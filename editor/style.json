@@ -16,5 +16,9 @@
   "seam_soft": 46,
   "seam_shadow": 0.55,
   "seam_hairline": 0.22,
-  "voice_chain": "natural"
+  "voice_chain": "original",
+  "graphic_sfx": false,
+  "hit_sfx": false,
+  "extra_sfx_on": false,
+  "whoosh_level": 0.24
 }

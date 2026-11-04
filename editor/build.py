@@ -269,13 +269,14 @@ def sfx_cues(plan):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
         if nxt['type'] == 'full' and prev['type'] != 'full':
-            cues.append((pick('air'), T, 0.34)); last_tr = T
-            if nxt.get('hit'): cues.append((pick('impact'), T + 0.02, 0.30))
+            cues.append((pick('air'), T, float(plan.get('whoosh_level', 0.24)))); last_tr = T
+            if nxt.get('hit') and plan.get('hit_sfx', False): cues.append((pick('impact'), T + 0.02, 0.30))
         elif nxt['type'] != 'full' and prev['type'] == 'full':
             if T - last_tr >= 6: cues.append((pick('air_soft'), T, 0.22)); last_tr = T
         elif nxt.get('sfx'):
             cues.append((pick('air_soft'), T, 0.2)); last_tr = T
-    for g in plan.get('graphics', []):
+    graphic_sfx = plan.get('graphic_sfx', False)        # owner: no random loud sounds mid-sentence
+    for g in (plan.get('graphics', []) if graphic_sfx else []):
         t0, ev = g['t'], g.get('_ev', {})
         if g['type'] == 'data':
             for k, tk in enumerate(ev.get('ticks', [])[:5]): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.14))
@@ -291,7 +292,7 @@ def sfx_cues(plan):
             if 'swish' in ev: cues.append((pick('air_soft'), t0 + ev['swish'] + 0.25, 0.24))
         elif g['type'] in ('name', 'stat'):
             cues.append((pick('pop'), t0 + 0.05, 0.28))
-    for c in plan.get('extra_sfx', []):
+    for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
         cues.append((pick(c[0]) if c[0] in POOLS else c[0], c[1], c[2]))
     # de-clutter: no two cues of the same family within 0.12 s; whoosh-family cues >= 1.5 s apart
     cues.sort(key=lambda c: c[1]); out, last_air = [], -99
@@ -375,10 +376,11 @@ def main(plan_path):
         # natural: no noise reduction (it made the voice watery/muffled), gentle de-mud + air, light 2:1 compression
         'natural': 'highpass=f=70,equalizer=f=320:t=q:w=1.0:g=-1.5,equalizer=f=4500:t=h:w=0.7:g=2,'
                    'acompressor=threshold=-18dB:ratio=2:attack=15:release=200:makeup=1.5',
-        'raw': 'highpass=f=60',
+        'original': 'anull',          # HOUSE DEFAULT: the owner's untouched voice (EQ/compression took the bass out)
+        'raw': 'anull',
         'denoise': 'highpass=f=70,afftdn=nf=-40:nr=6,equalizer=f=4500:t=h:w=0.7:g=2,acompressor=threshold=-18dB:ratio=2:attack=15:release=200',
     }
-    vchain = VOICE.get(plan.get('voice_chain', 'natural'), plan.get('voice_chain'))
+    vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
     cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
@@ -388,11 +390,11 @@ def main(plan_path):
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
     mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
-    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',loudnorm=I=-14:TP=-1.0:print_format=json[a]']),
+    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
-    d = json.loads(m[m.rindex('{'):])
-    ln = (f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={d['input_i']}:measured_TP={d['input_tp']}:"
-          f"measured_LRA={d['input_lra']}:measured_thresh={d['input_thresh']}:offset={d['target_offset']}:linear=true")
+    li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
+    gain = -14.0 - li                                  # one static gain: tone and dynamics untouched
+    ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
     awav = f'{wd}/mix.wav'
     run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
          '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])

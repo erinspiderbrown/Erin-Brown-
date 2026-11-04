@@ -6,9 +6,9 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
-- **Voice must sound natural.** The owner said the old processing made his voice sound "weird / muffled".
-  - The default `voice_chain: "natural"` has no noise reduction, light EQ and 2:1 compression, plus a two-pass *linear* loudness pass so the volume never pumps.
-  - Don't add `afftdn` or heavy compression back unless the owner asks. If a recording is noisy, ask first, then use `"denoise"` (a gentle setting).
+- **Use the owner's original voice audio, untouched.** The default is `voice_chain: "original"`. The only change is one static volume gain to reach −14 LUFS, plus a peak limiter.
+  - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
+  - Don't add voice processing back unless the owner asks for it.
 - **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow` if needed.
 
 ## Style
@@ -17,12 +17,14 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - The face must **not** blend or dissolve into the B-roll; the owner rejected `"blend"`.
   - No bold or colored divider line either; the owner rejected the red line.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
-- **Sound effects stay restrained.** The owner found every-cut whooshes repetitive. Defaults in `build.py`:
-  - B-roll swaps inside the split are silent.
-  - A soft airy whoosh plays only on cuts to full-screen.
-  - Mark only the biggest moment or two with `"hit": true` for the bass hit and flash.
-  - Every cue gets a small random pitch variation.
-- **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring) with tick and land sounds. Run `suggest_data.py` on the transcript to find every number.
+- **No random loud sound effects mid-sentence.** The owner dislikes them. The defaults in `style.json` are:
+  - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no stamp thuds, pops, ticks or clicks).
+  - **Off:** `hit_sfx: false`, so there are no bass hits.
+  - **Off:** `extra_sfx_on: false`, so there are no risers.
+  - **Kept:** a quiet airy whoosh on cuts into and out of full-screen (`whoosh_level` 0.24), with small pitch variation. B-roll swaps inside the split are silent.
+  - Don't turn any of these back on unless the owner asks. `"hit": true` on a segment now only adds the visual flash.
+  - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random.)
+- **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
 - **Things being talked about** get motion graphics (`type: "motion"`):
   - `stamp`: e.g. "FRAUD?"
   - `keyword`
