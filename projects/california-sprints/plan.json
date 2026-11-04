@@ -18,11 +18,11 @@
    "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "broll/univ200.mp4",
-    "ss": 0.2,
+    "src": "broll/hs_400m_full.jpg",
+    "ss": 0,
     "focus": [
-     0.42,
-     0.5
+     0.6,
+     0.15
     ]
    }
   },
@@ -30,11 +30,11 @@
    "type": "split",
    "start": 3.3,
    "broll": {
-    "src": "broll/hs_400m.jpg",
+    "src": "broll/olympic_4x100.jpg",
     "ss": 0,
     "focus": [
-     0.45,
-     0.35
+     0.5,
+     0.45
     ]
    }
   },
@@ -78,7 +78,7 @@
    "type": "full",
    "start": 15.0,
    "broll": {
-    "src": "broll/hollywood.mp4",
+    "src": "broll/hollywood_4k.mp4",
     "ss": 1.0,
     "focus": [
      0.5,
@@ -127,7 +127,7 @@
    "type": "full",
    "start": 29.8,
    "broll": {
-    "src": "broll/la_sunrise.mp4",
+    "src": "broll/la_sunrise_4k.mp4",
     "ss": 15.0,
     "focus": [
      0.5,
@@ -175,11 +175,11 @@
    "type": "full",
    "start": 41.7,
    "broll": {
-    "src": "broll/beijing100.mp4",
-    "ss": 3.0,
+    "src": "broll/penn_relays2_full.jpg",
+    "ss": 0,
     "focus": [
      0.5,
-     0.55
+     0.5
     ]
    }
   },
@@ -223,11 +223,11 @@
    "type": "split",
    "start": 52.5,
    "broll": {
-    "src": "broll/penn_relays2.jpg",
+    "src": "broll/hs_400m.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.55
+     0.45,
+     0.35
     ]
    }
   },
@@ -247,7 +247,7 @@
    "type": "full",
    "start": 59.8,
    "broll": {
-    "src": "broll/la_sunrise.mp4",
+    "src": "broll/la_sunrise_4k.mp4",
     "ss": 36.0,
     "focus": [
      0.5,
@@ -327,7 +327,7 @@
    "t": 1.2,
    "dur": 2.0,
    "text": "NOT TOP 5",
-   "anchor": "upper"
+   "y": 1120
   },
   {
    "type": "motion",
@@ -533,17 +533,5 @@
    ],
    "cta": "COMMENT BELOW"
   }
- ],
- "extra_sfx": [
-  [
-   "riser",
-   15.0,
-   0.3
-  ],
-  [
-   "riser",
-   59.8,
-   0.3
-  ]
  ]
 }

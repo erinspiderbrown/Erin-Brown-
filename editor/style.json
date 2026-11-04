@@ -15,5 +15,6 @@
   "seam_style": "soft",
   "seam_soft": 46,
   "seam_shadow": 0.55,
-  "seam_hairline": 0.22
+  "seam_hairline": 0.22,
+  "sfx_min_gap": 3.0
 }

@@ -30,13 +30,12 @@ The `work`, `raw` and `broll` folders were scratch symlinks in the editing sessi
 ## B-roll credits (Wikimedia Commons)
 CC BY / BY-SA need attribution. Paste this in the caption or a pinned comment:
 
-> B-roll via Wikimedia Commons: FISUTV (CC BY 3.0); World Athletics Championships 2015 (CC BY 3.0); the Dronalist (CC BY 3.0); REVisuals LA (CC BY 3.0); Third Coast Drone (CC BY 3.0); The Nomad With The Drone (CC BY 3.0); Neil Narain (CC BY 3.0); ProtoplasmaKid (CC BY-SA 4.0); 2017 Canada Summer Games (CC BY 2.0); Michael Barera (CC BY-SA 4.0); Habst (CC BY-SA 4.0).
+> B-roll via Wikimedia Commons: FISUTV (CC BY 3.0); the Dronalist (CC BY 3.0); REVisuals LA (CC BY 3.0); Third Coast Drone (CC BY 3.0); The Nomad With The Drone (CC BY 3.0); Neil Narain (CC BY 3.0); ProtoplasmaKid (CC BY-SA 4.0); 2017 Canada Summer Games (CC BY 2.0); Michael Barera (CC BY-SA 4.0); Habst (CC BY-SA 4.0); Daieuxetdailleurs (CC BY 4.0).
 
 | file | Commons source | author | license |
 |---|---|---|---|
 | univ200.mp4 | Athletics Men's 200 Final - 27th Summer Universiade 2013 - Kazan (RUS).webm | FISUTV | CC BY 3.0 |
 | hurdles.mp4 | 100 metres hurdles.webm | FISUTV | CC BY 3.0 |
-| beijing100.mp4 | Shelly Ann Fraser Pryce wins - World Athletics Championships BEIJING 2015.webm | World Athletics Championships 2015 | CC BY 3.0 |
 | hollywood.mp4 | Aerial views of Hollywood Sign, Hollywoodland, Griffith Observatory… .webm | the Dronalist | CC BY 3.0 |
 | la_sunrise.mp4 | Aerial views of Downtown Los Angeles California USA at sunrise.webm | the Dronalist | CC BY 3.0 |
 | venice.mp4 | Venice Beach 4K Drone in Los Angeles CA.webm | REVisuals LA | CC BY 3.0 |
@@ -48,4 +47,15 @@ CC BY / BY-SA need attribution. Paste this in the caption or a pinned comment:
 | hs_sprinter.jpg | Oregon City Track & field - IMG 8800 (52865760653).jpg | Oregon City High School | Public domain |
 | relay_handoff.jpg | 2017-08-04-Matt Duboff-4x100 (35543395104).jpg | 2017 Canada Summer Games | CC BY 2.0 |
 | texas_meet.jpg | 2017 Lone Star Conference Outdoor Track and Field Championships 01 … .jpg | Michael Barera | CC BY-SA 4.0 |
-| penn_relays.jpg, penn_relays2.jpg | 2024 Penn Relays 35.jpg, 29.jpg | Habst | CC BY-SA 4.0 |
+| penn_relays.jpg, penn_relays2(_full).jpg | 2024 Penn Relays 35.jpg, 29.jpg | Habst | CC BY-SA 4.0 |
+| olympic_4x100.jpg | Athletics at the 2024 Summer Olympics – Men's 4 × 100 metres relay final - 01.jpg | Daieuxetdailleurs | CC BY 4.0 |
+
+## v2 (owner feedback)
+- **Full-screen quality:** every full-screen shot is now 4K or full-res. The 1080p race clips are only used in the split.
+  - Opening: the full 8256×5504 photo of the high school runner.
+  - Hollywood and LA drone shots: native 4K intermediates (`*_4k.mp4`).
+  - Mid-video: the Penn Relays photo (3024×4032, natively vertical).
+- **Sound:**
+  - Removed the two 4 s risers (the loud, drawn-out noise).
+  - New spacing rule: at least 3 s between sound moments.
+  - No sound is used twice in a row. 14 sound moments in total.

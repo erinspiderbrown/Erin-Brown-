@@ -52,6 +52,9 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
 - **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
 - **Audio:** voice cleanup (high-pass, denoise, EQ, compression), mastered to −14 LUFS.
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
+  - Sound moments are spaced at least `sfx_min_gap` (3 s) apart.
+  - The same sound never plays twice in a row.
+  - Risers and long cinematic hits are banned.
 - **Quality rules:**
   - B-roll below 1080p (short side) is rejected.
   - Clips that have to be enlarged to fill the screen get extra sharpening.
