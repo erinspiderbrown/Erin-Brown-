@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday -->
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
   html, body { margin: 0; background: transparent; overflow: hidden; }
@@ -183,6 +183,30 @@ const BUILD = {
         background:${i % 2 ? '#fff' : '#1f2230'};color:${i % 2 ? '#111' : '#fff'};border-bottom-${i % 2 ? 'right' : 'left'}-radius:8px">
         <span class="t-mb" style="font-size:44px;letter-spacing:.01em">${t}</span></div>`).join('');
   },
+  // birthday cake: number candles light up, confetti burst, "HAPPY BIRTHDAY" + name
+  birthday() {
+    R.w = 1000; R.h = 900;
+    const num = String(S.number ?? '');
+    const conf = Array.from({ length: 46 }, (_, i) => { const r = k => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+      const c = ['var(--acc)', 'var(--acc2)', '#fff', '#3fa9f5', '#2ecc71'][i % 5];
+      return `<div id="cf${i}" data-a="${(r(1) * 2 - 1) * 1.25}" data-v="${560 + r(2) * 520}" data-s="${r(3) * 720 - 360}" style="position:absolute;left:500px;top:330px;width:${14 + r(4) * 12}px;height:${8 + r(5) * 8}px;background:${c};border-radius:2px;opacity:0"></div>`; }).join('');
+    const digits = num.split('').map((d, i) => `<div style="position:relative;width:110px;text-align:center">
+        <div id="fl${i}" style="position:absolute;left:41px;top:-62px;width:28px;height:50px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+          background:radial-gradient(circle at 50% 70%, #fff 0 18%, var(--acc2) 40%, #ff8a00 75%, transparent 76%);opacity:0;transform-origin:50% 100%;filter:drop-shadow(0 0 18px #ffb300)"></div>
+        <div style="position:absolute;left:53px;top:-14px;width:4px;height:16px;background:#222"></div>
+        <div class="t-anton" style="font-size:150px;line-height:1;color:var(--acc2);-webkit-text-stroke:6px #000;paint-order:stroke fill">${d}</div></div>`).join('');
+    return `<div id="cake" class="shadow" style="position:absolute;left:200px;top:120px;width:600px;height:470px;transform-origin:50% 100%">
+        <div style="position:absolute;left:0;right:0;top:34px;display:flex;justify-content:center;gap:6px">${digits}</div>
+        <div style="position:absolute;left:110px;width:380px;top:180px;height:120px;border-radius:22px 22px 10px 10px;background:linear-gradient(#fff6e8,#f1d9b5)"></div>
+        <svg width="380" height="44" style="position:absolute;left:110px;top:178px"><path d="M0 18 ${Array.from({length:8},(_,i)=>`Q ${i*47.5+23.75} 48 ${(i+1)*47.5} 18`).join(' ')} V0 H0Z" fill="var(--acc)"/></svg>
+        <div style="position:absolute;left:40px;width:520px;top:300px;height:150px;border-radius:22px 22px 12px 12px;background:linear-gradient(#ffffff,#e9cfa6)"></div>
+        <svg width="520" height="50" style="position:absolute;left:40px;top:298px"><path d="M0 20 ${Array.from({length:10},(_,i)=>`Q ${i*52+26} 54 ${(i+1)*52} 20`).join(' ')} V0 H0Z" fill="var(--acc2)"/></svg>
+        <div style="position:absolute;left:0;right:0;top:440px;height:26px;border-radius:13px;background:#d9dde6"></div></div>
+      ${conf}
+      <div id="hbT" class="shadow" style="position:absolute;left:0;width:1000px;top:620px;text-align:center">
+        <div class="t-anton" style="font-size:118px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'HAPPY BIRTHDAY'}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:40px;color:var(--acc2);letter-spacing:.14em;margin-top:10px">${S.sub}</div>` : ''}</div>`;
+  },
 };
 const ANIM = {
   padlock(t) { const q = eOut(clamp((t - .15) / .3)); $('lock').style.transform = `translateY(${(1 - q) * -420}px)`; $('lock').style.opacity = clamp((t - .1) / .1) * fadeOut(t);
@@ -237,6 +261,14 @@ const ANIM = {
       const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
       e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
     const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+  birthday(t) { const q = eBack(t / .45); $('cake').style.transform = `translateY(${(1 - q) * 160}px) scale(${.7 + .3 * q})`;
+    $('root').style.opacity = clamp(t / .12) * fadeOut(t);
+    String(S.number ?? '').split('').forEach((_, i) => { const f = $('fl' + i), l = clamp((t - .45 - i * .18) / .12);
+      f.style.opacity = l; f.style.transform = `scale(${l * (1 + .08 * Math.sin(t * 23 + i * 2))},${l * (1 + .14 * Math.sin(t * 17 + i))}) rotate(${4 * Math.sin(t * 13 + i)}deg)`; });
+    const b = t - .8; document.querySelectorAll('[id^=cf]').forEach(e => { if (b <= 0) { e.style.opacity = 0; return; }
+      const a = +e.dataset.a, v = +e.dataset.v, x = Math.sin(a) * v * b, y = -Math.cos(a) * v * b * 1.1 + 900 * b * b;
+      e.style.opacity = clamp(1 - (b - 1.3) / .6) * fadeOut(t); e.style.transform = `translate(${x}px,${y}px) rotate(${+e.dataset.s * b}deg) rotateX(${b * 540}deg)`; });
+    const l = eBack((t - .9) / .4); $('hbT').style.opacity = clamp((t - .9) / .12) * fadeOut(t); $('hbT').style.transform = `scale(${.5 + .5 * l})`; },
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
@@ -254,6 +286,7 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   wind: () => ({ air: .05 }),
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
+  birthday: () => ({ soft: .45, pops: [.9] }),
 };
 
 window.setup = async (spec) => {
