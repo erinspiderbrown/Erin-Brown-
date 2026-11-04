@@ -27,3 +27,13 @@ These came in a Dropbox folder link and are not committed:
 ## New motion graphics (hand-built)
 - `board`: a records board. Rows of event, time and an optional tag slide in, and `times` lands each row on the spoken word.
 - `track`: a runner dot laps an oval while a clock counts up to `value`, then the label pops in. Used for "one lap = open 400".
+
+## v2: house rules from the `modest-hypatia` session
+- **Voice:** the original voice is untouched (`voice_chain: "original"`), with one gain to −14.0 LUFS.
+- **Sound:** graphics, hits and risers are silent. Only 3 quiet whooshes remain, on the full-screen cuts.
+- **Transitions:** viral transitions are picked automatically:
+  - A whip out of the opening full-screen.
+  - Bottom-half swipes on every B-roll swap.
+  - A flash into the "47" full-screen and a zoom back out of it.
+  - A shake into "jack of all trades".
+- **Export:** `exports/taiju_goto_tiktok_v2.mp4`.

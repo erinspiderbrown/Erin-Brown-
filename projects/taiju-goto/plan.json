@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "work/out/taiju_goto_v1.mp4",
+ "output": "work/out/taiju_goto_v2.mp4",
  "words": "work/words_tight.json",
  "voice_ss": 0.0,
  "duration": 64.56,
