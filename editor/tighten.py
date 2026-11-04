@@ -32,7 +32,7 @@ for i, (a, b) in enumerate(ranges):
     fc.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={b-a-0.015:.3f}:d=0.015[a{i}]")
 fc.append(''.join(f'[v{i}][a{i}]' for i in range(len(ranges))) + f'concat=n={len(ranges)}:v=1:a=1[cv][ca]')
 r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-filter_complex', ';'.join(fc), '-map', '[cv]', '-map', '[ca]',
-                    '-c:v', 'libx264', '-crf', '14', '-preset', 'fast', '-c:a', 'pcm_s16le', out_v], capture_output=True, text=True)
+                    '-c:v', 'libx264', '-crf', '14', '-preset', 'fast', '-c:a', 'pcm_f32le', out_v], capture_output=True, text=True)
 if r.returncode: sys.exit(r.stderr[-2000:])
 new = sum(b - a for a, b in ranges)
 print(f'{dur:.2f}s -> {new:.2f}s ({len(cuts)} pauses cut)')

@@ -14,7 +14,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - a high-res photo (about 3000 px or more on the long side)
   - 1080p landscape clips go in the bottom half of the split only.
   - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
-- **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow`, or with a two-pass encode at about 9 Mbps if that's still too big.
+- **Export:** 1080×1920, 30 fps, stereo audio, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow`, or with a two-pass encode at about 9 Mbps if that's still too big.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
@@ -53,9 +53,13 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox share links. Download them with `?dl=1`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
-3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
-4. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
-5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+3. **Check the voice for clipping.** Phone recordings are often too hot: the owner's Nov 2026 take clipped on nearly every loud syllable, which sounds crunchy.
+   - Run `editor/declip.py raw/talking_head.mov work/voice_declip.wav`. It rebuilds the flattened peaks and writes a float WAV.
+   - Mux that WAV onto the cropped face video before tightening.
+   - Keep the voice in float from here on: `tighten.py` writes `pcm_f32le`, and `build.py` gives it −6 dB of headroom first.
+4. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
+5. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
+6. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.

@@ -396,7 +396,12 @@ def main(plan_path):
     # 3) audio: voice + sfx
     ai = len(inputs) // 2           # all earlier inputs are ["-i", path] pairs
     inputs += ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[{ai}:a]highpass=f=80,afftdn=nf=-28,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3500:t=q:w=1.0:g=2.5,equalizer=f=10000:t=h:w=0.7:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,alimiter=limit=0.95[vo]']
+    # voice: float all the way (the source may be declipped with peaks > 1.0), headroom first, gentle presence
+    # (big 3.5k/10k boosts made the clipped phone recording sound harsh), light de-ess, then compress + limit
+    vchain = plan.get('voice_chain', 'aformat=sample_fmts=flt,volume=-6dB,highpass=f=80,afftdn=nf=-30,'
+                      'equalizer=f=250:t=q:w=1.2:g=-2,equalizer=f=3200:t=q:w=1.0:g=1,equalizer=f=10000:t=h:w=0.7:g=0.5,'
+                      'deesser=i=0.35,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=150:makeup=2,alimiter=limit=0.9')
+    cues = sfx_cues(plan); mix = [f'[{ai}:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
         inputs += ['-i', f"{plan['sfxdir']}/{name}.wav"]
@@ -404,7 +409,7 @@ def main(plan_path):
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{ai+1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
     mix.append(''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) +
-               f'amix=inputs={len(cues)+1}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.0:LRA=9[a]')
+               f'amix=inputs={len(cues)+1}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.0:LRA=9,aformat=channel_layouts=stereo[a]')
     run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc + mix),
          '-map', '[v]', '-map', '[a]', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
          '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',

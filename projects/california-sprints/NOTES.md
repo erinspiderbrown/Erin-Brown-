@@ -59,3 +59,19 @@ CC BY / BY-SA need attribution. Paste this in the caption or a pinned comment:
   - Removed the two 4 s risers (the loud, drawn-out noise).
   - New spacing rule: at least 3 s between sound moments.
   - No sound is used twice in a row. 14 sound moments in total.
+
+## v3: audio fix
+- **Problem:** the original recording clips on nearly every loud syllable. There were about 6,000 flat-topped peaks, with the phone mic overloaded.
+  - `tighten.py` saved the audio as 16-bit, which hard-clipped those peaks again.
+  - The voice EQ (+2.5 dB at 3.5 kHz, +1.5 dB above 10 kHz) brought out the harshness.
+- **Fix:**
+  - `editor/declip.py` rebuilt 7,031 clipped peaks from their clean neighbours (least-squares parabola with a soft cap).
+  - The voice is now float all the way: `tighten.py` writes `pcm_f32le`, and `build.py` adds −6 dB of headroom.
+  - Gentler presence EQ, plus a light de-esser.
+  - Stereo output (was mono).
+- **Result:**
+  - Upper-mid harshness (2.5–6 kHz share in loud passages): 6.1% → 3.7%.
+  - High-frequency distortion above 8 kHz: 0.33% → 0.16%.
+  - No clicks at the cut points.
+  - −14.3 LUFS.
+- **Files:** `work/face_dc.mov` is the cropped face with the declipped audio, and `work/face_tight_dc.mov` is its tightened version, used by the plan. The cut points are identical to before, so `words_tight.json` is unchanged.

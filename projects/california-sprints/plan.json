@@ -5,7 +5,7 @@
  "voice_ss": 0.0,
  "duration": 76.36,
  "face": {
-  "src": "work/face_tight.mov",
+  "src": "work/face_tight_dc.mov",
   "focus": [
    0.5,
    0.5
