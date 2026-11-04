@@ -1,0 +1,549 @@
+{
+ "workdir": "work/build",
+ "output": "work/california_sprints.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 76.36,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "_res_note": "skip_res_check only because of raw/photo_ca.jpg (owner's photo, 1200x810, below 1080p; used in the split by request and flagged). All other B-roll is 1080p+.",
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.3,
+   "broll": {
+    "src": "broll/hs_400m.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.6,
+   "broll": {
+    "src": "broll/penn_relays.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.6,
+   "broll": {
+    "src": "broll/texas_meet.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.3,
+   "broll": {
+    "src": "raw/photo_ca.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 15.0,
+   "broll": {
+    "src": "broll/hollywood.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 19.4,
+   "broll": {
+    "src": "broll/hs_sprinter.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.2,
+   "broll": {
+    "src": "broll/houston.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 27.1,
+   "broll": {
+    "src": "broll/miami.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 29.8,
+   "broll": {
+    "src": "broll/la_sunrise.mp4",
+    "ss": 15.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.0,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 3.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 35.9,
+   "broll": {
+    "src": "broll/goldengate.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.9,
+   "broll": {
+    "src": "broll/venice.mp4",
+    "ss": 22.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 41.7,
+   "broll": {
+    "src": "broll/beijing100.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 44.3,
+   "broll": {
+    "src": "broll/miami.mp4",
+    "ss": 32.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.3,
+   "broll": {
+    "src": "broll/houston.mp4",
+    "ss": 38.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.8,
+   "broll": {
+    "src": "broll/charlotte_nc.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 52.5,
+   "broll": {
+    "src": "broll/penn_relays2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.6,
+   "broll": {
+    "src": "broll/relay_handoff.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 59.8,
+   "broll": {
+    "src": "broll/la_sunrise.mp4",
+    "ss": 36.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 63.2,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 7.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.3,
+   "broll": {
+    "src": "broll/hollywood.mp4",
+    "ss": 16.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 72.4,
+   "broll": {
+    "src": "broll/venice.mp4",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   20.4,
+   22.0,
+   1.1
+  ],
+  [
+   36.4,
+   39.3,
+   1.14
+  ],
+  [
+   53.8,
+   55.6,
+   1.08
+  ],
+  [
+   64.2,
+   65.9,
+   1.1
+  ],
+  [
+   70.4,
+   72.2,
+   1.14
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 1.2,
+   "dur": 2.0,
+   "text": "NOT TOP 5",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "usmap",
+   "t": 9.0,
+   "dur": 4.5,
+   "title": "THE \"TOP\" SPRINT STATES",
+   "groups": [
+    {
+     "names": [
+      "Texas"
+     ],
+     "label": "TX",
+     "at": 1.15
+    },
+    {
+     "names": [
+      "Florida"
+     ],
+     "label": "FL",
+     "at": 1.7
+    }
+   ],
+   "cross": {
+    "names": [
+     "California"
+    ],
+    "label": "CALI?",
+    "at": 3.5
+   }
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 15.6,
+   "dur": 3.6,
+   "value": "39.4",
+   "unit": "MILLION",
+   "label": "California population",
+   "sub": "Census est. July 2025"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 20.3,
+   "dur": 3.4,
+   "text": "2-5 GOOD SPRINTERS",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 24.4,
+   "dur": 2.6,
+   "text": "TEXAS",
+   "sub": "A LARGE INFLUX"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 27.2,
+   "dur": 2.5,
+   "text": "FLORIDA",
+   "sub": "A LARGE INFLUX"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 31.1,
+   "dur": 1.5,
+   "text": "THEY DON'T",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 33.9,
+   "dur": 2.0,
+   "text": "3-4 ATHLETES",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.3,
+   "dur": 1.9,
+   "text": "A BIG ARIZONA",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "usmap",
+   "t": 44.3,
+   "dur": 8.2,
+   "title": "BETTER SPRINT STATES",
+   "groups": [
+    {
+     "names": [
+      "Florida"
+     ],
+     "label": "FL",
+     "at": 0.3
+    },
+    {
+     "names": [
+      "Georgia"
+     ],
+     "label": "GA",
+     "at": 1.3,
+     "dx": -22
+    },
+    {
+     "names": [
+      "Texas"
+     ],
+     "label": "TX",
+     "at": 2.2
+    },
+    {
+     "names": [
+      "Maryland",
+      "District of Columbia",
+      "Virginia"
+     ],
+     "label": "DMV",
+     "at": 3.5,
+     "dy": -40
+    },
+    {
+     "names": [
+      "North Carolina"
+     ],
+     "label": "NC",
+     "at": 4.7
+    }
+   ],
+   "cross": {
+    "names": [
+     "California"
+    ],
+    "label": "CALI",
+    "at": 6.4
+   }
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 60.3,
+   "dur": 2.9,
+   "text": "2 OF 40,000,000",
+   "hi": 0,
+   "anchor": "upper",
+   "size": 130
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 63.6,
+   "dur": 5.6,
+   "label": "Population \u00b7 millions",
+   "unit": "M",
+   "base": 0,
+   "items": [
+    {
+     "name": "California",
+     "value": "39.4"
+    },
+    {
+     "name": "Texas",
+     "value": "31.7"
+    },
+    {
+     "name": "Florida",
+     "value": "23.5"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 70.9,
+   "dur": 1.5,
+   "text": "OVERHYPED?",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 72.5,
+   "dur": 1.3,
+   "text": "THE WEATHER?",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 73.8,
+   "dur": 2.56,
+   "question": "IS CALI TOP 5?",
+   "options": [
+    "YES",
+    "NO"
+   ],
+   "cta": "COMMENT BELOW"
+  }
+ ],
+ "extra_sfx": [
+  [
+   "riser",
+   15.0,
+   0.3
+  ],
+  [
+   "riser",
+   59.8,
+   0.3
+  ]
+ ]
+}

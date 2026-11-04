@@ -144,7 +144,7 @@ def chunks(words, maxw=3, gap=0.35):
             yield cur; cur = []
 
 def clean(w):
-    w = re.sub(r'[^\w.%$#\'-]', '', w.upper())
+    w = re.sub(r'[^\w.%$#*\'-]', '', w.upper())
     return re.sub(r'\.$', '', w)
 
 def hex2ass(h):
