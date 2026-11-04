@@ -16,6 +16,14 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Seam:** a clear separation between the face and the B-roll, but soft: `seam_style: "soft"` gives a clean edge with a soft shadow band and a faint 2 px hairline.
   - The face must **not** blend or dissolve into the B-roll; the owner rejected `"blend"`.
   - No bold or colored divider line either; the owner rejected the red line.
+- **Transitions: viral-style, on every video** (`editor/transitions.py`; auto-picked by `choose_transitions` in `build.py`):
+  - **Into full-screen:** rotate zoom-through, whip-pan (left/up) and spin.
+  - **`hit` segments:** flash or camera shake.
+  - **Out of full-screen:** whip-down, zoom, whip-right or glitch.
+  - **Full → full:** whip or glitch.
+  - **B-roll swaps inside the split:** a bottom-half swipe with motion blur; the owner's face never moves.
+  - **Overrides:** force one per segment with `"transition": "whip:left" | "zoom" | "spin" | "glitch" | "flash" | "shake" | "swipe:right" | "cut"`. Set `split_swipes: false` for plain cuts in the split.
+  - Keep them varied, never the same transition twice in a row. Motion blur peaks briefly at the cut so both shots stay sharp.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
 - **No random loud sound effects mid-sentence.** The owner dislikes them. The defaults in `style.json` are:
   - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no stamp thuds, pops, ticks or clicks).

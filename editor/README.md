@@ -36,6 +36,19 @@ Segments: `"hit": true` marks the one or two biggest full-screen moments (bass h
 
 Renders are cached: unchanged segments and graphics are reused, so tweaks re-render fast.
 
+## Transitions
+`transitions.py` has these effects:
+- `whip`: whip-pan with directional motion blur
+- `zoom`: zoom-through
+- `spin`
+- `glitch`: RGB split plus jitter
+- `flash`: white bloom
+- `shake`: camera shake
+- `swipe`: bottom-half whip for split B-roll swaps
+- `cut`
+
+Each is rendered as a short clip from the overlap between segments. `build.py` picks them automatically and varies them; override per segment with `"transition"`.
+
 ## What it does
 - **Layout:** split screen (face top, B-roll bottom, separated by a soft seam: a clean edge, soft shadow and faint hairline. `seam_style: "blend"` is available but not the house look) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
 - **Full frame:** full-screen B-roll always fills the whole 9:16 frame, with no bars, blur fill or blank space. `focus: [x, y]` (0–1) picks the crop point so the action stays in frame.

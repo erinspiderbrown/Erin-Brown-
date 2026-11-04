@@ -4,6 +4,8 @@ Usage: python3 build.py plan.json
 All times in the plan are OUTPUT seconds (0 = start of edit), except *_ss fields which are source seek times.
 """
 import hashlib, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import transitions
 
 W, H, FPS, D = 1080, 1920, 30, 0.30          # canvas, fps, transition duration
 HALF = H // 2
@@ -303,6 +305,30 @@ def sfx_cues(plan):
         out.append(c)
     return [(n, t, v * lvl, round(rng.uniform(0.92, 1.08), 3)) for n, t, v in out]
 
+def choose_transitions(plan):
+    """Pick a transition per boundary. A segment can force one with "transition": "whip:left" / "zoom" / "cut" / ...
+    Auto rules (house style, viral but varied):
+      into full-screen   -> rotate zoom, whip-left, spin, whip-up   ("hit" segments: flash / shake)
+      out of full-screen -> rotate whip-down, zoom, whip-right, glitch
+      full -> full       -> rotate whip-left, glitch, whip-right
+      split -> split     -> bottom-half swipe (left/right alternating); your face never moves"""
+    rot = {'in': ['zoom', 'whip:left', 'spin', 'whip:up'], 'hit': ['flash', 'shake'], 'out': ['whip:down', 'zoom', 'whip:right', 'glitch'],
+           'ff': ['whip:left', 'glitch', 'whip:right'], 'ss': ['swipe:left', 'swipe:right']}
+    cnt = {k: 0 for k in rot}
+    def take(k):
+        v = rot[k][cnt[k] % len(rot[k])]; cnt[k] += 1; return v
+    segs, out = plan['segments'], [None]
+    for prev, nxt in zip(segs, segs[1:]):
+        if 'transition' in nxt and nxt['transition'] in transitions.DUR or ':' in str(nxt.get('transition', '')):
+            spec = nxt['transition']
+        elif nxt['type'] == 'full' and prev['type'] != 'full': spec = take('hit') if nxt.get('hit') else take('in')
+        elif nxt['type'] != 'full' and prev['type'] == 'full': spec = take('out')
+        elif nxt['type'] == 'full': spec = take('ff')
+        else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
+        k, _, dr = spec.partition(':')
+        out.append((k, dr or None, 'bottom' if k == 'swipe' else None))
+    return out
+
 def main(plan_path):
     global GOLD_ASS
     here0 = os.path.dirname(os.path.abspath(__file__))
@@ -316,24 +342,39 @@ def main(plan_path):
     if not plan.get('skip_res_check'): check_sources(plan, plan.get('min_broll_short_side', 1080))
     wd = plan['workdir']; os.makedirs(wd, exist_ok=True)
     segs = plan['segments']; end = plan['duration']
-    # 1) segments with D/2 overlap on each inner boundary
+    # 1) segments, each rendered with PAD s of overlap on both sides so any transition can use it
+    PAD = 0.25
     parts = []
     for i, s in enumerate(segs):
-        a = s['start'] - (D / 2 if i else 0)
-        b = (segs[i + 1]['start'] + D / 2) if i + 1 < len(segs) else end
+        a = max(0.0, s['start'] - PAD) if i else 0.0
+        b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not os.path.exists(p): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
-    # 2) xfade chain
-    inputs, fc, last = [], [], '0:v'
+    # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
+    trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
+    dur = [0.0] + [transitions.DUR[k] for k, _, _ in trs[1:]]
+    inputs, fc, pieces = [], [], []
     for i, (p, a, b) in enumerate(parts):
         inputs += ['-i', p]
-    for i in range(1, len(parts)):
-        tr = segs[i].get('transition', 'smoothup' if segs[i]['type'] == 'full' else 'smoothdown')
-        off = parts[i][1]
-        fc.append(f'[{last}][{i}:v]xfade=transition={tr}:duration={D}:offset={off:.3f}[x{i}]'); last = f'x{i}'
+    for i in range(len(parts)):
+        a_i = parts[i][1]
+        if i:
+            k, dr, half = trs[i]
+            if dur[i] > 0:
+                d = dur[i]; T = segs[i]['start']
+                key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
+                tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
+                if not os.path.exists(tp):
+                    transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
+                n = len(inputs) // 2; inputs += ['-i', tp]
+                pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
+        s0 = (segs[i]['start'] + dur[i] / 2 - a_i) if i else 0.0
+        s1 = (segs[i + 1]['start'] - dur[i + 1] / 2 - a_i) if i + 1 < len(segs) else end - a_i
+        fc.append(f'[{i}:v]trim=start={s0:.4f}:end={s1:.4f},setpts=PTS-STARTPTS,setsar=1[b{i}]'); pieces.append(f'[b{i}]')
+    fc.append(''.join(pieces) + f'concat=n={len(pieces)}:v=1:a=0,fps={FPS}[x0]'); last = 'x0'
     here = os.path.dirname(os.path.abspath(__file__))
     for gi, g in enumerate(plan.get('graphics', [])):
         if g['type'] == 'clip':
