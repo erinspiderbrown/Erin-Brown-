@@ -36,6 +36,19 @@ Segments: `"hit": true` marks the one or two biggest full-screen moments (bass h
 
 Renders are cached: unchanged segments and graphics are reused, so tweaks re-render fast.
 
+## Transitions
+`transitions.py` has these effects:
+- `whip`: whip-pan with directional motion blur
+- `zoom`: zoom-through
+- `spin`
+- `glitch`: RGB split plus jitter
+- `flash`: white bloom
+- `shake`: camera shake
+- `swipe`: bottom-half whip for split B-roll swaps
+- `cut`
+
+Each is rendered as a short clip from the overlap between segments. `build.py` picks them automatically and varies them; override per segment with `"transition"`.
+
 ## What it does
 - **Layout:** split screen (face top, B-roll bottom, separated by a soft seam: a clean edge, soft shadow and faint hairline. `seam_style: "blend"` is available but not the house look) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
 - **Full frame:** full-screen B-roll always fills the whole 9:16 frame, with no bars, blur fill or blank space. `focus: [x, y]` (0–1) picks the crop point so the action stays in frame.
@@ -50,7 +63,7 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
   Each one gets its own sound design: a whoosh in, data ticks as the numbers move, and a pop and bass hit when the number lands.
 - **Captions:** word-by-word highlights in Montserrat Black. The highlight color alternates between chunks using `caption_colors`.
 - **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
-- **Audio:** voice cleanup (high-pass, denoise, EQ, compression), mastered to −14 LUFS.
+- **Audio:** your original voice, untouched (one volume gain to −14 LUFS).
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
 - **Quality rules:**
   - B-roll below 1080p (short side) is rejected.

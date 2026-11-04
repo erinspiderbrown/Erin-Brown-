@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, podcast -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast -->
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
   html, body { margin: 0; background: transparent; overflow: hidden; }
@@ -131,9 +131,120 @@ const BUILD = {
         <div class="t-anton" style="font-size:92px;line-height:1.05;color:#fff;white-space:nowrap">${S.text}</div></div>
       <svg width="480" height="40" style="position:absolute;left:236px;top:176px;overflow:visible">${bars}</svg></div>`;
   },
-};
 
+  // padlock slams shut over a screen showing the sport, "PAYWALL" text
+  padlock() {
+    R.w = 960; R.h = 700;
+    return `<div style="position:absolute;left:180px;top:40px;width:600px;height:360px;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#1b3b8f,#0e1a3d);border:3px solid rgba(255,255,255,.15)" class="shadow">
+        <svg width="600" height="360"><g opacity=".9">${Array.from({length:6},(_,i)=>`<path d="M -20 ${330-i*26} Q 300 ${200-i*30} 620 ${330-i*26}" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4"/>`).join('')}</g>
+          <text x="300" y="120" text-anchor="middle" font-family="Anton" font-size="70" fill="#fff">${S.screen || 'TRACK & FIELD'}</text></svg>
+        <div id="pwDim" style="position:absolute;inset:0;background:rgba(0,0,0,.0)"></div></div>
+      <svg id="lock" width="300" height="360" style="position:absolute;left:330px;top:170px;overflow:visible" class="shadow">
+        <path id="shackle" d="M 80 150 V 95 a 70 70 0 0 1 140 0 V 150" fill="none" stroke="#d9dde6" stroke-width="30" stroke-linecap="round"/>
+        <rect x="40" y="140" width="220" height="180" rx="30" fill="var(--acc)"/>
+        <circle cx="150" cy="215" r="22" fill="#111"/><rect x="141" y="225" width="18" height="48" rx="8" fill="#111"/></svg>
+      <div id="pwT" class="t-anton shadow" style="position:absolute;left:0;width:960px;top:540px;text-align:center;font-size:120px;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill">${S.text || 'PAYWALL'}</div>`;
+  },
+  // streaming screen: "now streaming on A" -> card swaps to B -> SUBSCRIPTION REQUIRED
+  subscription() {
+    R.w = 960; R.h = 720;
+    return `<div id="phone" class="shadow" style="position:absolute;left:180px;top:20px;width:600px;height:680px;border-radius:48px;background:#0c0d12;border:6px solid #2a2c35;overflow:hidden">
+        <div class="t-meb" style="color:rgba(255,255,255,.6);font-size:28px;letter-spacing:.14em;text-align:center;margin-top:46px">${S.event || 'DIAMOND LEAGUE'}</div>
+        <div id="cardA" style="position:absolute;left:50px;right:50px;top:120px;height:200px;border-radius:28px;background:linear-gradient(135deg,#2b2f3d,#171922);display:flex;align-items:center;justify-content:center">
+          <span class="t-anton" style="font-size:84px;color:#fff">${S.from}</span></div>
+        <div id="cardB" style="position:absolute;left:50px;right:50px;top:120px;height:200px;border-radius:28px;background:linear-gradient(135deg,var(--acc),#7a0f0c);display:flex;align-items:center;justify-content:center">
+          <span class="t-anton" style="font-size:84px;color:#fff">${S.to}</span></div>
+        <div id="lockRow" style="position:absolute;left:30px;right:30px;top:350px;text-align:center">
+          <svg width="90" height="110" viewBox="0 0 300 360"><path d="M 80 150 V 95 a 70 70 0 0 1 140 0 V 150" fill="none" stroke="#d9dde6" stroke-width="30"/><rect x="40" y="140" width="220" height="180" rx="30" fill="var(--acc)"/></svg>
+          <div class="t-anton" style="font-size:52px;color:#fff;line-height:1.05;white-space:nowrap;margin-top:8px">SUBSCRIPTION REQUIRED</div></div>
+        <div id="btn" style="position:absolute;left:90px;right:90px;bottom:50px;height:90px;border-radius:45px;background:#fff;display:flex;align-items:center;justify-content:center">
+          <span class="t-mb" style="font-size:30px;color:#111;letter-spacing:.04em;white-space:nowrap">${S.button || 'SUBSCRIBE TO WATCH'}</span></div></div>`;
+  },
+  // TV switches on: static burst -> picture of a track -> label
+  tv() {
+    R.w = 960; R.h = 700;
+    return `<div class="shadow" style="position:absolute;left:110px;top:30px;width:740px;height:500px">
+        <div style="position:absolute;inset:0;border-radius:36px;background:#15161c;border:6px solid #2a2c35"></div>
+        <div id="scr" style="position:absolute;left:34px;top:34px;right:34px;bottom:34px;border-radius:18px;overflow:hidden;background:#000">
+          <svg id="trk" width="672" height="432" style="position:absolute;left:0;top:0;opacity:0"><rect width="672" height="432" fill="#1d6b3a"/>
+            <ellipse cx="336" cy="216" rx="330" ry="190" fill="#b5462f"/><ellipse cx="336" cy="216" rx="250" ry="120" fill="#1d6b3a"/>
+            ${Array.from({length:5},(_,i)=>`<ellipse cx="336" cy="216" rx="${330-i*16}" ry="${190-i*14}" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"/>`).join('')}
+            <rect x="18" y="18" width="110" height="44" rx="8" fill="var(--acc)"/><text x="73" y="50" text-anchor="middle" font-family="Anton" font-size="30" fill="#fff">LIVE</text></svg>
+          <canvas id="noise" width="168" height="108" style="position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated"></canvas>
+          <div id="line" style="position:absolute;left:0;right:0;top:50%;height:6px;background:#fff;transform-origin:center"></div></div>
+        <div style="position:absolute;left:300px;top:500px;width:140px;height:60px;background:#2a2c35;border-radius:0 0 18px 18px"></div></div>
+      <div id="tvT" class="t-anton shadow" style="position:absolute;left:0;width:960px;top:590px;text-align:center;font-size:96px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">${S.text || 'ON TV, FOR FREE'}</div>`;
+  },
+  // eyes -> attention -> money: three icons light up in sequence with arrows (no fake numbers)
+  flow() {
+    R.w = 1000; R.h = 520;
+    const items = S.items || ['FREE TO WATCH', 'MORE EYES', 'MORE MONEY'];
+    const icons = [
+      `<svg width="150" height="150" viewBox="0 0 100 100"><rect x="14" y="22" width="72" height="48" rx="8" fill="none" stroke="#fff" stroke-width="7"/><path d="M44 36 L60 46 L44 56 Z" fill="var(--acc2)"/><rect x="38" y="76" width="24" height="7" rx="3" fill="#fff"/></svg>`,
+      `<svg width="150" height="150" viewBox="0 0 100 100"><path d="M8 50 Q50 10 92 50 Q50 90 8 50 Z" fill="none" stroke="#fff" stroke-width="7"/><circle cx="50" cy="50" r="15" fill="var(--acc2)"/></svg>`,
+      `<svg width="150" height="150" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#fff" stroke-width="7"/><text x="50" y="68" text-anchor="middle" font-family="Anton" font-size="52" fill="var(--acc2)">$</text></svg>`];
+    return `<div style="position:absolute;left:0;top:30px;width:1000px;display:flex;justify-content:space-between;align-items:flex-start">
+      ${items.map((t, i) => `<div id="fl${i}" class="shadow" style="width:300px;text-align:center">${icons[i % 3]}
+        <div class="t-anton" style="font-size:62px;line-height:1.02;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;margin-top:8px">${t}</div></div>`).join('')}</div>
+      ${[0,1].map(i => `<svg id="ar${i}" width="90" height="60" style="position:absolute;left:${300 + i*335 - 30}px;top:95px" class="shadow"><path d="M5 30 H70 M50 10 L75 30 L50 50" fill="none" stroke="var(--acc2)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>`).join('')}`;
+  },
+  // chat bubbles pop in (generic, illustrative reactions)
+  bubbles() {
+    R.w = 1000; R.h = 680;
+    const L = S.items || ['PAYWALL AGAIN?!', 'WHERE CAN I EVEN WATCH THIS', 'ANOTHER SUBSCRIPTION?', 'TRACK IS DYING'];
+    const pos = [[40, 30], [260, 170], [60, 330], [380, 480], [120, 560]];
+    return L.map((t, i) => `<div id="bb${i}" class="shadow" style="position:absolute;left:${pos[i % 5][0]}px;top:${pos[i % 5][1]}px;max-width:640px;padding:22px 34px;border-radius:34px;
+        background:${i % 2 ? '#fff' : '#1f2230'};color:${i % 2 ? '#111' : '#fff'};border-bottom-${i % 2 ? 'right' : 'left'}-radius:8px">
+        <span class="t-mb" style="font-size:44px;letter-spacing:.01em">${t}</span></div>`).join('');
+  },
+  // birthday cake: number candles light up, confetti burst, "HAPPY BIRTHDAY" + name
+  birthday() {
+    R.w = 1000; R.h = 900;
+    const num = String(S.number ?? '');
+    const conf = Array.from({ length: 46 }, (_, i) => { const r = k => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+      const c = ['var(--acc)', 'var(--acc2)', '#fff', '#3fa9f5', '#2ecc71'][i % 5];
+      return `<div id="cf${i}" data-a="${(r(1) * 2 - 1) * 1.25}" data-v="${560 + r(2) * 520}" data-s="${r(3) * 720 - 360}" style="position:absolute;left:500px;top:330px;width:${14 + r(4) * 12}px;height:${8 + r(5) * 8}px;background:${c};border-radius:2px;opacity:0"></div>`; }).join('');
+    const digits = num.split('').map((d, i) => `<div style="position:relative;width:110px;text-align:center">
+        <div id="fl${i}" style="position:absolute;left:41px;top:-62px;width:28px;height:50px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+          background:radial-gradient(circle at 50% 70%, #fff 0 18%, var(--acc2) 40%, #ff8a00 75%, transparent 76%);opacity:0;transform-origin:50% 100%;filter:drop-shadow(0 0 18px #ffb300)"></div>
+        <div style="position:absolute;left:53px;top:-14px;width:4px;height:16px;background:#222"></div>
+        <div class="t-anton" style="font-size:150px;line-height:1;color:var(--acc2);-webkit-text-stroke:6px #000;paint-order:stroke fill">${d}</div></div>`).join('');
+    return `<div id="cake" class="shadow" style="position:absolute;left:200px;top:120px;width:600px;height:470px;transform-origin:50% 100%">
+        <div style="position:absolute;left:0;right:0;top:34px;display:flex;justify-content:center;gap:6px">${digits}</div>
+        <div style="position:absolute;left:110px;width:380px;top:180px;height:120px;border-radius:22px 22px 10px 10px;background:linear-gradient(#fff6e8,#f1d9b5)"></div>
+        <svg width="380" height="44" style="position:absolute;left:110px;top:178px"><path d="M0 18 ${Array.from({length:8},(_,i)=>`Q ${i*47.5+23.75} 48 ${(i+1)*47.5} 18`).join(' ')} V0 H0Z" fill="var(--acc)"/></svg>
+        <div style="position:absolute;left:40px;width:520px;top:300px;height:150px;border-radius:22px 22px 12px 12px;background:linear-gradient(#ffffff,#e9cfa6)"></div>
+        <svg width="520" height="50" style="position:absolute;left:40px;top:298px"><path d="M0 20 ${Array.from({length:10},(_,i)=>`Q ${i*52+26} 54 ${(i+1)*52} 20`).join(' ')} V0 H0Z" fill="var(--acc2)"/></svg>
+        <div style="position:absolute;left:0;right:0;top:440px;height:26px;border-radius:13px;background:#d9dde6"></div></div>
+      ${conf}
+      <div id="hbT" class="shadow" style="position:absolute;left:0;width:1000px;top:620px;text-align:center">
+        <div class="t-anton" style="font-size:118px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'HAPPY BIRTHDAY'}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:40px;color:var(--acc2);letter-spacing:.14em;margin-top:10px">${S.sub}</div>` : ''}</div>`;
+  },
+};
 const ANIM = {
+  padlock(t) { const q = eOut(clamp((t - .15) / .3)); $('lock').style.transform = `translateY(${(1 - q) * -420}px)`; $('lock').style.opacity = clamp((t - .1) / .1) * fadeOut(t);
+    const snap = clamp((t - .5) / .12); $('shackle').setAttribute('transform', `translate(0 ${(1 - snap) * -40})`);
+    const sh = t > .6 && t < .85 ? Math.sin(t * 95) * 9 * (1 - (t - .6) / .25) : 0; $('root').style.transform = `translate(${sh}px,${sh * .5}px)`;
+    $('pwDim').style.background = `rgba(0,0,0,${.55 * clamp((t - .55) / .25)})`; $('root').style.opacity = clamp(t / .15) * fadeOut(t);
+    const l = eBack((t - .65) / .35); $('pwT').style.opacity = clamp((t - .65) / .1); $('pwT').style.transform = `scale(${.5 + .5 * l})`; },
+  subscription(t) { const q = eBack(t / .4); $('phone').style.transform = `translateY(${(1 - q) * 120}px)`; $('root').style.opacity = clamp(t / .15) * fadeOut(t);
+    const sw = eInOut((t - .9) / .45); $('cardA').style.transform = `translateX(${-sw * 560}px)`; $('cardB').style.transform = `translateX(${(1 - sw) * 560}px)`;
+    const lk = eBack((t - 1.45) / .35); $('lockRow').style.opacity = clamp((t - 1.45) / .1); $('lockRow').style.transform = `scale(${.6 + .4 * lk})`;
+    $('btn').style.opacity = clamp((t - 1.8) / .2); $('btn').style.transform = `scale(${t > 2.1 ? 1 + .03 * Math.sin((t - 2.1) * 7) : 1})`; },
+  tv(t) { $('root').style.opacity = clamp(t / .15) * fadeOut(t); const on = clamp((t - .3) / .15);
+    $('line').style.transform = `scaleY(${t < .3 ? 1 : 1 + on * 80})`; $('line').style.opacity = t < .3 ? clamp(t / .15) : 1 - on;
+    const c = $('noise'), x = c.getContext('2d'), img = x.createImageData(168, 108); let seed = Math.floor(t * 30) * 9301 + 49297;
+    for (let i = 0; i < img.data.length; i += 4) { seed = (seed * 9301 + 49297) % 233280; const v = seed / 233280 * 255; img.data[i] = img.data[i+1] = img.data[i+2] = v; img.data[i+3] = 255; }
+    x.putImageData(img, 0, 0); const st = clamp((t - .35) / .1) * (1 - clamp((t - .75) / .2)); c.style.opacity = st;
+    $('trk').style.opacity = clamp((t - .7) / .2); const l = eBack((t - .9) / .35); $('tvT').style.opacity = clamp((t - .9) / .1); $('tvT').style.transform = `scale(${.5 + .5 * l})`; },
+  flow(t) { const T = S.times || [.1, .55, 1.0];
+    (S.items || [0, 0, 0]).forEach((_, i) => { const q = eBack((t - T[i]) / .35), e = $('fl' + i);
+      e.style.opacity = clamp((t - T[i]) / .1) * fadeOut(t); e.style.transform = `translateY(${(1 - q) * 60}px) scale(${.7 + .3 * q})`; });
+    [0, 1].forEach(i => { const a = eOut((t - T[i + 1] + .25) / .25), e = $('ar' + i); e.style.opacity = a * fadeOut(t); e.style.transform = `translateX(${(1 - a) * -30}px)`; }); },
+  bubbles(t) { (S.items || [0, 0, 0, 0]).forEach((_, i) => { const q = eBack((t - .1 - i * .32) / .3, 2.2), e = $('bb' + i);
+      e.style.opacity = clamp((t - .1 - i * .32) / .08) * fadeOut(t); e.style.transform = `scale(${.4 + .6 * q}) rotate(${(i % 2 ? 2 : -2) * (1 - q)}deg)`; e.style.transformOrigin = i % 2 ? '100% 100%' : '0 100%'; }); },
+
   stamp(t) { const k = clamp(t / .22), sc = 2.4 - 1.4 * eOut(k), sh = t > .22 && t < .5 ? Math.sin(t * 90) * 10 * (1 - (t - .22) / .28) : 0;
     $('st').style.transform = `translate(${sh}px,${sh * .6}px) scale(${sc})`; $('st').style.opacity = clamp(t / .08) * fadeOut(t); },
   keyword(t) { S.text.split(' ').forEach((_, i) => { const q = eBack((t - i * .12) / .35);
@@ -171,9 +282,23 @@ const ANIM = {
     $('pmic').style.transform = `scale(${1 + .04 * Math.sin(t * 11)})`;
     for (let i = 0; i < 22; i++) { const h = 8 + 30 * Math.abs(Math.sin(t * (5 + i % 5) + i * 1.7) * Math.sin(t * 2.3 + i * .6));
       const b = $('pb' + i); b.setAttribute('height', h); b.setAttribute('y', 20 - h / 2); } },
+  birthday(t) { const q = eBack(t / .45); $('cake').style.transform = `translateY(${(1 - q) * 160}px) scale(${.7 + .3 * q})`;
+    $('root').style.opacity = clamp(t / .12) * fadeOut(t);
+    String(S.number ?? '').split('').forEach((_, i) => { const f = $('fl' + i), l = clamp((t - .45 - i * .18) / .12);
+      f.style.opacity = l; f.style.transform = `scale(${l * (1 + .08 * Math.sin(t * 23 + i * 2))},${l * (1 + .14 * Math.sin(t * 17 + i))}) rotate(${4 * Math.sin(t * 13 + i)}deg)`; });
+    const b = t - .8; document.querySelectorAll('[id^=cf]').forEach(e => { if (b <= 0) { e.style.opacity = 0; return; }
+      const a = +e.dataset.a, v = +e.dataset.v, x = Math.sin(a) * v * b, y = -Math.cos(a) * v * b * 1.1 + 900 * b * b;
+      e.style.opacity = clamp(1 - (b - 1.3) / .6) * fadeOut(t); e.style.transform = `translate(${x}px,${y}px) rotate(${+e.dataset.s * b}deg) rotateX(${b * 540}deg)`; });
+    const l = eBack((t - .9) / .4); $('hbT').style.opacity = clamp((t - .9) / .12) * fadeOut(t); $('hbT').style.transform = `scale(${.5 + .5 * l})`; },
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  padlock: () => ({ thud: .58 }),
+  subscription: () => ({ swish: .85, drop: 1.5, pops: [1.85] }),
+  tv: () => ({ ticks: [.3], soft: .75, pops: [.95] }),
+  flow: () => ({ pops: (S.times || [.1, .55, 1.0]).map(x => +(x + .1).toFixed(2)) }),
+  bubbles: () => ({ pops: (S.items || [0, 0, 0, 0]).map((_, i) => +(.18 + i * .32).toFixed(2)) }),
+
   stamp: () => ({ thud: .2 }),
   keyword: () => ({ pops: S.text.split(' ').map((_, i) => +(i * .12 + .2).toFixed(2)) }),
   pin: () => ({ drop: .35, soft: .55 }),
@@ -183,6 +308,7 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
   podcast: () => ({ pops: [.2] }),
+  birthday: () => ({ soft: .45, pops: [.9] }),
 };
 
 window.setup = async (spec) => {

@@ -6,7 +6,7 @@
     "#FFE11A"
   ],
   "caption_font": "Montserrat Black",
-  "flash": "hits",
+  "flash": false,
   "sfx_level": 1.0,
   "fontsdir": "assets/fonts",
   "sfxdir": "assets/sfx",
@@ -15,5 +15,11 @@
   "seam_style": "soft",
   "seam_soft": 46,
   "seam_shadow": 0.55,
-  "seam_hairline": 0.22
+  "seam_hairline": 0.22,
+  "voice_chain": "original",
+  "graphic_sfx": false,
+  "hit_sfx": false,
+  "extra_sfx_on": false,
+  "whoosh_level": 0.24,
+  "split_swipes": true
 }

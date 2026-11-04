@@ -4,6 +4,8 @@ Usage: python3 build.py plan.json
 All times in the plan are OUTPUT seconds (0 = start of edit), except *_ss fields which are source seek times.
 """
 import hashlib, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import transitions
 
 W, H, FPS, D = 1080, 1920, 30, 0.30          # canvas, fps, transition duration
 HALF = H // 2
@@ -269,13 +271,14 @@ def sfx_cues(plan):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
         if nxt['type'] == 'full' and prev['type'] != 'full':
-            cues.append((pick('air'), T, 0.34)); last_tr = T
-            if nxt.get('hit'): cues.append((pick('impact'), T + 0.02, 0.30))
+            cues.append((pick('air'), T, float(plan.get('whoosh_level', 0.24)))); last_tr = T
+            if nxt.get('hit') and plan.get('hit_sfx', False): cues.append((pick('impact'), T + 0.02, 0.30))
         elif nxt['type'] != 'full' and prev['type'] == 'full':
             if T - last_tr >= 6: cues.append((pick('air_soft'), T, 0.22)); last_tr = T
         elif nxt.get('sfx'):
             cues.append((pick('air_soft'), T, 0.2)); last_tr = T
-    for g in plan.get('graphics', []):
+    graphic_sfx = plan.get('graphic_sfx', False)        # owner: no random loud sounds mid-sentence
+    for g in (plan.get('graphics', []) if graphic_sfx else []):
         t0, ev = g['t'], g.get('_ev', {})
         if g['type'] == 'data':
             for k, tk in enumerate(ev.get('ticks', [])[:5]): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.14))
@@ -291,7 +294,7 @@ def sfx_cues(plan):
             if 'swish' in ev: cues.append((pick('air_soft'), t0 + ev['swish'] + 0.25, 0.24))
         elif g['type'] in ('name', 'stat'):
             cues.append((pick('pop'), t0 + 0.05, 0.28))
-    for c in plan.get('extra_sfx', []):
+    for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
         cues.append((pick(c[0]) if c[0] in POOLS else c[0], c[1], c[2]))
     # de-clutter: no two cues of the same family within 0.12 s; whoosh-family cues >= 1.5 s apart
     cues.sort(key=lambda c: c[1]); out, last_air = [], -99
@@ -301,6 +304,30 @@ def sfx_cues(plan):
             last_air = c[1]
         out.append(c)
     return [(n, t, v * lvl, round(rng.uniform(0.92, 1.08), 3)) for n, t, v in out]
+
+def choose_transitions(plan):
+    """Pick a transition per boundary. A segment can force one with "transition": "whip:left" / "zoom" / "cut" / ...
+    Auto rules (house style, viral but varied):
+      into full-screen   -> rotate zoom, whip-left, spin, whip-up   ("hit" segments: flash / shake)
+      out of full-screen -> rotate whip-down, zoom, whip-right, glitch
+      full -> full       -> rotate whip-left, glitch, whip-right
+      split -> split     -> bottom-half swipe (left/right alternating); your face never moves"""
+    rot = {'in': ['zoom', 'whip:left', 'spin', 'whip:up'], 'hit': ['flash', 'shake'], 'out': ['whip:down', 'zoom', 'whip:right', 'glitch'],
+           'ff': ['whip:left', 'glitch', 'whip:right'], 'ss': ['swipe:left', 'swipe:right']}
+    cnt = {k: 0 for k in rot}
+    def take(k):
+        v = rot[k][cnt[k] % len(rot[k])]; cnt[k] += 1; return v
+    segs, out = plan['segments'], [None]
+    for prev, nxt in zip(segs, segs[1:]):
+        if 'transition' in nxt and nxt['transition'] in transitions.DUR or ':' in str(nxt.get('transition', '')):
+            spec = nxt['transition']
+        elif nxt['type'] == 'full' and prev['type'] != 'full': spec = take('hit') if nxt.get('hit') else take('in')
+        elif nxt['type'] != 'full' and prev['type'] == 'full': spec = take('out')
+        elif nxt['type'] == 'full': spec = take('ff')
+        else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
+        k, _, dr = spec.partition(':')
+        out.append((k, dr or None, 'bottom' if k == 'swipe' else None))
+    return out
 
 def main(plan_path):
     global GOLD_ASS
@@ -315,24 +342,39 @@ def main(plan_path):
     if not plan.get('skip_res_check'): check_sources(plan, plan.get('min_broll_short_side', 1080))
     wd = plan['workdir']; os.makedirs(wd, exist_ok=True)
     segs = plan['segments']; end = plan['duration']
-    # 1) segments with D/2 overlap on each inner boundary
+    # 1) segments, each rendered with PAD s of overlap on both sides so any transition can use it
+    PAD = 0.25
     parts = []
     for i, s in enumerate(segs):
-        a = s['start'] - (D / 2 if i else 0)
-        b = (segs[i + 1]['start'] + D / 2) if i + 1 < len(segs) else end
+        a = max(0.0, s['start'] - PAD) if i else 0.0
+        b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not os.path.exists(p): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
-    # 2) xfade chain
-    inputs, fc, last = [], [], '0:v'
+    # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
+    trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
+    dur = [0.0] + [transitions.DUR[k] for k, _, _ in trs[1:]]
+    inputs, fc, pieces = [], [], []
     for i, (p, a, b) in enumerate(parts):
         inputs += ['-i', p]
-    for i in range(1, len(parts)):
-        tr = segs[i].get('transition', 'smoothup' if segs[i]['type'] == 'full' else 'smoothdown')
-        off = parts[i][1]
-        fc.append(f'[{last}][{i}:v]xfade=transition={tr}:duration={D}:offset={off:.3f}[x{i}]'); last = f'x{i}'
+    for i in range(len(parts)):
+        a_i = parts[i][1]
+        if i:
+            k, dr, half = trs[i]
+            if dur[i] > 0:
+                d = dur[i]; T = segs[i]['start']
+                key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
+                tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
+                if not os.path.exists(tp):
+                    transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
+                n = len(inputs) // 2; inputs += ['-i', tp]
+                pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
+        s0 = (segs[i]['start'] + dur[i] / 2 - a_i) if i else 0.0
+        s1 = (segs[i + 1]['start'] - dur[i + 1] / 2 - a_i) if i + 1 < len(segs) else end - a_i
+        fc.append(f'[{i}:v]trim=start={s0:.4f}:end={s1:.4f},setpts=PTS-STARTPTS,setsar=1[b{i}]'); pieces.append(f'[b{i}]')
+    fc.append(''.join(pieces) + f'concat=n={len(pieces)}:v=1:a=0,fps={FPS}[x0]'); last = 'x0'
     here = os.path.dirname(os.path.abspath(__file__))
     for gi, g in enumerate(plan.get('graphics', [])):
         if g['type'] == 'clip':
@@ -370,21 +412,38 @@ def main(plan_path):
     write_ass(plan, json.load(open(plan['words'])), ass)
     fontsdir = plan['fontsdir']
     fc.append(f"[{last}]ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
-    # 3) audio: voice + sfx
-    ai = len(inputs) // 2           # all earlier inputs are ["-i", path] pairs
-    inputs += ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[{ai}:a]highpass=f=80,afftdn=nf=-28,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3500:t=q:w=1.0:g=2.5,equalizer=f=10000:t=h:w=0.7:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,alimiter=limit=0.95[vo]']
+    # 3) audio: voice + sfx -> mastered WAV (two-pass, LINEAR loudness normalisation: no pumping)
+    VOICE = {
+        # natural: no noise reduction (it made the voice watery/muffled), gentle de-mud + air, light 2:1 compression
+        'natural': 'highpass=f=70,equalizer=f=320:t=q:w=1.0:g=-1.5,equalizer=f=4500:t=h:w=0.7:g=2,'
+                   'acompressor=threshold=-18dB:ratio=2:attack=15:release=200:makeup=1.5',
+        'original': 'anull',          # HOUSE DEFAULT: the owner's untouched voice (EQ/compression took the bass out)
+        'raw': 'anull',
+        'denoise': 'highpass=f=70,afftdn=nf=-40:nr=6,equalizer=f=4500:t=h:w=0.7:g=2,acompressor=threshold=-18dB:ratio=2:attack=15:release=200',
+    }
+    vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
+    ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
+    cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
-        inputs += ['-i', f"{plan['sfxdir']}/{name}.wav"]
+        ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
-        mix.append(f'[{ai+1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mix.append(''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) +
-               f'amix=inputs={len(cues)+1}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.0:LRA=9[a]')
-    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc + mix),
-         '-map', '[v]', '-map', '[a]', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
-         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
+        mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
+    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
+    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet[a]']),
+                        '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
+    gain = -14.0 - li                                  # one static gain: tone and dynamics untouched
+    ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+    awav = f'{wd}/mix.wav'
+    run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
+         '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
+    ai = len(inputs) // 2
+    inputs += ['-i', awav]
+    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
+         '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
+         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])
 

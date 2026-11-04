@@ -1,0 +1,442 @@
+{
+ "workdir": "work/build",
+ "output": "out/flotrack_v1.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 96.3,
+ "face": {
+  "src": "work/aroll.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.3,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.12
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.1,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 3.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.0,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 9.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 13.3,
+   "hit": true,
+   "broll": {
+    "src": "raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.82,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 16.4,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 14.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.86,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.0,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.5,
+   "broll": {
+    "src": "raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 34.0,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 38.0,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 43.6,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 27.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 47.5,
+   "broll": {
+    "src": "raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.8,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.4,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 30.5,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.0,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.2
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 58.5,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 39.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.5,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 65.7,
+   "hit": true,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 70.1,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 45.0,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 74.5,
+   "broll": {
+    "src": "raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.85,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 79.4,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 87.6,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 91.6,
+   "broll": {
+    "src": "raw/podcast.mp4",
+    "ss": 0.5,
+    "crop": [
+     1920,
+     850,
+     0,
+     0
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   17.0,
+   18.8,
+   1.1
+  ],
+  [
+   51.4,
+   53.3,
+   1.12
+  ],
+  [
+   63.6,
+   65.6,
+   1.08
+  ],
+  [
+   91.6,
+   96.3,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 1.6,
+   "dur": 1.8,
+   "text": "SICK OF FLOTRACK",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "name",
+   "t": 3.6,
+   "dur": 2.6,
+   "rank": "OLY",
+   "name": "MASAI RUSSELL",
+   "sub": "OLYMPIC CHAMPION  \u00b7  100M HURDLES"
+  },
+  {
+   "type": "motion",
+   "kind": "padlock",
+   "t": 13.6,
+   "dur": 2.9,
+   "text": "PAYWALL",
+   "screen": "TRACK & FIELD"
+  },
+  {
+   "type": "name",
+   "t": 19.1,
+   "dur": 2.6,
+   "rank": "OLY",
+   "name": "MASAI RUSSELL",
+   "sub": "ON THE PODCAST WITH RG3"
+  },
+  {
+   "type": "motion",
+   "kind": "subscription",
+   "t": 24.1,
+   "dur": 3.6,
+   "event": "DIAMOND LEAGUE",
+   "from": "PEACOCK",
+   "to": "FLOTRACK"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 41.0,
+   "dur": 1.7,
+   "text": "PAY AGAIN?",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 50.7,
+   "dur": 1.6,
+   "text": "PAYWALLED",
+   "size": 130,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 54.2,
+   "dur": 2.2,
+   "text": "NO SOLUTION?",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "tv",
+   "t": 63.4,
+   "dur": 2.6,
+   "text": "TV NETWORKS"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 80.9,
+   "dur": 6.6,
+   "items": [
+    "SEEN FOR FREE",
+    "MORE EYES",
+    "MORE MONEY"
+   ],
+   "times": [
+    0.2,
+    3.7,
+    5.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 92.6,
+   "dur": 3.7,
+   "items": [
+    "PAYWALL AGAIN?!",
+    "WHERE CAN I WATCH THIS?",
+    "ANOTHER SUBSCRIPTION?"
+   ]
+  }
+ ],
+ "extra_sfx": [
+  [
+   "riser",
+   13.3,
+   0.28
+  ]
+ ]
+}
