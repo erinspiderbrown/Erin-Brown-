@@ -23,3 +23,5 @@ click_interface_tone 1113
 click_camera_shutter 275
 riser_synth 794
 riser_space_stutter 2719
+tick_scifi 2531
+tick_tech_select 2568

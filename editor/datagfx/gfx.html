@@ -1,0 +1,187 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root { --acc: #E8231E; --acc2: #FFE11A; --ink: #fff; --mute: rgba(255,255,255,.62); }
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  #stage { position: absolute; left: 60px; top: 60px; width: 960px; transform-origin: 50% 60%; }
+  .card { position: relative; border-radius: 34px; padding: 44px 48px 48px; overflow: hidden;
+          background: linear-gradient(165deg, rgba(26,28,36,.94), rgba(9,10,14,.92));
+          border: 1.5px solid rgba(255,255,255,.10);
+          box-shadow: 0 40px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); }
+  .grid { position: absolute; inset: 0; opacity: .5; pointer-events: none;
+          background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+          background-size: 48px 48px; }
+  .scan { position: absolute; top: 0; bottom: 0; width: 260px; pointer-events: none;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent); }
+  .glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; right: -160px; top: -220px;
+          background: radial-gradient(closest-side, color-mix(in srgb, var(--acc) 38%, transparent), transparent); }
+  .hdr { position: relative; display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+  .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 18px var(--acc); }
+  .label { font: 800 30px/1 'MontEB'; letter-spacing: .16em; color: var(--mute); text-transform: uppercase; }
+  .big { font: 400 230px/0.9 'Anton'; color: var(--ink); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+  .unit { font: 400 100px/1 'Bebas'; color: var(--acc); letter-spacing: .04em; margin-left: 18px; }
+  .sub { font: 800 30px/1.2 'MontEB'; color: var(--mute); margin-top: 22px; letter-spacing: .04em; }
+  .bar { position: relative; height: 10px; border-radius: 5px; background: rgba(255,255,255,.08); margin-top: 30px; overflow: hidden; }
+  .bar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px;
+             background: linear-gradient(90deg, var(--acc), var(--acc2)); box-shadow: 0 0 20px var(--acc); }
+  .row { position: relative; margin-top: 30px; }
+  .rowtop { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .name { font: 900 40px/1 'MontB'; color: var(--ink); letter-spacing: .01em; text-transform: uppercase; }
+  .rank { color: var(--acc); margin-right: 14px; }
+  .val { font: 400 66px/1 'Anton'; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .track { position: relative; height: 56px; border-radius: 16px; background: rgba(255,255,255,.07); overflow: hidden; }
+  .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 16px;
+          background: linear-gradient(90deg, rgba(255,255,255,.28), rgba(255,255,255,.55)); }
+  .win .fill { background: linear-gradient(90deg, var(--acc), color-mix(in srgb, var(--acc) 55%, var(--acc2))); box-shadow: 0 0 34px color-mix(in srgb, var(--acc) 70%, transparent); }
+  .shine { position: absolute; top: 0; bottom: 0; width: 120px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent); }
+  .badge { position: absolute; right: 40px; top: 36px; padding: 14px 24px; border-radius: 999px;
+           background: var(--acc2); color: #111; font: 900 32px/1 'MontB'; letter-spacing: .03em; }
+  svg text { font-family: 'MontEB'; }
+</style></head>
+<body><div id="stage"></div>
+<script>
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eOutCubic = x => 1 - Math.pow(1 - clamp(x), 3);
+const eOutExpo = x => (x = clamp(x)) >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+const eInOut = x => (x = clamp(x)) < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eBack = x => { x = clamp(x); const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+let S = null, el = {};
+const IN = 0.45, OUT = 0.35, A0 = 0.35;            // entry, exit, anim start
+const fmt = (v, dec) => v.toFixed(dec);
+const decOf = s => (String(s).split('.')[1] || '').length;
+
+function fontsCSS(dir) {
+  const f = (fam, file) => `@font-face{font-family:'${fam}';src:url('file://${dir}/${file}')}`;
+  return f('Anton', 'Anton-Regular.ttf') + f('Bebas', 'BebasNeue-Regular.ttf') +
+         f('MontB', 'Montserrat-Black.ttf') + f('MontEB', 'Montserrat-ExtraBold.ttf');
+}
+
+window.setup = async (spec) => {
+  S = spec; S.anim = S.anim || 1.4;
+  const st = document.createElement('style'); st.textContent = fontsCSS(S.fontsdir); document.head.appendChild(st);
+  if (S.accent) document.documentElement.style.setProperty('--acc', S.accent);
+  if (S.accent2) document.documentElement.style.setProperty('--acc2', S.accent2);
+  const stage = document.getElementById('stage');
+  const hdr = `<div class="hdr"><div class="dot"></div><div class="label">${S.label || ''}</div></div>`;
+  let body = '';
+  if (S.kind === 'counter') {
+    body = `<div style="display:flex;align-items:baseline"><div class="big" id="num">0</div><div class="unit">${S.unit || ''}</div></div>
+            ${S.sub ? `<div class="sub">${S.sub}</div>` : ''}<div class="bar"><i id="prog"></i></div>`;
+  } else if (S.kind === 'compare' || S.kind === 'bars') {
+    body = S.items.map((it, i) => `<div class="row" id="r${i}"><div class="rowtop">
+        <div class="name">${S.kind === 'bars' ? `<span class="rank">${i + 1}</span>` : ''}${it.name}</div>
+        <div class="val"><span id="v${i}">0</span><span class="unit" style="font-size:44px;margin-left:8px">${S.unit || ''}</span></div></div>
+        <div class="track"><div class="fill" id="f${i}"><div class="shine" id="s${i}"></div></div></div></div>`).join('') +
+        (S.badge ? `<div class="badge" id="badge">${S.badge}</div>` : '');
+  } else if (S.kind === 'line') {
+    body = `<svg id="svg" width="864" height="430" viewBox="0 0 864 430"></svg>`;
+  } else if (S.kind === 'ring') {
+    body = `<div style="display:flex;justify-content:center"><svg id="svg" width="520" height="520" viewBox="0 0 520 520"></svg></div>
+            ${S.sub ? `<div class="sub" style="text-align:center">${S.sub}</div>` : ''}`;
+  }
+  stage.innerHTML = `<div class="card" id="card"><div class="grid"></div><div class="glow"></div><div class="scan" id="scan"></div>${hdr}${body}</div>`;
+  if (S.kind === 'line') buildLine(); if (S.kind === 'ring') buildRing();
+  await document.fonts.ready;
+  if (S.kind === 'compare' || S.kind === 'bars') {
+    const vals = S.items.map(i => +i.value);
+    const best = S.lower_is_better ? Math.min(...vals) : Math.max(...vals);
+    S.items.forEach((it, i) => { if (+it.value === best) document.getElementById('r' + i).classList.add('win'); });
+    const lo = S.base !== undefined ? S.base : 0, hi = Math.max(...vals);
+    const spread = S.spread || Math.abs(best) * 0.05;   // lower-is-better: winner = full bar, others shrink by the gap
+    S.w = vals.map(v => S.lower_is_better ? clamp(1 - (v - best) / spread, .12, 1) : clamp((v - lo) / (hi - lo), .04, 1));
+  }
+  const r = document.getElementById('card').getBoundingClientRect();
+  return { w: Math.ceil(r.width) + 120, h: Math.ceil(r.height) + 120, events: events() };
+};
+
+function buildLine() {
+  const svg = document.getElementById('svg'), P = S.points, n = P.length;
+  const lo = Math.min(...P), hi = Math.max(...P), pad = (hi - lo) * .15 || 1;
+  const X = i => 30 + i * (804 / (n - 1)), Y = v => 340 - (v - (lo - pad)) / ((hi + pad) - (lo - pad)) * 300;
+  S.XY = P.map((v, i) => [X(i), Y(v)]);
+  const d = S.XY.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  let g = '';
+  for (let k = 0; k < 4; k++) g += `<line x1="30" x2="834" y1="${40 + k * 100}" y2="${40 + k * 100}" stroke="rgba(255,255,255,.08)" stroke-width="2"/>`;
+  const xl = (S.xlabels || []).map((t, i) => `<text x="${X(i)}" y="395" fill="rgba(255,255,255,.55)" font-size="26" text-anchor="middle">${t}</text>`).join('');
+  svg.innerHTML = `<defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--acc)" stop-opacity=".45"/>
+      <stop offset="1" stop-color="var(--acc)" stop-opacity="0"/></linearGradient>
+      <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="var(--acc2)"/><stop offset="1" stop-color="var(--acc)"/></linearGradient>
+      <clipPath id="cp"><rect id="cpr" x="0" y="0" width="0" height="430"/></clipPath>
+      <filter id="gl"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    ${g}${xl}<path d="${d} L ${S.XY[n - 1][0]} 360 L 30 360 Z" fill="url(#ag)" clip-path="url(#cp)"/>
+    <path id="ln" d="${d}" fill="none" stroke="url(#lg)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl)"/>
+    ${S.XY.map((p, i) => `<circle id="pt${i}" cx="${p[0]}" cy="${p[1]}" r="0" fill="#fff"/>`).join('')}
+    <circle id="pulse" cx="${S.XY[n - 1][0]}" cy="${S.XY[n - 1][1]}" r="0" fill="none" stroke="var(--acc)" stroke-width="4"/>
+    <g id="call" opacity="0"><rect x="${Math.min(S.XY[n - 1][0] - 120, 600)}" y="${Math.max(S.XY[n - 1][1] - 112, 0)}" width="230" height="78" rx="20" fill="var(--acc2)"/>
+      <text id="callt" x="${Math.min(S.XY[n - 1][0] - 120, 600) + 115}" y="${Math.max(S.XY[n - 1][1] - 112, 0) + 54}" font-size="44" font-family="Anton" text-anchor="middle" fill="#111"></text></g>`;
+  const ln = document.getElementById('ln'); S.len = ln.getTotalLength(); ln.style.strokeDasharray = S.len;
+}
+
+function buildRing() {
+  const svg = document.getElementById('svg');
+  svg.innerHTML = `<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--acc2)"/><stop offset="1" stop-color="var(--acc)"/></linearGradient>
+      <filter id="gl"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <circle cx="260" cy="260" r="200" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="40"/>
+    <circle id="arc" cx="260" cy="260" r="200" fill="none" stroke="url(#rg)" stroke-width="40" stroke-linecap="round"
+            transform="rotate(-90 260 260)" filter="url(#gl)" stroke-dasharray="${2 * Math.PI * 200}" stroke-dashoffset="${2 * Math.PI * 200}"/>
+    <text id="rt" x="260" y="300" font-family="Anton" font-size="150" fill="#fff" text-anchor="middle">0</text>
+    <text x="260" y="360" font-family="Bebas" font-size="56" fill="var(--acc)" text-anchor="middle">${S.unit || '%'}</text>`;
+}
+
+function events() {  // SFX timing hints (seconds from graphic start)
+  const ev = { in: 0, ticks: [], land: A0 + S.anim };
+  const N = S.kind === 'line' ? S.points.length - 1 : 9;
+  const inv = S.kind === 'line' ? (k => k) : (k => -Math.log2(1 - k * 0.999) / 10);   // inverse of eOutExpo
+  let last = -1;
+  for (let k = 1; k <= N; k++) { const t = A0 + S.anim * clamp(inv(k / N)); if (t - last > 0.06) { ev.ticks.push(+t.toFixed(3)); last = t; } }
+  if (S.kind === 'compare' || S.kind === 'bars') ev.ticks = S.items.map((_, i) => +(A0 + i * .16).toFixed(3));
+  if (S.badge) ev.badge = +(A0 + S.anim + .25).toFixed(3);
+  return ev;
+}
+
+window.renderAt = (t) => {
+  const D = S.dur, k = t < IN ? eBack(t / IN) : 1, o = clamp(t / 0.25) * (1 - clamp((t - (D - OUT)) / OUT));
+  const stage = document.getElementById('stage');
+  const exitY = 40 * eInOut((t - (D - OUT)) / OUT);
+  stage.style.opacity = o;
+  stage.style.transform = `translateY(${(1 - k) * 70 + exitY}px) scale(${0.9 + 0.1 * k})`;
+  stage.style.filter = `blur(${(1 - clamp(t / 0.3)) * 10}px)`;
+  document.getElementById('scan').style.left = (-300 + ((t * 520) % 1600)) + 'px';
+  const p = eOutExpo((t - A0) / S.anim);
+  if (S.kind === 'counter') {
+    const v = +S.value, dec = decOf(S.value);
+    const num = document.getElementById('num'); num.textContent = fmt(v * p, dec);
+    const speed = (1 - p);                             // motion blur while digits fly
+    num.style.filter = `blur(${speed * 3}px)`; num.style.transform = `translateY(${speed * -6}px)`;
+    document.getElementById('prog').style.width = (p * 100) + '%';
+    const land = clamp((t - A0 - S.anim) / 0.25);
+    num.style.textShadow = land > 0 && land < 1 ? `0 0 ${40 * (1 - land)}px var(--acc)` : 'none';
+  } else if (S.kind === 'compare' || S.kind === 'bars') {
+    S.items.forEach((it, i) => {
+      const q = eOutCubic((t - A0 - i * .16) / (S.anim * .85));
+      document.getElementById('f' + i).style.width = (S.w[i] * q * 100) + '%';
+      document.getElementById('v' + i).textContent = fmt(+it.value * eOutExpo((t - A0 - i * .16) / (S.anim * .85)), decOf(it.value));
+      document.getElementById('s' + i).style.left = (-20 + 140 * ((t * .9 + i * .2) % 1.4)) + '%';
+      document.getElementById('r' + i).style.opacity = clamp((t - .15 - i * .08) / .25);
+    });
+    const b = document.getElementById('badge');
+    if (b) { const bq = eBack((t - (A0 + S.anim + .25)) / .35); b.style.transform = `scale(${bq})`; b.style.opacity = clamp(bq * 2); }
+  } else if (S.kind === 'line') {
+    const q = eInOut((t - A0) / S.anim), n = S.XY.length;
+    document.getElementById('ln').style.strokeDashoffset = S.len * (1 - q);
+    document.getElementById('cpr').setAttribute('width', 30 + 804 * q + 10);
+    S.XY.forEach((pt, i) => { const tp = A0 + S.anim * (i / (n - 1)); document.getElementById('pt' + i).setAttribute('r', 9 * eBack((t - tp) / .25)); });
+    const ld = (t - A0 - S.anim);
+    document.getElementById('pulse').setAttribute('r', ld > 0 ? 10 + (ld % .9) * 60 : 0);
+    document.getElementById('pulse').setAttribute('opacity', ld > 0 ? 1 - (ld % .9) / .9 : 0);
+    document.getElementById('call').setAttribute('opacity', clamp(ld / .2));
+    const last = S.points[n - 1];
+    document.getElementById('callt').textContent = S.callout || (fmt(last * eOutExpo(ld / .5), decOf(S.points_fmt || last)) + (S.unit ? ' ' + S.unit : ''));
+  } else if (S.kind === 'ring') {
+    const C = 2 * Math.PI * 200, v = +S.value;
+    document.getElementById('arc').setAttribute('stroke-dashoffset', C * (1 - (v / 100) * p));
+    document.getElementById('rt').textContent = fmt(v * p, decOf(S.value));
+  }
+};
+</script></body></html>
