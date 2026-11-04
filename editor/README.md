@@ -20,8 +20,24 @@ Rules: the final video must be **at least 61 seconds**, and all B-roll must be *
 4. Render:
        python3 build.py plan.json
 
+## House style
+`style.json` holds the defaults every plan inherits: colors, seam feather, sound level, minimums.
+
+## Graphic types (`graphics` list in the plan)
+| type | kinds / fields | use for |
+|---|---|---|
+| `data` | `counter`, `compare`, `bars`, `line`, `ring` | numbers and stats |
+| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll` | things being talked about |
+| `name` | `rank`, `name`, `sub` | introducing a person |
+| `clip` | `src`, `t`, `dur`, `x`, `y`, `w`, `key: green\|black` | animation clips you supply (green-screen, black-background or alpha) |
+
+Placement: `anchor` (`lower`/`upper`/`center`) or explicit `x`/`y`. `spotlight` takes subject coordinates `x`, `y`, `r` on the 1080×1920 frame.
+Segments: `"hit": true` marks the one or two biggest full-screen moments (bass hit and flash). `"sfx": true` forces a whoosh on a quiet B-roll swap.
+
+Renders are cached: unchanged segments and graphics are reused, so tweaks re-render fast.
+
 ## What it does
-- **Layout:** split screen (face top, B-roll bottom, accent divider) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
+- **Layout:** split screen (face top, B-roll bottom, dissolving into each other through a soft feathered seam) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
 - **Full frame:** full-screen B-roll always fills the whole 9:16 frame, with no bars, blur fill or blank space. `focus: [x, y]` (0–1) picks the crop point so the action stays in frame.
 - **Face zooms:** `zooms: [[start, end, scale]]` punches in on you for emphasis.
 - **Data graphics** (`"type": "data"`) are rendered in Chromium as transparent overlays:

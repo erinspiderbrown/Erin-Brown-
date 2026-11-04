@@ -1,0 +1,14 @@
+{
+  "_about": "House style. Every plan inherits these; any key in a plan overrides it.",
+  "accent": "#E8231E",
+  "caption_colors": ["#E8231E", "#FFE11A"],
+  "caption_font": "Montserrat Black",
+  "seam_feather": 220,
+  "seam_shade": 0.30,
+  "flash": "hits",
+  "sfx_level": 1.0,
+  "fontsdir": "assets/fonts",
+  "sfxdir": "assets/sfx",
+  "min_duration": 61,
+  "min_broll_short_side": 1080
+}

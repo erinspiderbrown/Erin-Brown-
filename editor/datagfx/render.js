@@ -10,7 +10,7 @@ const fs = require('fs'), path = require('path'), { execFileSync } = require('ch
   const tmp = fs.mkdtempSync(path.join(path.dirname(out), 'frames-'));
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1200 } });
-  await page.goto('file://' + path.join(__dirname, 'gfx.html'));
+  await page.goto('file://' + path.join(__dirname, spec.page || 'gfx.html'));
   const info = await page.evaluate(s => window.setup(s), spec);
   await page.setViewportSize({ width: info.w, height: info.h });
   for (let i = 0; i < frames; i++) {

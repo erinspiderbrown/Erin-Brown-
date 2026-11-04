@@ -25,3 +25,11 @@ riser_synth 794
 riser_space_stutter 2719
 tick_scifi 2531
 tick_tech_select 2568
+air_windy_swoosh 1465
+air_short_wind 3115
+air_wind_passing 2050
+air_fast_sweeping 1468
+air_flying_swoosh 1464
+air_cine_wind 169
+air_zoom_vacuum 2909
+thud_wood_hit 2589

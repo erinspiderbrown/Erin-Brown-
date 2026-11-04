@@ -1,0 +1,391 @@
+{
+ "workdir": "work/build",
+ "output": "out/charlotte_v2.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 68.16,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 0.3,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.4,
+   "broll": {
+    "src": "raw/photo_headtouch.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 7.9,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 5.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.5,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 11.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.4,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 16.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 22.3,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 20.5,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 31.0,
+   "broll": {
+    "src": "raw/photo_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.3,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 31.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.4,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 35.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 42.0,
+   "broll": {
+    "src": "raw/photo_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 45.0,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 42.3,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.3,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 32.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 52.0,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 36.5,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.0,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 39.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.4,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 28.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 63.8,
+   "broll": {
+    "src": "raw/race.mp4",
+    "ss": 44.0,
+    "crop": [
+     720,
+     1100,
+     0,
+     0
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   35.0,
+   37.4,
+   1.1
+  ],
+  [
+   40.5,
+   42.0,
+   1.16
+  ],
+  [
+   59.0,
+   61.9,
+   1.08
+  ],
+  [
+   64.0,
+   68.16,
+   1.13
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 2.5,
+   "dur": 1.6,
+   "text": "FRAUD?",
+   "anchor": "upper"
+  },
+  {
+   "type": "name",
+   "t": 5.0,
+   "dur": 2.8,
+   "rank": "14",
+   "name": "CHARLOTTE EHIOGHAE",
+   "sub": "AGE 14  \u00b7  AUSTRALIA"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 13.2,
+   "dur": 2.6,
+   "text": "AUSTRALIA",
+   "sub": "OTHER SIDE OF THE WORLD"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 19.0,
+   "dur": 3.0,
+   "items": [
+    "NOV",
+    "DEC",
+    "JAN"
+   ],
+   "hi": [
+    1,
+    2
+   ],
+   "label": "WHEN THEIR SEASON HEATS UP"
+  },
+  {
+   "type": "motion",
+   "kind": "wind",
+   "t": 26.6,
+   "dur": 2.0,
+   "text": "SLIGHTLY WINDY",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 27.9,
+   "dur": 3.0,
+   "value": "22.8",
+   "unit": "SECONDS",
+   "label": "200M  \u00b7  AGE 14",
+   "anim": 1.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 35.85,
+   "dur": 1.6,
+   "text": "FRAUDULENT?",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 42.9,
+   "dur": 2.1,
+   "x": 566,
+   "y": 548,
+   "r": 175,
+   "lx": 110,
+   "ly": 1130,
+   "text": "TALENTED",
+   "sub": "AND ONLY 14"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 50.5,
+   "dur": 3.9,
+   "label": "Her 200M Times",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 1.4,
+   "items": [
+    {
+     "name": "This race (windy)",
+     "value": "22.8"
+    },
+    {
+     "name": "Usual \u00b7 23 mid",
+     "value": "23.5"
+    },
+    {
+     "name": "Usual \u00b7 23 high",
+     "value": "23.8"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 55.3,
+   "dur": 3.4,
+   "value": "11.7",
+   "unit": "SEC",
+   "label": "100M \u00b7 Legal Best",
+   "sub": "per World Athletics"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 63.9,
+   "dur": 4.2,
+   "question": "SHOULD I TRUST THIS?",
+   "options": [
+    "LEGIT",
+    "FRAUD"
+   ]
+  }
+ ],
+ "extra_sfx": [
+  [
+   "riser",
+   22.3,
+   0.3
+  ]
+ ]
+}

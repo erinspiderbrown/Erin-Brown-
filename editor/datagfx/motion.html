@@ -1,0 +1,177 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Motion graphics that illustrate what's being said (no card background).
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll -->
+<style>
+  :root { --acc: #E8231E; --acc2: #FFE11A; }
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  #root { position: absolute; left: 0; top: 0; }
+  .t-anton { font-family: 'Anton'; } .t-bebas { font-family: 'Bebas'; }
+  .t-mb { font-family: 'MontB'; } .t-meb { font-family: 'MontEB'; }
+  .shadow { filter: drop-shadow(0 18px 30px rgba(0,0,0,.55)) drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+</style></head>
+<body><div id="root"></div>
+<script>
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eOut = x => 1 - Math.pow(1 - clamp(x), 3);
+const eOutExpo = x => (x = clamp(x)) >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+const eInOut = x => (x = clamp(x)) < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eBack = (x, c = 1.7) => { x = clamp(x); return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const eElastic = x => { x = clamp(x); return x === 0 || x === 1 ? x : Math.pow(2, -10 * x) * Math.sin((x * 10 - .75) * (2 * Math.PI / 3)) + 1; };
+let S, R = {};
+const $ = id => document.getElementById(id);
+const fadeOut = t => 1 - clamp((t - (S.dur - .3)) / .3);
+
+function fonts(dir) {
+  const f = (fam, file) => `@font-face{font-family:'${fam}';src:url('file://${dir}/${file}')}`;
+  return f('Anton', 'Anton-Regular.ttf') + f('Bebas', 'BebasNeue-Regular.ttf') + f('MontB', 'Montserrat-Black.ttf') + f('MontEB', 'Montserrat-ExtraBold.ttf');
+}
+
+const BUILD = {
+  // big rubber-stamp slam, e.g. "FRAUD?"
+  stamp() {
+    R.w = 960; R.h = 460;
+    return `<div id="st" class="shadow" style="position:absolute;left:480px;top:230px;transform-origin:center">
+      <div style="transform:translate(-50%,-50%) rotate(${S.angle ?? -8}deg);border:12px solid var(--acc);border-radius:22px;padding:18px 44px 8px;
+        background:rgba(0,0,0,.18);-webkit-mask-image:radial-gradient(circle at 30% 40%, #000 60%, rgba(0,0,0,.82) 61%, #000 70%);">
+        <div class="t-anton" style="font-size:${S.size || 170}px;line-height:1;color:var(--acc);letter-spacing:.02em;white-space:nowrap">${S.text}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:34px;color:var(--acc);text-align:center;letter-spacing:.2em;margin:6px 0 10px">${S.sub}</div>` : ''}
+      </div></div>`;
+  },
+  // kinetic keyword: letters drop in with stagger
+  keyword() {
+    R.w = 1000; R.h = 360;
+    const words = S.text.split(' ');
+    return `<div class="shadow" style="position:absolute;left:0;top:0;width:1000px;height:360px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap">
+      ${words.map((w, i) => `<span id="kw${i}" class="t-anton" style="display:inline-block;font-size:${S.size || 150}px;line-height:1;
+        color:${i === (S.hi ?? words.length - 1) ? 'var(--acc2)' : '#fff'};-webkit-text-stroke:6px #000;paint-order:stroke fill">${w}</span>`).join('')}</div>`;
+  },
+  // location pin drop + ripple + label
+  pin() {
+    R.w = 900; R.h = 620;
+    return `<svg width="900" height="520" style="position:absolute;left:0;top:0;overflow:visible">
+      <ellipse id="rp" cx="450" cy="300" rx="0" ry="0" fill="none" stroke="var(--acc)" stroke-width="5"/>
+      <ellipse cx="450" cy="300" rx="38" ry="12" fill="rgba(0,0,0,.45)" id="pinsh"/>
+      <g id="pin" class="shadow"><path d="M450 300 C 420 250, 385 222, 385 180 a65 65 0 1 1 130 0 C 515 222, 480 250, 450 300 Z" fill="var(--acc)"/>
+        <circle cx="450" cy="180" r="26" fill="#fff"/></g></svg>
+      <div id="pl" class="shadow" style="position:absolute;left:0;width:900px;top:340px;text-align:center">
+        <div class="t-anton" style="font-size:110px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">${S.text}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:34px;color:#fff;letter-spacing:.14em;margin-top:6px">${S.sub}</div>` : ''}</div>`;
+  },
+  // month chips flip in; highlighted ones glow
+  calendar() {
+    const n = S.items.length; R.w = Math.max(960, n * 230 + 80); R.h = 420;
+    return `<div class="shadow" style="position:absolute;left:0;top:0;width:${R.w}px;display:flex;justify-content:center;gap:26px;perspective:900px;padding-top:30px">
+      ${S.items.map((m, i) => `<div id="cal${i}" style="width:200px;border-radius:26px;overflow:hidden;background:#15161c;border:2px solid rgba(255,255,255,.12);transform-origin:50% 0">
+        <div style="height:52px;background:${(S.hi || []).includes(i) ? 'var(--acc)' : '#2a2c35'}"></div>
+        <div class="t-anton" style="font-size:96px;color:#fff;text-align:center;padding:18px 0 24px">${m}</div></div>`).join('')}</div>
+      ${S.label ? `<div id="calL" class="t-mb shadow" style="position:absolute;left:0;width:${R.w}px;top:330px;text-align:center;font-size:38px;color:#fff;letter-spacing:.06em;white-space:nowrap">${S.label}</div>` : ''}`;
+  },
+  // stopwatch: hand sweeps, digits count to value
+  stopwatch() {
+    R.w = 900; R.h = 620;
+    const ticks = Array.from({ length: 60 }, (_, i) => { const a = i / 60 * 2 * Math.PI, r1 = i % 5 ? 196 : 182;
+      return `<line x1="${260 + Math.sin(a) * r1}" y1="${300 - Math.cos(a) * r1}" x2="${260 + Math.sin(a) * 210}" y2="${300 - Math.cos(a) * 210}" stroke="rgba(255,255,255,${i % 5 ? .35 : .9})" stroke-width="${i % 5 ? 3 : 6}"/>`; }).join('');
+    return `<svg width="520" height="560" style="position:absolute;left:0;top:30px" class="shadow">
+      <rect x="235" y="40" width="50" height="40" rx="8" fill="#2a2c35"/><rect x="215" y="22" width="90" height="26" rx="10" fill="var(--acc)"/>
+      <circle cx="260" cy="300" r="225" fill="#111218" stroke="#2a2c35" stroke-width="10"/>${ticks}
+      <circle id="swArc" cx="260" cy="300" r="150" fill="none" stroke="var(--acc)" stroke-width="16" stroke-linecap="round" transform="rotate(-90 260 300)"
+        stroke-dasharray="${2 * Math.PI * 150}" stroke-dashoffset="${2 * Math.PI * 150}" opacity=".9"/>
+      <line id="hand" x1="260" y1="300" x2="260" y2="110" stroke="var(--acc2)" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="260" cy="300" r="16" fill="var(--acc2)"/></svg>
+      <div class="shadow" style="position:absolute;left:520px;top:180px">
+        <div id="swN" class="t-anton" style="font-size:190px;line-height:.9;color:#fff">0.0</div>
+        <div class="t-bebas" style="font-size:80px;color:var(--acc)">${S.unit || 'SECONDS'}</div>
+        ${S.label ? `<div class="t-meb" style="font-size:30px;color:rgba(255,255,255,.75);letter-spacing:.14em;margin-top:8px">${S.label}</div>` : ''}</div>`;
+  },
+  // wind streaks flowing + label
+  wind() {
+    R.w = 1080; R.h = 420;
+    let lines = '';
+    for (let i = 0; i < 9; i++) { const y = 40 + i * 38 + (i % 2) * 10;
+      lines += `<path id="wl${i}" d="M -200 ${y} C 150 ${y - 30}, 350 ${y + 30}, 620 ${y} S 1000 ${y - 26}, 1280 ${y}" fill="none" stroke="rgba(255,255,255,${.55 + (i % 3) * .15})" stroke-width="${5 + (i % 3) * 3}" stroke-linecap="round" stroke-dasharray="360 1300"/>`; }
+    return `<svg width="1080" height="400" style="position:absolute;left:0;top:0">${lines}</svg>
+      <div id="wlab" class="shadow" style="position:absolute;left:0;top:300px;width:1080px;text-align:center">
+        <span class="t-anton" style="font-size:96px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">${S.text || 'WIND-AIDED'}</span></div>`;
+  },
+  // circle draws around a subject on the full 1080x1920 frame + arrow + label
+  spotlight() {
+    R.w = 1080; R.h = 1920; R.full = true;
+    const { x, y } = S, r = S.r || 170, lx = S.lx ?? (x > 540 ? x - 420 : x + 120), ly = S.ly ?? (y + r + 170);
+    const C = 2 * Math.PI * r;
+    return `<svg width="1080" height="1920" style="position:absolute;left:0;top:0" class="shadow">
+      <circle id="spC" cx="${x}" cy="${y}" r="${r}" fill="none" stroke="var(--acc2)" stroke-width="12" stroke-linecap="round"
+        stroke-dasharray="${C}" stroke-dashoffset="${C}" transform="rotate(-120 ${x} ${y})"/>
+      <path id="spA" d="M ${lx + 150} ${ly - 30} Q ${(lx + 150 + x) / 2 + 60} ${(ly + y) / 2 + 40}, ${x + (lx < x ? -r : r) * .55} ${y + r * .9}" fill="none" stroke="var(--acc2)" stroke-width="10" stroke-linecap="round"/>
+      </svg>
+      <div id="spL" class="shadow" style="position:absolute;left:${lx}px;top:${ly}px">
+        <div class="t-anton" style="font-size:84px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;white-space:nowrap">${S.text}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:32px;color:var(--acc2);letter-spacing:.12em">${S.sub}</div>` : ''}</div>`;
+  },
+  // comment-bait poll: question + two options that pulse, no fake percentages
+  poll() {
+    R.w = 960; R.h = 560;
+    return `<div class="shadow" style="position:absolute;left:30px;top:20px;width:900px">
+      <div id="pq" class="t-anton" style="font-size:96px;line-height:1.02;color:#fff;text-align:center;-webkit-text-stroke:5px #000;paint-order:stroke fill">${S.question}</div>
+      <div style="display:flex;gap:28px;margin-top:34px">${S.options.map((o, i) => `<div id="po${i}" style="flex:1;border-radius:28px;padding:30px 0;text-align:center;
+          background:${i ? 'var(--acc)' : '#fff'};color:${i ? '#fff' : '#111'}"><span class="t-anton" style="font-size:78px">${o}</span></div>`).join('')}</div>
+      <div id="pc" class="t-mb" style="text-align:center;font-size:36px;color:#fff;letter-spacing:.16em;margin-top:28px">${S.cta || 'COMMENT BELOW ⬇'}</div></div>`;
+  },
+};
+
+const ANIM = {
+  stamp(t) { const k = clamp(t / .22), sc = 2.4 - 1.4 * eOut(k), sh = t > .22 && t < .5 ? Math.sin(t * 90) * 10 * (1 - (t - .22) / .28) : 0;
+    $('st').style.transform = `translate(${sh}px,${sh * .6}px) scale(${sc})`; $('st').style.opacity = clamp(t / .08) * fadeOut(t); },
+  keyword(t) { S.text.split(' ').forEach((_, i) => { const q = eBack((t - i * .12) / .35);
+    const e = $('kw' + i); e.style.transform = `translateY(${(1 - q) * -120}px) scale(${.6 + .4 * q})`; e.style.opacity = clamp((t - i * .12) / .12) * fadeOut(t); }); },
+  pin(t) { const q = eElastic(clamp(t / .7)); $('pin').setAttribute('transform', `translate(0 ${(1 - q) * -340})`);
+    $('pinsh').setAttribute('opacity', clamp(t / .5) * fadeOut(t)); $('pin').style.opacity = fadeOut(t);
+    const r = (t - .45); $('rp').setAttribute('rx', r > 0 ? (r % 1.1) * 220 : 0); $('rp').setAttribute('ry', r > 0 ? (r % 1.1) * 70 : 0);
+    $('rp').setAttribute('opacity', r > 0 ? (1 - (r % 1.1) / 1.1) * fadeOut(t) : 0);
+    const l = eOut((t - .5) / .4); $('pl').style.opacity = l * fadeOut(t); $('pl').style.transform = `translateY(${(1 - l) * 40}px)`; },
+  calendar(t) { S.items.forEach((_, i) => { const q = eBack((t - .1 - i * .18) / .4, 1.3), e = $('cal' + i);
+      e.style.transform = `rotateX(${(1 - q) * -95}deg)`; e.style.opacity = clamp((t - .1 - i * .18) / .1) * fadeOut(t);
+      if ((S.hi || []).includes(i)) { const g = clamp((t - .4 - S.items.length * .18) / .3); e.style.boxShadow = `0 0 ${50 * g}px color-mix(in srgb, var(--acc) ${70 * g}%, transparent)`; e.style.borderColor = g > .5 ? 'var(--acc)' : ''; } });
+    if ($('calL')) { const l = eOut((t - .3 - S.items.length * .18) / .4); $('calL').style.opacity = l * fadeOut(t); $('calL').style.transform = `translateY(${(1 - l) * 30}px)`; } },
+  stopwatch(t) { const A = S.anim || 1.6, p = eOutExpo((t - .35) / A), v = +S.value;
+    $('root').style.opacity = clamp(t / .2) * fadeOut(t); $('root').style.transform = `scale(${.85 + .15 * eBack(t / .4)})`;
+    $('hand').setAttribute('transform', `rotate(${(v * p) % 60 * 6} 260 300)`);
+    const C = 2 * Math.PI * 150; $('swArc').setAttribute('stroke-dashoffset', C * (1 - ((v * p) % 60) / 60));
+    $('swN').textContent = (v * p).toFixed((String(S.value).split('.')[1] || '').length);
+    const land = clamp((t - .35 - A) / .25); $('swN').style.textShadow = land > 0 && land < 1 ? `0 0 ${50 * (1 - land)}px var(--acc)` : 'none'; },
+  wind(t) { for (let i = 0; i < 9; i++) $('wl' + i).style.strokeDashoffset = 1600 - ((t * (900 + i * 60) + i * 170) % 1660);
+    $('root').style.opacity = clamp(t / .25) * fadeOut(t); const l = eBack((t - .25) / .4); $('wlab').style.transform = `scale(${.5 + .5 * l})`; $('wlab').style.opacity = clamp((t - .25) / .15); },
+  spotlight(t) { const r = S.r || 170, C = 2 * Math.PI * r;
+    $('spC').setAttribute('stroke-dashoffset', C * (1 - eInOut(t / .55))); $('spC').style.opacity = fadeOut(t);
+    const a = $('spA'), L = a.getTotalLength(); a.style.strokeDasharray = L; a.style.strokeDashoffset = L * (1 - eOut((t - .45) / .35)); a.style.opacity = fadeOut(t);
+    const l = eBack((t - .7) / .35); $('spL').style.opacity = clamp((t - .7) / .12) * fadeOut(t); $('spL').style.transform = `scale(${.6 + .4 * l})`; $('spL').style.transformOrigin = '0 50%'; },
+  poll(t) { const q = eBack(t / .4); $('pq').style.transform = `scale(${.7 + .3 * q})`; $('pq').style.opacity = clamp(t / .12) * fadeOut(t);
+    S.options.forEach((_, i) => { const o = eBack((t - .35 - i * .15) / .35), e = $('po' + i);
+      const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
+      e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
+    const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+};
+
+const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  stamp: () => ({ thud: .2 }),
+  keyword: () => ({ pops: S.text.split(' ').map((_, i) => +(i * .12 + .2).toFixed(2)) }),
+  pin: () => ({ drop: .35, soft: .55 }),
+  calendar: () => ({ ticks: S.items.map((_, i) => +(.25 + i * .18).toFixed(2)), soft: +(.45 + S.items.length * .18).toFixed(2) }),
+  stopwatch: () => { const A = S.anim || 1.6; return { ticks: [.5, .75, 1.0, 1.25, 1.5].filter(x => x < .35 + A).map(x => x), land: +(.35 + A).toFixed(2) }; },
+  wind: () => ({ air: .05 }),
+  spotlight: () => ({ swish: .1, soft: .75 }),
+  poll: () => ({ pops: [.38, .53] }),
+};
+
+window.setup = async (spec) => {
+  S = spec;
+  const st = document.createElement('style'); st.textContent = fonts(S.fontsdir); document.head.appendChild(st);
+  if (S.accent) document.documentElement.style.setProperty('--acc', S.accent);
+  if (S.accent2) document.documentElement.style.setProperty('--acc2', S.accent2);
+  R = {}; const html = BUILD[S.kind]();
+  const root = $('root'); root.innerHTML = html; root.style.width = R.w + 'px'; root.style.height = R.h + 'px'; root.style.transformOrigin = '50% 50%';
+  await document.fonts.ready;
+  return { w: R.w, h: R.h, full: !!R.full, events: EVENTS[S.kind]() };
+};
+window.renderAt = t => ANIM[S.kind](t);
+</script></body></html>

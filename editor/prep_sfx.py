@@ -1,6 +1,6 @@
 import subprocess, numpy as np, json, glob, os, sys
 raw, out = sys.argv[1], sys.argv[2]
-MAXLEN = {'tick': 0.35, 'whoosh': 1.4, 'impact': 2.5, 'pop': 0.6, 'click': 0.6, 'riser': 4.0}
+MAXLEN = {'air': 1.4, 'thud': 1.2, 'tick': 0.35, 'whoosh': 1.4, 'impact': 2.5, 'pop': 0.6, 'click': 0.6, 'riser': 4.0}
 meta = {}
 for f in sorted(glob.glob(f'{raw}/*.mp3')):
     name = os.path.basename(f)[:-4]; kind = name.split('_')[0]
