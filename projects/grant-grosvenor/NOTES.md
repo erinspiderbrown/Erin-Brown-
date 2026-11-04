@@ -16,7 +16,7 @@ Talking head about Grant Grosvenor (ex-Oregon NCAA champ, 33, back running sub-4
    - Name from the bib: Grosvenor (whisper heard "Grozier").
    - "NC double-a" → NCAA, "147" → 1:47, "358" → 3:58.
    - Two words are censored in the captions only (audio untouched).
-4. `python3 ../../editor/build.py plan.json`.
+4. `python3 ../../editor/build.py plan.json`, then a two-pass 6000k encode to `exports/grant_grosvenor_tiktok.mp4` (88 MB; CRF 20 was still 121 MB).
 
 ## Interpretations (tell the owner)
 - "147" is shown as 1:47 with no event named (it's almost certainly 800 m, but he doesn't say so).
