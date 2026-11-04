@@ -10,10 +10,10 @@ Needs ffmpeg, Python 3, and Node with Playwright and Chromium.
 ## Per video
 Rules: the final video must be **at least 61 seconds**, and all B-roll must be **1080p or higher**.
 
-0. Crop a 4K or landscape talking head to the top-half framing first (1440×1280 works well), then cut the dead air:
-       python3 tighten.py work/face.mov work/words.json work/face_tight.mov work/words_tight.json
 1. Transcribe the talking-head take (word timings drive the captions):
        python3 transcribe.py raw/talking_head.mov 0 work/words.json medium.en
+1b. Crop a 4K or landscape talking head to the top-half framing first (1440×1280 works well), then cut the dead air:
+       python3 tighten.py work/face.mov work/words.json work/face_tight.mov work/words_tight.json
 2. Write a plan (see `example_plan.json`): segments (split / full), B-roll sources and seek points, graphics.
 3. Find every stat worth animating:
        python3 suggest_data.py work/words.json
