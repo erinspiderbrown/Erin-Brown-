@@ -6,6 +6,9 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
+- **Voice must sound natural.** The owner said the old processing made his voice sound "weird / muffled".
+  - The default `voice_chain: "natural"` has no noise reduction, light EQ and 2:1 compression, plus a two-pass *linear* loudness pass so the volume never pumps.
+  - Don't add `afftdn` or heavy compression back unless the owner asks. If a recording is noisy, ask first, then use `"denoise"` (a gentle setting).
 - **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow` if needed.
 
 ## Style

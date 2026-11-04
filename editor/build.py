@@ -370,21 +370,37 @@ def main(plan_path):
     write_ass(plan, json.load(open(plan['words'])), ass)
     fontsdir = plan['fontsdir']
     fc.append(f"[{last}]ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
-    # 3) audio: voice + sfx
-    ai = len(inputs) // 2           # all earlier inputs are ["-i", path] pairs
-    inputs += ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[{ai}:a]highpass=f=80,afftdn=nf=-28,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=3500:t=q:w=1.0:g=2.5,equalizer=f=10000:t=h:w=0.7:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,alimiter=limit=0.95[vo]']
+    # 3) audio: voice + sfx -> mastered WAV (two-pass, LINEAR loudness normalisation: no pumping)
+    VOICE = {
+        # natural: no noise reduction (it made the voice watery/muffled), gentle de-mud + air, light 2:1 compression
+        'natural': 'highpass=f=70,equalizer=f=320:t=q:w=1.0:g=-1.5,equalizer=f=4500:t=h:w=0.7:g=2,'
+                   'acompressor=threshold=-18dB:ratio=2:attack=15:release=200:makeup=1.5',
+        'raw': 'highpass=f=60',
+        'denoise': 'highpass=f=70,afftdn=nf=-40:nr=6,equalizer=f=4500:t=h:w=0.7:g=2,acompressor=threshold=-18dB:ratio=2:attack=15:release=200',
+    }
+    vchain = VOICE.get(plan.get('voice_chain', 'natural'), plan.get('voice_chain'))
+    ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
+    cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
-        inputs += ['-i', f"{plan['sfxdir']}/{name}.wav"]
+        ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
-        mix.append(f'[{ai+1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mix.append(''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) +
-               f'amix=inputs={len(cues)+1}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.0:LRA=9[a]')
-    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc + mix),
-         '-map', '[v]', '-map', '[a]', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
-         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
+        mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
+    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
+    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',loudnorm=I=-14:TP=-1.0:print_format=json[a]']),
+                        '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
+    d = json.loads(m[m.rindex('{'):])
+    ln = (f"loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={d['input_i']}:measured_TP={d['input_tp']}:"
+          f"measured_LRA={d['input_lra']}:measured_thresh={d['input_thresh']}:offset={d['target_offset']}:linear=true")
+    awav = f'{wd}/mix.wav'
+    run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
+         '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
+    ai = len(inputs) // 2
+    inputs += ['-i', awav]
+    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
+         '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
+         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])
 
