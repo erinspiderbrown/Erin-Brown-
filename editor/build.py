@@ -69,6 +69,15 @@ def seam_assets(plan, F):
              f"format=rgba,geq=r=0:g=0:b=0:a='255*{op}*pow(sin(PI*Y/{sh}),2)'", '-frames:v', '1', shade])
     return mask, shade
 
+def soft_seam_asset(plan):
+    """Soft shadow band centred on the seam: darkest at the edge, fading out ~seam_soft px each way."""
+    sw = int(plan.get('seam_soft', 46)); op = float(plan.get('seam_shadow', 0.55))
+    path = f"{plan['workdir']}/seam_soft_{sw}_{op}.png"
+    if not os.path.exists(path):
+        run(['ffmpeg', '-v', 'error', '-y', '-f', 'lavfi', '-i', f'color=black:s={W}x{2*sw}', '-vf',
+             f"format=rgba,geq=r=0:g=0:b=0:a='255*{op}*pow(1-abs(Y-{sw})/{sw},2.2)'", '-frames:v', '1', path])
+    return path
+
 def render_segment(plan, seg, a, b, out):
     face, br = plan['face'], seg['broll']
     fss = plan['voice_ss'] + a                 # face stays lip-synced to voice
@@ -77,16 +86,26 @@ def render_segment(plan, seg, a, b, out):
     grade = plan.get('face_grade', 'hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:saturation=1.06:gamma=0.98,vignette=PI/6')
     bpush = 0.10 if is_img(br['src']) else 0.04
     if seg['type'] == 'split':
-        F = int(plan.get('seam_feather', 220)); HF = HALF + F // 2
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', [])
               if z1 > a and z0 < b]
-        mask, shade = seam_assets(plan, F)
-        fc = (f"[0:v]{cover(W, HF, face.get('crop'), focus=tuple(face.get('focus', (0.5, 0.35))), zexpr='+'.join(zt) or None)},{grade},format=yuva420p[f];"
-              f"[2:v]format=gray,scale={W}:{HF}[m];[f][m]alphamerge[fa];"
-              f"[1:v]{cover(W, HF, br.get('crop'), bpush, dur, focus=tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}[b];"
-              f"color=c=black:s={W}x{H}:r={FPS}:d={dur:.3f}[bg];[bg][b]overlay=0:{H-HF}[t1];[t1][fa]overlay=0:0:shortest=1[t2];"
-              f"[3:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2,fps={FPS},format=yuv420p[v]")
-        extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', mask, '-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+        ffoc = tuple(face.get('focus', (0.5, 0.35))); bfoc = tuple(br.get('focus', (0.5, 0.5)))
+        if plan.get('seam_style', 'soft') == 'blend':      # face dissolves into B-roll (not the owner's preference)
+            F = int(plan.get('seam_feather', 220)); HF = HALF + F // 2
+            mask, shade = seam_assets(plan, F)
+            fc = (f"[0:v]{cover(W, HF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade},format=yuva420p[f];"
+                  f"[2:v]format=gray,scale={W}:{HF}[m];[f][m]alphamerge[fa];"
+                  f"[1:v]{cover(W, HF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"color=c=black:s={W}x{H}:r={FPS}:d={dur:.3f}[bg];[bg][b]overlay=0:{H-HF}[t1];[t1][fa]overlay=0:0:shortest=1[t2];"
+                  f"[3:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2,fps={FPS},format=yuv420p[v]")
+            extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', mask, '-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+        else:                                               # 'soft': clean separation, soft shadow + faint hairline
+            shade = soft_seam_asset(plan)
+            hl = float(plan.get('seam_hairline', 0.22))
+            fc = (f"[0:v]{cover(W, HALF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade}[f];"
+                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
+                  f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
+            extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
     else:
         c = br.get('fullcrop', br.get('crop'))
         fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
@@ -301,7 +320,7 @@ def main(plan_path):
     for i, s in enumerate(segs):
         a = s['start'] - (D / 2 if i else 0)
         b = (segs[i + 1]['start'] + D / 2) if i + 1 < len(segs) else end
-        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_feather'), plan.get('seam_shade'),
+        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not os.path.exists(p): render_segment(plan, s, a, b, p)

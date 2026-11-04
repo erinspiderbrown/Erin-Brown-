@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "out/charlotte_v2.mp4",
+ "output": "out/charlotte_v3.mp4",
  "words": "work/words_tight.json",
  "voice_ss": 0.0,
  "duration": 68.16,

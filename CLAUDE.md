@@ -10,7 +10,9 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
-- **Seam:** the face dissolves softly into the B-roll (`seam_feather`). No hard colored divider line.
+- **Seam:** a clear separation between the face and the B-roll, but soft: `seam_style: "soft"` gives a clean edge with a soft shadow band and a faint 2 px hairline.
+  - The face must **not** blend or dissolve into the B-roll; the owner rejected `"blend"`.
+  - No bold or colored divider line either; the owner rejected the red line.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
 - **Sound effects stay restrained.** The owner found every-cut whooshes repetitive. Defaults in `build.py`:
   - B-roll swaps inside the split are silent.
@@ -29,7 +31,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `poll`: comment-bait ending
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).
-- **Animation clips** the owner provides go in as `type: "clip"` overlays, keyed with `key: "green"`/`"black"` or as alpha video.
+- **Animation clips are a standing request for future videos.** Plan short animated clips that illustrate what's being said, alongside the motion graphics. Examples: an animated track, a running-figure loop, a stopwatch or a globe spin.
+  - Before each edit, list the animation moments you'd add and ask the owner to supply clips, or offer to generate them.
+  - AI generation costs credits and the owner doesn't want an "AI look", so get approval first.
+  - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox share links. Download them with `?dl=1`.

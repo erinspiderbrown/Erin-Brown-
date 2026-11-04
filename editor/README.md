@@ -37,7 +37,7 @@ Segments: `"hit": true` marks the one or two biggest full-screen moments (bass h
 Renders are cached: unchanged segments and graphics are reused, so tweaks re-render fast.
 
 ## What it does
-- **Layout:** split screen (face top, B-roll bottom, dissolving into each other through a soft feathered seam) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
+- **Layout:** split screen (face top, B-roll bottom, separated by a soft seam: a clean edge, soft shadow and faint hairline. `seam_style: "blend"` is available but not the house look) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
 - **Full frame:** full-screen B-roll always fills the whole 9:16 frame, with no bars, blur fill or blank space. `focus: [x, y]` (0–1) picks the crop point so the action stays in frame.
 - **Face zooms:** `zooms: [[start, end, scale]]` punches in on you for emphasis.
 - **Data graphics** (`"type": "data"`) are rendered in Chromium as transparent overlays:
