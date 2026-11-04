@@ -34,6 +34,8 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `tv`: TV switching on
   - `flow`: three-step icon chain; set `times` to land each step on the word
   - `bubbles`: generic reaction chat bubbles. These are illustrative, never presented as real quotes.
+  - `board`: records board; rows of `event`, `value` and optional `tag`, with `times` landing each row on the word
+  - `track`: one lap of a track with a clock counting to `value` (open 400 times)
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).
 - **Animation clips are a standing request for future videos.** Plan short animated clips that illustrate what's being said, alongside the motion graphics. Examples: an animated track, a running-figure loop, a stopwatch or a globe spin.

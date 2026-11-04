@@ -1,0 +1,445 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/taiju_goto_v1.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 64.56,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.5,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.5,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.1
+    ],
+    "crop": [
+     1080,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.6,
+   "broll": {
+    "src": "raw/photo_tweet.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.45,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.9,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ],
+    "crop": [
+     1080,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.3,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 28.3,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 30.9,
+   "broll": {
+    "src": "raw/photo_tweet.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.2,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.2
+    ],
+    "crop": [
+     1080,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.6,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.3,
+   "broll": {
+    "src": "raw/photo_tweet.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.9,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ],
+    "crop": [
+     1080,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.7,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.0,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.1
+    ],
+    "crop": [
+     1080,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 59.6,
+   "broll": {
+    "src": "raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 61.9,
+   "broll": {
+    "src": "raw/photo_timer.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   22.3,
+   24.9,
+   1.08
+  ],
+  [
+   35.3,
+   37.0,
+   1.12
+  ],
+  [
+   46.6,
+   48.0,
+   1.1
+  ],
+  [
+   63.3,
+   64.56,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 2.45,
+   "dur": 2.0,
+   "text": "JAPAN",
+   "sub": "17 YEARS OLD"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 4.5,
+   "dur": 9.1,
+   "title": "HE'S ALREADY RUN",
+   "times": [
+    0.25,
+    3.35,
+    6.0
+   ],
+   "rows": [
+    {
+     "event": "400M HURDLES",
+     "value": "47.93",
+     "tag": "U18 WR"
+    },
+    {
+     "event": "110M HURDLES",
+     "value": "13.63"
+    },
+    {
+     "event": "200M",
+     "value": "20.40"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 14.5,
+   "dur": 3.9,
+   "value": "45.33",
+   "anim": 1.0,
+   "text": "OPEN 400M",
+   "sub": "ASIAN U18 RECORD"
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 19.85,
+   "dur": 2.0,
+   "x": 540,
+   "y": 1370,
+   "r": 120,
+   "lx": 650,
+   "ly": 1180,
+   "text": "17 YEARS OLD"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 22.3,
+   "dur": 2.6,
+   "text": "UNDER-18 RECORDS",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 25.6,
+   "dur": 2.4,
+   "items": [
+    "17",
+    "18"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "NOW IMAGINE HIM AT 18"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 35.3,
+   "dur": 1.8,
+   "text": "THE REAL DEAL",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 42.9,
+   "dur": 3.0,
+   "value": "47.93",
+   "unit": "SECONDS",
+   "label": "400MH  \u00b7  AT 17",
+   "anim": 1.4,
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 46.6,
+   "dur": 1.6,
+   "text": "17 YEARS OLD",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 48.25,
+   "dur": 1.5,
+   "text": "1 MORE YEAR",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 49.75,
+   "dur": 8.55,
+   "title": "THEN HE RAN",
+   "times": [
+    0.78,
+    4.25,
+    6.34
+   ],
+   "rows": [
+    {
+     "event": "OPEN 400M",
+     "value": "45.33",
+     "tag": "ASIAN U18"
+    },
+    {
+     "event": "200M",
+     "value": "20.40"
+    },
+    {
+     "event": "110M HURDLES",
+     "value": "13.63"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 59.8,
+   "dur": 2.1,
+   "text": "JACK OF ALL TRADES",
+   "hi": 3,
+   "anchor": "upper",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 62.0,
+   "dur": 2.56,
+   "question": "FUTURE 400M STAR?",
+   "options": [
+    "YES",
+    "TOO EARLY"
+   ]
+  }
+ ],
+ "extra_sfx": [
+  [
+   "riser",
+   27.8,
+   0.28
+  ]
+ ]
+}
