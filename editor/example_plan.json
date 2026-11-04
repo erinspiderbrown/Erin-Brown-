@@ -1,0 +1,22 @@
+{
+  "workdir": "work",
+  "output": "out/final.mp4",
+  "fontsdir": "assets/fonts",
+  "sfxdir": "assets/sfx",
+  "words": "work/words.json",
+  "voice_ss": 0.0,
+  "duration": 60.0,
+  "accent": "#E8231E",
+  "caption_colors": ["#E8231E", "#FFE11A"],
+  "face": {"src": "raw/talking_head.mov"},
+  "segments": [
+    {"type": "split", "start": 0.0,  "broll": {"src": "raw/broll_race.mp4", "ss": 3.0}},
+    {"type": "full",  "start": 6.5,  "broll": {"src": "raw/broll_finish.mp4", "ss": 0.5}},
+    {"type": "split", "start": 10.0, "broll": {"src": "raw/team_photo.jpg", "ss": 0}}
+  ],
+  "graphics": [
+    {"type": "stat", "t": 2.0, "dur": 3.0, "value": "10.04", "unit": "SEC", "label": "100M PR"},
+    {"type": "name", "t": 10.2, "dur": 2.5, "rank": "#1", "name": "ATHLETE NAME", "sub": "SCHOOL  ·  EVENT"}
+  ],
+  "extra_sfx": [["riser", 5.9, 0.35]]
+}

@@ -1,0 +1,6 @@
+editor/assets/
+editor/work/
+editor/out/
+__pycache__/
+*.mp4
+*.mov
