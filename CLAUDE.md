@@ -9,7 +9,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Use the owner's original voice audio, untouched.** The default is `voice_chain: "original"`. The only change is one static volume gain to reach −14 LUFS, plus a peak limiter.
   - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
   - Don't add voice processing back unless the owner asks for it.
-- **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow` if needed.
+- **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
+  - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
+  - Full-screen needs one of:
+    - 4K landscape video (keep it at native 4K, don't downscale the intermediate)
+    - vertical video at 1080×1920 or higher
+    - a high-res photo (about 3000 px or more on the long side)
+  - 1080p landscape clips go in the bottom half of the split only.
+  - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
+- **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow`, or with a two-pass encode at about 9 Mbps if that's still too big.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
@@ -25,13 +33,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - **Overrides:** force one per segment with `"transition": "whip:left" | "zoom" | "spin" | "glitch" | "flash" | "shake" | "swipe:right" | "cut"`. Set `split_swipes: false` for plain cuts in the split.
   - Keep them varied, never the same transition twice in a row. Motion blur peaks briefly at the cut so both shots stay sharp.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
-- **No random loud sound effects mid-sentence.** The owner dislikes them. The defaults in `style.json` are:
+- **Sound effects: few, quiet, spaced out.** The owner dislikes random loud sounds mid-sentence. `build.py` and the `style.json` defaults enforce this:
   - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no stamp thuds, pops, ticks or clicks).
-  - **Off:** `hit_sfx: false`, so there are no bass hits.
-  - **Off:** `extra_sfx_on: false`, so there are no risers.
+  - **Off:** `hit_sfx: false`, so there are no bass hits. `"hit": true` on a segment only picks the flash/shake transition.
+  - **Off:** `extra_sfx_on: false`. Risers and long cinematic hits are banned outright (`BANNED_SFX`), in any video.
   - **Kept:** a quiet airy whoosh on cuts into and out of full-screen (`whoosh_level` 0.24), with small pitch variation. B-roll swaps inside the split are silent.
-  - Don't turn any of these back on unless the owner asks. `"hit": true` on a segment now only adds the visual flash.
-  - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random.)
+  - **Spaced out:** at least `sfx_min_gap` (3 s) between sound moments, and never the same sound file twice in a row.
+  - The render prints the kept sound list (`SFX: …`). Check it.
+  - Don't turn any of these back on unless the owner asks.
+  - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random, and risers too loud and drawn out.)
 - **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
 - **Things being talked about** get motion graphics (`type: "motion"`):
   - `stamp`: e.g. "FRAUD?"
@@ -47,6 +57,9 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `tv`: TV switching on
   - `flow`: three-step icon chain; set `times` to land each step on the word
   - `bubbles`: generic reaction chat bubbles. These are illustrative, never presented as real quotes.
+  - `usmap`: states light up on a US map in time with the voice; `cross` puts a red X on a state
+  - `birthday`: cake with number candles and confetti
+  - `podcast`: mic badge with a live waveform naming who's talking, for guest podcast clips
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).
 - **Animation clips are a standing request for future videos.** Plan short animated clips that illustrate what's being said, alongside the motion graphics. Examples: an animated track, a running-figure loop, a stopwatch or a globe spin.
