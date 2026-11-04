@@ -17,8 +17,12 @@
    "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "raw/vidB.mp4",
-    "ss": 52.0
+    "src": "raw/p2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
    }
   },
   {
@@ -58,11 +62,15 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 20.5,
    "broll": {
     "src": "raw/vidB.mp4",
-    "ss": 19.3
+    "ss": 19.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
    }
   },
   {
@@ -141,8 +149,18 @@
    "type": "full",
    "start": 44.0,
    "broll": {
-    "src": "raw/vidB.mp4",
-    "ss": 55.0
+    "src": "raw/p2.jpg",
+    "ss": 0,
+    "crop": [
+     1300,
+     2311,
+     350,
+     120
+    ],
+    "focus": [
+     0.5,
+     0.3
+    ]
    },
    "hit": true
   },
@@ -283,13 +301,16 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 102.4,
    "broll": {
-    "src": "raw/vidB.mp4",
-    "ss": 63.0
-   },
-   "hit": true
+    "src": "raw/p4.webp",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
   },
   {
    "type": "split",
@@ -343,6 +364,11 @@
    98.0,
    99.6,
    1.1
+  ],
+  [
+   102.4,
+   104.8,
+   1.14
   ],
   [
    110.9,
@@ -570,11 +596,5 @@
    ]
   }
  ],
- "extra_sfx": [
-  [
-   "riser",
-   44.0,
-   0.3
-  ]
- ]
+ "extra_sfx": []
 }

@@ -21,3 +21,13 @@ Talking head about Grant Grosvenor (ex-Oregon NCAA champ, 33, back running sub-4
 ## Interpretations (tell the owner)
 - "147" is shown as 1:47 with no event named (it's almost certainly 800 m, but he doesn't say so).
 - In the podcast clip, "I deserve his NIL" is the reading in context; an isolated re-transcription heard "I deserve it".
+
+## v2 (merged house style)
+- Your original voice (no EQ, compression or denoise), with one gain to −14 LUFS.
+- Viral transitions are auto-picked. Graphics are silent, there are no bass hits and no riser, and the only sounds are quiet full-screen whooshes at least 3 s apart.
+- Full-screen shots are sharp sources only:
+  - p2 (2000×3000) for the opening and the 3:58 moment (a tighter crop the second time).
+  - p4 (2040×2031, shown at roughly native size) for the podcast.
+  - The 720p vidB and vidA clips are in the bottom half only.
+- "What does that say about you" is now a split shot with Nathan's photo and a face punch-in, because there's no third sharp full-screen source.
+- The podcast clip stays at 6.6 s and on Nathan's photo, as the owner asked, rather than the 15–25 s guest-soundbite default. The podcast's own footage is 720p track B-roll with burned-in captions, so it can't fill the top "speaker" slot.
