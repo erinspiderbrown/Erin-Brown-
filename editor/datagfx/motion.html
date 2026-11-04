@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -81,7 +81,7 @@ const BUILD = {
       <line id="hand" x1="260" y1="300" x2="260" y2="110" stroke="var(--acc2)" stroke-width="8" stroke-linecap="round"/>
       <circle cx="260" cy="300" r="16" fill="var(--acc2)"/></svg>
       <div class="shadow" style="position:absolute;left:520px;top:180px">
-        <div id="swN" class="t-anton" style="font-size:190px;line-height:.9;color:#fff">${S.format === 'mss' ? '0:00' : '0.0'}</div>
+        <div id="swN" class="t-anton" style="font-size:${S.size || 190}px;line-height:.9;color:#fff">${S.format === 'mss' ? '0:00' : '0.0'}</div>
         <div class="t-bebas" style="font-size:80px;color:var(--acc)">${S.unit || 'SECONDS'}</div>
         ${S.label ? `<div class="t-meb" style="font-size:30px;color:rgba(255,255,255,.75);letter-spacing:.14em;margin-top:8px">${S.label}</div>` : ''}</div>`;
   },
@@ -239,8 +239,50 @@ const BUILD = {
         <div class="t-anton" style="font-size:118px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'HAPPY BIRTHDAY'}</div>
         ${S.sub ? `<div class="t-mb" style="font-size:40px;color:var(--acc2);letter-spacing:.14em;margin-top:10px">${S.sub}</div>` : ''}</div>`;
   },
+  // records board: rows (event | time | tag) slide in one by one, each landing on the spoken word via `times`
+  board() {
+    const rows = S.rows, n = rows.length; R.w = 960; R.h = (S.title ? 96 : 0) + n * 128 + 20;
+    return `${S.title ? `<div id="bdT" class="t-anton shadow" style="position:absolute;left:0;top:0;width:960px;text-align:center;font-size:72px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;letter-spacing:.02em">${S.title}</div>` : ''}
+      ${rows.map((r, i) => `<div id="bd${i}" class="shadow" style="position:absolute;left:40px;top:${(S.title ? 100 : 0) + i * 128}px;width:880px;height:108px;border-radius:22px;
+          background:#15161c;border:2px solid rgba(255,255,255,.12);display:flex;align-items:center;overflow:hidden">
+        <div style="width:14px;align-self:stretch;background:${i % 2 ? 'var(--acc2)' : 'var(--acc)'}"></div>
+        <div class="t-meb" style="flex:1;padding-left:30px;font-size:40px;color:#fff;letter-spacing:.06em;white-space:nowrap">${r.event}</div>
+        ${r.tag ? `<div id="bdg${i}" class="t-mb" style="font-size:24px;letter-spacing:.1em;padding:8px 14px;border-radius:12px;margin-right:22px;background:${i % 2 ? 'var(--acc2)' : 'var(--acc)'};color:${i % 2 ? '#111' : '#fff'};white-space:nowrap">${r.tag}</div>` : ''}
+        <div id="bdv${i}" class="t-anton" style="font-size:78px;color:#fff;padding-right:34px;min-width:200px;text-align:right">${r.value}</div></div>`).join('')}`;
+  },
+  // one lap of a track: a runner dot laps the oval while a clock counts up to `value`; label underneath
+  track() {
+    R.w = 960; R.h = 640;
+    const lanes = Array.from({ length: 6 }, (_, i) => `<rect x="${60 + i * 14}" y="${40 + i * 14}" width="${720 - i * 28}" height="${360 - i * 28}" rx="${180 - i * 14}" fill="none" stroke="rgba(255,255,255,${i ? .5 : .9})" stroke-width="${i ? 2.5 : 4}"/>`).join('');
+    return `<svg width="840" height="440" style="position:absolute;left:60px;top:0" class="shadow">
+        <rect x="46" y="26" width="748" height="388" rx="194" fill="#b5462f"/>
+        <rect x="144" y="124" width="552" height="192" rx="96" fill="#1d6b3a"/>${lanes}
+        <path id="tkP" d="M 420 386 H 600 A 166 166 0 0 0 600 54 H 240 A 166 166 0 0 0 240 386 Z" fill="none" stroke="var(--acc2)" stroke-width="12" stroke-linecap="round"/>
+        <rect x="414" y="372" width="12" height="30" fill="#fff"/>
+        <circle id="tkD" r="20" fill="var(--acc2)" stroke="#111" stroke-width="5"/></svg>
+      <div class="shadow" style="position:absolute;left:0;top:136px;width:960px;text-align:center">
+        <div id="tkN" class="t-anton" style="font-size:150px;line-height:1;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">0.00</div></div>
+      <div id="tkL" class="shadow" style="position:absolute;left:0;top:460px;width:960px;text-align:center">
+        <div class="t-anton" style="font-size:96px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'ONE LAP'}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:34px;color:var(--acc2);letter-spacing:.14em;margin-top:4px">${S.sub}</div>` : ''}</div>`;
+  },
 };
 const ANIM = {
+  board(t) { const T = S.times || S.rows.map((_, i) => .1 + i * .4);
+    if ($('bdT')) { const q = eBack(t / .35); $('bdT').style.opacity = clamp(t / .12) * fadeOut(t); $('bdT').style.transform = `scale(${.7 + .3 * q})`; }
+    S.rows.forEach((_, i) => { const q = eOut((t - T[i]) / .3), e = $('bd' + i);
+      e.style.opacity = clamp((t - T[i]) / .1) * fadeOut(t); e.style.transform = `translateX(${(1 - q) * 300}px)`;
+      const l = clamp((t - T[i] - .2) / .25), v = $('bdv' + i); v.style.textShadow = l > 0 && l < 1 ? `0 0 ${40 * (1 - l)}px var(--acc2)` : 'none';
+      v.style.transform = `scale(${1 + .12 * Math.sin(Math.PI * l)})`;
+      const g = $('bdg' + i); if (g) { const b = eBack((t - T[i] - .3) / .3); g.style.opacity = clamp((t - T[i] - .3) / .08); g.style.transform = `scale(${.4 + .6 * b})`; } }); },
+  track(t) { const A = S.anim || 2.2, p = eInOut((t - .3) / A), P = $('tkP'), L = P.getTotalLength(), pt = P.getPointAtLength(Math.min(p * L, L - .01));
+    $('root').style.opacity = clamp(t / .2) * fadeOut(t);
+    $('tkD').setAttribute('cx', pt.x); $('tkD').setAttribute('cy', pt.y);
+    P.style.strokeDasharray = L; P.style.strokeDashoffset = L * (1 - p);
+    $('tkN').textContent = (+S.value * p).toFixed((String(S.value).split('.')[1] || '').length);
+    const land = clamp((t - .3 - A) / .3); $('tkN').style.color = land > 0 ? 'var(--acc2)' : '#fff';
+    $('tkN').style.transform = `scale(${1 + .14 * Math.sin(Math.PI * land)})`;
+    const l = eBack((t - .3 - A) / .35); $('tkL').style.opacity = clamp((t - .3 - A) / .1) * fadeOut(t); $('tkL').style.transform = `scale(${.5 + .5 * l})`; },
   padlock(t) { const q = eOut(clamp((t - .15) / .3)); $('lock').style.transform = `translateY(${(1 - q) * -420}px)`; $('lock').style.opacity = clamp((t - .1) / .1) * fadeOut(t);
     const snap = clamp((t - .5) / .12); $('shackle').setAttribute('transform', `translate(0 ${(1 - snap) * -40})`);
     const sh = t > .6 && t < .85 ? Math.sin(t * 95) * 9 * (1 - (t - .6) / .25) : 0; $('root').style.transform = `translate(${sh}px,${sh * .5}px)`;
@@ -332,6 +374,8 @@ const ANIM = {
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  board: () => { const T = S.times || S.rows.map((_, i) => .1 + i * .4); return { pops: T.map(x => +(x + .25).toFixed(2)) }; },
+  track: () => { const A = S.anim || 2.2; return { ticks: [.6, 1.0, 1.4, 1.8].filter(x => x < .3 + A), land: +(.3 + A).toFixed(2) }; },
   padlock: () => ({ thud: .58 }),
   subscription: () => ({ swish: .85, drop: 1.5, pops: [1.85] }),
   tv: () => ({ ticks: [.3], soft: .75, pops: [.95] }),
