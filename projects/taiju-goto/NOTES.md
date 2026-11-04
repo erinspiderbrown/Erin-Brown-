@@ -37,3 +37,9 @@ These came in a Dropbox folder link and are not committed:
   - A flash into the "47" full-screen and a zoom back out of it.
   - A shake into "jack of all trades".
 - **Export:** `exports/taiju_goto_tiktok_v2.mp4`.
+
+## v3: voice never turned down
+- **v2 problem:** v2 turned the owner's voice down by 1.6 dB, from −12.4 to −14 LUFS, to hit the export target. `build.py` now never lowers the voice.
+- **Why 0.5 dB of headroom:** the take peaks right at 0 dBFS. ffmpeg's AAC encoder squashes full-scale audio: −0.3 dB, plus crunch at −27 dB residual on the loudest words. So the build adds the minimum static trim, 0.5 dB, which makes the encode clean (−42 dB residual).
+- **Result:** the voice is −0.51 dB vs the original, identical across every band including the bass. There's no EQ, no compression and no limiter. Loudness is −12.9 LUFS.
+- **Export:** `exports/taiju_goto_tiktok_v3.mp4`.
