@@ -43,11 +43,14 @@ def cover(w, h, crop=None, push=0.0, dur=1.0, punch=0.0, focus=(0.5, 0.5), zexpr
     return ','.join(f)
 
 _probe = {}
-def cached(path):
-    """A cached render counts only if it's a complete file (an interrupted render leaves a 0-byte or truncated one)."""
+def cached(path, expect=None):
+    """A cached render counts only if it's complete. A stopped render can leave a 0-byte file, or (ffmpeg exits
+    cleanly on SIGTERM) a valid but short one, so check the duration against what the render should produce."""
     if not os.path.exists(path) or os.path.getsize(path) < 1024: return False
     r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
-    return r.returncode == 0 and r.stdout.strip() not in ('', 'N/A')
+    try: got = float(r.stdout.strip())
+    except ValueError: return False
+    return expect is None or got >= expect - 0.1
 
 def probe(src):
     if src not in _probe:
@@ -383,7 +386,7 @@ def main(plan_path):
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
-        if not cached(p): render_segment(plan, s, a, b, p)
+        if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
     # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
     trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
@@ -399,7 +402,7 @@ def main(plan_path):
                 d = dur[i]; T = segs[i]['start']
                 key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
                 tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
-                if not cached(tp):
+                if not cached(tp, d - 0.05):
                     transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
                 n = len(inputs) // 2; inputs += ['-i', tp]
                 pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
@@ -423,7 +426,7 @@ def main(plan_path):
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
         h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
-        if not cached(mov):
+        if not cached(mov, g['dur'] - 0.1):
             json.dump(spec, open(sp, 'w'))
             r = subprocess.run(['node', f'{here}/datagfx/render.js', sp, mov], capture_output=True, text=True)
             if r.returncode: sys.exit('graphic failed: ' + r.stderr[-2000:])
