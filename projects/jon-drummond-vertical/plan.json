@@ -197,11 +197,11 @@
    "type": "full",
    "start": 82.4,
    "broll": {
-    "src": "raw3/ph/gold_medal.jpg",
+    "src": "raw3/ph/syd_stadium.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.45
+     0.5
     ]
    },
    "hit": true
@@ -799,10 +799,10 @@
    "type": "split",
    "start": 354.2,
    "broll": {
-    "src": "raw3/ph/kissinger.jpg",
+    "src": "raw3/ph/antidoping.jpg",
     "ss": 0,
     "focus": [
-     0.8,
+     0.5,
      0.5
     ]
    }
