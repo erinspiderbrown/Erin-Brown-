@@ -40,11 +40,11 @@
    "type": "split",
    "start": 10.4,
    "broll": {
-    "src": "raw2/ph/bolt_bru.jpg",
+    "src": "raw2/ph/blake_beast.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.45
+     0.5
     ]
    }
   },
@@ -76,11 +76,11 @@
    "type": "full",
    "start": 27.35,
    "broll": {
-    "src": "raw2/ph/blake_lon200q.jpg",
+    "src": "raw2/ph/bolt_bru.jpg",
     "ss": 0,
     "focus": [
-     0.55,
-     0.5
+     0.5,
+     0.3
     ]
    },
    "hit": true
@@ -234,11 +234,11 @@
    "type": "split",
    "start": 98.9,
    "broll": {
-    "src": "raw2/ph/blake_beast.jpg",
+    "src": "raw2/ph/blake_oly12.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.75,
+     0.4
     ]
    }
   },
@@ -405,24 +405,20 @@
    "title": "GATLIN \u00b7 2ND TO BOLT",
    "rows": [
     {
-     "event": "2013 WORLDS \u00b7 100M",
-     "value": "2ND",
-     "tag": "MOSCOW"
+     "event": "WORLDS 2013 \u00b7 100M \u00b7 MOSCOW",
+     "value": "2ND"
     },
     {
-     "event": "2015 WORLDS \u00b7 100M",
-     "value": "2ND",
-     "tag": "BEIJING"
+     "event": "WORLDS 2015 \u00b7 100M \u00b7 BEIJING",
+     "value": "2ND"
     },
     {
-     "event": "2015 WORLDS \u00b7 200M",
-     "value": "2ND",
-     "tag": "BEIJING"
+     "event": "WORLDS 2015 \u00b7 200M \u00b7 BEIJING",
+     "value": "2ND"
     },
     {
-     "event": "2016 OLYMPICS \u00b7 100M",
-     "value": "2ND",
-     "tag": "RIO"
+     "event": "OLYMPICS 2016 \u00b7 100M \u00b7 RIO",
+     "value": "2ND"
     }
    ],
    "times": [
@@ -573,7 +569,8 @@
      "name": "Blake \u00b7 5th",
      "value": "9.97"
     }
-   ]
+   ],
+   "y": 975
   },
   {
    "type": "motion",
