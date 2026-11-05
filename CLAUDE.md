@@ -5,6 +5,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Hard rules
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
+  - Never use sub-1080p footage full-screen. If the owner wants it used, keep it in the split and AI-upscale it first with `editor/upscale.py` (Real-ESRGAN general-x4v3; CPU, about 8 s per frame).
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Use the owner's original voice audio, untouched, on every video.** The default is `voice_chain: "original"`.
   - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
@@ -16,6 +17,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
+- **Face look:** no color grade on the talking head; the owner disliked the reddish look from the old contrast and saturation grade. Keep only the dark edges: `face_grade: "vignette=PI/6"` in `style.json`.
 - **Seam:** a clear separation between the face and the B-roll, but soft: `seam_style: "soft"` gives a clean edge with a soft shadow band and a faint 2 px hairline.
   - The face must **not** blend or dissolve into the B-roll; the owner rejected `"blend"`.
   - No bold or colored divider line either; the owner rejected the red line.

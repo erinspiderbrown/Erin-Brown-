@@ -21,5 +21,6 @@
   "hit_sfx": false,
   "extra_sfx_on": false,
   "whoosh_level": 0.24,
-  "split_swipes": true
+  "split_swipes": true,
+  "face_grade": "vignette=PI/6"
 }

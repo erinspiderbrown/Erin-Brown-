@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "work/out/30s_test_v2.mp4",
+ "output": "work/out/30s_test_v3.mp4",
  "words": "work/words_final.json",
  "voice_ss": 0.0,
  "duration": 68.76,
@@ -19,14 +19,20 @@
  ],
  "segments": [
   {
-   "type": "full",
+   "type": "split",
    "start": 0.0,
    "broll": {
-    "src": "broll/t_slo.mp4",
+    "src": "broll/t_slo_up.mp4",
     "ss": 9.0,
     "focus": [
-     0.43,
+     0.5,
      0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
     ]
    }
   },
@@ -34,8 +40,8 @@
    "type": "split",
    "start": 2.85,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 0.5,
+    "src": "broll/upA.mp4",
+    "ss": 0.2,
     "focus": [
      0.5,
      0.5
@@ -70,8 +76,8 @@
    "type": "split",
    "start": 13.4,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 3.0,
+    "src": "broll/upA.mp4",
+    "ss": 2.7,
     "focus": [
      0.5,
      0.5
@@ -79,29 +85,24 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 17.3,
    "broll": {
-    "src": "broll/t_slo.mp4",
-    "ss": 0.0,
+    "src": "broll/curve_slo.mp4",
+    "ss": 10.0,
     "focus": [
      0.5,
      0.5
-    ],
-    "crop": [
-     960,
-     540,
-     83,
-     126
     ]
-   }
+   },
+   "hit": true
   },
   {
    "type": "split",
    "start": 21.6,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 16.5,
+    "src": "broll/upB.mp4",
+    "ss": 0.1,
     "focus": [
      0.5,
      0.5
@@ -112,8 +113,8 @@
    "type": "split",
    "start": 24.9,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 18.5,
+    "src": "broll/upB.mp4",
+    "ss": 2.1,
     "focus": [
      0.5,
      0.5
@@ -124,32 +125,38 @@
    "type": "split",
    "start": 31.5,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 26.0,
+    "src": "broll/upB.mp4",
+    "ss": 9.6,
     "focus": [
      0.5,
      0.5
     ],
     "crop": [
-     960,
-     540,
-     83,
-     126
+     1440,
+     810,
+     125,
+     189
     ]
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 35.3,
    "broll": {
-    "src": "raw/test300.mov",
-    "ss": 26.6,
+    "src": "broll/upB.mp4",
+    "ss": 10.2,
     "focus": [
-     0.45,
+     0.5,
      0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
     ]
    },
-   "hit": true
+   "transition": "flash"
   },
   {
    "type": "split",
@@ -188,20 +195,14 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 55.6,
    "broll": {
-    "src": "broll/t_slo.mp4",
-    "ss": 11.0,
+    "src": "broll/curve_slo.mp4",
+    "ss": 14.5,
     "focus": [
      0.5,
      0.5
-    ],
-    "crop": [
-     960,
-     540,
-     83,
-     126
     ]
    }
   },
@@ -221,17 +222,17 @@
    "type": "split",
    "start": 62.5,
    "broll": {
-    "src": "broll/t_slo.mp4",
+    "src": "broll/t_slo_up.mp4",
     "ss": 5.0,
     "focus": [
      0.5,
      0.5
     ],
     "crop": [
-     960,
-     540,
-     83,
-     126
+     1440,
+     810,
+     125,
+     189
     ]
    }
   }
@@ -259,25 +260,12 @@
    "kind": "neon",
    "t": 0.15,
    "dur": 2.6,
-   "text": "FIRST TIME|IN SPIKES",
+   "text": "FIRST TIME IN SPIKES",
    "sub": "30-SECOND TEST",
-   "icon": "bolt",
    "color": "#E6FF00",
    "color2": "#FF2BD6",
-   "anchor": "upper"
-  },
-  {
-   "type": "motion",
-   "kind": "spotlight",
-   "t": 0.9,
-   "dur": 1.9,
-   "x": 540,
-   "y": 1060,
-   "r": 120,
-   "lx": 620,
-   "ly": 1240,
-   "text": "THAT'S ME",
-   "sub": "NEON SHORTS"
+   "size": 92,
+   "y": 24
   },
   {
    "type": "motion",
@@ -342,7 +330,8 @@
      "end": "DIED",
      "endColor": "#FF3B3B"
     }
-   ]
+   ],
+   "anchor": "center"
   },
   {
    "type": "data",
@@ -394,18 +383,6 @@
    "color": "#E6FF00",
    "color2": "#FF2BD6",
    "size": 110
-  },
-  {
-   "type": "motion",
-   "kind": "spotlight",
-   "t": 35.5,
-   "dur": 2.1,
-   "x": 540,
-   "y": 1000,
-   "r": 130,
-   "lx": 110,
-   "ly": 1250,
-   "text": "THAT'S ME"
   },
   {
    "type": "data",
@@ -480,7 +457,8 @@
    "icon": "bolt",
    "color": "#00F0FF",
    "color2": "#E6FF00",
-   "size": 120
+   "size": 120,
+   "anchor": "upper"
   },
   {
    "type": "motion",
