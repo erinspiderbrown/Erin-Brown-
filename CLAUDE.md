@@ -70,6 +70,35 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - As of Nov 2026 the owner's Higgsfield account is on the free plan with 10 credits. Its 1080p models need the Basic plan or higher, and the only clips 10 credits cover are 720p, which breaks the 1080p rule. Until that changes, hand-build animations as `motion` graphics.
   - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
+## Reference style: the Yohan Blake edit
+The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and asked for this style on every upcoming TikTok. Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure and pacing.
+- **Story arc:** build the edit as an argument with a payoff.
+  1. **Hook (0–15 s):** the subject full-screen with a name tag, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
+  2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `stamp` for the twist, e.g. "NOT A CHAMPIONSHIP").
+  3. **Turn:** cut to full-screen on the key fact, with a `data` counter.
+  4. **The real story:** a name tag for each new person, then a `board` listing the evidence, one row landing on each spoken item (`times`).
+  5. **Callback:** full-screen with the claim stamped again ("WRONG ERA?" → "LIE").
+  6. **Proof:** actual results for each event the owner names (`bars` with real times, the subject's place in the name), with a stamp on each verdict ("4TH PLACE", "4TH AGAIN").
+  7. **Ending:** `poll` on the core question ("BORN IN THE WRONG ERA? YES / NO").
+- **Pacing:**
+  - A graphic on almost every beat, about every 3–5 s.
+  - A new B-roll shot every 4–7 s.
+  - Full-screen at each act turn (4–5 per video), with `hit` on the two biggest.
+  - Punch-in zooms on the owner's rhetorical questions ("Where was he?").
+- **Facts on screen:** the owner's claims are backed by real, checked numbers: official times and places, all-time ranks. Never invent data. List every added fact in the project NOTES, and tell the owner where his wording differs from the record.
+- **When the owner sends only a talking head:**
+  - Pull B-roll from Wikimedia Commons: freely licensed photos of the athletes and races, ≥2800 px.
+    - Search by category and by file name.
+    - Download slowly, because Commons rate-limits.
+    - Bake in EXIF orientation, and cap photos at 3200 px for render speed.
+  - Write `CREDITS.md` (CC BY / CC BY-SA need a caption credit) and tell the owner the caption line.
+  - YouTube race footage can't be downloaded from the cloud session (bot check; don't try to get around it). List the official uploads in `footage_wanted.md` so the owner can send them; they'd go in the bottom half.
+  - Full-screen photos must be vertical or large enough to crop to 9:16 sharply. A wide landscape photo crops to an awkward slice, so use it in the split only.
+- **Graphic layout limits (learned on this edit):**
+  - `board` rows: keep `event` to about 20 characters, and only use `tag` on short rows, or the value gets clipped.
+  - `bars`: at most 4 rows in the split. For 5+ results, use a `board` (rows like "5 · YOHAN BLAKE", with a `tag`).
+  - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
+
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox links.
    - Share links (`/scl/fi/...`): download with `?dl=1`.
@@ -77,7 +106,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - **Guest soundbites:** when the owner references someone's interview or podcast, cut the guest's best 15–25 s into the A-roll right after the owner introduces them. The guest's footage takes the top "speaker" slot, in the same 1440×1280 framing with any on-screen banners cropped off. Match its loudness to the owner's voice, and merge the guest's captions into the timeline. See `projects/flotrack-masai/`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
 3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
-4. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
+4. **Write `plan.json`.** Start from `projects/yohan-blake/plan.json`, the reference style (see above).
 5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
 
 ## Setup in a fresh session
