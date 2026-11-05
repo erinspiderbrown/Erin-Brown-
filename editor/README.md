@@ -63,7 +63,7 @@ Each is rendered as a short clip from the overlap between segments. `build.py` p
   Each one gets its own sound design: a whoosh in, data ticks as the numbers move, and a pop and bass hit when the number lands.
 - **Captions:** word-by-word highlights in Montserrat Black. The highlight color alternates between chunks using `caption_colors`.
 - **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
-- **Audio:** your original voice, untouched (one volume gain to −14 LUFS).
+- **Audio:** your original voice, untouched. It's never turned down; a quiet take is raised to −14 LUFS.
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
   - Sound moments are spaced at least `sfx_min_gap` (3 s) apart.
   - The same sound never plays twice in a row.

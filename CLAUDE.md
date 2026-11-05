@@ -6,9 +6,12 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
-- **Use the owner's original voice audio, untouched.** The default is `voice_chain: "original"`. The only change is one static volume gain to reach −14 LUFS, plus a peak limiter.
+- **Use the owner's original voice audio, untouched, on every video.** The default is `voice_chain: "original"`.
   - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
-  - Don't add voice processing back unless the owner asks for it.
+  - **Never turn the voice down.** If the take is already at or above −14 LUFS, it passes through untouched: no gain and no limiter.
+    - One exception: if the take peaks right at 0 dBFS, it gets the minimum static trim to a −0.5 dBFS peak (about 0.5 dB, below audibility). ffmpeg's AAC encoder squashes full-scale audio (quieter, with crunch on the loudest words), and this headroom keeps the encode clean.
+  - If the take is quieter than −14 LUFS, it gets one static volume boost up to −14, plus a peak limiter only in that case.
+  - Don't add voice processing back, or lower the voice, unless the owner asks for it.
 - **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
   - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
   - Full-screen needs one of:
@@ -17,7 +20,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - a high-res photo (about 3000 px or more on the long side)
   - 1080p landscape clips go in the bottom half of the split only.
   - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
-- **Export:** 1080×1920, 30 fps, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow`, or with a two-pass encode at about 9 Mbps if that's still too big.
+- **Export:** 1080×1920, 30 fps. Loudness is −14 LUFS, or louder if the owner's take is already louder (see above). Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode the video with `-crf 20 -preset slow`, or with a two-pass encode at about 6–9 Mbps if that's still too big. Copy the audio (`-c:a copy`; the build writes 256k AAC) so the voice is never re-compressed.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.

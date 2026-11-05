@@ -455,11 +455,22 @@ def main(plan_path):
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
     mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
-    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet[a]']),
+    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
-    gain = -14.0 - li                                  # one static gain: tone and dynamics untouched
-    ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+    # one static gain, tone and dynamics untouched. NEVER turn the owner's voice down: a take already at or above
+    # -14 LUFS passes through bit-for-bit (no gain, no limiter); a quiet take is raised, with a limiter only then.
+    gain = max(0.0, -14.0 - li)
+    if gain > 0.05:
+        ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+    else:
+        # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
+        # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
+        # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
+        pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+        gain = min(0.0, -0.5 - pk)
+        ln = f'volume={gain:.2f}dB' if gain < -0.01 else 'anull'
+    print(f'voice: {li:.1f} LUFS, static gain {gain:+.2f} dB' + (', no limiter' if gain <= 0.05 else ', limiter'))
     awav = f'{wd}/mix.wav'
     run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
          '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
