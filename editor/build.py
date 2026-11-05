@@ -257,7 +257,16 @@ POOLS = {
     'riser':     ['riser_synth', 'riser_space_stutter'],
     'data_tick': ['tick_scifi', 'tick_tech_select'],
     'thud':      ['thud_wood_hit'],
+    # "transition_sfx": a matched sound family per transition kind (owner asked for great, varied transition sounds)
+    'tr_whip':   ['whoosh_fast_trans', 'whoosh_cine_fast', 'air_fast_sweeping', 'whoosh_fast_sweep', 'whoosh_small_sweep',
+                  'whoosh_fast_trans2', 'air_flying_swoosh', 'whoosh_air_sweep'],
+    'tr_zoom':   ['air_zoom_vacuum', 'impact_quick_zoom', 'whoosh_speeding'],
+    'tr_spin':   ['whoosh_flying_fast', 'whoosh_cine_fast2', 'whoosh_speeding'],
+    'tr_glitch': ['click_camera_shutter', 'whoosh_quick_accent', 'tick_scifi'],
+    'tr_flash':  ['impact_trailer_whoosh_hit', 'impact_deep_cine_whoosh'],
+    'tr_shake':  ['impact_big_cine', 'impact_deep_cine_whoosh'],
 }
+TR_LEVEL = {'whip': 0.24, 'swipe': 0.22, 'zoom': 0.26, 'spin': 0.26, 'glitch': 0.20, 'flash': 0.27, 'shake': 0.27}
 import random
 def sfx_cues(plan):
     """-> list of (sfx name, time where its PEAK lands, volume, rate)"""
@@ -267,6 +276,17 @@ def sfx_cues(plan):
         n = POOLS[pool][rot[pool] % len(POOLS[pool])]; rot[pool] += 1; return n
     lvl = float(plan.get('sfx_level', 1.0))
     cues, segs, last_tr = [], plan['segments'], -99
+    if plan.get('transition_sfx'):
+        # a sound on (almost) every transition, matched to its kind, never closer than transition_sfx_gap seconds
+        gap, last_name, scale = float(plan.get('transition_sfx_gap', 2.5)), None, float(plan.get('whoosh_level', 0.24)) / 0.24
+        for nxt, tr in zip(segs[1:], choose_transitions(plan)[1:]):
+            T = nxt['start']
+            if not tr or tr[0] == 'cut' or nxt.get('sfx') is False or T - last_tr < gap: continue
+            pool = 'tr_' + ('whip' if tr[0] == 'swipe' else tr[0])
+            name = pick(pool)
+            if name == last_name: name = pick(pool)
+            cues.append((name, T, TR_LEVEL.get(tr[0], 0.24) * scale)); last_tr, last_name = T, name
+        segs = segs[:1]                      # transitions handled; skip the default whoosh rules below
     for prev, nxt in zip(segs, segs[1:]):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
@@ -314,6 +334,8 @@ def choose_transitions(plan):
       split -> split     -> bottom-half swipe (left/right alternating); your face never moves"""
     rot = {'in': ['zoom', 'whip:left', 'spin', 'whip:up'], 'hit': ['flash', 'shake'], 'out': ['whip:down', 'zoom', 'whip:right', 'glitch'],
            'ff': ['whip:left', 'glitch', 'whip:right'], 'ss': ['swipe:left', 'swipe:right']}
+    if plan.get('transition_style') == 'epic':     # B-roll swaps in the split rotate through bigger moves (bottom half only)
+        rot['ss'] = ['swipe:left', 'zoom', 'swipe:right', 'glitch', 'whip:up', 'swipe:left', 'zoom', 'whip:down', 'glitch', 'swipe:right']
     cnt = {k: 0 for k in rot}
     def take(k):
         v = rot[k][cnt[k] % len(rot[k])]; cnt[k] += 1; return v
@@ -326,7 +348,8 @@ def choose_transitions(plan):
         elif nxt['type'] == 'full': spec = take('ff')
         else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
         k, _, dr = spec.partition(':')
-        out.append((k, dr or None, 'bottom' if k == 'swipe' else None))
+        both_split = prev['type'] == 'split' and nxt['type'] == 'split'
+        out.append((k, dr or None, 'bottom' if (k == 'swipe' or (both_split and k != 'cut')) else None))
     return out
 
 def main(plan_path):

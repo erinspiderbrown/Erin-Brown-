@@ -28,6 +28,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - **Full → full:** whip or glitch.
   - **B-roll swaps inside the split:** a bottom-half swipe with motion blur; the owner's face never moves.
   - **Overrides:** force one per segment with `"transition": "whip:left" | "zoom" | "spin" | "glitch" | "flash" | "shake" | "swipe:right" | "cut"`. Set `split_swipes: false` for plain cuts in the split.
+  - **Epic mode** (`"transition_style": "epic"`): split B-roll swaps rotate through swipe, zoom, glitch and whip-up/down on the bottom half. Spin is left out on the half frame because it shows black corners.
   - Keep them varied, never the same transition twice in a row. Motion blur peaks briefly at the cut so both shots stay sharp.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
 - **No random loud sound effects mid-sentence.** The owner dislikes them. The defaults in `style.json` are:
@@ -37,6 +38,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - **Kept:** a quiet airy whoosh on cuts into and out of full-screen (`whoosh_level` 0.24), with small pitch variation. B-roll swaps inside the split are silent.
   - Don't turn any of these back on unless the owner asks. `"hit": true` on a segment now only adds the visual flash.
   - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random.)
+  - **Transition sounds (Nov 2026):** the owner now wants great transition sounds on most cuts. Use `"transition_sfx": true`.
+    - It gives each transition a matched sound family: whooshes for whip/swipe, a vacuum or zoom hit for zoom, a shutter click for glitch, and cinematic hits for flash/shake.
+    - Sounds rotate so none repeats back to back, and they're never closer than `transition_sfx_gap` (default 2.5 s).
+    - Levels stay modest (about 0.20–0.27). Graphics stay silent.
 - **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
 - **Things being talked about** get motion graphics (`type: "motion"`):
   - `stamp`: e.g. "FRAUD?"

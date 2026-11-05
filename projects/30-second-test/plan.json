@@ -183,7 +183,7 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 49.5,
    "broll": {
     "src": "broll/gcu_slo.mp4",
@@ -446,7 +446,8 @@
    "unit": "SECONDS",
    "label": "400M \u00b7 WHERE I COME FROM",
    "anim": 1.0,
-   "size": 160
+   "size": 160,
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -498,5 +499,7 @@
    "color2": "#FF2BD6",
    "size": 120
   }
- ]
+ ],
+ "transition_style": "epic",
+ "transition_sfx": true
 }
