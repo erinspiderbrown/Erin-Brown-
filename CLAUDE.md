@@ -73,8 +73,13 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - As of Nov 2026 the owner's Higgsfield account is on the free plan with 10 credits. Its 1080p models need the Basic plan or higher, and the only clips 10 credits cover are 720p, which breaks the 1080p rule. Until that changes, hand-build animations as `motion` graphics.
   - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
-## Reference style: the Yohan Blake edit
-The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and asked for this style on every upcoming TikTok. Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure and pacing.
+## Default editing method: the Yohan Blake edit
+**This is the default way to edit every TikTok from now on.** The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and "probably the best video". Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure, pacing, graphics and transitions unless the owner asks for something different.
+- **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
+  - The auto-picked viral transitions, with no per-segment overrides.
+  - A graphic on almost every beat (name tags, keywords, stamps, boards, bars, counters, a poll).
+  - Don't thin them out or swap in new styles without asking.
+- **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
 - **Story arc:** build the edit as an argument with a payoff.
   1. **Hook (0–15 s):** the subject full-screen with a name tag, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
   2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `stamp` for the twist, e.g. "NOT A CHAMPIONSHIP").
@@ -109,7 +114,7 @@ The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and asked for this s
    - **Guest soundbites:** when the owner references someone's interview or podcast, cut the guest's best 15–25 s into the A-roll right after the owner introduces them. The guest's footage takes the top "speaker" slot, in the same 1440×1280 framing with any on-screen banners cropped off. Match its loudness to the owner's voice, and merge the guest's captions into the timeline. See `projects/flotrack-masai/`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
 3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
-4. **Write `plan.json`.** Start from `projects/yohan-blake/plan.json`, the reference style (see above).
+4. **Write `plan.json`.** Start from `projects/yohan-blake/plan.json`, the default editing method (see above).
 5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
 
 ## Setup in a fresh session
