@@ -13,7 +13,9 @@ GOLD_ASS = '&H2CC7FF&'                        # #FFC72C in ASS BGR
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode: sys.exit(f"FAILED: {' '.join(cmd)}\n{r.stderr[-3000:]}")
+    if r.returncode:
+        err = '\n'.join(l for l in r.stderr.splitlines() if len(l) < 600)   # skip ffmpeg's echo of huge filtergraphs
+        sys.exit(f"FAILED: {' '.join(cmd)[:400]}...\n{err[-3000:]}")
 
 IMG = ('.jpg', '.jpeg', '.png', '.webp', '.heic')
 def is_img(p): return p.lower().endswith(IMG)
@@ -41,6 +43,12 @@ def cover(w, h, crop=None, push=0.0, dur=1.0, punch=0.0, focus=(0.5, 0.5), zexpr
     return ','.join(f)
 
 _probe = {}
+def cached(path):
+    """A cached render counts only if it's a complete file (an interrupted render leaves a 0-byte or truncated one)."""
+    if not os.path.exists(path) or os.path.getsize(path) < 1024: return False
+    r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    return r.returncode == 0 and r.stdout.strip() not in ('', 'N/A')
+
 def probe(src):
     if src not in _probe:
         r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
@@ -375,7 +383,7 @@ def main(plan_path):
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
-        if not os.path.exists(p): render_segment(plan, s, a, b, p)
+        if not cached(p): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
     # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
     trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
@@ -391,7 +399,7 @@ def main(plan_path):
                 d = dur[i]; T = segs[i]['start']
                 key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
                 tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
-                if not os.path.exists(tp):
+                if not cached(tp):
                     transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
                 n = len(inputs) // 2; inputs += ['-i', tp]
                 pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
@@ -415,7 +423,7 @@ def main(plan_path):
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
         h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
-        if not os.path.exists(mov):
+        if not cached(mov):
             json.dump(spec, open(sp, 'w'))
             r = subprocess.run(['node', f'{here}/datagfx/render.js', sp, mov], capture_output=True, text=True)
             if r.returncode: sys.exit('graphic failed: ' + r.stderr[-2000:])
