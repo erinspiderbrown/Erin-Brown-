@@ -116,6 +116,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
 4. **Write `plan.json`.** Start from `projects/yohan-blake/plan.json`, the default editing method (see above).
 5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+6. **Deliver to the owner's Dropbox** too: save every finished export to `/TikTok Exports/` in his Dropbox. He's connected it through the Composio connector (account "Erin Brown Track & Field").
+   - Files over about 150 MB can't go through `DROPBOX_UPLOAD_FILE`. Use `DROPBOX_SAVE_URL` with the file's GitHub LFS URL (`https://media.githubusercontent.com/media/<owner>/<repo>/<branch>/exports/<file>`), so Dropbox fetches it server-side.
+   - Check the returned `content_hash` against the local file (SHA-256 of the per-4 MB-block SHA-256s) before telling the owner it's there.
+   - He can also put raw footage in his Dropbox and name the folder; read it from there instead of asking for share links.
+- **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.
