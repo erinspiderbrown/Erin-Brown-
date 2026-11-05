@@ -40,3 +40,13 @@ These came in a Dropbox folder and are not committed.
 - **Why most running shots are in the split:** the clip is 720p and the owner is small in the frame. So only the hook (0–2.85 s) and the 283 m reveal (35.3–39.4 s) are full screen. Split shots of the run are cropped in on him (crop 960×540 at (83, 126)).
 - **"THAT'S ME" spotlights:** added on both full-screen shots so viewers can find him.
 - **Export:** `exports/30_second_test_tiktok_v2.mp4`.
+
+## v3: no face grade, upscaled run, epic transitions
+- **Face:** no color grade, only the dark edges (`face_grade: "vignette=PI/6"`, now the house default).
+- **Today's run:** AI-upscaled with `editor/upscale.py` (Real-ESRGAN general-x4v3, 4× and then downscaled to 1920×1080).
+  - `upA` is test300 0.3–7.0 s; `upB` is 16.4–31.3 s. About 8 s per frame on CPU, about 85 min total.
+  - `t_slo_up` is the 2× slow motion built from `upB`.
+  - Today's run is used only in the split, never full screen.
+- **Full-screen moments:** the June training clips, on "last year" (17.3 s, flash), the GCU banners (49.5 s), and "different strategies" (55.6 s).
+- **Transitions and sound:** `transition_style: "epic"` and `transition_sfx: true` give 15 varied transitions and 13 matched transition sounds, at least 2.5 s apart.
+- **Export:** `exports/30_second_test_tiktok_v3.mp4`.
