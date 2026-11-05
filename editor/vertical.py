@@ -93,32 +93,22 @@ def main(plan_path):
     wd = plan.get('workdir', 'vwork'); os.makedirs(wd, exist_ok=True)
     f, total = remap(plan)
     fy = int(plan.get('frame_y', 600))
-    # 1) cut + join (video concat; audio crossfaded at each joint)
-    keep = plan['keep']; fc = []
+    # 1) each kept range -> its own frame-sized clip (keeps memory low: one short decode at a time)
+    keep = plan['keep']; segs = []
     for i, (a, b) in enumerate(keep):
-        fc.append(f"[0:v]trim={a:.3f}:{b:.3f},setpts=PTS-STARTPTS,fps={FPS}[v{i}]")
-        fc.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[a{i}]")
-    vlast, alast = 'v0', 'a0'; acc = keep[0][1] - keep[0][0]
-    for i in range(1, len(keep)):
-        fc.append(f"[{vlast}][v{i}]xfade=transition=fade:duration={XF}:offset={acc - XF:.3f}[vx{i}]")
-        fc.append(f"[{alast}][a{i}]acrossfade=d={XF}:c1=tri:c2=tri[ax{i}]")
-        vlast, alast = f'vx{i}', f'ax{i}'; acc += (keep[i][1] - keep[i][0]) - XF
-    ass = f'{wd}/vertical.ass'; ass_file(plan, ass, total, f)
-    fontsdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/fonts')
-    bar_y, bar_x, bar_w = H - 280, 90, W - 180
-    fc.append(f"color=c=0x0d0e13:s={W}x{H}:r={FPS}:d={total:.3f}[bg]")
-    fc.append(f"[{vlast}]scale={FW}:{FH}:flags=lanczos,crop={W}:{FH}:{(FW-W)//2}:0,setsar=1[fr]")
-    fc.append(f"color=c=0xE8231E:s={bar_w}x10:r={FPS}:d={total:.3f}[bar]")
-    fc.append(f"[bg][fr]overlay=0:{fy}:shortest=1,"
-              f"drawbox=x=0:y={fy-2}:w={W}:h=2:color=white@0.22:t=fill,drawbox=x=0:y={fy+FH}:w={W}:h=2:color=white@0.22:t=fill,"
-              f"drawbox=x={bar_x}:y={bar_y}:w={bar_w}:h=10:color=white@0.16:t=fill[base];"
-              f"[base][bar]overlay=x='{bar_x}-{bar_w}+{bar_w}*t/{total:.3f}':y={bar_y}:shortest=1,"   # progress fills left to right
-              f"drawbox=x=0:y={bar_y}:w={bar_x}:h=10:color=0x0d0e13:t=fill,"                     # mask the part left of the bar
-              f"ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
-    # 2) audio: the owner's mix, never turned down (house rule). Boost to -14 only if quieter.
+        out = f'{wd}/seg{i:02d}_{a:.2f}_{b:.2f}.mp4'
+        if not os.path.exists(out):
+            run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{a:.3f}', '-to', f'{b:.3f}', '-i', plan['src'], '-vf',
+                 f'fps={FPS},scale={FW}:{FH}:flags=lanczos,crop={W}:{FH}:{(FW-W)//2}:0,setsar=1', '-an',
+                 '-c:v', 'libx264', '-crf', '10', '-preset', 'fast', out])
+        segs.append(out)
+    # 2) audio: the owner's mix, cut with crossfades, never turned down (house rule)
     pre = f'{wd}/audio_cut.wav'
-    run(['ffmpeg', '-v', 'error', '-y', '-i', plan['src'], '-filter_complex', ';'.join(
-        [x for x in fc if x.startswith('[0:a]') or 'acrossfade' in x]), '-map', f'[{alast}]', '-c:a', 'pcm_s24le', pre])
+    afc = [f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[a{i}]" for i, (a, b) in enumerate(keep)]
+    alast = 'a0'
+    for i in range(1, len(keep)):
+        afc.append(f"[{alast}][a{i}]acrossfade=d={XF}:c1=tri:c2=tri[ax{i}]"); alast = f'ax{i}'
+    run(['ffmpeg', '-v', 'error', '-y', '-i', plan['src'], '-filter_complex', ';'.join(afc), '-map', f'[{alast}]', '-c:a', 'pcm_s24le', pre])
     meas = run(['ffmpeg', '-hide_banner', '-i', pre, '-af', 'ebur128=peak=true', '-f', 'null', '-'])
     import re
     I = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', meas.stderr)[-1]); pk = float(re.findall(r'Peak:\s+(-?[\d.]+) dBFS', meas.stderr)[-1])
@@ -126,11 +116,31 @@ def main(plan_path):
     elif pk > -0.5: af = f'volume={-0.5 - pk:.2f}dB'
     else: af = 'anull'
     print(f'audio: {I:.1f} LUFS, peak {pk:.1f} dBFS -> {af}')
-    vfc = [x for x in fc if not (x.startswith('[0:a]') or 'acrossfade' in x)]
-    run(['ffmpeg', '-v', 'error', '-y', '-i', plan['src'], '-i', pre, '-filter_complex', ';'.join(vfc) + f';[1:a]{af}[a]',
-         '-map', '[v]', '-map', '[a]', '-t', f'{total:.3f}', '-c:v', 'libx264', '-crf', '18', '-preset', 'slow', '-profile:v', 'high',
+    # 3) join with short video crossfades, composite the vertical layout -> near-lossless master
+    fc, vlast, acc = [], '0:v', 0.0
+    for i in range(len(segs)):
+        d = keep[i][1] - keep[i][0]
+        if i:
+            fc.append(f"[{vlast}][{i}:v]xfade=transition=fade:duration={XF}:offset={acc - XF:.3f}[vx{i}]"); vlast = f'vx{i}'; acc += d - XF
+        else: acc = d
+    ass = f'{wd}/vertical.ass'; ass_file(plan, ass, total, f)
+    fontsdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/fonts')
+    bar_y, bar_x, bar_w = H - 280, 90, W - 180
+    fc.append(f"color=c=0x0d0e13:s={W}x{H}:r={FPS}:d={total:.3f}[bg]")
+    fc.append(f"color=c=0xE8231E:s={bar_w}x10:r={FPS}:d={total:.3f}[bar]")
+    fc.append(f"[bg][{vlast}]overlay=0:{fy}:shortest=1,"
+              f"drawbox=x=0:y={fy-2}:w={W}:h=2:color=white@0.22:t=fill,drawbox=x=0:y={fy+FH}:w={W}:h=2:color=white@0.22:t=fill,"
+              f"drawbox=x={bar_x}:y={bar_y}:w={bar_w}:h=10:color=white@0.16:t=fill[base];"
+              f"[base][bar]overlay=x='{bar_x}-{bar_w}+{bar_w}*t/{total:.3f}':y={bar_y}:shortest=1,"   # progress fills left to right
+              f"drawbox=x=0:y={bar_y}:w={bar_x}:h=10:color=0x0d0e13:t=fill,"                     # mask the part left of the bar
+              f"ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
+    n = len(segs)
+    fc.append(f"[{n}:a]{af}[a]")
+    ins = sum([['-i', x] for x in segs], []) + ['-i', pre]
+    run(['ffmpeg', '-v', 'error', '-y', *ins, '-filter_complex', ';'.join(fc),
+         '-map', '[v]', '-map', '[a]', '-t', f'{total:.3f}', '-c:v', 'libx264', '-crf', '12', '-preset', 'slow', '-profile:v', 'high',
          '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000', '-movflags', '+faststart', plan['output']])
-    print(f"wrote {plan['output']} ({total:.1f}s)")
+    print(f"wrote {plan['output']} ({total:.1f}s, master; make the upload file with a 2-pass encode and check SSIM)")
 
 
 if __name__ == '__main__':
