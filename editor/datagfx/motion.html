@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, track, jail -->
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
   html, body { margin: 0; background: transparent; overflow: hidden; }
@@ -207,6 +207,46 @@ const BUILD = {
         <div class="t-anton" style="font-size:118px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'HAPPY BIRTHDAY'}</div>
         ${S.sub ? `<div class="t-mb" style="font-size:40px;color:var(--acc2);letter-spacing:.14em;margin-top:10px">${S.sub}</div>` : ''}</div>`;
   },
+  // top-down track: two runners come round the curve, then start BOUNDING off the bend (hops + stride marks)
+  track() {
+    R.w = 1000; R.h = 820;
+    return `<svg width="1000" height="640" style="position:absolute;left:0;top:0" class="shadow">
+        <path d="M 300 60 H 700 A 240 240 0 0 1 700 540 H 300 A 240 240 0 0 1 300 60 Z" fill="#b5462f" stroke="#fff" stroke-width="4"/>
+        <path d="M 300 150 H 700 A 150 150 0 0 1 700 450 H 300 A 150 150 0 0 1 300 150 Z" fill="#1d6b3a" stroke="#fff" stroke-width="4"/>
+        ${[1,2,3].map(i=>`<path d="M 300 ${60+i*22.5} H 700 A ${240-i*22.5} ${240-i*22.5} 0 0 1 700 ${540-i*22.5} H 300 A ${240-i*22.5} ${240-i*22.5} 0 0 1 300 ${60+i*22.5} Z" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"/>`).join('')}
+        <path id="lane" d="M 300 95 A 205 205 0 0 0 300 505 L 820 505" fill="none" stroke="none"/>
+        <path id="lane2" d="M 300 118 A 182 182 0 0 0 300 482 L 820 482" fill="none" stroke="none"/>
+        <path id="trail" d="" fill="none" stroke="var(--acc2)" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 16" opacity=".95"/>
+        <g id="marks"></g>
+        <ellipse id="sh0" rx="16" ry="6" fill="rgba(0,0,0,.45)"/><ellipse id="sh1" rx="16" ry="6" fill="rgba(0,0,0,.45)"/>
+        <circle id="r0" r="17" fill="#2fd3c9" stroke="#fff" stroke-width="5"/><circle id="r1" r="17" fill="var(--acc)" stroke="#fff" stroke-width="5"/>
+        <g id="curveTag" opacity="0"><rect x="180" y="270" width="170" height="60" rx="14" fill="#111218"/><text x="265" y="311" text-anchor="middle" font-family="Anton" font-size="34" fill="#fff">CURVE</text></g>
+      </svg>
+      <div id="bnd" class="t-anton shadow" style="position:absolute;left:0;width:1000px;top:600px;text-align:center;font-size:150px;line-height:1;color:var(--acc2);-webkit-text-stroke:7px #000;paint-order:stroke fill;opacity:0">${S.text || 'BOUNDING?!'}</div>
+      ${S.sub ? `<div id="bndS" class="t-mb shadow" style="position:absolute;left:0;width:1000px;top:762px;text-align:center;font-size:40px;color:#fff;letter-spacing:.14em;opacity:0">${S.sub}</div>` : ''}`;
+  },
+  // jail cell: bars slam down over a coach (cap, whistle, clipboard) + sentence text
+  jail() {
+    R.w = 900; R.h = 800;
+    const bars = Array.from({ length: 7 }, (_, i) => `<rect x="${150 + i * 100 - 11}" y="0" width="22" height="520" rx="11" fill="url(#steel)"/>`).join('');
+    return `<svg width="900" height="600" style="position:absolute;left:0;top:0;overflow:visible" class="shadow">
+        <defs><linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#6b7280"/><stop offset=".45" stop-color="#e5e7eb"/><stop offset="1" stop-color="#4b5563"/></linearGradient></defs>
+        <rect x="100" y="40" width="700" height="540" rx="26" fill="#1a1c23" stroke="#2a2c35" stroke-width="6"/>
+        <g id="coach">
+          <circle cx="450" cy="250" r="78" fill="#3a3d48"/>
+          <path d="M 368 238 Q 450 150 532 238 Z" fill="var(--acc)"/><rect x="440" y="226" width="140" height="22" rx="11" fill="var(--acc)"/>
+          <path d="M 300 580 Q 300 360 450 350 Q 600 360 600 580 Z" fill="#3a3d48"/>
+          <path d="M 410 352 Q 450 430 490 352" fill="none" stroke="var(--acc2)" stroke-width="7"/>
+          <rect x="432" y="420" width="44" height="26" rx="10" fill="var(--acc2)"/><circle cx="470" cy="433" r="8" fill="#1a1c23"/>
+          <rect x="520" y="420" width="96" height="128" rx="10" fill="#d9dde6" transform="rotate(10 568 484)"/>
+          <rect x="548" y="410" width="40" height="20" rx="6" fill="#6b7280" transform="rotate(10 568 484)"/>
+          ${[0,1,2].map(i=>`<rect x="534" y="${450+i*24}" width="66" height="8" rx="4" fill="#9aa1ad" transform="rotate(10 568 484)"/>`).join('')}
+        </g>
+        <g id="bars" transform="translate(0 -560)"><rect x="100" y="40" width="700" height="34" rx="12" fill="url(#steel)"/><g transform="translate(0 50)">${bars}</g><rect x="100" y="548" width="700" height="34" rx="12" fill="url(#steel)"/></g>
+        <g id="tag" opacity="0"><rect x="300" y="470" width="300" height="70" rx="10" fill="#f5f0e1" stroke="#111" stroke-width="4"/><text x="450" y="517" text-anchor="middle" font-family="Anton" font-size="40" fill="#111">${S.tag || 'THE COACH'}</text></g>
+      </svg>
+      <div id="jT" class="t-anton shadow" style="position:absolute;left:0;width:900px;top:620px;text-align:center;font-size:130px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;opacity:0;white-space:nowrap">${S.text || 'LIFE SENTENCE'}</div>`;
+  },
 };
 const ANIM = {
   padlock(t) { const q = eOut(clamp((t - .15) / .3)); $('lock').style.transform = `translateY(${(1 - q) * -420}px)`; $('lock').style.opacity = clamp((t - .1) / .1) * fadeOut(t);
@@ -269,6 +309,27 @@ const ANIM = {
       const a = +e.dataset.a, v = +e.dataset.v, x = Math.sin(a) * v * b, y = -Math.cos(a) * v * b * 1.1 + 900 * b * b;
       e.style.opacity = clamp(1 - (b - 1.3) / .6) * fadeOut(t); e.style.transform = `translate(${x}px,${y}px) rotate(${+e.dataset.s * b}deg) rotateX(${b * 540}deg)`; });
     const l = eBack((t - .9) / .4); $('hbT').style.opacity = clamp((t - .9) / .12) * fadeOut(t); $('hbT').style.transform = `scale(${.5 + .5 * l})`; },
+  track(t) { $('root').style.opacity = clamp(t / .2) * fadeOut(t);
+    const T0 = .35, Tc = S.tc || 1.5, Tb = S.tb || 2.3, back = S.back;   // curve run, then bounding on the straight
+    const L = $('lane').getTotalLength(), curveL = Math.PI * 205;
+    const prog = x => x < Tc ? clamp((x - T0) / (Tc - T0)) * curveL : curveL + (x - Tc) * 230;
+    const d = Math.min(prog(t), L - 2), bounding = t > Tc && (!back || t < Tc + Tb);
+    const marks = $('marks'); let mk = '';
+    ['lane', 'lane2'].forEach((ln, k) => { const dd = Math.min(d - k * 28, L - 2), pt = $(ln).getPointAtLength(Math.max(0, dd));
+      let hop = 0; if (bounding && dd > curveL) { const ph = ((dd - curveL) / 95) % 1; hop = Math.sin(ph * Math.PI) * 46; }
+      $('r' + k).setAttribute('cx', pt.x); $('r' + k).setAttribute('cy', pt.y - hop); $('r' + k).setAttribute('r', 17 + hop * .12);
+      $('sh' + k).setAttribute('cx', pt.x); $('sh' + k).setAttribute('cy', pt.y + 12); $('sh' + k).setAttribute('opacity', 1 - hop / 80);
+      if (dd > curveL) { const end = Math.min(dd, curveL + (back ? Tb * 230 : 9e9)); for (let x = curveL + 95; x <= end; x += 95) { const q = $(ln).getPointAtLength(x); mk += `<circle cx="${q.x}" cy="${q.y + 10}" r="7" fill="var(--acc2)" opacity=".9"/>`; } } });
+    marks.innerHTML = mk;
+    $('curveTag').setAttribute('opacity', clamp((t - .4) / .2) * (1 - clamp((t - Tc) / .3)));
+    const l = eBack((t - Tc - .1) / .35); $('bnd').style.opacity = clamp((t - Tc - .1) / .1) * fadeOut(t); $('bnd').style.transform = `scale(${.5 + .5 * l}) rotate(${-3 * Math.sin(t * 9)}deg)`;
+    if ($('bndS')) { $('bndS').style.opacity = clamp((t - Tc - .4) / .2) * fadeOut(t); } },
+  jail(t) { $('root').style.opacity = clamp(t / .15) * fadeOut(t);
+    const q = clamp((t - .35) / .22), drop = q * q; $('bars').setAttribute('transform', `translate(0 ${(1 - drop) * -560})`);
+    const sh = t > .57 && t < .9 ? Math.sin(t * 95) * 12 * (1 - (t - .57) / .33) : 0; $('root').style.transform = `translate(${sh}px,${sh * .5}px)`;
+    $('coach').setAttribute('transform', `translate(0 ${t < .57 ? 0 : Math.sin((t - .57) * 30) * 4 * Math.max(0, 1 - (t - .57) * 3)})`);
+    $('tag').setAttribute('opacity', clamp((t - .75) / .15));
+    const l = eBack((t - .85) / .35); $('jT').style.opacity = clamp((t - .85) / .1) * fadeOut(t); $('jT').style.transform = `scale(${.5 + .5 * l})`; },
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
@@ -287,6 +348,8 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
   birthday: () => ({ soft: .45, pops: [.9] }),
+  track: () => ({ swish: (S.tc || 1.5) + .05 }),
+  jail: () => ({ thud: .57 }),
 };
 
 window.setup = async (spec) => {

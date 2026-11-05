@@ -1,0 +1,426 @@
+{
+ "workdir": "work/build",
+ "output": "out/bounding_v2.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 68.5,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/stock/letzigrund_sunset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.0,
+   "broll": {
+    "src": "raw/stock/zurich_400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.1,
+   "broll": {
+    "src": "raw/stock/sdf_2024.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.4,
+   "broll": {
+    "src": "raw/stock/zurich_800.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.76,
+   "broll": {
+    "src": "raw/stock/zurich_dl.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.0,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 1.2,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.3,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.1,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 8.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 29.4,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 4.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.7,
+   "broll": {
+    "src": "raw/stock/zurich_dl.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.7
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 37.3,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 11.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 39.1,
+   "broll": {
+    "src": "raw/stock/spikes.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 40.0,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 13.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 41.1,
+   "broll": {
+    "src": "raw/stock/tj_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.5,
+   "broll": {
+    "src": "work/clip_slow.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 52.6,
+   "broll": {
+    "src": "raw/stock/zurich_400.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.6,
+   "broll": {
+    "src": "raw/stock/sdf_2024.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.7,
+   "broll": {
+    "src": "raw/stock/zurich_800.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 64.2,
+   "broll": {
+    "src": "raw/clip_720p.mp4",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  }
+ ],
+ "zooms": [
+  [
+   5.0,
+   6.1,
+   1.06
+  ],
+  [
+   13.0,
+   15.0,
+   1.1
+  ],
+  [
+   24.1,
+   26.0,
+   1.12
+  ],
+  [
+   29.4,
+   31.0,
+   1.06
+  ],
+  [
+   41.1,
+   42.6,
+   1.1
+  ],
+  [
+   52.6,
+   54.2,
+   1.16
+  ],
+  [
+   56.6,
+   58.0,
+   1.06
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 0.25,
+   "dur": 2.6,
+   "text": "EUROPE",
+   "sub": "NOTORIOUS ATHLETES"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 8.0,
+   "dur": 1.6,
+   "text": "LEAST TALENT?",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 17.6,
+   "dur": 2.6,
+   "items": [
+    "YOU NEED TO SEE THIS",
+    "WHAT IS THIS DRILL??"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 22.7,
+   "dur": 1.4,
+   "text": "WHO IS THE COACH?",
+   "hi": 3,
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "jail",
+   "t": 24.9,
+   "dur": 4.4,
+   "text": "LIFE SENTENCE",
+   "tag": "THE COACH"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 31.2,
+   "dur": 1.5,
+   "text": "120 OR 150?",
+   "hi": 2,
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 32.8,
+   "dur": 4.5,
+   "tc": 3.9,
+   "text": "BOUNDING?!"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 38.4,
+   "dur": 0.75,
+   "text": "MID-REP?!",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 39.15,
+   "dur": 0.85,
+   "text": "IN SPIKES",
+   "hi": 1,
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 40.05,
+   "dur": 1.0,
+   "text": "MID-RUN",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 43.0,
+   "dur": 1.6,
+   "text": "GET YOU ROLLED",
+   "hi": 2,
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 45.6,
+   "dur": 6.8,
+   "tc": 1.4,
+   "tb": 3.4,
+   "back": true,
+   "text": "MID-BOUND?!",
+   "sub": "THEN BACK TO A REGULAR RUN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 55.4,
+   "dur": 1.4,
+   "text": "MUSCLE MEMORY",
+   "hi": 1,
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 60.7,
+   "dur": 3.5,
+   "items": [
+    "200M",
+    "400M"
+   ],
+   "hi": [
+    0,
+    1
+   ],
+   "label": "START BOUNDING MID-RACE?"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 64.9,
+   "dur": 3.6,
+   "question": "GENIUS OR CRIMINAL?",
+   "options": [
+    "GENIUS",
+    "LOCK HIM UP"
+   ]
+  }
+ ]
+}
