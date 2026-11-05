@@ -303,9 +303,13 @@ def sfx_cues(plan):
         if c[0] in BANNED_SFX: print(f"NOTE: extra_sfx '{c[0]}' is banned (owner: too loud/drawn out), skipped"); continue
         add(1, [(c[0], c[1], c[2], 0)])
     # spacing: keep highest-priority moments first, then anything that is >= gap from every kept moment
+    # distance between two moments = closest pair of their audible (non-tick) cues, not their start times,
+    # so a graphic whose pop lands late can't crowd the next whoosh
+    def times(m): return [c[1] for c in m[2] if not c[3]] or [m[0]]
+    def dist(a, b): return min(abs(x - y) for x in times(a) for y in times(b))
     kept = []
     for m in sorted(moments, key=lambda m: (-m[1], m[0])):
-        if all(abs(m[0] - k[0]) >= gap for k in kept): kept.append(m)
+        if all(dist(m, k) >= gap for k in kept): kept.append(m)
     kept.sort(key=lambda m: m[0])
     # resolve sound names chronologically; never the same file twice in a row
     rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}

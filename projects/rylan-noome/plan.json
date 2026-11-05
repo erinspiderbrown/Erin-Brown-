@@ -1,0 +1,410 @@
+{
+ "workdir": "work/build",
+ "output": "work/rylan_noome.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 69.0,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "_res_note": "skip_res_check only for the owner's own media: photo_a.jpg (984x1211) and the 720p race/kitchen clips, which appear framed at native size in race_card/fitness_card. All found B-roll is 1080p+; full-screen shots are high-res photos.",
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo_b.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 3.0,
+   "broll": {
+    "src": "broll/olympic_400_action.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.2,
+   "broll": {
+    "src": "raw/photo_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 8.3,
+   "broll": {
+    "src": "broll/auckland_tower.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.6,
+   "broll": {
+    "src": "broll/race_card.mp4",
+    "ss": 0.0
+   }
+  },
+  {
+   "type": "full",
+   "start": 15.6,
+   "broll": {
+    "src": "broll/stopwatch.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 18.3,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.4,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.8,
+   "broll": {
+    "src": "broll/race_card.mp4",
+    "ss": 5.0
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.5,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 7.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 36.1,
+   "broll": {
+    "src": "broll/butterfly_above.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 40.4,
+   "broll": {
+    "src": "broll/phelps_dressel.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 44.2,
+   "broll": {
+    "src": "broll/butterfly_under.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.6,
+   "broll": {
+    "src": "broll/olympic_400_board.jpg",
+    "ss": 0,
+    "focus": [
+     0.65,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.1,
+   "broll": {
+    "src": "broll/fitness_card.mp4",
+    "ss": 5.0
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.7,
+   "broll": {
+    "src": "broll/slo_400m.mp4",
+    "ss": 62.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 59.9,
+   "broll": {
+    "src": "broll/olympic_400_board.jpg",
+    "ss": 0,
+    "focus": [
+     0.25,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.7,
+   "broll": {
+    "src": "raw/photo_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   22.2,
+   24.0,
+   1.1
+  ],
+  [
+   26.3,
+   28.1,
+   1.12
+  ],
+  [
+   31.8,
+   33.4,
+   1.08
+  ],
+  [
+   44.2,
+   45.4,
+   1.12
+  ],
+  [
+   57.0,
+   58.6,
+   1.08
+  ],
+  [
+   66.6,
+   68.6,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.8,
+   "dur": 3.0,
+   "rank": "20",
+   "name": "RYLAN NOOME",
+   "sub": "NEW ZEALAND  \u00b7  100M PB 10.48"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 3.3,
+   "dur": 1.9,
+   "text": "WORST TOP END?",
+   "size": 130,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 8.6,
+   "dur": 2.0,
+   "text": "NEW ZEALAND",
+   "sub": "ONE OF THEIR TOP SPRINTERS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 13.5,
+   "dur": 1.8,
+   "text": "THE 300M",
+   "size": 140,
+   "y": 1500
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 15.9,
+   "dur": 3.2,
+   "value": "35.3",
+   "unit": "SECONDS",
+   "label": "300M  \u00b7  ALL OUT",
+   "anim": 1.5,
+   "y": 1110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 21.0,
+   "dur": 2.0,
+   "text": "SUPER SPIKES",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 23.5,
+   "dur": 1.4,
+   "text": "RIDICULOUS",
+   "size": 130,
+   "y": 1180
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 29.4,
+   "dur": 6.6,
+   "label": "300M times \u00b7 his take",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 2.6,
+   "items": [
+    {
+     "name": "OK, I get it",
+     "value": "33.3"
+    },
+    {
+     "name": "Slower end",
+     "value": "34.3"
+    },
+    {
+     "name": "What he ran",
+     "value": "35.3"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.3,
+   "dur": 1.9,
+   "text": "THAT LAST 100",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 40.7,
+   "dur": 1.6,
+   "x": 425,
+   "y": 390,
+   "r": 130,
+   "lx": 90,
+   "ly": 1150,
+   "text": "MICHAEL PHELPS"
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 42.3,
+   "dur": 1.9,
+   "x": 820,
+   "y": 370,
+   "r": 130,
+   "lx": 420,
+   "ly": 1150,
+   "text": "CAELEB DRESSEL"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 46.8,
+   "dur": 2.4,
+   "items": [
+    "SAT",
+    "SUN"
+   ],
+   "hi": [
+    0,
+    1
+   ],
+   "label": "400M  \u00b7  THIS WEEKEND"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 49.4,
+   "dur": 2.2,
+   "text": "1 MONTH TO IMPROVE",
+   "size": 120,
+   "y": 1590
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 56.5,
+   "dur": 3.2,
+   "value": "51",
+   "unit": "SEC",
+   "label": "My 400M projection",
+   "sub": "if he finished \u00b7 made a month ago"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 63.6,
+   "dur": 5.4,
+   "question": "HIS 400M THIS WEEKEND?",
+   "options": [
+    "UNDER 51",
+    "OVER 51"
+   ],
+   "cta": "COMMENT YOUR PREDICTION"
+  }
+ ]
+}

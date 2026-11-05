@@ -25,7 +25,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Sound effects stay restrained.** The owner found every-cut whooshes repetitive. `build.py` enforces all of this:
   - Simple whooshes, swooshes and pops are fine.
   - **No risers or long cinematic hits, in any video.** The owner found them too loud and too drawn out. They're banned in `build.py` (`BANNED_SFX`), and `extra_sfx` can't add them back.
-  - **Space the sounds out:** at least `sfx_min_gap` (3 s, in `style.json`) between sound moments, never one every 1–2 seconds. Hits and full-screen cuts take priority, and cues that crowd them are dropped. Each graphic gets one pop or thud, not one per word or state.
+  - **Space the sounds out:** at least `sfx_min_gap` (3 s, in `style.json`) between sounds, never one every 1–2 seconds. The gap is measured between the closest actual sounds of two moments, so a late graphic pop counts. Hits and full-screen cuts take priority, and cues that crowd them are dropped. Each graphic gets one pop or thud, not one per word or state.
   - **Never the same sound twice in a row.** Consecutive transition sounds always use different files.
   - B-roll swaps inside the split are silent.
   - A soft airy whoosh plays only on cuts to full-screen.
