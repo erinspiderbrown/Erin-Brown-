@@ -1,0 +1,590 @@
+{
+ "workdir": "w2/build",
+ "output": "out/yohan_blake.mp4",
+ "words": "w2/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 107.8,
+ "face": {
+  "src": "w2/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw2/ph/blake_lau_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.6,
+   "broll": {
+    "src": "raw2/ph/blake_oly12.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.4,
+   "broll": {
+    "src": "raw2/ph/bolt_bru.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 14.6,
+   "broll": {
+    "src": "raw2/ph/blake_bru.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.9,
+   "broll": {
+    "src": "raw2/ph/lau12_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 27.35,
+   "broll": {
+    "src": "raw2/ph/blake_lon200q.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 33.6,
+   "broll": {
+    "src": "raw2/ph/gatlin_rio_b.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.1,
+   "broll": {
+    "src": "raw2/ph/rio_vbg.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.9,
+   "broll": {
+    "src": "raw2/ph/mos_gatlin31.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.4,
+   "broll": {
+    "src": "raw2/ph/bolt_aug13.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.0,
+   "broll": {
+    "src": "raw2/ph/gatlin_rio.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 58.85,
+   "broll": {
+    "src": "raw2/ph/blake_bru12.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 67.3,
+   "broll": {
+    "src": "raw2/ph/bolt_2013.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 72.1,
+   "broll": {
+    "src": "raw2/ph/lon17_bolt.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 77.4,
+   "broll": {
+    "src": "raw2/ph/lon17_bolt_gatlin.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 82.45,
+   "broll": {
+    "src": "raw2/ph/blake_lau_b.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 84.1,
+   "broll": {
+    "src": "raw2/ph/rio_final_bolt.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 91.7,
+   "broll": {
+    "src": "raw2/ph/blake_rio200a.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 98.9,
+   "broll": {
+    "src": "raw2/ph/blake_beast.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.9,
+   "broll": {
+    "src": "raw2/ph/blake_lon200q.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   8.2,
+   9.8,
+   1.12
+  ],
+  [
+   10.9,
+   12.2,
+   1.07
+  ],
+  [
+   29.8,
+   31.2,
+   1.1
+  ],
+  [
+   64.2,
+   66.6,
+   1.12
+  ],
+  [
+   81.0,
+   82.4,
+   1.12
+  ],
+  [
+   88.2,
+   89.6,
+   1.1
+  ],
+  [
+   99.3,
+   100.9,
+   1.15
+  ],
+  [
+   106.0,
+   107.8,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.8,
+   "rank": "JAM",
+   "name": "YOHAN BLAKE",
+   "sub": "\"THE BEAST\"  \u00b7  SPRINTER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.75,
+   "dur": 2.3,
+   "text": "ALWAYS 2ND TO BOLT?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 8.15,
+   "dur": 1.5,
+   "text": "BIGGEST LIE",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 10.6,
+   "dur": 3.4,
+   "items": [
+    "HE WAS JUST UNLUCKY",
+    "WRONG ERA FR",
+    "BOLT ROBBED HIM"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 16.9,
+   "dur": 4.8,
+   "title": "ALL-TIME LISTS",
+   "rows": [
+    {
+     "event": "200M \u00b7 BRUSSELS 2011",
+     "value": "19.26",
+     "tag": "#2 EVER"
+    },
+    {
+     "event": "100M \u00b7 LAUSANNE 2012",
+     "value": "9.69",
+     "tag": "#2 EVER (=)"
+    }
+   ],
+   "times": [
+    2.95,
+    4.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 22.4,
+   "dur": 2.6,
+   "text": "DIAMOND LEAGUE",
+   "sub": "REGULAR CIRCUIT MEETS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 25.7,
+   "dur": 1.6,
+   "text": "NOT A CHAMPIONSHIP",
+   "size": 100,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 29.6,
+   "dur": 3.6,
+   "value": "1",
+   "unit": "YEAR",
+   "label": "Runner-up to Bolt",
+   "sub": "2012 \u00b7 out of a 16-year career"
+  },
+  {
+   "type": "name",
+   "t": 37.5,
+   "dur": 2.8,
+   "rank": "USA",
+   "name": "JUSTIN GATLIN",
+   "sub": "THE REAL RUNNER-UP"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 41.55,
+   "dur": 1.9,
+   "text": "4 TIMES"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 45.85,
+   "dur": 12.3,
+   "title": "GATLIN \u00b7 2ND TO BOLT",
+   "rows": [
+    {
+     "event": "2013 WORLDS \u00b7 100M",
+     "value": "2ND",
+     "tag": "MOSCOW"
+    },
+    {
+     "event": "2015 WORLDS \u00b7 100M",
+     "value": "2ND",
+     "tag": "BEIJING"
+    },
+    {
+     "event": "2015 WORLDS \u00b7 200M",
+     "value": "2ND",
+     "tag": "BEIJING"
+    },
+    {
+     "event": "2016 OLYMPICS \u00b7 100M",
+     "value": "2ND",
+     "tag": "RIO"
+    }
+   ],
+   "times": [
+    1.9,
+    4.3,
+    7.6,
+    11.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 61.2,
+   "dur": 1.6,
+   "text": "WRONG ERA?",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 65.1,
+   "dur": 1.5,
+   "text": "LIE",
+   "size": 200,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 68.7,
+   "dur": 2.8,
+   "text": "IF BOLT WASN'T THERE"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 77.9,
+   "dur": 3.3,
+   "label": "London 2017 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.12,
+   "items": [
+    {
+     "name": "Gatlin",
+     "value": "9.92"
+    },
+    {
+     "name": "Coleman",
+     "value": "9.94"
+    },
+    {
+     "name": "Bolt",
+     "value": "9.95"
+    },
+    {
+     "name": "Blake \u00b7 4th",
+     "value": "9.99"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 82.55,
+   "dur": 1.5,
+   "text": "4TH PLACE",
+   "anchor": "lower"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 84.5,
+   "dur": 3.6,
+   "label": "Rio 2016 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.16,
+   "items": [
+    {
+     "name": "Bolt",
+     "value": "9.81"
+    },
+    {
+     "name": "Gatlin",
+     "value": "9.89"
+    },
+    {
+     "name": "De Grasse",
+     "value": "9.91"
+    },
+    {
+     "name": "Blake \u00b7 4th",
+     "value": "9.93"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 90.25,
+   "dur": 1.4,
+   "text": "4TH AGAIN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 94.7,
+   "dur": 1.9,
+   "text": "NO BOLT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 96.7,
+   "dur": 1.6,
+   "text": "WHERE WAS HE?",
+   "size": 120,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 101.2,
+   "dur": 4.1,
+   "label": "Doha 2019 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.26,
+   "items": [
+    {
+     "name": "Coleman",
+     "value": "9.76"
+    },
+    {
+     "name": "Gatlin",
+     "value": "9.89"
+    },
+    {
+     "name": "De Grasse",
+     "value": "9.90"
+    },
+    {
+     "name": "Simbine",
+     "value": "9.93"
+    },
+    {
+     "name": "Blake \u00b7 5th",
+     "value": "9.97"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 105.35,
+   "dur": 2.45,
+   "question": "BORN IN THE WRONG ERA?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
