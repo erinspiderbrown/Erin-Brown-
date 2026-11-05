@@ -1,108 +1,1566 @@
 {
- "src": "raw3/src.mp4",
- "words": "w3/words_fixed.json",
- "keep": [
-  [
-   1.6,
-   33.6
-  ],
-  [
-   38.9,
-   69.0
-  ],
-  [
-   79.6,
-   100.2
-  ],
-  [
-   110.9,
-   140.9
-  ],
-  [
-   177.7,
-   206.4
-  ],
-  [
-   211.5,
-   283.0
-  ],
-  [
-   290.9,
-   436.8
-  ],
-  [
-   444.5,
-   463.0
-  ],
-  [
-   478.1,
-   481.3
-  ],
-  [
-   491.8,
-   512.9
+ "workdir": "w3/sbuild",
+ "output": "out/jon_drummond_split.mp4",
+ "words": "w3/words_cut.json",
+ "voice_ss": 0.0,
+ "duration": 400.5,
+ "face": {
+  "src": "w3/top.mov",
+  "focus": [
+   0.5,
+   0.5
   ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.1,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 2.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 11.3,
+   "broll": {
+    "src": "raw3/ph/false_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 170.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 19.9,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 231.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 13.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.4,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 390.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.0,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 35.2,
+   "broll": {
+    "src": "raw3/ph/syringe.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 41.3,
+   "broll": {
+    "src": "raw3/ph/gavel.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 47.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 152.8,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.3,
+   "broll": {
+    "src": "raw3/ph/overbrook.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.9,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 66.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 70.3,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 100.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 76.0,
+   "broll": {
+    "src": "raw3/ph/indoor_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 82.4,
+   "broll": {
+    "src": "raw3/ph/syd_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 86.7,
+   "broll": {
+    "src": "raw3/ph/syd_usteam.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 94.9,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 100.8,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 99.6,
+   "broll": {
+    "src": "raw3/ph/syd_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.8,
+   "broll": {
+    "src": "raw3/ph/kissinger.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 108.4,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 108.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 112.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 101.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 118.3,
+   "broll": {
+    "src": "raw3/ph/false_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 124.5,
+   "broll": {
+    "src": "raw3/ph/indoor_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 128.7,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 154.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 136.1,
+   "broll": {
+    "src": "raw3/ph/gay_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 143.5,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 158.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 149.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 155.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 154.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 253.8,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 161.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 157.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 165.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 12.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 173.3,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 3.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 178.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 21.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 186.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 231.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 192.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 25.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 196.7,
+   "broll": {
+    "src": "raw3/ph/mjohnson.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 200.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 205.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 206.5,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 159.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 212.3,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 20.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 216.6,
+   "broll": {
+    "src": "raw3/ph/indoor_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 221.0,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 226.9,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 232.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 234.3,
+   "broll": {
+    "src": "raw3/ph/false_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 238.1,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 162.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 241.5,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 254.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 248.2,
+   "broll": {
+    "src": "raw3/ph/gay_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 253.3,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 258.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 258.6,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 14.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 265.0,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 2.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 271.1,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 283.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 278.0,
+   "broll": {
+    "src": "raw3/ph/gay_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 281.0,
+   "broll": {
+    "src": "raw3/ph/gay_start.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 288.7,
+   "broll": {
+    "src": "raw3/ph/usa_relay12a.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 293.7,
+   "broll": {
+    "src": "raw3/ph/usa_relay12b.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 297.7,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 298.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 301.7,
+   "broll": {
+    "src": "raw3/ph/syringe.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 304.5,
+   "broll": {
+    "src": "raw3/ph/syringe.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 308.5,
+   "broll": {
+    "src": "raw3/ph/gay_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 315.9,
+   "broll": {
+    "src": "raw3/ph/usa_relay12a.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 318.7,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 327.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 326.2,
+   "broll": {
+    "src": "raw3/ph/gavel.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 332.8,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 333.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 339.5,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 309.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 345.1,
+   "broll": {
+    "src": "raw3/ph/gay_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 349.7,
+   "broll": {
+    "src": "raw3/ph/gavel.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 354.2,
+   "broll": {
+    "src": "raw3/ph/kissinger.jpg",
+    "ss": 0,
+    "focus": [
+     0.8,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 358.1,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 358.15,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 362.0,
+   "broll": {
+    "src": "raw3/ph/usa_relay12b.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 372.0,
+   "broll": {
+    "src": "raw3/ph/syringe.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 376.4,
+   "broll": {
+    "src": "raw3/ph/gavel.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 382.6,
+   "broll": {
+    "src": "raw3/ph/overbrook.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 386.2,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 392.6,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 397.3,
+   "broll": {
+    "src": "w3/cut16x9.mov",
+    "ss": 388.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
  ],
- "chapters": [
-  [
-   0,
-   "JON DRUMMOND",
-   "THE SHOWMAN WHO WOULDN'T LEAVE"
-  ],
-  [
-   63.7,
-   "WHO WAS HE?",
-   "US 4X100 RELAY CAPTAIN"
-  ],
-  [
-   110.9,
-   "SYDNEY 2000",
-   "THE CELEBRATION"
-  ],
-  [
-   187.3,
-   "THE NEW RULE",
-   "FALSE STARTS"
-  ],
-  [
-   214.1,
-   "PARIS 2003",
-   "HE WOULDN'T LEAVE"
-  ],
-  [
-   305.5,
-   "MY TAKE",
-   "BAD LOOK \u00b7 FAIR POINT"
-  ],
-  [
-   349.7,
-   "THE COMEBACK",
-   "COACH DRUMMOND"
-  ],
-  [
-   380.3,
-   "2013",
-   "THE TYSON GAY CASE"
-  ],
-  [
-   414.0,
-   "THE RULING",
-   "8-YEAR BAN"
-  ],
-  [
-   444.5,
-   "SAME YEAR",
-   "HALL OF FAME + BANNED"
-  ],
-  [
-   478.1,
-   "WHERE HE IS NOW",
-   ""
-  ]
- ],
- "title": "JON DRUMMOND",
- "subtitle": "THE SHOWMAN WHO WOULDN'T LEAVE",
- "output": "out/jon_drummond_vertical.mp4",
- "workdir": "w3/build",
- "frame_y": 600
+ "zooms": [],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 5.6,
+   "dur": 3.4,
+   "rank": "USA",
+   "name": "JON DRUMMOND",
+   "sub": "OLYMPIC GOLD \u00b7 RELAY CAPTAIN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 12.3,
+   "dur": 2.0,
+   "text": "NOT LEAVING"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 20.2,
+   "dur": 2.4,
+   "text": "EVERYBODY LOOKING"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 23.1,
+   "dur": 1.8,
+   "text": "MEET STOPPED",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 28.6,
+   "dur": 2.6,
+   "text": "NEAR AN HOUR"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 32.0,
+   "dur": 1.1,
+   "text": "MELTDOWN"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 33.4,
+   "dur": 1.6,
+   "text": "CAREER OVER?",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.4,
+   "dur": 2.4,
+   "text": "11 YEARS LATER"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 43.8,
+   "dur": 1.6,
+   "text": "DOPING CASE",
+   "size": 130
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 45.5,
+   "dur": 2.2,
+   "value": "8",
+   "unit": "YEARS",
+   "label": "Banned",
+   "sub": "Jon Drummond \u00b7 2014"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 48.0,
+   "dur": 6.0,
+   "items": [
+    "SHOWMAN",
+    "WOULDN'T LEAVE",
+    "BANNED"
+   ],
+   "times": [
+    0.3,
+    1.8,
+    4.8
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 57.0,
+   "dur": 2.6,
+   "text": "WHO WAS HE?"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 64.6,
+   "dur": 11.2,
+   "title": "DRUMMOND \u00b7 US 4X100",
+   "rows": [
+    {
+     "event": "1993 WORLDS",
+     "value": "GOLD",
+     "tag": "WR ="
+    },
+    {
+     "event": "1996 OLYMPICS",
+     "value": "SILVER"
+    },
+    {
+     "event": "1999 WORLDS",
+     "value": "GOLD"
+    }
+   ],
+   "times": [
+    0.6,
+    6.9,
+    9.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 77.3,
+   "dur": 1.8,
+   "text": "SHOWMAN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 79.8,
+   "dur": 2.4,
+   "text": "THE TALKER"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 82.6,
+   "dur": 3.8,
+   "text": "SYDNEY 2000",
+   "sub": "OLYMPIC FINAL \u00b7 4X100"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 87.0,
+   "dur": 7.6,
+   "title": "THE SQUAD",
+   "rows": [
+    {
+     "event": "JON DRUMMOND",
+     "value": "CAPT."
+    },
+    {
+     "event": "MAURICE GREENE",
+     "value": "USA"
+    },
+    {
+     "event": "BERNARD WILLIAMS",
+     "value": "USA"
+    },
+    {
+     "event": "BRIAN LEWIS",
+     "value": "USA"
+    }
+   ],
+   "times": [
+    0.2,
+    2.7,
+    3.6,
+    4.7
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 93.1,
+   "dur": 1.7,
+   "text": "GOLD"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 97.0,
+   "dur": 2.6,
+   "text": "THE PARTY STARTS"
+  },
+  {
+   "type": "name",
+   "t": 103.3,
+   "dur": 3.2,
+   "rank": "US",
+   "name": "HENRY KISSINGER",
+   "sub": "HANDED OUT THE MEDALS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 106.6,
+   "dur": 1.7,
+   "text": "TONGUE OUT",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 108.7,
+   "dur": 2.6,
+   "text": "NOT HAPPY"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 114.6,
+   "dur": 3.6,
+   "items": [
+    "SHOWMAN",
+    "REBEL",
+    "NO SCRIPT"
+   ],
+   "times": [
+    0.1,
+    0.7,
+    1.4
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 118.8,
+   "dur": 1.8,
+   "text": "NEW RULES",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 123.4,
+   "dur": 3.4,
+   "text": "1 FREE FALSE START"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 129.4,
+   "dur": 3.4,
+   "text": "2001 \u00b7 NEW RULE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 136.3,
+   "dur": 3.8,
+   "text": "FIELD GETS ONE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 141.0,
+   "dur": 2.0,
+   "text": "2003"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 145.2,
+   "dur": 3.6,
+   "text": "PARIS",
+   "sub": "2003 WORLDS \u00b7 100M QUARTERS"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 149.2,
+   "dur": 2.6,
+   "value": "34",
+   "unit": "YRS",
+   "label": "Jon Drummond",
+   "sub": "one year of prep for this"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 158.1,
+   "dur": 1.9,
+   "text": "FALSE START",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 161.9,
+   "dur": 2.8,
+   "text": "JUST A FLINCH?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 170.3,
+   "dur": 1.8,
+   "text": "HE WON'T LEAVE",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 173.5,
+   "dur": 2.6,
+   "text": "LAY DOWN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 183.4,
+   "dur": 2.6,
+   "text": "NEAR AN HOUR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 189.5,
+   "dur": 2.4,
+   "text": "THEY WENT IN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 192.6,
+   "dur": 3.4,
+   "text": "KICK HIM OUT"
+  },
+  {
+   "type": "name",
+   "t": 196.9,
+   "dur": 3.7,
+   "rank": "USA",
+   "name": "MICHAEL JOHNSON",
+   "sub": "\"EMBARRASSED TO BE AN AMERICAN\""
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 204.8,
+   "dur": 3.4,
+   "text": "A FLINCH COUNTS?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 209.0,
+   "dur": 2.8,
+   "text": "HIS LIVING"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 212.6,
+   "dur": 2.2,
+   "text": "OUT FOR THE SEASON",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 221.4,
+   "dur": 4.6,
+   "text": "SPIRIT BROKE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 228.2,
+   "dur": 2.0,
+   "text": "BAD LOOK"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 236.5,
+   "dur": 1.6,
+   "text": "NOT TRIPPIN'",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 238.4,
+   "dur": 3.0,
+   "text": "FLINCH VS FALSE START"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 245.0,
+   "dur": 6.6,
+   "title": "FALSE START RULE",
+   "rows": [
+    {
+     "event": "BEFORE 2003",
+     "value": "1 EACH"
+    },
+    {
+     "event": "2003",
+     "value": "1 PER RACE"
+    },
+    {
+     "event": "2010",
+     "value": "1 & OUT"
+    }
+   ],
+   "times": [
+    0.2,
+    0.5,
+    1.0
+   ]
+  },
+  {
+   "type": "name",
+   "t": 253.5,
+   "dur": 3.4,
+   "rank": "JAM",
+   "name": "USAIN BOLT",
+   "sub": "DQ \u00b7 2011 WORLD FINAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 256.6,
+   "dur": 2.0,
+   "text": "8 YEARS AFTER PARIS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 260.8,
+   "dur": 3.4,
+   "text": "LOST THE ARGUMENT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 267.9,
+   "dur": 1.9,
+   "text": "HALFTIME"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 275.0,
+   "dur": 2.6,
+   "text": "COACHING"
+  },
+  {
+   "type": "name",
+   "t": 278.1,
+   "dur": 2.8,
+   "rank": "USA",
+   "name": "TYSON GAY",
+   "sub": "ONE OF THE WORLD'S FASTEST"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 284.8,
+   "dur": 3.8,
+   "text": "LONDON 2012",
+   "sub": "TEAM USA RELAY COACH"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 289.0,
+   "dur": 2.0,
+   "text": "DISGRACE?"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 294.0,
+   "dur": 3.4,
+   "value": "40.82",
+   "unit": "S",
+   "label": "Women's 4x100 \u00b7 London 2012",
+   "sub": "World record"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 297.9,
+   "dur": 3.4,
+   "text": "REDEMPTION ARC"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 302.0,
+   "dur": 2.2,
+   "text": "2013"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 305.0,
+   "dur": 3.3,
+   "value": "3",
+   "unit": "TESTS",
+   "label": "Tyson Gay \u00b7 2013",
+   "sub": "Failed drug tests"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 312.2,
+   "dur": 3.4,
+   "text": "RESULTS WIPED"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 316.2,
+   "dur": 2.2,
+   "text": "SILVER RETURNED",
+   "size": 110
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 318.9,
+   "dur": 3.0,
+   "value": "1",
+   "unit": "YEAR",
+   "label": "Gay's ban, cut down",
+   "sub": "Substantial assistance"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 324.4,
+   "dur": 1.7,
+   "text": "HE TALKED"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 326.6,
+   "dur": 2.6,
+   "text": "LED TO HIS COACH"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 329.5,
+   "dur": 3.2,
+   "text": "DRUMMOND SUED"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 339.9,
+   "dur": 2.2,
+   "text": "VIOLATIONS FOUND",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 345.3,
+   "dur": 3.2,
+   "text": "HELPED TYSON"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 349.8,
+   "dur": 3.4,
+   "value": "8",
+   "unit": "YEARS",
+   "label": "Drummond banned",
+   "sub": "No coaching \u00b7 training \u00b7 advising"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 354.4,
+   "dur": 3.4,
+   "text": "NO USATF \u00b7 NO IAAF"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 358.4,
+   "dur": 2.2,
+   "text": "LIKE A MOVIE",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 365.0,
+   "dur": 4.0,
+   "text": "HALL OF FAME"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 372.2,
+   "dur": 1.9,
+   "text": "8-YEAR BAN"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 374.3,
+   "dur": 1.6,
+   "text": "SAME YEAR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 379.7,
+   "dur": 2.8,
+   "text": "BAN ENDS \u00b7 2022"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 382.8,
+   "dur": 3.4,
+   "text": "PHILADELPHIA",
+   "sub": "A PASTOR TODAY"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 393.4,
+   "dur": 2.6,
+   "text": "HOW HE ATE"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 397.4,
+   "dur": 3.1,
+   "question": "SHOWMAN OR VILLAIN?",
+   "options": [
+    "SHOWMAN",
+    "VILLAIN"
+   ]
+  }
+ ]
 }
