@@ -243,14 +243,20 @@
    }
   },
   {
-   "type": "split",
-   "start": 102.9,
+   "type": "full",
+   "start": 100.95,
    "broll": {
-    "src": "raw2/ph/blake_lon200q.jpg",
+    "src": "raw2/ph/blake_lau_a.jpg",
     "ss": 0,
+    "fullcrop": [
+     1500,
+     2667,
+     300,
+     0
+    ],
     "focus": [
-     0.6,
-     0.5
+     0.5,
+     0.2
     ]
    }
   }
@@ -405,19 +411,19 @@
    "title": "GATLIN \u00b7 2ND TO BOLT",
    "rows": [
     {
-     "event": "WORLDS 2013 \u00b7 100M \u00b7 MOSCOW",
+     "event": "WORLDS 2013 \u00b7 100M",
      "value": "2ND"
     },
     {
-     "event": "WORLDS 2015 \u00b7 100M \u00b7 BEIJING",
+     "event": "WORLDS 2015 \u00b7 100M",
      "value": "2ND"
     },
     {
-     "event": "WORLDS 2015 \u00b7 200M \u00b7 BEIJING",
+     "event": "WORLDS 2015 \u00b7 200M",
      "value": "2ND"
     },
     {
-     "event": "OLYMPICS 2016 \u00b7 100M \u00b7 RIO",
+     "event": "OLYMPICS 2016 \u00b7 100M",
      "value": "2ND"
     }
    ],
@@ -540,43 +546,47 @@
    "anchor": "upper"
   },
   {
-   "type": "data",
-   "kind": "bars",
+   "type": "motion",
+   "kind": "board",
    "t": 101.2,
-   "dur": 4.1,
-   "label": "Doha 2019 \u00b7 100m Final",
-   "unit": "S",
-   "lower_is_better": true,
-   "spread": 0.26,
-   "items": [
+   "dur": 4.6,
+   "title": "DOHA 2019 \u00b7 100M FINAL",
+   "rows": [
     {
-     "name": "Coleman",
+     "event": "1 \u00b7 COLEMAN",
      "value": "9.76"
     },
     {
-     "name": "Gatlin",
+     "event": "2 \u00b7 GATLIN",
      "value": "9.89"
     },
     {
-     "name": "De Grasse",
+     "event": "3 \u00b7 DE GRASSE",
      "value": "9.90"
     },
     {
-     "name": "Simbine",
+     "event": "4 \u00b7 SIMBINE",
      "value": "9.93"
     },
     {
-     "name": "Blake \u00b7 5th",
-     "value": "9.97"
+     "event": "5 \u00b7 YOHAN BLAKE",
+     "value": "9.97",
+     "tag": "5TH"
     }
    ],
-   "y": 975
+   "times": [
+    0.3,
+    0.65,
+    1.0,
+    1.35,
+    3.95
+   ]
   },
   {
    "type": "motion",
    "kind": "poll",
-   "t": 105.35,
-   "dur": 2.45,
+   "t": 105.85,
+   "dur": 1.95,
    "question": "BORN IN THE WRONG ERA?",
    "options": [
     "YES",
