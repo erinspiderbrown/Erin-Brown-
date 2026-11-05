@@ -1,0 +1,375 @@
+{
+ "workdir": "work/build",
+ "output": "out/ellis_v4.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 63.55,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/screen1.mov",
+    "ss": 46,
+    "crop": [
+     1100,
+     654,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.2,
+   "broll": {
+    "src": "raw/screen1.mov",
+    "ss": 53,
+    "crop": [
+     1100,
+     654,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.3,
+   "broll": {
+    "src": "raw/screen1.mov",
+    "ss": 60.5,
+    "crop": [
+     1100,
+     654,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 10.0,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 13.6,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 17.4,
+   "broll": {
+    "src": "raw/screen1.mov",
+    "ss": 64.5,
+    "crop": [
+     1100,
+     654,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 19.4,
+   "broll": {
+    "src": "raw/screen2.mov",
+    "ss": 15.9,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 23.0,
+   "broll": {
+    "src": "raw/screen2.mov",
+    "ss": 23.5,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 26.2,
+   "broll": {
+    "src": "raw/screen2.mov",
+    "ss": 28,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 29.7,
+   "broll": {
+    "src": "work/img/espn_head.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 33.0,
+   "broll": {
+    "src": "work/img/espn_body.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 38.4,
+   "broll": {
+    "src": "work/img/espn_ready.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 44.5,
+   "broll": {
+    "src": "raw/screen2.mov",
+    "ss": 0,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 47.4,
+   "broll": {
+    "src": "work/img/tweet.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 50.9,
+   "broll": {
+    "src": "raw/screen2.mov",
+    "ss": 4,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.5,
+   "broll": {
+    "src": "work/img/espn_quote2.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 56.7,
+   "broll": {
+    "src": "raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   4.0,
+   6.5,
+   1.06
+  ],
+  [
+   20.0,
+   23.0,
+   1.08
+  ],
+  [
+   38.6,
+   40.3,
+   1.14
+  ],
+  [
+   50.9,
+   53.3,
+   1.08
+  ],
+  [
+   54.5,
+   56.7,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.9,
+   "dur": 2.6,
+   "rank": "USC",
+   "name": "KENDALL ELLIS",
+   "sub": "2018 NCAA 4X400  \u00b7  ANCHOR LEG"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 8.3,
+   "dur": 2.4,
+   "value": "50.05",
+   "unit": "SEC",
+   "label": "Anchor Split \u00b7 2018 NCAA",
+   "sub": "USC won by 0.07s"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 12.2,
+   "dur": 1.6,
+   "text": "PARIS",
+   "sub": "2024 OLYMPICS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 15.1,
+   "dur": 1.9,
+   "text": "TOO SLOW?",
+   "size": 150
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 21.9,
+   "dur": 2.6,
+   "value": "49.46",
+   "unit": "SEC",
+   "label": "2024 U.S. Trials \u00b7 400M",
+   "sub": "1st place"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 28.6,
+   "dur": 1.5,
+   "text": "FINALLY",
+   "hi": 0,
+   "size": 160
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.4,
+   "dur": 1.6,
+   "text": "VERY POLITICAL",
+   "hi": 1,
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 37.5,
+   "dur": 1.4,
+   "text": "FAVORITES",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 45.0,
+   "dur": 2.4,
+   "value": "4",
+   "unit": "MINUTES",
+   "label": "BEFORE CALL TIME",
+   "anim": 1.1
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 53.6,
+   "dur": 1.4,
+   "text": "BIGGER NAME",
+   "hi": 1,
+   "size": 140
+  },
+  {
+   "type": "name",
+   "t": 57.4,
+   "dur": 2.6,
+   "rank": "USA",
+   "name": "KENDALL ELLIS",
+   "sub": "2024 U.S. 400M CHAMPION"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 60.3,
+   "dur": 2.4,
+   "text": "BURN IT DOWN",
+   "size": 130
+  }
+ ]
+}
