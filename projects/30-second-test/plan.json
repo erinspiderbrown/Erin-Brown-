@@ -1,0 +1,478 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/30s_test_v1.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 68.76,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "accent": "#FF2BD6",
+ "caption_colors": [
+  "#FF2BD6",
+  "#E6FF00"
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/curve_slo.mp4",
+    "ss": 12.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.85,
+   "broll": {
+    "src": "raw/test300.mov",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.35,
+   "broll": {
+    "src": "broll/gcu.mp4",
+    "ss": 10,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.3,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 6,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.4,
+   "broll": {
+    "src": "raw/test300.mov",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 17.3,
+   "broll": {
+    "src": "broll/curve_slo.mp4",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.6,
+   "broll": {
+    "src": "raw/test300.mov",
+    "ss": 24.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   },
+   "transition": "whip:down"
+  },
+  {
+   "type": "split",
+   "start": 24.9,
+   "broll": {
+    "src": "broll/curve_rt.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.5,
+   "broll": {
+    "src": "raw/test300.mov",
+    "ss": 26.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 35.3,
+   "broll": {
+    "src": "raw/test300.mov",
+    "ss": 26.6,
+    "focus": [
+     0.62,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 39.4,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 43.7,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 9,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.5,
+   "broll": {
+    "src": "broll/gcu_slo.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 55.6,
+   "broll": {
+    "src": "broll/curve_slo.mp4",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.9,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.5,
+   "broll": {
+    "src": "broll/curve_rt.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   13.9,
+   17.2,
+   1.08
+  ],
+  [
+   49.6,
+   52.2,
+   1.1
+  ],
+  [
+   66.7,
+   68.76,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 0.15,
+   "dur": 2.6,
+   "text": "FIRST TIME|IN SPIKES",
+   "sub": "30-SECOND TEST",
+   "icon": "bolt",
+   "color": "#E6FF00",
+   "color2": "#FF2BD6",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 3.5,
+   "dur": 2.0,
+   "value": "30.0",
+   "unit": "SECONDS",
+   "label": "HOW FAR CAN YOU GO?",
+   "anim": 1.1,
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 5.7,
+   "dur": 3.3,
+   "items": [
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV"
+   ],
+   "hi": [
+    3
+   ],
+   "label": "LATEST I'VE EVER PUT ON SPIKES"
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 10.4,
+   "dur": 2.8,
+   "text": "HEALTHIEST|EVER",
+   "icon": "plus",
+   "color": "#39FF14",
+   "color2": "#00F0FF",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 15.3,
+   "dur": 2.0,
+   "text": "GOOD? BAD?",
+   "icon": "question",
+   "color": "#00F0FF",
+   "color2": "#FF2BD6",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "battery",
+   "t": 18.3,
+   "dur": 2.6,
+   "anim": 1.3,
+   "anchor": "center",
+   "rows": [
+    {
+     "label": "LAST YEAR",
+     "to": 0.03,
+     "color": "#FF2BD6",
+     "end": "DIED",
+     "endColor": "#FF3B3B"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 20.7,
+   "dur": 1.6,
+   "value": "281",
+   "unit": "M",
+   "label": "LAST YEAR \u00b7 30 SEC"
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 22.4,
+   "dur": 2.5,
+   "value": "400",
+   "anim": 1.3,
+   "text": "RUN IT LIKE A 400",
+   "sub": "NOT ALL-OUT"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 25.9,
+   "dur": 5.6,
+   "title": "FIRST 200M",
+   "times": [
+    0.75,
+    3.95
+   ],
+   "rows": [
+    {
+     "event": "THIS YEAR'S PLAN",
+     "value": "21.4\u201321.5"
+    },
+    {
+     "event": "LAST YEAR",
+     "value": "20.8\u201320.9"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 33.3,
+   "dur": 1.9,
+   "text": "CLOSE ON THE|BACK END",
+   "icon": "arrow",
+   "color": "#E6FF00",
+   "color2": "#FF2BD6",
+   "size": 110
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 37.7,
+   "dur": 1.7,
+   "value": "283",
+   "unit": "M",
+   "label": "THIS YEAR \u00b7 30 SEC"
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 40.8,
+   "dur": 2.9,
+   "label": "30-SECOND TEST",
+   "unit": "M",
+   "base": 270,
+   "badge": "+2 M",
+   "items": [
+    {
+     "name": "LAST YEAR",
+     "value": "281"
+    },
+    {
+     "name": "THIS YEAR",
+     "value": "283"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "battery",
+   "t": 44.0,
+   "dur": 5.2,
+   "anim": 1.2,
+   "stagger": 0.4,
+   "rows": [
+    {
+     "label": "LAST YEAR",
+     "to": 0.03,
+     "color": "#FF2BD6",
+     "end": "DIED",
+     "endColor": "#FF3B3B"
+    },
+    {
+     "label": "THIS YEAR",
+     "to": 0.62,
+     "color": "#39FF14",
+     "end": "GAS LEFT",
+     "endSize": 80
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 53.2,
+   "dur": 2.4,
+   "value": "45",
+   "unit": "SECONDS",
+   "label": "400M \u00b7 WHERE I COME FROM",
+   "anim": 1.0,
+   "size": 160
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 55.9,
+   "dur": 2.0,
+   "text": "DIFFERENT|STRATEGIES",
+   "icon": "bolt",
+   "color": "#00F0FF",
+   "color2": "#E6FF00",
+   "anchor": "upper",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 58.6,
+   "dur": 8.0,
+   "title": "THE EXPERIMENTS",
+   "times": [
+    0.9,
+    4.0,
+    7.4
+   ],
+   "rows": [
+    {
+     "event": "30-SECOND TEST",
+     "value": "DONE",
+     "tag": "283 M"
+    },
+    {
+     "event": "200 METERS",
+     "value": "NEXT"
+    },
+    {
+     "event": "100 METERS",
+     "value": "NEXT"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 66.7,
+   "dur": 2.06,
+   "text": "TILL I GET|IT RIGHT",
+   "icon": "flame",
+   "color": "#E6FF00",
+   "color2": "#FF2BD6",
+   "size": 120
+  }
+ ]
+}

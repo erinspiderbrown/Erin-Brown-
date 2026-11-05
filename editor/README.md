@@ -27,7 +27,7 @@ Rules: the final video must be **at least 61 seconds**, and all B-roll must be *
 | type | kinds / fields | use for |
 |---|---|---|
 | `data` | `counter`, `compare`, `bars`, `line`, `ring` | numbers and stats |
-| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll`, `padlock`, `subscription`, `tv`, `flow`, `bubbles`, `board`, `track` | things being talked about |
+| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll`, `padlock`, `subscription`, `tv`, `flow`, `bubbles`, `board`, `track`, `neon`, `battery` | things being talked about |
 | `name` | `rank`, `name`, `sub` | introducing a person |
 | `clip` | `src`, `t`, `dur`, `x`, `y`, `w`, `key: green\|black` | animation clips you supply (green-screen, black-background or alpha) |
 
