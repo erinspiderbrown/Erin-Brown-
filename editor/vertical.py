@@ -20,6 +20,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build   # caption styling shared with the split-screen editor
 
 W, H, FPS, XF = 1080, 1920, 30, 0.12
+FW = 1180                      # frame scaled to 1180 wide, then the outer 50 px each side (HUD corners) trimmed
+FH = round(FW * 9 / 16 / 2) * 2
 
 
 def run(cmd):
@@ -44,12 +46,12 @@ def remap(plan):
 def ass_file(plan, path, total, f):
     style = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'style.json')))
     fonts = style.get('caption_font', 'Montserrat Black')
-    fy = int(plan.get('frame_y', 600)); fh = 608
+    fy = int(plan.get('frame_y', 600)); fh = FH
     words = []
     for w in json.load(open(plan['words'])):
         s, e = f(w['s']), f(w['e'])
         if s is not None and e is not None and e > s: words.append({**w, 's': s, 'e': e})
-    cap_y = fy + fh + 150
+    cap_y = fy + fh + 140
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -61,7 +63,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{fonts},84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H50000000,0,0,0,0,100,100,1,0,1,6,3,5,40,40,0,1
 Style: Head,Anton,124,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,1,0,1,0,0,5,40,40,0,1
-Style: Sub,Montserrat ExtraBold,38,{build.hex2ass(style['caption_colors'][-1]).replace('&H', '&H00')},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,3,0,1,0,0,5,40,40,0,1
+Style: Sub,Montserrat ExtraBold,38,{build.hex2ass(style['caption_colors'][-1]).rstrip('&').replace('&H', '&H00')},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,3,0,1,0,0,5,40,40,0,1
 Style: Chap,Montserrat ExtraBold,30,&H00AFAFAF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,4,0,1,0,0,7,0,0,0,1
 
 [Events]
@@ -69,7 +71,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = build.caption_events(words, 0, total, style['caption_colors'], cap_y)
     # chapter header: title + sub, animated in at each chapter change
-    chs = [(f(t) if f(t) is not None else None, ti, sub) for t, ti, sub in plan.get('chapters', [])]
+    def snap(t):   # a chapter that starts inside a cut begins at the next kept moment
+        if f(t) is not None: return f(t)
+        nxt = [a for a, b in plan['keep'] if a >= t]
+        return f(nxt[0]) if nxt else None
+    chs = [(snap(t), ti, sub) for t, ti, sub in plan.get('chapters', [])]
     chs = [c for c in chs if c[0] is not None] or [(0.0, plan.get('title', ''), '')]
     if chs[0][0] > 0: chs.insert(0, (0.0, plan.get('title', ''), plan.get('subtitle', '')))
     for i, (t, ti, sub) in enumerate(chs):
@@ -101,11 +107,13 @@ def main(plan_path):
     fontsdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/fonts')
     bar_y, bar_x, bar_w = H - 280, 90, W - 180
     fc.append(f"color=c=0x0d0e13:s={W}x{H}:r={FPS}:d={total:.3f}[bg]")
-    fc.append(f"[{vlast}]scale={W}:-2:flags=lanczos,setsar=1[fr]")
+    fc.append(f"[{vlast}]scale={FW}:{FH}:flags=lanczos,crop={W}:{FH}:{(FW-W)//2}:0,setsar=1[fr]")
+    fc.append(f"color=c=0xE8231E:s={bar_w}x10:r={FPS}:d={total:.3f}[bar]")
     fc.append(f"[bg][fr]overlay=0:{fy}:shortest=1,"
-              f"drawbox=x=0:y={fy-2}:w={W}:h=2:color=white@0.22:t=fill,drawbox=x=0:y={fy+608}:w={W}:h=2:color=white@0.22:t=fill,"
-              f"drawbox=x={bar_x}:y={bar_y}:w={bar_w}:h=10:color=white@0.16:t=fill,"
-              f"drawbox=x={bar_x}:y={bar_y}:w='max(2,{bar_w}*t/{total:.3f})':h=10:color=0xE8231E:t=fill,"
+              f"drawbox=x=0:y={fy-2}:w={W}:h=2:color=white@0.22:t=fill,drawbox=x=0:y={fy+FH}:w={W}:h=2:color=white@0.22:t=fill,"
+              f"drawbox=x={bar_x}:y={bar_y}:w={bar_w}:h=10:color=white@0.16:t=fill[base];"
+              f"[base][bar]overlay=x='{bar_x}-{bar_w}+{bar_w}*t/{total:.3f}':y={bar_y}:shortest=1,"   # progress fills left to right
+              f"drawbox=x=0:y={bar_y}:w={bar_x}:h=10:color=0x0d0e13:t=fill,"                     # mask the part left of the bar
               f"ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
     # 2) audio: the owner's mix, never turned down (house rule). Boost to -14 only if quieter.
     pre = f'{wd}/audio_cut.wav'
