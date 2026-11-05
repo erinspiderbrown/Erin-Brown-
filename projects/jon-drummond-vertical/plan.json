@@ -197,11 +197,11 @@
    "type": "full",
    "start": 82.4,
    "broll": {
-    "src": "raw3/ph/syd_stadium.jpg",
+    "src": "raw3/ph/gold_medal.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.45
     ]
    },
    "hit": true
@@ -354,11 +354,11 @@
    "type": "split",
    "start": 154.8,
    "broll": {
-    "src": "w3/cut16x9.mov",
-    "ss": 253.8,
+    "src": "raw3/ph/blocks.jpg",
+    "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.6
     ]
    }
   },
@@ -546,11 +546,11 @@
    "type": "split",
    "start": 241.5,
    "broll": {
-    "src": "w3/cut16x9.mov",
-    "ss": 254.2,
+    "src": "raw3/ph/blocks.jpg",
+    "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.3,
+     0.6
     ]
    }
   },
@@ -570,11 +570,11 @@
    "type": "split",
    "start": 253.3,
    "broll": {
-    "src": "w3/cut16x9.mov",
-    "ss": 258.0,
+    "src": "raw3/ph/bolt_2011.jpg",
+    "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.4
     ]
    }
   },
@@ -642,11 +642,11 @@
    "type": "split",
    "start": 288.7,
    "broll": {
-    "src": "raw3/ph/usa_relay12a.jpg",
+    "src": "raw3/ph/lon12_stadium.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.4
+     0.5
     ]
    }
   },
@@ -690,10 +690,10 @@
    "type": "split",
    "start": 304.5,
    "broll": {
-    "src": "raw3/ph/syringe.jpg",
+    "src": "raw3/ph/antidoping.jpg",
     "ss": 0,
     "focus": [
-     0.3,
+     0.5,
      0.5
     ]
    }
@@ -823,11 +823,11 @@
    "type": "full",
    "start": 362.0,
    "broll": {
-    "src": "raw3/ph/usa_relay12b.jpg",
+    "src": "raw3/ph/gold_medal.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.4
+     0.3
     ]
    }
   },
@@ -859,11 +859,11 @@
    "type": "full",
    "start": 382.6,
    "broll": {
-    "src": "raw3/ph/overbrook.jpg",
+    "src": "raw3/ph/philly_church.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.4
     ]
    }
   },
