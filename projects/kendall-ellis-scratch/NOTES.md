@@ -5,7 +5,8 @@
 - `raw/screen1.mov`: 2018 NCAA women's 4x400, USC anchor leg. **1206×654 screen recording, below the 1080p rule.**
 - `raw/screen2.mov`: 2024 U.S. Trials women's 400 m final (49.46). **1206×658, below the 1080p rule.**
 - Both are the only race footage, so they're used in the split only (cropped `[1100,h,0,0]` to drop the broadcast clock box), never full-screen.
-- `raw/shot1-4.png`: the X post and ESPN article screenshots (1206×2622). They're cropped and padded onto matching black or white canvases (`work/img/`) so the push-in never cuts off text.
+- `raw/shot1.png`: the X post, padded onto black (`work/img/tweet.png`) and shown full-screen.
+- `raw/shot2-4.png`: ESPN article screenshots. **Not used:** the owner found the article distracting in the bottom half.
 - `raw/photo1-3.jpg`: Trials emotion collage, Trials running and Paris. All at least 1080 px on the short side.
 
 ## Steps

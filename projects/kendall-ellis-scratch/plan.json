@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "out/ellis_v4.mp4",
+ "output": "out/ellis_v5.mp4",
  "words": "work/words_tight.json",
  "voice_ss": 0.0,
  "duration": 63.55,
@@ -140,11 +140,11 @@
    "type": "split",
    "start": 29.7,
    "broll": {
-    "src": "work/img/espn_head.png",
+    "src": "raw/photo3.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.6,
+     0.25
     ]
    }
   },
@@ -152,8 +152,14 @@
    "type": "split",
    "start": 33.0,
    "broll": {
-    "src": "work/img/espn_body.png",
-    "ss": 0,
+    "src": "raw/screen2.mov",
+    "ss": 7,
+    "crop": [
+     1100,
+     658,
+     0,
+     0
+    ],
     "focus": [
      0.5,
      0.5
@@ -164,8 +170,14 @@
    "type": "split",
    "start": 38.4,
    "broll": {
-    "src": "work/img/espn_ready.png",
-    "ss": 0,
+    "src": "raw/screen1.mov",
+    "ss": 20,
+    "crop": [
+     1100,
+     654,
+     0,
+     0
+    ],
     "focus": [
      0.5,
      0.5
@@ -217,11 +229,11 @@
    "type": "split",
    "start": 54.5,
    "broll": {
-    "src": "work/img/espn_quote2.png",
+    "src": "raw/photo2.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.45,
+     0.3
     ]
    }
   },
