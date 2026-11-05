@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "work/out/30s_test_v1.mp4",
+ "output": "work/out/30s_test_v2.mp4",
  "words": "work/words_final.json",
  "voice_ss": 0.0,
  "duration": 68.76,
@@ -22,10 +22,10 @@
    "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "broll/curve_slo.mp4",
-    "ss": 12.5,
+    "src": "broll/t_slo.mp4",
+    "ss": 9.0,
     "focus": [
-     0.5,
+     0.43,
      0.5
     ]
    }
@@ -79,14 +79,20 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 17.3,
    "broll": {
-    "src": "broll/curve_slo.mp4",
-    "ss": 4.0,
+    "src": "broll/t_slo.mp4",
+    "ss": 0.0,
     "focus": [
      0.5,
      0.5
+    ],
+    "crop": [
+     960,
+     540,
+     83,
+     126
     ]
    }
   },
@@ -95,23 +101,22 @@
    "start": 21.6,
    "broll": {
     "src": "raw/test300.mov",
-    "ss": 24.0,
+    "ss": 16.5,
     "focus": [
-     0.6,
+     0.5,
      0.5
     ]
-   },
-   "transition": "whip:down"
+   }
   },
   {
    "type": "split",
    "start": 24.9,
    "broll": {
-    "src": "broll/curve_rt.mp4",
-    "ss": 0,
+    "src": "raw/test300.mov",
+    "ss": 18.5,
     "focus": [
      0.5,
-     0.6
+     0.5
     ]
    }
   },
@@ -122,8 +127,14 @@
     "src": "raw/test300.mov",
     "ss": 26.0,
     "focus": [
-     0.6,
+     0.5,
      0.5
+    ],
+    "crop": [
+     960,
+     540,
+     83,
+     126
     ]
    }
   },
@@ -134,7 +145,7 @@
     "src": "raw/test300.mov",
     "ss": 26.6,
     "focus": [
-     0.62,
+     0.45,
      0.5
     ]
    },
@@ -177,14 +188,20 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 55.6,
    "broll": {
-    "src": "broll/curve_slo.mp4",
-    "ss": 12.0,
+    "src": "broll/t_slo.mp4",
+    "ss": 11.0,
     "focus": [
      0.5,
      0.5
+    ],
+    "crop": [
+     960,
+     540,
+     83,
+     126
     ]
    }
   },
@@ -204,11 +221,17 @@
    "type": "split",
    "start": 62.5,
    "broll": {
-    "src": "broll/curve_rt.mp4",
-    "ss": 2,
+    "src": "broll/t_slo.mp4",
+    "ss": 5.0,
     "focus": [
      0.5,
-     0.6
+     0.5
+    ],
+    "crop": [
+     960,
+     540,
+     83,
+     126
     ]
    }
   }
@@ -242,6 +265,19 @@
    "color": "#E6FF00",
    "color2": "#FF2BD6",
    "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 0.9,
+   "dur": 1.9,
+   "x": 540,
+   "y": 1060,
+   "r": 120,
+   "lx": 620,
+   "ly": 1240,
+   "text": "THAT'S ME",
+   "sub": "NEON SHORTS"
   },
   {
    "type": "motion",
@@ -298,7 +334,6 @@
    "t": 18.3,
    "dur": 2.6,
    "anim": 1.3,
-   "anchor": "center",
    "rows": [
     {
      "label": "LAST YEAR",
@@ -359,6 +394,18 @@
    "color": "#E6FF00",
    "color2": "#FF2BD6",
    "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 35.5,
+   "dur": 2.1,
+   "x": 540,
+   "y": 1000,
+   "r": 130,
+   "lx": 110,
+   "ly": 1250,
+   "text": "THAT'S ME"
   },
   {
    "type": "data",
@@ -433,7 +480,6 @@
    "icon": "bolt",
    "color": "#00F0FF",
    "color2": "#E6FF00",
-   "anchor": "upper",
    "size": 120
   },
   {

@@ -30,3 +30,13 @@ These came in a Dropbox folder and are not committed.
 - **First-200 splits:** 21.4–21.5 is this year's *plan*; 20.8–20.9 is last year's all-out pace. These are what he said, not measured splits from today.
 - **45:** his 400m. It's shown as "45", exactly as said.
 - **Battery levels:** illustrative ("died" vs "gas left"); no percentages are shown.
+
+## v2: today's yellow-shorts footage as the running highlight
+- **Owner's note:** the running highlights must be today's test (yellow shorts), not the June training clips (orange shorts).
+- **What changed:**
+  - Every running shot now comes from `test300.mov`.
+  - `t_slo.mp4` is test300 23.5–31.2 s at 2× slow motion (`minterpolate`, mci, 60 fps, then `setpts=2*PTS`).
+  - The June clips stay only as behind-the-scenes B-roll: the crouch, the empty hurdles and the GCU pan.
+- **Why most running shots are in the split:** the clip is 720p and the owner is small in the frame. So only the hook (0–2.85 s) and the 283 m reveal (35.3–39.4 s) are full screen. Split shots of the run are cropped in on him (crop 960×540 at (83, 126)).
+- **"THAT'S ME" spotlights:** added on both full-screen shots so viewers can find him.
+- **Export:** `exports/30_second_test_tiktok_v2.mp4`.
