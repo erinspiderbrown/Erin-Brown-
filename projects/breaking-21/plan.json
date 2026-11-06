@@ -1,0 +1,423 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/breaking21_v1.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 67.96,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "transition_style": "epic",
+ "transition_sfx": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.8,
+   "broll": {
+    "src": "broll/dec_fin.mp4",
+    "ss": 2.95,
+    "focus": [
+     0.65,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.9,
+   "broll": {
+    "src": "broll/apr_fin.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.6,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.3,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 17.6,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 22.9,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 29.7,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 9.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.6,
+   "broll": {
+    "src": "broll/dec_close.mp4",
+    "ss": 4.4,
+    "focus": [
+     0.55,
+     0.5
+    ],
+    "crop": [
+     1920,
+     760,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.7,
+   "broll": {
+    "src": "broll/apr_close.mp4",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ],
+    "crop": [
+     1440,
+     1100,
+     480,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.4,
+   "broll": {
+    "src": "broll/dec_close.mp4",
+    "ss": 0.9,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     760,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.7,
+   "broll": {
+    "src": "broll/apr_close.mp4",
+    "ss": 3.4,
+    "focus": [
+     0.0,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.9,
+   "broll": {
+    "src": "broll/dec_close.mp4",
+    "ss": 5.5,
+    "focus": [
+     0.75,
+     0.5
+    ],
+    "crop": [
+     1920,
+     760,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.7,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 14.0,
+    "focus": [
+     0.57,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.2,
+   "broll": {
+    "src": "broll/may_cc.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   3.2,
+   5.4,
+   1.08
+  ],
+  [
+   29.8,
+   31.8,
+   1.1
+  ],
+  [
+   39.8,
+   41.4,
+   1.08
+  ],
+  [
+   64.3,
+   67.96,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 0.2,
+   "dur": 2.5,
+   "text": "BREAKING 21",
+   "sub": "THE HARDEST MILESTONE",
+   "color": "#FFE11A",
+   "color2": "#E8231E",
+   "anchor": "upper",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 10.6,
+   "dur": 7.0,
+   "title": "MY MILESTONES",
+   "times": [
+    1.64,
+    3.64,
+    5.56
+   ],
+   "rows": [
+    {
+     "event": "200 METERS",
+     "value": "SUB 21"
+    },
+    {
+     "event": "100 METERS",
+     "value": "SUB 11"
+    },
+    {
+     "event": "400 METERS",
+     "value": "SUB 46"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 21.2,
+   "dur": 1.7,
+   "text": "SUB 21",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 28.2,
+   "dur": 1.5,
+   "text": "DEFAULT SETTING?",
+   "icon": "question",
+   "color": "#00F0FF",
+   "color2": "#FFE11A",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "scoreboard",
+   "t": 30.8,
+   "dur": 3.7,
+   "title": "MENS 200M \u2014 HEAT 1",
+   "times": [
+    0.5,
+    1.1
+   ],
+   "rows": [
+    {
+     "place": "1",
+     "name": "ERIN BROWN",
+     "team": "GCU",
+     "time": "20.69"
+    },
+    {
+     "place": "2",
+     "name": "CAMERON FRANKLIN",
+     "team": "UVU",
+     "time": "21.12"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 35.0,
+   "dur": 2.6,
+   "value": "20.79",
+   "unit": "SEC",
+   "label": "MEN'S 200M \u00b7 INDOOR",
+   "sub": "Runnerspace result"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 40.3,
+   "dur": 6.0,
+   "title": "THE 400",
+   "times": [
+    2.1,
+    4.6
+   ],
+   "rows": [
+    {
+     "event": "BREAKTHROUGH",
+     "value": "46.7"
+    },
+    {
+     "event": "NEXT RACES",
+     "value": "47s\u201348s"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 46.8,
+   "dur": 4.8,
+   "title": "THE 100",
+   "times": [
+    1.16,
+    4.39
+   ],
+   "rows": [
+    {
+     "event": "BREAKTHROUGH",
+     "value": "10.8 / 10.7"
+    },
+    {
+     "event": "NEXT RACES",
+     "value": "11s"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 56.6,
+   "dur": 1.4,
+   "text": "3\u20134 YEARS AGO",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 59.4,
+   "dur": 2.2,
+   "value": "21.00",
+   "unit": "SECONDS",
+   "label": "MY SLOWEST SINCE",
+   "anim": 1.0,
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "neon",
+   "t": 62.0,
+   "dur": 2.1,
+   "text": "HARDEST|MILESTONE",
+   "icon": "flame",
+   "color": "#FFE11A",
+   "color2": "#E8231E",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 64.4,
+   "dur": 3.56,
+   "question": "HAVE YOU BROKEN 21?",
+   "options": [
+    "YES",
+    "NOT YET"
+   ]
+  }
+ ]
+}
