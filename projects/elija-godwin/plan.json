@@ -1,0 +1,405 @@
+{
+ "workdir": "w5/build",
+ "output": "out/elija_godwin.mp4",
+ "words": "w5/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 68.78,
+ "face": {
+  "src": "w5/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "raw5/ph/podium22.jpg",
+    "ss": 0,
+    "focus": [
+     0.85,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.1,
+   "broll": {
+    "src": "raw5/ph/uga_gday.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.9,
+   "broll": {
+    "src": "raw5/ph/jav_c.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.7,
+   "broll": {
+    "src": "raw5/ph/jav_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.9,
+   "broll": {
+    "src": "raw5/ph/jav_c.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 25.6,
+   "broll": {
+    "src": "raw5/ph/uga_gday.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 33.0,
+   "broll": {
+    "src": "raw5/ph/jav_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 38.9,
+   "broll": {
+    "src": "raw5/ph/tokyo_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 51.4,
+   "broll": {
+    "src": "raw5/ph/oregon22.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.0,
+   "broll": {
+    "src": "raw5/ph/podium22.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.9,
+   "broll": {
+    "src": "raw5/ph/jav_c.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.6,
+   "broll": {
+    "src": "raw5/ph/jav_a.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 66.2,
+   "broll": {
+    "src": "raw5/ph/uga_gday.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   24.5,
+   25.6,
+   1.1
+  ],
+  [
+   58.4,
+   60.2,
+   1.12
+  ],
+  [
+   64.3,
+   66.3,
+   1.1
+  ],
+  [
+   67.0,
+   68.78,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 1.2,
+   "dur": 3.2,
+   "rank": "USA",
+   "name": "ELIJA GODWIN",
+   "sub": "GEORGIA \u00b7 TEAM USA 400M"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 3.0,
+   "dur": 1.9,
+   "text": "PUNCTURED LUNG",
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 6.3,
+   "dur": 3.6,
+   "text": "ATHENS, GA",
+   "sub": "MAY 7, 2019 \u00b7 UGA PRACTICE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.1,
+   "dur": 2.4,
+   "text": "A REGULAR DAY"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 14.0,
+   "dur": 1.7,
+   "text": "FELL ON A JAVELIN?",
+   "size": 100,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 16.0,
+   "dur": 2.6,
+   "text": "WHAT I THOUGHT"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 19.0,
+   "dur": 6.2,
+   "items": [
+    "JAVELIN THROWN",
+    "MID-REP",
+    "HIT"
+   ],
+   "times": [
+    0.4,
+    3.2,
+    4.4
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "headline",
+   "t": 25.8,
+   "dur": 7.1,
+   "items": [
+    {
+     "outlet": "CBS SPORTS",
+     "date": "MAY 8, 2019",
+     "title": "Georgia sprinter impales himself with javelin in horrific accident, undergoes surgery"
+    },
+    {
+     "outlet": "ASSOCIATED PRESS",
+     "date": "MAY 8, 2019",
+     "title": "University of Georgia sprinter impaled by javelin during practice"
+    },
+    {
+     "outlet": "SATURDAY DOWN SOUTH",
+     "date": "MAY 8, 2019",
+     "title": "Report: Georgia sprinter punctures lung in freak accident involving a javelin"
+    }
+   ],
+   "times": [
+    0.3,
+    1.6,
+    4.9
+   ],
+   "gap": 22,
+   "y": 1000
+  },
+  {
+   "type": "motion",
+   "kind": "javelin",
+   "t": 33.1,
+   "dur": 2.6,
+   "text": "5\u20136 INCHES",
+   "sub": "INTO HIS BACK"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 35.6,
+   "dur": 1.7,
+   "text": "SURGERY",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 37.5,
+   "dur": 1.5,
+   "text": "FULL RECOVERY"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 41.6,
+   "dur": 9.4,
+   "title": "THE COMEBACK",
+   "rows": [
+    {
+     "event": "400M \u00b7 SEC 2021",
+     "value": "44.61"
+    },
+    {
+     "event": "400M \u00b7 NCAA 2022",
+     "value": "44.50",
+     "tag": "3RD"
+    },
+    {
+     "event": "200M \u00b7 2021",
+     "value": "20.32"
+    }
+   ],
+   "times": [
+    0.4,
+    3.3,
+    5.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 51.6,
+   "dur": 5.0,
+   "title": "TEAM USA",
+   "rows": [
+    {
+     "event": "TOKYO 2020 \u00b7 MIXED",
+     "value": "BRONZE"
+    },
+    {
+     "event": "WORLDS 22 \u00b7 MIXED",
+     "value": "BRONZE"
+    },
+    {
+     "event": "WORLDS 22 \u00b7 4X400",
+     "value": "GOLD"
+    },
+    {
+     "event": "WORLD INDOOR 25/26",
+     "value": "GOLD"
+    }
+   ],
+   "times": [
+    0.5,
+    1.5,
+    2.4,
+    3.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 56.3,
+   "dur": 1.6,
+   "text": "NOW A PRO"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 58.6,
+   "dur": 2.0,
+   "text": "HOW?!"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 63.9,
+   "dur": 2.4,
+   "text": "FALL ON A JAVELIN?"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 66.35,
+   "dur": 2.43,
+   "question": "FREAK ACCIDENT?",
+   "options": [
+    "ACCIDENT",
+    "MORE TO IT"
+   ]
+  }
+ ]
+}
