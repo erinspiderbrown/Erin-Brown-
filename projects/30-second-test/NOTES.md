@@ -1,5 +1,19 @@
 # 30-second test (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** I Ran 283m in 30 Seconds Using Less Energy Than Last Year 🤯
+**Alternates:**
+- I Changed My Race Strategy and Ran Further on Less Energy
+- 281m → 283m: What Changed in My 30-Second Test
+
+**Thumbnail** (3:4): `exports/thumbnails/30_second_test_thumb.jpg`. It's a native 1080×1440 crop of the 4K June training frame (`train_jun01.mov` @ 4.3 s), made by `thumbnail.py`. Today's test clip is 720p, too soft for a cover.
+
+## v4: house style (Yohan Blake / Tebogo)
+- **Owner's note:** he rejected the neon theme.
+- **Graphics:** the neon signs became a name tag, keywords and stamps. The batteries became a "DIED" stamp and a "LESS ENERGY. LESS TIRED." keyword. The ending is now a poll ("WHAT SHOULD I TEST NEXT? 200M / 100M").
+- **Captions and color:** house red/yellow captions and accent.
+- **Transitions and sound:** auto transitions with 3 quiet whooshes.
+- **Export:** `exports/30_second_test_tiktok_v4.mp4`.
+
 A storytelling edit: first time in spikes this season, a 30-second test run in 281 m last year vs 283 m today.
 
 ## Inputs

@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "work/out/30s_test_v3.mp4",
+ "output": "work/out/30s_test_v4.mp4",
  "words": "work/words_final.json",
  "voice_ss": 0.0,
  "duration": 68.76,
@@ -12,11 +12,6 @@
   ]
  },
  "skip_res_check": true,
- "accent": "#FF2BD6",
- "caption_colors": [
-  "#FF2BD6",
-  "#E6FF00"
- ],
  "segments": [
   {
    "type": "split",
@@ -155,8 +150,7 @@
      125,
      189
     ]
-   },
-   "transition": "flash"
+   }
   },
   {
    "type": "split",
@@ -256,16 +250,12 @@
  ],
  "graphics": [
   {
-   "type": "motion",
-   "kind": "neon",
-   "t": 0.15,
-   "dur": 2.6,
-   "text": "FIRST TIME IN SPIKES",
-   "sub": "30-SECOND TEST",
-   "color": "#E6FF00",
-   "color2": "#FF2BD6",
-   "size": 92,
-   "y": 24
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.5,
+   "rank": "GCU",
+   "name": "ERIN BROWN",
+   "sub": "FIRST TIME IN SPIKES  \u00b7  30-SEC TEST"
   },
   {
    "type": "motion",
@@ -296,42 +286,28 @@
   },
   {
    "type": "motion",
-   "kind": "neon",
+   "kind": "keyword",
    "t": 10.4,
-   "dur": 2.8,
-   "text": "HEALTHIEST|EVER",
-   "icon": "plus",
-   "color": "#39FF14",
-   "color2": "#00F0FF",
-   "size": 120
+   "dur": 2.6,
+   "text": "HEALTHIEST EVER",
+   "hi": 0
   },
   {
    "type": "motion",
-   "kind": "neon",
+   "kind": "keyword",
    "t": 15.3,
    "dur": 2.0,
-   "text": "GOOD? BAD?",
-   "icon": "question",
-   "color": "#00F0FF",
-   "color2": "#FF2BD6",
-   "size": 120
+   "text": "GOOD OR BAD?",
+   "hi": 2
   },
   {
    "type": "motion",
-   "kind": "battery",
-   "t": 18.3,
-   "dur": 2.6,
-   "anim": 1.3,
-   "rows": [
-    {
-     "label": "LAST YEAR",
-     "to": 0.03,
-     "color": "#FF2BD6",
-     "end": "DIED",
-     "endColor": "#FF3B3B"
-    }
-   ],
-   "anchor": "center"
+   "kind": "stamp",
+   "t": 19.8,
+   "dur": 1.4,
+   "text": "DIED",
+   "size": 200,
+   "anchor": "upper"
   },
   {
    "type": "data",
@@ -375,14 +351,11 @@
   },
   {
    "type": "motion",
-   "kind": "neon",
+   "kind": "keyword",
    "t": 33.3,
    "dur": 1.9,
-   "text": "CLOSE ON THE|BACK END",
-   "icon": "arrow",
-   "color": "#E6FF00",
-   "color2": "#FF2BD6",
-   "size": 110
+   "text": "CLOSE STRONG",
+   "hi": 1
   },
   {
    "type": "data",
@@ -415,27 +388,11 @@
   },
   {
    "type": "motion",
-   "kind": "battery",
+   "kind": "keyword",
    "t": 44.0,
-   "dur": 5.2,
-   "anim": 1.2,
-   "stagger": 0.4,
-   "rows": [
-    {
-     "label": "LAST YEAR",
-     "to": 0.03,
-     "color": "#FF2BD6",
-     "end": "DIED",
-     "endColor": "#FF3B3B"
-    },
-    {
-     "label": "THIS YEAR",
-     "to": 0.62,
-     "color": "#39FF14",
-     "end": "GAS LEFT",
-     "endSize": 80
-    }
-   ]
+   "dur": 5.0,
+   "text": "LESS ENERGY. LESS TIRED.",
+   "hi": 0
   },
   {
    "type": "motion",
@@ -451,14 +408,11 @@
   },
   {
    "type": "motion",
-   "kind": "neon",
+   "kind": "keyword",
    "t": 55.9,
    "dur": 2.0,
-   "text": "DIFFERENT|STRATEGIES",
-   "icon": "bolt",
-   "color": "#00F0FF",
-   "color2": "#E6FF00",
-   "size": 120,
+   "text": "DIFFERENT STRATEGIES",
+   "hi": 1,
    "anchor": "upper"
   },
   {
@@ -490,16 +444,14 @@
   },
   {
    "type": "motion",
-   "kind": "neon",
+   "kind": "poll",
    "t": 66.7,
    "dur": 2.06,
-   "text": "TILL I GET|IT RIGHT",
-   "icon": "flame",
-   "color": "#E6FF00",
-   "color2": "#FF2BD6",
-   "size": 120
+   "question": "WHAT SHOULD I TEST NEXT?",
+   "options": [
+    "200M",
+    "100M"
+   ]
   }
- ],
- "transition_style": "epic",
- "transition_sfx": true
+ ]
 }
