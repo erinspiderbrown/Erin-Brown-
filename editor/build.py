@@ -424,7 +424,9 @@ def main(plan_path):
                     accent2=(plan.get('caption_colors') or ['#FFE11A'])[-1])
         if g['type'] == 'motion': spec['page'] = 'motion.html'
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
-        h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
+        # the cache key covers the graphic's code too, so editing motion.html/gfx.html re-renders graphics that use it
+        page_src = open(f"{here}/datagfx/{spec.get('page', 'gfx.html')}", 'rb').read()
+        h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode() + page_src).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
         if not cached(mov, g['dur'] - 0.1):
             json.dump(spec, open(sp, 'w'))
