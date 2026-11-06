@@ -1,5 +1,20 @@
 # Breaking 21 in the 200 (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** Why Breaking 21 Seconds in the 200 Changes Everything ⏱️
+**Alternates:**
+- Sub-21 Is the Hardest Milestone in Sprinting — Here's Why
+- I Broke 21 in the 200… and Never Went Back
+
+**Thumbnail** (3:4, 1080×1440): `exports/thumbnails/breaking_21_thumb.jpg`, made from the NCAA photo with "SUB 21" by `thumbnail.py`.
+
+## v2: house style (Yohan Blake / Tebogo)
+- **Owner's note:** he rejected the neon theme. v2 uses the default house style.
+  - No neon graphics and no "epic" transition/sound overrides.
+  - Graphics: a name tag, keywords and stamps on almost every beat, boards, the scoreboard, a counter, a stopwatch, and a closing poll.
+  - Sound: auto transitions with only 3 quiet whooshes.
+- **Full screen:** 3 shots — the hook photo, the "SUB 21" turn (hit), and the "hardest milestone" callback (hit). The only full-screen-sharp sources are the two NCAA photos; the race streams are upscaled and stay in the split.
+- **Export:** `exports/breaking_21_tiktok_v2.mp4` (crf 20, 76.7 MB).
+
 ## Inputs
 These came from a Dropbox folder and are not committed.
 - `talking.mov`: 4K, 74 s.

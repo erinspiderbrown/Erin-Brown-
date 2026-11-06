@@ -1,6 +1,6 @@
 {
  "workdir": "work/build",
- "output": "work/out/breaking21_v1.mp4",
+ "output": "work/out/breaking21_v2.mp4",
  "words": "work/words_final.json",
  "voice_ss": 0.0,
  "duration": 67.96,
@@ -11,8 +11,6 @@
    0.5
   ]
  },
- "transition_style": "epic",
- "transition_sfx": true,
  "segments": [
   {
    "type": "full",
@@ -196,16 +194,17 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 61.7,
    "broll": {
-    "src": "broll/may_cc.mp4",
-    "ss": 14.0,
+    "src": "raw/photo2.jpg",
+    "ss": 0,
     "focus": [
-     0.57,
+     0.3,
      0.5
     ]
-   }
+   },
+   "hit": true
   },
   {
    "type": "split",
@@ -227,6 +226,11 @@
    1.08
   ],
   [
+   18.0,
+   20.3,
+   1.1
+  ],
+  [
    29.8,
    31.8,
    1.1
@@ -244,16 +248,28 @@
  ],
  "graphics": [
   {
-   "type": "motion",
-   "kind": "neon",
-   "t": 0.2,
+   "type": "name",
+   "t": 0.3,
    "dur": 2.5,
-   "text": "BREAKING 21",
-   "sub": "THE HARDEST MILESTONE",
-   "color": "#FFE11A",
-   "color2": "#E8231E",
-   "anchor": "upper",
-   "size": 120
+   "rank": "GCU",
+   "name": "ERIN BROWN",
+   "sub": "200M  \u00b7  SUB-21 SPRINTER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 3.3,
+   "dur": 2.3,
+   "text": "HARDEST MILESTONE",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 6.9,
+   "dur": 2.2,
+   "text": "AVERAGE-LEVEL SPRINTER?",
+   "hi": 0
   },
   {
    "type": "motion",
@@ -283,28 +299,42 @@
   },
   {
    "type": "motion",
+   "kind": "keyword",
+   "t": 18.2,
+   "dur": 2.0,
+   "text": "THE HARDEST ONE",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
    "kind": "stamp",
    "t": 21.2,
-   "dur": 1.7,
+   "dur": 1.6,
    "text": "SUB 21",
    "size": 150
   },
   {
    "type": "motion",
-   "kind": "neon",
-   "t": 28.2,
-   "dur": 1.5,
-   "text": "DEFAULT SETTING?",
-   "icon": "question",
-   "color": "#00F0FF",
-   "color2": "#FFE11A",
-   "size": 100
+   "kind": "keyword",
+   "t": 24.3,
+   "dur": 2.2,
+   "text": "RACE STRATEGY",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 28.3,
+   "dur": 1.4,
+   "text": "DEFAULT SETTING",
+   "size": 110
   },
   {
    "type": "motion",
    "kind": "scoreboard",
    "t": 30.8,
-   "dur": 3.7,
+   "dur": 3.6,
    "title": "MENS 200M \u2014 HEAT 1",
    "times": [
     0.5,
@@ -326,14 +356,30 @@
    ]
   },
   {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.5,
+   "dur": 1.4,
+   "text": "COMPLETELY DIFFERENT",
+   "hi": 1
+  },
+  {
    "type": "data",
    "kind": "counter",
-   "t": 35.0,
-   "dur": 2.6,
+   "t": 36.0,
+   "dur": 2.2,
    "value": "20.79",
    "unit": "SEC",
    "label": "MEN'S 200M \u00b7 INDOOR",
    "sub": "Runnerspace result"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 38.3,
+   "dur": 1.4,
+   "text": "NO GOING BACK",
+   "size": 110
   },
   {
    "type": "motion",
@@ -380,6 +426,15 @@
   {
    "type": "motion",
    "kind": "keyword",
+   "t": 53.4,
+   "dur": 1.6,
+   "text": "FIRST SUB-21",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
    "t": 56.6,
    "dur": 1.4,
    "text": "3\u20134 YEARS AGO",
@@ -399,14 +454,12 @@
   },
   {
    "type": "motion",
-   "kind": "neon",
-   "t": 62.0,
-   "dur": 2.1,
-   "text": "HARDEST|MILESTONE",
-   "icon": "flame",
-   "color": "#FFE11A",
-   "color2": "#E8231E",
-   "size": 110
+   "kind": "stamp",
+   "t": 62.3,
+   "dur": 1.7,
+   "text": "HARDEST MILESTONE",
+   "size": 110,
+   "anchor": "upper"
   },
   {
    "type": "motion",
