@@ -79,7 +79,7 @@
     "src": "raw4/ph/tebogo_greene.jpg",
     "ss": 0,
     "focus": [
-     0.5,
+     0.65,
      0.3
     ]
    },
@@ -101,11 +101,11 @@
    "type": "split",
    "start": 34.2,
    "broll": {
-    "src": "raw4/ph/paris_ath_0809.jpg",
+    "src": "raw4/ph/stade_2024.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.3,
+     0.5
     ]
    }
   },
@@ -118,6 +118,30 @@
     "focus": [
      0.5,
      0.25
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 47.8,
+   "broll": {
+    "src": "raw4/ph/bednarek_record.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.4,
+   "broll": {
+    "src": "raw4/ph/lyles_paris_b.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
     ]
    }
   },
@@ -137,11 +161,11 @@
    "type": "split",
    "start": 57.3,
    "broll": {
-    "src": "raw4/ph/botswana_douala.jpg",
+    "src": "raw4/ph/bednarek_26.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.4
+     0.5
     ]
    }
   },
@@ -149,11 +173,11 @@
    "type": "full",
    "start": 61.9,
    "broll": {
-    "src": "raw4/ph/lyles_paris.jpg",
+    "src": "raw4/ph/lyles_paris_b.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.25
+     0.45,
+     0.3
     ]
    },
    "hit": true
@@ -162,11 +186,11 @@
    "type": "split",
    "start": 73.0,
    "broll": {
-    "src": "raw4/ph/lyles_trials_v.jpg",
+    "src": "raw4/ph/lyles_paris.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.3
+     0.5
     ]
    }
   },
@@ -365,7 +389,7 @@
   },
   {
    "type": "name",
-   "t": 47.9,
+   "t": 48.0,
    "dur": 1.6,
    "rank": "USA",
    "name": "KENNY BEDNAREK",
@@ -373,7 +397,7 @@
   },
   {
    "type": "name",
-   "t": 49.5,
+   "t": 49.6,
    "dur": 2.2,
    "rank": "USA",
    "name": "NOAH LYLES",
