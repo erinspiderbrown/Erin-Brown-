@@ -1,0 +1,485 @@
+{
+ "workdir": "w4/build",
+ "output": "out/tebogo_lyles.mp4",
+ "words": "w4/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 85.32,
+ "face": {
+  "src": "w4/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw4/ph/tebogo_paris.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.7,
+   "broll": {
+    "src": "raw4/p1.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.0,
+   "broll": {
+    "src": "raw4/ph/stade_2024.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 16.4,
+   "broll": {
+    "src": "raw4/ph/tebogo_bislett26.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.0,
+   "broll": {
+    "src": "raw4/ph/stade_prelim.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 25.3,
+   "broll": {
+    "src": "raw4/ph/tebogo_greene.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 29.2,
+   "broll": {
+    "src": "raw4/ph/tebogo_press.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.2,
+   "broll": {
+    "src": "raw4/ph/paris_ath_0809.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 37.7,
+   "broll": {
+    "src": "raw4/ph/tebogo_press.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.2,
+   "broll": {
+    "src": "raw4/ph/tebogo_bislett26.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.3,
+   "broll": {
+    "src": "raw4/ph/botswana_douala.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 61.9,
+   "broll": {
+    "src": "raw4/ph/lyles_paris.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 73.0,
+   "broll": {
+    "src": "raw4/ph/lyles_trials_v.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 76.3,
+   "broll": {
+    "src": "raw4/ph/tebogo_paris.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 78.9,
+   "broll": {
+    "src": "raw4/ph/tebogo_bislett26.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 81.5,
+   "broll": {
+    "src": "raw4/ph/la_coliseum.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   4.5,
+   6.4,
+   1.08
+  ],
+  [
+   53.2,
+   54.7,
+   1.12
+  ],
+  [
+   66.8,
+   68.4,
+   1.08
+  ],
+  [
+   79.3,
+   80.7,
+   1.1
+  ],
+  [
+   83.9,
+   85.32,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.9,
+   "dur": 3.4,
+   "rank": "BOT",
+   "name": "LETSILE TEBOGO",
+   "sub": "2024 OLYMPIC 200M CHAMPION"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.5,
+   "dur": 1.9,
+   "text": "THE REAL DEAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.6,
+   "dur": 2.6,
+   "text": "ONLY THE OLYMPICS?"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 13.2,
+   "dur": 3.4,
+   "items": [
+    "WORLDS? WHO CARES",
+    "CIRCUIT IS PRACTICE",
+    "SAVE IT FOR THE GAMES"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 18.9,
+   "dur": 1.8,
+   "text": "SANDBAG"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 22.6,
+   "dur": 2.4,
+   "text": "ROCK AND ROLL"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 26.0,
+   "dur": 3.4,
+   "label": "Paris 2024 \u00b7 200m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.3,
+   "items": [
+    {
+     "name": "Tebogo",
+     "value": "19.46"
+    },
+    {
+     "name": "Bednarek",
+     "value": "19.62"
+    },
+    {
+     "name": "Lyles",
+     "value": "19.70"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 30.0,
+   "dur": 1.9,
+   "text": "COLLECTING CHECKS",
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 34.6,
+   "dur": 3.0,
+   "items": [
+    "2025",
+    "2026",
+    "2027",
+    "2028"
+   ],
+   "hi": [
+    3
+   ],
+   "label": "NEXT OLYMPIC TITLE"
+  },
+  {
+   "type": "motion",
+   "kind": "tweet",
+   "t": 37.9,
+   "dur": 15.3,
+   "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/raw4/tweet.jpg",
+   "imgw": 1206,
+   "cards": [
+    [
+     20,
+     185,
+     1170,
+     415
+    ]
+   ],
+   "times": [
+    0.35
+   ],
+   "width": 1000,
+   "hl": {
+    "card": 0,
+    "t": 13.4,
+    "rects": [
+     [
+      195,
+      440,
+      520,
+      55
+     ]
+    ]
+   }
+  },
+  {
+   "type": "name",
+   "t": 47.9,
+   "dur": 1.6,
+   "rank": "USA",
+   "name": "KENNY BEDNAREK",
+   "sub": "PARIS 2024 \u00b7 SILVER"
+  },
+  {
+   "type": "name",
+   "t": 49.5,
+   "dur": 2.2,
+   "rank": "USA",
+   "name": "NOAH LYLES",
+   "sub": "PARIS 2024 \u00b7 BRONZE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 54.8,
+   "dur": 2.0,
+   "text": "SANDBAGGED?",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 58.5,
+   "dur": 2.8,
+   "text": "FASTEST AT THE END"
+  },
+  {
+   "type": "motion",
+   "kind": "tweet",
+   "t": 62.0,
+   "dur": 11.3,
+   "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/raw4/tweet.jpg",
+   "imgw": 1206,
+   "cards": [
+    [
+     20,
+     185,
+     1170,
+     415
+    ],
+    [
+     20,
+     650,
+     1170,
+     600
+    ]
+   ],
+   "times": [
+    0.2,
+    2.1
+   ],
+   "width": 1000,
+   "gap": 60,
+   "hl": {
+    "card": 1,
+    "t": 6.5,
+    "rects": [
+     [
+      765,
+      890,
+      320,
+      58
+     ],
+     [
+      25,
+      960,
+      1075,
+      62
+     ]
+    ],
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 74.0,
+   "dur": 2.2,
+   "text": "THE PATTERN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 76.9,
+   "dur": 2.0,
+   "text": "MILLIONS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 79.5,
+   "dur": 1.6,
+   "text": "I'M GOOD"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 81.7,
+   "dur": 1.6,
+   "text": "LOS ANGELES",
+   "sub": "2028 OLYMPICS"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 82.9,
+   "dur": 2.42,
+   "question": "SANDBAGGING OR SMART?",
+   "options": [
+    "SANDBAG",
+    "SMART"
+   ]
+  }
+ ]
+}

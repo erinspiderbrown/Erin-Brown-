@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -117,6 +117,24 @@ const BUILD = {
       <div style="display:flex;gap:28px;margin-top:34px">${S.options.map((o, i) => `<div id="po${i}" style="flex:1;border-radius:28px;padding:30px 0;text-align:center;
           background:${i ? 'var(--acc)' : '#fff'};color:${i ? '#fff' : '#111'}"><span class="t-anton" style="font-size:78px">${o}</span></div>`).join('')}</div>
       <div id="pc" class="t-mb" style="text-align:center;font-size:36px;color:#fff;letter-spacing:.16em;margin-top:28px">${S.cta || 'COMMENT BELOW ⬇'}</div></div>`;
+  },
+  // real tweet screenshot, cut into cards: each card drops in with a 3D tilt, a thread line links them,
+  // and a highlighter sweeps over the key line. spec: src (screenshot path), cards [[x,y,w,h] in screenshot px],
+  // times [card appear times], hl {card, t, rects [[x,y,w,h] in screenshot px], color}, width (display px)
+  tweet() {
+    R.w = 1080; R.h = 1920; R.full = true;
+    const W = S.width || 980, k = W / S.cards[0][2];
+    const hs = S.cards.map(c => c[3] * k), gap = S.gap ?? 70, total = hs.reduce((a, b) => a + b, 0) + gap * (hs.length - 1);
+    let y = S.top ?? Math.round((1920 - total) / 2); const tops = [];
+    const cards = S.cards.map((c, i) => { tops.push(y); const html = `<div id="tc${i}" style="position:absolute;left:${(1080 - W) / 2}px;top:${y}px;width:${W}px;height:${hs[i]}px;
+        border-radius:30px;overflow:hidden;border:2px solid rgba(255,255,255,.16);background:#000 url('file://${S.src}') no-repeat;
+        background-size:${S.imgw * k}px auto;background-position:${-c[0] * k}px ${-c[1] * k}px;
+        box-shadow:0 40px 90px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.6);transform-origin:50% 0">
+        ${S.hl && S.hl.card === i ? S.hl.rects.map((r, j) => `<div id="hl${j}" style="position:absolute;left:${(r[0] - c[0]) * k}px;top:${(r[1] - c[1]) * k}px;width:0;height:${r[3] * k}px;
+          background:${S.hl.color || 'rgba(255,225,26,.42)'};border-radius:8px"></div>`).join('') : ''}</div>`; y += hs[i] + gap; return html; }).join('');
+    const links = S.cards.slice(1).map((_, i) => `<div id="tl${i}" style="position:absolute;left:${(1080 - W) / 2 + 74 * k}px;top:${tops[i] + hs[i]}px;width:8px;height:${gap}px;
+        border-radius:4px;background:linear-gradient(var(--acc2),var(--acc));transform-origin:50% 0;transform:scaleY(0)"></div>`).join('');
+    return `<div style="position:absolute;inset:0;perspective:1600px">${links}${cards}</div>`;
   },
   // podcast clip on screen: mic badge + live waveform + who's talking
   podcast() {
@@ -337,6 +355,19 @@ const ANIM = {
       const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
       e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
     const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+  tweet(t) {
+    const T = S.times || S.cards.map((_, i) => .1 + i * .9);
+    S.cards.forEach((_, i) => { const q = eBack((t - T[i]) / .55, 1.2), e = $('tc' + i), up = i ? 1 : -1;
+      e.style.opacity = clamp((t - T[i]) / .15) * fadeOut(t);
+      const float = Math.sin((t - T[i]) * 1.6 + i) * 4;
+      e.style.transform = `translateY(${(1 - q) * 260 * -up + float}px) rotateX(${(1 - q) * 38 * up}deg) rotateZ(${(1 - q) * (i ? 3 : -3)}deg) scale(${.9 + .1 * q})`;
+      if (i) { const l = $('tl' + (i - 1)); l.style.transform = `scaleY(${eOut((t - T[i] + .35) / .3)})`; l.style.opacity = fadeOut(t); } });
+    if (S.hl) { const H = S.hl, per = H.dur || .55;
+      H.rects.forEach((r, j) => { const p = eInOut((t - H.t - j * per) / per), k = (S.width || 980) / S.cards[0][2];
+        $('hl' + j).style.width = (r[2] * k * p) + 'px'; });
+      const pop = clamp((t - H.t - H.rects.length * per) / .25); const e = $('tc' + H.card);
+      if (pop > 0 && pop < 1) e.style.boxShadow = `0 40px 90px rgba(0,0,0,.75),0 0 ${70 * Math.sin(pop * Math.PI)}px var(--acc2)`; }
+  },
   podcast(t) { const q = eBack(t / .45); $('pcw').style.transform = `translateY(${(1 - q) * -60}px) scale(${.85 + .15 * q})`;
     $('pcw').style.opacity = clamp(t / .15) * fadeOut(t); $('pdot').style.opacity = .35 + .65 * (Math.sin(t * 7) > 0 ? 1 : 0);
     $('pmic').style.transform = `scale(${1 + .04 * Math.sin(t * 11)})`;
@@ -391,6 +422,7 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
   podcast: () => ({ pops: [.2] }),
+  tweet: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
   birthday: () => ({ soft: .45, pops: [.9] }),
   usmap: () => ({ pops: (S.groups || []).map(g => +(g.at + .05).toFixed(2)), ...(S.cross ? { thud: +(S.cross.at + .1).toFixed(2) } : {}) }),
 };
