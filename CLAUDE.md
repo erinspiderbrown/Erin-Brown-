@@ -120,6 +120,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Files over about 150 MB can't go through `DROPBOX_UPLOAD_FILE`. Use `DROPBOX_SAVE_URL` with the file's GitHub LFS URL (`https://media.githubusercontent.com/media/<owner>/<repo>/<branch>/exports/<file>`), so Dropbox fetches it server-side.
    - Check the returned `content_hash` against the local file (SHA-256 of the per-4 MB-block SHA-256s) before telling the owner it's there.
    - He can also put raw footage in his Dropbox and name the folder; read it from there instead of asking for share links.
+7. **Write a title** for every video: a one-line, YouTube Shorts style hook (the owner asked for this on all of them).
+   - Lead with a name people search plus the conflict or twist (e.g. "He Refused to Leave the Track… 11 Years Later, Track Banned Him").
+   - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
+   - No claim the video doesn't back up.
+   - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
 - **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session

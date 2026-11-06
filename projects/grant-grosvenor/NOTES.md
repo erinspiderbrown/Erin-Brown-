@@ -1,5 +1,7 @@
 # Grant Grosvenor (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** 33, Former Addict, Now Running 3:58 — And the Pros Are Mad
+
 Talking head about Grant Grosvenor (ex-Oregon NCAA champ, 33, back running sub-4) and the Nathan Green podcast clip.
 
 ## Inputs (not committed)

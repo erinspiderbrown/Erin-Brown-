@@ -1,5 +1,7 @@
 # Yohan Blake: "born in the wrong era" is a lie (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** Yohan Blake Wasn't Born in the Wrong Era — The Results Prove It
+
 The owner sent only a talking head (4K, displays 3840×2160) and asked for the clips to be pulled from the internet.
 
 ## B-roll

@@ -1,5 +1,7 @@
 # Jon Drummond: YouTube → vertical TikTok (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** He Refused to Leave the Track… 11 Years Later, Track Banned Him
+
 The source is the owner's finished 16:9 YouTube edit ("Jon Drummond: He Wouldn't Leave The Track", 8:37, 1080p). It's voiceover with music, archive footage and widescreen motion graphics, and there's no talking head.
 
 ## Layout (`editor/vertical.py`)

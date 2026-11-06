@@ -1,5 +1,7 @@
 # Tebogo vs Lyles: "stop playing opossum" (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** Noah Lyles Told the Olympic Champ to Stop "Playing Opossum" 😳
+
 Talking head (4K) with the owner's two photos and a screenshot of the Tebogo/Lyles tweets. Built in the default Yohan Blake style.
 
 ## Inputs
