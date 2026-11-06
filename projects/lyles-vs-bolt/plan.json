@@ -317,21 +317,25 @@
   {
    "type": "data",
    "kind": "bars",
-   "t": 10.1,
-   "dur": 5.6,
-   "label": "Sub-20 200m races \u00b7 all-time",
+   "t": 10.0,
+   "dur": 6.0,
+   "label": "Most sub-20 200s \u00b7 all conditions",
    "unit": "",
    "items": [
     {
-     "name": "Noah Lyles \u00b7 by mid-2024",
-     "value": "40"
+     "name": "Noah Lyles",
+     "value": "50"
     },
     {
-     "name": "Usain Bolt \u00b7 career",
+     "name": "Kenny Bednarek",
+     "value": "45"
+    },
+    {
+     "name": "Usain Bolt",
      "value": "34"
     }
    ],
-   "base": 20
+   "base": 0
   },
   {
    "type": "data",

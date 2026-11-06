@@ -18,9 +18,10 @@
 4. `python3 ../../editor/build.py plan.json`, then export at CRF 20 (91 MB, −14.6 LUFS).
 
 ## Data (no invented numbers)
-- **Sub-20 200 m races:** Bolt **34** (career). Lyles **40 as of mid-2024**: he passed Bolt with his 35th in London, July 2023.
-  - No 2025–26 count was found, so the bars are labelled "by mid-2024".
-  - The owner says "15" on the recording, which contradicts "more than anybody". Whisper hears "fifteen" even when primed with "fifty". **Ask the owner.**
+- **Sub-20 200 m races (v2):** from the list the owner sent ("Most sub-20 200m races · men · all-time · all conditions", graphic by @Romar Asugao).
+  - Lyles **50**, Bednarek **45**, Bolt **34**.
+  - The owner confirmed he says "50" (Whisper heard "15"), and the caption is corrected.
+  - The bars recreate the numbers. The list image itself isn't shown, because it's someone else's design and photo.
 - **Bolt:** 200 m world record 19.19 (Berlin 2009). Olympic 200 m golds 2008, 2012, 2016.
 - **Lyles:** 0 Olympic 200 m golds (bronze at Tokyo 2020, held in 2021, and Paris 2024). He has world 200 m titles, but the graphic only shows Olympic golds, which is what the owner says.
 - **Gatlin:** Olympic 100 m 2004, World 100 and 200 m 2005, World 100 m 2017 (shown as the chips 2004 · 2005 · 2017).
@@ -45,3 +46,11 @@ Paste this in the caption or a pinned comment:
 | jamaica_flag.jpg | Flag of Jamaica 03.jpg | Dickelbers | CC BY-SA 4.0 |
 | univ200.mp4 | Athletics Men's 200 Final - 27th Summer Universiade 2013 - Kazan (RUS).webm | FISUTV | CC BY 3.0 |
 | beijing100.mp4 | Shelly Ann Fraser Pryce wins - World Athletics Championships BEIJING 2015.webm | World Athletics Championships 2015 | CC BY 3.0 |
+
+## v2 (owner feedback)
+- **Audio was muffled.** The tone check showed 5–10 kHz air halved (0.33 → 0.15) and extra low end, caused by the de-esser, noise reduction and reduced presence EQ.
+  - New default voice chain: low-mid cut and clarity/air lift.
+  - The voice is now brighter than the raw recording: clarity 17.9 → 20.8, presence 2.9 → 4.9, air 0.28 → 0.41.
+  - `audio_check.py` now runs after every render.
+- **Stats:** the "15" caption is now "50", and the bars show Lyles 50 · Bednarek 45 · Bolt 34 (all conditions).
+- The California and Rylan Noome videos were re-rendered with the same clear voice chain.
