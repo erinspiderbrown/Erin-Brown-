@@ -13,7 +13,9 @@ GOLD_ASS = '&H2CC7FF&'                        # #FFC72C in ASS BGR
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode: sys.exit(f"FAILED: {' '.join(cmd)}\n{r.stderr[-3000:]}")
+    if r.returncode:
+        err = '\n'.join(l for l in r.stderr.splitlines() if len(l) < 600)   # skip ffmpeg's echo of huge filtergraphs
+        sys.exit(f"FAILED: {' '.join(cmd)[:400]}...\n{err[-3000:]}")
 
 IMG = ('.jpg', '.jpeg', '.png', '.webp', '.heic')
 def is_img(p): return p.lower().endswith(IMG)
@@ -41,6 +43,15 @@ def cover(w, h, crop=None, push=0.0, dur=1.0, punch=0.0, focus=(0.5, 0.5), zexpr
     return ','.join(f)
 
 _probe = {}
+def cached(path, expect=None):
+    """A cached render counts only if it's complete. A stopped render can leave a 0-byte file, or (ffmpeg exits
+    cleanly on SIGTERM) a valid but short one, so check the duration against what the render should produce."""
+    if not os.path.exists(path) or os.path.getsize(path) < 1024: return False
+    r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    try: got = float(r.stdout.strip())
+    except ValueError: return False
+    return expect is None or got >= expect - 0.1
+
 def probe(src):
     if src not in _probe:
         r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
@@ -146,7 +157,7 @@ def chunks(words, maxw=3, gap=0.35):
             yield cur; cur = []
 
 def clean(w):
-    w = re.sub(r'[^\w.%$#\'-]', '', w.upper())
+    w = re.sub(r'[^\w.%$#\'*:-]', '', w.upper())
     return re.sub(r'\.$', '', w)
 
 def hex2ass(h):
@@ -243,10 +254,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                 ev.append(f'Dialogue: 30,{ts(T-0.04)},{ts(T+0.22)},Gfx,,0,0,0,,{{\\an7\\pos(0,0)\\p1\\1c&HFFFFFF&\\1a&H70&\\t(40,220,\\1a&HFF&)}}{rrect(W,H,0)}{{\\p0}}')
     open(path, 'w').write(hdr + '\n'.join(ev) + '\n')
 
-# ---------- SFX: restrained + varied ----------
-# Rules (house style): B-roll swaps inside the split are SILENT; cuts to full-screen get a soft airy whoosh;
-# a bass hit/flash only on segments marked "hit"; returns to split only get a whoosh if the last one was >= 6 s ago;
-# every cue gets a small random pitch/speed variation so repeats never sound identical.
+# ---------- SFX: restrained, spaced, never repeated back-to-back ----------
+# House rules (owner feedback, Nov 2026):
+# - B-roll swaps inside the split are SILENT; cuts to full-screen get a soft airy whoosh;
+#   a short bass hit only on segments marked "hit"; graphics get one small pop/thud each.
+# - NO risers or long cinematic hits (too loud, too drawn out). They're banned below and can't be requested.
+# - Sound "moments" are spaced at least `sfx_min_gap` seconds apart (default 3.0): never a sound every 1-2 s.
+#   Higher-priority moments (hits, full-screen cuts) win; quieter ones that crowd them are dropped.
+# - The same sound file never plays twice in a row (data ticks inside one counter excepted).
+# - Every cue gets a small random pitch variation.
 POOLS = {
     'air':       ['air_fast_sweeping', 'air_flying_swoosh', 'air_wind_passing', 'air_cine_wind', 'air_zoom_vacuum', 'air_short_wind',
                   'whoosh_cine_fast', 'whoosh_fast_sweep'],
@@ -254,75 +270,74 @@ POOLS = {
     'impact':    ['impact_short_bass', 'impact_sub_bass_knock', 'impact_futuristic_bass'],
     'pop':       ['pop_hard_click', 'pop_explainer_light', 'pop_dry_notify'],
     'tick':      ['click_box_check'],
-    'riser':     ['riser_synth', 'riser_space_stutter'],
     'data_tick': ['tick_scifi', 'tick_tech_select'],
-    'thud':      ['thud_wood_hit'],
-    # "transition_sfx": a matched sound family per transition kind (owner asked for great, varied transition sounds)
-    'tr_whip':   ['whoosh_fast_trans', 'whoosh_cine_fast', 'air_fast_sweeping', 'whoosh_fast_sweep', 'whoosh_small_sweep',
-                  'whoosh_fast_trans2', 'air_flying_swoosh', 'whoosh_air_sweep'],
-    'tr_zoom':   ['air_zoom_vacuum', 'impact_quick_zoom', 'whoosh_speeding'],
-    'tr_spin':   ['whoosh_flying_fast', 'whoosh_cine_fast2', 'whoosh_speeding'],
-    'tr_glitch': ['click_camera_shutter', 'whoosh_quick_accent', 'tick_scifi'],
-    'tr_flash':  ['impact_trailer_whoosh_hit', 'impact_deep_cine_whoosh'],
-    'tr_shake':  ['impact_big_cine', 'impact_deep_cine_whoosh'],
+    'thud':      ['thud_wood_hit', 'impact_sub_bass_knock', 'impact_short_bass'],
 }
-TR_LEVEL = {'whip': 0.24, 'swipe': 0.22, 'zoom': 0.26, 'spin': 0.26, 'glitch': 0.20, 'flash': 0.27, 'shake': 0.27}
+BANNED_SFX = {'riser', 'riser_synth', 'riser_space_stutter', 'impact_big_cine', 'impact_deep_cine_whoosh',
+              'impact_quick_zoom', 'impact_trailer_whoosh_hit', 'air_windy_swoosh'}
 import random
 def sfx_cues(plan):
     """-> list of (sfx name, time where its PEAK lands, volume, rate)"""
     rng = random.Random(plan.get('sfx_seed', 7))
-    rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
-    def pick(pool):
-        n = POOLS[pool][rot[pool] % len(POOLS[pool])]; rot[pool] += 1; return n
+    gap = float(plan.get('sfx_min_gap', 3.0))
     lvl = float(plan.get('sfx_level', 1.0))
-    cues, segs, last_tr = [], plan['segments'], -99
-    if plan.get('transition_sfx'):
-        # a sound on (almost) every transition, matched to its kind, never closer than transition_sfx_gap seconds
-        gap, last_name, scale = float(plan.get('transition_sfx_gap', 2.5)), None, float(plan.get('whoosh_level', 0.24)) / 0.24
-        for nxt, tr in zip(segs[1:], choose_transitions(plan)[1:]):
-            T = nxt['start']
-            if not tr or tr[0] == 'cut' or nxt.get('sfx') is False or T - last_tr < gap: continue
-            pool = 'tr_' + ('whip' if tr[0] == 'swipe' else tr[0])
-            name = pick(pool)
-            if name == last_name: name = pick(pool)
-            cues.append((name, T, TR_LEVEL.get(tr[0], 0.24) * scale)); last_tr, last_name = T, name
-        segs = segs[:1]                      # transitions handled; skip the default whoosh rules below
+    moments = []                     # (anchor t, priority, [(pool|name, t, vol, is_tick)])
+    def add(prio, cues):
+        if cues: moments.append((min(c[1] for c in cues), prio, cues))
+    segs, last_full = plan['segments'], -99
     for prev, nxt in zip(segs, segs[1:]):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
         if nxt['type'] == 'full' and prev['type'] != 'full':
-            cues.append((pick('air'), T, float(plan.get('whoosh_level', 0.24)))); last_tr = T
-            if nxt.get('hit') and plan.get('hit_sfx', False): cues.append((pick('impact'), T + 0.02, 0.30))
+            wl = float(plan.get('whoosh_level', 0.24))
+            add(3 if nxt.get('hit') else 2, [('air', T, wl, 0)] + ([('impact', T + 0.02, 0.26, 0)] if nxt.get('hit') and plan.get('hit_sfx', False) else []))
+            last_full = T
         elif nxt['type'] != 'full' and prev['type'] == 'full':
-            if T - last_tr >= 6: cues.append((pick('air_soft'), T, 0.22)); last_tr = T
+            if T - last_full >= 6: add(0, [('air_soft', T, 0.20, 0)])
         elif nxt.get('sfx'):
-            cues.append((pick('air_soft'), T, 0.2)); last_tr = T
+            add(1, [('air_soft', T, 0.2, 0)])
     graphic_sfx = plan.get('graphic_sfx', False)        # owner: no random loud sounds mid-sentence
     for g in (plan.get('graphics', []) if graphic_sfx else []):
         t0, ev = g['t'], g.get('_ev', {})
         if g['type'] == 'data':
-            for k, tk in enumerate(ev.get('ticks', [])[:5]): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.14))
-            cues.append((pick('pop'), t0 + ev['land'], 0.32))
-            if 'badge' in ev: cues.append((pick('pop'), t0 + ev['badge'], 0.28))
+            add(1, [('data_tick', t0 + tk, 0.12, 1) for tk in ev.get('ticks', [])[:3]] + [('pop', t0 + ev['land'], 0.30, 0)])
         elif g['type'] == 'motion':
-            if 'thud' in ev: cues += [(pick('thud'), t0 + ev['thud'], 0.45), (pick('impact'), t0 + ev['thud'], 0.22)]
-            for tk in ev.get('pops', []): cues.append((pick('pop'), t0 + tk, 0.26))
-            if 'drop' in ev: cues.append((pick('pop'), t0 + ev['drop'], 0.32))
-            for k, tk in enumerate(ev.get('ticks', [])): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.15))
-            if 'land' in ev: cues.append((pick('pop'), t0 + ev['land'], 0.32))
-            if 'air' in ev: cues.append((pick('air'), t0 + ev['air'] + 0.3, 0.3))
-            if 'swish' in ev: cues.append((pick('air_soft'), t0 + ev['swish'] + 0.25, 0.24))
+            first = None
+            for key, pool, vol in (('drop', 'pop', 0.30), ('land', 'pop', 0.30), ('air', 'air', 0.28), ('swish', 'air_soft', 0.22)):
+                if key in ev: first = (pool, t0 + ev[key] + (0.3 if key == 'air' else 0.25 if key == 'swish' else 0), vol, 0); break
+            if first is None and ev.get('pops'): first = ('pop', t0 + ev['pops'][0], 0.26, 0)
+            ticks = [('data_tick', t0 + tk, 0.12, 1) for tk in ev.get('ticks', [])[:3]]
+            if 'thud' in ev:
+                th = ('thud', t0 + ev['thud'], 0.40, 0)
+                if first and th[1] - first[1] > 1.0: add(1, ticks + [first]); add(1, [th])
+                else: add(1, ticks + [th])
+            elif first: add(1, ticks + [first])
         elif g['type'] in ('name', 'stat'):
-            cues.append((pick('pop'), t0 + 0.05, 0.28))
+            add(1, [('pop', t0 + 0.05, 0.26, 0)])
     for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
-        cues.append((pick(c[0]) if c[0] in POOLS else c[0], c[1], c[2]))
-    # de-clutter: no two cues of the same family within 0.12 s; whoosh-family cues >= 1.5 s apart
-    cues.sort(key=lambda c: c[1]); out, last_air = [], -99
-    for c in cues:
-        if c[0].startswith(('air', 'whoosh')):
-            if c[1] - last_air < 1.5: continue
-            last_air = c[1]
-        out.append(c)
+        if c[0] in BANNED_SFX: print(f"NOTE: extra_sfx '{c[0]}' is banned (owner: too loud/drawn out), skipped"); continue
+        add(1, [(c[0], c[1], c[2], 0)])
+    # spacing: keep highest-priority moments first, then anything that is >= gap from every kept moment
+    kept = []
+    for m in sorted(moments, key=lambda m: (-m[1], m[0])):
+        if all(abs(m[0] - k[0]) >= gap for k in kept): kept.append(m)
+    kept.sort(key=lambda m: m[0])
+    # resolve sound names chronologically; never the same file twice in a row
+    rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
+    out, last = [], None
+    for _, _, cues in kept:
+        for src, t, vol, tick in sorted(cues, key=lambda c: c[1]):
+            if src in POOLS:
+                pool = POOLS[src]
+                for _ in range(len(pool)):
+                    name = pool[rot[src] % len(pool)]; rot[src] += 1
+                    if tick or name != last: break
+            else: name = src
+            if name in BANNED_SFX: continue
+            if not tick: last = name
+            out.append((name, t, vol))
+    print(f"SFX: {len(kept)} moments kept of {len(moments)} (min gap {gap:.1f}s): " +
+          ', '.join(f"{t:.1f}s {n}" for n, t, _ in out if not n.startswith('tick')))
     return [(n, t, v * lvl, round(rng.uniform(0.92, 1.08), 3)) for n, t, v in out]
 
 def choose_transitions(plan):
@@ -374,7 +389,7 @@ def main(plan_path):
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
-        if not os.path.exists(p): render_segment(plan, s, a, b, p)
+        if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
     # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
     trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
@@ -390,7 +405,7 @@ def main(plan_path):
                 d = dur[i]; T = segs[i]['start']
                 key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
                 tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
-                if not os.path.exists(tp):
+                if not cached(tp, d - 0.05):
                     transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
                 n = len(inputs) // 2; inputs += ['-i', tp]
                 pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
@@ -414,7 +429,7 @@ def main(plan_path):
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
         h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
-        if not os.path.exists(mov):
+        if not cached(mov, g['dur'] - 0.1):
             json.dump(spec, open(sp, 'w'))
             r = subprocess.run(['node', f'{here}/datagfx/render.js', sp, mov], capture_output=True, text=True)
             if r.returncode: sys.exit('graphic failed: ' + r.stderr[-2000:])
