@@ -1,7 +1,8 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, headline, javelin -->
+<script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
   html, body { margin: 0; background: transparent; overflow: hidden; }
@@ -80,7 +81,7 @@ const BUILD = {
       <line id="hand" x1="260" y1="300" x2="260" y2="110" stroke="var(--acc2)" stroke-width="8" stroke-linecap="round"/>
       <circle cx="260" cy="300" r="16" fill="var(--acc2)"/></svg>
       <div class="shadow" style="position:absolute;left:520px;top:180px">
-        <div id="swN" class="t-anton" style="font-size:190px;line-height:.9;color:#fff">0.0</div>
+        <div id="swN" class="t-anton" style="font-size:${S.size || 190}px;line-height:.9;color:#fff">${S.format === 'mss' ? '0:00' : '0.0'}</div>
         <div class="t-bebas" style="font-size:80px;color:var(--acc)">${S.unit || 'SECONDS'}</div>
         ${S.label ? `<div class="t-meb" style="font-size:30px;color:rgba(255,255,255,.75);letter-spacing:.14em;margin-top:8px">${S.label}</div>` : ''}</div>`;
   },
@@ -116,6 +117,86 @@ const BUILD = {
       <div style="display:flex;gap:28px;margin-top:34px">${S.options.map((o, i) => `<div id="po${i}" style="flex:1;border-radius:28px;padding:30px 0;text-align:center;
           background:${i ? 'var(--acc)' : '#fff'};color:${i ? '#fff' : '#111'}"><span class="t-anton" style="font-size:78px">${o}</span></div>`).join('')}</div>
       <div id="pc" class="t-mb" style="text-align:center;font-size:36px;color:#fff;letter-spacing:.16em;margin-top:28px">${S.cta || 'COMMENT BELOW ⬇'}</div></div>`;
+  },
+  // javelin drives in at an angle through a surface line; a depth bracket draws out with the label
+  // spec: text (e.g. "5–6 INCHES"), sub
+  javelin() {
+    R.w = 1000; R.h = 620;
+    return `<svg width="1000" height="560" style="position:absolute;left:0;top:0;overflow:visible" class="shadow">
+        <rect x="60" y="330" width="880" height="190" rx="18" fill="rgba(232,35,30,.16)"/>
+        <line x1="60" y1="330" x2="940" y2="330" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+        <g id="jv"><line x1="0" y1="0" x2="620" y2="0" stroke="#e9e9ee" stroke-width="12" stroke-linecap="round"/>
+          <rect x="240" y="-10" width="110" height="20" rx="6" fill="#2a2c35"/>
+          <path d="M 620 -9 L 700 0 L 620 9 Z" fill="#c9ccd6"/></g>
+        <g id="jb" opacity="0"><line x1="760" y1="330" x2="760" y2="452" stroke="var(--acc2)" stroke-width="7"/>
+          <line x1="735" y1="330" x2="785" y2="330" stroke="var(--acc2)" stroke-width="7"/>
+          <line x1="735" y1="452" x2="785" y2="452" stroke="var(--acc2)" stroke-width="7"/></g></svg>
+      <div id="jl" style="position:absolute;left:600px;top:470px;width:400px;text-align:center" class="shadow">
+        <div class="t-anton" style="font-size:86px;line-height:1;color:var(--acc2);-webkit-text-stroke:4px #000;paint-order:stroke fill">${S.text}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:30px;color:#fff;letter-spacing:.14em;margin-top:6px">${S.sub}</div>` : ''}</div>`;
+  },
+  // news headline cards (real headlines, cited): white article cards fan in one by one, newest on top.
+  // spec: items [{outlet, title, date}], times [appear times]
+  headline() {
+    R.w = 1080; R.h = 1100;
+    const n = S.items.length;
+    return `<div style="position:absolute;left:70px;top:40px;width:940px;display:flex;flex-direction:column;gap:${S.gap ?? 30}px">` + S.items.map((it, i) => `<div id="hd${i}" class="shadow" style="position:relative;width:940px;
+        border-radius:22px;background:#fbfaf7;overflow:hidden;transform-origin:50% 50%">
+        <div style="height:12px;background:${i % 2 ? 'var(--acc2)' : 'var(--acc)'}"></div>
+        <div style="padding:26px 38px 30px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="t-mb" style="font-size:30px;letter-spacing:.12em;color:#c81d18">${it.outlet}</span>
+            <span class="t-meb" style="font-size:24px;color:#8a8a8a;letter-spacing:.06em">${it.date || ''}</span></div>
+          <div class="t-mb" style="font-size:${it.size || 44}px;line-height:1.12;color:#141414;margin-top:12px">${it.title}</div></div></div>`).join('') + `</div>`;
+  },
+  // real tweet screenshot, cut into cards: each card drops in with a 3D tilt, a thread line links them,
+  // and a highlighter sweeps over the key line. spec: src (screenshot path), cards [[x,y,w,h] in screenshot px],
+  // times [card appear times], hl {card, t, rects [[x,y,w,h] in screenshot px], color}, width (display px)
+  tweet() {
+    R.w = 1080; R.h = 1920; R.full = true;
+    const W = S.width || 980, k = W / S.cards[0][2];
+    const hs = S.cards.map(c => c[3] * k), gap = S.gap ?? 70, total = hs.reduce((a, b) => a + b, 0) + gap * (hs.length - 1);
+    let y = S.top ?? Math.round((1920 - total) / 2); const tops = [];
+    const cards = S.cards.map((c, i) => { tops.push(y); const html = `<div id="tc${i}" style="position:absolute;left:${(1080 - W) / 2}px;top:${y}px;width:${W}px;height:${hs[i]}px;
+        border-radius:30px;overflow:hidden;border:2px solid rgba(255,255,255,.16);background:#000 url('file://${S.src}') no-repeat;
+        background-size:${S.imgw * k}px auto;background-position:${-c[0] * k}px ${-c[1] * k}px;
+        box-shadow:0 40px 90px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.6);transform-origin:50% 0">
+        ${S.hl && S.hl.card === i ? S.hl.rects.map((r, j) => `<div id="hl${j}" style="position:absolute;left:${(r[0] - c[0]) * k}px;top:${(r[1] - c[1]) * k}px;width:0;height:${r[3] * k}px;
+          background:${S.hl.color || 'rgba(255,225,26,.42)'};border-radius:8px"></div>`).join('') : ''}</div>`; y += hs[i] + gap; return html; }).join('');
+    const links = S.cards.slice(1).map((_, i) => `<div id="tl${i}" style="position:absolute;left:${(1080 - W) / 2 + 74 * k}px;top:${tops[i] + hs[i]}px;width:8px;height:${gap}px;
+        border-radius:4px;background:linear-gradient(var(--acc2),var(--acc));transform-origin:50% 0;transform:scaleY(0)"></div>`).join('');
+    return `<div style="position:absolute;inset:0;perspective:1600px">${links}${cards}</div>`;
+  },
+  // podcast clip on screen: mic badge + live waveform + who's talking
+  podcast() {
+    R.w = 1000; R.h = 300;
+    const bars = Array.from({ length: 22 }, (_, i) => `<rect id="pb${i}" x="${i * 22}" y="0" width="12" height="10" rx="6" fill="${i % 2 ? 'var(--acc2)' : '#fff'}"/>`).join('');
+    return `<div id="pcw" class="shadow" style="position:absolute;left:40px;top:30px;width:920px;height:230px;border-radius:34px;background:rgba(14,15,20,.86);border:3px solid rgba(255,255,255,.14)">
+      <div id="pmic" style="position:absolute;left:28px;top:28px;width:174px;height:174px;border-radius:50%;background:var(--acc)">
+        <svg width="174" height="174" viewBox="0 0 174 174"><rect x="66" y="34" width="42" height="72" rx="21" fill="#fff"/>
+          <path d="M50 88 a37 37 0 0 0 74 0" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+          <line x1="87" y1="125" x2="87" y2="144" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg></div>
+      <div style="position:absolute;left:232px;top:26px">
+        <div class="t-meb" style="font-size:28px;letter-spacing:.24em;color:var(--acc2)"><span id="pdot" style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--acc);margin-right:12px;vertical-align:2px"></span>${S.tag || 'ON A PODCAST'}</div>
+        <div class="t-anton" style="font-size:92px;line-height:1.05;color:#fff;white-space:nowrap">${S.text}</div></div>
+      <svg width="480" height="40" style="position:absolute;left:236px;top:176px;overflow:visible">${bars}</svg></div>`;
+  },
+  // US map: states light up one group at a time (timed to the voice); optional "cross" state gets a red X
+  // spec: groups:[{names:[..], label, at, dx, dy}], cross:{names:[..], label, at}, title
+  usmap() {
+    R.w = 1040; R.h = S.title ? 770 : 690;
+    const top = S.title ? 90 : 10, lit = new Set((S.groups || []).flatMap(g => g.names)), cr = new Set((S.cross || {}).names || []);
+    const paths = Object.entries(window.US_STATES).filter(([n]) => n !== 'Alaska' && n !== 'Hawaii').map(([n, d]) =>
+      `<path id="us_${n.replace(/ /g, '_')}" d="${d}" fill="#22242c" stroke="rgba(255,255,255,.28)" stroke-width="1.2" stroke-linejoin="round"/>`).join('');
+    const chip = (id, txt, bg, fg) => `<div id="${id}" class="t-anton" style="position:absolute;padding:4px 20px 2px;border-radius:16px;background:${bg};color:${fg};
+      font-size:52px;line-height:1.1;white-space:nowrap;transform:translate(-50%,-50%);box-shadow:0 8px 22px rgba(0,0,0,.55)">${txt}</div>`;
+    return `${S.title ? `<div id="umT" class="t-anton shadow" style="position:absolute;left:0;top:0;width:1040px;text-align:center;font-size:76px;color:#fff;
+        -webkit-text-stroke:5px #000;paint-order:stroke fill">${S.title}</div>` : ''}
+      <svg id="umS" width="1040" height="660" viewBox="-20 0 1000 635" style="position:absolute;left:0;top:${top}px;overflow:visible" class="shadow">
+        <g id="umG">${paths}</g><g id="umX" opacity="0"></g></svg>
+      <div id="umL" style="position:absolute;left:0;top:${top}px;width:1040px;height:660px">
+        ${(S.groups || []).map((g, i) => chip('umc' + i, g.label, 'var(--acc2)', '#111')).join('')}
+        ${S.cross ? chip('umcx', S.cross.label, 'var(--acc)', '#fff') : ''}</div>`;
   },
 
   // padlock slams shut over a screen showing the sport, "PAYWALL" text
@@ -183,8 +264,74 @@ const BUILD = {
         background:${i % 2 ? '#fff' : '#1f2230'};color:${i % 2 ? '#111' : '#fff'};border-bottom-${i % 2 ? 'right' : 'left'}-radius:8px">
         <span class="t-mb" style="font-size:44px;letter-spacing:.01em">${t}</span></div>`).join('');
   },
+  // birthday cake: number candles light up, confetti burst, "HAPPY BIRTHDAY" + name
+  birthday() {
+    R.w = 1000; R.h = 900;
+    const num = String(S.number ?? '');
+    const conf = Array.from({ length: 46 }, (_, i) => { const r = k => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+      const c = ['var(--acc)', 'var(--acc2)', '#fff', '#3fa9f5', '#2ecc71'][i % 5];
+      return `<div id="cf${i}" data-a="${(r(1) * 2 - 1) * 1.25}" data-v="${560 + r(2) * 520}" data-s="${r(3) * 720 - 360}" style="position:absolute;left:500px;top:330px;width:${14 + r(4) * 12}px;height:${8 + r(5) * 8}px;background:${c};border-radius:2px;opacity:0"></div>`; }).join('');
+    const digits = num.split('').map((d, i) => `<div style="position:relative;width:110px;text-align:center">
+        <div id="fl${i}" style="position:absolute;left:41px;top:-62px;width:28px;height:50px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+          background:radial-gradient(circle at 50% 70%, #fff 0 18%, var(--acc2) 40%, #ff8a00 75%, transparent 76%);opacity:0;transform-origin:50% 100%;filter:drop-shadow(0 0 18px #ffb300)"></div>
+        <div style="position:absolute;left:53px;top:-14px;width:4px;height:16px;background:#222"></div>
+        <div class="t-anton" style="font-size:150px;line-height:1;color:var(--acc2);-webkit-text-stroke:6px #000;paint-order:stroke fill">${d}</div></div>`).join('');
+    return `<div id="cake" class="shadow" style="position:absolute;left:200px;top:120px;width:600px;height:470px;transform-origin:50% 100%">
+        <div style="position:absolute;left:0;right:0;top:34px;display:flex;justify-content:center;gap:6px">${digits}</div>
+        <div style="position:absolute;left:110px;width:380px;top:180px;height:120px;border-radius:22px 22px 10px 10px;background:linear-gradient(#fff6e8,#f1d9b5)"></div>
+        <svg width="380" height="44" style="position:absolute;left:110px;top:178px"><path d="M0 18 ${Array.from({length:8},(_,i)=>`Q ${i*47.5+23.75} 48 ${(i+1)*47.5} 18`).join(' ')} V0 H0Z" fill="var(--acc)"/></svg>
+        <div style="position:absolute;left:40px;width:520px;top:300px;height:150px;border-radius:22px 22px 12px 12px;background:linear-gradient(#ffffff,#e9cfa6)"></div>
+        <svg width="520" height="50" style="position:absolute;left:40px;top:298px"><path d="M0 20 ${Array.from({length:10},(_,i)=>`Q ${i*52+26} 54 ${(i+1)*52} 20`).join(' ')} V0 H0Z" fill="var(--acc2)"/></svg>
+        <div style="position:absolute;left:0;right:0;top:440px;height:26px;border-radius:13px;background:#d9dde6"></div></div>
+      ${conf}
+      <div id="hbT" class="shadow" style="position:absolute;left:0;width:1000px;top:620px;text-align:center">
+        <div class="t-anton" style="font-size:118px;line-height:1;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'HAPPY BIRTHDAY'}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:40px;color:var(--acc2);letter-spacing:.14em;margin-top:10px">${S.sub}</div>` : ''}</div>`;
+  },
+  // records board: rows (event | time | tag) slide in one by one, each landing on the spoken word via `times`
+  board() {
+    const rows = S.rows, n = rows.length; R.w = 960; R.h = (S.title ? 96 : 0) + n * 128 + 20;
+    return `${S.title ? `<div id="bdT" class="t-anton shadow" style="position:absolute;left:0;top:0;width:960px;text-align:center;font-size:72px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;letter-spacing:.02em">${S.title}</div>` : ''}
+      ${rows.map((r, i) => `<div id="bd${i}" class="shadow" style="position:absolute;left:40px;top:${(S.title ? 100 : 0) + i * 128}px;width:880px;height:108px;border-radius:22px;
+          background:#15161c;border:2px solid rgba(255,255,255,.12);display:flex;align-items:center;overflow:hidden">
+        <div style="width:14px;align-self:stretch;background:${i % 2 ? 'var(--acc2)' : 'var(--acc)'}"></div>
+        <div class="t-meb" style="flex:1;padding-left:30px;font-size:40px;color:#fff;letter-spacing:.06em;white-space:nowrap">${r.event}</div>
+        ${r.tag ? `<div id="bdg${i}" class="t-mb" style="font-size:24px;letter-spacing:.1em;padding:8px 14px;border-radius:12px;margin-right:22px;background:${i % 2 ? 'var(--acc2)' : 'var(--acc)'};color:${i % 2 ? '#111' : '#fff'};white-space:nowrap">${r.tag}</div>` : ''}
+        <div id="bdv${i}" class="t-anton" style="font-size:78px;color:#fff;padding-right:34px;min-width:200px;text-align:right">${r.value}</div></div>`).join('')}`;
+  },
+  // one lap of a track: a runner dot laps the oval while a clock counts up to `value`; label underneath
+  track() {
+    R.w = 960; R.h = 640;
+    const lanes = Array.from({ length: 6 }, (_, i) => `<rect x="${60 + i * 14}" y="${40 + i * 14}" width="${720 - i * 28}" height="${360 - i * 28}" rx="${180 - i * 14}" fill="none" stroke="rgba(255,255,255,${i ? .5 : .9})" stroke-width="${i ? 2.5 : 4}"/>`).join('');
+    return `<svg width="840" height="440" style="position:absolute;left:60px;top:0" class="shadow">
+        <rect x="46" y="26" width="748" height="388" rx="194" fill="#b5462f"/>
+        <rect x="144" y="124" width="552" height="192" rx="96" fill="#1d6b3a"/>${lanes}
+        <path id="tkP" d="M 420 386 H 600 A 166 166 0 0 0 600 54 H 240 A 166 166 0 0 0 240 386 Z" fill="none" stroke="var(--acc2)" stroke-width="12" stroke-linecap="round"/>
+        <rect x="414" y="372" width="12" height="30" fill="#fff"/>
+        <circle id="tkD" r="20" fill="var(--acc2)" stroke="#111" stroke-width="5"/></svg>
+      <div class="shadow" style="position:absolute;left:0;top:136px;width:960px;text-align:center">
+        <div id="tkN" class="t-anton" style="font-size:150px;line-height:1;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">0.00</div></div>
+      <div id="tkL" class="shadow" style="position:absolute;left:0;top:460px;width:960px;text-align:center">
+        <div class="t-anton" style="font-size:96px;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;white-space:nowrap">${S.text || 'ONE LAP'}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:34px;color:var(--acc2);letter-spacing:.14em;margin-top:4px">${S.sub}</div>` : ''}</div>`;
+  },
 };
 const ANIM = {
+  board(t) { const T = S.times || S.rows.map((_, i) => .1 + i * .4);
+    if ($('bdT')) { const q = eBack(t / .35); $('bdT').style.opacity = clamp(t / .12) * fadeOut(t); $('bdT').style.transform = `scale(${.7 + .3 * q})`; }
+    S.rows.forEach((_, i) => { const q = eOut((t - T[i]) / .3), e = $('bd' + i);
+      e.style.opacity = clamp((t - T[i]) / .1) * fadeOut(t); e.style.transform = `translateX(${(1 - q) * 300}px)`;
+      const l = clamp((t - T[i] - .2) / .25), v = $('bdv' + i); v.style.textShadow = l > 0 && l < 1 ? `0 0 ${40 * (1 - l)}px var(--acc2)` : 'none';
+      v.style.transform = `scale(${1 + .12 * Math.sin(Math.PI * l)})`;
+      const g = $('bdg' + i); if (g) { const b = eBack((t - T[i] - .3) / .3); g.style.opacity = clamp((t - T[i] - .3) / .08); g.style.transform = `scale(${.4 + .6 * b})`; } }); },
+  track(t) { const A = S.anim || 2.2, p = eInOut((t - .3) / A), P = $('tkP'), L = P.getTotalLength(), pt = P.getPointAtLength(Math.min(p * L, L - .01));
+    $('root').style.opacity = clamp(t / .2) * fadeOut(t);
+    $('tkD').setAttribute('cx', pt.x); $('tkD').setAttribute('cy', pt.y);
+    P.style.strokeDasharray = L; P.style.strokeDashoffset = L * (1 - p);
+    $('tkN').textContent = (+S.value * p).toFixed((String(S.value).split('.')[1] || '').length);
+    const land = clamp((t - .3 - A) / .3); $('tkN').style.color = land > 0 ? 'var(--acc2)' : '#fff';
+    $('tkN').style.transform = `scale(${1 + .14 * Math.sin(Math.PI * land)})`;
+    const l = eBack((t - .3 - A) / .35); $('tkL').style.opacity = clamp((t - .3 - A) / .1) * fadeOut(t); $('tkL').style.transform = `scale(${.5 + .5 * l})`; },
   padlock(t) { const q = eOut(clamp((t - .15) / .3)); $('lock').style.transform = `translateY(${(1 - q) * -420}px)`; $('lock').style.opacity = clamp((t - .1) / .1) * fadeOut(t);
     const snap = clamp((t - .5) / .12); $('shackle').setAttribute('transform', `translate(0 ${(1 - snap) * -40})`);
     const sh = t > .6 && t < .85 ? Math.sin(t * 95) * 9 * (1 - (t - .6) / .25) : 0; $('root').style.transform = `translate(${sh}px,${sh * .5}px)`;
@@ -224,7 +371,9 @@ const ANIM = {
     $('root').style.opacity = clamp(t / .2) * fadeOut(t); $('root').style.transform = `scale(${.85 + .15 * eBack(t / .4)})`;
     $('hand').setAttribute('transform', `rotate(${(v * p) % 60 * 6} 260 300)`);
     const C = 2 * Math.PI * 150; $('swArc').setAttribute('stroke-dashoffset', C * (1 - ((v * p) % 60) / 60));
-    $('swN').textContent = (v * p).toFixed((String(S.value).split('.')[1] || '').length);
+    const cur = v * p;
+    $('swN').textContent = S.format === 'mss' ? `${Math.floor(cur / 60)}:${String(Math.floor(cur % 60)).padStart(2, '0')}`
+                                              : cur.toFixed((String(S.value).split('.')[1] || '').length);
     const land = clamp((t - .35 - A) / .25); $('swN').style.textShadow = land > 0 && land < 1 ? `0 0 ${50 * (1 - land)}px var(--acc)` : 'none'; },
   wind(t) { for (let i = 0; i < 9; i++) $('wl' + i).style.strokeDashoffset = 1600 - ((t * (900 + i * 60) + i * 170) % 1660);
     $('root').style.opacity = clamp(t / .25) * fadeOut(t); const l = eBack((t - .25) / .4); $('wlab').style.transform = `scale(${.5 + .5 * l})`; $('wlab').style.opacity = clamp((t - .25) / .15); },
@@ -237,9 +386,74 @@ const ANIM = {
       const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
       e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
     const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+  javelin(t) {
+    // javelin path: angled ~25deg, tip ends ~120px below the surface line at x~700
+    const a = 25 * Math.PI / 180, q = eOut(t / .45), tipX = 700, tipY = 452, L = 700;
+    const back = (1 - q) * 520, x0 = tipX - Math.cos(a) * (L + back), y0 = tipY - Math.sin(a) * (L + back);
+    const shake = t > .45 && t < .8 ? Math.sin(t * 90) * 3 * (1 - (t - .45) / .35) : 0;
+    $('jv').setAttribute('transform', `translate(${x0} ${y0 + shake}) rotate(25)`);
+    $('root').style.opacity = clamp(t / .1) * fadeOut(t);
+    $('jb').setAttribute('opacity', clamp((t - .55) / .2));
+    const l = eBack((t - .7) / .35); $('jl').style.opacity = clamp((t - .7) / .12); $('jl').style.transform = `scale(${.6 + .4 * l})`;
+  },
+  headline(t) {
+    const T = S.times || S.items.map((_, i) => .1 + i * .7);
+    S.items.forEach((_, i) => { const q = eBack((t - T[i]) / .45, 1.3), e = $('hd' + i);
+      e.style.opacity = clamp((t - T[i]) / .12) * fadeOut(t);
+      e.style.transform = `translateX(${(1 - q) * 900}px) rotate(${(i % 2 ? 1.6 : -1.6) * q}deg)`; });
+  },
+  tweet(t) {
+    const T = S.times || S.cards.map((_, i) => .1 + i * .9);
+    S.cards.forEach((_, i) => { const q = eBack((t - T[i]) / .55, 1.2), e = $('tc' + i), up = i ? 1 : -1;
+      e.style.opacity = clamp((t - T[i]) / .15) * fadeOut(t);
+      const float = Math.sin((t - T[i]) * 1.6 + i) * 4;
+      e.style.transform = `translateY(${(1 - q) * 260 * -up + float}px) rotateX(${(1 - q) * 38 * up}deg) rotateZ(${(1 - q) * (i ? 3 : -3)}deg) scale(${.9 + .1 * q})`;
+      if (i) { const l = $('tl' + (i - 1)); l.style.transform = `scaleY(${eOut((t - T[i] + .35) / .3)})`; l.style.opacity = fadeOut(t); } });
+    if (S.hl) { const H = S.hl, per = H.dur || .55;
+      H.rects.forEach((r, j) => { const p = eInOut((t - H.t - j * per) / per), k = (S.width || 980) / S.cards[0][2];
+        $('hl' + j).style.width = (r[2] * k * p) + 'px'; });
+      const pop = clamp((t - H.t - H.rects.length * per) / .25); const e = $('tc' + H.card);
+      if (pop > 0 && pop < 1) e.style.boxShadow = `0 40px 90px rgba(0,0,0,.75),0 0 ${70 * Math.sin(pop * Math.PI)}px var(--acc2)`; }
+  },
+  podcast(t) { const q = eBack(t / .45); $('pcw').style.transform = `translateY(${(1 - q) * -60}px) scale(${.85 + .15 * q})`;
+    $('pcw').style.opacity = clamp(t / .15) * fadeOut(t); $('pdot').style.opacity = .35 + .65 * (Math.sin(t * 7) > 0 ? 1 : 0);
+    $('pmic').style.transform = `scale(${1 + .04 * Math.sin(t * 11)})`;
+    for (let i = 0; i < 22; i++) { const h = 8 + 30 * Math.abs(Math.sin(t * (5 + i % 5) + i * 1.7) * Math.sin(t * 2.3 + i * .6));
+      const b = $('pb' + i); b.setAttribute('height', h); b.setAttribute('y', 20 - h / 2); } },
+  birthday(t) { const q = eBack(t / .45); $('cake').style.transform = `translateY(${(1 - q) * 160}px) scale(${.7 + .3 * q})`;
+    $('root').style.opacity = clamp(t / .12) * fadeOut(t);
+    String(S.number ?? '').split('').forEach((_, i) => { const f = $('fl' + i), l = clamp((t - .45 - i * .18) / .12);
+      f.style.opacity = l; f.style.transform = `scale(${l * (1 + .08 * Math.sin(t * 23 + i * 2))},${l * (1 + .14 * Math.sin(t * 17 + i))}) rotate(${4 * Math.sin(t * 13 + i)}deg)`; });
+    const b = t - .8; document.querySelectorAll('[id^=cf]').forEach(e => { if (b <= 0) { e.style.opacity = 0; return; }
+      const a = +e.dataset.a, v = +e.dataset.v, x = Math.sin(a) * v * b, y = -Math.cos(a) * v * b * 1.1 + 900 * b * b;
+      e.style.opacity = clamp(1 - (b - 1.3) / .6) * fadeOut(t); e.style.transform = `translate(${x}px,${y}px) rotate(${+e.dataset.s * b}deg) rotateX(${b * 540}deg)`; });
+    const l = eBack((t - .9) / .4); $('hbT').style.opacity = clamp((t - .9) / .12) * fadeOut(t); $('hbT').style.transform = `scale(${.5 + .5 * l})`; },
+  usmap(t) {
+    const top = S.title ? 90 : 10, sc = 1040 / 1000, k = eOut(t / .45);
+    $('root').style.opacity = clamp(t / .2) * fadeOut(t); $('umS').style.transform = `scale(${.92 + .08 * k})`;
+    if ($('umT')) { const q = eBack(t / .4); $('umT').style.transform = `scale(${.7 + .3 * q})`; }
+    const box = n => { const b = $('us_' + n.replace(/ /g, '_')).getBBox(); return [b.x + b.width / 2, b.y + b.height / 2]; };
+    const place = (id, names, dy, dx) => { const c = names.map(box), x = c.reduce((a, p) => a + p[0], 0) / c.length, y = c.reduce((a, p) => a + p[1], 0) / c.length;
+      $(id).style.left = ((x + 20) * sc + (dx || 0)) + 'px'; $(id).style.top = (y * sc + (dy || 0)) + 'px'; };
+    (S.groups || []).forEach((g, i) => { const q = clamp((t - g.at) / .25);
+      g.names.forEach(n => { const e = $('us_' + n.replace(/ /g, '_'));
+        e.setAttribute('fill', q > 0 ? `color-mix(in srgb, var(--acc2) ${Math.round(100 * q)}%, #22242c)` : '#22242c');
+        e.style.filter = q > 0 ? `drop-shadow(0 0 ${14 * q}px var(--acc2))` : ''; });
+      place('umc' + i, g.names, g.dy, g.dx); const c = eBack((t - g.at) / .35); $('umc' + i).style.opacity = clamp((t - g.at) / .1);
+      $('umc' + i).style.transform = `translate(-50%,-50%) scale(${.3 + .7 * c})`; });
+    if (S.cross) { const at = S.cross.at, q = clamp((t - at) / .25);
+      S.cross.names.forEach(n => { const e = $('us_' + n.replace(/ /g, '_'));
+        e.setAttribute('fill', q > 0 ? `color-mix(in srgb, var(--acc) ${Math.round(85 * q)}%, #22242c)` : '#22242c'); });
+      const [x, y] = box(S.cross.names[0]), L = 60 * eOut((t - at - .1) / .3);
+      $('umX').setAttribute('opacity', q); $('umX').innerHTML = `<path d="M${x - L} ${y - L}L${x + L} ${y + L}M${x + L} ${y - L}L${x - L} ${y + L}" stroke="#fff" stroke-width="14" stroke-linecap="round"/>`;
+      place('umcx', S.cross.names, S.cross.dy ?? 110, S.cross.dx); const c = eBack((t - at - .2) / .35); $('umcx').style.opacity = clamp((t - at - .2) / .1);
+      $('umcx').style.transform = `translate(-50%,-50%) scale(${.3 + .7 * c})`; }
+  },
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  board: () => { const T = S.times || S.rows.map((_, i) => .1 + i * .4); return { pops: T.map(x => +(x + .25).toFixed(2)) }; },
+  track: () => { const A = S.anim || 2.2; return { ticks: [.6, 1.0, 1.4, 1.8].filter(x => x < .3 + A), land: +(.3 + A).toFixed(2) }; },
   padlock: () => ({ thud: .58 }),
   subscription: () => ({ swish: .85, drop: 1.5, pops: [1.85] }),
   tv: () => ({ ticks: [.3], soft: .75, pops: [.95] }),
@@ -254,6 +468,12 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   wind: () => ({ air: .05 }),
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
+  podcast: () => ({ pops: [.2] }),
+  javelin: () => ({ thud: .45 }),
+  headline: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
+  tweet: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
+  birthday: () => ({ soft: .45, pops: [.9] }),
+  usmap: () => ({ pops: (S.groups || []).map(g => +(g.at + .05).toFixed(2)), ...(S.cross ? { thud: +(S.cross.at + .1).toFixed(2) } : {}) }),
 };
 
 window.setup = async (spec) => {

@@ -27,7 +27,7 @@ Rules: the final video must be **at least 61 seconds**, and all B-roll must be *
 | type | kinds / fields | use for |
 |---|---|---|
 | `data` | `counter`, `compare`, `bars`, `line`, `ring` | numbers and stats |
-| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll` | things being talked about |
+| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll`, `padlock`, `subscription`, `tv`, `flow`, `bubbles`, `board`, `track` | things being talked about |
 | `name` | `rank`, `name`, `sub` | introducing a person |
 | `clip` | `src`, `t`, `dur`, `x`, `y`, `w`, `key: green\|black` | animation clips you supply (green-screen, black-background or alpha) |
 
@@ -65,6 +65,9 @@ Each is rendered as a short clip from the overlap between segments. `build.py` p
 - **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
 - **Audio:** your original voice, untouched. It's never turned down; a quiet take is raised to −14 LUFS.
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
+  - Sound moments are spaced at least `sfx_min_gap` (3 s) apart.
+  - The same sound never plays twice in a row.
+  - Risers and long cinematic hits are banned.
 - **Quality rules:**
   - B-roll below 1080p (short side) is rejected.
   - Clips that have to be enlarged to fill the screen get extra sharpening.

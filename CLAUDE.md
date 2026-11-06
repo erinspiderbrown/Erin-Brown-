@@ -12,7 +12,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - One exception: if the take peaks right at 0 dBFS, it gets the minimum static trim to a −0.5 dBFS peak (about 0.5 dB, below audibility). ffmpeg's AAC encoder squashes full-scale audio (quieter, with crunch on the loudest words), and this headroom keeps the encode clean.
   - If the take is quieter than −14 LUFS, it gets one static volume boost up to −14, plus a peak limiter only in that case.
   - Don't add voice processing back, or lower the voice, unless the owner asks for it.
-- **Export:** 1080×1920, 30 fps. Loudness is −14 LUFS, or louder if the owner's take is already louder (see above). Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode the video with `-crf 20 -preset slow` if needed, and copy the audio (`-c:a copy`; the build writes 256k AAC) so the voice is never re-compressed.
+- **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
+  - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
+  - Full-screen needs one of:
+    - 4K landscape video (keep it at native 4K, don't downscale the intermediate)
+    - vertical video at 1080×1920 or higher
+    - a high-res photo (about 3000 px or more on the long side)
+  - 1080p landscape clips go in the bottom half of the split only.
+  - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
+- **Export:** 1080×1920, 30 fps. Loudness is −14 LUFS, or louder if the owner's take is already louder (see above). Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode the video with `-crf 20 -preset slow`, or with a two-pass encode at about 6–9 Mbps if that's still too big. Copy the audio (`-c:a copy`; the build writes 256k AAC) so the voice is never re-compressed.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
@@ -28,13 +36,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - **Overrides:** force one per segment with `"transition": "whip:left" | "zoom" | "spin" | "glitch" | "flash" | "shake" | "swipe:right" | "cut"`. Set `split_swipes: false` for plain cuts in the split.
   - Keep them varied, never the same transition twice in a row. Motion blur peaks briefly at the cut so both shots stay sharp.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
-- **No random loud sound effects mid-sentence.** The owner dislikes them. The defaults in `style.json` are:
+- **Sound effects: few, quiet, spaced out.** The owner dislikes random loud sounds mid-sentence. `build.py` and the `style.json` defaults enforce this:
   - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no stamp thuds, pops, ticks or clicks).
-  - **Off:** `hit_sfx: false`, so there are no bass hits.
-  - **Off:** `extra_sfx_on: false`, so there are no risers.
+  - **Off:** `hit_sfx: false`, so there are no bass hits. `"hit": true` on a segment only picks the flash/shake transition.
+  - **Off:** `extra_sfx_on: false`. Risers and long cinematic hits are banned outright (`BANNED_SFX`), in any video.
   - **Kept:** a quiet airy whoosh on cuts into and out of full-screen (`whoosh_level` 0.24), with small pitch variation. B-roll swaps inside the split are silent.
-  - Don't turn any of these back on unless the owner asks. `"hit": true` on a segment now only adds the visual flash.
-  - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random.)
+  - **Spaced out:** at least `sfx_min_gap` (3 s) between sound moments, and never the same sound file twice in a row.
+  - The render prints the kept sound list (`SFX: …`). Check it.
+  - Don't turn any of these back on unless the owner asks.
+  - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random, and risers too loud and drawn out.)
 - **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
 - **Things being talked about** get motion graphics (`type: "motion"`):
   - `stamp`: e.g. "FRAUD?"
@@ -50,6 +60,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `tv`: TV switching on
   - `flow`: three-step icon chain; set `times` to land each step on the word
   - `bubbles`: generic reaction chat bubbles. These are illustrative, never presented as real quotes.
+  - `usmap`: states light up on a US map in time with the voice; `cross` puts a red X on a state
+  - `birthday`: cake with number candles and confetti
+  - `podcast`: mic badge with a live waveform naming who's talking, for guest podcast clips
+  - `board`: records board; rows of `event`, `value` and optional `tag`, with `times` landing each row on the word
+  - `track`: one lap of a track with a clock counting to `value` (open 400 times)
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).
 - **Animation clips are a standing request for future videos.** Plan short animated clips that illustrate what's being said, alongside the motion graphics. Examples: an animated track, a running-figure loop, a stopwatch or a globe spin.
@@ -58,6 +73,40 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - As of Nov 2026 the owner's Higgsfield account is on the free plan with 10 credits. Its 1080p models need the Basic plan or higher, and the only clips 10 credits cover are 720p, which breaks the 1080p rule. Until that changes, hand-build animations as `motion` graphics.
   - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
+## Default editing method: the Yohan Blake edit
+**This is the default way to edit every TikTok from now on.** The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and "probably the best video". Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure, pacing, graphics and transitions unless the owner asks for something different.
+- **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
+  - The auto-picked viral transitions, with no per-segment overrides.
+  - A graphic on almost every beat (name tags, keywords, stamps, boards, bars, counters, a poll).
+  - Don't thin them out or swap in new styles without asking.
+- **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
+- **Story arc:** build the edit as an argument with a payoff.
+  1. **Hook (0–15 s):** the subject full-screen with a name tag, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
+  2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `stamp` for the twist, e.g. "NOT A CHAMPIONSHIP").
+  3. **Turn:** cut to full-screen on the key fact, with a `data` counter.
+  4. **The real story:** a name tag for each new person, then a `board` listing the evidence, one row landing on each spoken item (`times`).
+  5. **Callback:** full-screen with the claim stamped again ("WRONG ERA?" → "LIE").
+  6. **Proof:** actual results for each event the owner names (`bars` with real times, the subject's place in the name), with a stamp on each verdict ("4TH PLACE", "4TH AGAIN").
+  7. **Ending:** `poll` on the core question ("BORN IN THE WRONG ERA? YES / NO").
+- **Pacing:**
+  - A graphic on almost every beat, about every 3–5 s.
+  - A new B-roll shot every 4–7 s.
+  - Full-screen at each act turn (4–5 per video), with `hit` on the two biggest.
+  - Punch-in zooms on the owner's rhetorical questions ("Where was he?").
+- **Facts on screen:** the owner's claims are backed by real, checked numbers: official times and places, all-time ranks. Never invent data. List every added fact in the project NOTES, and tell the owner where his wording differs from the record.
+- **When the owner sends only a talking head:**
+  - Pull B-roll from Wikimedia Commons: freely licensed photos of the athletes and races, ≥2800 px.
+    - Search by category and by file name.
+    - Download slowly, because Commons rate-limits.
+    - Bake in EXIF orientation, and cap photos at 3200 px for render speed.
+  - Write `CREDITS.md` (CC BY / CC BY-SA need a caption credit) and tell the owner the caption line.
+  - YouTube race footage can't be downloaded from the cloud session (bot check; don't try to get around it). List the official uploads in `footage_wanted.md` so the owner can send them; they'd go in the bottom half.
+  - Full-screen photos must be vertical or large enough to crop to 9:16 sharply. A wide landscape photo crops to an awkward slice, so use it in the split only.
+- **Graphic layout limits (learned on this edit):**
+  - `board` rows: keep `event` to about 20 characters, and only use `tag` on short rows, or the value gets clipped.
+  - `bars`: at most 4 rows in the split. For 5+ results, use a `board` (rows like "5 · YOHAN BLAKE", with a `tag`).
+  - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
+
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox links.
    - Share links (`/scl/fi/...`): download with `?dl=1`.
@@ -65,8 +114,24 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - **Guest soundbites:** when the owner references someone's interview or podcast, cut the guest's best 15–25 s into the A-roll right after the owner introduces them. The guest's footage takes the top "speaker" slot, in the same 1440×1280 framing with any on-screen banners cropped off. Match its loudness to the owner's voice, and merge the guest's captions into the timeline. See `projects/flotrack-masai/`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
 3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
-4. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
+4. **Write `plan.json`.** Start from `projects/yohan-blake/plan.json`, the default editing method (see above).
 5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+6. **Deliver to the owner's Dropbox** too: save every finished export to `/TikTok Exports/` in his Dropbox. He's connected it through the Composio connector (account "Erin Brown Track & Field").
+   - Files over about 150 MB can't go through `DROPBOX_UPLOAD_FILE`. Use `DROPBOX_SAVE_URL` with the file's GitHub LFS URL (`https://media.githubusercontent.com/media/<owner>/<repo>/<branch>/exports/<file>`), so Dropbox fetches it server-side.
+   - Check the returned `content_hash` against the local file (SHA-256 of the per-4 MB-block SHA-256s) before telling the owner it's there.
+   - He can also put raw footage in his Dropbox and name the folder; read it from there instead of asking for share links.
+7. **Write a title** for every video: a one-line, YouTube Shorts style hook (the owner asked for this on all of them).
+   - Lead with a name people search plus the conflict or twist (e.g. "He Refused to Leave the Track… 11 Years Later, Track Banned Him").
+   - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
+   - No claim the video doesn't back up.
+   - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
+8. **Make a 3:4 thumbnail** (1080×1440 JPG, the TikTok profile-grid cover size; the owner said 9:16 was too big) for every video, saved to `exports/thumbnails/<video>_thumb.jpg` and delivered to Dropbox with the video.
+   - Simple and high quality, from real photos only: no AI-generated images, nothing that looks AI.
+   - One or two strong faces or expressions (e.g. the two people in the conflict, top and bottom with the house soft seam), with photos used at native resolution and never enlarged, plus a light contrast/color grade.
+   - Few words, if any: at most one or two in Anton (e.g. "OPOSSUM?").
+   - Check the crops so faces, hands and gestures aren't cut off or covered by the text.
+   - Example: `projects/tebogo-lyles/thumbnail.py`.
+- **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.

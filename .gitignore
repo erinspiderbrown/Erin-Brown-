@@ -4,3 +4,7 @@ editor/out/
 __pycache__/
 *.mp4
 *.mov
+projects/*/raw/
+projects/*/work/
+projects/*/out/
+projects/*/broll/
