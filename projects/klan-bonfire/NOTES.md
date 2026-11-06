@@ -6,7 +6,7 @@ Alternates:
 - Growing Up a 400m Runner in Texas, I Almost Walked Into a Klan Rally
 - I Googled "Bonfires With Guys Dressed Like Ghosts"… Oh Hell No
 
-Thumbnail (3:4, 1080×1440): `exports/thumbnails/klan_bonfire_thumb.jpg`. The owner's confused squint (a 4K frame from 1:05, "what the f*** is dressed like ghosts for?") is on top, the 1923 public-domain night rally (robes around the cross) below, and "GHOSTS?" on the seam. Made by `thumbnail.py`.
+Thumbnails: `exports/thumbnails/klan_bonfire_thumb.jpg` (3:4, 1080×1440) and `klan_bonfire_thumb_916.jpg` (9:16). No text and no face (the owner said his face isn't needed): the Texas flag at night over the city on top, in color, and the 1923 public-domain night rally (robes around the cross) below in black and white, split by a diagonal white line. Built by `editor/thumb.py` from `thumb_spec.json`.
 
 ## Story and sound
 The owner's personal story, built as a slow-burn reveal:
