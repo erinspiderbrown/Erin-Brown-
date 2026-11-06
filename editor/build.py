@@ -465,7 +465,20 @@ def main(plan_path):
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
+    # ambience beds (plan "ambience"): quiet looped atmospheres under a stretch of the story (e.g. campfire crackle,
+    # night crickets). Each is levelled to its own target loudness ("lufs", default -34) far below the -14 voice, faded in/out.
+    amb_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'ambience')
+    beds = []
+    for k, a in enumerate(plan.get('ambience', [])):
+        src = f"{amb_dir}/{a['src']}.wav"
+        lm = subprocess.run(['ffmpeg', '-hide_banner', '-i', src, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        g = float(a.get('lufs', -34)) - float(re.findall(r'I:\s+(-?[\d.]+) LUFS', lm)[-1])
+        d = a['end'] - a['t']; f = min(float(a.get('fade', 1.0)), d / 2)
+        ain += ['-stream_loop', '-1', '-i', src]
+        mix.append(f"[{1+len(cues)+k}:a]atrim=0:{d:.3f},asetpts=PTS-STARTPTS,aresample=48000,afade=t=in:d={f:.2f},"
+                   f"afade=t=out:st={d-f:.3f}:d={f:.2f},volume={g:.2f}dB,adelay={int(a['t']*1000)}:all=1[b{k}]")
+        beds.append(f'[b{k}]')
+    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))] + beds) + f'amix=inputs={len(cues)+1+len(beds)}:normalize=0:duration=first'
     m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])

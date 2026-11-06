@@ -1,0 +1,562 @@
+{
+ "workdir": "w6/build",
+ "output": "out/klan_bonfire.mp4",
+ "words": "w6/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 95.14,
+ "face": {
+  "src": "w6/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw6/ph/kkk_cross80.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.0,
+   "broll": {
+    "src": "raw6/mix/bonfire_big_night.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 7.3,
+   "broll": {
+    "src": "raw6/mix/track_man_training.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.6,
+   "broll": {
+    "src": "raw6/mix/track_coach.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 12.6,
+   "broll": {
+    "src": "raw6/ph/texas_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.3,
+   "broll": {
+    "src": "raw6/mix/track_pair.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 19.9,
+   "broll": {
+    "src": "raw6/mix/track_slowmo.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 23.0,
+   "broll": {
+    "src": "raw6/mix/track_sitting_exhausted.mp4",
+    "ss": 1.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 26.0,
+   "broll": {
+    "src": "raw6/mix/track_man_jog.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 29.4,
+   "broll": {
+    "src": "raw6/mix/campfire_woods_night.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.3,
+   "broll": {
+    "src": "raw6/mix/forest_moon.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.6,
+   "broll": {
+    "src": "raw6/mix/bonfire_dark.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.5,
+   "broll": {
+    "src": "raw6/mix/tent_setup.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.4,
+   "broll": {
+    "src": "raw6/mix/campfire_tent.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.9,
+   "broll": {
+    "src": "raw6/mix/marshmallows.mp4",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.1,
+   "broll": {
+    "src": "raw6/mix/bonfire_sky.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.1,
+   "broll": {
+    "src": "raw6/mix/forest_paranormal.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.5,
+   "broll": {
+    "src": "raw6/mix/robes_night.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.0,
+   "broll": {
+    "src": "raw6/mix/robed_red_light.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 67.5,
+   "broll": {
+    "src": "raw6/mix/forest_foggy_stars.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 71.2,
+   "broll": {
+    "src": "raw6/mix/laptop_night.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 76.6,
+   "broll": {
+    "src": "raw6/mix/phone_bed.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 79.4,
+   "broll": {
+    "src": "raw6/ph/kkk_init.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 84.9,
+   "broll": {
+    "src": "raw6/ph/kkk_parade_v1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 87.8,
+   "broll": {
+    "src": "raw6/ph/kkk_cross25.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 90.4,
+   "broll": {
+    "src": "raw6/ph/kkk_penn.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.6
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   62.5,
+   64.0,
+   1.1
+  ],
+  [
+   80.8,
+   82.4,
+   1.15
+  ],
+  [
+   91.2,
+   92.6,
+   1.15
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 2.4,
+   "dur": 2.6,
+   "text": "KLAN RALLY?!",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.5,
+   "dur": 2.2,
+   "text": "NO IDEA"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.3,
+   "dur": 1.8,
+   "text": "THE 400"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.3,
+   "dur": 1.4,
+   "text": "REALLY HARD"
+  },
+  {
+   "type": "motion",
+   "kind": "usmap",
+   "t": 12.8,
+   "dur": 2.5,
+   "groups": [
+    {
+     "names": [
+      "Texas"
+     ],
+     "label": "TEXAS",
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 15.5,
+   "dur": 3.2,
+   "text": "EVERYBODY COOL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 23.6,
+   "dur": 2.2,
+   "text": "HARDEST PRACTICE",
+   "size": 105,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 28.4,
+   "dur": 3.6,
+   "items": [
+    "WE HAVING A BONFIRE TONIGHT",
+    "IN THE WOODS",
+    "YOU SHOULD PULL UP"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 35.1,
+   "dur": 2.0,
+   "text": "A LITTLE DIFFERENT?",
+   "size": 95,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.3,
+   "dur": 2.6,
+   "text": "NEVER HEARD OF IT"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 43.0,
+   "dur": 2.2,
+   "text": "BOY SCOUTS"
+  },
+  {
+   "type": "motion",
+   "kind": "usmap",
+   "t": 45.5,
+   "dur": 3.3,
+   "groups": [
+    {
+     "names": [
+      "Arkansas"
+     ],
+     "label": "ARKANSAS",
+     "at": 0.8
+    },
+    {
+     "names": [
+      "Oklahoma"
+     ],
+     "label": "OKLAHOMA",
+     "at": 1.7
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 50.8,
+   "dur": 2.6,
+   "text": "ROAST \u00b7 COOK \u00b7 FISH"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 58.9,
+   "dur": 2.4,
+   "text": "DRESSED LIKE GHOSTS?",
+   "size": 90,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 65.7,
+   "dur": 1.9,
+   "text": "NOT HALLOWEEN",
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "search",
+   "t": 73.8,
+   "dur": 5.5,
+   "text": "bonfires with guys dressed like ghosts not around halloween",
+   "type_dur": 5.0
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 91.1,
+   "dur": 1.6,
+   "text": "OH HELL NO",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 92.75,
+   "dur": 2.39,
+   "question": "WHAT WOULD YOU DO?",
+   "options": [
+    "CUT HIM OFF",
+    "CONFRONT"
+   ]
+  }
+ ],
+ "ambience": [
+  {
+   "src": "campfire_crackle",
+   "t": 29.4,
+   "end": 34.6,
+   "lufs": -31,
+   "fade": 0.8
+  },
+  {
+   "src": "night_crickets",
+   "t": 34.0,
+   "end": 48.9,
+   "lufs": -36,
+   "fade": 1.2
+  },
+  {
+   "src": "campfire_crackle2",
+   "t": 45.4,
+   "end": 56.3,
+   "lufs": -32,
+   "fade": 1.0
+  },
+  {
+   "src": "night_crickets",
+   "t": 56.1,
+   "end": 79.35,
+   "lufs": -35,
+   "fade": 1.0
+  },
+  {
+   "src": "scary_woods",
+   "t": 58.5,
+   "end": 79.35,
+   "lufs": -33,
+   "fade": 2.0
+  },
+  {
+   "src": "horror_ambience",
+   "t": 84.9,
+   "end": 90.6,
+   "lufs": -36,
+   "fade": 1.0
+  }
+ ]
+}

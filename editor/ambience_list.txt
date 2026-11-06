@@ -1,0 +1,7 @@
+campfire_crackle 1345
+campfire_crackle2 2653
+campfire_night_wind 1329
+night_forest 1788
+night_crickets 1227
+scary_woods 2474
+horror_ambience 2414

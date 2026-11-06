@@ -15,4 +15,11 @@ while read -r name id; do
   curl -sSL -o "$HERE/assets/sfx_raw/$name.mp3" "https://assets.mixkit.co/active_storage/sfx/$id/$id-preview.mp3"
 done < "$HERE/sfx_list.txt"
 python3 "$HERE/prep_sfx.py" "$HERE/assets/sfx_raw" "$HERE/assets/sfx"
+# ambience beds (campfire, night crickets, scary woods) for the plan's "ambience" list
+mkdir -p "$HERE/assets/ambience"
+while read -r name id; do
+  [ -z "$name" ] && continue
+  curl -sSL -o "$HERE/assets/ambience/$name.mp3" "https://assets.mixkit.co/active_storage/sfx/$id/$id-preview.mp3"
+  ffmpeg -nostdin -v error -y -i "$HERE/assets/ambience/$name.mp3" -ar 48000 -ac 2 "$HERE/assets/ambience/$name.wav"
+done < "$HERE/ambience_list.txt"
 echo "setup done"
