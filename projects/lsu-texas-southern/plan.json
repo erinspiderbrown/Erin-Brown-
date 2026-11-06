@@ -1,0 +1,529 @@
+{
+ "workdir": "work/build",
+ "output": "out/lsu_v1.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 82.4,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": false,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/stock/pmac.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.9,
+   "broll": {
+    "src": "raw/stock/game1.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 7.2,
+   "broll": {
+    "src": "raw/stock/lsu01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 13.1,
+   "broll": {
+    "src": "raw/stock/game3.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.2,
+   "broll": {
+    "src": "raw/stock/game4.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.7,
+   "broll": {
+    "src": "raw/stock/lsu05.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 26.5,
+   "broll": {
+    "src": "raw/stock/wnba4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.6,
+   "broll": {
+    "src": "raw/stock/wnba25.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 35.0,
+   "broll": {
+    "src": "raw/stock/game5.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.4,
+   "broll": {
+    "src": "raw/stock/game6.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 44.0,
+   "broll": {
+    "src": "raw/stock/stef.webm",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.4,
+   "broll": {
+    "src": "raw/stock/game7.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 54.5,
+   "broll": {
+    "src": "raw/stock/game2.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 58.7,
+   "broll": {
+    "src": "raw/stock/kids3.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.9,
+   "broll": {
+    "src": "raw/stock/lsu19.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.1,
+   "broll": {
+    "src": "raw/stock/kids1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 67.4,
+   "broll": {
+    "src": "raw/stock/wnba2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 70.0,
+   "broll": {
+    "src": "raw/stock/pmac.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 73.5,
+   "broll": {
+    "src": "raw/stock/adelphi.webm",
+    "ss": 140.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 76.4,
+   "broll": {
+    "src": "raw/stock/umd3.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 80.6,
+   "broll": {
+    "src": "raw/stock/game1.mp4",
+    "ss": 3.5,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1920,
+     880,
+     0,
+     0
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   13.1,
+   14.3,
+   1.15
+  ],
+  [
+   22.7,
+   24.2,
+   1.1
+  ],
+  [
+   31.6,
+   33.4,
+   1.06
+  ],
+  [
+   49.4,
+   52.4,
+   1.1
+  ],
+  [
+   60.9,
+   63.0,
+   1.12
+  ],
+  [
+   73.5,
+   75.2,
+   1.1
+  ],
+  [
+   80.6,
+   82.4,
+   1.14
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.2,
+   "dur": 3.0,
+   "text": "WOMEN'S BASKETBALL?",
+   "hi": 1,
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 5.2,
+   "dur": 1.6,
+   "text": "NO TALENT?",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "scoreboard",
+   "t": 7.5,
+   "dur": 5.4,
+   "home": "LSU",
+   "away": "TSU",
+   "hs": 131,
+   "as": 22,
+   "margin": "+109",
+   "anim": 3.1
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 14.4,
+   "dur": 2.8,
+   "label": "2nd Quarter",
+   "unit": "PTS",
+   "items": [
+    {
+     "name": "LSU",
+     "value": "40"
+    },
+    {
+     "name": "Texas Southern",
+     "value": "0"
+    }
+   ],
+   "badge": "40-0"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 19.9,
+   "dur": 2.4,
+   "text": "10 ON 5?",
+   "hi": 2,
+   "size": 160
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.2,
+   "dur": 1.6,
+   "text": "ATTENTION?",
+   "hi": 0,
+   "size": 150
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 40.6,
+   "dur": 2.8,
+   "value": "50",
+   "unit": "PTS",
+   "label": "Losing by",
+   "sub": "\"Oh man, that's horrible\""
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 45.4,
+   "dur": 2.9,
+   "value": "60",
+   "unit": "PTS",
+   "label": "Losing by",
+   "sub": "\"That is a blowout\""
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 53.4,
+   "dur": 1.1,
+   "value": "80",
+   "unit": "PTS",
+   "label": "Down by",
+   "anim": 0.6
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 56.6,
+   "dur": 1.9,
+   "text": "FROM THE THREE?!",
+   "hi": 2,
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 61.8,
+   "dur": 2.2,
+   "text": "DIVISION I?!",
+   "hi": 1,
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 64.3,
+   "dur": 1.6,
+   "text": "CANCEL IT",
+   "size": 150
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 70.2,
+   "dur": 3.3,
+   "label": "Largest D-I margin ever",
+   "unit": "PTS",
+   "items": [
+    {
+     "name": "LSU vs TSU \u00b7 2026",
+     "value": "109"
+    },
+    {
+     "name": "Baylor vs Winthrop \u00b7 2016",
+     "value": "108"
+    }
+   ],
+   "badge": "NEW RECORD"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 74.0,
+   "dur": 1.4,
+   "text": "PRACTICE?",
+   "size": 150
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 76.9,
+   "dur": 2.8,
+   "value": "38",
+   "unit": "TO",
+   "label": "Texas Southern turnovers",
+   "sub": "8 of 55 from the field"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 79.8,
+   "dur": 2.6,
+   "question": "HOW DOES THIS HAPPEN?",
+   "options": [
+    "NO PRACTICE",
+    "LSU TOO GOOD"
+   ]
+  }
+ ]
+}
