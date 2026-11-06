@@ -485,9 +485,11 @@ def main(plan_path):
         return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]), float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
     def graph(vg, fg):
         g = list(mix)
-        g.append(f'[vo]volume={vg:.2f}dB[vg]')
-        if not others: return ';'.join(g) + ';[vg]anull'
-        g.append(''.join(others) + f'amix=inputs={len(others)}:normalize=0,volume={fg:.2f}dB[fx]')
+        if not others: return ';'.join(g) + f';[vo]volume={vg:.2f}dB'
+        g.append(f'[vo]volume={vg:.2f}dB,asplit[vg][key]')
+        # sfx/beds duck briefly under loud words (sidechain on the voice), so they never stack on a voice peak
+        g.append(''.join(others) + f'amix=inputs={len(others)}:normalize=0,volume={fg:.2f}dB[fxr]')
+        g.append('[fxr][key]sidechaincompress=threshold=0.12:ratio=6:attack=3:release=180:makeup=1[fx]')
         return ';'.join(g) + ';[vg][fx]amix=inputs=2:normalize=0:duration=first'
     # The voice is judged ON ITS OWN (not the sum with sfx/beds), so the extra sounds can never cause it to be turned down.
     # NEVER turn the owner's voice down: a take at or above -14 LUFS passes through bit-for-bit (no gain, no limiter);
@@ -502,8 +504,8 @@ def main(plan_path):
         # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
         # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
         gain = min(0.0, -0.5 - vpk); ln = 'anull'
-        # if a whoosh or bed landing on a loud word pushes the SUM over -0.5 dBFS, turn down the sfx/beds, never the voice
-        while others and fxg > -12 and measure(graph(gain, fxg))[1] > -0.5: fxg -= 1.5
+        # ducking keeps the SUM within ~0.2 dB of the voice peak; if it still goes over -0.3 dBFS, turn down the sfx/beds, never the voice
+        while others and fxg > -12 and measure(graph(gain, fxg))[1] > -0.3: fxg -= 1.5
     print(f'voice: {li:.1f} LUFS, peak {vpk:.1f} dBFS, static gain {gain:+.2f} dB' + (', limiter' if gain > 0.05 else ', no limiter')
           + (f'; sfx/beds {fxg:+.1f} dB to avoid clipping' if fxg else ''))
     mixed = graph(gain, fxg) + (f',{ln}' if ln != 'anull' else '')
