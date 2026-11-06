@@ -478,25 +478,37 @@ def main(plan_path):
         mix.append(f"[{1+len(cues)+k}:a]atrim=0:{d:.3f},asetpts=PTS-STARTPTS,aresample=48000,afade=t=in:d={f:.2f},"
                    f"afade=t=out:st={d-f:.3f}:d={f:.2f},volume={g:.2f}dB,adelay={int(a['t']*1000)}:all=1[b{k}]")
         beds.append(f'[b{k}]')
-    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))] + beds) + f'amix=inputs={len(cues)+1+len(beds)}:normalize=0:duration=first'
-    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
-                        '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
-    li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
-    # one static gain, tone and dynamics untouched. NEVER turn the owner's voice down: a take already at or above
-    # -14 LUFS passes through bit-for-bit (no gain, no limiter); a quiet take is raised, with a limiter only then.
-    gain = max(0.0, -14.0 - li)
-    if gain > 0.05:
-        ln = f'volume={gain:.2f}dB,alimiter=limit=0.84:attack=5:release=50:level=false'   # -1.5 dBFS: AAC overshoots ~1 dB on transients
+    others = [f'[s{j}]' for j in range(len(cues))] + beds
+    def measure(graph):
+        m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', graph + ',ebur128=framelog=quiet:peak=sample[a]',
+                            '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]), float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+    def graph(vg, fg):
+        g = list(mix)
+        g.append(f'[vo]volume={vg:.2f}dB[vg]')
+        if not others: return ';'.join(g) + ';[vg]anull'
+        g.append(''.join(others) + f'amix=inputs={len(others)}:normalize=0,volume={fg:.2f}dB[fx]')
+        return ';'.join(g) + ';[vg][fx]amix=inputs=2:normalize=0:duration=first'
+    # The voice is judged ON ITS OWN (not the sum with sfx/beds), so the extra sounds can never cause it to be turned down.
+    # NEVER turn the owner's voice down: a take at or above -14 LUFS passes through bit-for-bit (no gain, no limiter);
+    # a quiet take gets one static boost to -14, with a limiter only then.
+    li, vpk = measure(';'.join(mix[:1]) + ';[vo]anull')
+    fxg = 0.0
+    if -14.0 - li > 0.05:
+        gain = -14.0 - li
+        ln = 'alimiter=limit=0.84:attack=5:release=50:level=false'   # -1.5 dBFS: AAC overshoots ~1 dB on transients
     else:
         # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
         # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
         # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
-        pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
-        gain = min(0.0, -0.5 - pk)
-        ln = f'volume={gain:.2f}dB' if gain < -0.01 else 'anull'
-    print(f'voice: {li:.1f} LUFS, static gain {gain:+.2f} dB' + (', no limiter' if gain <= 0.05 else ', limiter'))
+        gain = min(0.0, -0.5 - vpk); ln = 'anull'
+        # if a whoosh or bed landing on a loud word pushes the SUM over -0.5 dBFS, turn down the sfx/beds, never the voice
+        while others and fxg > -12 and measure(graph(gain, fxg))[1] > -0.5: fxg -= 1.5
+    print(f'voice: {li:.1f} LUFS, peak {vpk:.1f} dBFS, static gain {gain:+.2f} dB' + (', limiter' if gain > 0.05 else ', no limiter')
+          + (f'; sfx/beds {fxg:+.1f} dB to avoid clipping' if fxg else ''))
+    mixed = graph(gain, fxg) + (f',{ln}' if ln != 'anull' else '')
     awav = f'{wd}/mix.wav'
-    run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
+    run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', mixed + ',aresample=48000[a]',
          '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
     ai = len(inputs) // 2
     inputs += ['-i', awav]
