@@ -125,7 +125,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-8. **Make a 9:16 thumbnail** (1080×1920 JPG) for every video, saved to `exports/thumbnails/<video>_thumb.jpg` and delivered to Dropbox with the video.
+8. **Make a 3:4 thumbnail** (1080×1440 JPG, the TikTok profile-grid cover size; the owner said 9:16 was too big) for every video, saved to `exports/thumbnails/<video>_thumb.jpg` and delivered to Dropbox with the video.
    - Simple and high quality, from real photos only: no AI-generated images, nothing that looks AI.
    - One or two strong faces or expressions (e.g. the two people in the conflict, top and bottom with the house soft seam), with photos used at native resolution and never enlarged, plus a light contrast/color grade.
    - Few words, if any: at most one or two in Anton (e.g. "OPOSSUM?").

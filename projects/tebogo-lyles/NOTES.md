@@ -1,7 +1,7 @@
 # Tebogo vs Lyles: "stop playing opossum" (Nov 2026)
 
 **Title (YouTube Shorts / TikTok):** Noah Lyles Just Exposed the Olympic Champion's Pattern 👀
-Thumbnail: `exports/thumbnails/tebogo_lyles_thumb.jpg` (Tebogo's side-eye from the Athletissima 2026 press conference on top, Lyles' peace sign at Paris 2024 below, "OPOSSUM?" on the seam; made by `thumbnail.py`).
+Thumbnail (3:4, 1080×1440): `exports/thumbnails/tebogo_lyles_thumb.jpg` (Tebogo's side-eye from the Athletissima 2026 press conference on top, Lyles' peace sign at Paris 2024 below, "OPOSSUM?" on the seam; made by `thumbnail.py`).
 Alternates:
 - Tebogo Called Out the Field… Then Lyles Clapped Back
 - "Stop Playing Opossum" — Noah Lyles Goes After Tebogo
