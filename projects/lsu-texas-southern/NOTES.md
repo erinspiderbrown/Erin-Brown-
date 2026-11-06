@@ -29,3 +29,12 @@ Photos:
 2. Crop the face to 2000×1778 at (863, 250), scale to 1440×1280, then run `tighten.py` (87.6 s → 82.4 s).
 3. New motion kind `scoreboard`: arena LED board counts up to the final, with a FINAL lamp and a margin slam.
 4. Render, then re-encode at `-crf 20` plus a `-crf 24` phone copy.
+
+## Title
+- **Recommended:** LSU beat Texas Southern by 109 points… how?? 😳
+- Alt: 131–22. Is women's basketball even real?
+- Alt: The biggest blowout in D1 history makes no sense
+
+Caption:
+LSU beat Texas Southern by 109 points… how?? 😳 #LSU #womensbasketball #collegebasketball #ncaa #blowout
+B-roll: Wikimedia Commons (Gold Broth, Spatms, Kew Gardens 613, Sphilbrick, GKess Films, MD Comptroller)

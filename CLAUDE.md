@@ -64,6 +64,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 3. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
 4. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
 5. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+6. **Title (every video, standing request).** End every delivery with a TikTok title for the video:
+   - One recommended title, plus two alternatives. Make them short, punchy and hook-first, with the key number or name up front.
+   - A ready-to-paste caption: the title, 3–5 hashtags, and a credit line for any licensed B-roll.
+   - Save it under a `## Title` section in the project's `NOTES.md`.
+   - Titles must stay factual: no invented stats.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.
