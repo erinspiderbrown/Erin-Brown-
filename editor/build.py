@@ -473,7 +473,7 @@ def main(plan_path):
     # -14 LUFS passes through bit-for-bit (no gain, no limiter); a quiet take is raised, with a limiter only then.
     gain = max(0.0, -14.0 - li)
     if gain > 0.05:
-        ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+        ln = f'volume={gain:.2f}dB,alimiter=limit=0.84:attack=5:release=50:level=false'   # -1.5 dBFS: AAC overshoots ~1 dB on transients
     else:
         # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
         # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
