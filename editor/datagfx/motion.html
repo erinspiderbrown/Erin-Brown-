@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, headline, javelin -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, headline, javelin, search -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -117,6 +117,17 @@ const BUILD = {
       <div style="display:flex;gap:28px;margin-top:34px">${S.options.map((o, i) => `<div id="po${i}" style="flex:1;border-radius:28px;padding:30px 0;text-align:center;
           background:${i ? 'var(--acc)' : '#fff'};color:${i ? '#fff' : '#111'}"><span class="t-anton" style="font-size:78px">${o}</span></div>`).join('')}</div>
       <div id="pc" class="t-mb" style="text-align:center;font-size:36px;color:#fff;letter-spacing:.16em;margin-top:28px">${S.cta || 'COMMENT BELOW ⬇'}</div></div>`;
+  },
+  // generic search bar (no brand): text types in letter by letter, a blinking cursor, then a results shimmer.
+  // spec: text, type_dur (seconds to type it all)
+  search() {
+    R.w = 1000; R.h = 520;
+    const rows = [0, 1, 2].map(i => `<div id="sr${i}" style="height:${i ? 26 : 34}px;width:${[620, 760, 540][i]}px;border-radius:13px;margin:${i ? 16 : 36}px 0 0 34px;
+        background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.42),rgba(255,255,255,.18));background-size:300% 100%"></div>`).join('');
+    return `<div id="sb" class="shadow" style="position:absolute;left:30px;top:30px;width:940px;border-radius:44px;background:#fff;padding:26px 34px;display:flex;align-items:center;gap:22px">
+        <svg width="54" height="54" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" fill="none" stroke="#555" stroke-width="2.4"/><line x1="15" y1="15" x2="21" y2="21" stroke="#555" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <div class="t-meb" style="font-size:40px;line-height:1.2;color:#1a1a1a;flex:1"><span id="st"></span><span id="sc" style="display:inline-block;width:4px;height:42px;background:#1a1a1a;vertical-align:-6px;margin-left:3px"></span></div></div>
+      <div id="sres" class="shadow" style="position:absolute;left:30px;top:200px;width:940px;height:260px;border-radius:30px;background:rgba(20,20,26,.88);opacity:0">${rows}</div>`;
   },
   // javelin drives in at an angle through a surface line; a depth bracket draws out with the label
   // spec: text (e.g. "5–6 INCHES"), sub
@@ -386,6 +397,15 @@ const ANIM = {
       const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
       e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
     const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+  search(t) {
+    const T = S.type_dur || 3, n = Math.round(S.text.length * clamp((t - .25) / T));
+    $('root').style.opacity = clamp(t / .15) * fadeOut(t);
+    const q = eBack(t / .4); $('sb').style.transform = `scale(${.8 + .2 * q})`;
+    $('st').textContent = S.text.slice(0, n);
+    $('sc').style.opacity = (Math.floor(t * 2.6) % 2 === 0 || n < S.text.length) ? 1 : 0;
+    const r = clamp((t - .25 - T - .15) / .25); $('sres').style.opacity = r; $('sres').style.transform = `translateY(${(1 - r) * 30}px)`;
+    [0, 1, 2].forEach(i => $('sr' + i).style.backgroundPosition = `${(100 - ((t * 120 + i * 30) % 200))}% 0`);
+  },
   javelin(t) {
     // javelin path: angled ~25deg, tip ends ~120px below the surface line at x~700
     const a = 25 * Math.PI / 180, q = eOut(t / .45), tipX = 700, tipY = 452, L = 700;
@@ -469,6 +489,7 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
   podcast: () => ({ pops: [.2] }),
+  search: () => ({ pops: [.2] }),
   javelin: () => ({ thud: .45 }),
   headline: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
   tweet: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
