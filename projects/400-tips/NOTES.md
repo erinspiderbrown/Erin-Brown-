@@ -9,6 +9,7 @@ A talking head replying to a comment, in the house style (Yohan Blake / Tebogo).
 
 ## Inputs
 - `raw/talking.mov`: 4K, 143.7 s.
+- **Export:** `exports/400_tips_tiktok_hq.mp4` (Git LFS; crf 20, 131.5 MB, SSIM 0.985 vs the master). The thumbnail is `exports/thumbnails/400_tips_thumb.jpg` (NCAA photo, "56 → 48").
 - `raw/photo.jpg`: the WTFQuincy comment screenshot (1206×280). It's shown with the `tweet` card graphic, and the highlighter sweeps "me in the 400 as a senior in highschool".
 - **Race videos:** the owner linked two, the first 49 (2018 SW AAU Region 18 qualifier, 400m, 15–16 boys) and the 47.1 Conference Final on YouTube.
   - YouTube returned 403 on the media download from the cloud session. Per the house rule, nothing was tried to get around it.

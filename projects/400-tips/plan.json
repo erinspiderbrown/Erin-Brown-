@@ -477,11 +477,10 @@
   {
    "type": "motion",
    "kind": "stamp",
-   "t": 54.0,
+   "t": 57.95,
    "dur": 1.4,
    "text": "STILL ENDED BAD",
-   "size": 100,
-   "anchor": "upper"
+   "size": 100
   },
   {
    "type": "motion",
@@ -583,11 +582,10 @@
   {
    "type": "motion",
    "kind": "stamp",
-   "t": 87.7,
-   "dur": 1.8,
+   "t": 92.0,
+   "dur": 1.7,
    "text": "FIRST SUB-50",
-   "size": 130,
-   "anchor": "upper"
+   "size": 130
   },
   {
    "type": "motion",
@@ -623,17 +621,16 @@
   {
    "type": "motion",
    "kind": "stamp",
-   "t": 104.4,
-   "dur": 1.8,
+   "t": 107.95,
+   "dur": 1.55,
    "text": "FIRST SUB-49",
-   "size": 130,
-   "anchor": "upper"
+   "size": 130
   },
   {
    "type": "data",
    "kind": "line",
-   "t": 108.2,
-   "dur": 4.1,
+   "t": 109.5,
+   "dur": 2.9,
    "label": "My first 400s",
    "unit": "S",
    "points": [
