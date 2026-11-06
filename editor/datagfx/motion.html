@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, neon, battery, scoreboard -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, neon, battery, scoreboard, raceplan -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -333,8 +333,37 @@ const BUILD = {
         <span id="st${i}" class="t-mb" style="width:200px;text-align:right;font-size:58px;color:#E8E3FF;text-shadow:0 0 10px #B9A7FF">${r.time}</span></div>`).join('')}
     </div>`;
   },
+  // 400m race plan: a lap where coloured zones (HARD / CHILL / KICK ...) fill in as a runner dot goes round,
+  // labels pop at each zone, and the result time is revealed at `reveal` s (shown as "?" until then).
+  raceplan() {
+    R.w = 1000; R.h = 700;
+    const P = 'M 750 470 A 159 159 0 0 0 750 152 H 250 A 159 159 0 0 0 250 470 Z';
+    const zones = (S.zones || []).map((z, i) => `<path id="rz${i}" d="${P}" fill="none" stroke="${z.color || '#E8231E'}" stroke-width="30" stroke-linecap="butt" pathLength="400" stroke-dasharray="0 400"/>`).join('');
+    const chips = (S.zones || []).map((z, i) => `<div id="rc${i}" class="t-anton shadow" style="position:absolute;transform:translate(-50%,-50%);padding:6px 18px 4px;border-radius:12px;background:${z.color || '#E8231E'};color:${z.ink || '#fff'};font-size:40px;white-space:nowrap;opacity:0">${z.label}</div>`).join('');
+    return `${S.title ? `<div id="rpT" class="t-anton shadow" style="position:absolute;left:0;top:0;width:1000px;text-align:center;font-size:64px;color:#fff;-webkit-text-stroke:4px #000;paint-order:stroke fill;white-space:nowrap">${S.title}</div>` : ''}
+      <svg width="1000" height="640" style="position:absolute;left:0;top:60px;overflow:visible" class="shadow">
+        <path d="${P}" fill="#1d6b3a" stroke="#b5462f" stroke-width="64"/>
+        ${[-26, -13, 0, 13, 26].map(o => `<path d="${P}" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" transform="translate(0 0)" style="vector-effect:non-scaling-stroke" opacity="${o ? .5 : 0}"/>`).join('')}
+        ${zones}
+        <rect x="744" y="436" width="12" height="68" fill="#fff"/>
+        <path id="rpP" d="${P}" fill="none" stroke="none"/>
+        <circle id="rpD" r="20" fill="#FFE11A" stroke="#111" stroke-width="5"/></svg>
+      <div id="rpC" style="position:absolute;left:0;top:60px;width:1000px;height:640px">${chips}</div>
+      <div style="position:absolute;left:0;top:${60 + 230}px;width:1000px;text-align:center">
+        <div id="rpN" class="t-anton" style="font-size:150px;line-height:1;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">?</div></div>`;
+  },
 };
 const ANIM = {
+  raceplan(t) { const A = S.anim || 2.4, p = clamp((t - .3) / A), m = 400 * p, P = $('rpP'), L = P.getTotalLength();
+    $('root').style.opacity = clamp(t / .2) * fadeOut(t); if ($('rpT')) $('rpT').style.transform = `scale(${.8 + .2 * eBack(t / .35)})`;
+    const pt = P.getPointAtLength(Math.min(L * p, L - .01)); $('rpD').setAttribute('cx', pt.x); $('rpD').setAttribute('cy', pt.y);
+    (S.zones || []).forEach((z, i) => { const vis = clamp(m - z.from, 0, z.to - z.from); $('rz' + i).setAttribute('stroke-dasharray', `0 ${z.from} ${vis} 400`);
+      const c = $('rc' + i), mid = P.getPointAtLength(L * ((z.from + z.to) / 2) / 400), cx = 500 + (mid.x - 500) * 1.0, cy = mid.y + (mid.y > 311 ? 62 : -62);
+      c.style.left = (z.lx ?? cx) + 'px'; c.style.top = (z.ly ?? cy) + 'px'; const q = clamp((m - z.from) / 30); c.style.opacity = q * fadeOut(t);
+      c.style.transform = `translate(-50%,-50%) scale(${.5 + .5 * eBack(q)})`; });
+    const R0 = S.reveal ?? (.3 + A + .2), r = clamp((t - R0) / .5), v = +S.result, d = (String(S.result).split('.')[1] || '').length;
+    $('rpN').textContent = t < R0 ? '?' : (v * eOutExpo(r)).toFixed(d); $('rpN').style.color = t >= R0 + .5 ? '#FFE11A' : '#fff';
+    $('rpN').style.transform = `scale(${1 + .15 * Math.sin(Math.PI * clamp((t - R0 - .4) / .35))})`; },
   scoreboard(t) { const T = S.times || S.rows.map((_, i) => .5 + i * .45);
     $('root').style.opacity = clamp(t / .15) * fadeOut(t); $('root').style.transform = `scale(${.9 + .1 * eBack(t / .4)})`;
     S.rows.forEach((_, i) => { const e = $('sr' + i), x = t - T[i]; e.style.opacity = x < 0 ? .08 : [1, .3, 1, .5, 1][Math.min(4, Math.floor(x / .05))];
@@ -471,6 +500,7 @@ const ANIM = {
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  raceplan: () => ({ land: +((S.reveal ?? (.3 + (S.anim || 2.4) + .2)) + .5).toFixed(2) }),
   scoreboard: () => ({ pops: (S.times || S.rows.map((_, i) => .5 + i * .45)).map(x => +x.toFixed(2)) }),
   neon: () => ({ pops: [.1] }),
   battery: () => { const A = S.anim || 1.4; return { pops: S.rows.map((_, i) => +(.4 + i * (S.stagger ?? .5) + A).toFixed(2)) }; },

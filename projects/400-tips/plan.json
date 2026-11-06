@@ -1,0 +1,712 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/400tips_v1.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 135.36,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/me_ncaa1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.6,
+   "broll": {
+    "src": "broll/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.1,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 20.8,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 26.4,
+   "broll": {
+    "src": "broll/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.9,
+   "broll": {
+    "src": "broll/me_ncaa2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 38.5,
+   "broll": {
+    "src": "broll/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.9,
+   "broll": {
+    "src": "broll/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.6,
+   "broll": {
+    "src": "broll/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 58.0,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 69.1,
+   "broll": {
+    "src": "broll/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 71.3,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 78.7,
+   "broll": {
+    "src": "broll/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 85.6,
+   "broll": {
+    "src": "broll/me_ncaa2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 91.8,
+   "broll": {
+    "src": "broll/me_ncaa1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 93.8,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 101.2,
+   "broll": {
+    "src": "broll/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 108.0,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 112.4,
+   "broll": {
+    "src": "broll/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 116.4,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 121.4,
+   "broll": {
+    "src": "broll/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 126.3,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 130.5,
+   "broll": {
+    "src": "broll/me_ncaa2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.45
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   2.8,
+   4.0,
+   1.08
+  ],
+  [
+   12.2,
+   13.1,
+   1.1
+  ],
+  [
+   18.6,
+   20.7,
+   1.08
+  ],
+  [
+   43.4,
+   45.8,
+   1.12
+  ],
+  [
+   69.8,
+   71.2,
+   1.1
+  ],
+  [
+   86.6,
+   88.2,
+   1.1
+  ],
+  [
+   108.6,
+   110.3,
+   1.12
+  ],
+  [
+   126.3,
+   128.5,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.6,
+   "rank": "GCU",
+   "name": "ERIN BROWN",
+   "sub": "400M  \u00b7  SPRINTER"
+  },
+  {
+   "type": "motion",
+   "kind": "tweet",
+   "t": 2.9,
+   "dur": 5.7,
+   "src": "/tmp/claude-0/-home-user-Erin-Brown-/86462db5-48b3-5b35-8962-db876d3ef862/scratchpad/r49/raw/photo.jpg",
+   "imgw": 1206,
+   "cards": [
+    [
+     0,
+     0,
+     1206,
+     280
+    ]
+   ],
+   "times": [
+    0.2
+   ],
+   "width": 1000,
+   "top": 380,
+   "hl": {
+    "card": 0,
+    "t": 4.4,
+    "rects": [
+     [
+      158,
+      186,
+      842,
+      50
+     ]
+    ]
+   }
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.4,
+   "dur": 2.3,
+   "text": "GOT IT DOWN PAT?",
+   "hi": 3
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 12.0,
+   "dur": 1.2,
+   "text": "NOT FOR YOU",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 18.4,
+   "dur": 2.3,
+   "text": "STUCK IN THE 400?",
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 24.3,
+   "dur": 2.0,
+   "text": "SOCIAL EXPERIMENT",
+   "size": 110,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 27.4,
+   "dur": 3.2,
+   "text": "DIFFERENT THINGS = DIFFERENT RESULTS",
+   "hi": 3,
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "raceplan",
+   "t": 33.1,
+   "dur": 12.7,
+   "title": "ATTEMPT 1 \u00b7 OUT HARD",
+   "zones": [
+    {
+     "from": 0,
+     "to": 300,
+     "label": "ALL OUT",
+     "color": "#E8231E"
+    },
+    {
+     "from": 300,
+     "to": 400,
+     "label": "HOLD ON",
+     "color": "#8A8F98"
+    }
+   ],
+   "result": "56",
+   "reveal": 11.8,
+   "anim": 2.4
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 39.3,
+   "dur": 2.0,
+   "text": "CROSS-COUNTRY STAMINA",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "raceplan",
+   "t": 47.3,
+   "dur": 10.6,
+   "title": "ATTEMPT 2 \u00b7 HARD 200",
+   "zones": [
+    {
+     "from": 0,
+     "to": 200,
+     "label": "HARD",
+     "color": "#E8231E"
+    },
+    {
+     "from": 200,
+     "to": 400,
+     "label": "HOLD ON",
+     "color": "#8A8F98"
+    }
+   ],
+   "result": "54",
+   "reveal": 9.5,
+   "anim": 2.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 54.0,
+   "dur": 1.4,
+   "text": "STILL ENDED BAD",
+   "size": 100,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "raceplan",
+   "t": 59.4,
+   "dur": 9.6,
+   "title": "ATTEMPT 3 \u00b7 OUT 50 \u00b7 KICK 200",
+   "zones": [
+    {
+     "from": 0,
+     "to": 50,
+     "label": "OUT",
+     "color": "#E8231E"
+    },
+    {
+     "from": 50,
+     "to": 200,
+     "label": "CHILL",
+     "color": "#2F7DF6"
+    },
+    {
+     "from": 200,
+     "to": 400,
+     "label": "KICK",
+     "color": "#FFE11A",
+     "ink": "#111"
+    }
+   ],
+   "result": "53",
+   "reveal": 8.7,
+   "anim": 2.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 70.2,
+   "dur": 1.1,
+   "text": "SOMETHING DIFFERENT",
+   "size": 100,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 72.0,
+   "dur": 6.6,
+   "title": "STUCK IN THE 53s",
+   "times": [
+    0.3,
+    0.7,
+    1.1
+   ],
+   "rows": [
+    {
+     "event": "ATTEMPT 1",
+     "value": "56"
+    },
+    {
+     "event": "ATTEMPT 2",
+     "value": "54"
+    },
+    {
+     "event": "ATTEMPT 3",
+     "value": "53"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "raceplan",
+   "t": 79.0,
+   "dur": 12.7,
+   "title": "ATTEMPT 4 \u00b7 COACH'S PLAN",
+   "zones": [
+    {
+     "from": 0,
+     "to": 150,
+     "label": "HARD",
+     "color": "#E8231E"
+    },
+    {
+     "from": 150,
+     "to": 250,
+     "label": "SHUT IT DOWN",
+     "color": "#2F7DF6"
+    },
+    {
+     "from": 250,
+     "to": 400,
+     "label": "HIT IT",
+     "color": "#FFE11A",
+     "ink": "#111"
+    }
+   ],
+   "result": "49.5",
+   "reveal": 11.7,
+   "anim": 2.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 87.7,
+   "dur": 1.8,
+   "text": "FIRST SUB-50",
+   "size": 130,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "raceplan",
+   "t": 95.7,
+   "dur": 12.2,
+   "title": "ATTEMPT 5 \u00b7 PUSH 180",
+   "zones": [
+    {
+     "from": 0,
+     "to": 180,
+     "label": "PUSH",
+     "color": "#E8231E"
+    },
+    {
+     "from": 180,
+     "to": 200,
+     "label": "CHILL",
+     "color": "#2F7DF6"
+    },
+    {
+     "from": 200,
+     "to": 400,
+     "label": "HIT IT",
+     "color": "#FFE11A",
+     "ink": "#111"
+    }
+   ],
+   "result": "48.4",
+   "reveal": 11.3,
+   "anim": 2.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 104.4,
+   "dur": 1.8,
+   "text": "FIRST SUB-49",
+   "size": 130,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "line",
+   "t": 108.2,
+   "dur": 4.1,
+   "label": "My first 400s",
+   "unit": "S",
+   "points": [
+    56,
+    54,
+    53,
+    49.5,
+    48.4
+   ],
+   "xlabels": [
+    "#1",
+    "#2",
+    "#3",
+    "#4",
+    "#5"
+   ],
+   "value": "48.4"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 114.5,
+   "dur": 1.9,
+   "text": "EVERYBODY RUNS IT DIFFERENT",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 116.9,
+   "dur": 2.6,
+   "text": "YOUR STRENGTH. YOUR SPEED.",
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 122.6,
+   "dur": 3.7,
+   "title": "THE RULE",
+   "times": [
+    0.5,
+    2.7
+   ],
+   "rows": [
+    {
+     "event": "AT PRACTICE",
+     "value": "TRY IT"
+    },
+    {
+     "event": "AT MEETS",
+     "value": "REPLICATE IT"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 126.9,
+   "dur": 2.4,
+   "text": "DON'T EXPERIMENT AT MEETS",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 130.9,
+   "dur": 4.46,
+   "question": "HOW DO YOU RUN YOUR 400?",
+   "options": [
+    "OUT HARD",
+    "SAVE IT"
+   ]
+  }
+ ]
+}
