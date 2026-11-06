@@ -60,6 +60,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `board`: records board; rows of `event`, `value` and optional `tag`, with `times` landing each row on the word
   - `track`: one lap of a track with a clock counting to `value` (open 400 times)
   - `neon`: glowing neon sign that flickers on (`text` with `|` for line breaks, `sub`, `icon`: bolt/plus/question/flame/check/arrow, `color`, `color2`, `frame`)
+  - `scoreboard`: clean LED stadium scoreboard (`title`, `clock`, `rows` of `place`, `name`, `team`, `time`; `hi` row glows). Use it to recreate a blurry real scoreboard, with the real times only.
   - `battery`: neon batteries draining (`rows` of `label`, `to` 0–1, `color`, `end` text). Illustrative only, never a measured value.
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).

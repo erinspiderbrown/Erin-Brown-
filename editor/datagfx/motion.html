@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, board, track, neon, battery -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, board, track, neon, battery, scoreboard -->
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
   html, body { margin: 0; background: transparent; overflow: hidden; }
@@ -243,8 +243,29 @@ const BUILD = {
           <rect id="bF${i}" x="22" y="22" width="528" height="92" rx="12" fill="${c}"/></svg>
         <div id="bE${i}" class="t-anton" style="position:absolute;left:650px;top:56px;width:290px;font-size:${r.endSize || 100}px;line-height:140px;color:#fff;-webkit-text-stroke:2px ${r.endColor || c};text-shadow:${glow(r.endColor || c)};white-space:nowrap;opacity:0">${r.end || ''}</div></div>`; }).join('');
   },
+  // stadium LED scoreboard: title + rows {place, lane, name, team, time}; rows light up one by one, the first row glows
+  scoreboard() {
+    const rows = S.rows, n = rows.length; R.w = 1000; R.h = 156 + n * 114;
+    const led = 'radial-gradient(circle, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 60%) 0 0/6px 6px';
+    return `<div id="sbB" class="shadow" style="position:absolute;left:20px;top:10px;width:960px;height:${R.h - 30}px;border-radius:18px;background:#0b0f0c;border:6px solid #2a2f2c;overflow:hidden">
+      <div style="position:absolute;inset:0;background:${led};pointer-events:none;z-index:3"></div>
+      <div id="sbT" style="height:110px;display:flex;align-items:center;justify-content:space-between;padding:0 34px;background:#101a12;border-bottom:3px solid #1f3a24">
+        <span class="t-mb" style="font-size:46px;color:#7CFF6B;letter-spacing:.04em;text-shadow:0 0 12px #39FF14">${S.title}</span>
+        <span id="sbC" class="t-mb" style="font-size:46px;color:#E8E3FF;text-shadow:0 0 10px #B9A7FF">${S.clock || ''}</span></div>
+      ${rows.map((r, i) => `<div id="sr${i}" style="height:112px;display:flex;align-items:center;padding:0 30px;gap:22px;border-bottom:2px solid #16241a">
+        <span class="t-mb" style="width:44px;font-size:52px;color:#7CFF6B;text-shadow:0 0 10px #39FF14">${r.place}</span>
+        <span class="t-mb" style="flex:1;font-size:50px;color:#E8E3FF;text-shadow:0 0 10px #B9A7FF;white-space:nowrap">${r.name}</span>
+        <span class="t-mb" style="width:120px;font-size:36px;color:#FFD86B;text-shadow:0 0 10px #FFB000">${r.team || ''}</span>
+        <span id="st${i}" class="t-mb" style="width:200px;text-align:right;font-size:58px;color:#E8E3FF;text-shadow:0 0 10px #B9A7FF">${r.time}</span></div>`).join('')}
+    </div>`;
+  },
 };
 const ANIM = {
+  scoreboard(t) { const T = S.times || S.rows.map((_, i) => .5 + i * .45);
+    $('root').style.opacity = clamp(t / .15) * fadeOut(t); $('root').style.transform = `scale(${.9 + .1 * eBack(t / .4)})`;
+    S.rows.forEach((_, i) => { const e = $('sr' + i), x = t - T[i]; e.style.opacity = x < 0 ? .08 : [1, .3, 1, .5, 1][Math.min(4, Math.floor(x / .05))];
+      if (i === (S.hi ?? 0)) { const g = clamp((t - T[i] - .3) / .3); $('st' + i).style.color = g > 0 ? '#FFF27A' : '#E8E3FF';
+        $('st' + i).style.textShadow = g > 0 ? `0 0 ${10 + 16 * (.6 + .4 * Math.sin(t * 7))}px #FFE11A` : '0 0 10px #B9A7FF'; e.style.background = g > 0 ? 'rgba(255,225,26,.08)' : 'none'; } }); },
   neon(t) { const n = String(S.text).split('|').length, f = (k, a) => { const x = t - a; if (x < 0) return 0; if (x > .45) return 1; return [1, 0, 1, .2, 1, 0, 1, 1, .6, 1][Math.floor(x / .045)] ?? 1; };
     for (let i = 0; i < n; i++) { const e = $('nT' + i); e.style.opacity = f(i, .05 + i * .12) * fadeOut(t); e.style.transform = `scale(${1.08 - .08 * eOut((t - i * .12) / .3)})`; }
     if ($('nS')) $('nS').style.opacity = f(9, .35 + n * .12) * fadeOut(t);
@@ -327,6 +348,7 @@ const ANIM = {
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  scoreboard: () => ({ pops: (S.times || S.rows.map((_, i) => .5 + i * .45)).map(x => +x.toFixed(2)) }),
   neon: () => ({ pops: [.1] }),
   battery: () => { const A = S.anim || 1.4; return { pops: S.rows.map((_, i) => +(.4 + i * (S.stagger ?? .5) + A).toFixed(2)) }; },
   board: () => { const T = S.times || S.rows.map((_, i) => .1 + i * .4); return { pops: T.map(x => +(x + .25).toFixed(2)) }; },
