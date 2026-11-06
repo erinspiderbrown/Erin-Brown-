@@ -1,5 +1,6 @@
 """AI upscale (Real-ESRGAN realesr-general-x4v3, SRVGGNetCompact) on CPU.
-usage: python3 upscale.py <model.pth> <in> <out.mp4> <ss> <dur> <outW> <outH>
+usage: python3 upscale.py <model.pth> <in> <out.mp4> <ss> <dur> <outW> <outH|-1> [fps=30]
+(outH -1 keeps the aspect ratio; display rotation is handled; frames are resampled to fps)
 model: https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth
 needs: pip install torch --index-url https://download.pytorch.org/whl/cpu"""
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, subprocess, sys, time
@@ -16,12 +17,16 @@ def load(p):
     m=SRVGG(); sd=torch.load(p,map_location='cpu'); sd=sd.get('params',sd); m.load_state_dict(sd); return m.eval()
 if __name__=='__main__':
     # usage: srvgg.py model in.mp4 out.mp4 ss dur outW outH
-    mp,src,dst,ss,dur,W,H=sys.argv[1:8]; W,H=int(W),int(H)
+    mp,src,dst,ss,dur,W,H=sys.argv[1:8]; W,H=int(W),int(H); FPS=sys.argv[8] if len(sys.argv)>8 else '30'
     torch.set_num_threads(4); m=load(mp)
-    pr=subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height','-of','csv=p=0',src],capture_output=True,text=True).stdout.strip().split(',')
-    iw,ih=int(pr[0]),int(pr[1])
-    dec=subprocess.Popen(['ffmpeg','-v','error','-ss',ss,'-t',dur,'-i',src,'-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
-    enc=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r','30','-i','-','-c:v','libx264','-crf','14','-preset','fast','-pix_fmt','yuv420p',dst],stdin=subprocess.PIPE)
+    import json as _j
+    st=_j.loads(subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height:stream_side_data=rotation','-of','json',src],capture_output=True,text=True).stdout)['streams'][0]
+    iw,ih=st['width'],st['height']
+    rot=abs(int(float(next((d.get('rotation',0) for d in st.get('side_data_list',[])),0))))
+    if rot in (90,270): iw,ih=ih,iw
+    if H<0: H=int(round(W*ih/iw/2))*2
+    dec=subprocess.Popen(['ffmpeg','-v','error','-ss',ss,'-t',dur,'-i',src,'-vf',f'fps={FPS}','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
+    enc=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',FPS,'-i','-','-c:v','libx264','-crf','14','-preset','fast','-pix_fmt','yuv420p',dst],stdin=subprocess.PIPE)
     n=0; t0=time.time(); fs=iw*ih*3
     with torch.inference_mode():
         while True:
