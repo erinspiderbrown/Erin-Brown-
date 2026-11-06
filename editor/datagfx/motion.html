@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, headline -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, headline, javelin -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -117,6 +117,23 @@ const BUILD = {
       <div style="display:flex;gap:28px;margin-top:34px">${S.options.map((o, i) => `<div id="po${i}" style="flex:1;border-radius:28px;padding:30px 0;text-align:center;
           background:${i ? 'var(--acc)' : '#fff'};color:${i ? '#fff' : '#111'}"><span class="t-anton" style="font-size:78px">${o}</span></div>`).join('')}</div>
       <div id="pc" class="t-mb" style="text-align:center;font-size:36px;color:#fff;letter-spacing:.16em;margin-top:28px">${S.cta || 'COMMENT BELOW ⬇'}</div></div>`;
+  },
+  // javelin drives in at an angle through a surface line; a depth bracket draws out with the label
+  // spec: text (e.g. "5–6 INCHES"), sub
+  javelin() {
+    R.w = 1000; R.h = 620;
+    return `<svg width="1000" height="560" style="position:absolute;left:0;top:0;overflow:visible" class="shadow">
+        <rect x="60" y="330" width="880" height="190" rx="18" fill="rgba(232,35,30,.16)"/>
+        <line x1="60" y1="330" x2="940" y2="330" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+        <g id="jv"><line x1="0" y1="0" x2="620" y2="0" stroke="#e9e9ee" stroke-width="12" stroke-linecap="round"/>
+          <rect x="240" y="-10" width="110" height="20" rx="6" fill="#2a2c35"/>
+          <path d="M 620 -9 L 700 0 L 620 9 Z" fill="#c9ccd6"/></g>
+        <g id="jb" opacity="0"><line x1="760" y1="330" x2="760" y2="452" stroke="var(--acc2)" stroke-width="7"/>
+          <line x1="735" y1="330" x2="785" y2="330" stroke="var(--acc2)" stroke-width="7"/>
+          <line x1="735" y1="452" x2="785" y2="452" stroke="var(--acc2)" stroke-width="7"/></g></svg>
+      <div id="jl" style="position:absolute;left:600px;top:470px;width:400px;text-align:center" class="shadow">
+        <div class="t-anton" style="font-size:86px;line-height:1;color:var(--acc2);-webkit-text-stroke:4px #000;paint-order:stroke fill">${S.text}</div>
+        ${S.sub ? `<div class="t-mb" style="font-size:30px;color:#fff;letter-spacing:.14em;margin-top:6px">${S.sub}</div>` : ''}</div>`;
   },
   // news headline cards (real headlines, cited): white article cards fan in one by one, newest on top.
   // spec: items [{outlet, title, date}], times [appear times]
@@ -369,6 +386,16 @@ const ANIM = {
       const beat = t > 1.2 ? 1 + .05 * Math.max(0, Math.sin((t - 1.2) * 5 + i * Math.PI)) : 1;
       e.style.transform = `translateY(${(1 - o) * 80}px) scale(${beat})`; e.style.opacity = clamp((t - .35 - i * .15) / .12) * fadeOut(t); });
     const c = clamp((t - .9) / .3); $('pc').style.opacity = c * fadeOut(t) * (t > 1.4 ? .75 + .25 * Math.sin(t * 6) : 1); },
+  javelin(t) {
+    // javelin path: angled ~25deg, tip ends ~120px below the surface line at x~700
+    const a = 25 * Math.PI / 180, q = eOut(t / .45), tipX = 700, tipY = 452, L = 700;
+    const back = (1 - q) * 520, x0 = tipX - Math.cos(a) * (L + back), y0 = tipY - Math.sin(a) * (L + back);
+    const shake = t > .45 && t < .8 ? Math.sin(t * 90) * 3 * (1 - (t - .45) / .35) : 0;
+    $('jv').setAttribute('transform', `translate(${x0} ${y0 + shake}) rotate(25)`);
+    $('root').style.opacity = clamp(t / .1) * fadeOut(t);
+    $('jb').setAttribute('opacity', clamp((t - .55) / .2));
+    const l = eBack((t - .7) / .35); $('jl').style.opacity = clamp((t - .7) / .12); $('jl').style.transform = `scale(${.6 + .4 * l})`;
+  },
   headline(t) {
     const T = S.times || S.items.map((_, i) => .1 + i * .7);
     S.items.forEach((_, i) => { const q = eBack((t - T[i]) / .45, 1.3), e = $('hd' + i);
@@ -442,6 +469,7 @@ const EVENTS = {   // semantic SFX hints, seconds from graphic start
   spotlight: () => ({ swish: .1, soft: .75 }),
   poll: () => ({ pops: [.38, .53] }),
   podcast: () => ({ pops: [.2] }),
+  javelin: () => ({ thud: .45 }),
   headline: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
   tweet: () => ({ pops: (S.times || []).map(x => +(x + .2).toFixed(2)) }),
   birthday: () => ({ soft: .45, pops: [.9] }),
