@@ -6,7 +6,7 @@ Alternates:
 - How Do You "Fall" on a Javelin? There Has to Be More to This Story
 - A Javelin Punctured His Lung. 3 Years Later He Was World Champ
 
-Thumbnail (3:4, 1080×1440): `exports/thumbnails/elija_godwin_thumb.jpg`. The owner's skeptical side-eye (a 4K frame from his take) is on top, a javelin throw below, and "JAVELIN?!" on the seam. Made by `thumbnail.py`.
+Thumbnail (3:4, 1080×1440): `exports/thumbnails/elija_godwin_thumb.jpg`. The owner's skeptical side-eye (a 4K frame from his take) is on top, a Godwin racing for Georgia below (2023), and "JAVELIN?!" on the seam. Made by `thumbnail.py`.
 
 ## Inputs
 - A 4K talking head only. The owner asked for clips, photos and news articles from online.
@@ -14,7 +14,7 @@ Thumbnail (3:4, 1080×1440): `exports/thumbnails/elija_godwin_thumb.jpg`. The ow
   - CBS Sports: "Georgia sprinter impales himself with javelin in horrific accident, undergoes surgery"
   - Associated Press: "University of Georgia sprinter impaled by javelin during practice"
   - Saturday Down South: "Report: Georgia sprinter punctures lung in freak accident involving a javelin"
-- **Photos:** Wikimedia Commons (see `CREDITS.md`). Commons has no clear solo photo of Godwin; he's on the 2022 Worlds mixed relay podium photo.
+- **Photos (v2, owner: "add more clips of him"):** Georgia Athletics photos of Godwin from 2019–2023 now fill almost every shot: his freshman season, Georgia's Bulldog Track, May 2019, SEC 2021, the 2022 NCAA meet, 2022 Worlds and 2023. Only two Commons javelin photos (the "what I thought" part) and the Sanford Stadium shot behind the headlines remain. See `CREDITS.md`.
 - **Race footage:** YouTube can't be downloaded here. If the owner wants the 2022 NCAA 400m final or the 2022 Worlds relays, he can send clips for the bottom half.
 - **New `javelin` motion graphic:** an angled javelin and a depth bracket labelled "5–6 INCHES · INTO HIS BACK" (the AP report gives the wound as 5–6 inches deep).
 

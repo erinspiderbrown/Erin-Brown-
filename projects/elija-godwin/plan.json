@@ -13,14 +13,14 @@
  },
  "segments": [
   {
-   "type": "split",
+   "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "raw5/ph/podium22.jpg",
+    "src": "raw5/uga/2021_9_15_21_Godwin_Elija_headshot.jpg",
     "ss": 0,
     "focus": [
-     0.85,
-     0.4
+     0.5,
+     0.3
     ]
    }
   },
@@ -28,11 +28,11 @@
    "type": "split",
    "start": 6.1,
    "broll": {
-    "src": "raw5/ph/uga_gday.jpg",
+    "src": "raw5/uga/2019_3_21_Godwin_YJInvite.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.3
     ]
    }
   },
@@ -40,11 +40,11 @@
    "type": "split",
    "start": 10.9,
    "broll": {
-    "src": "raw5/ph/jav_c.jpg",
+    "src": "raw5/uga/2022_6_24_22_Godwin_16x9.jpg",
     "ss": 0,
     "focus": [
-     0.75,
-     0.5
+     0.5,
+     0.4
     ]
    }
   },
@@ -89,36 +89,71 @@
    "type": "split",
    "start": 33.0,
    "broll": {
-    "src": "raw5/ph/jav_a.jpg",
+    "src": "raw5/uga/2019_5_28_Godwin_cropped.jpg",
     "ss": 0,
     "focus": [
-     0.6,
-     0.6
+     0.55,
+     0.45
     ]
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 38.9,
    "broll": {
-    "src": "raw5/ph/tokyo_stadium.jpg",
+    "src": "raw5/uga/2021_2_27_21_Godwin_16x9_4x4_71.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 41.6,
+   "broll": {
+    "src": "raw5/uga/2021_5_28_21_Godwin_16x9.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 44.6,
+   "broll": {
+    "src": "raw5/uga/2022_7_14_22_Godwin_16x9_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.65,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 47.0,
+   "broll": {
+    "src": "raw5/uga/2021_1_14_20_Godwin_sprints_16x9_71.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.35
     ]
-   },
-   "hit": true
+   }
   },
   {
    "type": "split",
    "start": 51.4,
    "broll": {
-    "src": "raw5/ph/oregon22.jpg",
+    "src": "raw5/uga/2022_7_15_22_Godwin_16x9_2_71.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.45,
+     0.35
     ]
    }
   },
@@ -126,11 +161,23 @@
    "type": "split",
    "start": 54.0,
    "broll": {
-    "src": "raw5/ph/podium22.jpg",
+    "src": "raw5/uga/2022_7_24_22_Godwin_16x9_4_71.jpg",
     "ss": 0,
     "focus": [
-     0.75,
-     0.45
+     0.65,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.2,
+   "broll": {
+    "src": "raw5/uga/2023_2_9_23_Godwin_16x9.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
     ]
    }
   },
@@ -138,11 +185,11 @@
    "type": "split",
    "start": 57.9,
    "broll": {
-    "src": "raw5/ph/jav_c.jpg",
+    "src": "raw5/uga/2023_4_22_23_Godwin_16x9-7.jpg",
     "ss": 0,
     "focus": [
-     0.6,
-     0.5
+     0.5,
+     0.3
     ]
    }
   },
@@ -150,11 +197,11 @@
    "type": "split",
    "start": 62.6,
    "broll": {
-    "src": "raw5/ph/jav_a.jpg",
+    "src": "raw5/uga/2023_4_4_23_Boling_Godwin_16x9.jpg",
     "ss": 0,
     "focus": [
-     0.3,
-     0.5
+     0.5,
+     0.3
     ]
    }
   },
@@ -162,11 +209,11 @@
    "type": "split",
    "start": 66.2,
    "broll": {
-    "src": "raw5/ph/uga_gday.jpg",
+    "src": "raw5/uga/2023_4_4_23_Godwin_16x9-10.jpg",
     "ss": 0,
     "focus": [
-     0.3,
-     0.5
+     0.5,
+     0.35
     ]
    }
   }

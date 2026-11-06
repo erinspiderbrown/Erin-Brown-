@@ -1,4 +1,4 @@
-# 3:4 TikTok cover: the owner's skeptical side-eye (4K frame) on top, the javelin below, one word on the seam.
+# 3:4 TikTok cover: the owner's skeptical side-eye (4K frame) on top, Godwin racing for Georgia below, one word on the seam.
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 S='/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad'
 F='/home/user/Erin-Brown-/editor/assets/fonts/'
@@ -11,7 +11,7 @@ def crop_at(im,cx,cy,scale=1.0,w=W,h=HALF,bright=1.0):
     im=ImageEnhance.Contrast(im).enhance(1.1); im=ImageEnhance.Color(im).enhance(1.06); return ImageEnhance.Sharpness(im).enhance(1.1)
 face=Image.open(f'{S}/w5/thumb_face.png')            # 3840x2160 frame
 top=crop_at(face,1960,1020,0.42,bright=1.05)         # whole face above the word; downscaled 4K -> sharp
-bot=crop_at(Image.open(f'{S}/raw5/ph/jav_a.jpg'),1600,655,0.55)   # javelin shaft just below the word
+bot=crop_at(Image.open(f'{S}/raw5/uga/2023_4_22_23_Godwin_16x9-7.jpg'),920,385,1.0)   # Godwin racing for Georgia (UGA Athletics photo)
 c=Image.new('RGB',(W,H)); c.paste(top,(0,0)); c.paste(bot,(0,HALF))
 sh=Image.new('L',(W,140),0); d=ImageDraw.Draw(sh)
 for y in range(140): d.line([(0,y),(W,y)],fill=int(150*(1-abs(y-70)/70)**2.2))
