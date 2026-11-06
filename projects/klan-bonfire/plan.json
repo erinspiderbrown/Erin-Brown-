@@ -284,7 +284,7 @@
     "src": "raw6/ph/kkk_init.jpg",
     "ss": 0,
     "focus": [
-     0.42,
+     0.58,
      0.5
     ]
    },
@@ -350,9 +350,9 @@
    "type": "motion",
    "kind": "stamp",
    "t": 2.4,
-   "dur": 2.6,
+   "dur": 2.0,
    "text": "KLAN RALLY?!",
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -404,7 +404,7 @@
    "dur": 2.2,
    "text": "HARDEST PRACTICE",
    "size": 105,
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -424,7 +424,7 @@
    "dur": 2.0,
    "text": "A LITTLE DIFFERENT?",
    "size": 95,
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -476,7 +476,7 @@
    "dur": 2.4,
    "text": "DRESSED LIKE GHOSTS?",
    "size": 90,
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -485,7 +485,7 @@
    "dur": 1.9,
    "text": "NOT HALLOWEEN",
    "size": 110,
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
@@ -501,7 +501,7 @@
    "t": 91.1,
    "dur": 1.6,
    "text": "OH HELL NO",
-   "anchor": "upper"
+   "anchor": "lower"
   },
   {
    "type": "motion",
