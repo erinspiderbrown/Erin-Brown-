@@ -1,6 +1,10 @@
 # Tebogo vs Lyles: "stop playing opossum" (Nov 2026)
 
-**Title (YouTube Shorts / TikTok):** Noah Lyles Told the Olympic Champ to Stop "Playing Opossum" 😳
+**Title (YouTube Shorts / TikTok):** Noah Lyles Just Exposed the Olympic Champion's Pattern 👀
+Alternates:
+- Tebogo Called Out the Field… Then Lyles Clapped Back
+- "Stop Playing Opossum" — Noah Lyles Goes After Tebogo
+- Is the Olympic 200m Champ Sandbagging? Noah Lyles Thinks So
 
 Talking head (4K) with the owner's two photos and a screenshot of the Tebogo/Lyles tweets. Built in the default Yohan Blake style.
 
