@@ -534,6 +534,11 @@ def main(plan_path):
     if -14.0 - li > 0.05:
         gain = -14.0 - li
         ln = 'alimiter=limit=0.84:attack=5:release=50:level=false'   # -1.5 dBFS: AAC overshoots ~1 dB on transients
+        # the limiter shaves loudness off a peaky take: measure AFTER it and top the static gain up until it lands on -14
+        for _ in range(3):
+            lo = measure(graph(gain, 0.0) + f',{ln}')[0]
+            if abs(-14.0 - lo) < 0.15: break
+            gain += -14.0 - lo
     else:
         # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
         # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
