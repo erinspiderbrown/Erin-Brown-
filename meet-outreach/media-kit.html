@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Erin Brown Media Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0b0b0d; --card:#16161a; --line:#2a2a30; --text:#f4f4f5; --muted:#a1a1aa; --accent:#FF7A1A; --accent2:#22d3ee; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; background: var(--bg); color: var(--text); font-family: Inter, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 13mm 13mm 10mm; display: flex; flex-direction: column; gap: 6.5mm; position: relative; overflow: hidden; }
+  .page::before { content:""; position:absolute; top:-60mm; right:-50mm; width:150mm; height:150mm; background: radial-gradient(circle, rgba(255,122,26,.22), transparent 65%); }
+  h1, h2, .num, .label { font-family: Montserrat, sans-serif; }
+  header { display:flex; gap:6mm; align-items:center; position:relative; }
+  header img { width:30mm; height:30mm; border-radius:50%; object-fit:cover; border:2px solid var(--accent); box-shadow:0 0 18px rgba(255,122,26,.55); }
+  .kicker { font-family:Montserrat; font-weight:800; font-size:9pt; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; }
+  h1 { font-weight:900; font-size:30pt; line-height:1; letter-spacing:-.01em; text-transform:uppercase; margin:1.5mm 0 2mm; }
+  h1 span { color:var(--accent); }
+  .tagline { color:var(--muted); font-size:10pt; line-height:1.4; }
+  .handles { margin-top:2mm; font-size:9pt; color:var(--text); font-weight:600; }
+  .handles b { color:var(--accent2); font-weight:600; }
+  .hero { display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; }
+  .hero > div { background:var(--card); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:3mm; padding:4mm 3.5mm; }
+  .num { font-weight:900; font-size:21pt; line-height:1; }
+  .label { font-weight:700; font-size:7.5pt; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-top:1.8mm; line-height:1.3; }
+  h2 { font-weight:800; font-size:11pt; text-transform:uppercase; letter-spacing:.08em; margin-bottom:3mm; display:flex; align-items:center; gap:2.5mm; }
+  h2::before { content:""; width:5mm; height:2px; background:var(--accent); }
+  .platforms { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; }
+  .pf { background:var(--card); border:1px solid var(--line); border-radius:3mm; padding:4mm; }
+  .pf .name { font-family:Montserrat; font-weight:800; font-size:11pt; }
+  .pf .h { color:var(--accent2); font-size:8.5pt; font-weight:600; margin-bottom:3mm; }
+  .pf .big { font-family:Montserrat; font-weight:900; font-size:17pt; }
+  .pf .big small { font-size:8pt; font-weight:700; color:var(--muted); text-transform:uppercase; margin-left:1mm; }
+  .pf ul { list-style:none; margin-top:2.5mm; border-top:1px solid var(--line); padding-top:2.5mm; }
+  .pf li { display:flex; justify-content:space-between; font-size:8.5pt; padding:.9mm 0; color:var(--muted); }
+  .pf li b { color:var(--text); font-weight:600; }
+  .pf .win { font-size:7pt; color:var(--muted); margin-top:1.5mm; font-style:italic; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:3mm; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:3mm; padding:4mm; }
+  .box p, .box li { font-size:9pt; line-height:1.45; color:#d4d4d8; }
+  .box ul { padding-left:4mm; }
+  .box li { margin-bottom:1.2mm; }
+  .box li::marker { color:var(--accent); }
+  .step { margin-bottom:2.5mm; }
+  .step .t { font-family:Montserrat; font-weight:800; font-size:8.5pt; color:var(--accent); text-transform:uppercase; letter-spacing:.06em; }
+  .step p { margin-top:.6mm; }
+  .ask li { font-size:10.5pt; margin-bottom:3mm; }
+  .ask { border-color:var(--accent); background:linear-gradient(135deg, rgba(255,122,26,.12), var(--card) 60%); }
+  footer { margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid var(--line); padding-top:3.5mm; }
+  footer .cta { font-family:Montserrat; font-weight:800; font-size:12pt; }
+  footer .cta span { color:var(--accent); }
+  footer .src { font-size:7pt; color:var(--muted); text-align:right; line-height:1.4; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <img src="erin.jpg" alt="Erin Brown">
+    <div>
+      <div class="kicker">Media kit · 2027 season</div>
+      <h1>Erin <span>"Spider"</span> Brown</h1>
+      <p class="tagline">Track and field creator, athlete and journalist. I cover the sport's athletes, races and storylines for a fast-growing audience of track fans.</p>
+      <p class="handles"><b>TikTok</b> @erinspiderbrown &nbsp;·&nbsp; <b>Instagram</b> @e.diamondz ✓ &nbsp;·&nbsp; <b>YouTube</b> @theerinbrowntv</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div><div class="num">312K</div><div class="label">Followers across 3 platforms</div></div>
+    <div><div class="num">79.8M</div><div class="label">TikTok views, last 12 months</div></div>
+    <div><div class="num">~11M</div><div class="label">Views per month, all platforms</div></div>
+    <div><div class="num">6.5M</div><div class="label">TikTok likes, last 12 months</div></div>
+  </section>
+
+  <section>
+    <h2>Platforms</h2>
+    <div class="platforms">
+      <div class="pf">
+        <div class="name">TikTok</div><div class="h">@erinspiderbrown</div>
+        <div class="big">205.4K<small>followers</small></div>
+        <ul>
+          <li>Views, last 12 mo <b>79.8M</b></li>
+          <li>Views, last 60 days <b>13.4M</b></li>
+          <li>Likes, last 12 mo <b>6.5M</b></li>
+          <li>Shares, last 12 mo <b>284.6K</b></li>
+          <li>Profile views, 12 mo <b>2.2M</b></li>
+        </ul>
+      </div>
+      <div class="pf">
+        <div class="name">Instagram</div><div class="h">@e.diamondz · verified</div>
+        <div class="big">71.7K<small>followers</small></div>
+        <ul>
+          <li>Views, last 90 days <b>7.6M</b></li>
+          <li>Accounts reached, 90 days <b>1.07M</b></li>
+          <li>Reel views, 90 days <b>4.7M</b></li>
+          <li>Story views, 90 days <b>2.6M</b></li>
+          <li>Profile visits, 90 days <b>153K</b></li>
+        </ul>
+      </div>
+      <div class="pf">
+        <div class="name">YouTube</div><div class="h">@theerinbrowntv</div>
+        <div class="big">34.9K<small>subscribers</small></div>
+        <ul>
+          <li>Views, last 90 days <b>4.27M</b></li>
+          <li>Watch time, 90 days <b>55K hrs</b></li>
+          <li>New subscribers, 90 days <b>+3,055</b></li>
+          <li>Views, last 28 days <b>1.3M</b></li>
+          <li>Total channel views <b>19M</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="box">
+      <h2>Meet coverage package</h2>
+      <div class="step"><div class="t">Before the meet</div><p>3 pre-meet videos building up the field, the storylines and the athletes to watch, plus a countdown on stories. Links to your tickets and stream.</p></div>
+      <div class="step"><div class="t">At the meet</div><p>Live reactions and atmosphere videos, filmed, edited and posted during the meet.</p></div>
+      <div class="step"><div class="t">After the meet</div><p>At least 5 recap and breakdown videos from all our footage, on TikTok, Instagram and YouTube, plus a reach report within 14 days for your sponsors.</p></div>
+      <p style="font-size:8pt;color:var(--muted);margin-top:1mm;">My style is reactions, breakdowns and storytelling. I don't do formal athlete interviews.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:3mm;">
+      <div class="box ask" style="flex:1; display:flex; flex-direction:column; justify-content:center; padding:6mm;">
+        <h2>Partnership</h2>
+        <ul>
+          <li><b style="color:var(--accent)">Package fee: $3,000 USD</b></li>
+          <li>Travel and hotel for 2</li>
+          <li>Media passes for 2 (creator and camera operator) to film around the meet</li>
+          <li>50% on confirmation, 50% after the meet</li>
+          <li>You can repost all of our videos on your channels</li>
+          <li>We follow your broadcast and filming rules</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="cta">Let's work together → <span>bookingediamondz@gmail.com</span></div>
+    <div class="src">Figures from TikTok, Instagram and YouTube analytics, 6 Nov 2026.<br>Monthly views: TikTok 60-day average plus Instagram 30-day and YouTube 28-day totals.</div>
+  </footer>
+</div>
+</body>
+</html>
