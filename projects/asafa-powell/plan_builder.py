@@ -2,9 +2,9 @@
 Every graphic is anchored to a spoken word. Results/facts are verified - see projects/asafa-powell/NOTES.md."""
 import json, re, os, sys
 S = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(S)
-W = json.load(open('w8b/words_final.json'))
+W = json.load(open('w8c/words_final.json'))
 TOK = [re.sub(r"[^a-z0-9.'\-]", '', x['w'].lower()).rstrip('.') for x in W]
-DUR = 338.49
+DUR = 336.04
 
 
 def at(phrase, n=1, after=0.0):
@@ -32,7 +32,7 @@ gfx = [
     M('stamp', at('not one') - .1, 0.9, text='0 INDIVIDUAL GOLDS', size=90),
     M('keyword', at('so how you'), 3.0, text='FASTEST MAN ALIVE…'),
     # --- Jamaica / family
-    M('pin', at('so asafa from'), 2.8, text='JAMAICA', sub='YOUNGEST OF 6 BOYS'),
+    M('pin', at('now asafa from'), 2.8, text='JAMAICA', sub='YOUNGEST OF 6 BOYS'),
     M('keyword', at('his mama'), 2.4, text='PARENTS: BOTH MINISTERS'),
     M('keyword', at('stephen'), 2.6, text='COACH STEPHEN FRANCIS · MVP'),
     M('keyword', at('scary fast'), 1.6, text='SCARY FAST'),
@@ -60,7 +60,7 @@ gfx = [
     M('stamp', at('run him down'), 0.8, text='RUN DOWN', size=120),
     D('bars', at('tyson win it') - .2, 5.4, label='Osaka 2007 · 100m Final', unit='S', lower_is_better=True, spread=0.15,
       items=[{'name': 'Tyson Gay', 'value': '9.85'}, {'name': 'Derrick Atkins', 'value': '9.91'}, {'name': 'Powell · 3rd', 'value': '9.96'}]),
-    M('keyword', at('when tyson came on') , 3.6, text='"I JUST PANICKED"'),
+    M('keyword', at('when tyson came on') , 3.3, text='"I JUST PANICKED"'),
     N(at('and michael johnson'), 3.0, 'USA', 'MICHAEL JOHNSON', '4× OLYMPIC CHAMPION'),
     M('keyword', at('i\'m losing it'), 1.7, text='"I\'M LOSING IT…"'),
     M('stamp', at('he just gave up'), 1.6, text='GAVE UP', size=130),
@@ -93,7 +93,7 @@ gfx = [
     M('stamp', at('the groin give out'), 1.8, text='GROIN AGAIN', size=110),
     D('counter', at('11.99') - .5, 3.0, value='11.99', unit='SEC', label='Last place', sub='3rd Olympic final'),
     # --- 2013 / 2017
-    M('stamp', at('he popped positive'), 2.0, text='POSITIVE TEST', size=110),
+    M('stamp', at('he test positive'), 2.0, text='POSITIVE TEST', size=110),
     M('keyword', at('oxilofrine'), 2.6, text='OXILOFRINE (SUPPLEMENT)'),
     M('board', at('they give him'), round(at('but the damage') - at('they give him') + .6, 2), title='HIS BAN',
       rows=[{'event': 'ORIGINAL BAN', 'value': '18 MO'}, {'event': 'AFTER CAS APPEAL', 'value': '6 MO'}],
@@ -102,9 +102,9 @@ gfx = [
     M('stamp', at('whole team get'), 2.0, text='DISQUALIFIED', size=110),
     M('keyword', at('give that medal back'), 2.6, text='MEDAL STRIPPED · 9 YEARS LATER'),
     # --- 2015 / 2016 / career
-    M('keyword', at('never stop showing up') - .3, 1.85, text='NEVER STOPPED SHOWING UP'),
+    M('keyword', at('never stopped showing up') - .3, 1.85, text='NEVER STOPPED SHOWING UP'),
     M('pin', at('at 32'), 2.4, text='BEIJING 2015', sub='WORLDS FINAL · AGE 32'),
-    M('pin', at('and rio'), 2.6, text='RIO 2016', sub='OLYMPIC 4X1 · AGE 33'),
+    M('pin', at('in rio'), 2.6, text='RIO 2016', sub='OLYMPIC 4X1 · AGE 33'),
     M('stamp', at('and they win'), 1.8, text='OLYMPIC GOLD · 4X1', size=90),
     M('keyword', at('but that individual'), 3.6, text='INDIVIDUAL GOLD: NEVER'),
     M('board', at('he retired') , round(at('and out of every') - at('he retired'), 2), title='CAREER · RETIRED 2022',
@@ -127,20 +127,20 @@ if __name__ == '__main__':
     for a, b in zip(gfx, gfx[1:]):
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics')
-    json.dump(gfx, open('w8b/gfx.json', 'w'), indent=1)
+    json.dump(gfx, open('w8c/gfx.json', 'w'), indent=1)
 
 
 A = lambda src, t, end, lufs, fade=1.0: {'src': src, 't': round(t, 2), 'end': round(end, 2), 'lufs': lufs, 'fade': fade}
 amb = [
-    A('stadium_crowd_murmur', 0.0, at('but life hit') + 1.0, -36, 1.5),                 # the legend / circuit
-    A('stadium_crowd_murmur', at('then his first worlds') - .5, at('he said something') + .5, -36, 1.5),   # 2003-2007 meets
+    A('stadium_crowd_murmur', 0.0, at('but see life') + 1.0, -36, 1.5),                 # the legend / circuit
+    A('stadium_crowd_murmur', at('then his first worlds') - .5, at('he says something') + .5, -36, 1.5),   # 2003-2007 meets
     A('stadium_cheer', at('9.77') - .3, at('9.77') + 4.0, -33, 0.6),                    # 2005 world record
-    A('reporters_flashes', at('he said something'), at('he just gave up') + 1.5, -34, 0.8),   # post-race quotes
+    A('reporters_flashes', at('he says something'), at('he just gave up') + 1.5, -34, 0.8),   # post-race quotes
     A('stadium_cheer', at('9.74') - .3, at('9.74') + 4.0, -33, 0.6),                    # Rieti 9.74
     A('stadium_crowd_murmur', at('2008 beijing') - .3, at('2013 it get') - .3, -36, 1.5),     # 2008-2012
     A('crowd_victory', at('bolt run') - .2, at('bolt run') + 4.5, -32, 0.5),            # Bolt 9.69, Beijing
     A('reporters_flashes', at('2013 it get'), at('but the damage') + 2.0, -35, 0.8),    # the positive test
-    A('stadium_crowd_murmur', at('and rio') - .3, at('so what was it'), -36, 1.5),     # Rio and the career recap
+    A('stadium_crowd_murmur', at('in rio') - .3, at('so what was it'), -36, 1.5),     # Rio and the career recap
     A('stadium_cheer', at('and they win') - .2, at('and they win') + 4.0, -32, 0.6),    # Rio relay gold
 ]
 
@@ -159,15 +159,15 @@ segs = [
     frame(t_wr - .1, DOHA, B01, PA3, (0.5, 0.08), (0.75, 0.35)),                         # WR board over Powell
     full(at('not one') - .2, B03, (0.5, 0.3), hit=True),
     full(at('so how you'), SING, (0.55, 0.4)),
-    full(at('so asafa from'), P('Flag_of_Jamaica_02'), (0.55, 0.45)),
+    full(at('now asafa from'), P('Flag_of_Jamaica_02'), (0.55, 0.45)),
     full(at('his mama'), B06, (0.5, 0.3)),
     full(at('stephen'), P('Starting_block_J1'), (0.45, 0.5)),
-    full(at('but life hit'), P('Laitche_P063'), (0.4, 0.5)),
+    full(at('but see life'), P('Laitche_P063'), (0.4, 0.5)),
     full(at('about a year later'), P('Verso_Sera_al_Guidobaldi'), (0.5, 0.5)),
     full(at('then his first worlds'), PA1, (0.45, 0.5)),                               # Stade de France (2003 worlds venue)
     full(at('false start'), P('Starting_block_J1'), (0.7, 0.5)),
     full(at('athens olympics'), P('Athletissima_2012_arriv_e_du_100m_H'), (0.45, 0.5)),
-    frame(at('where he finished'), DOHA, SING, P('Starting_block_J1'), (0.55, 0.3), (0.5, 0.5)),
+    frame(at('where he finish'), DOHA, SING, P('Starting_block_J1'), (0.55, 0.3), (0.5, 0.5)),
     full(at('now peep what'), PA4, (0.4, 0.5), hit=True),                             # the 2005 WR
     full(at('world record', 1, after=at('9.77')), B06, (0.5, 0.25)),
     full(at('then he hurt'), B01, (0.5, 0.35)),
@@ -208,9 +208,9 @@ segs = [
     full(at('and remember that'), P('Beijing_National_Stadium_2008_08_4'), (0.5, 0.5)),
     full(at('nesta carter') - .5, P('2013_World_Championships_in_At_s_Men_s_4_100_metres_relay_02'), (0.5, 0.4)),
     full(at('give that medal back') - .3, P('Osaka07_D9A_M4_100_VC') if False else B06, (0.5, 0.3)),
-    full(at('but here\'s the thing'), PA1, (0.4, 0.45)),
+    full(at('here\'s the thing'), PA1, (0.4, 0.45)),
     full(at('at 32'), PA4, (0.5, 0.5)),
-    full(at('and rio'), P('Est_dio_Ol_mpico_Engenh_o_nos_Jogos_Paraol_mpicos_Rio_2016'), (0.5, 0.5)),
+    full(at('in rio'), P('Est_dio_Ol_mpico_Engenh_o_nos_Jogos_Paraol_mpicos_Rio_2016'), (0.5, 0.5)),
     full(at('and they win'), RIO('1039087_19_08_2016_frz_1141'), (0.6, 0.45), hit=True),
     full(at('a relay gold'), RIO('1039105_19_08_2016_frz_1203'), (0.45, 0.4)),
     full(at('but that individual'), SING, (0.55, 0.4)),
@@ -230,6 +230,6 @@ if __name__ == '__main__':
     print('segments', len(segs), '| missing files:', missing)
     for a, b in zip(segs, segs[1:]):
         if b['start'] - a['start'] < 1.0: print('SHORT', a['start'], b['start'])
-    plan = {'workdir': 'w8/build', 'output': 'out/asafa_powell_v2.mp4', 'words': 'w8b/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
-            'face': {'src': 'w8b/face.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs, 'graphics': gfx, 'ambience': amb}
+    plan = {'workdir': 'w8/build', 'output': 'out/asafa_powell_v3.mp4', 'words': 'w8c/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
+            'face': {'src': 'w8c/face.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs, 'graphics': gfx, 'ambience': amb}
     json.dump(plan, open('/home/user/Erin-Brown-/projects/asafa-powell/plan.json', 'w'), indent=1)
