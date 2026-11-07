@@ -1,0 +1,423 @@
+{
+ "workdir": "work/build",
+ "output": "work/noome_400.mp4",
+ "words": "work/words_story.json",
+ "voice_ss": 0.0,
+ "duration": 103.66,
+ "face": {
+  "src": "work/face_story.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "_res_note": "skip_res_check because race_card.mp4 (from the previous Noome video) frames a 720p clip at native size. Every other source is >=1080p: the owner's low-res interview/walk-in clips and photos were AI-upscaled with editor/enhance.py (Real-ESRGAN).",
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/noome_relay_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.3,
+   "broll": {
+    "src": "broll/race_card.mp4",
+    "ss": 0.0
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.4,
+   "broll": {
+    "src": "broll/butterfly_above.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 16.4,
+   "broll": {
+    "src": "broll/noome_blocks_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 19.9,
+   "broll": {
+    "src": "broll/arrived_hd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.2,
+   "broll": {
+    "src": "broll/race_full.mp4",
+    "ss": 10.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.2,
+   "broll": {
+    "src": "broll/arrived_hd.mp4",
+    "ss": 2.6,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.0,
+   "broll": {
+    "src": "broll/noome_relay_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 33.6,
+   "broll": {
+    "src": "broll/race_card.mp4",
+    "ss": 5.5
+   }
+  },
+  {
+   "type": "full",
+   "start": 37.05,
+   "broll": {
+    "src": "broll/interview_hd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.75,
+   "broll": {
+    "src": "broll/race_start_hd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 55.75,
+   "broll": {
+    "src": "broll/race_full.mp4",
+    "ss": 6.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.0,
+   "broll": {
+    "src": "broll/race_full.mp4",
+    "ss": 16.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 68.6,
+   "broll": {
+    "src": "broll/race_full.mp4",
+    "ss": 28.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 74.5,
+   "broll": {
+    "src": "broll/race_finish_hd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 91.0,
+   "broll": {
+    "src": "broll/noome_blocks_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 97.6,
+   "broll": {
+    "src": "broll/race_card.mp4",
+    "ss": 3.0
+   }
+  }
+ ],
+ "zooms": [
+  [
+   17.6,
+   19.5,
+   1.12
+  ],
+  [
+   25.4,
+   27.0,
+   1.1
+  ],
+  [
+   34.4,
+   36.5,
+   1.12
+  ],
+  [
+   62.1,
+   63.8,
+   1.1
+  ],
+  [
+   69.6,
+   71.5,
+   1.08
+  ],
+  [
+   95.7,
+   97.0,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.3,
+   "rank": "NZ",
+   "name": "RYLAN NOOME",
+   "sub": "100M PB 10.48  \u00b7  AGE 20"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 2.7,
+   "dur": 2.2,
+   "text": "EMBARRASSING",
+   "size": 130,
+   "y": 1150
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 5.5,
+   "dur": 1.8,
+   "text": "PART 1: THE 300",
+   "size": 95,
+   "y": 1520,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 11.4,
+   "dur": 2.6,
+   "value": "35.3",
+   "unit": "SECONDS",
+   "label": "HIS 300M  \u00b7  A MONTH AGO",
+   "anim": 1.4
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 18.9,
+   "dur": 1.4,
+   "text": "TOO BIG?",
+   "size": 130,
+   "y": 1200
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 22.4,
+   "dur": 2.0,
+   "text": "1 MONTH TO TRAIN",
+   "size": 120,
+   "y": 1560
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 29.2,
+   "dur": 1.7,
+   "text": "PART 2: THE PREDICTIONS",
+   "size": 85,
+   "y": 1520,
+   "hi": 2
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 31.1,
+   "dur": 2.9,
+   "value": "51.0",
+   "unit": "SEC",
+   "label": "My 400m prediction",
+   "sub": "made after his 300"
+  },
+  {
+   "type": "name",
+   "t": 37.3,
+   "dur": 2.6,
+   "rank": "PRE",
+   "name": "RYLAN NOOME",
+   "sub": "BEFORE THE 400"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 40.0,
+   "dur": 1.6,
+   "text": "SUB-50?",
+   "size": 150,
+   "y": 1150
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 46.4,
+   "dur": 2.4,
+   "text": "\"THESE CALVES\"",
+   "size": 120,
+   "y": 1500
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 50.0,
+   "dur": 1.8,
+   "text": "PART 3: THE 400",
+   "size": 95,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 62.1,
+   "dur": 2.4,
+   "text": "CHECK ENGINE LIGHT",
+   "size": 115,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 71.0,
+   "dur": 2.0,
+   "text": "THE KICK?",
+   "size": 130,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 77.8,
+   "dur": 2.0,
+   "text": "RUNNING BACKWARDS",
+   "size": 120,
+   "y": 260
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 82.5,
+   "dur": 1.6,
+   "text": "CINDER BLOCKS",
+   "size": 120,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 91.2,
+   "dur": 1.8,
+   "text": "THE VERDICT",
+   "size": 110,
+   "y": 1520,
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 96.2,
+   "dur": 2.0,
+   "text": "NEW ZEALAND",
+   "sub": "EMBARRASSED?"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 98.6,
+   "dur": 5.06,
+   "question": "WHAT DID HE RUN?",
+   "options": [
+    "SUB-50",
+    "51+"
+   ],
+   "cta": "COMMENT YOUR GUESS"
+  }
+ ]
+}
