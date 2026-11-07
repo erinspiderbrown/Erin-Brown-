@@ -108,8 +108,18 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
 
 ## ElevenLabs narration (when the owner asks for his AI voice instead of a talking head)
-**Always use the approved Jon Drummond recipe. Don't improvise the model, settings or format.** The owner asked "why can't you be consistent with the voices?", so match this exactly every time.
-- **Reference:** his ElevenLabs flow "Jon Drummond documentary voiceover" (`EwtCtvyEoktyTmEPgx7r`), nodes labelled "V4 0x … (natural, consistent)". Read one with `creative_get_flow_node` if in doubt.
+**This is the owner's DEFAULT VOICE for all his YouTube and TikTok videos** (approved Nov 2026: "I like that one. Set that as the default voice"). Always use this recipe. Don't improvise the model, settings or format. The owner asked "why can't you be consistent with the voices?", so match this exactly every time.
+- **Approved results:**
+  - The Jon Drummond YouTube voiceover.
+  - The final Asafa Powell video (`exports/asafa_powell_tiktok_hq.mp4`, Asafa v3).
+- **Reference flows** (read a node with `creative_get_flow_node` if in doubt):
+  - "Jon Drummond documentary voiceover" (`EwtCtvyEoktyTmEPgx7r`), nodes labelled "V4 0x … (natural, consistent)".
+  - "Asafa Powell voiceover (Drummond recipe)" (`W4Hc1NpmegUzmpwft2jt`), with its script in `projects/asafa-powell/script_v4_sections.txt`.
+- **Assembly** (as on Asafa v3):
+  - Generate 2 takes per section.
+  - Transcribe them and keep the take that stays in dialect, says every line and doesn't rush its first seconds.
+  - Join sections with about 1.5 s of breath.
+  - If the video must reach a length, lengthen about 15 of the longest in-section pauses by about 0.4 s.
 - **Voice:** his clone "Erin Brown" (`voice_id` `dk6cvd5UilZRrcpZ7dNK`).
 - **Model and settings:** `eleven_v4`, `voice_settings` `{"stability": 0.45, "similarity": 0.85}`. Nothing else.
 - **Tags:** every paragraph starts with `[calm] [relaxed] [Texas accent]`. Put `[pause]` before big beats.
