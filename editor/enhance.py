@@ -73,7 +73,7 @@ def main():
     W, H = fit(w * S, h * S, a.w, a.h)
     rng = ['-ss', str(a.ss)] + (['-t', str(a.t)] if a.t else [])
     dec = subprocess.Popen(['ffmpeg', '-v', 'error', *rng, '-i', a.src, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
-    tmp = a.out + '.noaudio.mp4'
+    tmp = a.out + '.noaudio.mkv'           # MKV: still readable if the job is interrupted
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{w * S}x{h * S}', '-r', f'{fps:.3f}',
                             '-i', '-', '-vf', f'scale={W}:{H}:flags=lanczos,format=yuv420p', '-c:v', 'libx264', '-crf', '14', '-preset', 'medium', tmp],
                            stdin=subprocess.PIPE)
