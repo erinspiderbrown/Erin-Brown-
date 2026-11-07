@@ -127,7 +127,7 @@ def render_segment(plan, seg, a, b, out):
         sw, sh = probe(br['src'])
         if br.get('crop'): sw, sh = br['crop'][0], br['crop'][1]
         bh = min(round(W * sh / sw / 2) * 2, H - 2 * 360)          # band height (keep >= 360px panels)
-        ph = (H - bh) // 2; ph2 = H - bh - ph
+        ph = (H - bh) // 4 * 2; ph2 = H - bh - ph                   # even panel heights (yuv420p drops odd rows)
         tp, bt = br['top'], br['bottom']
         def pin(i, p, h, push):
             ip = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', p['src']] if is_img(p['src'])
