@@ -8,3 +8,6 @@ projects/*/raw/
 projects/*/work/
 projects/*/out/
 projects/*/broll/
+
+# two-pass encoder logs written during exports
+exports/x264pass*
