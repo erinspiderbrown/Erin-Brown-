@@ -108,10 +108,19 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
 
 ## ElevenLabs narration (when the owner asks for his AI voice instead of a talking head)
-Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/NOTES.md`.
+**Always use the approved Jon Drummond recipe. Don't improvise the model, settings or format.** The owner asked "why can't you be consistent with the voices?", so match this exactly every time.
+- **Reference:** his ElevenLabs flow "Jon Drummond documentary voiceover" (`EwtCtvyEoktyTmEPgx7r`), nodes labelled "V4 0x … (natural, consistent)". Read one with `creative_get_flow_node` if in doubt.
 - **Voice:** his clone "Erin Brown" (`voice_id` `dk6cvd5UilZRrcpZ7dNK`).
-- **What he liked:** the first delivered Asafa version. That was model **`eleven_v4`**, default voice settings, with the script written in his own dialect (`projects/asafa-powell/script_v2_part*.txt`). He called it "really decent".
-  - Its one problem: **slightly too fast at the very beginning.** Next time, slow the first few lines (shorter sentences, more full stops, a beat after the hook) and don't make the open hyped.
+- **Model and settings:** `eleven_v4`, `voice_settings` `{"stability": 0.45, "similarity": 0.85}`. Nothing else.
+- **Tags:** every paragraph starts with `[calm] [relaxed] [Texas accent]`. Put `[pause]` before big beats.
+- **Spelling:** write it the way he talks, in his urban Texas dialect:
+  - "Aight, so check it out", "lemme tell y'all", "'Cause", "nah, mane", "damn near a hour", "they was", "4 by 1"
+  - dropped g's: "leavin'", "standin'", "lookin'"
+  - phonetic name spellings where needed ("Drummund")
+- **Length:** seven-ish short sections of about 900–1,900 characters, each its own node. That keeps the delivery steady, where one long take speeds up.
+- **Pace check:** the approved Drummond read runs about **164 wpm, steady from the first second**, with pauses averaging about 0.6 s. Measure each take, and reject any whose first 30 s is noticeably faster than the rest.
+Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/NOTES.md`:
+- **Asafa v1:** `eleven_v4`, default settings, no tags, dialect script. It was "really decent", but **too fast at the beginning** (182 wpm in the first 30 s).
 - **What he rejected:**
   - A proper, newscaster-style script: "doesn't sound like how I would talk".
   - An enthusiastic, "too proper" open.
