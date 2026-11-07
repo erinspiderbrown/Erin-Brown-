@@ -25,6 +25,7 @@ These came from a Dropbox folder and are not committed.
 - **Online footage:** YouTube has the 2026 UIL 6A boys race (BryceMtn) and his Woodbridge race (Erik Boal Sports), but the download returned 403. Nothing was tried to get around it. See `footage_wanted.md`.
 
 ## Steps
+0. **Match the two clips' loudness:** clip B was recorded at −17.8 LUFS and clip A at −12.1. Following the never-turn-down rule, B got one static +5.7 dB boost with a peak limiter (it lands at −14.1); A is untouched. The build then added the full-scale peak trim (−1.2 dB).
 1. **Crop the face:** crop 2430×2160 at (670, 0), scale to 1440×1280.
 2. **Fix the transcript:**
    - "Ivanage Deguan" → Avinash Dewagan.
