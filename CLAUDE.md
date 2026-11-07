@@ -52,6 +52,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `poll`: comment-bait ending
   - `usmap`: states light up on a US map in time with the voice; `cross` puts a red X on a state
 - **Never invent data.** Don't fake stats or poll percentages. If a value is interpreted (e.g. "23 mid" → 23.5), say so to the owner.
+- **No name tags.** The owner doesn't like the name plate at the bottom of the opening. Don't use `type: "name"` in any video; `build.py` drops it. Introduce people with the captions, B-roll and other graphics instead.
 - **Punch-in zooms** on the talking head for emphasis (`zooms`).
 - **Animation clips are a standing request for future videos.** Plan short animated clips that illustrate what's being said, alongside the motion graphics. Examples: an animated track, a running-figure loop, a stopwatch or a globe spin.
   - Before each edit, list the animation moments you'd add and ask the owner to supply clips, or offer to generate them.

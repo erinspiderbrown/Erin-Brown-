@@ -346,6 +346,11 @@ def main(plan_path):
     if plan['duration'] < plan.get('min_duration', 0):
         print(f"WARNING: {plan['duration']:.1f}s is under the {plan['min_duration']}s minimum")
     if plan.get('accent'): GOLD_ASS = hex2ass(plan['accent'])
+    # owner (Nov 2026): no name tag / name plate in any video. Drop any 'name' graphic a plan still has.
+    dropped = [g for g in plan.get('graphics', []) if g['type'] == 'name']
+    if dropped:
+        print(f"NOTE: dropped {len(dropped)} name-tag graphic(s); the owner doesn't want name tags in any video")
+        plan['graphics'] = [g for g in plan['graphics'] if g['type'] != 'name']
     if not plan.get('skip_res_check'): check_sources(plan, plan.get('min_broll_short_side', 1080))
     wd = plan['workdir']; os.makedirs(wd, exist_ok=True)
     segs = plan['segments']; end = plan['duration']

@@ -28,7 +28,7 @@ Rules: the final video must be **at least 61 seconds**, and all B-roll must be *
 |---|---|---|
 | `data` | `counter`, `compare`, `bars`, `line`, `ring` | numbers and stats |
 | `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll` | things being talked about |
-| `name` | `rank`, `name`, `sub` | introducing a person |
+| `name` | `rank`, `name`, `sub` | **disabled**: the owner doesn't want name tags; `build.py` drops them |
 | `clip` | `src`, `t`, `dur`, `x`, `y`, `w`, `key: green\|black` | animation clips you supply (green-screen, black-background or alpha) |
 
 Placement: `anchor` (`lower`/`upper`/`center`) or explicit `x`/`y`. `spotlight` takes subject coordinates `x`, `y`, `r` on the 1080×1920 frame.
@@ -49,7 +49,7 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
 
   Each one gets its own sound design: a whoosh in, data ticks as the numbers move, and a pop and bass hit when the number lands.
 - **Captions:** word-by-word highlights in Montserrat Black. The highlight color alternates between chunks using `caption_colors`.
-- **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
+- **Graphics:** stat cards with count-up numbers. (Name plates exist in the code but are disabled; the owner doesn't want them.)
 - **Audio:** voice cleanup (high-pass, denoise, EQ, compression), mastered to −14 LUFS.
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
   - Sound moments are spaced at least `sfx_min_gap` (3 s) apart.
