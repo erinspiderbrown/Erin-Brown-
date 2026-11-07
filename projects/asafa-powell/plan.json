@@ -1,0 +1,1639 @@
+{
+ "workdir": "w8/build",
+ "output": "out/asafa_powell.mp4",
+ "words": "w8/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 334.45,
+ "face": {
+  "src": "w8/face.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 4.4,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_4.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 7.98,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Doha_2012.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_01.jpg",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/PowellAsafaParisStDenis2015_3.jpg",
+     "focus": [
+      0.75,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 16.74,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 18.86,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 26.52,
+   "broll": {
+    "src": "raw8/ph/Flag_of_Jamaica_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 29.98,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_06.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 34.38,
+   "broll": {
+    "src": "raw8/ph/Starting_block_J1.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 40.9,
+   "broll": {
+    "src": "raw8/ph/Laitche_P063.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.34,
+   "broll": {
+    "src": "raw8/ph/Verso_Sera_al_Guidobaldi.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 57.72,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 62.8,
+   "broll": {
+    "src": "raw8/ph/Starting_block_J1.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 69.08,
+   "broll": {
+    "src": "raw8/ph/Athletissima_2012_arriv_e_du_100m_H.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 74.28,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Doha_2012.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Starting_block_J1.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 79.1,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_4.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 87.56,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_06.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 91.92,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 97.24,
+   "broll": {
+    "src": "raw8/ph/Athletissima_2012_arriv_e_du_100m_H_bis.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 101.2,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 105.08,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_3.jpg",
+    "ss": 0,
+    "focus": [
+     0.72,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 111.3,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 114.38,
+   "broll": {
+    "src": "raw8/ph/Track_15797602003.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 117.16,
+   "broll": {
+    "src": "raw8/ph/Osaka07_D2A_Tyson_Gay_Victory.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 120.32,
+   "broll": {
+    "src": "raw8/ph/Osaka07_D1M_M100M_Heat_Astafa_Powell.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Osaka07_D6A_Tyson_Gay_interview.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Track_15797602003.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 125.98,
+   "broll": {
+    "src": "raw8/ph/Osaka07_D6A_Tyson_Gay_interview.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 131.12,
+   "broll": {
+    "src": "raw8/ph/Osaka07_D1M_M100M_Heat_Astafa_Powell.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_02.jpg",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Osaka07_D2A_Tyson_Gay_Victory.jpg",
+     "focus": [
+      0.5,
+      0.25
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 134.78,
+   "broll": {
+    "src": "raw8/ph/25th_Laureus_World_Sports_Awar_Michael_Johnson_240422_175402.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 140.66,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 144.5,
+   "broll": {
+    "src": "raw8/ph/Stadio_Raul_Guidobaldi_Rieti_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 147.9,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_4.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 153.94,
+   "broll": {
+    "src": "raw8/ph/Verso_Sera_al_Guidobaldi.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 159.42,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_06.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 167.62,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 169.96,
+   "broll": {
+    "src": "raw8/ph/Beijing_National_Stadium_and_Olympic_flame_2008_08_20_night.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Beijing_National_Stadium_2008_08_4.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_01.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 178.58,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 185.92,
+   "broll": {
+    "src": "raw8/ph/Osaka07_D6A_M200M_nearfinish.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Usain_Bolt_Lightning_pose.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Usain_Bolt_9391717499.jpg",
+     "focus": [
+      0.35,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 189.2,
+   "broll": {
+    "src": "raw8/ph/Usain_Bolt_Olympics_Celebration.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 193.82,
+   "broll": {
+    "src": "raw8/ph/Boltbeijing.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Asafa_Powell_Doha_2012.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Beijing_National_Stadium_2008_08_1.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 199.0,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 204.08,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 212.8,
+   "broll": {
+    "src": "raw8/ph/Bolt_se_aposenta_com_medalha_d_s_1039086_19_08_2016_frz_1139.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 217.5,
+   "broll": {
+    "src": "raw8/ph/Usain_Bolt_Bislet_Games_2011.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 220.02,
+   "broll": {
+    "src": "raw8/ph/Usain_Bolt_9391717499.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 224.4,
+   "broll": {
+    "src": "raw8/ph/2013_World_Championships_in_At_s_Men_s_4_100_metres_relay_04.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 230.72,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 235.18,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 240.48,
+   "broll": {
+    "src": "raw8/ph/London_Olympics_2012_Friday_Au_d_in_the_Olympic_Stadium_4959.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 242.5,
+   "broll": {
+    "src": "raw8/ph/Justin_Gatlin_Men_s_100m_Final_ndon_2012_Olympics_8374272018.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 247.6,
+   "broll": {
+    "src": "raw8/ph/London_Olympics_2012_Friday_Au_d_in_the_Olympic_Stadium_5025.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 250.74,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Doha_2012.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "top": {
+     "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "raw8/ph/Fans_in_the_Olympic_Park_7724429148.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 260.34,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 266.62,
+   "broll": {
+    "src": "raw8/ph/Beijing_National_Stadium_2008_08_4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 270.72,
+   "broll": {
+    "src": "raw8/ph/2013_World_Championships_in_At_s_Men_s_4_100_metres_relay_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 275.7,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_06.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 278.94,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 282.64,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 285.86,
+   "broll": {
+    "src": "raw8/ph/Est_dio_Ol_mpico_Engenh_o_nos_Jogos_Paraol_mpicos_Rio_2016.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 291.58,
+   "broll": {
+    "src": "raw8/ph/Bolt_se_aposenta_com_medalha_d_s_1039087_19_08_2016_frz_1141.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 292.76,
+   "broll": {
+    "src": "raw8/ph/Bolt_se_aposenta_com_medalha_d_s_1039105_19_08_2016_frz_1203.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 295.04,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 299.02,
+   "broll": {
+    "src": "raw8/ph/PowellAsafaParisStDenis2015_2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 306.7,
+   "broll": {
+    "src": "raw8/ph/Bolt_se_aposenta_com_medalha_d_s_1039085_19_08_2016_frz_1119.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 316.28,
+   "broll": {
+    "src": "raw8/ph/Powell_2010_06_04_Bislett_Games_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 319.46,
+   "broll": {
+    "src": "raw8/ph/Usain_Bolt_Olympics_Celebration.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 324.3,
+   "broll": {
+    "src": "raw8/ph/Beijing_National_Stadium_and_Olympic_flame_2008_08_20_night.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 328.44,
+   "broll": {
+    "src": "raw8/ph/Asafa_Powell_Singapore_2010.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 331.1,
+   "broll": {
+    "src": "raw8/ph/Bolt_se_aposenta_com_medalha_d_s_1039083_19_08_2016_frz_1074.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 3.0,
+   "rank": "JAM",
+   "name": "ASAFA POWELL",
+   "sub": "FORMER 100M WORLD RECORD HOLDER"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 4.4,
+   "dur": 3.0,
+   "value": "97",
+   "unit": "SUB-10s",
+   "label": "Most in history",
+   "sub": "100m races under 10 seconds"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 7.98,
+   "dur": 5.4,
+   "title": "WORLD RECORDS",
+   "rows": [
+    {
+     "event": "ATHENS 2005",
+     "value": "9.77"
+    },
+    {
+     "event": "GATESHEAD 2006",
+     "value": "9.77",
+     "tag": "TIED"
+    },
+    {
+     "event": "ZURICH 2006",
+     "value": "9.77",
+     "tag": "TIED"
+    },
+    {
+     "event": "RIETI 2007",
+     "value": "9.74"
+    }
+   ],
+   "times": [
+    0.1,
+    1.52,
+    2.58,
+    3.54
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 16.84,
+   "dur": 1.8,
+   "text": "0 INDIVIDUAL GOLDS",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 18.86,
+   "dur": 3.0,
+   "text": "FASTEST MAN ALIVE\u2026"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 26.52,
+   "dur": 2.8,
+   "text": "JAMAICA",
+   "sub": "YOUNGEST OF 6 BOYS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 29.98,
+   "dur": 2.4,
+   "text": "PARENTS: BOTH MINISTERS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.38,
+   "dur": 2.6,
+   "text": "COACH STEPHEN FRANCIS \u00b7 MVP"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.44,
+   "dur": 1.6,
+   "text": "SCARY FAST"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 44.66,
+   "dur": 2.6,
+   "text": "2002 \u00b7 NEW YORK"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 53.04,
+   "dur": 3.0,
+   "text": "TWO BROTHERS. GONE."
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 59.46,
+   "dur": 2.4,
+   "text": "PARIS 2003",
+   "sub": "WORLD CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 64.44,
+   "dur": 1.8,
+   "text": "DQ",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 69.08,
+   "dur": 2.4,
+   "text": "ATHENS 2004",
+   "sub": "OLYMPIC GAMES"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 75.16,
+   "dur": 3.2,
+   "value": "9.94",
+   "unit": "SEC",
+   "label": "5th \u00b7 Olympic final",
+   "sub": "Athens 2004 \u00b7 no medal"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 80.22,
+   "dur": 2.2,
+   "text": "NO PRESSURE"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 85.48,
+   "dur": 2.0,
+   "value": "9.77",
+   "unit": "SECONDS",
+   "label": "ATHENS \u00b7 JUNE 2005",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 87.56,
+   "dur": 1.8,
+   "text": "WORLD RECORD",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 89.48,
+   "dur": 2.0,
+   "text": "FASTEST MAN ALIVE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 92.1,
+   "dur": 1.1,
+   "text": "GROIN INJURY",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 93.24,
+   "dur": 2.4,
+   "text": "MISSED WORLDS 2005"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 97.24,
+   "dur": 3.0,
+   "text": "2006: NO WORLDS. NO OLYMPICS."
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 101.2,
+   "dur": 8.46,
+   "title": "2006 \u00b7 TIED HIS OWN WR",
+   "rows": [
+    {
+     "event": "GATESHEAD",
+     "value": "9.77"
+    },
+    {
+     "event": "ZURICH",
+     "value": "9.77"
+    }
+   ],
+   "times": [
+    2.06,
+    5.26
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 111.3,
+   "dur": 2.4,
+   "text": "\"NEXT YEAR IS HIS YEAR\""
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 114.38,
+   "dur": 2.4,
+   "text": "OSAKA 2007",
+   "sub": "WORLD CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 117.36,
+   "dur": 0.8,
+   "text": "RUN DOWN",
+   "size": 120
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 118.18,
+   "dur": 5.4,
+   "label": "Osaka 2007 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.15,
+   "items": [
+    {
+     "name": "Tyson Gay",
+     "value": "9.85"
+    },
+    {
+     "name": "Derrick Atkins",
+     "value": "9.91"
+    },
+    {
+     "name": "Powell \u00b7 3rd",
+     "value": "9.96"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 131.12,
+   "dur": 3.6,
+   "text": "\"I JUST PANICKED\""
+  },
+  {
+   "type": "name",
+   "t": 134.78,
+   "dur": 3.0,
+   "rank": "USA",
+   "name": "MICHAEL JOHNSON",
+   "sub": "4\u00d7 OLYMPIC CHAMPION"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 140.66,
+   "dur": 1.7,
+   "text": "\"I'M LOSING IT\u2026\""
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 142.38,
+   "dur": 1.6,
+   "text": "GAVE UP",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 147.3,
+   "dur": 3.0,
+   "value": "9.74",
+   "unit": "SECONDS",
+   "label": "RIETI \u00b7 2 WEEKS LATER",
+   "anim": 0.9
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 153.94,
+   "dur": 2.0,
+   "text": "IN THE HEATS",
+   "size": 110
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 159.42,
+   "dur": 2.8,
+   "value": "9.78",
+   "unit": "SEC",
+   "label": "Won the final",
+   "sub": "Rieti \u00b7 9 Sept 2007"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 167.62,
+   "dur": 1.9,
+   "text": "MAKE IT MAKE SENSE",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 170.16,
+   "dur": 2.4,
+   "text": "BEIJING 2008",
+   "sub": "OLYMPIC GAMES"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 178.68,
+   "dur": 3.2,
+   "value": "15",
+   "unit": "SUB-10s",
+   "label": "In one season \u00b7 2008",
+   "sub": "First man ever"
+  },
+  {
+   "type": "name",
+   "t": 186.02,
+   "dur": 3.0,
+   "rank": "JAM",
+   "name": "USAIN BOLT",
+   "sub": "TOOK THE WR \u00b7 9.72 \u00b7 MAY 2008"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 189.2,
+   "dur": 5.0,
+   "label": "Beijing 2008 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.3,
+   "items": [
+    {
+     "name": "Usain Bolt",
+     "value": "9.69"
+    },
+    {
+     "name": "Richard Thompson",
+     "value": "9.89"
+    },
+    {
+     "name": "Walter Dix",
+     "value": "9.91"
+    },
+    {
+     "name": "Powell \u00b7 5th",
+     "value": "9.95"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 199.0,
+   "dur": 4.4,
+   "text": "\"ALWAYS\u2026 FIFTH AT THE OLYMPICS\""
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 204.78,
+   "dur": 3.0,
+   "value": "9.72",
+   "unit": "SECONDS",
+   "label": "LAUSANNE \u00b7 LIFETIME BEST",
+   "anim": 0.9
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 209.7,
+   "dur": 1.8,
+   "text": "AFTER THE OLYMPICS",
+   "size": 95
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 212.8,
+   "dur": 2.6,
+   "text": "BEIJING 4X1: GOLD"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 215.84,
+   "dur": 1.8,
+   "text": "REMEMBER THIS",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 218.02,
+   "dur": 1.05,
+   "text": "BERLIN 2009",
+   "sub": "WORLD CHAMPIONSHIPS"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 219.12,
+   "dur": 4.6,
+   "label": "Berlin 2009 \u00b7 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.3,
+   "items": [
+    {
+     "name": "Usain Bolt",
+     "value": "9.58"
+    },
+    {
+     "name": "Tyson Gay",
+     "value": "9.71"
+    },
+    {
+     "name": "Powell \u00b7 3rd",
+     "value": "9.84"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 224.4,
+   "dur": 2.8,
+   "text": "ANCHORED 4X1 GOLD"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 233.22,
+   "dur": 1.8,
+   "text": "NEVER CAME",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 235.18,
+   "dur": 2.2,
+   "text": "DAEGU 2011",
+   "sub": "WORLD CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 237.44,
+   "dur": 1.8,
+   "text": "WITHDREW",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 240.48,
+   "dur": 2.2,
+   "text": "LONDON 2012",
+   "sub": "OLYMPIC GAMES"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 243.5,
+   "dur": 1.8,
+   "text": "GROIN AGAIN",
+   "size": 110
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 246.04,
+   "dur": 3.0,
+   "value": "11.99",
+   "unit": "SEC",
+   "label": "Last place",
+   "sub": "3rd Olympic final"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 253.62,
+   "dur": 2.0,
+   "text": "POSITIVE TEST",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 255.92,
+   "dur": 2.6,
+   "text": "OXILOFRINE (SUPPLEMENT)"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 260.34,
+   "dur": 4.2,
+   "title": "HIS BAN",
+   "rows": [
+    {
+     "event": "ORIGINAL BAN",
+     "value": "18 MO"
+    },
+    {
+     "event": "AFTER CAS APPEAL",
+     "value": "6 MO"
+    }
+   ],
+   "times": [
+    0.1,
+    2.24
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 270.92,
+   "dur": 2.6,
+   "text": "NESTA CARTER \u00b7 RETEST \u00b7 2017"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 273.52,
+   "dur": 2.0,
+   "text": "DISQUALIFIED",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 276.0,
+   "dur": 2.6,
+   "text": "MEDAL STRIPPED \u00b7 9 YEARS LATER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 280.76,
+   "dur": 1.85,
+   "text": "NEVER STOPPED SHOWING UP"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 282.64,
+   "dur": 2.4,
+   "text": "BEIJING 2015",
+   "sub": "WORLDS FINAL \u00b7 AGE 32"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 285.86,
+   "dur": 2.6,
+   "text": "RIO 2016",
+   "sub": "OLYMPIC 4X1 \u00b7 AGE 33"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 291.58,
+   "dur": 1.8,
+   "text": "OLYMPIC GOLD \u00b7 4X1",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 295.04,
+   "dur": 3.6,
+   "text": "INDIVIDUAL GOLD: NEVER"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 299.02,
+   "dur": 7.68,
+   "title": "CAREER \u00b7 RETIRED 2022",
+   "rows": [
+    {
+     "event": "SUB-10 RACES",
+     "value": "97",
+     "tag": "MOST EVER"
+    },
+    {
+     "event": "WORLD RECORDS",
+     "value": "4",
+     "tag": "W/ TIES"
+    },
+    {
+     "event": "IND. WORLD/OLY GOLD",
+     "value": "0"
+    }
+   ],
+   "times": [
+    2.74,
+    5.76,
+    7.08
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 306.8,
+   "dur": 9.48,
+   "title": "9.72 OR FASTER \u00b7 ALL-TIME",
+   "rows": [
+    {
+     "event": "USAIN BOLT",
+     "value": "9.58",
+     "tag": "GOLD"
+    },
+    {
+     "event": "TYSON GAY",
+     "value": "9.69",
+     "tag": "GOLD"
+    },
+    {
+     "event": "YOHAN BLAKE",
+     "value": "9.69",
+     "tag": "GOLD"
+    },
+    {
+     "event": "ASAFA POWELL",
+     "value": "9.72",
+     "tag": "NONE"
+    }
+   ],
+   "times": [
+    0.2,
+    0.7,
+    1.2,
+    3.4
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 317.22,
+   "dur": 1.0,
+   "text": "NERVES?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 318.26,
+   "dur": 1.35,
+   "text": "INJURIES?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 319.66,
+   "dur": 3.0,
+   "text": "WRONG ERA?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 324.3,
+   "dur": 2.4,
+   "text": "LIGHTS OFF: FASTEST ALIVE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 328.44,
+   "dur": 2.2,
+   "text": "LIGHTS ON: GONE",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 331.1,
+   "dur": 3.35,
+   "question": "NERVES OR BOLT?",
+   "options": [
+    "NERVES",
+    "BOLT"
+   ]
+  }
+ ]
+}
