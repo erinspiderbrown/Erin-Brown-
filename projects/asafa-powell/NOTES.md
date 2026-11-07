@@ -6,6 +6,12 @@ Alternates:
 - Asafa Powell Ran 9.74 in the HEATS… and Still Never Won Gold
 - The Fastest Man Alive, Until the Lights Came On: The Asafa Powell Story
 
+## Owner feedback on the narration (most recent first)
+- **v2** (`eleven_multilingual_v2`, stability 0.75, style 0, script `script_v3_part*.txt`, calmer delivery plus stadium/crowd/reporter beds): **"horrible"**. This is the version currently in `exports/` and Dropbox.
+- **v1** (`eleven_v4`, default settings, dialect script `script_v2_part*.txt`): **slightly too fast at the beginning, then "really decent"**. This is the reference for future ElevenLabs narration. It's in git history at commit 097f953 (`exports/asafa_powell_tiktok_hq.mp4`) and can be restored.
+- The first, too-proper script (`old/`) was rejected before it was used.
+- The owner said not to proceed further on this video for now.
+
 ## Format
 - **Length:** 5:34, vertical 1080×1920, full-screen photos the whole way.
 - **No talking head:** the owner's ElevenLabs voice ("Erin Brown", `eleven_v4`) narrates, at his request.

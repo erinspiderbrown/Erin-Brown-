@@ -107,6 +107,22 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `bars`: at most 4 rows in the split. For 5+ results, use a `board` (rows like "5 · YOHAN BLAKE", with a `tag`).
   - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
 
+## ElevenLabs narration (when the owner asks for his AI voice instead of a talking head)
+Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/NOTES.md`.
+- **Voice:** his clone "Erin Brown" (`voice_id` `dk6cvd5UilZRrcpZ7dNK`).
+- **What he liked:** the first delivered Asafa version. That was model **`eleven_v4`**, default voice settings, with the script written in his own dialect (`projects/asafa-powell/script_v2_part*.txt`). He called it "really decent".
+  - Its one problem: **slightly too fast at the very beginning.** Next time, slow the first few lines (shorter sentences, more full stops, a beat after the hook) and don't make the open hyped.
+- **What he rejected:**
+  - A proper, newscaster-style script: "doesn't sound like how I would talk".
+  - An enthusiastic, "too proper" open.
+  - `eleven_multilingual_v2` with stability 0.75 and style 0 (Asafa v2): he called it "horrible". Don't use that model or those settings for him.
+- **Script:** write it in his **urban Texas dialect**, modelled on his real transcripts (Klan, Yohan Blake, Drummond, 200m):
+  - phrases like "Man, let me tell y'all", "he ain't even make it to the final", "Where he finish? Fifth.", "Make it make sense", "they was", "4x1", "worlds"
+  - times said the track way ("nine seventy-four")
+  - keep it conversational and calm, not performed
+- **Words the voice mangles:** "Mane" came out as "May-nay", and "fr" came out as "far". Avoid them, or check every take's transcript and cut them.
+- **Limits:** ElevenLabs takes at most 5,000 characters per generation, so split long scripts at a section break. Transcribe every take and keep the one that stays in dialect; some takes drift ("how *are* you", "*Meh*").
+
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox links.
    - Share links (`/scl/fi/...`): download with `?dl=1`.
