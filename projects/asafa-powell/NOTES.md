@@ -7,6 +7,9 @@ Alternates:
 - The Fastest Man Alive, Until the Lights Came On: The Asafa Powell Story
 
 ## Owner feedback on the narration (most recent first)
+- **v3 (in progress):** redone with the **approved Jon Drummond recipe** read straight from his ElevenLabs flow `EwtCtvyEoktyTmEPgx7r`. That means `eleven_v4`, stability 0.45, similarity 0.85, `[calm] [relaxed] [Texas accent]` on every paragraph, `[pause]` before beats, dropped g's, and 7 short sections (`script_v4_sections.txt`, flow `W4Hc1NpmegUzmpwft2jt`).
+  - Owner: "The last two just weren't it… In the John Drummond video, that was much better. Why can't you be consistent?"
+  - Measured pace: Drummond holds 164 wpm from the first second. Asafa v1 opened at 182 wpm, v2 at 194 wpm.
 - **v2** (`eleven_multilingual_v2`, stability 0.75, style 0, script `script_v3_part*.txt`, calmer delivery plus stadium/crowd/reporter beds): **"horrible"**. This is the version currently in `exports/` and Dropbox.
 - **v1** (`eleven_v4`, default settings, dialect script `script_v2_part*.txt`): **slightly too fast at the beginning, then "really decent"**. This is the reference for future ElevenLabs narration. It's in git history at commit 097f953 (`exports/asafa_powell_tiktok_hq.mp4`) and can be restored.
 - The first, too-proper script (`old/`) was rejected before it was used.
