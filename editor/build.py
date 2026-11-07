@@ -119,6 +119,18 @@ def render_segment(plan, seg, a, b, out):
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+    elif br.get('fit') == 'blur':
+        # "blurred fill" (owner-approved for older / lower-res / wide footage): the WHOLE shot shows, uncropped and
+        # centred, over a blurred, darkened, zoomed copy of itself, so the 9:16 frame is still filled edge to edge.
+        sw, sh = probe(br['src'])
+        if br.get('crop'): sw, sh = br['crop'][0], br['crop'][1]
+        fw, fh = (W, round(W * sh / sw / 2) * 2) if sw / sh >= W / H else (round(H * sw / sh / 2) * 2, H)
+        c = br.get('crop')
+        fc = (f"[1:v]split[s1][s2];"
+              f"[s1]{cover(W, H, c, 0.06, dur, focus=tuple(br.get('focus', (0.5, 0.5))))},gblur=sigma=38,eq=brightness=-0.10:saturation=1.15[bg];"
+              f"[s2]{cover(fw, fh, c, 0.05 if is_img(br['src']) else 0.0, dur, seg.get('punch', 0.06), src_wh=(sw, sh))}[fg];"
+              f"[bg][fg]overlay=(W-w)/2:(H-h)/2,fps={FPS},format=yuv420p[v]")
+        extra = []
     else:
         c = br.get('fullcrop', br.get('crop'))
         fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
