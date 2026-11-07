@@ -160,12 +160,16 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-8. **Make a 3:4 thumbnail** (1080×1440 JPG, the TikTok profile-grid cover size; the owner said 9:16 was too big) for every video, saved to `exports/thumbnails/<video>_thumb.jpg` and delivered to Dropbox with the video.
-   - Simple and high quality, from real photos only: no AI-generated images, nothing that looks AI.
-   - One or two strong faces or expressions (e.g. the two people in the conflict, top and bottom with the house soft seam), with photos used at native resolution and never enlarged, plus a light contrast/color grade.
-   - Few words, if any: at most one or two in Anton (e.g. "OPOSSUM?").
-   - Check the crops so faces, hands and gestures aren't cut off or covered by the text.
-   - Example: `projects/tebogo-lyles/thumbnail.py`.
+8. **Make a thumbnail for every video in the cut-out style** (owner, Nov 2026: "I definitely need more complex thumbnails", then picked cut-out athletes; he wants this for every future video, not the older ones). Save `exports/thumbnails/<video>_thumb.jpg` (3:4, 1080×1440, the profile-grid cover) and `<video>_thumb_916.jpg` (9:16 upload cover), and deliver both to Dropbox with the video.
+   - **Tool:** `editor/thumb_cutout.py spec.json`. Cut subjects out with `rembg` (`isnet-general-use`, local, no credits), then clean the mask (threshold alpha > 150 and feather) to drop semi-transparent leftovers.
+   - **Look:** the key athlete(s) cut out of **real photos**, layered over a real, darkened and graded background tied to the story (a stadium or venue).
+     - The main subject is big and front-and-center, with a white outline, a colored glow and a drop shadow.
+     - The second person sits behind, with a contrasting glow color.
+     - On busts, use `fade_bottom` and `soft_below` so the torso fades into the background and ragged clothing edges never show.
+   - **Reference:** `projects/asafa-powell/thumb_spec.json` and `exports/thumbnails/asafa_powell_thumb.jpg` (Powell front, blue rim; Bolt behind, gold glow; the Bird's Nest at night).
+   - **Text:** no text unless the owner asks for it; he chose cut-outs only.
+   - Real photos only: no AI-generated images, nothing that looks AI. Never enlarge a cut-out past about 1.1× its source. The background can be soft and graded.
+   - Check at full size: faces sharp, no halos or torn edges, no heads or hands cut off, and both sizes composed.
 - **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
