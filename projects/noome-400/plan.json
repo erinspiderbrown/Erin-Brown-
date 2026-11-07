@@ -405,7 +405,8 @@
    "t": 96.2,
    "dur": 2.0,
    "text": "NEW ZEALAND",
-   "sub": "EMBARRASSED?"
+   "sub": "EMBARRASSED?",
+   "y": 1290
   },
   {
    "type": "motion",

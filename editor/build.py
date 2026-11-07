@@ -85,6 +85,13 @@ def render_segment(plan, seg, a, b, out):
     dur = b - a
     grade = plan.get('face_grade', 'hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:saturation=1.06:gamma=0.98,vignette=PI/6')
     bpush = 0.10 if is_img(br['src']) else 0.04
+    hold = ''
+    if not is_img(br['src']):
+        have = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', br['src']],
+                                    capture_output=True, text=True).stdout or 0) - bss
+        if have < dur - 0.02:
+            print(f"NOTE: {os.path.basename(br['src'])} has {have:.2f}s from ss but the segment needs {dur:.2f}s; holding its last frame")
+        hold = f'tpad=stop_mode=clone:stop_duration={dur + 1:.2f},'
     if seg['type'] == 'split':
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', [])
               if z1 > a and z0 < b]
@@ -94,7 +101,7 @@ def render_segment(plan, seg, a, b, out):
             mask, shade = seam_assets(plan, F)
             fc = (f"[0:v]{cover(W, HF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade},format=yuva420p[f];"
                   f"[2:v]format=gray,scale={W}:{HF}[m];[f][m]alphamerge[fa];"
-                  f"[1:v]{cover(W, HF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"[1:v]{hold}{cover(W, HF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
                   f"color=c=black:s={W}x{H}:r={FPS}:d={dur:.3f}[bg];[bg][b]overlay=0:{H-HF}[t1];[t1][fa]overlay=0:0:shortest=1[t2];"
                   f"[3:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', mask, '-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
@@ -102,19 +109,19 @@ def render_segment(plan, seg, a, b, out):
             shade = soft_seam_asset(plan)
             hl = float(plan.get('seam_hairline', 0.22))
             fc = (f"[0:v]{cover(W, HALF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade}[f];"
-                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"[1:v]{hold}{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
     else:
         c = br.get('fullcrop', br.get('crop'))
-        fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
+        fc = (f"[1:v]{hold}{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
               f"fps={FPS},format=yuv420p[v]")
         extra = []
     bin_ = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', br['src']] if is_img(br['src'])
             else ['-ss', f'{bss:.3f}', '-t', f'{dur:.3f}', '-i', br['src']])
     run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{fss:.3f}', '-t', f'{dur:.3f}', '-i', face['src'], *bin_, *extra,
-         '-filter_complex', fc, '-map', '[v]', '-an', '-c:v', 'libx264', '-crf', '12', '-preset', 'fast', out])
+         '-filter_complex', fc, '-map', '[v]', '-an', '-t', f'{dur:.3f}', '-c:v', 'libx264', '-crf', '12', '-preset', 'fast', out])
 
 # ---------- captions & graphics (ASS) ----------
 def ts(t):

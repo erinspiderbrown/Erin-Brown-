@@ -5,6 +5,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Hard rules
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
+  - The owner wants low-res clips **enhanced**. Use `editor/enhance.py` (Real-ESRGAN, local CPU, no credits).
+  - It makes 360p/540p clips and ~1200 px photos usable (photos become full-screen eligible).
+  - For a soft 1080p clip, shrink it to 540×960 first, then upscale 4×.
+  - Speed: about 5 s per 540×960 frame on this 4-core box. Enhance only the time ranges you use, and run one job at a time (parallel jobs just fight over the CPU).
+  - Don't wait on jobs with busy-loops; use `sleep`.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
   - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
@@ -63,8 +68,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Keep the voice in float from here on: `tighten.py` writes `pcm_f32le`, and `build.py` gives it −6 dB of headroom first.
    - Don't fight leftover harshness by dulling the voice. Declipping fixes the cause.
 4. **Crop** the talking head to the top-half framing (1440×1280 intermediate), then run `tighten.py` to cut dead air. Check the result is still at least 61 s.
-5. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
-6. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+5. **Structure the story.** For a follow-up or reaction, use chapter labels (`keyword` cards like "PART 1: THE 300"), and let the subject speak in their own words where there's an interview clip.
+   - Splice it into the talking-head timeline: a gap in `face`, the clip's audio loudness-matched, and the words shifted. See `projects/noome-400/NOTES.md`.
+6. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
+7. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.
