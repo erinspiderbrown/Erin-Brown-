@@ -202,7 +202,7 @@ segs = [
     full(at('daegu'), SING, (0.45, 0.4)),
     full(at('london olympics'), P('London_Olympics_2012_Friday_Au_d_in_the_Olympic_Stadium_4959'), (0.5, 0.5)),
     full(at('and in the race'), P('Justin_Gatlin_Men_s_100m_Final_ndon_2012_Olympics_8374272018'), (0.4, 0.4), hit=True),
-    full(at('dead last') - .4, P('London_Olympics_2012_Friday_Au_d_in_the_Olympic_Stadium_5025'), (0.5, 0.5)),
+    full(at('dead last') - .4, P('London_Olympics_2012_Friday_Au_d_in_the_Olympic_Stadium_4959'), (0.72, 0.6)),
     frame(at('2013 it get'), DOHA, SING, P('Fans_in_the_Olympic_Park_7724429148'), (0.5, 0.35), (0.5, 0.4), hit=True),
     full(at('they give him'), B01, (0.5, 0.3)),
     full(at('and remember that'), P('Beijing_National_Stadium_2008_08_4'), (0.5, 0.5)),
