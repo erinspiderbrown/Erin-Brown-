@@ -119,6 +119,27 @@ def render_segment(plan, seg, a, b, out):
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+    elif br.get('fit') == 'frame':
+        # "framed" full screen (owner's preference over blurred fill): the whole shot (older/retro video or a wide photo)
+        # sits uncropped in a band across the middle; the space above and below is filled with REAL content - other
+        # high-res photos of the story with their own slow push - so every part of the 9:16 frame is part of the video.
+        # Graphics/captions land on the panels as usual. broll keys: top/bottom = {src, focus}.
+        sw, sh = probe(br['src'])
+        if br.get('crop'): sw, sh = br['crop'][0], br['crop'][1]
+        bh = min(round(W * sh / sw / 2) * 2, H - 2 * 360)          # band height (keep >= 360px panels)
+        ph = (H - bh) // 2; ph2 = H - bh - ph
+        tp, bt = br['top'], br['bottom']
+        def pin(i, p, h, push):
+            ip = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', p['src']] if is_img(p['src'])
+                  else ['-ss', f"{p.get('ss', 0):.3f}", '-t', f'{dur:.3f}', '-i', p['src']])
+            return ip, (f"[{i}:v]{cover(W, h, p.get('crop'), push, dur, focus=tuple(p.get('focus', (0.5, 0.5))), src_wh=probe(p['src']))},"
+                        f"eq=brightness=-0.05:saturation=1.05[p{i}]")
+        i2, f2 = pin(2, tp, ph, 0.08); i3, f3 = pin(3, bt, ph2, 0.08)
+        fc = (f"{f2};{f3};[1:v]{cover(W, bh, br.get('crop'), 0.04 if is_img(br['src']) else 0.0, dur, seg.get('punch', 0.06), src_wh=(sw, sh))}[mid];"
+              f"[p2][mid][p3]vstack=3,"
+              f"drawbox=y={ph-3}:w={W}:h=6:color=white@0.92:t=fill,drawbox=y={ph+bh-3}:w={W}:h=6:color=white@0.92:t=fill,"
+              f"fps={FPS},format=yuv420p[v]")
+        extra = i2 + i3
     elif br.get('fit') == 'blur':
         # "blurred fill" (owner-approved for older / lower-res / wide footage): the WHOLE shot shows, uncropped and
         # centred, over a blurred, darkened, zoomed copy of itself, so the 9:16 frame is still filled edge to edge.
