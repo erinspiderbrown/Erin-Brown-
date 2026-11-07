@@ -5,3 +5,8 @@ night_forest 1788
 night_crickets 1227
 scary_woods 2474
 horror_ambience 2414
+stadium_crowd_murmur 364
+stadium_cheer 3022
+stadium_chant 438
+reporters_flashes 432
+crowd_victory 462
