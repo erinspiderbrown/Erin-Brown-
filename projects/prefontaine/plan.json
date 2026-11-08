@@ -1,0 +1,2048 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/out/prefontaine_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/prefontaine/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 331.1,
+ "face": {
+  "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/face.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/01_mg_night.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     2860,
+     2120,
+     490,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 5.84,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_190.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 7.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/01_mg_night.mp4",
+    "ss": 2.4,
+    "focus": [
+     0.42,
+     0.5
+    ],
+    "fullcrop": [
+     2860,
+     2120,
+     490,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 10.96,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/02_crash_aftermath.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.62,
+     0.5
+    ],
+    "fullcrop": [
+     2850,
+     2120,
+     498,
+     20
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 15.46,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.43,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 21.76,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_193.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.5,
+      0.55
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 26.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/05_hayward_crowd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.42,
+     0.5
+    ],
+    "fullcrop": [
+     2960,
+     2120,
+     500,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 29.54,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.44,
+     0.38
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 34.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/07_coos_bay.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     3020,
+     2120,
+     412,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 40.74,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Coos_Bay_DPLA_6de9a85a20c611d789a179f70fbc4efc.jpg",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Plaque_Coos__7c7762f811e837362874ff6da2760.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_3e6baa590794d1f4c2fc71486de57.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 43.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/09_hs_cinder.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_3e6baa590794d1f4c2fc71486de57.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Coos_Bay_DPLA_6de9a85a20c611d789a179f70fbc4efc.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    },
+    "crop": [
+     1620,
+     1050,
+     204,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.16,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_3e6baa590794d1f4c2fc71486de57.jpg",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Coos_Bay_DPLA_6de9a85a20c611d789a179f70fbc4efc.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Plaque_Coos__7c7762f811e837362874ff6da2760.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 52.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/13_stopwatch.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_3e6baa590794d1f4c2fc71486de57.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Coos_Bay_DPLA_6de9a85a20c611d789a179f70fbc4efc.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    },
+    "crop": [
+     1430,
+     1050,
+     245,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 57.6,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/11_feet.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Plaque_Coos__7c7762f811e837362874ff6da2760.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_3e6baa590794d1f4c2fc71486de57.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "crop": [
+     1860,
+     1060,
+     30,
+     10
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 63.6,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 68.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/12_waffle.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.3,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_4ea3ad7d13887f677a5e705171953.jpg",
+     "focus": [
+      0.5,
+      0.75
+     ]
+    },
+    "crop": [
+     1430,
+     1050,
+     245,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 73.94,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.42,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 79.02,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/10_cross_country.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.6,
+      0.5
+     ]
+    },
+    "crop": [
+     1500,
+     1050,
+     212,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 84.3,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 89.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/05_hayward_crowd.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     2960,
+     2120,
+     500,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 94.04,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 100.62,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.4,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 106.34,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/08_dawn_trail.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.52,
+     0.5
+    ],
+    "fullcrop": [
+     3010,
+     2120,
+     409,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 110.6,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 117.1,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 122.94,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/03_munich_lead.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     3000,
+     2160,
+     420,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 128.28,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.35,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 134.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/03_munich_lead.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.46,
+     0.5
+    ],
+    "fullcrop": [
+     3000,
+     2160,
+     420,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 140.42,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.44,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 142.38,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/03_munich_lead.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.55,
+     0.5
+    ],
+    "fullcrop": [
+     3000,
+     2160,
+     420,
+     0
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 147.38,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/11_feet.mp4",
+    "ss": 1.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_5fe4ab73c9d3ce575c130233b101d.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1860,
+     1060,
+     30,
+     10
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 150.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/03_munich_lead.mp4",
+    "ss": 3.9,
+    "focus": [
+     0.58,
+     0.5
+    ],
+    "fullcrop": [
+     3000,
+     2160,
+     420,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 152.34,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.45,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 158.68,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/14_disappointed.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Mural_depicting_Steve_Prefonta_5fe4ab73c9d3ce575c130233b101d.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.43,
+      0.3
+     ]
+    },
+    "crop": [
+     1426,
+     1050,
+     249,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 163.24,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.44,
+     0.36
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 170.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/08_dawn_trail.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.55,
+     0.5
+    ],
+    "fullcrop": [
+     3010,
+     2120,
+     409,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 176.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/15_officials.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1780,
+     990,
+     68,
+     50
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 182.86,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.43,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 187.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/16_shoes.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.43,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park_2.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1426,
+     1050,
+     247,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 192.84,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/15_officials.mp4",
+    "ss": 2.5,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.43,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1780,
+     990,
+     68,
+     50
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 195.22,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/05_hayward_crowd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.45,
+     0.5
+    ],
+    "fullcrop": [
+     2960,
+     2120,
+     500,
+     20
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 197.54,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park_2.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 204.44,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 208.62,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 213.54,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/17_prison.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park_3.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.43,
+      0.4
+     ]
+    },
+    "crop": [
+     1418,
+     1050,
+     251,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 219.54,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/17_prison.mp4",
+    "ss": 1.8,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.45,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/2017_11_25_Alton_Baker_Park.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1418,
+     1050,
+     251,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 223.74,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 231.84,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.42,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 235.1,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 238.54,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/18_party.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1420,
+     980,
+     252,
+     52
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 242.48,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/01_mg_night.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.4,
+     0.5
+    ],
+    "fullcrop": [
+     2860,
+     2120,
+     490,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 247.04,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/01_mg_night.mp4",
+    "ss": 1.4,
+    "focus": [
+     0.58,
+     0.5
+    ],
+    "fullcrop": [
+     2860,
+     2120,
+     490,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 251.62,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/02_crash_aftermath.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.66,
+     0.5
+    ],
+    "fullcrop": [
+     2850,
+     2120,
+     498,
+     20
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 256.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/19_police.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Pre_s_Rock_in_Eugene_Oregon.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_194.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1418,
+     1050,
+     251,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 258.44,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Pre_s_Rock_in_Eugene_Oregon.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 263.2,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/19_police.mp4",
+    "ss": 2.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+     "focus": [
+      0.43,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_195.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1418,
+     1050,
+     251,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 266.34,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/02_crash_aftermath.mp4",
+    "ss": 1.5,
+    "focus": [
+     0.55,
+     0.5
+    ],
+    "fullcrop": [
+     2850,
+     2120,
+     498,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 269.84,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_190.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 273.72,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.44,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 277.56,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/01_mg_night.mp4",
+    "ss": 1.2,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     2860,
+     2120,
+     490,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 282.36,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_191.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 286.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/08_dawn_trail.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.6,
+     0.5
+    ],
+    "fullcrop": [
+     3010,
+     2120,
+     409,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 290.02,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/20_tribute.mp4",
+    "ss": 0.0,
+    "fit": "frame",
+    "top": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "crop": [
+     1430,
+     1050,
+     245,
+     15
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 295.3,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Prefontaine_Classic_2013.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 297.18,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/06_memorial_rock.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.62,
+     0.5
+    ],
+    "fullcrop": [
+     3600,
+     2160,
+     120,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 300.28,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_196.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 303.22,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.43,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 309.98,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Day_4_at_the_2024_United_State_ic_Trials_track_and_field_192.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 313.3,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.44,
+     0.36
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 318.44,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/03_munich_lead.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     3000,
+     2160,
+     420,
+     0
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 320.08,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/prefontaine/reenact/08_dawn_trail.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "fullcrop": [
+     3010,
+     2120,
+     409,
+     20
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 323.08,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Steve_Prefontaine_Marty_Liquori_and_Gianni_Del_Buono.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.43,
+     0.42
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 1.8,
+   "dur": 2.6,
+   "items": [
+    "MAY",
+    "30",
+    "1975"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "JUST AFTER MIDNIGHT"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 5.84,
+   "dur": 1.45,
+   "text": "EUGENE, OREGON",
+   "sub": "SKYLINE BOULEVARD"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 7.36,
+   "dur": 2.6,
+   "text": "GOLD MG CONVERTIBLE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 13.86,
+   "dur": 1.4,
+   "text": "FLIPPED",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 17.1,
+   "dur": 2.4,
+   "text": "AMERICA'S GREATEST?"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 19.98,
+   "dur": 1.7,
+   "value": "24",
+   "unit": "YEARS OLD",
+   "label": "Steve Prefontaine",
+   "sub": "1951 \u2013 1975"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 21.76,
+   "dur": 3.4,
+   "text": "EVERY U.S. RECORD \u00b7 2K TO 10K"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 28.14,
+   "dur": 1.6,
+   "text": "HOURS EARLIER: HE WON",
+   "size": 90
+  },
+  {
+   "type": "name",
+   "t": 30.36,
+   "dur": 3.2,
+   "rank": "USA",
+   "name": "STEVE PREFONTAINE",
+   "sub": "\"PRE\" \u00b7 OREGON \u00b7 OLYMPIAN"
+  },
+  {
+   "type": "motion",
+   "kind": "birthday",
+   "t": 34.94,
+   "dur": 2.4,
+   "text": "JAN 25, 1951",
+   "name": "PRE"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 38.1,
+   "dur": 2.6,
+   "text": "COOS BAY, OREGON",
+   "sub": "LOGGING TOWN ON THE COAST"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 43.16,
+   "dur": 2.8,
+   "text": "MARSHFIELD HIGH \u00b7 COACH WALT McCLURE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 48.44,
+   "dur": 1.8,
+   "text": "UNDEFEATED",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 54.04,
+   "dur": 2.6,
+   "value": "246.9",
+   "format": "mss1",
+   "unit": "MILE",
+   "label": "OREGON HS RECORD",
+   "anim": 1.0,
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 58.82,
+   "dur": 2.8,
+   "value": "521.5",
+   "format": "mss1",
+   "unit": "2 MILE",
+   "label": "NATIONAL HS RECORD (REPORTED)",
+   "anim": 1.0,
+   "size": 120
+  },
+  {
+   "type": "name",
+   "t": 68.52,
+   "dur": 3.4,
+   "rank": "ORE",
+   "name": "BILL BOWERMAN",
+   "sub": "OREGON COACH \u00b7 NIKE CO-FOUNDER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 76.6,
+   "dur": 1.8,
+   "text": "A WHOLE 'NOTHER LEVEL"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 78.92,
+   "dur": 3.0,
+   "value": "7",
+   "unit": "NCAA TITLES",
+   "label": "3 cross country \u00b7 4 track",
+   "sub": "University of Oregon"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 84.3,
+   "dur": 3.2,
+   "text": "FIRST EVER: 4 NCAA TITLES IN ONE EVENT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 92.6,
+   "dur": 1.5,
+   "text": "NEVER LOST (NCAA, > MILE)",
+   "size": 80
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 98.22,
+   "dur": 2.6,
+   "value": "3",
+   "unit": "LOSSES",
+   "label": "College races in Eugene",
+   "sub": "All in the mile"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 105.02,
+   "dur": 3.6,
+   "text": "NO KICK. HE WENT TO THE FRONT."
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 110.5,
+   "dur": 4.9,
+   "text": "\"NOT AGAINST ME.\""
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 117.1,
+   "dur": 2.6,
+   "text": "HAYWARD FIELD",
+   "sub": "\"HIS HOUSE\""
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 127.22,
+   "dur": 2.4,
+   "text": "MUNICH 1972",
+   "sub": "OLYMPIC GAMES \u00b7 AGE 21"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 131.54,
+   "dur": 2.6,
+   "value": "802.8",
+   "format": "mss1",
+   "unit": "5000M",
+   "label": "AMERICAN RECORD \u00b7 OLY TRIALS",
+   "anim": 0.9,
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 134.62,
+   "dur": 2.2,
+   "items": [
+    "SEP",
+    "10",
+    "1972"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "OLYMPIC 5000 FINAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 138.66,
+   "dur": 2.4,
+   "text": "SLOW FIRST 2 MILES"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 145.98,
+   "dur": 1.2,
+   "text": "GO!",
+   "size": 150
+  },
+  {
+   "type": "name",
+   "t": 147.28,
+   "dur": 2.8,
+   "rank": "FIN",
+   "name": "LASSE VIR\u00c9N",
+   "sub": "FINLAND"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 158.48,
+   "dur": 4.61,
+   "title": "MUNICH 1972 \u00b7 5000 FINAL",
+   "rows": [
+    {
+     "event": "1 \u00b7 LASSE VIR\u00c9N",
+     "value": "13:26.4"
+    },
+    {
+     "event": "2 \u00b7 M. GAMMOUDI",
+     "value": "13:27.4"
+    },
+    {
+     "event": "3 \u00b7 IAN STEWART",
+     "value": "13:27.6"
+    },
+    {
+     "event": "4 \u00b7 PREFONTAINE",
+     "value": "13:28.4"
+    }
+   ],
+   "times": [
+    0.15,
+    0.4,
+    0.65,
+    1.0
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 163.14,
+   "dur": 1.8,
+   "text": "0.8 FROM BRONZE",
+   "size": 95
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 165.9,
+   "dur": 3.2,
+   "text": "\"MOST DISAPPOINTED I HAVE EVER BEEN\""
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 174.22,
+   "dur": 2.4,
+   "text": "MONTREAL 1976",
+   "sub": "THE NEXT OLYMPICS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 179.14,
+   "dur": 2.2,
+   "text": "\"AMATEUR\" ONLY"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 181.46,
+   "dur": 5.94,
+   "items": [
+    "GET PAID",
+    "ENDORSEMENTS",
+    "LOSE STATUS"
+   ],
+   "times": [
+    0.2,
+    2.32,
+    3.38
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 187.5,
+   "dur": 2.6,
+   "text": "FREE GEAR FROM NIKE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 192.84,
+   "dur": 1.6,
+   "text": "WAR WITH THE AAU",
+   "size": 95
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 195.42,
+   "dur": 17.92,
+   "title": "AMERICAN RECORDS \u00b7 BY 1975",
+   "rows": [
+    {
+     "event": "2,000M \u2192 10,000M",
+     "value": "7",
+     "tag": "ALL OF THEM"
+    },
+    {
+     "event": "5000M \u00b7 HELSINKI",
+     "value": "13:21.9"
+    },
+    {
+     "event": "10,000M \u00b7 EUGENE",
+     "value": "27:43.6"
+    }
+   ],
+   "times": [
+    4.74,
+    10.54,
+    14.72
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 213.72,
+   "dur": 2.4,
+   "text": "WHAT PEOPLE DON'T KNOW"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 216.76,
+   "dur": 2.6,
+   "text": "OREGON STATE PENITENTIARY",
+   "sub": "SALEM"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 222.0,
+   "dur": 1.8,
+   "text": "STILL RUNNING TODAY",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 224.14,
+   "dur": 2.4,
+   "items": [
+    "MAY",
+    "29",
+    "1975"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "HAYWARD FIELD \u00b7 5000M"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 231.96,
+   "dur": 2.6,
+   "value": "803.8",
+   "format": "mss1",
+   "unit": "5000M",
+   "label": "WON \u00b7 HIS LAST RACE",
+   "anim": 0.9,
+   "size": 120
+  },
+  {
+   "type": "name",
+   "t": 235.0,
+   "dur": 3.2,
+   "rank": "USA",
+   "name": "FRANK SHORTER",
+   "sub": "1972 OLYMPIC MARATHON CHAMP \u00b7 2ND"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 238.54,
+   "dur": 2.8,
+   "text": "PARTY \u00b7 GEOFF HOLLISTER'S"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 242.48,
+   "dur": 3.2,
+   "text": "DROPS SHORTER AT KENNY MOORE'S"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 247.44,
+   "dur": 3.0,
+   "text": "SKYLINE BLVD",
+   "sub": "BY HENDRICKS PARK"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 254.42,
+   "dur": 1.6,
+   "text": "ROCK WALL",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 256.74,
+   "dur": 2.4,
+   "text": "TRAPPED UNDERNEATH"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 260.32,
+   "dur": 2.6,
+   "value": "24",
+   "unit": "YEARS OLD",
+   "label": "May 30, 1975",
+   "sub": "Eugene, Oregon"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 264.58,
+   "dur": 1.6,
+   "text": "MESSY",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 266.54,
+   "dur": 7.18,
+   "title": "BLOOD ALCOHOL (POLICE)",
+   "rows": [
+    {
+     "event": "REPORTED",
+     "value": "0.16"
+    },
+    {
+     "event": "OREGON LIMIT (1975)",
+     "value": "0.15"
+    }
+   ],
+   "times": [
+    1.52,
+    4.58
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 275.22,
+   "dur": 2.6,
+   "text": "QUESTIONED FOR 50 YEARS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 278.36,
+   "dur": 1.95,
+   "text": "ANOTHER CAR?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 280.41,
+   "dur": 1.6,
+   "text": "RULED OUT",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 287.02,
+   "dur": 2.6,
+   "text": "NO MONTREAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 290.02,
+   "dur": 3.4,
+   "text": "SUMMER 1975 \u00b7 A MEET IN HIS HONOR"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 295.4,
+   "dur": 1.9,
+   "text": "PREFONTAINE CLASSIC",
+   "size": 85
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 298.8,
+   "dur": 1.4,
+   "text": "PRE'S ROCK",
+   "sub": "SKYLINE BLVD, EUGENE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 300.28,
+   "dur": 2.8,
+   "text": "BIBS. MEDALS. SHOES."
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 303.22,
+   "dur": 9.88,
+   "title": "HIS LEGACY",
+   "rows": [
+    {
+     "event": "PREFONTAINE",
+     "value": "1997",
+     "tag": "FILM"
+    },
+    {
+     "event": "WITHOUT LIMITS",
+     "value": "1998",
+     "tag": "FILM"
+    },
+    {
+     "event": "NIKE HQ",
+     "value": "BUILDING"
+    }
+   ],
+   "times": [
+    2.08,
+    4.64,
+    6.76
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 315.34,
+   "dur": 1.9,
+   "text": "EVERY U.S. RECORD 2K\u201310K"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 318.44,
+   "dur": 1.6,
+   "text": "ONE OLYMPIC FINAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 320.08,
+   "dur": 2.6,
+   "text": "ONE QUESTION\u2026"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 323.08,
+   "dur": 8.02,
+   "question": "PRE IN MONTREAL '76: GOLD?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ],
+ "ambience": [
+  {
+   "src": "stadium_crowd_murmur",
+   "t": 25.84,
+   "end": 34.44,
+   "lufs": -37,
+   "fade": 1.2
+  },
+  {
+   "src": "stadium_crowd_murmur",
+   "t": 73.64,
+   "end": 122.74,
+   "lufs": -36,
+   "fade": 1.5
+  },
+  {
+   "src": "stadium_cheer",
+   "t": 116.9,
+   "end": 121.1,
+   "lufs": -33,
+   "fade": 0.6
+  },
+  {
+   "src": "stadium_crowd_murmur",
+   "t": 134.42,
+   "end": 170.56,
+   "lufs": -36,
+   "fade": 1.2
+  },
+  {
+   "src": "crowd_victory",
+   "t": 150.16,
+   "end": 154.36,
+   "lufs": -33,
+   "fade": 0.6
+  },
+  {
+   "src": "reporters_flashes",
+   "t": 192.64,
+   "end": 195.02,
+   "lufs": -36,
+   "fade": 0.8
+  },
+  {
+   "src": "stadium_crowd_murmur",
+   "t": 223.94,
+   "end": 238.54,
+   "lufs": -36,
+   "fade": 1.0
+  },
+  {
+   "src": "stadium_cheer",
+   "t": 231.64,
+   "end": 235.44,
+   "lufs": -33,
+   "fade": 0.6
+  },
+  {
+   "src": "stadium_crowd_murmur",
+   "t": 289.72,
+   "end": 297.18,
+   "lufs": -37,
+   "fade": 1.2
+  }
+ ]
+}

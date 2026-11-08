@@ -11,3 +11,6 @@ projects/*/broll/
 
 # two-pass encoder logs written during exports
 exports/x264pass*
+
+# rebuilt from voice_takes/ by assemble_voice.py
+projects/*/voice_master.wav

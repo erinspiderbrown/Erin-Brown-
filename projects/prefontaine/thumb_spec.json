@@ -1,0 +1,41 @@
+{
+ "out": "/home/user/Erin-Brown-/exports/thumbnails/prefontaine",
+ "bg": {
+  "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Pre_s_Rock_in_Eugene_Oregon.jpg",
+  "cx": 1050,
+  "cy": 1000,
+  "zoom": 1.12,
+  "blur": 2.5,
+  "dark": 0.42
+ },
+ "tint": [
+  30,
+  90,
+  60
+ ],
+ "layers": [
+  {
+   "cut": "/home/user/Erin-Brown-/projects/prefontaine/cutouts/pre_1973.png",
+   "h": 0.87,
+   "x": 0.72,
+   "y": 1.1,
+   "stroke": 10,
+   "glow": [
+    255,
+    196,
+    0
+   ],
+   "glow_px": 30,
+   "fade_bottom": 0.4,
+   "soft_below": 0.58,
+   "soft_px": 18
+  }
+ ],
+ "layers_916": {
+  "0": {
+   "h": 0.65,
+   "x": 0.66,
+   "y": 1.0
+  }
+ }
+}
