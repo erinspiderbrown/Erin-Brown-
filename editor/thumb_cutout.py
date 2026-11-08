@@ -7,7 +7,8 @@ graded background. Nothing is generated. Writes <out>_thumb.jpg (3:4, 1080x1440)
 
 spec:
   out:   "exports/thumbnails/<name>"
-  bg:    {src, cx, cy, zoom, blur, dark}       background photo: centre point (source px), zoom, blur radius, darkening 0..1
+  bg:    {src, cx, cy, zoom, blur, dark, bottom_shade}   background photo: centre point (source px), zoom, blur radius,
+         darkening 0..1, bottom_shade = fraction of the canvas height that fades to black at the bottom (for busts)
   tint:  [r, g, b]                              colour wash over the background (optional)
   layers: [ {cut, h, x, y, stroke, glow, glow_px, dim, flip} ... ]   back to front.
           cut = transparent PNG (subject cut-out). h = height as a fraction of the canvas height (scale is capped
@@ -44,7 +45,14 @@ def background(spec, W, H):
     v = Image.new('L', (W, H), 0); vv = Image.new('L', (W // 8, H // 8), 255)
     v.paste(vv.resize((int(W * .8), int(H * .8))), (int(W * .1), int(H * .1)))
     v = v.filter(ImageFilter.GaussianBlur(W // 6))
-    return Image.composite(im, Image.new('RGB', (W, H), (0, 0, 0)), v)
+    im = Image.composite(im, Image.new('RGB', (W, H), (0, 0, 0)), v)
+    if b.get('bottom_shade'):          # fade the lower part of the background to black so a faded bust dissolves into darkness
+        f0 = 1 - b['bottom_shade']; g = Image.new('L', (1, H), 0)
+        for yy in range(H):
+            r = (yy / H - f0) / max(1e-6, b['bottom_shade'])
+            g.putpixel((0, yy), int(255 * min(1, max(0, r)) ** 1.3 * b.get('bottom_shade_max', 0.92)))
+        im = Image.composite(Image.new('RGB', (W, H), (0, 0, 0)), im, g.resize((W, H)))
+    return im
 
 
 def layer(canvas, L, W, H):

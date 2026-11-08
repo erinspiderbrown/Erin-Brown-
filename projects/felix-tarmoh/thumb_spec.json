@@ -1,0 +1,43 @@
+{
+ "out": "/home/user/Erin-Brown-/exports/thumbnails/felix_tarmoh",
+ "bg": {
+  "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+  "cx": 2300,
+  "cy": 1500,
+  "zoom": 0.75,
+  "blur": 2,
+  "dark": 0.38,
+  "bottom_shade": 0.6,
+  "bottom_shade_max": 0.97
+ },
+ "tint": [
+  120,
+  20,
+  20
+ ],
+ "layers": [
+  {
+   "cut": "/home/user/Erin-Brown-/projects/felix-tarmoh/cutouts/felix_2012.png",
+   "h": 0.72,
+   "x": 0.64,
+   "y": 1.06,
+   "stroke": 10,
+   "glow": [
+    232,
+    35,
+    30
+   ],
+   "glow_px": 30,
+   "fade_bottom": 0.5,
+   "soft_below": 0.36,
+   "soft_px": 34
+  }
+ ],
+ "layers_916": {
+  "0": {
+   "h": 0.58,
+   "x": 0.6,
+   "y": 0.94
+  }
+ }
+}

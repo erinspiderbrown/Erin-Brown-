@@ -1,5 +1,18 @@
 # Allyson Felix vs Jeneba Tarmoh: the 2012 dead heat (Nov 2026)
 
+**Title (YouTube Shorts / TikTok):** Allyson Felix Kept the Spot… Jeneba Tarmoh Lost Her Olympics 💔
+Alternates:
+- They Tied to the Thousandth… Then USATF Wanted a Coin Toss
+- Jeneba Tarmoh Did the Victory Lap… Then They Took It Back
+- Allyson Felix: Two-Faced or Ambitious? 🤔
+- Same Coach, Same Time, One Spot: Felix vs Tarmoh 2012
+- 11.068 vs 11.068… and the Olympic Spot Came Down to an Email
+- Was Allyson Felix Wrong for Keeping That Olympic Spot?
+
+**Thumbnail v1** (`exports/thumbnails/felix_tarmoh_thumb.jpg` / `_916.jpg`): Felix cut out of "Allyson Felix Doha 2012.jpg" (Commons, CC BY 2.0)
+with a red rim over Hayward Field at dusk ("Hayward Field 6-4-11.JPG"). No free photo of Tarmoh exists on Commons/Flickr; add her behind
+Felix from a frame of the owner's footage once it arrives.
+
 Source: the owner's YouTube video "Allyson Felix: Two-Faced or Ambitious?" (Sept 2024, https://youtu.be/td5bQpV9gP4, 11:15).
 This TikTok retells it in ~5:25 in his default ElevenLabs voice, facts checked.
 
