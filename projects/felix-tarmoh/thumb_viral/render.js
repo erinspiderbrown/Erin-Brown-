@@ -2,8 +2,8 @@
 const { chromium } = require('playwright'); const path = require('path'); const { execFileSync } = require('child_process');
 const out = process.argv[2];
 const layouts = {
-  '_916': { W: 1080, H: 1920, t1: 250, s1: 175, t2: 405, s2: 340, t3: 755, fx: 150, fy: 900, fw: 1150, px: 26, py: 1290, pw: 360 },
-  '':     { W: 1080, H: 1440, t1: 40,  s1: 160, t2: 180, s2: 300, t3: 478, fx: 230, fy: 668, fw: 1000, px: 20, py: 900,  pw: 330 },
+  '_916': { W: 1080, H: 1920, t1: 250, s1: 175, t2: 405, s2: 340, t3: 755, fx: 150, fy: 900, fw: 1150, px: 26, py: 1290, pw: 400 },
+  '':     { W: 1080, H: 1440, t1: 40,  s1: 160, t2: 180, s2: 300, t3: 478, fx: 230, fy: 668, fw: 1000, px: 14, py: 905,  pw: 335 },
 };
 (async () => {
   const b = await chromium.launch();

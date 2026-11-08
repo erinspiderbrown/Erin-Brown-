@@ -1,0 +1,2463 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/out/felix_tarmoh_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/felix-tarmoh/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 410.6,
+ "face": {
+  "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/face.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 0.02,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.55
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 5.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 5.18,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_pod.jpg",
+     "focus": [
+      0.6,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 10.12,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/ph/Hayward_Field_6_4_11.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 15.82,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 68.56,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 22.66,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 75.4,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 29.4,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 82.14,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.55
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 34.68,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 87.42,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 39.34,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 92.08,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 43.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 96.46,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 48.24,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 100.98,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 53.84,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 106.58,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 60.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 112.9,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 66.76,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 119.5,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 70.88,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 124.62,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 76.56,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 130.3,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 82.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 136.24,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 88.26,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 142.38,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 94.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 148.98,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 100.2,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 166.7,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 106.66,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 183.86,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 115.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 192.92,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 120.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 197.7,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 129.54,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 207.24,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 139.28,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 218.46,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 145.44,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 224.62,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 151.03,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 236.38,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 156.95,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 242.3,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 161.95,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 247.3,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 168.21,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 253.56,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 172.29,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 257.58,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 179.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 265.26,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 187.53,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 272.82,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 190.67,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 275.96,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 196.95,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 282.24,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 201.25,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 286.54,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 207.75,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 297.38,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 215.31,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 310.26,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 221.41,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 316.66,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 231.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 326.58,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 235.17,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 330.42,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 238.39,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 333.64,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 244.25,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 356.68,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 254.85,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 367.28,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 263.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 376.06,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_pod.jpg",
+     "focus": [
+      0.6,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/kersee.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 271.25,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 396.14,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_pod.jpg",
+     "focus": [
+      0.6,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 276.03,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 401.4,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/kersee.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 284.79,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 410.16,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 291.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 417.0,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 298.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 443.64,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 306.08,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 450.82,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 312.84,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 482.1,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 320.4,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 489.66,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 325.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 495.16,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 329.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 514.08,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_pod.jpg",
+     "focus": [
+      0.6,
+      0.3
+     ]
+    }
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 337.64,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 521.98,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 341.4,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 525.74,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish2.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 346.32,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 530.66,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 352.22,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 536.56,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 358.8,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 543.14,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 364.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 557.66,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 370.52,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 564.02,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race2.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/felix_lap.jpg",
+     "focus": [
+      0.55,
+      0.3
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 378.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 571.64,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/race.jpg",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 385.54,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 579.04,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_lap.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn2.jpg",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 391.42,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 584.92,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/tarmoh_espn.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 396.04,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 589.78,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/geer.jpg",
+     "focus": [
+      0.5,
+      0.35
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 404.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/raw/source.mp4",
+    "ss": 663.14,
+    "fit": "frame",
+    "crop": [
+     1440,
+     1080,
+     240,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/hug.jpg",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/felix-tarmoh/stills/finish.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.2,
+   "dur": 3.2,
+   "rank": "USA",
+   "name": "JENEBA TARMOH",
+   "sub": "SPRINTER \u00b7 2012 OLYMPIC TEAM"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 3.46,
+   "dur": 1.4,
+   "text": "BLACKBALLED",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 8.1,
+   "dur": 2.2,
+   "text": "NO MEETS. NO MONEY."
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 10.42,
+   "dur": 2.8,
+   "text": "HAYWARD FIELD",
+   "sub": "US OLYMPIC TRIALS \u00b7 JUNE 23, 2012"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 18.6,
+   "dur": 2.6,
+   "text": "ONE RACE. ONE SPOT."
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 22.66,
+   "dur": 3.0,
+   "text": "TOP 3 GO TO LONDON"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 29.4,
+   "dur": 2.6,
+   "text": "PHOTO FINISH"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 35.32,
+   "dur": 2.6,
+   "value": "11.068",
+   "unit": "SECONDS",
+   "label": "FELIX & TARMOH \u00b7 BOTH",
+   "anim": 0.9
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 39.24,
+   "dur": 4.38,
+   "title": "TRIALS 100M FINAL",
+   "rows": [
+    {
+     "event": "1 \u00b7 C. JETER",
+     "value": "10.92"
+    },
+    {
+     "event": "2 \u00b7 T. MADISON",
+     "value": "10.96"
+    },
+    {
+     "event": "3 \u00b7 J. TARMOH",
+     "value": "11.068"
+    },
+    {
+     "event": "3 \u00b7 A. FELIX",
+     "value": "11.068"
+    }
+   ],
+   "times": [
+    0.2,
+    1.78,
+    2.58,
+    2.98
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 48.54,
+   "dur": 1.6,
+   "text": "TARMOH 3RD",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 52.14,
+   "dur": 1.4,
+   "text": "FELIX 4TH",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 58.0,
+   "dur": 2.2,
+   "text": "SHE MADE THE TEAM\u2026 RIGHT?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 62.36,
+   "dur": 1.4,
+   "text": "PLOT TWIST",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 67.3,
+   "dur": 1.6,
+   "text": "A TIE?!",
+   "size": 150
+  },
+  {
+   "type": "name",
+   "t": 70.88,
+   "dur": 3.0,
+   "rank": "USATF",
+   "name": "JILL GEER",
+   "sub": "USATF SPOKESPERSON"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 76.56,
+   "dur": 2.6,
+   "text": "USATF \u00b7 THAT SAME NIGHT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 84.84,
+   "dur": 1.8,
+   "text": "DEAD HEAT",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 93.02,
+   "dur": 2.4,
+   "text": "MILLIONS BEHIND FELIX"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 95.64,
+   "dur": 2.6,
+   "text": "NIKE'S GOLDEN GIRL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 100.92,
+   "dur": 2.4,
+   "text": "A DIFFERENT PICTURE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 109.3,
+   "dur": 2.6,
+   "text": "CALCULATED MOVE?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 117.02,
+   "dur": 2.6,
+   "text": "WANTED THE 100 + 200"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 122.32,
+   "dur": 2.4,
+   "text": "JUST ACCEPT 4TH?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 130.16,
+   "dur": 1.6,
+   "text": "BETRAYED",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 132.76,
+   "dur": 2.6,
+   "text": "ALREADY ANNOUNCED 3RD"
+  },
+  {
+   "type": "name",
+   "t": 139.28,
+   "dur": 3.2,
+   "rank": "USA",
+   "name": "JENEBA TARMOH",
+   "sub": "ON ESPN, 2012"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 147.76,
+   "dur": 3.4,
+   "text": "\"NOT COMFORTABLE WITH A COIN TOSS\""
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 154.93,
+   "dur": 2.2,
+   "text": "\"FAIR AND SQUARE\""
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 164.09,
+   "dur": 2.4,
+   "text": "VICTORY LAP. PRESS CONFERENCE."
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 172.29,
+   "dur": 2.6,
+   "text": "THE MEETING WITH USATF"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 186.19,
+   "dur": 1.6,
+   "text": "\"YOU WILL CONCEDE YOUR SPOT\""
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 187.93,
+   "dur": 1.8,
+   "text": "\"I DIDN'T MEAN THAT\"",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 201.25,
+   "dur": 2.4,
+   "text": "\"I CAN'T JUST GIVE UP MY SPOT\""
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 205.41,
+   "dur": 1.4,
+   "text": "SHOCKED",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 207.75,
+   "dur": 3.0,
+   "text": "BETRAYED\u2026 OR MISUNDERSTOOD?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 218.51,
+   "dur": 2.0,
+   "text": "SAID ONE THING, DID ANOTHER",
+   "size": 70
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 225.55,
+   "dur": 2.6,
+   "text": "NIKE CLOUT?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 232.71,
+   "dur": 2.4,
+   "text": "SHE EARNED IT?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 239.01,
+   "dur": 1.6,
+   "text": "OPPORTUNIST?",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 249.71,
+   "dur": 1.6,
+   "text": "SUSPICIOUS?",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 256.27,
+   "dur": 3.0,
+   "text": "ROLES REVERSED = NO REVIEW?"
+  },
+  {
+   "type": "name",
+   "t": 263.63,
+   "dur": 3.0,
+   "rank": "USA",
+   "name": "JENEBA TARMOH",
+   "sub": "PODCAST INTERVIEW"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 267.39,
+   "dur": 1.6,
+   "text": "THAT'S POLITICS",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 275.05,
+   "dur": 1.4,
+   "text": "BLACKBALLED",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 278.89,
+   "dur": 6.0,
+   "title": "USATF TIEBREAK",
+   "rows": [
+    {
+     "event": "OPTION 1",
+     "value": "RUNOFF"
+    },
+    {
+     "event": "OPTION 2",
+     "value": "COIN TOSS"
+    }
+   ],
+   "times": [
+    1.44,
+    3.42
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 287.93,
+   "dur": 2.4,
+   "text": "SHE ALREADY WON?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 296.07,
+   "dur": 1.6,
+   "text": "FOR THE OLYMPICS?!",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 303.04,
+   "dur": 2.4,
+   "text": "BENDING OVER BACKWARDS?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 306.56,
+   "dur": 2.6,
+   "text": "MASSIVE NIKE DEAL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 318.3,
+   "dur": 1.6,
+   "text": "FAVORITISM?",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 320.96,
+   "dur": 2.4,
+   "text": "MOST MARKETABLE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 328.18,
+   "dur": 2.0,
+   "text": "RELATIVELY UNKNOWN"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 333.26,
+   "dur": 1.6,
+   "text": "HARASSED",
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 341.4,
+   "dur": 2.4,
+   "text": "FAMILY INSULTED"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 344.8,
+   "dur": 2.2,
+   "text": "THREATS"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 349.3,
+   "dur": 2.8,
+   "items": [
+    "JUL",
+    "2",
+    "2012"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "THE RUNOFF NEVER HAPPENED"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 359.0,
+   "dur": 1.8,
+   "text": "SPOT GIVEN UP",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 364.06,
+   "dur": 13.88,
+   "title": "FELIX IN LONDON",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "5TH"
+    },
+    {
+     "event": "200M",
+     "value": "GOLD"
+    },
+    {
+     "event": "4X100 (WR)",
+     "value": "GOLD"
+    },
+    {
+     "event": "4X400",
+     "value": "GOLD"
+    }
+   ],
+   "times": [
+    4.18,
+    7.78,
+    9.64,
+    10.74
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 378.14,
+   "dur": 2.6,
+   "text": "TARMOH: RELAYS ONLY"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 385.74,
+   "dur": 3.0,
+   "text": "RAN THE 4X100 HEATS (STILL GOT GOLD)"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 391.74,
+   "dur": 1.6,
+   "text": "LEFT OFF THE FINAL",
+   "size": 95
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 398.18,
+   "dur": 2.6,
+   "text": "A LASTING STAIN"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 404.16,
+   "dur": 6.44,
+   "question": "ALLYSON FELIX: TWO-FACED OR AMBITIOUS?",
+   "options": [
+    "TWO-FACED",
+    "AMBITIOUS"
+   ]
+  }
+ ],
+ "ambience": []
+}

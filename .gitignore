@@ -14,3 +14,5 @@ exports/x264pass*
 
 # rebuilt from voice_takes/ by assemble_voice.py
 projects/*/voice_master.wav
+projects/*/voice_cut.wav
+projects/*/raw/source.mp4
