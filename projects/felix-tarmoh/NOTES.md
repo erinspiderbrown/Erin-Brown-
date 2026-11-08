@@ -21,6 +21,23 @@ Felix from a frame of the owner's footage once it arrives.
 Source: the owner's YouTube video "Allyson Felix: Two-Faced or Ambitious?" (Sept 2024, https://youtu.be/td5bQpV9gP4, 11:15).
 This TikTok retells it in ~5:25 in his default ElevenLabs voice, facts checked.
 
+## The cut (real voice + real footage)
+- Source: the owner's 2024 YouTube video file (Dropbox share, 11:14, 1920x1080), `raw/source.mp4` (not in git).
+- `cut_voice.py` keeps 22 ranges of his ORIGINAL audio, same plot order, untouched (25 ms fades at cuts only): 6:47.8 + 3 s poll hold.
+  Removed: channel plugs (intro/outro), "critics argued" / "most damaging" repetition, the Michael Johnson lobby clip, most of the closing moral.
+  Kept: Tarmoh "blackballed" cold open (podcast), the race + reversal, USATF's Jill Geer announcement, golden-girl setup, Tarmoh's ESPN interview
+  (~80 s), Nike clout / roles-reversed, "that's politics" + "blackballed" (podcast), runoff or coin toss, harassment + walk-away, London.
+- `plan_builder.py`: his video plays in sync in a 4:3 framed band (native 1440x1080 crop, no upscale); real stills from the same video fill the
+  panels (photo finish, race, the Tarmoh/Felix photo, Felix bib, ESPN set, podcast, Jill Geer, Kersee); one full-screen Hayward Field photo.
+  63 graphics (results board 10.92/10.96/11.068/11.068, stopwatch 11.068, tiebreak board, London board, name tags, stamps, poll).
+- Captions: his transcript re-timed to the cut, names fixed (Allyson, Jeneba Tarmoh, USATF, Tianna).
+
+## Where the owner's 2024 narration differs from the record (flag, not changed: it's his voice)
+- "both clocked 11.06": official 11.068 for both (graphics show 11.068).
+- "multiple Olympic medals in the 200 and 400": before 2012 Felix had 200 m silvers (2004, 2008) and 4x400 gold (2008); the "400" is the relay.
+- "harassed… threats": not independently verified; it's his account.
+- His video says Tarmoh was replaced in the final; true. The graphic adds that she still received a 4x100 gold medal for running the heats.
+
 ## Direction change (owner, Nov 8)
 - Use the owner's REAL voice from his 2024 video (not ElevenLabs), real footage/interviews of Felix and Tarmoh (faces OK), Tarmoh's
   interview soundbites, lots of real video, ≤ 7:00, same plot. Generic AI reenactments are no longer the plan; no credit top-up needed.
