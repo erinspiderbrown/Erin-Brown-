@@ -6,6 +6,11 @@ Alternates:
 - 0.8 Seconds From a Medal… The Steve Prefontaine Story
 - If Pre Made It to Montreal '76… Was He Winning Gold?
 
+## Export
+- `exports/steve_prefontaine_tiktok_hq.mp4` (Git LFS): 5:31, 1080×1920, 30 fps, 7 Mbps 2-pass, SSIM 0.987 vs master, −14.4 LUFS (voice +13.5 dB + limiter).
+- Thumbnails: `exports/thumbnails/prefontaine_thumb.jpg` (3:4) and `prefontaine_thumb_916.jpg` (9:16): Pre (1973 photo) cut out over Pre's Rock.
+- Render: `plan_builder.py` → `plan.json` → `editor/build.py`. v1 had clipped keywords, a crowded flow and a stopwatch rounding bug (13:22.7); fixed in v2.
+
 ## Owner's earlier video
 - YouTube, Aug 2024: "The Dark Tragic Death Of Steve Prefontaine" (https://youtu.be/lXvz67PNMeY, 7:55). Read via its transcript; nothing in it
   conflicts with this script. It has beats this one skips (Munich massacre before the final, trailer + food stamps, first Nike-signed athlete
