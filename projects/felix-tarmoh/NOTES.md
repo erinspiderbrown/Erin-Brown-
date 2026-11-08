@@ -3,7 +3,13 @@
 Source: the owner's YouTube video "Allyson Felix: Two-Faced or Ambitious?" (Sept 2024, https://youtu.be/td5bQpV9gP4, 11:15).
 This TikTok retells it in ~5:25 in his default ElevenLabs voice, facts checked.
 
-## Status
+## Direction change (owner, Nov 8)
+- Use the owner's REAL voice from his 2024 video (not ElevenLabs), real footage/interviews of Felix and Tarmoh (faces OK), Tarmoh's
+  interview soundbites, lots of real video, ≤ 7:00, same plot. Generic AI reenactments are no longer the plan; no credit top-up needed.
+- Waiting on the owner's files in Dropbox `/Felix Tarmoh/` (see `footage_wanted.md`).
+- The ElevenLabs takes/flows below are kept only as a fallback.
+
+## Status (ElevenLabs draft, superseded)
 - Voice: flow `4LlukseKRsgRiOUAzkpV`, 8 sections × 2 takes (Drummond recipe). Draft picks 01b 02a 03a 04a 05a 06b 07a 08a, assembled by
   `assemble_voice.py` (+0.22–0.4 s per natural pause, 1.5 s breaths) → 5:25. Section 05 reads at 213 wpm in both takes: re-voice after top-up.
 - Reenactments: flow `1kAbw3V5Z9CqtozGX0gV`. ElevenLabs plan quota (496,500) ran out after 6 of 20 started (Nov 8). Owner is topping up.
