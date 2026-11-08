@@ -21,6 +21,11 @@ Felix from a frame of the owner's footage once it arrives.
 Source: the owner's YouTube video "Allyson Felix: Two-Faced or Ambitious?" (Sept 2024, https://youtu.be/td5bQpV9gP4, 11:15).
 This TikTok retells it in ~5:25 in his default ElevenLabs voice, facts checked.
 
+## Export
+- `exports/felix_tarmoh_tiktok_hq.mp4` (Git LFS): 6:51, 1080×1920, 30 fps, 7 Mbps 2-pass, SSIM 0.997 vs master, −14.1 LUFS / −1.4 dBTP.
+- Voice: owner-approved light polish (`voice_chain: "polish"`, now the house default) after a before/after (`voice_before_after.mp3`).
+- v1 had two clipped cards ("RAN THE 4X100 HEATS (STILL GOT…", "WANTED THE 100 + 200"); shortened in v2.
+
 ## The cut (real voice + real footage)
 - Source: the owner's 2024 YouTube video file (Dropbox share, 11:14, 1920x1080), `raw/source.mp4` (not in git).
 - `cut_voice.py` keeps 22 ranges of his ORIGINAL audio, same plot order, untouched (25 ms fades at cuts only): 6:47.8 + 3 s poll hold.
