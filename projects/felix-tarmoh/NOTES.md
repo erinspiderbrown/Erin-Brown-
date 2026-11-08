@@ -1,10 +1,10 @@
 # Allyson Felix vs Jeneba Tarmoh: the 2012 dead heat (Nov 2026)
 
-**Title (YouTube Shorts / TikTok):** They Tied in the 100m… Then Allyson Felix Took Her Olympic Spot
-(vidIQ short-form title score 95. Search data, Nov 2026: "allyson felix" ~8.8k searches/month, "jeneba tarmoh" <750, so lead with Felix.)
+**Title (YouTube Shorts / TikTok), owner's pick:** Is Allyson Felix the Biggest Snake in Track? 🐍
+(vidIQ short-form score 85; matches the thumbnail. Search data, Nov 2026: "allyson felix" ~8.8k searches/month, "jeneba tarmoh" <750.)
 Alternates (vidIQ score):
 - The Olympic Spot Decided by a Coin Toss? Allyson Felix vs Her Training Partner (89)
-- Is Allyson Felix the Biggest Snake in Track? 🐍 (85, matches the thumbnail)
+- They Tied in the 100m… Then Allyson Felix Took Her Olympic Spot (95)
 - Allyson Felix Kept the Spot… Jeneba Tarmoh Lost Her Olympics 💔 (81)
 - Allyson Felix: Two-Faced or Ambitious? 🤔 (74, his YouTube title)
 
