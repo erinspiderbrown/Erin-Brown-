@@ -9,6 +9,11 @@ Alternates:
 - 11.068 vs 11.068… and the Olympic Spot Came Down to an Email
 - Was Allyson Felix Wrong for Keeping That Olympic Spot?
 
+**Thumbnail v2 (viral, owner's YouTube style):** `exports/thumbnails/felix_tarmoh_viral_thumb.jpg` (3:4) / `_916.jpg` (9:16), rebuilt from
+his YouTube thumbnail: "BIGGEST / SNAKE / IN TRACK?" (green #8DF02A + glowing white, Anton), Felix bust (Commons "Allyson Felix Doha 2012.jpg",
+CC BY 2.0) on black, Polaroid of Felix + Tarmoh embracing at the Trials cropped from his thumbnail (only ~110 px there; straightened, FSRCNN 4×,
+soft at inset size). Swap in a sharp frame from the race footage when it arrives. Source: `thumb_viral/`.
+
 **Thumbnail v1** (`exports/thumbnails/felix_tarmoh_thumb.jpg` / `_916.jpg`): Felix cut out of "Allyson Felix Doha 2012.jpg" (Commons, CC BY 2.0)
 with a red rim over Hayward Field at dusk ("Hayward Field 6-4-11.JPG"). No free photo of Tarmoh exists on Commons/Flickr; add her behind
 Felix from a frame of the owner's footage once it arrives.

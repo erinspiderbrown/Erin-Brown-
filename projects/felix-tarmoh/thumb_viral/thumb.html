@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url('file:///home/user/Erin-Brown-/editor/assets/fonts/Anton-Regular.ttf')}
+html,body{margin:0;background:#000}
+#c{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 45% at 62% 72%,#3a0a0a 0%,#140303 45%,#000 75%)}
+.t{position:absolute;left:0;right:0;text-align:center;font-family:Anton;line-height:.92;letter-spacing:2px;text-transform:uppercase}
+.g{color:#8DF02A;text-shadow:0 0 18px rgba(141,240,42,.55),0 6px 0 rgba(0,0,0,.6)}
+.w{color:#fff;text-shadow:0 0 22px #fff,0 0 60px rgba(255,255,255,.7),0 8px 0 rgba(0,0,0,.5)}
+#felix{position:absolute;-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 50%,transparent 80%);mask-image:linear-gradient(to bottom,#000 0%,#000 50%,transparent 80%);
+  filter:brightness(1.06) contrast(1.1) saturate(1.12) drop-shadow(0 0 30px rgba(0,0,0,.9))}
+#pol{position:absolute;background:#fff;padding:16px 16px 54px;box-shadow:0 18px 40px rgba(0,0,0,.85);transform:rotate(-9deg)}
+#pol img{display:block}
+</style></head><body><div id="c"></div>
+<script>
+const L = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const c = document.getElementById('c'); c.style.width = L.W + 'px'; c.style.height = L.H + 'px';
+c.innerHTML = `
+ <img id="felix" src="felix_bust.png" style="left:${L.fx}px;top:${L.fy}px;width:${L.fw}px">
+ <div class="t g" style="top:${L.t1}px;font-size:${L.s1}px">Biggest</div>
+ <div class="t w" style="top:${L.t2}px;font-size:${L.s2}px">Snake</div>
+ <div class="t g" style="top:${L.t3}px;font-size:${L.s1}px">In Track?</div>
+ <div id="pol" style="left:${L.px}px;top:${L.py}px"><img src="polaroid_photo.png" style="width:${L.pw}px"></div>`;
+</script></body></html>
