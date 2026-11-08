@@ -23,6 +23,8 @@ This TikTok retells it in ~5:25 in his default ElevenLabs voice, facts checked.
 
 ## Export
 - `exports/felix_tarmoh_tiktok_hq.mp4` (Git LFS): 6:51, 1080×1920, 30 fps, 7 Mbps 2-pass, SSIM 0.997 vs master, −14.1 LUFS / −1.4 dBTP.
+- Dropbox `/TikTok Exports/`: `felix_tarmoh_tiktok_hq.mp4` (content_hash a45a1680… matches), `felix_tarmoh_viral_thumb_v2.jpg` and
+  `felix_tarmoh_viral_thumb_916_v2.jpg` (sharper Polaroid; hashes match). The earlier `felix_tarmoh_viral_thumb*.jpg` and `felix_tarmoh_thumb*.jpg` are older versions.
 - Voice: owner-approved light polish (`voice_chain: "polish"`, now the house default) after a before/after (`voice_before_after.mp3`).
 - v1 had two clipped cards ("RAN THE 4X100 HEATS (STILL GOT…", "WANTED THE 100 + 200"); shortened in v2.
 
