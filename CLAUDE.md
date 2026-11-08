@@ -121,6 +121,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Transcribe them and keep the take that stays in dialect, says every line and doesn't rush its first seconds.
   - Join sections with about 1.5 s of breath.
   - If the video must reach a length, lengthen about 15 of the longest in-section pauses by about 0.4 s.
+- **Mix:** set `voice_chain: "original"` in the plan for ElevenLabs narration. The clone was approved as generated (Drummond, Asafa v3); the `polish` default is for his real recordings.
 - **Voice:** his clone "Erin Brown" (`voice_id` `dk6cvd5UilZRrcpZ7dNK`).
 - **Model and settings:** `eleven_v4`, `voice_settings` `{"stability": 0.45, "similarity": 0.85}`. Nothing else.
 - **Tags:** every paragraph starts with `[calm] [relaxed] [Texas accent]`. Put `[pause]` before big beats.
