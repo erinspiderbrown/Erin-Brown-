@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/out/prefontaine_v1.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/pre/out/prefontaine_v2.mp4",
  "words": "/home/user/Erin-Brown-/projects/prefontaine/words_final.json",
  "voice_ss": 0.0,
  "duration": 331.1,
@@ -1404,7 +1404,7 @@
    "kind": "keyword",
    "t": 21.76,
    "dur": 3.4,
-   "text": "EVERY U.S. RECORD \u00b7 2K TO 10K"
+   "text": "EVERY U.S. RECORD 2K\u201310K"
   },
   {
    "type": "motion",
@@ -1443,7 +1443,7 @@
    "kind": "keyword",
    "t": 43.16,
    "dur": 2.8,
-   "text": "MARSHFIELD HIGH \u00b7 COACH WALT McCLURE"
+   "text": "MARSHFIELD HIGH"
   },
   {
    "type": "motion",
@@ -1675,7 +1675,7 @@
    "dur": 5.94,
    "items": [
     "GET PAID",
-    "ENDORSEMENTS",
+    "SPONSORS",
     "LOSE STATUS"
    ],
    "times": [
@@ -1708,8 +1708,7 @@
    "rows": [
     {
      "event": "2,000M \u2192 10,000M",
-     "value": "7",
-     "tag": "ALL OF THEM"
+     "value": "7"
     },
     {
      "event": "5000M \u00b7 HELSINKI",

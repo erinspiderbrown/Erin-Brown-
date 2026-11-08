@@ -416,7 +416,7 @@ const ANIM = {
     $('hand').setAttribute('transform', `rotate(${(v * p) % 60 * 6} 260 300)`);
     const C = 2 * Math.PI * 150; $('swArc').setAttribute('stroke-dashoffset', C * (1 - ((v * p) % 60) / 60));
     const cur = v * p;
-    $('swN').textContent = S.format === 'mss1' ? `${Math.floor(cur / 60)}:${(Math.floor(cur % 60 * 10) / 10).toFixed(1).padStart(4, '0')}`   // m:ss.d race time
+    $('swN').textContent = S.format === 'mss1' ? ((r) => `${Math.floor(r / 60)}:${(r % 60).toFixed(1).padStart(4, '0')}`)(Math.round(cur * 10) / 10)   // m:ss.d race time
                          : S.format === 'mss' ? `${Math.floor(cur / 60)}:${String(Math.floor(cur % 60)).padStart(2, '0')}`
                                               : cur.toFixed((String(S.value).split('.')[1] || '').length);
     const land = clamp((t - .35 - A) / .25); $('swN').style.textShadow = land > 0 && land < 1 ? `0 0 ${50 * (1 - land)}px var(--acc)` : 'none'; },

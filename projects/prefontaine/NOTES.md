@@ -6,6 +6,11 @@ Alternates:
 - 0.8 Seconds From a Medal… The Steve Prefontaine Story
 - If Pre Made It to Montreal '76… Was He Winning Gold?
 
+## Owner's earlier video
+- YouTube, Aug 2024: "The Dark Tragic Death Of Steve Prefontaine" (https://youtu.be/lXvz67PNMeY, 7:55). Read via its transcript; nothing in it
+  conflicts with this script. It has beats this one skips (Munich massacre before the final, trailer + food stamps, first Nike-signed athlete
+  in 1974, organizing his own meets, Coos Bay memorial). Owner chose to keep this TikTok as scripted (Nov 2026).
+
 ## Format
 - ~5:30, vertical 1080×1920. No talking head: the owner's default ElevenLabs voice narrates (approved Drummond recipe, see CLAUDE.md).
 - Voice: flow "Steve Prefontaine voiceover (Drummond recipe)" `j3DrD1suS4c21E2NTzTa`, 8 sections (`script_sections.txt`), `eleven_v4`,

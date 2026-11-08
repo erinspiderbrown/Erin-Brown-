@@ -169,13 +169,13 @@ gfx = [
     M('stamp', at('flips over') - .1, 1.4, text='FLIPPED', size=130),
     M('keyword', at('the greatest distance'), 2.4, text="AMERICA'S GREATEST?"),
     D('counter', at('24 years old') - .2, 1.7, value='24', unit='YEARS OLD', label='Steve Prefontaine', sub='1951 – 1975'),
-    M('keyword', at('he held every'), 3.4, text='EVERY U.S. RECORD · 2K TO 10K'),
+    M('keyword', at('he held every'), 3.4, text='EVERY U.S. RECORD 2K–10K'),
     M('stamp', at('he won a race'), 1.6, text='HOURS EARLIER: HE WON', size=90),
     N(at('steve prefontaine') - .2, 3.2, 'USA', 'STEVE PREFONTAINE', '"PRE" · OREGON · OLYMPIAN'),
     # --- Coos Bay
     M('birthday', at('pre was born') + .2, 2.4, text='JAN 25, 1951', name='PRE'),
     M('pin', at('coos bay'), 2.6, text='COOS BAY, OREGON', sub='LOGGING TOWN ON THE COAST'),
-    M('keyword', at('at marshfield'), 2.8, text='MARSHFIELD HIGH · COACH WALT McCLURE'),
+    M('keyword', at('at marshfield'), 2.8, text='MARSHFIELD HIGH'),
     M('stamp', at('pre was undefeated') + .2, 1.8, text='UNDEFEATED', size=120),
     M('stopwatch', at('the mile in') + .1, 2.6, value='246.9', format='mss1', unit='MILE', label='OREGON HS RECORD', anim=1.0, size=120),
     M('stopwatch', at('the two mile') + .1, 2.8, value='521.5', format='mss1', unit='2 MILE', label='NATIONAL HS RECORD (REPORTED)', anim=1.0, size=120),
@@ -205,12 +205,12 @@ gfx = [
     # --- the system / records / prison
     M('pin', at('montreal') - .1, 2.4, text='MONTREAL 1976', sub='THE NEXT OLYMPICS'),
     M('keyword', at('track was supposed'), 2.2, text='"AMATEUR" ONLY'),
-    M('flow', at('the aau ran'), round(at('pre was taking free') - at('the aau ran') - .1, 2), items=['GET PAID', 'ENDORSEMENTS', 'LOSE STATUS'],
+    M('flow', at('the aau ran'), round(at('pre was taking free') - at('the aau ran') - .1, 2), items=['GET PAID', 'SPONSORS', 'LOSE STATUS'],
       times=[0.2, round(at('or got endorsements') - at('the aau ran'), 2), round(at('they could take') - at('the aau ran'), 2)]),
     M('keyword', at('pre was taking free'), 2.6, text='FREE GEAR FROM NIKE'),
     M('stamp', at('he went to war'), 1.6, text='WAR WITH THE AAU', size=95),
     M('board', t_rec + .2, round(at('and here goes') - t_rec - .4, 2), title='AMERICAN RECORDS · BY 1975',
-      rows=[{'event': '2,000M → 10,000M', 'value': '7', 'tag': 'ALL OF THEM'}, {'event': '5000M · HELSINKI', 'value': '13:21.9'},
+      rows=[{'event': '2,000M → 10,000M', 'value': '7'}, {'event': '5000M · HELSINKI', 'value': '13:21.9'},
             {'event': '10,000M · EUGENE', 'value': '27:43.6'}],
       times=[round(at('every american record', 2) - t_rec, 2), round(at('13:21.9') - t_rec, 2), round(at('27:43.6') - t_rec, 2)]),
     M('keyword', at('here goes something'), 2.4, text="WHAT PEOPLE DON'T KNOW"),
@@ -279,6 +279,6 @@ if __name__ == '__main__':
     for a, b in zip(gfx, gfx[1:]):
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics; DUR', DUR)
-    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/prefontaine_v1.mp4', 'words': f'{HERE}/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
+    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/prefontaine_v2.mp4', 'words': f'{HERE}/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
             'face': {'src': f'{SP}/face.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs, 'graphics': gfx, 'ambience': amb}
     json.dump(plan, open(f'{HERE}/plan.json', 'w'), indent=1)
