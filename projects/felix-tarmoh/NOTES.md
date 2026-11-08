@@ -1,13 +1,12 @@
 # Allyson Felix vs Jeneba Tarmoh: the 2012 dead heat (Nov 2026)
 
-**Title (YouTube Shorts / TikTok):** Allyson Felix Kept the Spot… Jeneba Tarmoh Lost Her Olympics 💔
-Alternates:
-- They Tied to the Thousandth… Then USATF Wanted a Coin Toss
-- Jeneba Tarmoh Did the Victory Lap… Then They Took It Back
-- Allyson Felix: Two-Faced or Ambitious? 🤔
-- Same Coach, Same Time, One Spot: Felix vs Tarmoh 2012
-- 11.068 vs 11.068… and the Olympic Spot Came Down to an Email
-- Was Allyson Felix Wrong for Keeping That Olympic Spot?
+**Title (YouTube Shorts / TikTok):** They Tied in the 100m… Then Allyson Felix Took Her Olympic Spot
+(vidIQ short-form title score 95. Search data, Nov 2026: "allyson felix" ~8.8k searches/month, "jeneba tarmoh" <750, so lead with Felix.)
+Alternates (vidIQ score):
+- The Olympic Spot Decided by a Coin Toss? Allyson Felix vs Her Training Partner (89)
+- Is Allyson Felix the Biggest Snake in Track? 🐍 (85, matches the thumbnail)
+- Allyson Felix Kept the Spot… Jeneba Tarmoh Lost Her Olympics 💔 (81)
+- Allyson Felix: Two-Faced or Ambitious? 🤔 (74, his YouTube title)
 
 **Thumbnail v2 (viral, owner's YouTube style):** `exports/thumbnails/felix_tarmoh_viral_thumb.jpg` (3:4) / `_916.jpg` (9:16), rebuilt from
 his YouTube thumbnail: "BIGGEST / SNAKE / IN TRACK?" (green #8DF02A + glowing white, Anton), Felix bust (Commons "Allyson Felix Doha 2012.jpg",
