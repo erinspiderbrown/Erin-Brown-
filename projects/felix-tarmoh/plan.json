@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/out/felix_tarmoh_v1.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ft/out/felix_tarmoh_v2.mp4",
  "words": "/home/user/Erin-Brown-/projects/felix-tarmoh/words_final.json",
  "voice_ss": 0.0,
  "duration": 410.6,
@@ -2104,7 +2104,7 @@
    "kind": "keyword",
    "t": 117.02,
    "dur": 2.6,
-   "text": "WANTED THE 100 + 200"
+   "text": "WANTED 100 + 200"
   },
   {
    "type": "motion",
@@ -2430,7 +2430,7 @@
    "kind": "keyword",
    "t": 385.74,
    "dur": 3.0,
-   "text": "RAN THE 4X100 HEATS (STILL GOT GOLD)"
+   "text": "STILL GOT 4X100 GOLD"
   },
   {
    "type": "motion",

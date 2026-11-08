@@ -117,7 +117,7 @@ gfx = [
     M('keyword', at('golden girl') - .2, 2.6, text="NIKE'S GOLDEN GIRL"),
     M('keyword', at('painted a different'), 2.4, text='A DIFFERENT PICTURE'),
     M('keyword', at('calculated move'), 2.6, text='CALCULATED MOVE?'),
-    M('keyword', at('double in both'), 2.6, text='WANTED THE 100 + 200'),
+    M('keyword', at('double in both'), 2.6, text='WANTED 100 + 200'),
     M('stamp', at('feeling betrayed') - .1, 1.6, text='BETRAYED', size=130),
     N(at('well you know'), 3.2, 'USA', 'JENEBA TARMOH', 'ON ESPN, 2012'),
     M('keyword', at("i'm not comfortable with the runoff"), 3.4, text='"NOT COMFORTABLE WITH A COIN TOSS"'),
@@ -147,7 +147,7 @@ gfx = [
             {'event': '4X400', 'value': 'GOLD'}],
       times=[round(at('did not even medal') - t_lon, 2), round(at('win gold in the 200') - t_lon + .3, 2),
              round(at('4x1') - t_lon, 2) if 'x' else 0, round(at('4x4') - t_lon, 2)]),
-    M('keyword', at('despite running the prelims'), 3.0, text='RAN THE 4X100 HEATS (STILL GOT GOLD)'),
+    M('keyword', at('despite running the prelims'), 3.0, text='STILL GOT 4X100 GOLD'),
     M('stamp', at('replaced in the final') - .1, 1.6, text='LEFT OFF THE FINAL', size=95),
     M('keyword', at('lasting stain'), 2.6, text='A LASTING STAIN'),
     M('poll', at('be sure to let'), round(DUR - at('be sure to let'), 2), question='ALLYSON FELIX: TWO-FACED OR AMBITIOUS?', options=['TWO-FACED', 'AMBITIOUS']),
@@ -210,6 +210,6 @@ if __name__ == '__main__':
     for a, b in zip(gfx, gfx[1:]):
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics; voice', VOICE_END, 'DUR', DUR)
-    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/felix_tarmoh_v1.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
+    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/felix_tarmoh_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0, 'duration': DUR,
             'face': {'src': f'{SP}/face.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs, 'graphics': gfx, 'ambience': amb}
     json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
