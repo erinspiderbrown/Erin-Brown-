@@ -487,11 +487,16 @@ def main(plan_path):
         # natural: no noise reduction (it made the voice watery/muffled), gentle de-mud + air, light 2:1 compression
         'natural': 'highpass=f=70,equalizer=f=320:t=q:w=1.0:g=-1.5,equalizer=f=4500:t=h:w=0.7:g=2,'
                    'acompressor=threshold=-18dB:ratio=2:attack=15:release=200:makeup=1.5',
-        'original': 'anull',          # HOUSE DEFAULT: the owner's untouched voice (EQ/compression took the bass out)
+        # HOUSE DEFAULT (owner approved Nov 2026, "I like the way the voice sounds. Save that for all of my future videos"):
+        # a light polish that keeps the bass - rumble filter only below 60 Hz (no low cut, no EQ), very gentle noise reduction,
+        # soft de-ess, light 2:1 leveling. Loudness is still set by the static gain below (never turned down).
+        'polish': 'highpass=f=60,afftdn=nr=8:nf=-48:tn=1,deesser=i=0.35:m=0.5:f=0.5,'
+                  'acompressor=threshold=-22dB:ratio=2:attack=8:release=160:makeup=1.5',
+        'original': 'anull',          # the owner's untouched voice (earlier default; heavier EQ/compression took the bass out)
         'raw': 'anull',
         'denoise': 'highpass=f=70,afftdn=nf=-40:nr=6,equalizer=f=4500:t=h:w=0.7:g=2,acompressor=threshold=-18dB:ratio=2:attack=15:release=200',
     }
-    vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
+    vchain = VOICE.get(plan.get('voice_chain', 'polish'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
     cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))

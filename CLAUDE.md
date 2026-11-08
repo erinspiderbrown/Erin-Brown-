@@ -6,12 +6,13 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
-- **Use the owner's original voice audio, untouched, on every video.** The default is `voice_chain: "original"`.
-  - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
-  - **Never turn the voice down.** If the take is already at or above −14 LUFS, it passes through untouched: no gain and no limiter.
+- **Use the owner's real voice with the approved light polish on every video.** The default is `voice_chain: "polish"` (owner, Nov 2026, after an A/B of his Felix/Tarmoh narration: "I like the way the voice sounds. Save that for all of my future videos").
+  - The chain (in `build.py`): rumble filter below 60 Hz only, very gentle noise reduction (`afftdn nr=8`), soft de-ess, light 2:1 leveling. No EQ and no low cut: it measured *fuller* in the low end than the original.
+  - Don't make it stronger. Earlier, heavier processing (EQ, a 70 Hz+ high-pass, stronger noise reduction) made his voice "weird / muffled" and "took the bass out". Use `voice_chain: "original"` (untouched) only if he asks.
+  - If you change anything in the voice path, send him a loudness-matched before/after (`projects/felix-tarmoh/voice_before_after.mp3` is the reference) before using it.
+  - **Never turn the voice down.** If the take is already at or above −14 LUFS, it gets no gain and no limiter.
     - One exception: if the take peaks right at 0 dBFS, it gets the minimum static trim to a −0.5 dBFS peak (about 0.5 dB, below audibility). ffmpeg's AAC encoder squashes full-scale audio (quieter, with crunch on the loudest words), and this headroom keeps the encode clean.
   - If the take is quieter than −14 LUFS, it gets one static volume boost up to −14, plus a peak limiter only in that case.
-  - Don't add voice processing back, or lower the voice, unless the owner asks for it.
 - **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
   - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
   - Full-screen needs one of:
