@@ -21,3 +21,8 @@ Photos: Wikimedia Commons, under their free licences (CC BY / CC BY-SA / GFDL ne
 | Italia en los relevos 4x100 de los Juegos del Mediterráneo 2018.jpg | Vanbasten 23 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Italia_en_los_relevos_4x100_de_los_Juegos_del_Mediterr%C3%A1neo_2018.jpg |
 | 2018 USA Indoor Track and Field Championships (39439538975).jpg | jenaragon94 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:2018_USA_Indoor_Track_and_Field_Championships_(39439538975).jpg |
 | Noah Lyles JO 03.08.2024.jpg | Aeltegop | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Noah_Lyles_JO_03.08.2024.jpg |
+
+## Not freely licensed (owner's decision)
+| File | Source | Note |
+|---|---|---|
+| photos/giacomo_tortu_corriereumbria.jpg | Corriere dell'Umbria, lead image of its profile "Giacomo Tortu, chi è…" | Not a free licence; the owner chose to use it. The article doesn't caption who is pictured. If credit is wanted: "Photo: Corriere dell'Umbria". |
