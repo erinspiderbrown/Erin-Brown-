@@ -73,6 +73,12 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Splice it into the talking-head timeline: a gap in `face`, the clip's audio loudness-matched, and the words shifted. See `projects/noome-400/NOTES.md`.
 6. **Write `plan.json`.** See `projects/charlotte-ehioghae/plan.json` for a full real example.
 7. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
+8. **Every video gets a high-quality thumbnail** (TikTok cover, 1080×1920 JPG), saved as `exports/<name>_thumb.jpg` and pushed with the video.
+   - Write `projects/<name>/thumbnail.json` and run `python3 editor/thumbnail.py thumbnail.json exports/<name>_thumb.jpg <scratch>/check.jpg`.
+   - **Background:** the sharpest real frame of the key moment. Score candidate frames for sharpness, run the pick through `enhance.py` (540×960 → 4×), or use a full-res photo.
+   - **Text:** 2–4 huge Anton words per line, 2 lines max, the video's core contrast or hook (e.g. "LIFTS 300 LB" / "RUNS 50.8"). Yellow `#FFE11A` with a black stroke, or white on a red `#E8231E` box.
+   - **Safe zones:** check the check image. Keep text out of the bottom 25% (caption/UI) and the right 140 px (buttons), and keep the text and the subject's face inside the centre 3:4 (y 240–1680), which is what the profile grid shows.
+   - **Accuracy:** numbers on the thumbnail follow the "never invent data" rule too.
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.

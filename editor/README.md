@@ -63,3 +63,6 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
 
 SFX: Mixkit Sound Effects Free License (commercial use OK; files aren't committed, `setup.sh` downloads them).
 Fonts: SIL Open Font License.
+
+## Thumbnails
+Every video ships with a TikTok cover: `python3 thumbnail.py spec.json out.jpg [check.jpg]`. The spec format and safe zones are documented at the top of `thumbnail.py`; see `projects/noome-weights/thumbnail.json` for an example.

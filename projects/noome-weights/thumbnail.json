@@ -1,0 +1,10 @@
+{
+ "bg": "broll/thumb_bg.jpg",
+ "focus": [0.5, 0.45],
+ "zoom": 1.12,
+ "darken": 0.45,
+ "lines": [
+  {"text": "LIFTS 300 LB", "y": 262, "size": 160, "color": "#FFE11A"},
+  {"text": "RUNS 50.8", "y": 1185, "size": 190, "color": "#FFFFFF", "box": "#E8231E", "rotate": -3}
+ ]
+}
