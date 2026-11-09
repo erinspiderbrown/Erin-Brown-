@@ -40,3 +40,9 @@ corner, "15 YEARS OLD / WON BY A MILE" (yellow/white, black outline), "10.28" in
   final; Morocco and Algeria appear only as board rows.
 - Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
   Private link: https://www.dropbox.com/scl/fi/pe8f6sx1h1dml0ab7p8jx/gift_bright_tiktok_hq.mp4?rlkey=cqt4asj6e37zlhx825rqq95mv&dl=0
+
+## v3 (owner feedback: no name tags, stamps too cliche, step the editing up)
+- Name tags removed; Tebogo and Bright are introduced with freeze-frame pop-outs (`editor/freeze.py`).
+- Stamps replaced by `slam` kinetic text ("BOLD PREDICTION", "ABUNDANCE", "LEVEL UP", "1ST NIGERIAN EVER").
+- Export SSIM 0.990, -14.1 LUFS. Dropbox: `/TikTok Exports/gift_bright_tiktok_hq_v2.mp4` (hash verified; the first cut is still there
+  as `gift_bright_tiktok_hq.mp4`). Link: https://www.dropbox.com/scl/fi/vb7aeub30ievm9w87u0h9/gift_bright_tiktok_hq_v2.mp4?rlkey=er8qjrs4xr40sf1inh136ci3r&dl=0
