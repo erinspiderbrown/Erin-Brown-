@@ -51,6 +51,9 @@ PHOTOS = {
     'tebogo': ('full', P('Letsile_Tebogo_JO_03_08_2024'), 0.5),
     # identified as Giacomo Tortu only by Corriere dell'Umbria using it as the lead image of a profile of him (no caption naming the person);
     # the owner chose to use it (Nov 9 2026) after being told it may show Filippo. Always labelled 'PER ITALIAN MEDIA · ALLEGED'.
+    'hacker_still': ('band', ST('hacker'), 0.5),
+    'spy_still': ('band', ST('spy'), 0.5),
+    'servers_still': ('band', ST('servers'), 0.5),
     'giacomo': ('band', f'{H}/photos/giacomo_tortu_corriereumbria.jpg', 0.55),
 }
 PROBE = {}
@@ -78,33 +81,34 @@ def foot_seg(t, top, bot, fx=0.5, **kw):
 SECTIONS = [
     ('imagine winning', ['jacobs_sitting', 'jacobs_paris'], ['tokyo_finish', 'gold_graphic', 'euro_scoreboard', 'jacobs_tv']),
     ('now imagine that', ['jacobs_mattarella', 'jacobs_sitting'], ['hacker', 'spy', 'servers', 'jacobs_cap']),
-    ("and here's where", ['jacobs_belgrade', 'tortu_portrait', 'tortu_flag'], ['tokyo_race', 'milan_court', 'presser', 'jacobs_tortu']),
-    ('before 2021', ['jacobs_relay', 'italy_relay', 'jacobs_child'], ['longjump', 'euro_scoreboard', 'gym', 'jacobs_tv']),
+    ("and here's where", ['jacobs_belgrade', 'jacobs_sitting', 'jacobs_roma'], ['tokyo_race', 'milan_court', 'presser', 'gold_graphic']),
+    ('before 2021', ['jacobs_relay', 'relay_podium', 'jacobs_child'], ['longjump', 'euro_scoreboard', 'gym', 'jacobs_tv']),
     ('then he went to tokyo', ['kerley', 'jacobs_paris', 'relay_podium'], ['tokyo_race', 'tokyo_finish', 'gold_graphic', 'gold2']),
     ('now this is where', ['jacobs_sitting', 'jacobs_roma'], ['lab', 'pills', 'vials', 'article']),
     ('during the olympics', ['jacobs_belgrade', 'jacobs_mattarella'], ['nutri_card', 'spazzini', 'pills', 'doc']),
-    ('the questions didn\'t', ['jacobs_child', 'jacobs_roma', 'tortu_200'], ['jacobs_interview', 'jacobs_tv', 'jacobs_cap2', 'tokyo_finish']),
+    ('the questions didn\'t', ['jacobs_child', 'jacobs_roma', 'jacobs_belgrade'], ['jacobs_interview', 'jacobs_tv', 'jacobs_cap2', 'tokyo_finish']),
     ('in 2024 jacobs', ['lyles_start', 'thompson', 'seville', 'paris_line', 'jacobs_paris'], ['paris_jacobs', 'indoor_60', 'jacobs_tv', 'euro_scoreboard']),
-    ('italian media reported', ['tortu_portrait', 'jacobs_mattarella', 'jacobs_sitting'], ['spy', 'hacker', 'servers', 'tortu_flag']),
+    ('italian media reported', ['hacker_still', 'jacobs_mattarella', 'spy_still'], ['spy', 'hacker', 'servers', 'milan_court']),
     ('the operation was connected', ['jacobs_roma', 'jacobs_relay'], ['servers', 'milan_court', 'presser', 'hacker']),
-    ('and in april', ['tortu_flag', 'jacobs_paris', 'tortu_portrait'], ['milan_court', 'presser', 'jacobs_tortu', 'spy']),
+    ('and in april', ['servers_still', 'jacobs_paris', 'jacobs_sitting'], ['milan_court', 'presser', 'servers', 'spy']),
 ]
 HITS = ['how did he get', 'was marcell jacobs doping', 'it was giacomo tortu', '9.80 seconds', 'because suspicion is not proof', 'insane turn',
         'not a conviction']
-FULL_AT = {'imagine winning': 'jacobs_roma', 'it was giacomo tortu': 'giacomo', 'the brother of filippo': 'tortu_portrait',
+FULL_AT = {'fred kerley': 'kerley', 'hacker gabriele': 'hacker_still', 'imagine winning': 'jacobs_roma', 'it was giacomo tortu': 'giacomo', 'the brother of filippo': 'tortu_portrait',
            'italian media reported': 'giacomo', 'giacomo tortu amongst': 'giacomo', '9.80 seconds': 'jacobs_paris',
            'in 2024 jacobs': 'lyles_start', 'filippo tortu jacobs': 'tortu_flag'}     # forced photos on key beats
 
 STARTS = [W[i]['s'] for i in range(len(W)) if i == 0 or W[i - 1]['w'].endswith(('.', '?', '!', ','))]
 sec_t = [at(p) for p, _, _ in SECTIONS] + [VOICE_END + 10]
 hit_t = {at(h) for h in HITS}; forced = {at(k): v for k, v in FULL_AT.items()}
+FOOT_AT = [at('a man named')]   # his own footage of Spazzini runs under the Spazzini name tag
 forced[round(VOICE_END + 0.1, 2)] = 'jacobs_roma'          # the closing 'since then' board sits on Jacobs, never on Filippo
 forced[round(FACTS_END, 2)] = 'jacobs_paris'                 # and so does the poll
 cuts = []
-for t in STARTS + list(forced):
-    if not cuts or t - cuts[-1] >= 4.4 or t in forced: cuts.append(t)
+for t in STARTS + list(forced) + FOOT_AT:
+    if not cuts or t - cuts[-1] >= 4.4 or t in forced or t in FOOT_AT: cuts.append(t)
 cuts = sorted(set(round(c, 2) for c in cuts))
-cuts = [c for i, c in enumerate(cuts) if i == 0 or c - cuts[i - 1] >= 1.6 or c in forced]
+cuts = [c for i, c in enumerate(cuts) if i == 0 or c - cuts[i - 1] >= 1.6 or c in forced or c in FOOT_AT]
 WSTARTS = [w['s'] for w in W]
 while True:                      # no shot longer than 8 s: split long gaps at the word start nearest the middle
     ends = cuts[1:] + [DUR]; long_ = [(c, e) for c, e in zip(cuts, ends) if e - c > 8.0]
@@ -120,7 +124,9 @@ for i, t in enumerate(cuts):
     _, pkeys, stills = SECTIONS[si]
     a, b = stills[i % len(stills)], stills[(i + 1) % len(stills)]
     hit = any(abs(t - h) < 0.3 for h in hit_t)
-    if t in forced:
+    if any(abs(t - f) < 0.05 for f in FOOT_AT):
+        key = None
+    elif t in forced:
         key = forced[t]
     elif kind_flip % 2 == 1:
         key = next((k for k in pkeys[(i // 2) % len(pkeys):] + pkeys if k != last_photo), pkeys[0])
@@ -237,7 +243,7 @@ if __name__ == '__main__':
     for a, b in zip(gfx, gfx[1:]):
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics; voice', VOICE_END, 'DUR', DUR)
-    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/marcell_jacobs_v1.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/marcell_jacobs_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
             'duration': DUR, 'face': {'src': f'{SP}/face_v2.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs,
             'graphics': gfx, 'ambience': []}
     json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)

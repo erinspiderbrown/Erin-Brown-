@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/out/marcell_jacobs_v1.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/out/marcell_jacobs_v2.mp4",
  "words": "/home/user/Erin-Brown-/projects/marcell-jacobs/words_final.json",
  "voice_ss": 0.0,
  "duration": 430.56,
@@ -209,7 +209,7 @@
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tortu.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/gold_graphic.jpg",
      "focus": [
       0.5,
       0.45
@@ -231,7 +231,7 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tortu.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/gold_graphic.jpg",
      "focus": [
       0.5,
       0.4
@@ -309,7 +309,7 @@
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tortu.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/gold_graphic.jpg",
      "focus": [
       0.5,
       0.45
@@ -437,12 +437,29 @@
    "type": "full",
    "start": 84.1,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Italia_en_los_relevos_4x100_de__Juegos_del_Mediterr_neo_2018.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Podium_4_100_m_relay_Roma_2024.jpg",
     "ss": 0,
-    "focus": [
-     0.42,
-     0.4
-    ]
+    "fit": "frame",
+    "crop": [
+     1151,
+     1279,
+     230,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/longjump.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
    }
   },
   {
@@ -587,6 +604,18 @@
   },
   {
    "type": "full",
+   "start": 115.82,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/2018_USA_Indoor_Track_and_Field_Championships_39439538975.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
    "start": 118.44,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Paris_Olympics_Athletics_53914712885.jpg",
@@ -602,37 +631,8 @@
    "type": "full",
    "start": 125.7,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Podium_4_100_m_relay_Roma_2024.jpg",
-    "ss": 0,
-    "fit": "frame",
-    "crop": [
-     1151,
-     1279,
-     230,
-     0
-    ],
-    "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/gold2.jpg",
-     "focus": [
-      0.5,
-      0.4
-     ]
-    },
-    "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tokyo_race.jpg",
-     "focus": [
-      0.5,
-      0.45
-     ]
-    }
-   }
-  },
-  {
-   "type": "full",
-   "start": 130.44,
-   "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 171.58,
+    "ss": 166.84,
     "fit": "frame",
     "crop": [
      1078,
@@ -658,39 +658,22 @@
   },
   {
    "type": "full",
-   "start": 135.06,
+   "start": 130.44,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_after_Istanbul_2023_silver_medal.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/2018_USA_Indoor_Track_and_Field_Championships_39439538975.jpg",
     "ss": 0,
-    "fit": "frame",
-    "crop": [
-     1149,
-     1277,
-     292,
-     0
-    ],
-    "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
-     "focus": [
-      0.5,
-      0.4
-     ]
-    },
-    "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/vials.jpg",
-     "focus": [
-      0.5,
-      0.45
-     ]
-    }
+    "focus": [
+     0.6,
+     0.4
+    ]
    }
   },
   {
    "type": "full",
-   "start": 140.62,
+   "start": 135.06,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 185.52,
+    "ss": 179.96,
     "fit": "frame",
     "crop": [
      1078,
@@ -716,7 +699,7 @@
   },
   {
    "type": "full",
-   "start": 147.58,
+   "start": 140.62,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_Roma_2024.jpg",
     "ss": 0,
@@ -745,10 +728,10 @@
   },
   {
    "type": "full",
-   "start": 154.7,
+   "start": 147.58,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 199.6,
+    "ss": 192.48,
     "fit": "frame",
     "crop": [
      1078,
@@ -757,14 +740,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/lab.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
      "focus": [
       0.5,
       0.45
@@ -774,7 +757,7 @@
   },
   {
    "type": "full",
-   "start": 159.24,
+   "start": 154.7,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_Belgrade_2022_2.jpg",
     "ss": 0,
@@ -803,10 +786,10 @@
   },
   {
    "type": "full",
-   "start": 164.96,
+   "start": 159.24,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 209.86,
+    "ss": 204.14,
     "fit": "frame",
     "crop": [
      1078,
@@ -832,7 +815,7 @@
   },
   {
    "type": "full",
-   "start": 169.72,
+   "start": 164.96,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Mattarella_Jacobs_2024.jpg",
     "ss": 0,
@@ -861,10 +844,10 @@
   },
   {
    "type": "full",
-   "start": 176.04,
+   "start": 169.72,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 246.38,
+    "ss": 240.06,
     "fit": "frame",
     "crop": [
      1078,
@@ -881,6 +864,64 @@
     },
     "bottom": {
      "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 170.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 241.2,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 176.68,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 247.02,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.45
@@ -902,14 +943,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.45
@@ -931,14 +972,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
      "focus": [
       0.5,
       0.45
@@ -960,14 +1001,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
      "focus": [
       0.5,
       0.45
@@ -989,14 +1030,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.45
@@ -1018,14 +1059,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.45
@@ -1047,14 +1088,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
      "focus": [
       0.5,
       0.45
@@ -1076,14 +1117,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
      "focus": [
       0.5,
       0.45
@@ -1105,14 +1146,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.45
@@ -1134,14 +1175,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.45
@@ -1163,14 +1204,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/pills.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/nutri_card.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/doc.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spazzini.jpg",
      "focus": [
       0.5,
       0.45
@@ -1181,64 +1222,6 @@
   {
    "type": "full",
    "start": 242.26,
-   "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_and_his_small_child_Belgrade_2022.jpg",
-    "ss": 0,
-    "fit": "frame",
-    "crop": [
-     1152,
-     1280,
-     230,
-     0
-    ],
-    "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tokyo_finish.jpg",
-     "focus": [
-      0.5,
-      0.4
-     ]
-    },
-    "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_interview.jpg",
-     "focus": [
-      0.5,
-      0.45
-     ]
-    }
-   }
-  },
-  {
-   "type": "full",
-   "start": 248.46,
-   "broll": {
-    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 370.94,
-    "fit": "frame",
-    "crop": [
-     1078,
-     1078,
-     421,
-     0
-    ],
-    "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_interview.jpg",
-     "focus": [
-      0.5,
-      0.4
-     ]
-    },
-    "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
-     "focus": [
-      0.5,
-      0.45
-     ]
-    }
-   }
-  },
-  {
-   "type": "full",
-   "start": 255.52,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_Roma_2024.jpg",
     "ss": 0,
@@ -1267,10 +1250,10 @@
   },
   {
    "type": "full",
-   "start": 261.55,
+   "start": 248.46,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 395.82,
+    "ss": 370.94,
     "fit": "frame",
     "crop": [
      1078,
@@ -1296,15 +1279,15 @@
   },
   {
    "type": "full",
-   "start": 266.47,
+   "start": 255.52,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/2022_08_19_European_Championsh_0_Metres_by_Sandro_Halank_004.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_Belgrade_2022_2.jpg",
     "ss": 0,
     "fit": "frame",
     "crop": [
-     1395,
-     1550,
-     393,
+     1153,
+     1282,
+     475,
      0
     ],
     "top": {
@@ -1316,6 +1299,64 @@
     },
     "bottom": {
      "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_interview.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 261.55,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 395.82,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_interview.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 266.47,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_and_his_small_child_Belgrade_2022.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "crop": [
+     1152,
+     1280,
+     230,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_cap2.jpg",
      "focus": [
       0.5,
       0.45
@@ -1337,14 +1378,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_interview.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_cap2.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tokyo_finish.jpg",
      "focus": [
       0.5,
       0.45
@@ -1378,14 +1419,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/paris_jacobs.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/euro_scoreboard.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/indoor_60.jpg",
      "focus": [
       0.5,
       0.45
@@ -1419,14 +1460,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/paris_jacobs.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tv.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/indoor_60.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/euro_scoreboard.jpg",
      "focus": [
       0.5,
       0.45
@@ -1460,47 +1501,6 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
-     "focus": [
-      0.5,
-      0.4
-     ]
-    },
-    "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tortu_flag.jpg",
-     "focus": [
-      0.5,
-      0.45
-     ]
-    }
-   }
-  },
-  {
-   "type": "full",
-   "start": 307.01,
-   "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Filippo_Tortu_ITA_2022.jpg",
-    "ss": 0,
-    "focus": [
-     0.45,
-     0.4
-    ]
-   }
-  },
-  {
-   "type": "full",
-   "start": 313.11,
-   "broll": {
-    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 468.42,
-    "fit": "frame",
-    "crop": [
-     1078,
-     1078,
-     421,
-     0
-    ],
-    "top": {
      "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
      "focus": [
       0.5,
@@ -1518,7 +1518,7 @@
   },
   {
    "type": "full",
-   "start": 318.51,
+   "start": 307.01,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Mattarella_Jacobs_2024.jpg",
     "ss": 0,
@@ -1547,10 +1547,10 @@
   },
   {
    "type": "full",
-   "start": 323.43,
+   "start": 313.11,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 478.74,
+    "ss": 468.42,
     "fit": "frame",
     "crop": [
      1078,
@@ -1566,7 +1566,7 @@
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tortu_flag.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
      "focus": [
       0.5,
       0.45
@@ -1576,19 +1576,19 @@
   },
   {
    "type": "full",
-   "start": 331.23,
+   "start": 318.51,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_after_Istanbul_2023_silver_medal.jpg",
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
     "ss": 0,
     "fit": "frame",
     "crop": [
-     1149,
-     1277,
-     292,
+     1078,
+     1078,
+     421,
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tortu_flag.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
      "focus": [
       0.5,
       0.4
@@ -1605,10 +1605,10 @@
   },
   {
    "type": "full",
-   "start": 336.41,
+   "start": 321.17,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 491.72,
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+    "ss": 0,
     "fit": "frame",
     "crop": [
      1078,
@@ -1634,22 +1634,39 @@
   },
   {
    "type": "full",
-   "start": 341.71,
+   "start": 323.43,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Filippo_Tortu_ITA_2022.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Mattarella_Jacobs_2024.jpg",
     "ss": 0,
-    "focus": [
-     0.45,
-     0.4
-    ]
+    "fit": "frame",
+    "crop": [
+     1152,
+     1280,
+     384,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
    }
   },
   {
    "type": "full",
-   "start": 349.36,
+   "start": 331.23,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 516.0,
+    "ss": 486.54,
     "fit": "frame",
     "crop": [
      1078,
@@ -1665,7 +1682,94 @@
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/tortu_flag.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 336.41,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 341.71,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 497.02,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 349.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+    "ss": 0,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
      "focus": [
       0.5,
       0.45
@@ -1676,6 +1780,35 @@
   {
    "type": "full",
    "start": 355.62,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 527.24,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 359.98,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/4_100_Budapest_2023_Jacobs_and_Patta.jpg",
     "ss": 0,
@@ -1704,10 +1837,10 @@
   },
   {
    "type": "full",
-   "start": 359.98,
+   "start": 364.5,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 531.6,
+    "ss": 536.12,
     "fit": "frame",
     "crop": [
      1078,
@@ -1733,7 +1866,7 @@
   },
   {
    "type": "full",
-   "start": 364.5,
+   "start": 370.14,
    "broll": {
     "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_Roma_2024.jpg",
     "ss": 0,
@@ -1762,10 +1895,10 @@
   },
   {
    "type": "full",
-   "start": 370.14,
+   "start": 376.0,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 541.76,
+    "ss": 573.8,
     "fit": "frame",
     "crop": [
      1078,
@@ -1774,14 +1907,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/hacker.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
      "focus": [
       0.5,
       0.45
@@ -1791,38 +1924,26 @@
   },
   {
    "type": "full",
-   "start": 376.0,
-   "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/2022_08_19_European_Championsh_0_Metres_by_Sandro_Halank_029.jpg",
-    "ss": 0,
-    "focus": [
-     0.5,
-     0.4
-    ]
-   }
-  },
-  {
-   "type": "full",
    "start": 380.44,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 578.24,
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Marcell_Jacobs_after_Istanbul_2023_silver_medal.jpg",
+    "ss": 0,
     "fit": "frame",
     "crop": [
-     1078,
-     1078,
-     421,
+     1149,
+     1277,
+     292,
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
      "focus": [
       0.5,
       0.45
@@ -1844,14 +1965,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tortu.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
      "focus": [
       0.5,
       0.45
@@ -1863,8 +1984,8 @@
    "type": "full",
    "start": 392.74,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 590.54,
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
+    "ss": 0,
     "fit": "frame",
     "crop": [
      1078,
@@ -1873,7 +1994,36 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/jacobs_tortu.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   }
+  },
+  {
+   "type": "full",
+   "start": 396.84,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 594.64,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
      "focus": [
       0.5,
       0.4
@@ -1890,22 +2040,22 @@
   },
   {
    "type": "full",
-   "start": 396.84,
+   "start": 400.9,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Filippo_Tortu_ITA_2022.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Paris_Olympics_Athletics_53914712885.jpg",
     "ss": 0,
     "focus": [
-     0.45,
+     0.57,
      0.4
     ]
    }
   },
   {
    "type": "full",
-   "start": 400.9,
+   "start": 405.66,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
-    "ss": 598.7,
+    "ss": 603.46,
     "fit": "frame",
     "crop": [
      1078,
@@ -1927,18 +2077,6 @@
       0.45
      ]
     }
-   }
-  },
-  {
-   "type": "full",
-   "start": 405.66,
-   "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/2022_08_19_European_Championsh_0_Metres_by_Sandro_Halank_029.jpg",
-    "ss": 0,
-    "focus": [
-     0.5,
-     0.4
-    ]
    }
   },
   {
@@ -1957,12 +2095,29 @@
    "type": "full",
    "start": 415.0,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph/Paris_Olympics_Athletics_53914712885.jpg",
-    "ss": 0,
-    "focus": [
-     0.57,
-     0.4
-    ]
+    "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/raw/source.mp4",
+    "ss": 612.8,
+    "fit": "frame",
+    "crop": [
+     1078,
+     1078,
+     421,
+     0
+    ],
+    "top": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/servers.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    "bottom": {
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
    }
   },
   {
@@ -1979,14 +2134,14 @@
      0
     ],
     "top": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/spy.jpg",
      "focus": [
       0.5,
       0.4
      ]
     },
     "bottom": {
-     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/presser.jpg",
+     "src": "/home/user/Erin-Brown-/projects/marcell-jacobs/stills/milan_court.jpg",
      "focus": [
       0.5,
       0.45
