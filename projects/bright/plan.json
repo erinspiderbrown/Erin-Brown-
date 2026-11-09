@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/out/gift_bright_v1.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/out/gift_bright_v2.mp4",
  "words": "/home/user/Erin-Brown-/projects/bright/work/words_final.json",
  "voice_ss": 0.0,
  "duration": 72.82,
@@ -280,6 +280,7 @@
    "t": 3.18,
    "dur": 1.5,
    "text": "BOLD PREDICTION",
+   "size": 100,
    "anchor": "upper"
   },
   {
@@ -464,8 +465,8 @@
    "type": "motion",
    "kind": "keyword",
    "t": 61.49,
-   "dur": 1.6,
-   "text": "HIGH SCHOOL FRESHMAN"
+   "dur": 1.15,
+   "text": "HS FRESHMAN"
   },
   {
    "type": "motion",

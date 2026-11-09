@@ -67,7 +67,7 @@ segs = [
 
 gfx = [
     M('keyword', 0.15, 2.0, text='AFRICA, WE SEE YOU'),
-    M('stamp', t_bold + 0.1, 1.5, text='BOLD PREDICTION', anchor='upper'),
+    M('stamp', t_bold + 0.1, 1.5, text='BOLD PREDICTION', size=100, anchor='upper'),
     M('keyword', at('2028,') + 0.05, 1.5, text='LA 2028'),
     N(t_dom + 0.1, 2.6, 'BOT', 'LETSILE TEBOGO', 'OLYMPIC 200M CHAMPION · PARIS 2024'),
     M('board', t_nig - 0.1, t_rise - t_nig - 0.1, title='AFRICA RISING',
@@ -89,7 +89,7 @@ gfx = [
     M('stamp', t_won + 0.1, 1.5, text='1ST NIGERIAN EVER', size=110, anchor='upper'),
     M('keyword', t_endur + 0.5, 1.4, text='SPEED ENDURANCE'),
     M('stopwatch', t_200 + 0.2, 2.4, value='20.72', unit='SECONDS', label='200M PB · JULY 2026', anim=1.0),
-    M('keyword', t_hs - 0.1, 1.6, text='HIGH SCHOOL FRESHMAN'),
+    M('keyword', t_hs - 0.1, 1.15, text='HS FRESHMAN'),
     M('board', t_already - 0.05, 2.6, title='GIFT BRIGHT · AGE 15',
       rows=[{'event': '100M', 'value': '10.28'}, {'event': '200M', 'value': '20.72'}], times=[0.1, 0.9]),
     M('keyword', t_sky + 0.3, 1.3, text="SKY'S THE LIMIT"),
@@ -98,7 +98,7 @@ gfx = [
 zooms = [[t_bold - 0.1, t_bold + 1.4, 1.1], [t_quick, t_quick + 1.4, 1.08], [t_fresh, t_fresh + 1.6, 1.1], [t_sky, t_sky + 1.3, 1.12]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/brt/build', 'output': f'{SP}/brt/out/gift_bright_v1.mp4', 'words': f'{H}/work/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/brt/build', 'output': f'{SP}/brt/out/gift_bright_v2.mp4', 'words': f'{H}/work/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face_tight.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):
