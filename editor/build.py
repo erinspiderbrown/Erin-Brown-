@@ -414,6 +414,16 @@ def main(plan_path):
     if plan['duration'] < plan.get('min_duration', 0):
         print(f"WARNING: {plan['duration']:.1f}s is under the {plan['min_duration']}s minimum")
     if plan.get('accent'): GOLD_ASS = hex2ass(plan['accent'])
+    # owner, Nov 2026: "those little red name tag[s] at the bottom, I don't like that. Let's exclude those" and the red
+    # stamps are "too cliche". Name tags are dropped and stamps become 'slam' kinetic text unless a plan opts back in.
+    gl = []
+    for g in plan.get('graphics', []):
+        if g['type'] == 'name' and not plan.get('name_tags', False):
+            print(f"NOTE: name tag '{g.get('name')}' skipped (name_tags off)"); continue
+        if g['type'] == 'motion' and g.get('kind') == 'stamp' and not plan.get('stamps', False):
+            g = {**{k: v for k, v in g.items() if k not in ('angle', 'size', 'sub')}, 'kind': 'slam'}
+        gl.append(g)
+    plan['graphics'] = gl
     if not plan.get('skip_res_check'): check_sources(plan, plan.get('min_broll_short_side', 1080))
     wd = plan['workdir']; os.makedirs(wd, exist_ok=True)
     segs = plan['segments']; end = plan['duration']

@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/out/gift_bright_v2.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/out/gift_bright_v3.mp4",
  "words": "/home/user/Erin-Brown-/projects/bright/work/words_final.json",
  "voice_ss": 0.0,
  "duration": 72.82,
@@ -40,11 +40,11 @@
    "type": "full",
    "start": 6.15,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Letsile_Tebogo_JO_03_08_2024.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/frz/tebogo.mp4",
     "ss": 0,
     "focus": [
      0.5,
-     0.3
+     0.5
     ]
    },
    "hit": true
@@ -121,6 +121,18 @@
     ]
    },
    "hit": true
+  },
+  {
+   "type": "full",
+   "start": 32.24,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/frz/bright_intro.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
   },
   {
    "type": "full",
@@ -276,11 +288,10 @@
   },
   {
    "type": "motion",
-   "kind": "stamp",
+   "kind": "slam",
    "t": 3.18,
    "dur": 1.5,
    "text": "BOLD PREDICTION",
-   "size": 100,
    "anchor": "upper"
   },
   {
@@ -289,14 +300,6 @@
    "t": 4.67,
    "dur": 1.5,
    "text": "LA 2028"
-  },
-  {
-   "type": "name",
-   "t": 6.3,
-   "dur": 2.6,
-   "rank": "BOT",
-   "name": "LETSILE TEBOGO",
-   "sub": "OLYMPIC 200M CHAMPION \u00b7 PARIS 2024"
   },
   {
    "type": "motion",
@@ -350,7 +353,7 @@
   },
   {
    "type": "motion",
-   "kind": "stamp",
+   "kind": "slam",
    "t": 23.38,
    "dur": 1.4,
    "text": "ABUNDANCE",
@@ -372,14 +375,6 @@
    "sub": "DAKAR, SENEGAL \u00b7 NOV 2026"
   },
   {
-   "type": "name",
-   "t": 30.13,
-   "dur": 3.2,
-   "rank": "NGR",
-   "name": "GIFT BRIGHT",
-   "sub": "AGE 15 \u00b7 100M / 200M"
-  },
-  {
    "type": "motion",
    "kind": "keyword",
    "t": 34.72,
@@ -395,7 +390,7 @@
   },
   {
    "type": "motion",
-   "kind": "stamp",
+   "kind": "slam",
    "t": 41.69,
    "dur": 1.5,
    "text": "LEVEL UP",
@@ -437,11 +432,14 @@
   },
   {
    "type": "motion",
-   "kind": "stamp",
+   "kind": "slam",
    "t": 49.87,
    "dur": 1.5,
    "text": "1ST NIGERIAN EVER",
-   "size": 110,
+   "hi": [
+    0,
+    2
+   ],
    "anchor": "upper"
   },
   {

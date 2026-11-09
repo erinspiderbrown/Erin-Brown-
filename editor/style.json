@@ -22,5 +22,7 @@
   "extra_sfx_on": false,
   "whoosh_level": 0.24,
   "split_swipes": true,
-  "sfx_min_gap": 3.0
+  "sfx_min_gap": 3.0,
+  "name_tags": false,
+  "stamps": false
 }

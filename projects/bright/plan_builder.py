@@ -3,7 +3,7 @@ the Dakar 2026 boys' 100m final + his 3 photos of Bright + Commons photos for th
 Yohan Blake method: hook full-screen, a graphic on almost every beat, full-screen at each turn, poll at the end.
 Facts (checked, see NOTES.md): 10.28 (+1.7) Youth Olympic 100m gold, Dakar, 8 Nov 2026 (Zhang Hangyu CHN 10.57, Szymon Dolega POL 10.61),
 first Nigerian to win the boys' 100m at the YOG; 200m PB 20.72 (4 Jul 2026); born 20 Dec 2010."""
-import json, re, os, sys, glob
+import json, re, os, sys, glob, subprocess
 H = os.path.dirname(os.path.abspath(__file__))
 SP = '/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad'
 PH = f'{SP}/brph/ph'
@@ -28,6 +28,16 @@ def at(phrase, n=1):
     sys.exit(f'not found: {phrase}')
 
 
+def FRZ(name, src, ss, dur, pick, focus=(0.5, 0.5), push=1.08):
+    """freeze-frame pop-out clip (editor/freeze.py), cached in the scratchpad; used as a full-screen segment"""
+    out = f'{SP}/brt/frz/{name}.mp4'; os.makedirs(os.path.dirname(out), exist_ok=True)
+    spec = {'src': src, 'ss': ss, 'out': out, 'dur': round(dur + 0.6, 2), 'pick': pick, 'focus': list(focus), 'push': push}
+    js = out[:-4] + '.json'
+    if not (os.path.exists(out) and os.path.exists(js) and json.load(open(js)) == spec):
+        json.dump(spec, open(js, 'w')); subprocess.run(['python3', f'{H}/../../editor/freeze.py', js], check=True)
+    return out
+
+
 END = round(W[-1]['e'] + 0.9, 2)
 full = lambda t, src, ss=0, fx=0.5, fy=0.4, **k: {'type': 'full', 'start': round(t, 2), 'broll': {'src': src, 'ss': ss, 'focus': [fx, fy]}, **k}
 split = lambda t, src, ss=0, fx=0.5, fy=0.45, **k: {'type': 'split', 'start': round(t, 2), 'broll': {'src': src, 'ss': ss, 'focus': [fx, fy]}, **k}
@@ -46,13 +56,14 @@ t_fresh, t_hs, t_already, t_sky, t_rate, t_2028 = at('so for a 15'), at('freshma
 segs = [
     full(0.0, CLIP, 22.6, 0.5, 0.45),                              # hook: Bright holding up his BRIGHT bib (his clip, vertical 1080x1920)
     split(t_now, P('4_100_metres_relay_final'), 0, 0.5, 0.4),       # bold prediction: Paris 2024 4x100 final
-    full(t_dom - 0.05, P('Tebogo_JO'), 0, 0.5, 0.3, hit=True),     # Africa to dominate: Tebogo, Paris 2024
+    full(t_dom - 0.05, FRZ('tebogo', P('Tebogo_JO'), 0, t_nig - t_dom, [0.45, 0.5], (0.5, 0.45)), 0, 0.5, 0.5, hit=True),  # Tebogo pops out (replaces his name tag)
     split(t_nig - 0.05, CLIP, 19.4, 0.5, 0.55),                     # Nigeria: NIGERIA vest (his clip)
     split(t_bot - 0.05, P('Douala_17'), 0, 0.5, 0.35),              # Botswana (2024 African Championships)
     split(t_sa - 0.05, P('ISTAF_2019_100_m_men'), 0, 0.5, 0.4),     # South Africa (Simbine) ... through Morocco, Algeria
     full(t_rise - 0.05, P('press_conf'), 0, 0.5, 0.3),             # "I see their rise": Tebogo
     split(t_abund - 0.25, CLIP, 5.0, 0.5, 0.6),                     # young talent: the Dakar youth final
     full(t_yog - 0.05, CLIP, 0.0, 0.5, 0.45, hit=True),            # the race
+    full(t_named - 0.05, FRZ('bright_intro', CLIP, 11.6, t_shine - t_named, [0.63, 0.66]), 0, 0.5, 0.5),  # "named Gift Bright": he pops out of the race
     full(t_shine - 0.05, CLIP, 15.6, 0.5, 0.4),                    # bib / celebration
     split(t_last - 0.05, R('photo_sign'), 0, 0.5, 0.4),
     split(t_step - 0.05, R('photo_flag'), 0, 0.5, 0.4),
@@ -67,26 +78,24 @@ segs = [
 
 gfx = [
     M('keyword', 0.15, 2.0, text='AFRICA, WE SEE YOU'),
-    M('stamp', t_bold + 0.1, 1.5, text='BOLD PREDICTION', size=100, anchor='upper'),
+    M('slam', t_bold + 0.1, 1.5, text='BOLD PREDICTION', anchor='upper'),
     M('keyword', at('2028,') + 0.05, 1.5, text='LA 2028'),
-    N(t_dom + 0.1, 2.6, 'BOT', 'LETSILE TEBOGO', 'OLYMPIC 200M CHAMPION · PARIS 2024'),
     M('board', t_nig - 0.1, t_rise - t_nig - 0.1, title='AFRICA RISING',
       rows=[{'event': 'NIGERIA', 'value': 'AMUSAN'}, {'event': 'BOTSWANA', 'value': 'TEBOGO'}, {'event': 'SOUTH AFRICA', 'value': 'SIMBINE'},
             {'event': 'MOROCCO', 'value': 'EL BAKKALI'}, {'event': 'ALGERIA', 'value': 'SEDJATI'}],
       times=[0.1, t_bot - t_nig + 0.1, t_sa - t_nig + 0.1, t_mor - t_nig + 0.1, t_alg - t_nig + 0.1]),
     M('keyword', t_rise + 0.9, 1.6, text='THE RISE'),
     M('keyword', t_young + 0.05, 1.8, text='YOUNG TALENT'),
-    M('stamp', t_abund + 0.05, 1.4, text='ABUNDANCE', anchor='lower'),
+    M('slam', t_abund + 0.05, 1.4, text='ABUNDANCE', anchor='lower'),
     M('keyword', t_quick + 0.3, 1.2, text='COMING UP QUICK'),
     M('pin', t_yog + 0.3, 2.4, text='YOUTH OLYMPICS', sub='DAKAR, SENEGAL · NOV 2026'),
-    N(t_15 + 0.1, 3.2, 'NGR', 'GIFT BRIGHT', 'AGE 15 · 100M / 200M'),
     M('keyword', t_shine + 1.1, 1.6, text='SHINES BRIGHT'),
     M('keyword', t_last + 0.4, 1.6, text='LAST YEAR: AGE 14'),
-    M('stamp', t_step + 0.6, 1.5, text='LEVEL UP', anchor='upper'),
+    M('slam', t_step + 0.6, 1.5, text='LEVEL UP', anchor='upper'),
     M('stopwatch', t_drop + 0.2, 2.3, value='10.28', unit='SECONDS', label='100M PB · YOUTH OLYMPIC FINAL', anim=1.0),
     D('bars', t_run + 0.15, 3.3, label="Dakar 2026 · Boys' 100m Final", unit='S', lower_is_better=True, spread=0.4,
       items=[{'name': '1 · Bright (NGR)', 'value': '10.28'}, {'name': '2 · Zhang (CHN)', 'value': '10.57'}, {'name': '3 · Dolega (POL)', 'value': '10.61'}]),
-    M('stamp', t_won + 0.1, 1.5, text='1ST NIGERIAN EVER', size=110, anchor='upper'),
+    M('slam', t_won + 0.1, 1.5, text='1ST NIGERIAN EVER', hi=[0, 2], anchor='upper'),
     M('keyword', t_endur + 0.5, 1.4, text='SPEED ENDURANCE'),
     M('stopwatch', t_200 + 0.2, 2.4, value='20.72', unit='SECONDS', label='200M PB · JULY 2026', anim=1.0),
     M('keyword', t_hs - 0.1, 1.15, text='HS FRESHMAN'),
@@ -98,7 +107,7 @@ gfx = [
 zooms = [[t_bold - 0.1, t_bold + 1.4, 1.1], [t_quick, t_quick + 1.4, 1.08], [t_fresh, t_fresh + 1.6, 1.1], [t_sky, t_sky + 1.3, 1.12]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/brt/build', 'output': f'{SP}/brt/out/gift_bright_v2.mp4', 'words': f'{H}/work/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/brt/build', 'output': f'{SP}/brt/out/gift_bright_v3.mp4', 'words': f'{H}/work/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face_tight.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):

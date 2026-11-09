@@ -38,7 +38,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Keep them varied, never the same transition twice in a row. Motion blur peaks briefly at the cut so both shots stay sharp.
 - **Captions:** word-by-word, all caps, Montserrat Black, sitting on the seam. Highlights alternate red `#E8231E` and yellow `#FFE11A`.
 - **Sound effects: few, quiet, spaced out.** The owner dislikes random loud sounds mid-sentence. `build.py` and the `style.json` defaults enforce this:
-  - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no stamp thuds, pops, ticks or clicks).
+  - **Off:** `graphic_sfx: false`, so graphics and animations make no sound (no thuds, pops, ticks or clicks).
   - **Off:** `hit_sfx: false`, so there are no bass hits. `"hit": true` on a segment only picks the flash/shake transition.
   - **Off:** `extra_sfx_on: false`. Risers and long cinematic hits are banned outright (`BANNED_SFX`), in any video.
   - **Kept:** a quiet airy whoosh on cuts into and out of full-screen (`whoosh_level` 0.24), with small pitch variation. B-roll swaps inside the split are silent.
@@ -48,7 +48,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random, and risers too loud and drawn out.)
 - **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
 - **Things being talked about** get motion graphics (`type: "motion"`):
-  - `stamp`: e.g. "FRAUD?"
+  - `slam`: kinetic punch text with a yellow marker bar on the key word (`hi`), e.g. "BIGGEST LIE". This replaces `stamp` (owner, Nov 2026: the red stamps are "too cliche"); the build turns any `stamp` into a `slam` unless a plan sets `stamps: true`.
   - `keyword`
   - `pin`: a place
   - `calendar`: months or seasons
@@ -78,16 +78,17 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 **This is the default way to edit every TikTok from now on.** The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and "probably the best video". Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure, pacing, graphics and transitions unless the owner asks for something different.
 - **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
   - The auto-picked viral transitions, with no per-segment overrides.
-  - A graphic on almost every beat (name tags, keywords, stamps, boards, bars, counters, a poll).
+  - A graphic on almost every beat (keywords, slams, boards, bars, counters, a poll).
+  - **No name tags** (owner, Nov 2026: "those little red name tag[s] at the bottom, I don't like that. Let's exclude those"). The build skips `name` graphics unless a plan sets `name_tags: true`. Introduce a person with a **freeze-frame pop-out** instead (`editor/freeze.py`): the shot freezes with a flash, the background drops dark and desaturated, and the athlete pops out with a white edge and glow. Use it as a full-screen segment (see `FRZ()` in `projects/bright/plan_builder.py`); `pick` selects the athlete when several are in frame (choose a frame where they're clear of others).
   - Don't thin them out or swap in new styles without asking.
 - **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
 - **Story arc:** build the edit as an argument with a payoff.
-  1. **Hook (0–15 s):** the subject full-screen with a name tag, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
-  2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `stamp` for the twist, e.g. "NOT A CHAMPIONSHIP").
+  1. **Hook (0–15 s):** the subject full-screen (freeze pop-out on their first mention), the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `slam` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
+  2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `slam` for the twist, e.g. "NOT A CHAMPIONSHIP").
   3. **Turn:** cut to full-screen on the key fact, with a `data` counter.
-  4. **The real story:** a name tag for each new person, then a `board` listing the evidence, one row landing on each spoken item (`times`).
-  5. **Callback:** full-screen with the claim stamped again ("WRONG ERA?" → "LIE").
-  6. **Proof:** actual results for each event the owner names (`bars` with real times, the subject's place in the name), with a stamp on each verdict ("4TH PLACE", "4TH AGAIN").
+  4. **The real story:** a freeze pop-out for each new person, then a `board` listing the evidence, one row landing on each spoken item (`times`).
+  5. **Callback:** full-screen with the claim slammed again ("WRONG ERA?" → "LIE").
+  6. **Proof:** actual results for each event the owner names (`bars` with real times, the subject's place in the name), with a slam on each verdict ("4TH PLACE", "4TH AGAIN").
   7. **Ending:** `poll` on the core question ("BORN IN THE WRONG ERA? YES / NO").
 - **Pacing:**
   - A graphic on almost every beat, about every 3–5 s.
