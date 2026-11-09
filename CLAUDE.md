@@ -59,6 +59,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - AI generation costs credits and the owner doesn't want an "AI look", so get approval first.
   - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
+## What's working (performance notes)
+- **Nov 2026, "The most embarrassing 400m I've ever seen?"** (`projects/noome-400`): 56.9K views in its first 1 day 20 h, #1 of the owner's last 10, **73.1% average viewed** on a 1:45 video, 1.3K likes.
+- What it had:
+  - A chaptered story: setup, then the owner's prediction, then the subject's own prediction in his own voice, then the race payoff.
+  - A poll ending.
+  - A question-style title with a strong claim.
+- The owner's own cover for it: a close, sharp photo of the subject with the result as a two-line headline at the top ("RAN 50.8" / "IN THE 400M"), in bold italic with red, white and yellow text.
+- For a running story (like the Noome series), match the covers so the videos read as a set on the profile.
+
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox share links. Download them with `?dl=1`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
