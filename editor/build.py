@@ -308,6 +308,13 @@ POOLS = {
 }
 BANNED_SFX = {'riser', 'riser_synth', 'riser_space_stutter', 'impact_big_cine', 'impact_deep_cine_whoosh',
               'impact_quick_zoom', 'impact_trailer_whoosh_hit', 'air_windy_swoosh'}
+def is_fs(sg):
+    """true full-screen: type 'full' without the framed middle band (fit: frame counts as a framed layout)"""
+    return sg['type'] == 'full' and (sg.get('broll') or {}).get('fit') != 'frame'
+
+def is_framed(sg):
+    return sg['type'] == 'full' and (sg.get('broll') or {}).get('fit') == 'frame'
+
 import random
 def sfx_cues(plan):
     """-> list of (sfx name, time where its PEAK lands, volume, rate)"""
@@ -321,11 +328,11 @@ def sfx_cues(plan):
     for prev, nxt in zip(segs, segs[1:]):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
-        if nxt['type'] == 'full' and prev['type'] != 'full':
+        if is_fs(nxt) and not is_fs(prev):
             wl = float(plan.get('whoosh_level', 0.24))
             add(3 if nxt.get('hit') else 2, [('air', T, wl, 0)] + ([('impact', T + 0.02, 0.26, 0)] if nxt.get('hit') and plan.get('hit_sfx', False) else []))
             last_full = T
-        elif nxt['type'] != 'full' and prev['type'] == 'full':
+        elif not is_fs(nxt) and is_fs(prev):
             if T - last_full >= 6: add(0, [('air_soft', T, 0.20, 0)])
         elif nxt.get('sfx'):
             add(1, [('air_soft', T, 0.2, 0)])
@@ -389,9 +396,9 @@ def choose_transitions(plan):
     for prev, nxt in zip(segs, segs[1:]):
         if 'transition' in nxt and nxt['transition'] in transitions.DUR or ':' in str(nxt.get('transition', '')):
             spec = nxt['transition']
-        elif nxt['type'] == 'full' and prev['type'] != 'full': spec = take('hit') if nxt.get('hit') else take('in')
-        elif nxt['type'] != 'full' and prev['type'] == 'full': spec = take('out')
-        elif nxt['type'] == 'full': spec = take('ff')
+        elif is_fs(nxt) and not is_fs(prev): spec = take('hit') if nxt.get('hit') else take('in')
+        elif is_fs(prev) and not is_fs(nxt): spec = take('out')
+        elif nxt['type'] == 'full': spec = take('ff')      # full->full, framed->framed, split->framed
         else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
         k, _, dr = spec.partition(':')
         out.append((k, dr or None, 'bottom' if k == 'swipe' else None))

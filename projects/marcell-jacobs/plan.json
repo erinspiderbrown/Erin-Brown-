@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/out/marcell_jacobs_v2.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacb/out/marcell_jacobs_v3.mp4",
  "words": "/home/user/Erin-Brown-/projects/marcell-jacobs/words_final.json",
  "voice_ss": 0.0,
  "duration": 430.56,
@@ -2253,7 +2253,7 @@
    "dur": 2.2,
    "rank": "ITA",
    "name": "GIACOMO TORTU",
-   "sub": "PER ITALIAN MEDIA \u00b7 ALLEGED, NOT CONVICTED"
+   "sub": "ACCUSED \u00b7 NOT CONVICTED"
   },
   {
    "type": "name",
@@ -2261,7 +2261,7 @@
    "dur": 3.2,
    "rank": "ITA",
    "name": "FILIPPO TORTU",
-   "sub": "HIS BROTHER \u00b7 JACOBS' TEAMMATE \u00b7 NOT ACCUSED"
+   "sub": "BROTHER \u00b7 TEAMMATE \u00b7 NOT ACCUSED"
   },
   {
    "type": "motion",
@@ -2576,7 +2576,7 @@
    "dur": 3.0,
    "rank": "ITA",
    "name": "GIACOMO TORTU",
-   "sub": "PER ITALIAN MEDIA \u00b7 ALLEGED, NOT CONVICTED"
+   "sub": "ACCUSED \u00b7 NOT CONVICTED"
   },
   {
    "type": "motion",

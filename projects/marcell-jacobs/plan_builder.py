@@ -156,8 +156,8 @@ gfx = [
     M('pin', at('shocked the world in tokyo') + .4, 1.3, text='TOKYO 2020', sub='OLYMPIC 100M · AUG 1, 2021'),
     M('keyword', at('italian prosecutors said'), 2.6, text='ITALIAN PROSECUTORS'),
     M('keyword', at("wasn't just a random"), 2.2, text='NOT A RANDOM JOURNALIST'),
-    N(at('it was giacomo tortu') + .1, 2.2, 'ITA', 'GIACOMO TORTU', 'PER ITALIAN MEDIA · ALLEGED, NOT CONVICTED'),
-    N(at('the brother of filippo') + .2, 3.2, 'ITA', 'FILIPPO TORTU', "HIS BROTHER · JACOBS' TEAMMATE · NOT ACCUSED"),
+    N(at('it was giacomo tortu') + .1, 2.2, 'ITA', 'GIACOMO TORTU', 'ACCUSED · NOT CONVICTED'),
+    N(at('the brother of filippo') + .2, 3.2, 'ITA', 'FILIPPO TORTU', 'BROTHER · TEAMMATE · NOT ACCUSED'),
     M('keyword', at('was there actually evidence'), 2.8, text='ANY ACTUAL EVIDENCE?'),
     # --- the rise
     M('keyword', at('wasn\'t exactly the guy'), 2.6, text='NOT THE GUY YOU EXPECTED'),
@@ -202,7 +202,7 @@ gfx = [
     M('keyword', at('fastest olympic'), 2.2, text='ONE OF THE FASTEST FINALS EVER'),
     M('stamp', at('insane turn') - .2, 1.8, text='2025: INSANE TURN', size=95),
     # --- the hacking
-    N(at('italian media reported') + .1, 3.0, 'ITA', 'GIACOMO TORTU', 'PER ITALIAN MEDIA · ALLEGED, NOT CONVICTED'),
+    N(at('italian media reported') + .1, 3.0, 'ITA', 'GIACOMO TORTU', 'ACCUSED · NOT CONVICTED'),
     M('keyword', at('become suspicious') - .2, 2.6, text='GIACOMO TORTU: SUSPICIOUS?'),
     M('keyword', at('get the answers privately') - .3, 2.4, text='ANSWERS… PRIVATELY'),
     N(at('hacker gabriele') - .2, 3.2, 'ITA', 'GABRIELE PEGORARO', 'ALLEGED HACKER'),
@@ -243,7 +243,7 @@ if __name__ == '__main__':
     for a, b in zip(gfx, gfx[1:]):
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics; voice', VOICE_END, 'DUR', DUR)
-    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/marcell_jacobs_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+    plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/marcell_jacobs_v3.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
             'duration': DUR, 'face': {'src': f'{SP}/face_v2.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs,
             'graphics': gfx, 'ambience': []}
     json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
