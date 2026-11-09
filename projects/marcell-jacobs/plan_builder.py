@@ -10,7 +10,7 @@ SP = '/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/
 PH = '/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/jacph/ph'
 W = json.load(open(f'{H}/words_final.json')); CM = json.load(open(f'{H}/cut_map.json'))
 TOK = [re.sub(r"[^a-z0-9.'\-]", '', x['w'].lower()).rstrip('.').strip("'") for x in W]
-VOICE_END = W[-1]['e']; DUR = round(VOICE_END + 3.5, 2)
+VOICE_END = W[-1]['e']; FACTS_END = VOICE_END + 7.0; DUR = round(FACTS_END + 4.5, 2)
 SRC = f'{H}/raw/source.mp4'; ST = lambda n: f'{H}/stills/{n}.jpg'; P = lambda n: f'{PH}/{n}.jpg'
 
 
@@ -49,6 +49,9 @@ PHOTOS = {
     'lyles_start': ('full', P('Noah_Lyles_JO_03_08_2024'), 0.5),
     'paris_line': ('full', P('Xie_Zhenye_Noah_Lyles'), 0.45),
     'tebogo': ('full', P('Letsile_Tebogo_JO_03_08_2024'), 0.5),
+    # identified as Giacomo Tortu only by Corriere dell'Umbria using it as the lead image of a profile of him (no caption naming the person);
+    # the owner chose to use it (Nov 9 2026) after being told it may show Filippo. Always labelled 'PER ITALIAN MEDIA · ALLEGED'.
+    'giacomo': ('band', f'{H}/photos/giacomo_tortu_corriereumbria.jpg', 0.55),
 }
 PROBE = {}
 
@@ -59,7 +62,7 @@ def photo_seg(t, key, top='tokyo_finish', bot='euro_scoreboard', **kw):
         return {'type': 'full', 'start': round(t, 2), 'broll': {'src': src, 'ss': 0, 'focus': [fx, 0.4]}, **kw}
     from PIL import Image
     w, h = PROBE.setdefault(src, Image.open(src).size)
-    cw = int(h * 0.9); x = int((w - cw) * fx)                       # 9:10 window at native height
+    cw = int(h * (1.0 if h < 1200 else 0.9)); x = int((w - cw) * fx)   # 9:10 window at native height (square for short photos)
     return {'type': 'full', 'start': round(t, 2), 'broll': {'src': src, 'ss': 0, 'fit': 'frame', 'crop': [cw, h, x, 0],
             'top': {'src': ST(top), 'focus': [0.5, 0.4]}, 'bottom': {'src': ST(bot), 'focus': [0.5, 0.45]}}, **kw}
 
@@ -88,12 +91,15 @@ SECTIONS = [
 ]
 HITS = ['how did he get', 'was marcell jacobs doping', 'it was giacomo tortu', '9.80 seconds', 'because suspicion is not proof', 'insane turn',
         'not a conviction']
-FULL_AT = {'imagine winning': 'jacobs_roma', 'it was giacomo tortu': 'tortu_portrait', '9.80 seconds': 'jacobs_paris',
+FULL_AT = {'imagine winning': 'jacobs_roma', 'it was giacomo tortu': 'giacomo', 'the brother of filippo': 'tortu_portrait',
+           'italian media reported': 'giacomo', 'giacomo tortu amongst': 'giacomo', '9.80 seconds': 'jacobs_paris',
            'in 2024 jacobs': 'lyles_start', 'filippo tortu jacobs': 'tortu_flag'}     # forced photos on key beats
 
 STARTS = [W[i]['s'] for i in range(len(W)) if i == 0 or W[i - 1]['w'].endswith(('.', '?', '!', ','))]
 sec_t = [at(p) for p, _, _ in SECTIONS] + [VOICE_END + 10]
 hit_t = {at(h) for h in HITS}; forced = {at(k): v for k, v in FULL_AT.items()}
+forced[round(VOICE_END + 0.1, 2)] = 'jacobs_roma'          # the closing 'since then' board sits on Jacobs, never on Filippo
+forced[round(FACTS_END, 2)] = 'jacobs_paris'                 # and so does the poll
 cuts = []
 for t in STARTS + list(forced):
     if not cuts or t - cuts[-1] >= 4.4 or t in forced: cuts.append(t)
@@ -144,8 +150,8 @@ gfx = [
     M('pin', at('shocked the world in tokyo') + .4, 1.3, text='TOKYO 2020', sub='OLYMPIC 100M · AUG 1, 2021'),
     M('keyword', at('italian prosecutors said'), 2.6, text='ITALIAN PROSECUTORS'),
     M('keyword', at("wasn't just a random"), 2.2, text='NOT A RANDOM JOURNALIST'),
-    N(at('it was giacomo tortu') + .1, 3.4, 'ITA', 'FILIPPO TORTU', "JACOBS' TEAMMATE · NOT ACCUSED"),
-    M('keyword', at('the brother of filippo') + .2, 2.6, text='HIS BROTHER: GIACOMO TORTU'),
+    N(at('it was giacomo tortu') + .1, 2.2, 'ITA', 'GIACOMO TORTU', 'PER ITALIAN MEDIA · ALLEGED, NOT CONVICTED'),
+    N(at('the brother of filippo') + .2, 3.2, 'ITA', 'FILIPPO TORTU', "HIS BROTHER · JACOBS' TEAMMATE · NOT ACCUSED"),
     M('keyword', at('was there actually evidence'), 2.8, text='ANY ACTUAL EVIDENCE?'),
     # --- the rise
     M('keyword', at('wasn\'t exactly the guy'), 2.6, text='NOT THE GUY YOU EXPECTED'),
@@ -190,7 +196,7 @@ gfx = [
     M('keyword', at('fastest olympic'), 2.2, text='ONE OF THE FASTEST FINALS EVER'),
     M('stamp', at('insane turn') - .2, 1.8, text='2025: INSANE TURN', size=95),
     # --- the hacking
-    M('keyword', at('italian media reported'), 2.6, text='ITALIAN MEDIA, 2025'),
+    N(at('italian media reported') + .1, 3.0, 'ITA', 'GIACOMO TORTU', 'PER ITALIAN MEDIA · ALLEGED, NOT CONVICTED'),
     M('keyword', at('become suspicious') - .2, 2.6, text='GIACOMO TORTU: SUSPICIOUS?'),
     M('keyword', at('get the answers privately') - .3, 2.4, text='ANSWERS… PRIVATELY'),
     N(at('hacker gabriele') - .2, 3.2, 'ITA', 'GABRIELE PEGORARO', 'ALLEGED HACKER'),
@@ -211,7 +217,11 @@ gfx = [
     M('stamp', at('not a conviction') - .4, 2.4, text='ALLEGATIONS, NOT A CONVICTION', size=70),
     M('keyword', at('could face trial'), 2.6, text='COULD FACE TRIAL'),
     N(at('filippo tortu jacobs') + .1, 3.4, 'ITA', 'FILIPPO TORTU', 'NOT ACCUSED OF ANY WRONGDOING'),
-    M('poll', round(VOICE_END - 2.5, 2), round(DUR - VOICE_END + 2.5, 2), question='WAS THE SUSPICION ON JACOBS FAIR?', options=['FAIR', 'UNFAIR']),
+    # facts the owner approved adding (Il Post, 9 Oct 2025); his voice is unchanged
+    M('board', round(VOICE_END + 0.3, 2), 6.6, title='SINCE THEN (OCT 2025)',
+      rows=[{'event': 'FIDAL BAN · G. TORTU', 'value': '3 YRS'}, {'event': 'THE USB HE GOT', 'value': 'EMPTY'},
+            {'event': 'DOPING CLAIMS', 'value': 'NO BASIS'}], times=[0.3, 2.0, 3.7]),
+    M('poll', round(FACTS_END, 2), round(DUR - FACTS_END, 2), question='WAS THE SUSPICION ON JACOBS FAIR?', options=['FAIR', 'UNFAIR']),
 ]
 
 if __name__ == '__main__':
@@ -228,6 +238,6 @@ if __name__ == '__main__':
         if a['t'] + a['dur'] > b['t'] + .05: print(f"OVERLAP {a['t']:.2f}+{a['dur']} {a.get('kind', a.get('type'))} / {b['t']:.2f} {b.get('kind', b.get('type'))} {b.get('text', b.get('name', ''))}")
     print(len(gfx), 'graphics; voice', VOICE_END, 'DUR', DUR)
     plan = {'workdir': f'{SP}/build', 'output': f'{SP}/out/marcell_jacobs_v1.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
-            'duration': DUR, 'face': {'src': f'{SP}/face.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs,
+            'duration': DUR, 'face': {'src': f'{SP}/face_v2.mov', 'focus': [0.5, 0.5]}, 'skip_res_check': True, 'segments': segs,
             'graphics': gfx, 'ambience': []}
     json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)

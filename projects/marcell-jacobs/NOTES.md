@@ -29,8 +29,12 @@ Source: `thumb_viral/` (template now takes the hook lines as layout data).
     with President Mattarella, Budapest/Rome relays.
 - Commons refuses original files (429) and only serves standard thumbnail sizes (1920/3840) to tools; photos 2800–3500 px wide come as
   1920 px, too small for full 9:16, hence the 9:10 band for them.
-- No free photo of Giacomo Tortu exists: name tags never sit on an unidentified person; when he's named, the screen shows Filippo labelled
-  "NOT ACCUSED" or neutral footage.
+- Giacomo Tortu photo (owner's decision, Nov 9 2026): `photos/giacomo_tortu_corriereumbria.jpg`, the lead image of Corriere dell'Umbria's
+  profile "Giacomo Tortu, chi è…" (no caption naming the person). Caveat told to the owner: his own YouTube video shows the same photo while
+  saying Filippo is not accused, and it may be Filippo. Mitigations: always labelled "PER ITALIAN MEDIA · ALLEGED, NOT CONVICTED"; only on
+  beats where his voice names Giacomo (0:49, 5:02, 6:26); Filippo appears only with "NOT ACCUSED"; the ending shows Jacobs, not a Tortu.
+- Added facts (owner approved): closing "SINCE THEN (OCT 2025)" board: FIDAL tribunal banned Giacomo Tortu 36 months; the USB stick he got
+  was empty; the tribunal said his doping suspicions had no factual basis (Jacobs never investigated for doping). Source: Il Post, 9 Oct 2025.
 
 ## Facts (checked; ANSA 9 Apr 2026, LaPresse)
 - Jacobs: 100 m PB entering 2021 10.03 (2019); 9.95 Italian record (May 2021); Tokyo heat 9.94, semi 9.84, final 9.80 (Kerley 2nd 9.84);
