@@ -41,19 +41,17 @@ t_rise, t_young, t_abund, t_quick = at("that's what i expect"), at('young talent
 t_yog, t_15, t_named = at('but at the youth'), at('a 15 year old'), at('named gift bright')
 t_shine, t_last, t_step, t_drop = at('and let me just'), at('see last year'), at('this year he'), at('he just dropped')
 t_run, t_won, t_endur, t_200 = at("so he's running"), at('won the youth'), at('and he also has'), at('he ran 20.7')
-t_fresh, t_hs, t_already, t_sky, t_rate, t_2028 = at('so for a 15'), at('freshman'), at("he's running 10.2,"), at("so the sky's"), at('if you look'), at("ain't no telling")
+t_fresh, t_hs, t_already, t_sky, t_rate, t_2028 = at('so for a 15'), at('freshman'), at("he's running 10.2", 2), at("so the sky's"), at('if you look'), at("ain't no telling")
 
 segs = [
     full(0.0, CLIP, 22.6, 0.5, 0.45),                              # hook: Bright holding up his BRIGHT bib (his clip, vertical 1080x1920)
-    split(t_now, P('press_conf'), 0, 0.5, 0.3),                     # bold prediction
+    split(t_now, P('4_100_metres_relay_final'), 0, 0.5, 0.4),       # bold prediction: Paris 2024 4x100 final
     full(t_dom - 0.05, P('Tebogo_JO'), 0, 0.5, 0.3, hit=True),     # Africa to dominate: Tebogo, Paris 2024
-    split(t_nig - 0.05, P('Africa_Games_23_413'), 0, 0.5, 0.4),     # Nigeria (Africa Games 2023)
-    split(t_bot - 0.05, P('Douala_17'), 0, 0.5, 0.35),              # Botswana
-    split(t_sa - 0.05, P('ISTAF_2019_100_m_men'), 0, 0.5, 0.4),     # South Africa (Simbine)
-    split(t_mor - 0.05, P('Athletissima_2022_8359'), 0, 0.5, 0.4),  # Morocco (El Bakkali)
-    split(t_alg - 0.05, P('Sedjati'), 0, 0.5, 0.35),                # Algeria (Sedjati)
-    full(t_rise - 0.05, P('mascotte_des_JOJ_Dakar_2026_entre'), 0, 0.5, 0.45),   # Dakar 2026: first Olympic event in Africa
-    split(t_abund - 0.25, P('Diamniadio'), 0, 0.5, 0.5),
+    split(t_nig - 0.05, CLIP, 19.4, 0.5, 0.55),                     # Nigeria: NIGERIA vest (his clip)
+    split(t_bot - 0.05, P('Douala_17'), 0, 0.5, 0.35),              # Botswana (2024 African Championships)
+    split(t_sa - 0.05, P('ISTAF_2019_100_m_men'), 0, 0.5, 0.4),     # South Africa (Simbine) ... through Morocco, Algeria
+    full(t_rise - 0.05, P('press_conf'), 0, 0.5, 0.3),             # "I see their rise": Tebogo
+    split(t_abund - 0.25, CLIP, 5.0, 0.5, 0.6),                     # young talent: the Dakar youth final
     full(t_yog - 0.05, CLIP, 0.0, 0.5, 0.45, hit=True),            # the race
     full(t_shine - 0.05, CLIP, 15.6, 0.5, 0.4),                    # bib / celebration
     split(t_last - 0.05, R('photo_sign'), 0, 0.5, 0.4),
@@ -61,10 +59,10 @@ segs = [
     full(t_drop - 0.05, CLIP, 12.6, 0.5, 0.45, hit=True),          # lands on the finish line as he says 10.28
     split(t_run - 0.05, R('photo_finish'), 0, 0.5, 0.35),
     full(t_endur - 0.05, CLIP, 16.8, 0.5, 0.4),
-    split(t_fresh - 0.05, P('Tobi_Amusan_2024'), 0, 0.5, 0.35),
+    split(t_fresh - 0.05, CLIP, 13.6, 0.5, 0.75),                   # finish line + clock
     full(t_already - 0.05, CLIP, 4.0, 0.5, 0.45),
     split(t_sky - 0.05, CLIP, 21.5, 0.5, 0.4),
-    split(t_2028 - 0.05, P('Blaise_Senghor_04'), 0, 0.5, 0.4),
+    split(t_2028 - 0.05, P('Tebogo_JO'), 0, 0.5, 0.3),
 ]
 
 gfx = [
@@ -76,7 +74,7 @@ gfx = [
       rows=[{'event': 'NIGERIA', 'value': 'AMUSAN'}, {'event': 'BOTSWANA', 'value': 'TEBOGO'}, {'event': 'SOUTH AFRICA', 'value': 'SIMBINE'},
             {'event': 'MOROCCO', 'value': 'EL BAKKALI'}, {'event': 'ALGERIA', 'value': 'SEDJATI'}],
       times=[0.1, t_bot - t_nig + 0.1, t_sa - t_nig + 0.1, t_mor - t_nig + 0.1, t_alg - t_nig + 0.1]),
-    M('pin', t_rise + 0.2, 2.4, text='DAKAR 2026', sub='FIRST OLYMPIC EVENT IN AFRICA'),
+    M('keyword', t_rise + 0.9, 1.6, text='THE RISE'),
     M('keyword', t_young + 0.05, 1.8, text='YOUNG TALENT'),
     M('stamp', t_abund + 0.05, 1.4, text='ABUNDANCE', anchor='lower'),
     M('keyword', t_quick + 0.3, 1.2, text='COMING UP QUICK'),
