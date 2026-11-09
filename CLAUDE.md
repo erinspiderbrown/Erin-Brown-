@@ -171,13 +171,16 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-8. **Make a VIRAL thumbnail for every video, in the owner's YouTube-thumbnail style** (owner, Nov 2026: the plain cut-outs "aren't appeasing to an audience… they aren't viral thumbnails"; "look into the YouTube thumbnails and convert it into a TikTok thumbnail, high quality").
+8. **Thumbnail for every video. Style depends on length** (owner, Nov 2026: "only want to use that [viral] style of thumbnail when I'm making the longer 5-minute plus documentary style videos"):
+   - **5+ minute documentary-style videos:** the VIRAL thumbnail below.
+   - **Shorter videos (talking-head TikToks under ~5 min):** the cut-out style (`editor/thumb_cutout.py`, described further down), no hook text.
+   - **VIRAL thumbnail, in the owner's YouTube-thumbnail style** (owner, Nov 2026: the plain cut-outs "aren't appeasing to an audience… they aren't viral thumbnails"; "look into the YouTube thumbnails and convert it into a TikTok thumbnail, high quality").
    - **Style (from his YouTube thumbnails, e.g. "Allyson Felix: Two-Faced or Ambitious?"):** black background, the subject's face big and close (cut out of a real, sharp photo, bust fading into black), a bold 2–4 word hook in Anton, stacked: lines in green `#8DF02A` with the key word huge in glowing white (e.g. "BIGGEST / SNAKE / IN TRACK?"), and a tilted white Polaroid inset showing the other person or the key moment.
    - If the owner already made a YouTube thumbnail for the story, rebuild THAT design (same words, colors, inset) at full resolution; never just upscale the 640×480 YouTube image.
    - **Tool:** `projects/felix-tarmoh/thumb_viral/` (`thumb.html` + `render.js`, Playwright at 2× then downscaled). Copy it per video and change the text, photos and layout numbers.
    - Make both: 9:16 (1080×1920, keep the key content inside the middle 1080×1440) and 3:4 (1080×1440, laid out separately).
-   - The cut-out-only style below is the fallback when no hook text fits.
-   - Earlier (superseded) rule: cut-out style. Save `exports/thumbnails/<video>_thumb.jpg` (3:4, 1080×1440, the profile-grid cover) and `<video>_thumb_916.jpg` (9:16 upload cover), and deliver both to Dropbox with the video.
+   - For 5+ min documentaries, the cut-out style below is also the fallback when no hook text fits.
+   - **Cut-out style (shorter videos):** Save `exports/thumbnails/<video>_thumb.jpg` (3:4, 1080×1440, the profile-grid cover) and `<video>_thumb_916.jpg` (9:16 upload cover), and deliver both to Dropbox with the video.
    - **Tool:** `editor/thumb_cutout.py spec.json`. Cut subjects out with `rembg` (`isnet-general-use`, local, no credits), then clean the mask (threshold alpha > 150 and feather) to drop semi-transparent leftovers.
    - **Look:** the key athlete(s) cut out of **real photos**, layered over a real, darkened and graded background tied to the story (a stadium or venue).
      - The main subject is big and front-and-center, with a white outline, a colored glow and a drop shadow.

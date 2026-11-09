@@ -1,0 +1,10 @@
+{
+ "out": "exports/thumbnails/gift_bright",
+ "bg": {"src": "projects/bright/cutouts/bg_dakar_track.jpg", "cx": 540, "cy": 690, "zoom": 1.0, "blur": 3, "dark": 0.42, "bottom_shade": 0.3},
+ "tint": [20, 150, 60],
+ "layers": [
+  {"cut": "projects/bright/cutouts/bright_flag.png", "h": 0.62, "x": 0.7, "y": 0.86, "stroke": 8, "glow": [255, 210, 40], "glow_px": 28, "dim": 0.12, "fade_bottom": 0.3, "soft_below": 0.62, "soft_px": 26},
+  {"cut": "projects/bright/cutouts/bright_finish.png", "h": 0.86, "x": 0.38, "y": 1.04, "stroke": 12, "glow": [60, 230, 90], "glow_px": 28, "fade_bottom": 0.32, "soft_below": 0.6, "soft_px": 30}
+ ],
+ "layers_916": {"0": {"h": 0.5, "x": 0.7, "y": 0.78}, "1": {"h": 0.68, "x": 0.4, "y": 1.02}}
+}

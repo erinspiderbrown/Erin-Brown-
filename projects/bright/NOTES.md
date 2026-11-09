@@ -6,9 +6,10 @@ Alternates:
 - Nigeria's 15-Year-Old Youth Olympic Champ Is Scary Fast
 - Africa Will Dominate LA 2028… Gift Bright Is the Proof
 
-**Thumbnail** (`exports/thumbnails/gift_bright_viral_thumb.jpg` 3:4 / `_916.jpg` 9:16), owner's viral style: black background, Bright cut out of
-the owner's finish photo (rembg isnet, native size or smaller), hook "15 YEARS OLD / 10.28 / AFRICA'S NEXT STAR?", Polaroid of him holding up
-his BRIGHT bib (frame from the owner's Olympics clip). Tool: `thumb_viral/`.
+**Thumbnail** (`exports/thumbnails/gift_bright_thumb.jpg` 3:4 / `_thumb_916.jpg` 9:16): cut-out style, because this is a short
+talking-head TikTok (owner: the viral hook-text style is only for 5+ minute documentaries). Spec `thumb_spec.json`: Bright running (owner's
+finish photo, green glow) in front, Bright smiling with the Nigerian flag (owner's photo, gold glow) behind, over the Dakar start line from
+his Olympics clip (darkened, green tint, cropped below the clip's burned-in caption). Cut-outs at or below native size.
 
 ## Sources (owner's Dropbox, Nov 9 2026)
 - `raw/talking_head.mov`: 4K landscape, 77.6 s → cropped 2430x2160 @ x=705 → 1440x1280, `tighten.py` → 72.5 s (15 pauses cut).
