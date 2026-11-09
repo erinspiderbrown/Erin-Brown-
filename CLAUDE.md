@@ -173,7 +173,12 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
 8. **Thumbnail for every video. Style depends on length** (owner, Nov 2026: "only want to use that [viral] style of thumbnail when I'm making the longer 5-minute plus documentary style videos"):
    - **5+ minute documentary-style videos:** the VIRAL thumbnail below.
-   - **Shorter videos (talking-head TikToks under ~5 min):** the cut-out style (`editor/thumb_cutout.py`, described further down), no hook text.
+   - **Shorter videos (TikToks under ~5 min):** a bright SHORT-FORM viral cover, NOT the dark cut-out style (owner, Nov 2026, on the Gift Bright cut-out: "That thumbnail is trash. It has no viral or virality in it").
+     - Bright and saturated, never dark/moody grading. One 2–4 word hook in Anton, yellow `#FFE11A` with a thick black outline ("15 YEARS OLD", "HE'S ONLY 15").
+     - The key number in a red `#E8231E` box with a white border ("10.28").
+     - Either a real proof frame (the race moment, red ring + red arrow on the subject, his face cut-out in a corner) or a huge emotional face cut-out over a bright color burst.
+     - Cover any burned-in captions/logos in source frames. Cut-outs at or below ~1.1× source size.
+     - Tool: `projects/bright/thumb_short/` (`thumb.html`, `layouts.json`, `render.js`); render 9:16 and 3:4.
    - **VIRAL thumbnail, in the owner's YouTube-thumbnail style** (owner, Nov 2026: the plain cut-outs "aren't appeasing to an audience… they aren't viral thumbnails"; "look into the YouTube thumbnails and convert it into a TikTok thumbnail, high quality").
    - **Style (from his YouTube thumbnails, e.g. "Allyson Felix: Two-Faced or Ambitious?"):** black background, the subject's face big and close (cut out of a real, sharp photo, bust fading into black), a bold 2–4 word hook in Anton, stacked: lines in green `#8DF02A` with the key word huge in glowing white (e.g. "BIGGEST / SNAKE / IN TRACK?"), and a tilted white Polaroid inset showing the other person or the key moment.
    - If the owner already made a YouTube thumbnail for the story, rebuild THAT design (same words, colors, inset) at full resolution; never just upscale the 640×480 YouTube image.
