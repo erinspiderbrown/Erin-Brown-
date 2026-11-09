@@ -1,0 +1,396 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/support_v1.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 68.58,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/me_ncaa1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.6,
+   "broll": {
+    "src": "broll/relay_uk.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.8,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.0,
+   "broll": {
+    "src": "broll/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.8,
+   "broll": {
+    "src": "broll/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 24.4,
+   "broll": {
+    "src": "broll/relay_uk.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 25.9,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.2,
+   "broll": {
+    "src": "broll/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 38.0,
+   "broll": {
+    "src": "broll/me_ncaa2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 41.2,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.6,
+   "broll": {
+    "src": "broll/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 57.5,
+   "broll": {
+    "src": "broll/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.5,
+   "broll": {
+    "src": "broll/relay_uk.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   8.2,
+   9.6,
+   1.08
+  ],
+  [
+   24.5,
+   25.8,
+   1.1
+  ],
+  [
+   56.2,
+   57.4,
+   1.12
+  ],
+  [
+   64.8,
+   68.58,
+   1.08
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.6,
+   "rank": "GCU",
+   "name": "ERIN BROWN",
+   "sub": "SPRINTER  \u00b7  CREATOR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 3.4,
+   "dur": 2.9,
+   "text": "CONTENT = OPPORTUNITY",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 8.1,
+   "dur": 1.6,
+   "text": "SUPPORT YOUR PEOPLE",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 10.5,
+   "dur": 1.3,
+   "text": "COLLEGE TEAM",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.9,
+   "dur": 1.1,
+   "text": "HIGH SCHOOL TEAM",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 15.4,
+   "dur": 2.2,
+   "text": "YOUR TEAMMATES' CONTENT",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "engage",
+   "t": 18.3,
+   "dur": 6.1,
+   "items": [
+    {
+     "icon": "repost",
+     "label": "REPOST"
+    },
+    {
+     "icon": "share",
+     "label": "RESHARE"
+    },
+    {
+     "icon": "like",
+     "label": "LIKE"
+    },
+    {
+     "icon": "comment",
+     "label": "COMMENT"
+    }
+   ],
+   "times": [
+    0.5,
+    2.2,
+    3.8,
+    5.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 25.2,
+   "dur": 1.6,
+   "text": "IT'S FREE",
+   "size": 170,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 26.8,
+   "dur": 6.0,
+   "items": [
+    "YOU ENGAGE",
+    "MORE PEOPLE SEE IT",
+    "MORE OPPORTUNITY"
+   ],
+   "times": [
+    0.2,
+    3.9,
+    4.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 35.1,
+   "dur": 2.6,
+   "text": "1 HANDSHAKE AWAY",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 39.1,
+   "dur": 1.9,
+   "text": "$1M OPPORTUNITY",
+   "size": 120,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 43.9,
+   "dur": 2.0,
+   "text": "ENGAGE WITH IT",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 46.2,
+   "dur": 3.4,
+   "items": [
+    "SHARING THIS",
+    "W TEAMMATE",
+    "LET'S GOOO"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 52.0,
+   "dur": 4.1,
+   "title": "WHAT IT COSTS YOU",
+   "times": [
+    0.6,
+    2.6
+   ],
+   "rows": [
+    {
+     "event": "MONEY",
+     "value": "NOTHING"
+    },
+    {
+     "event": "TIME",
+     "value": "NOTHING"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 56.2,
+   "dur": 1.2,
+   "text": "WHY NOT?",
+   "size": 170
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 58.4,
+   "dur": 1.6,
+   "text": "COLLEGE ATHLETE",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 60.6,
+   "dur": 1.8,
+   "text": "HIGH SCHOOL ATHLETE",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 64.6,
+   "dur": 3.98,
+   "question": "DO YOU REPOST YOUR TEAMMATES?",
+   "options": [
+    "ALWAYS",
+    "NEVER"
+   ]
+  }
+ ]
+}

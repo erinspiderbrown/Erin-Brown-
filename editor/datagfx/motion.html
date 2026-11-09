@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <!-- Motion graphics that illustrate what's being said (no card background).
-     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, neon, battery, scoreboard, raceplan -->
+     kinds: stamp, keyword, pin, calendar, stopwatch, wind, spotlight, poll, padlock, subscription, tv, flow, bubbles, birthday, podcast, usmap, board, track, tweet, neon, battery, scoreboard, raceplan, engage -->
 <script src="us_states.js"></script>
 <style>
   :root { --acc: #E8231E; --acc2: #FFE11A; }
@@ -352,8 +352,35 @@ const BUILD = {
       <div style="position:absolute;left:0;top:${60 + 230}px;width:1000px;text-align:center">
         <div id="rpN" class="t-anton" style="font-size:150px;line-height:1;color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill">?</div></div>`;
   },
+  // social action buttons (like / comment / repost / share / save) pop and light up one by one on the spoken word (`times`);
+  // a "+1" floats up from each. No counts are shown, so nothing is invented.
+  engage() {
+    const IC = {
+      like: '<path d="M50 84 C 20 62 8 46 8 30 a 20 20 0 0 1 42 -8 a 20 20 0 0 1 42 8 c 0 16 -12 32 -42 54 Z"/>',
+      comment: '<path d="M14 18 h72 a8 8 0 0 1 8 8 v40 a8 8 0 0 1 -8 8 h-40 l-20 16 v-16 h-12 a8 8 0 0 1 -8 -8 v-40 a8 8 0 0 1 8 -8 Z"/><circle cx="32" cy="46" r="6" fill="#15161c"/><circle cx="50" cy="46" r="6" fill="#15161c"/><circle cx="68" cy="46" r="6" fill="#15161c"/>',
+      repost: '<path d="M22 40 v-8 a10 10 0 0 1 10 -10 h40 l-10 -10 M72 22 l-10 10" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 60 v8 a10 10 0 0 1 -10 10 h-40 l10 10 M28 78 l10 -10" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>',
+      share: '<path d="M56 16 l34 30 l-34 30 v-18 c-22 0 -38 6 -48 24 c4 -26 18 -42 48 -46 Z"/>',
+      save: '<path d="M24 10 h52 v80 l-26 -18 l-26 18 Z"/>' };
+    const on = { like: '#FF2D55', comment: '#FFFFFF', repost: '#39D353', share: '#FFE11A', save: '#FFE11A' };
+    const n = S.items.length; R.w = 1000; R.h = 470;
+    return `${S.items.map((it, i) => { const x = (1000 / n) * (i + .5);
+      return `<div id="eg${i}" style="position:absolute;left:${x - 90}px;top:120px;width:180px;text-align:center;opacity:0">
+        <div id="egb${i}" class="shadow" style="width:150px;height:150px;margin:0 auto;border-radius:50%;background:#15161c;border:4px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center">
+          <svg id="egi${i}" width="88" height="88" viewBox="0 0 100 100" style="color:#6b6f7a;fill:#6b6f7a">${IC[it.icon]}</svg></div>
+        <div class="t-anton shadow" style="font-size:52px;color:#fff;margin-top:14px;-webkit-text-stroke:3px #000;paint-order:stroke fill;white-space:nowrap">${it.label}</div>
+        <div id="egp${i}" class="t-anton" style="position:absolute;left:0;width:180px;top:0;font-size:56px;color:${on[it.icon]};-webkit-text-stroke:3px #000;paint-order:stroke fill;opacity:0">+1</div></div>`; }).join('')}`;
+  },
 };
 const ANIM = {
+  engage(t) { const T = S.times || S.items.map((_, i) => .2 + i * .4);
+    const on = { like: '#FF2D55', comment: '#FFFFFF', repost: '#39D353', share: '#FFE11A', save: '#FFE11A' };
+    S.items.forEach((it, i) => { const x = t - T[i], e = $('eg' + i), q = eBack(clamp((x + .25) / .3));
+      e.style.opacity = clamp((x + .25) / .12) * fadeOut(t); e.style.transform = `translateY(${(1 - q) * 60}px)`;
+      const lit = x >= 0, ic = $('egi' + i), b = $('egb' + i);
+      ic.style.color = ic.style.fill = lit ? on[it.icon] : '#6b6f7a';
+      b.style.transform = `scale(${lit ? 1 + .22 * Math.sin(Math.PI * clamp(x / .3)) : 1})`;
+      b.style.borderColor = lit ? on[it.icon] : 'rgba(255,255,255,.18)'; b.style.boxShadow = lit ? `0 0 30px ${on[it.icon]}88` : 'none';
+      const pp = $('egp' + i), f = clamp(x / .9); pp.style.opacity = lit ? Math.sin(Math.PI * f) * fadeOut(t) : 0; pp.style.transform = `translateY(${-40 - 90 * f}px)`; }); },
   raceplan(t) { const A = S.anim || 2.4, p = clamp((t - .3) / A), m = 400 * p, P = $('rpP'), L = P.getTotalLength();
     $('root').style.opacity = clamp(t / .2) * fadeOut(t); if ($('rpT')) $('rpT').style.transform = `scale(${.8 + .2 * eBack(t / .35)})`;
     const pt = P.getPointAtLength(Math.min(L * p, L - .01)); $('rpD').setAttribute('cx', pt.x); $('rpD').setAttribute('cy', pt.y);
@@ -500,6 +527,7 @@ const ANIM = {
 };
 
 const EVENTS = {   // semantic SFX hints, seconds from graphic start
+  engage: () => ({ pops: (S.times || S.items.map((_, i) => .2 + i * .4)).map(x => +x.toFixed(2)) }),
   raceplan: () => ({ land: +((S.reveal ?? (.3 + (S.anim || 2.4) + .2)) + .5).toFixed(2) }),
   scoreboard: () => ({ pops: (S.times || S.rows.map((_, i) => .5 + i * .45)).map(x => +x.toFixed(2)) }),
   neon: () => ({ pops: [.1] }),
