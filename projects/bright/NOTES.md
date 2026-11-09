@@ -6,10 +6,9 @@ Alternates:
 - Nigeria's 15-Year-Old Youth Olympic Champ Is Scary Fast
 - Africa Will Dominate LA 2028… Gift Bright Is the Proof
 
-**Thumbnail** (`exports/thumbnails/gift_bright_thumb.jpg` 3:4 / `_thumb_916.jpg` 9:16): cut-out style, because this is a short
-talking-head TikTok (owner: the viral hook-text style is only for 5+ minute documentaries). Spec `thumb_spec.json`: Bright running (owner's
-finish photo, green glow) in front, Bright smiling with the Nigerian flag (owner's photo, gold glow) behind, over the Dakar start line from
-his Olympics clip (darkened, green tint, cropped below the clip's burned-in caption). Cut-outs at or below native size.
+**Thumbnail** (`exports/thumbnails/gift_bright_thumb.jpg` 3:4 / `_thumb_916.jpg` 9:16): owner picked option A of the short-form viral
+covers (`thumb_short/`): the real Dakar final frame from his clip, red ring + arrow on Bright with the field behind, his face cut out in the
+corner, "15 YEARS OLD / WON BY A MILE" (yellow/white, black outline), "10.28" in a red box. The dark cut-out version was rejected ("trash").
 
 ## Sources (owner's Dropbox, Nov 9 2026)
 - `raw/talking_head.mov`: 4K landscape, 77.6 s → cropped 2430x2160 @ x=705 → 1440x1280, `tighten.py` → 72.5 s (15 pauses cut).
@@ -33,3 +32,11 @@ his Olympics clip (darkened, green tint, cropped below the clip's burned-in capt
   carry his words, and the on-screen keyword is "LAST YEAR: AGE 14".
 - "He ran 20.7": the record is 20.72 (graphic shows 20.72). "running 10.2": the time is 10.28 (graphic shows 10.28).
 - Feb 2026 Niger Delta Games reports put a "Gift Bright" at 10.57 / 10.82 in Benin City; reports conflict, not used.
+
+## Export (Nov 9 2026)
+- `exports/gift_bright_tiktok_hq.mp4` (Git LFS): 1:12.8, 1080x1920, 30 fps, two-pass 8 Mbps, SSIM 0.990; -14.1 LUFS (take was -19.0,
+  one static +5.6 dB boost with a limiter), `polish` voice chain. 19 shots (8 full-screen), 23 graphics, 9 quiet whooshes.
+- Commons downloads stalled after 5 of 13 (rate limit), so the open uses Tebogo (x2), Botswana/Douala, Simbine (ISTAF) and the Paris 4x100
+  final; Morocco and Algeria appear only as board rows.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+  Private link: https://www.dropbox.com/scl/fi/pe8f6sx1h1dml0ab7p8jx/gift_bright_tiktok_hq.mp4?rlkey=cqt4asj6e37zlhx825rqq95mv&dl=0
