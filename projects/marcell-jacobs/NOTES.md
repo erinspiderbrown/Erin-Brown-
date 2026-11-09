@@ -47,3 +47,13 @@ Source: `thumb_viral/` (template now takes the hook lines as layout data).
 - "$10,000" → it's €10,000 (euros).
 - "September 2000 through August 2021" → September 2020.
 - "Gabriel Pergraro/Progaro" → Gabriele Pegoraro.
+
+## Export (Nov 9 2026)
+- `exports/marcell_jacobs_tiktok_hq.mp4` (Git LFS): 7:10.6, 1080x1920, 30 fps, two-pass 7 Mbps, SSIM 0.996 vs master; audio copied (256k AAC).
+  His voice: `polish` chain; the take measured -17.7 LUFS, so one static +3.7 dB boost to -14.0 LUFS with a limiter (peak -1.5 dBFS).
+- 81 shots: 12 true full-screen photos, 69 in the framed band (near-full-screen 9:10 photo crops, his footage as a square band);
+  photos fill 56% of the runtime. 64 graphics. 12 quiet whooshes on the full-screen cuts.
+- build.py fix found on this edit: `fit: frame` segments used to count as full-screen, so no whooshes and only whip/glitch
+  transitions; now band <-> full-screen cuts get the in/out transitions and the whoosh.
+- Dropbox `/TikTok Exports/`: video + `marcell_jacobs_viral_thumb.jpg` + `_916.jpg`, content_hash verified on all three.
+  Private link: https://www.dropbox.com/scl/fi/et6i5z2gi5pkvo2yvdqdo/marcell_jacobs_tiktok_hq.mp4?rlkey=wlmn69fylrcrrckyisysjj9fw&dl=0
