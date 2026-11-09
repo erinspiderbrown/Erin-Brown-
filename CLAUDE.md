@@ -108,6 +108,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - `bars`: at most 4 rows in the split. For 5+ results, use a `board` (rows like "5 · YOHAN BLAKE", with a `tag`).
   - Check a frame after each data graphic lands, plus the full-screen shots, before exporting.
 
+## Converting one of the owner's YouTube videos to a TikTok (learned on Felix/Tarmoh, Nov 2026)
+- Source = his original video file (he shares it via Dropbox). Keep his real voice (`polish` chain), the same plot order, ≤ 7:00: cut channel plugs, repeated commentary and long closing morals (`projects/felix-tarmoh/cut_voice.py`).
+- Keep the interview/soundbite clips that are inside his video (they're the strongest moments).
+- **More vertical, full-screen visuals** (owner: "more vertical images and videos should have been included", while keeping it high quality). On Felix/Tarmoh almost every shot was his 1080p footage in the framed middle band; that read as too boxed-in.
+  - Aim for roughly half the runtime full-screen, alternating with the framed band every ~5–8 s.
+  - Full-screen still has to be sharp: high-res photos (≥ 3000 px long side, from Commons), vertical video, or 4K. His 1080p landscape footage stays in the framed band.
+  - Put the full-screen shots on the big beats (hook, each act turn, verdicts) and on every new person.
+- Rebuild his YouTube thumbnail as the TikTok cover (step 8).
+
 ## ElevenLabs narration (when the owner asks for his AI voice instead of a talking head)
 **This is the owner's DEFAULT VOICE for all his YouTube and TikTok videos** (approved Nov 2026: "I like that one. Set that as the default voice"). Always use this recipe. Don't improvise the model, settings or format. The owner asked "why can't you be consistent with the voices?", so match this exactly every time.
 - **Approved results:**
