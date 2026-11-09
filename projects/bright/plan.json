@@ -1,0 +1,510 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brt/out/gift_bright_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/bright/work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 72.82,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/bright/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 22.6,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.44,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Athletics_at_the_2024_Summer_O_s_4_100_metres_relay_final_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 6.15,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Letsile_Tebogo_JO_03_08_2024.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 9.73,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 19.4,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.86,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Atrletes_Botswanais_Championna__tisme_2024_Douala_17_cropped.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 11.92,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/2019_09_01_ISTAF_2019_100_m_men_Martin_Rulsch_02.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 17.33,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Letsile_Tebogo_at_a_press_conf_sima_athletics_competition_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 23.08,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 27.01,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 33.57,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 15.6,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 36.19,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/photo_sign.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 41.04,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/photo_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 43.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 12.6,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 46.12,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/photo_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 50.8,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 16.8,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.3,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 13.6,
+    "focus": [
+     0.5,
+     0.75
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 62.55,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 66.27,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/bright/raw/broll_bright_gold.mp4",
+    "ss": 21.5,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.93,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/brph/ph/Letsile_Tebogo_JO_03_08_2024.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   2.98,
+   4.48,
+   1.1
+  ],
+  [
+   25.28,
+   26.68,
+   1.08
+  ],
+  [
+   57.35,
+   58.95,
+   1.1
+  ],
+  [
+   66.32,
+   67.61999999999999,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.15,
+   "dur": 2.0,
+   "text": "AFRICA, WE SEE YOU"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 3.18,
+   "dur": 1.5,
+   "text": "BOLD PREDICTION",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.67,
+   "dur": 1.5,
+   "text": "LA 2028"
+  },
+  {
+   "type": "name",
+   "t": 6.3,
+   "dur": 2.6,
+   "rank": "BOT",
+   "name": "LETSILE TEBOGO",
+   "sub": "OLYMPIC 200M CHAMPION \u00b7 PARIS 2024"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 9.68,
+   "dur": 7.5,
+   "title": "AFRICA RISING",
+   "rows": [
+    {
+     "event": "NIGERIA",
+     "value": "AMUSAN"
+    },
+    {
+     "event": "BOTSWANA",
+     "value": "TEBOGO"
+    },
+    {
+     "event": "SOUTH AFRICA",
+     "value": "SIMBINE"
+    },
+    {
+     "event": "MOROCCO",
+     "value": "EL BAKKALI"
+    },
+    {
+     "event": "ALGERIA",
+     "value": "SEDJATI"
+    }
+   ],
+   "times": [
+    0.1,
+    1.2300000000000009,
+    2.2900000000000014,
+    3.5300000000000016,
+    4.710000000000001
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 18.28,
+   "dur": 1.6,
+   "text": "THE RISE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 20.8,
+   "dur": 1.8,
+   "text": "YOUNG TALENT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 23.38,
+   "dur": 1.4,
+   "text": "ABUNDANCE",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 25.58,
+   "dur": 1.2,
+   "text": "COMING UP QUICK"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 27.36,
+   "dur": 2.4,
+   "text": "YOUTH OLYMPICS",
+   "sub": "DAKAR, SENEGAL \u00b7 NOV 2026"
+  },
+  {
+   "type": "name",
+   "t": 30.13,
+   "dur": 3.2,
+   "rank": "NGR",
+   "name": "GIFT BRIGHT",
+   "sub": "AGE 15 \u00b7 100M / 200M"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.72,
+   "dur": 1.6,
+   "text": "SHINES BRIGHT"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 36.64,
+   "dur": 1.6,
+   "text": "LAST YEAR: AGE 14"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 41.69,
+   "dur": 1.5,
+   "text": "LEVEL UP",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 43.88,
+   "dur": 2.3,
+   "value": "10.28",
+   "unit": "SECONDS",
+   "label": "100M PB \u00b7 YOUTH OLYMPIC FINAL",
+   "anim": 1.0
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 46.32,
+   "dur": 3.3,
+   "label": "Dakar 2026 \u00b7 Boys' 100m Final",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.4,
+   "items": [
+    {
+     "name": "1 \u00b7 Bright (NGR)",
+     "value": "10.28"
+    },
+    {
+     "name": "2 \u00b7 Zhang (CHN)",
+     "value": "10.57"
+    },
+    {
+     "name": "3 \u00b7 Dolega (POL)",
+     "value": "10.61"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 49.87,
+   "dur": 1.5,
+   "text": "1ST NIGERIAN EVER",
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 51.35,
+   "dur": 1.4,
+   "text": "SPEED ENDURANCE"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 53.15,
+   "dur": 2.4,
+   "value": "20.72",
+   "unit": "SECONDS",
+   "label": "200M PB \u00b7 JULY 2026",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 61.49,
+   "dur": 1.6,
+   "text": "HIGH SCHOOL FRESHMAN"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 62.55,
+   "dur": 2.6,
+   "title": "GIFT BRIGHT \u00b7 AGE 15",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "10.28"
+    },
+    {
+     "event": "200M",
+     "value": "20.72"
+    }
+   ],
+   "times": [
+    0.1,
+    0.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 66.62,
+   "dur": 1.3,
+   "text": "SKY'S THE LIMIT"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 69.78,
+   "dur": 3.0399999999999894,
+   "question": "AFRICA RUNS LA 2028?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
