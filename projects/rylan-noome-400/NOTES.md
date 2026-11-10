@@ -1,4 +1,6 @@
-# Rylan Noome roast (Nov 2026)
+# Rylan Noome roast: the 400 and the power clean (Nov 10 2026)
+
+Separate from the earlier 300m video (folder `projects/rylan-noome/` on branch `claude/dazzling-gates-a1dtnf`), hence the `-400` name.
 
 **Title (YouTube Shorts / TikTok), suggested:** Rylan Noome Ran 50.8 in the 400… He's Built Like a Deep Freezer 😭
 Alternates:
@@ -24,3 +26,9 @@ bar racked (frame from the owner's power clean clip), "BUILT LIKE A / DEEP FREEZ
 - **Owner's numbers, not found in any published results:** 300m 35.3 (~a month ago), 400m 50.8, 135 kg power clean, "200 pounds",
   "third meet this season", NZ nationals in March/April. Shown as he says them (stopwatches, counter, season board); not in the
   Athletics NZ weekly round-ups for 2 and 9 Nov 2026.
+
+## Export (Nov 10 2026)
+- `exports/rylan_noome_400_tiktok_hq.mp4` (Git LFS): 1:59, 1080x1920, 30 fps, two-pass 8 Mbps, SSIM 0.985; -14.1 LUFS (take -16.9,
+  one static +2.9 dB boost with a limiter), `polish` chain. 24 shots (9 full-screen, 2 freeze pop-outs), 29 graphics, no name tags,
+  slams instead of stamps, 12 quiet whooshes.
+- The owner chose to skip the earlier 300m clip (720x1280, below the 1080p rule; not in his Dropbox): the 300 part uses the 400 footage.

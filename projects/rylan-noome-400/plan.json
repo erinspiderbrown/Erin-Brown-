@@ -1,11 +1,11 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ryl/build",
  "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/ryl/out/rylan_noome_v1.mp4",
- "words": "/home/user/Erin-Brown-/projects/rylan-noome/words_final.json",
+ "words": "/home/user/Erin-Brown-/projects/rylan-noome-400/words_final.json",
  "voice_ss": 0.0,
  "duration": 119.07,
  "face": {
-  "src": "/home/user/Erin-Brown-/projects/rylan-noome/work/face_tight.mov",
+  "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/work/face_tight.mov",
   "focus": [
    0.5,
    0.5
@@ -28,7 +28,7 @@
    "type": "split",
    "start": 3.25,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 0.0,
     "focus": [
      0.5,
@@ -40,7 +40,7 @@
    "type": "full",
    "start": 10.25,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 2.0,
     "focus": [
      0.5,
@@ -53,7 +53,7 @@
    "type": "split",
    "start": 16.29,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 20.0,
     "focus": [
      0.5,
@@ -65,7 +65,7 @@
    "type": "split",
    "start": 19.97,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/photo_kick.jpg",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/photo_kick.jpg",
     "ss": 0,
     "focus": [
      0.6,
@@ -77,7 +77,7 @@
    "type": "split",
    "start": 22.36,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/photo_blocks.jpg",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/photo_blocks.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -89,7 +89,7 @@
    "type": "full",
    "start": 26.01,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 47.0,
     "focus": [
      0.5,
@@ -102,7 +102,7 @@
    "type": "split",
    "start": 30.73,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 51.5,
     "focus": [
      0.5,
@@ -114,7 +114,7 @@
    "type": "full",
    "start": 32.99,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/power_clean.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/power_clean.mp4",
     "ss": 0.5,
     "focus": [
      0.5,
@@ -126,7 +126,7 @@
    "type": "split",
    "start": 37.28,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 40.0,
     "focus": [
      0.5,
@@ -138,7 +138,7 @@
    "type": "full",
    "start": 43.29,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/power_clean.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/power_clean.mp4",
     "ss": 14.5,
     "focus": [
      0.5,
@@ -150,7 +150,7 @@
    "type": "split",
    "start": 48.71,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/photo_blocks.jpg",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/photo_blocks.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -162,7 +162,7 @@
    "type": "full",
    "start": 52.25,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 44.0,
     "focus": [
      0.5,
@@ -174,7 +174,7 @@
    "type": "split",
    "start": 57.77,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/power_clean.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/power_clean.mp4",
     "ss": 3.0,
     "focus": [
      0.5,
@@ -186,7 +186,7 @@
    "type": "full",
    "start": 60.59,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/power_clean.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/power_clean.mp4",
     "ss": 7.4,
     "focus": [
      0.5,
@@ -199,7 +199,7 @@
    "type": "split",
    "start": 68.11,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/photo_kick.jpg",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/photo_kick.jpg",
     "ss": 0,
     "focus": [
      0.35,
@@ -211,7 +211,7 @@
    "type": "split",
    "start": 74.41,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 0.5,
     "focus": [
      0.5,
@@ -223,7 +223,7 @@
    "type": "split",
    "start": 81.07,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 25.0,
     "focus": [
      0.5,
@@ -235,7 +235,7 @@
    "type": "full",
    "start": 84.49,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 4.5,
     "focus": [
      0.5,
@@ -247,7 +247,7 @@
    "type": "split",
    "start": 88.73,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/photo_blocks.jpg",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/photo_blocks.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -259,7 +259,7 @@
    "type": "split",
    "start": 94.34,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 49.0,
     "focus": [
      0.5,
@@ -284,7 +284,7 @@
    "type": "split",
    "start": 105.86,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/race_400.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/race_400.mp4",
     "ss": 30.0,
     "focus": [
      0.5,
@@ -296,7 +296,7 @@
    "type": "split",
    "start": 114.06,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/rylan-noome/raw/power_clean.mp4",
+    "src": "/home/user/Erin-Brown-/projects/rylan-noome-400/raw/power_clean.mp4",
     "ss": 15.0,
     "focus": [
      0.5,
