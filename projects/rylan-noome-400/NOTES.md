@@ -32,3 +32,5 @@ bar racked (frame from the owner's power clean clip), "BUILT LIKE A / DEEP FREEZ
   one static +2.9 dB boost with a limiter), `polish` chain. 24 shots (9 full-screen, 2 freeze pop-outs), 29 graphics, no name tags,
   slams instead of stamps, 12 quiet whooshes.
 - The owner chose to skip the earlier 300m clip (720x1280, below the 1080p rule; not in his Dropbox): the 300 part uses the 400 footage.
+- Dropbox `/TikTok Exports/`: `rylan_noome_400_tiktok_hq.mp4` + `rylan_noome_400_thumb(_916).jpg`, content_hash verified on all three.
+  Link: https://www.dropbox.com/scl/fi/5yqkomk5ozvtd9hekqynz/rylan_noome_400_tiktok_hq.mp4?rlkey=jtpyi1ulhg6j1esp00f4zf4rx&dl=0
