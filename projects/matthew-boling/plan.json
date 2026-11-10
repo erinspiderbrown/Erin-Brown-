@@ -252,7 +252,7 @@
    "start": 77.2,
    "broll": {
     "src": "yt/nbc.mp4",
-    "ss": 28.0,
+    "ss": 27.0,
     "focus": [
      0.5,
      0.5
@@ -312,10 +312,10 @@
    "start": 101.9,
    "broll": {
     "src": "yt/nbc.mp4",
-    "ss": 58.0,
+    "ss": 59.0,
     "focus": [
      0.5,
-     0.5
+     0.4
     ]
    }
   },
@@ -672,11 +672,11 @@
    "type": "split",
    "start": 249.6,
    "broll": {
-    "src": "yt/nbc.mp4",
-    "ss": 32.0,
+    "src": "ph/c1.jpg",
+    "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.6,
+     0.4
     ]
    }
   },

@@ -12,47 +12,29 @@ def ph(name, fb):
     p = f'ph/{name}.jpg' if not name.startswith('gph/') else name + '.jpg'
     return p if ok(p) else (f'ph/{fb}.jpg' if not fb.startswith('gph/') else fb + '.jpg')
 
-# ---- top track (split segments only show it): (t, src, ss, focus) ----
-TOP = [
- (0.0, NBC, 0.2, [0.5, 0.5]),     # 2019 state meet race
- (3.0, FOX, 0.0, [0.42, 0.5]),    # the 9.98 regional (NFHS broadcast, upscaled)
- (15.6, NBC, 9.0, [0.55, 0.4]),   # Boling looks up at the board
- (21.6, NBC, 27.0, [0.5, 0.45]),  # running at practice
- (24.5, NBC, 6.0, [0.5, 0.5]),    # finish
- (44.6, ABCI, 0.1, [0.42, 0.4]),  # ABC13 interview
- (53.4, NBC, 0.0, [0.5, 0.5]),    # state meet race (10.13)
- (64.4, NBC, 9.0, [0.55, 0.4]),
- (67.2, NBC, 44.0, [0.5, 0.5]),   # sprint start practice
- (82.2, NBC, 12.0, [0.6, 0.4]),   # Boling face
- (97.6, NBC, 52.0, [0.6, 0.4]),   # Boling face
- (101.9, NBC, 23.4, [0.5, 0.5]),  # stairs silhouette
- (108.4, NBC, 27.5, [0.5, 0.45]), # running toward camera
- (116.9, NBC, 11.85, [0.6, 0.4]), # soundbite: surreal
- (120.35, NBC, 14.86, [0.6, 0.45]),# coach
- (123.3, NBC, 66.3, [0.5, 0.5]),  # in the blocks
- (143.3, NBC, 70.4, [0.5, 0.5]),
- (160.3, NBC, 44.3, [0.5, 0.5]),
- (178.8, NBC, 28.0, [0.5, 0.45]),
- (184.8, NBC, 7.0, [0.5, 0.5]),
- (190.4, NBC, 62.0, [0.5, 0.5]),
- (200.4, NBC, 42.0, [0.55, 0.5]),
- (208.9, NBC, 19.2, [0.5, 0.5]),
- (236.3, NBC, 20.0, [0.55, 0.5]),  # coach + Boling walking the track
- (245.0, NBC, 42.5, [0.5, 0.5]),
- (249.6, NBC, 36.62, [0.4, 0.4]),  # soundbite: dad
- (255.2, NBC, 32.0, [0.5, 0.5]),   # parents
- (258.8, NBC, 0.0, [0.5, 0.5]),    # "since that video in 2019"
- (290.8, NBC, 47.0, [0.5, 0.5]),
- (305.0, NBC, 1.0, [0.5, 0.5]),
- (329.1, NBC, 12.5, [0.6, 0.4]),
- (333.3, NBC, 51.72, [0.6, 0.4]),  # soundbite: Bolt
- (337.0, FOX, 3.0, [0.45, 0.5]),
- (346.9, NBC, 9.2, [0.55, 0.4]),
- (352.9, NBC, 69.0, [0.5, 0.5]),   # stopwatch
- (357.4, NBC, 23.4, [0.5, 0.5]),
- (363.9, NBC, 55.0, [0.5, 0.5]),
- (373.9, NBC, 12.5, [0.6, 0.4]),
-]
+# ---- top track: clean source ranges only (never drifts into an unrelated interview) ----
+POOL = {
+ 'race': (NBC, 0.2, 8.4, [0.5, 0.5]), 'board': (NBC, 9.0, 11.8, [0.55, 0.4]), 'intA': (NBC, 12.0, 14.5, [0.6, 0.4]),
+ 'walk': (NBC, 19.6, 22.4, [0.55, 0.5]), 'stairs': (NBC, 23.4, 26.4, [0.5, 0.5]), 'run': (NBC, 27.0, 30.6, [0.5, 0.45]),
+ 'elevate': (NBC, 42.0, 43.8, [0.6, 0.5]), 'start': (NBC, 44.0, 48.0, [0.5, 0.5]), 'intB': (NBC, 51.8, 54.6, [0.6, 0.4]),
+ 'twins': (NBC, 55.0, 58.6, [0.5, 0.5]), 'prom': (NBC, 59.0, 61.8, [0.5, 0.4]), 'blocks': (NBC, 66.3, 68.6, [0.5, 0.5]),
+ 'watch': (NBC, 69.0, 69.9, [0.5, 0.5]), 'sprint': (NBC, 70.0, 71.8, [0.5, 0.5]),
+ 'fox': (FOX, 0.0, 4.5, [0.42, 0.5]), 'fox2': (FOX, 4.5, 8.3, [0.42, 0.5]), 'fox3': (FOX, 8.3, 11.9, [0.42, 0.5]), 'foxall': (FOX, 0.0, 11.9, [0.42, 0.5]), 'abci': (ABCI, 0.1, 8.3, [0.42, 0.4]),
+ 'surreal': (NBC, 11.85, 14.80, [0.6, 0.4]), 'coach': (NBC, 14.86, 20.05, [0.6, 0.45]), 'dad': (NBC, 36.62, 41.92, [0.4, 0.4]),
+ 'boltq': (NBC, 51.72, 54.95, [0.6, 0.4]),
+}
+# per split segment start: which clips fill the top half, in order (cycled if the segment is longer)
+TOPSEQ = {
+ 0.0: ['race'], 3.0: ['fox'], 7.5: ['fox2'], 11.3: ['fox3', 'board'], 15.6: ['board', 'intA'], 21.6: ['run', 'race'], 28.0: ['race'],
+ 32.4: ['intB'], 44.6: ['abci'], 49.0: ['abci'], 53.4: ['board', 'intA'], 58.6: ['race'], 64.4: ['board', 'run'],
+ 77.2: ['start', 'sprint'], 82.2: ['intA', 'walk'], 97.6: ['intB', 'stairs'], 101.9: ['stairs', 'run', 'intA'],
+ 108.4: ['run'], 116.9: ['surreal'], 120.35: ['coach'], 138.3: ['blocks', 'sprint', 'start'], 160.3: ['start', 'run'],
+ 174.8: ['sprint', 'watch', 'blocks'], 178.8: ['run', 'intB'], 190.4: ['twins', 'prom'], 200.4: ['elevate', 'start'],
+ 204.8: ['walk', 'blocks'], 212.4: ['stairs', 'run'], 236.3: ['walk', 'elevate'], 241.0: ['start'], 245.0: ['elevate', 'stairs'],
+ 249.6: ['dad'], 258.8: ['race', 'board'], 280.1: ['stairs', 'blocks'], 290.8: ['start', 'run', 'stairs'],
+ 298.8: ['sprint', 'watch', 'intA'], 329.1: ['intA', 'intB'], 333.3: ['boltq'], 337.0: ['foxall'], 346.9: ['board', 'intA', 'stairs'],
+ 357.4: ['blocks', 'start'], 369.9: ['intB', 'run'],
+}
 # ---- segments: (start, type, src, ss, focus, extra) ----
 c1, c2 = 'ph/c1.jpg', 'ph/c2.jpg'
 TRIALS24 = ph('c3', 'gph/zurich400'); BUD = ph('c4', 'c2'); MIX = ph('c6', 'gph/istanbul400')
@@ -77,12 +59,12 @@ SEG = [
  (64.4, 'split', NBC, 7.0, [0.5, 0.5], {}),
  (67.2, 'full', G('istanbul400'), 0, [0.35, 0.5], {}),
  (71.2, 'full', G('zurich400'), 0, [0.62, 0.5], {}),
- (77.2, 'split', NBC, 28.0, [0.5, 0.5], {}),
+ (77.2, 'split', NBC, 27.0, [0.5, 0.5], {}),
  (82.2, 'split', c2, 0, [0.5, 0.5], {}),
  (85.6, 'full', G('getset'), 0, [0.45, 0.6], {}),
  (90.8, 'full', G('istanbul400'), 0, [0.75, 0.5], {}),
  (97.6, 'split', NBC, 44.3, [0.5, 0.5], {}),
- (101.9, 'split', NBC, 58.0, [0.5, 0.5], {}),
+ (101.9, 'split', NBC, 59.0, [0.5, 0.4], {}),
  (108.4, 'split', NBC, 66.3, [0.5, 0.5], {}),
  (111.2, 'full', c2, 0, [0.5, 0.25], {}),
  (116.9, 'split', NBC, 6.0, [0.5, 0.5], {}),
@@ -111,7 +93,7 @@ SEG = [
  (236.3, 'split', c2, 0, [0.5, 0.5], {}),
  (241.0, 'split', NBC, 42.0, [0.6, 0.5], {}),
  (245.0, 'split', G('getset'), 0, [0.45, 0.6], {}),
- (249.6, 'split', NBC, 32.0, [0.5, 0.5], {}),
+ (249.6, 'split', c1, 0, [0.6, 0.4], {}),
  (255.7, 'full', G('getset'), 0, [0.5, 0.6], {}),
  (258.8, 'split', NBC, 6.0, [0.5, 0.5], {}),
  (263.8, 'full', G('zurich400'), 0, [0.5, 0.5], {}),
@@ -224,6 +206,20 @@ GFX = [
  {"type": "motion", "kind": "keyword", "t": 374.3, "dur": 3.5, "text": "BOLING HYPE TRAIN 2019?"},
  {"type": "motion", "kind": "stamp", "t": 377.9, "dur": 2.5, "text": "BE HONEST", "anchor": "upper"},
 ]
+TL = {x['label']: x['out_s'] for x in json.load(open('work/timeline.json'))}
+SYNC = {'surreal': ('nbc_surreal', 11.85), 'coach': ('nbc_coach', 14.86), 'dad': ('nbc_dad', 36.62), 'boltq': ('nbc_bolt', 51.72),
+        'abci': ('abc_boling', 0.1)}
+TOP = []
+_starts = [x[0] for x in SEG] + [DUR]
+for i, (st, ty, *_r) in enumerate(SEG):
+    if ty != 'split': continue
+    en = _starts[i + 1]; seq = TOPSEQ.get(st, ['run']); t = st; k = 0
+    while t < en - 0.05:
+        key = seq[k % len(seq)]; src, a, b, foc = POOL[key]; ss = a
+        if key in SYNC:                      # interview clips: lip-synced to where their audio sits in the voice track
+            ss = max(0.0, a - 0.3, SYNC[key][1] + (t - TL[SYNC[key][0]]))
+        d = min(b - ss, en - t) if key not in SYNC else en - t
+        TOP.append((round(t, 3), src, round(ss, 3), foc)); t += d; k += 1
 segs = []
 for s, ty, src, ss, foc, ex in SEG:
     ex = dict(ex); cr = ex.pop('crop', None)
