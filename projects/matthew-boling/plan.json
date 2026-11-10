@@ -115,14 +115,14 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 32.4,
    "broll": {
-    "src": "gph/istanbul400.jpg",
-    "ss": 0,
+    "src": "yt/nbc.mp4",
+    "ss": 49.0,
     "focus": [
      0.5,
-     0.35
+     0.4
     ]
    }
   },
@@ -588,11 +588,17 @@
    "type": "full",
    "start": 217.0,
    "broll": {
-    "src": "gph/istanbul400.jpg",
+    "src": "ph/c1.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.4
+     0.3
+    ],
+    "fullcrop": [
+     1260,
+     2240,
+     1650,
+     0
     ]
    }
   },
@@ -603,8 +609,8 @@
     "src": "ph/c2.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.3
+     0.52,
+     0.4
     ]
    }
   },
@@ -616,7 +622,13 @@
     "ss": 0,
     "focus": [
      0.5,
-     0.25
+     0.5
+    ],
+    "fullcrop": [
+     1080,
+     1920,
+     1450,
+     560
     ]
    }
   },
@@ -672,11 +684,11 @@
    "type": "full",
    "start": 255.7,
    "broll": {
-    "src": "gph/zurich400.jpg",
+    "src": "gph/getset.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.4
+     0.6
     ]
    }
   },
@@ -708,10 +720,10 @@
    "type": "full",
    "start": 268.8,
    "broll": {
-    "src": "gph/istanbul400.jpg",
+    "src": "ph/c1.jpg",
     "ss": 0,
     "focus": [
-     0.3,
+     0.62,
      0.4
     ]
    }
@@ -720,11 +732,11 @@
    "type": "full",
    "start": 273.4,
    "broll": {
-    "src": "gph/zurich400.jpg",
+    "src": "gph/wpgtrack.jpg",
     "ss": 0,
     "focus": [
-     0.4,
-     0.35
+     0.5,
+     0.5
     ]
    }
   },
@@ -793,11 +805,17 @@
    "type": "full",
    "start": 313.5,
    "broll": {
-    "src": "ph/c2.jpg",
+    "src": "ph/c1.jpg",
     "ss": 0,
     "focus": [
      0.5,
      0.3
+    ],
+    "fullcrop": [
+     1260,
+     2240,
+     1650,
+     0
     ]
    }
   },
@@ -826,14 +844,14 @@
    }
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 329.1,
    "broll": {
-    "src": "gph/zurich400.jpg",
-    "ss": 0,
+    "src": "yt/nbc.mp4",
+    "ss": 48.9,
     "focus": [
      0.5,
-     0.35
+     0.4
     ]
    }
   },
@@ -865,11 +883,17 @@
    "type": "full",
    "start": 341.2,
    "broll": {
-    "src": "gph/istanbul400.jpg",
+    "src": "ph/c2.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.35
+     0.3
+    ],
+    "fullcrop": [
+     1080,
+     1920,
+     1450,
+     560
     ]
    }
   },
@@ -1279,7 +1303,7 @@
    "kind": "keyword",
    "t": 123.5,
    "dur": 2.4,
-   "text": "BIGGER STAGE = BIGGER PERFORMANCE"
+   "text": "BIG-STAGE PERFORMER"
   },
   {
    "type": "motion",
@@ -1522,14 +1546,21 @@
    "sub": "2023 WORLD CHAMPIONSHIPS"
   },
   {
-   "type": "data",
-   "kind": "counter",
+   "type": "motion",
+   "kind": "board",
    "t": 221.8,
    "dur": 4.6,
-   "value": "3:08.80",
-   "unit": "",
-   "label": "MIXED 4X400 \u00b7 WORLD RECORD",
-   "sub": "BOLING \u00b7 3RD LEG"
+   "title": "MIXED 4X400 \u00b7 BUDAPEST",
+   "rows": [
+    {
+     "event": "USA \u00b7 BOLING 3RD LEG",
+     "value": "3:08.80",
+     "tag": "WR"
+    }
+   ],
+   "times": [
+    0.4
+   ]
   },
   {
    "type": "motion",
@@ -1809,7 +1840,7 @@
   {
    "type": "name",
    "t": 329.4,
-   "dur": 3.4,
+   "dur": 2.3,
    "rank": "JAM",
    "name": "USAIN BOLT",
    "sub": "WORLD RECORD \u00b7 9.58"
@@ -1885,18 +1916,11 @@
   },
   {
    "type": "motion",
-   "kind": "engage",
-   "t": 377.6,
-   "dur": 2.8,
-   "items": [
-    {
-     "icon": "comment",
-     "label": "BE HONEST"
-    }
-   ],
-   "times": [
-    0.3
-   ]
+   "kind": "stamp",
+   "t": 377.9,
+   "dur": 2.5,
+   "text": "BE HONEST",
+   "anchor": "upper"
   }
  ]
 }

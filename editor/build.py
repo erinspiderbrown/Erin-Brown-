@@ -461,14 +461,19 @@ def main(plan_path):
     }
     vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
+    cues = sfx_cues(plan); mix = [f'[0:a]{vchain},asplit=2[vo][vk]' if cues else f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
         ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
+    if cues:   # whooshes duck under the voice (sidechain on the SFX bus only), so they never push the voice's peaks up
+        mix.append(''.join(f'[s{j}]' for j in range(len(cues))) + f'amix=inputs={len(cues)}:normalize=0:duration=longest[sb]')
+        mix.append('[sb][vk]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=180[sd]')
+        mixed = '[vo][sd]amix=inputs=2:normalize=0:duration=first'
+    else:
+        mixed = '[vo]anull'
     m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
@@ -481,7 +486,9 @@ def main(plan_path):
         # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
         # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
         # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
-        pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+        vm = subprocess.run(['ffmpeg', '-hide_banner', *ain[:6], '-af', f'{vchain},ebur128=framelog=quiet:peak=sample', '-f', 'null', '-'],
+                            capture_output=True, text=True).stderr
+        pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', vm)[-1])      # the voice's own peak, not voice + whooshes
         gain = min(0.0, -0.5 - pk)
         ln = f'volume={gain:.2f}dB' if gain < -0.01 else 'anull'
     print(f'voice: {li:.1f} LUFS, static gain {gain:+.2f} dB' + (', no limiter' if gain <= 0.05 else ', limiter'))

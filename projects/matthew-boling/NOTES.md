@@ -21,6 +21,7 @@ Story order: pt 1, part 2, pt 3–6, pt 7 (2025), pt 7 (1) (closing verdict).
 - Pt 1 was recorded hotter (−10.5 LUFS, peaking +0.8 dBFS). It gets only the minimum static trim to a −0.5 dBFS peak (−1.3 dB) and stays louder than −14.
 - Parts 2–8 measured −14.6 to −15.6 LUFS. Each gets one static lift to −14 (+0.6 to +1.6 dB) with a peak limiter. Nothing is turned down.
 - The finished voice track measures −13.9 LUFS with a −0.5 dBFS peak.
+- **Whooshes:** they now duck under the voice (sidechain on the sound-effects bus only). Before, a whoosh landing on a loud word pushed the mix to −0.1 dBFS, and `build.py` trimmed everything 0.4 dB. That trim is now decided by the voice's own peak, so the voice is never turned down.
 
 **Archival soundbites**, each set to about −16 LUFS so it sits just under the voice:
 | Where | Clip |
@@ -31,6 +32,15 @@ Story order: pt 1, part 2, pt 3–6, pt 7 (2025), pt 7 (1) (closing verdict).
 | 2:00 | Chad Collier, his Strake Jesuit coach (NBC): "The bigger the stage, the bigger the performance." |
 | 4:10 | Mark Boling, his dad (NBC): "If he says I'm going to the Olympics… I'll buy the tickets" |
 | 5:33 | Boling to NBC: "I still have a lot of work to do if I want to get close to him" (Bolt) |
+
+## Photos I couldn't get
+Wikimedia Commons blocked this session (HTTP 429) for the whole edit. Flickr's image server refused it too (403).
+- **Missing:** the freely licensed photos of Boling at Budapest 2023, the mixed-relay final, the 2024 Trials, and the Usain Bolt photos.
+- **What's used instead:**
+  - Boling's own 2020 Georgia photos, wide and tight crops
+  - the Bolt shots inside the NBC piece
+  - neutral track shots (blocks, start line)
+- If you want the real Budapest/Trials photos in, they can be swapped in once Commons lets this session through again.
 
 ## Footage
 - **NBC Nightly News**, "Track star goes from high school commencement to Olympic training" (2019, 1080p). Used in the split only, because 1080p landscape can't go full-screen.
