@@ -1,0 +1,1902 @@
+{
+ "workdir": "build",
+ "output": "out/matthew_boling.mp4",
+ "words": "work/words.json",
+ "voice_ss": 0.0,
+ "duration": 380.4,
+ "face": {
+  "src": "top.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "vignette=PI/6",
+ "zooms": [
+  [
+   42.6,
+   44.4,
+   1.1
+  ],
+  [
+   154.7,
+   156.9,
+   1.08
+  ],
+  [
+   364.1,
+   366.3,
+   1.08
+  ]
+ ],
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "up/abc_race2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.0,
+   "broll": {
+    "src": "up/abc_race1.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 7.5,
+   "broll": {
+    "src": "up/abc_race2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 11.3,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.6,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.6,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.0,
+   "broll": {
+    "src": "up/abc_race1.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 32.4,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 35.2,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 38.2,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 42.3,
+   "broll": {
+    "src": "gph/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 44.6,
+   "broll": {
+    "src": "up/abc_race2.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.0,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.4,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 9.2,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 58.6,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.4,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 7.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 67.2,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 71.2,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 77.2,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 28.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 82.2,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 85.6,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 90.8,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 97.6,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 44.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 101.9,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 58.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 108.4,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 66.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 111.2,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 116.9,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 120.35,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 20.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 126.2,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.52,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 131.6,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 138.3,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 143.3,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 149.9,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 154.7,
+   "broll": {
+    "src": "gph/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 160.3,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 165.2,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 170.6,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.48,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 174.8,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 178.8,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 184.8,
+   "broll": {
+    "src": "gph/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 190.4,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.8,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 196.9,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 200.4,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 204.8,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 208.9,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.15,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 212.4,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 217.0,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 227.2,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 231.8,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 236.3,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 241.0,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 42.0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 245.0,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 249.6,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 32.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 255.7,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 258.8,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 263.8,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 268.8,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 273.4,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 280.1,
+   "broll": {
+    "src": "gph/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 286.2,
+   "broll": {
+    "src": "gph/markel.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 290.8,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 298.8,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 305.0,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 313.5,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 318.9,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 322.2,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 329.1,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 333.3,
+   "broll": {
+    "src": "yt/nbc.mp4",
+    "ss": 49.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 337.0,
+   "broll": {
+    "src": "up/abc_race2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 341.2,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 346.9,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 352.9,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 357.4,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 363.9,
+   "broll": {
+    "src": "ph/c1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 369.9,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 373.9,
+   "broll": {
+    "src": "ph/c2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.25,
+   "dur": 2.4,
+   "text": "WHITE LIGHTNING"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 3.1,
+   "dur": 2.7,
+   "items": [
+    "2017",
+    "2018",
+    "2019",
+    "2020"
+   ],
+   "hi": [
+    2
+   ],
+   "label": "APRIL 27, 2019"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 5.7,
+   "dur": 2.9,
+   "text": "HOUSTON, TEXAS",
+   "sub": "6A REGION III MEET"
+  },
+  {
+   "type": "name",
+   "t": 8.7,
+   "dur": 2.7,
+   "rank": "HS",
+   "name": "MATTHEW BOLING",
+   "sub": "STRAKE JESUIT \u00b7 SENIOR"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 11.6,
+   "dur": 3.8,
+   "value": "9.98",
+   "unit": "100M",
+   "label": "HIGH SCHOOL \u00b7 ALL CONDITIONS",
+   "anim": 0.9
+  },
+  {
+   "type": "motion",
+   "kind": "wind",
+   "t": 16.1,
+   "dur": 2.4,
+   "text": "WIND +4.2 M/S",
+   "sub": "LEGAL LIMIT +2.0"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 18.8,
+   "dur": 1.8,
+   "text": "WIND-AIDED",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "scoreboard",
+   "t": 21.0,
+   "dur": 3.5,
+   "title": "6A BOYS 100M \u2014 REGION III",
+   "times": [
+    0.4,
+    0.8,
+    1.1,
+    1.4
+   ],
+   "rows": [
+    {
+     "place": "1",
+     "name": "MATTHEW BOLING",
+     "team": "STRAKE JESUIT",
+     "time": "9.98"
+    },
+    {
+     "place": "2",
+     "name": "LANCE BROOME",
+     "team": "SEVEN LAKES",
+     "time": "10.27"
+    },
+    {
+     "place": "3",
+     "name": "DORIAN HEWITT",
+     "team": "NORTH SHORE",
+     "time": "10.33"
+    },
+    {
+     "place": "4",
+     "name": "CAMERON CROWE",
+     "team": "CYPRESS RIDGE",
+     "time": "10.47"
+    }
+   ],
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "tv",
+   "t": 24.6,
+   "dur": 4.9,
+   "text": "ESPN \u00b7 CBS \u00b7 FOX \u00b7 SI"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 30.2,
+   "dur": 2.2,
+   "text": "\"WHITE LIGHTNING\""
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 32.6,
+   "dur": 2.6,
+   "items": [
+    "THE NEXT USAIN BOLT",
+    "FASTEST HS KID EVER",
+    "OLYMPICS NEXT YEAR"
+   ]
+  },
+  {
+   "type": "name",
+   "t": 35.5,
+   "dur": 2.6,
+   "rank": "USA",
+   "name": "MATTHEW BOLING",
+   "sub": "\"WHITE LIGHTNING\""
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 38.6,
+   "dur": 2.8,
+   "text": "7 YEARS LATER",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 42.6,
+   "dur": 1.8,
+   "text": "WHAT HAPPENED?",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 44.8,
+   "dur": 7.8,
+   "text": "MATTHEW BOLING",
+   "tag": "THE DAY AFTER \u00b7 ABC13",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 57.1,
+   "dur": 1.6,
+   "text": "NOT A FLUKE",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 59.0,
+   "dur": 2.6,
+   "text": "TEXAS STATE MEET",
+   "sub": "UIL 6A \u00b7 AUSTIN \u00b7 MAY 2019"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 61.6,
+   "dur": 3.6,
+   "value": "10.13",
+   "unit": "S",
+   "label": "U.S. HIGH SCHOOL RECORD",
+   "sub": "100M \u00b7 WIND-LEGAL"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 67.4,
+   "dur": 3.9,
+   "title": "LONG JUMP \u00b7 2019",
+   "rows": [
+    {
+     "event": "STATE TITLE",
+     "value": "25'4.5\"",
+     "tag": "WIND+"
+    },
+    {
+     "event": "PB \u00b7 TEXAS RELAYS",
+     "value": "26'3.5\""
+    }
+   ],
+   "times": [
+    0.3,
+    1.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 72.0,
+   "dur": 5.0,
+   "value": "44.74",
+   "anim": 1.4,
+   "text": "4X400 ANCHOR SPLIT",
+   "sub": "FROM 20+ METERS BEHIND"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 79.7,
+   "dur": 1.8,
+   "text": "STATE CHAMPS",
+   "anchor": "lower"
+  },
+  {
+   "type": "name",
+   "t": 82.6,
+   "dur": 3.0,
+   "rank": "2019",
+   "name": "GATORADE NATIONAL",
+   "sub": "BOYS TRACK & FIELD PLAYER OF THE YEAR"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 86.0,
+   "dur": 2.8,
+   "text": "SAN JOS\u00c9, COSTA RICA",
+   "sub": "PAN AM U20 CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 89.2,
+   "dur": 8.0,
+   "title": "PAN AM U20 \u00b7 4 GOLDS",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "10.11"
+    },
+    {
+     "event": "200M",
+     "value": "20.31"
+    },
+    {
+     "event": "4X100",
+     "value": "38.62",
+     "tag": "WU20R"
+    },
+    {
+     "event": "4X400",
+     "value": "2:59.30",
+     "tag": "WU20R"
+    }
+   ],
+   "times": [
+    1.7,
+    2.5,
+    3.4,
+    4.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 98.4,
+   "dur": 2.8,
+   "text": "HE DIDN'T LIKE THE NICKNAME"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 102.2,
+   "dur": 5.0,
+   "items": [
+    "WHITE LIGHTNING",
+    "NEXT BOLT?",
+    "THE FASTEST WHITE GUY"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 108.6,
+   "dur": 2.2,
+   "text": "JUST WANTED TO RUN"
+  },
+  {
+   "type": "name",
+   "t": 111.4,
+   "dur": 2.6,
+   "rank": "UGA",
+   "name": "GEORGIA BULLDOGS",
+   "sub": "COMMITTED \u00b7 2019"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 114.4,
+   "dur": 2.2,
+   "text": "SOMETHING CRAZY"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 117.1,
+   "dur": 3.0,
+   "text": "MATTHEW BOLING",
+   "tag": "NBC NIGHTLY NEWS \u00b7 2019",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 123.5,
+   "dur": 2.4,
+   "text": "BIGGER STAGE = BIGGER PERFORMANCE"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 126.4,
+   "dur": 2.6,
+   "items": [
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "FRESHMAN YEAR"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 129.2,
+   "dur": 1.8,
+   "text": "COVID",
+   "anchor": "lower"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 133.7,
+   "dur": 4.3,
+   "value": "20.19",
+   "unit": "S",
+   "label": "NCAA INDOOR 200M CHAMPION",
+   "sub": "2021 \u00b7 GEORGIA"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 140.6,
+   "dur": 2.3,
+   "text": "RIGHT ON SCHEDULE"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 143.5,
+   "dur": 2.0,
+   "text": "EUGENE, OREGON",
+   "sub": "2021 OLYMPIC TRIALS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 145.6,
+   "dur": 8.6,
+   "title": "2021 OLYMPIC TRIALS",
+   "rows": [
+    {
+     "event": "100M \u00b7 SEMIS",
+     "value": "14TH"
+    },
+    {
+     "event": "200M \u00b7 SEMIS",
+     "value": "9TH",
+     "tag": "1 SPOT OUT"
+    }
+   ],
+   "times": [
+    1.8,
+    5.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 158.0,
+   "dur": 1.9,
+   "text": "NOT HIGH SCHOOL",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 160.6,
+   "dur": 2.9,
+   "text": "THE PART PEOPLE FORGET"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 165.3,
+   "dur": 4.9,
+   "value": "9.98",
+   "unit": "100M",
+   "label": "TOM JONES MEMORIAL \u00b7 +1.6",
+   "anim": 0.8
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 169.4,
+   "dur": 1.4,
+   "text": "LEGAL",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 171.0,
+   "dur": 3.7,
+   "value": "19.92",
+   "unit": "200M",
+   "label": "GEORGIA TECH INVITE \u00b7 1 WEEK LATER",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 175.0,
+   "dur": 3.8,
+   "title": "2022 \u00b7 200M",
+   "rows": [
+    {
+     "event": "SEC CHAMPS",
+     "value": "1ST",
+     "tag": "20.01"
+    },
+    {
+     "event": "NCAA CHAMPS",
+     "value": "2ND",
+     "tag": "20.13"
+    }
+   ],
+   "times": [
+    0.4,
+    2.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 181.0,
+   "dur": 3.1,
+   "text": "SUB-10 \u00b7 SUB-20"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 185.0,
+   "dur": 2.7,
+   "title": "2022 USA CHAMPS \u00b7 200M",
+   "rows": [
+    {
+     "event": "MATTHEW BOLING",
+     "value": "6TH",
+     "tag": "20.15"
+    }
+   ],
+   "times": [
+    1.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 189.5,
+   "dur": 1.6,
+   "text": "TOP 3 ONLY",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 191.6,
+   "dur": 3.2,
+   "text": "TOP 10 IN THE WORLD"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 195.6,
+   "dur": 1.6,
+   "text": "STAYING HOME",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 197.6,
+   "dur": 2.4,
+   "text": "THAT DEEP"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 202.0,
+   "dur": 2.8,
+   "value": "20.12",
+   "unit": "S",
+   "label": "NCAA INDOOR 200M CHAMPION",
+   "sub": "2023 \u00b7 TITLE NO. 2"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 207.2,
+   "dur": 1.6,
+   "text": "NO FINAL",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 209.3,
+   "dur": 2.9,
+   "text": "NEW EVENT: THE 400"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 212.6,
+   "dur": 4.3,
+   "title": "2023 USA CHAMPS \u00b7 400M",
+   "rows": [
+    {
+     "event": "MATTHEW BOLING",
+     "value": "6TH",
+     "tag": "45.17"
+    }
+   ],
+   "times": [
+    1.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 217.3,
+   "dur": 3.0,
+   "text": "BUDAPEST, HUNGARY",
+   "sub": "2023 WORLD CHAMPIONSHIPS"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 221.8,
+   "dur": 4.6,
+   "value": "3:08.80",
+   "unit": "",
+   "label": "MIXED 4X400 \u00b7 WORLD RECORD",
+   "sub": "BOLING \u00b7 3RD LEG"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 224.9,
+   "dur": 1.4,
+   "text": "GOLD",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 227.4,
+   "dur": 4.0,
+   "text": "MEN'S 4X400: GOLD TOO"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 233.4,
+   "dur": 2.6,
+   "text": "2X WORLD CHAMPION",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 236.5,
+   "dur": 5.4,
+   "items": [
+    "LEAVES GEORGIA",
+    "TURNS PRO",
+    "SOUTH CAROLINA"
+   ],
+   "times": [
+    1.4,
+    3.4,
+    4.9
+   ]
+  },
+  {
+   "type": "name",
+   "t": 245.5,
+   "dur": 2.7,
+   "rank": "PRO",
+   "name": "ALLEYNE FRANCIQUE",
+   "sub": "NEW COACH"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 247.9,
+   "dur": 1.7,
+   "text": "THE WORLD STAGE"
+  },
+  {
+   "type": "name",
+   "t": 249.9,
+   "dur": 3.0,
+   "rank": "DAD",
+   "name": "MARK BOLING",
+   "sub": "NBC NIGHTLY NEWS \u00b7 2019"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 255.9,
+   "dur": 2.7,
+   "items": [
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "hi": [
+    3
+   ],
+   "label": "THE OLYMPIC YEAR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 259.6,
+   "dur": 3.0,
+   "text": "THE ONE EVERYBODY WAITED ON"
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 264.0,
+   "dur": 4.4,
+   "value": "44.84",
+   "anim": 1.0,
+   "text": "400M PERSONAL BEST",
+   "sub": "2024"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 268.9,
+   "dur": 4.3,
+   "title": "2024 \u00b7 USA RELAYS",
+   "rows": [
+    {
+     "event": "WORLD INDOORS",
+     "value": "SILVER"
+    },
+    {
+     "event": "WORLD RELAYS",
+     "value": "GOLD"
+    }
+   ],
+   "times": [
+    0.9,
+    3.1
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "scoreboard",
+   "t": 274.0,
+   "dur": 5.8,
+   "title": "2024 OLYMPIC TRIALS \u2014 400M FINAL",
+   "times": [
+    0.5,
+    4.5
+   ],
+   "rows": [
+    {
+     "place": "1",
+     "name": "QUINCY HALL",
+     "team": "USA",
+     "time": "44.17"
+    },
+    {
+     "place": "8",
+     "name": "MATTHEW BOLING",
+     "team": "USA",
+     "time": "45.15"
+    }
+   ],
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 280.3,
+   "dur": 5.2,
+   "title": "2024 TRIALS \u00b7 200M",
+   "rows": [
+    {
+     "event": "MATTHEW BOLING",
+     "value": "9TH",
+     "tag": "NO FINAL"
+    }
+   ],
+   "times": [
+    3.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 289.2,
+   "dur": 1.6,
+   "text": "NO PARIS",
+   "size": 160
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 291.0,
+   "dur": 3.3,
+   "text": "PHILADELPHIA",
+   "sub": "GRAND SLAM TRACK \u00b7 2025"
+  },
+  {
+   "type": "data",
+   "kind": "bars",
+   "t": 294.8,
+   "dur": 4.0,
+   "label": "Grand Slam Philly \u00b7 200m",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.4,
+   "items": [
+    {
+     "name": "Boling (7th)",
+     "value": "20.87"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 298.9,
+   "dur": 3.6,
+   "title": "GRAND SLAM PHILLY \u00b7 400M",
+   "rows": [
+    {
+     "event": "MATTHEW BOLING",
+     "value": "5TH",
+     "tag": "45.21"
+    }
+   ],
+   "times": [
+    0.4
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 305.3,
+   "dur": 6.8,
+   "label": "100M \u00b7 BEST TIME",
+   "unit": "S",
+   "base": 9.5,
+   "badge": "SAME",
+   "items": [
+    {
+     "name": "AT 18 (WIND+)",
+     "value": "9.98"
+    },
+    {
+     "name": "TODAY (PB)",
+     "value": "9.98"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 313.8,
+   "dur": 8.2,
+   "title": "THE RESUME",
+   "rows": [
+    {
+     "event": "WORLD TITLES",
+     "value": "2",
+     "tag": "RELAYS"
+    },
+    {
+     "event": "100M PB",
+     "value": "9.98"
+    },
+    {
+     "event": "200M PB",
+     "value": "19.92"
+    },
+    {
+     "event": "400M PB",
+     "value": "44.84"
+    }
+   ],
+   "times": [
+    2.4,
+    5.4,
+    7.1,
+    7.8
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 322.5,
+   "dur": 3.5,
+   "text": "MOST WOULD KILL FOR THAT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 327.4,
+   "dur": 1.6,
+   "text": "BUT...",
+   "anchor": "upper"
+  },
+  {
+   "type": "name",
+   "t": 329.4,
+   "dur": 3.4,
+   "rank": "JAM",
+   "name": "USAIN BOLT",
+   "sub": "WORLD RECORD \u00b7 9.58"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 333.5,
+   "dur": 3.0,
+   "text": "MATTHEW BOLING",
+   "tag": "NBC NIGHTLY NEWS \u00b7 2019",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 339.6,
+   "dur": 1.6,
+   "text": "NOT LEGAL",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 343.4,
+   "dur": 3.4,
+   "items": [
+    "NEXT BOLT",
+    "OLYMPIC CHAMP SOON",
+    "GOAT IN THE MAKING"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "wind",
+   "t": 349.3,
+   "dur": 3.0,
+   "text": "ONE CLIP \u00b7 +4.2 M/S",
+   "sub": "TAILWIND"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 354.9,
+   "dur": 2.4,
+   "text": "HARDEST TEAM TO MAKE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 361.0,
+   "dur": 2.0,
+   "text": "STILL HOME",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 364.3,
+   "dur": 9.6,
+   "question": "DOWNFALL OR TOO MUCH HYPE?",
+   "options": [
+    "DOWNFALL",
+    "TOO MUCH HYPE"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 374.3,
+   "dur": 3.5,
+   "text": "BOLING HYPE TRAIN 2019?"
+  },
+  {
+   "type": "motion",
+   "kind": "engage",
+   "t": 377.6,
+   "dur": 2.8,
+   "items": [
+    {
+     "icon": "comment",
+     "label": "BE HONEST"
+    }
+   ],
+   "times": [
+    0.3
+   ]
+  }
+ ]
+}
