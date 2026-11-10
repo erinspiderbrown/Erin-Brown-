@@ -1,0 +1,959 @@
+{
+ "workdir": "work/build",
+ "output": "work/la28.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 297.2,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "broll_grade": "cinematic",
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/fireworks_at_olympic_stadium_and_the_orbit_durin.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "full",
+   "start": 4.2,
+   "broll": {
+    "src": "broll/los_angeles_memorial_coliseum.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 8.5,
+   "broll": {
+    "src": "broll/olympic_400_board.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.3,
+   "broll": {
+    "src": "broll/penn_relays.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 19.4,
+   "broll": {
+    "src": "broll/japan_national_stadium_september_20_2025.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 24.0,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.0,
+   "broll": {
+    "src": "broll/olympic_400_action.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 36.0,
+   "broll": {
+    "src": "broll/preuve_athl_tisme_jeux_olympiques_2024_stade_fr.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 39.5,
+   "broll": {
+    "src": "broll/ancient_olympia_stadium_in_greece_51224128585.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 43.1,
+   "broll": {
+    "src": "broll/berlin_painter_abv_144_211_athena_promachos_runn.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 45.6,
+   "broll": {
+    "src": "broll/discobolus_in_national_roman_museum.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.3,
+   "broll": {
+    "src": "broll/amphora_depicting_runners_storage_jar_painter_of.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 50.9,
+   "broll": {
+    "src": "broll/neugebauer_javelin.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 52.8,
+   "broll": {
+    "src": "broll/top_down_aerial_of_the_archaeological_site_of_ol.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 60.2,
+   "broll": {
+    "src": "broll/preuve_athl_tisme_jeux_olympiques_2024_stade_fr.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 65.0,
+   "broll": {
+    "src": "broll/olympic_4x100.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 70.1,
+   "broll": {
+    "src": "broll/spikes_shoes.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 74.8,
+   "broll": {
+    "src": "broll/valarie_allman_higher_resolution.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 78.6,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 83.2,
+   "broll": {
+    "src": "broll/la_sunrise_4k.mp4",
+    "ss": 15.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fadeblack",
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 89.5,
+   "broll": {
+    "src": "broll/hollywood_4k.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 95.9,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 7.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.0,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 110.3,
+   "broll": {
+    "src": "broll/olympic_400_action.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 119.1,
+   "broll": {
+    "src": "broll/hs_400m_full.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 128.7,
+   "broll": {
+    "src": "broll/hs_sprinter.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 135.8,
+   "broll": {
+    "src": "broll/penn_relays.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 140.9,
+   "broll": {
+    "src": "broll/u_s_olympic_team_participates_in_2024_opening_ce.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fadeblack",
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 145.6,
+   "broll": {
+    "src": "broll/2016_summer_olympics_opening_ceremony_5.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 151.2,
+   "broll": {
+    "src": "broll/rio_2016_opening_ceremony_29257297721.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 155.3,
+   "broll": {
+    "src": "broll/2016_summer_olympics_opening_ceremony_2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 166.8,
+   "broll": {
+    "src": "broll/zeus_le_cheval_m_tallique_jo_paris_2024.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 169.0,
+   "broll": {
+    "src": "broll/2016_summer_olympics_opening_ceremony_3.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 176.6,
+   "broll": {
+    "src": "broll/2016_summer_olympics_opening_ceremony_11.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 185.8,
+   "broll": {
+    "src": "broll/olympic_stadium_and_the_orbit_during_london_olym.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 190.9,
+   "broll": {
+    "src": "broll/olympic_400_board.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 196.5,
+   "broll": {
+    "src": "broll/2012_summer_olympics_opening_ceremony_olympic_ri.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 203.1,
+   "broll": {
+    "src": "broll/preuve_athl_tisme_jeux_olympiques_2024_stade_fr.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 207.7,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 8.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 213.6,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 14.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 222.0,
+   "broll": {
+    "src": "broll/beijing100.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 230.7,
+   "broll": {
+    "src": "broll/porteurs_de_la_flamme_olympique_saverne_dans_le.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 236.0,
+   "broll": {
+    "src": "broll/passage_de_pauline_stey_dans_la_grand_rue_de_sav.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 240.9,
+   "broll": {
+    "src": "broll/tokyo_2020_olympics_cauldron_51497718822.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 245.4,
+   "broll": {
+    "src": "broll/japan_national_stadium_september_20_2025.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 256.9,
+   "broll": {
+    "src": "broll/japan_national_stadium_september_20_2025.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 261.2,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.42,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 272.0,
+   "broll": {
+    "src": "broll/beijing100.mp4",
+    "ss": 13.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 276.6,
+   "broll": {
+    "src": "broll/olympic_400_board.jpg",
+    "ss": 0,
+    "focus": [
+     0.25,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 282.4,
+   "broll": {
+    "src": "broll/paris_2024_summer_olympics_cauldron_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 288.0,
+   "broll": {
+    "src": "broll/la_sunrise_4k.mp4",
+    "ss": 36.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   6.0,
+   8.3,
+   1.1
+  ],
+  [
+   17.6,
+   19.2,
+   1.08
+  ],
+  [
+   74.8,
+   78.4,
+   1.1
+  ],
+  [
+   133.3,
+   135.6,
+   1.12
+  ],
+  [
+   154.2,
+   155.2,
+   1.1
+  ],
+  [
+   183.1,
+   185.6,
+   1.12
+  ],
+  [
+   230.7,
+   232.0,
+   1.08
+  ],
+  [
+   239.4,
+   240.8,
+   1.1
+  ],
+  [
+   276.6,
+   282.2,
+   1.08
+  ],
+  [
+   293.6,
+   297.0,
+   1.14
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.4,
+   "dur": 2.6,
+   "text": "LA28 STANDARDS",
+   "size": 130,
+   "y": 260,
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 6.4,
+   "dur": 1.9,
+   "text": "DUMBEST ATHLETES?",
+   "size": 105,
+   "y": 1180
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 11.6,
+   "dur": 1.6,
+   "text": "DUMBEST FANS?",
+   "size": 120,
+   "y": 1200
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 19.6,
+   "dur": 2.0,
+   "text": "PART 1: THE OLD STANDARDS",
+   "size": 80,
+   "y": 260,
+   "hi": 3
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 25.4,
+   "dur": 3.0,
+   "value": "9.95",
+   "unit": "SEC",
+   "label": "100m standard \u00b7 Worlds 2027",
+   "sub": "World Athletics"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 32.4,
+   "dur": 3.0,
+   "value": "44.45",
+   "unit": "SEC",
+   "label": "400m standard \u00b7 Worlds 2027",
+   "sub": "World Athletics"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 39.7,
+   "dur": 2.0,
+   "text": "PART 2: THE OLDEST SPORT",
+   "size": 80,
+   "y": 260,
+   "hi": 3
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 61.4,
+   "dur": 1.8,
+   "text": "HUMANS EVOLVE",
+   "size": 130,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 70.6,
+   "dur": 1.6,
+   "text": "TECHNOLOGY",
+   "size": 130,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 80.0,
+   "dur": 1.6,
+   "text": "COMMON SENSE",
+   "size": 120,
+   "y": 1200
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 83.4,
+   "dur": 2.0,
+   "text": "PART 3: LA28",
+   "size": 100,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 95.8,
+   "dur": 3.6,
+   "label": "Men's 100m entry standard",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.06,
+   "items": [
+    {
+     "name": "LA28 Olympics",
+     "value": "9.93"
+    },
+    {
+     "name": "Worlds 2027",
+     "value": "9.95"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 106.2,
+   "dur": 3.6,
+   "label": "Men's 200m entry standard",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.3,
+   "items": [
+    {
+     "name": "LA28 Olympics",
+     "value": "19.95"
+    },
+    {
+     "name": "Worlds 2027",
+     "value": "20.07"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 115.2,
+   "dur": 3.6,
+   "label": "Men's 400m entry standard",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.15,
+   "items": [
+    {
+     "name": "LA28 Olympics",
+     "value": "44.40"
+    },
+    {
+     "name": "Worlds 2027",
+     "value": "44.45"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 121.4,
+   "dur": 2.0,
+   "text": "HIGH SCHOOLERS",
+   "size": 130,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 141.1,
+   "dur": 2.0,
+   "text": "PART 4: THE 60%",
+   "size": 100,
+   "y": 260,
+   "hi": 3
+  },
+  {
+   "type": "data",
+   "kind": "ring",
+   "t": 161.2,
+   "dur": 4.6,
+   "value": "60",
+   "label": "LA28 spots via world rankings",
+   "sub": "40% via entry standards"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 186.0,
+   "dur": 2.0,
+   "text": "PART 5: THE FANS",
+   "size": 100,
+   "y": 260,
+   "hi": 3
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 191.2,
+   "dur": 1.8,
+   "text": "KNOW THE RULES",
+   "size": 125,
+   "y": 1540
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 237.4,
+   "dur": 1.5,
+   "text": "BRAND NEW",
+   "size": 130,
+   "y": 1200
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 257.1,
+   "dur": 2.0,
+   "text": "PART 6: EXHIBIT A",
+   "size": 95,
+   "y": 260,
+   "hi": 3
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 266.6,
+   "dur": 3.2,
+   "value": "10.41",
+   "unit": "SECONDS",
+   "label": "AZZOPARDI \u00b7 TOKYO 2025 \u00b7 100M HEAT",
+   "anim": 1.4
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 282.6,
+   "dur": 2.0,
+   "text": "THE BOTTOM LINE",
+   "size": 110,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 288.6,
+   "dur": 8.6,
+   "question": "ARE THE LA28 STANDARDS TOO HARD?",
+   "options": [
+    "YES",
+    "NO"
+   ],
+   "cta": "COMMENT BELOW"
+  }
+ ]
+}

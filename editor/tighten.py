@@ -16,6 +16,12 @@ cuts = [(a + PAD, b - PAD) for a, b in zip(st, en) if b - a - 2 * PAD > 0.08]
 ranges, s = [], 0.0
 for a, b in cuts: ranges.append((s, a)); s = b
 ranges.append((s, dur))
+# snap every cut to a video frame boundary, so each kept part has identical audio and video length
+_fr = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=r_frame_rate', '-of', 'csv=p=0', src],
+                     capture_output=True, text=True).stdout.strip().split('/')
+FPS_ = float(_fr[0]) / float(_fr[1] if len(_fr) > 1 else 1)
+ranges = [(round(a * FPS_) / FPS_, round(b * FPS_) / FPS_) for a, b in ranges]
+ranges = [(a, b) for a, b in ranges if b - a > 1.5 / FPS_]
 def remap(t):
     acc = 0
     for a, b in ranges:
@@ -26,13 +32,22 @@ def remap(t):
 W = json.load(open(wj))
 for w in W: w['s'], w['e'] = round(remap(w['s']), 3), round(remap(w['e']), 3)
 json.dump(W, open(out_w, 'w'))
-fc = []
+# render each kept range on its own, then join losslessly: one giant trim/concat filter runs out of memory on 5-min takes
+import tempfile, os
+tmp = tempfile.mkdtemp(dir=os.path.dirname(os.path.abspath(out_v)))
+parts = []
 for i, (a, b) in enumerate(ranges):
-    fc.append(f"[0:v]trim={a:.3f}:{b:.3f},setpts=PTS-STARTPTS[v{i}]")
-    fc.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={b-a-0.015:.3f}:d=0.015[a{i}]")
-fc.append(''.join(f'[v{i}][a{i}]' for i in range(len(ranges))) + f'concat=n={len(ranges)}:v=1:a=1[cv][ca]')
-r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-filter_complex', ';'.join(fc), '-map', '[cv]', '-map', '[ca]',
-                    '-c:v', 'libx264', '-crf', '14', '-preset', 'fast', '-c:a', 'pcm_f32le', out_v], capture_output=True, text=True)
+    p = f'{tmp}/p{i:04d}.mkv'
+    r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{a:.4f}', '-t', f'{b-a:.4f}', '-i', src,
+                        '-af', f'afade=t=in:d=0.015,afade=t=out:st={max(0, b-a-0.015):.4f}:d=0.015',
+                        '-c:v', 'libx264', '-crf', '14', '-preset', 'fast', '-c:a', 'pcm_f32le', p], capture_output=True, text=True)
+    if r.returncode: sys.exit(r.stderr[-2000:])
+    parts.append(p)
+open(f'{tmp}/list.txt', 'w').write(''.join(f"file '{p}'\n" for p in parts))
+r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{tmp}/list.txt', '-c', 'copy', out_v],
+                   capture_output=True, text=True)
+for p in parts: os.remove(p)
+os.remove(f'{tmp}/list.txt'); os.rmdir(tmp)
 if r.returncode: sys.exit(r.stderr[-2000:])
 new = sum(b - a for a, b in ranges)
 print(f'{dur:.2f}s -> {new:.2f}s ({len(cuts)} pauses cut)')
