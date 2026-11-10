@@ -386,7 +386,8 @@ def main(plan_path):
     for i, s in enumerate(segs):
         a = max(0.0, s['start'] - PAD) if i else 0.0
         b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
-        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
+        st = os.stat(plan['face']['src']) if s['type'] == 'split' else None   # split shots depend on the face/top track's content too
+        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], [st.st_size, int(st.st_mtime)] if st else None, plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
                           plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not cached(p, b - a): render_segment(plan, s, a, b, p)
