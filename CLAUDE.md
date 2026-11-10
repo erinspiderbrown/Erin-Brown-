@@ -134,12 +134,13 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-8. **Make a 3:4 thumbnail** (1080×1440 JPG, the TikTok profile-grid cover size; the owner said 9:16 was too big) for every video, saved to `exports/thumbnails/<video>_thumb.jpg` and delivered to Dropbox with the video.
-   - Simple and high quality, from real photos only: no AI-generated images, nothing that looks AI.
-   - One or two strong faces or expressions (e.g. the two people in the conflict, top and bottom with the house soft seam), with photos used at native resolution and never enlarged, plus a light contrast/color grade.
-   - Few words, if any: at most one or two in Anton (e.g. "OPOSSUM?").
-   - Check the crops so faces, hands and gestures aren't cut off or covered by the text.
-   - Example: `projects/tebogo-lyles/thumbnail.py`.
+8. **Make a cover thumbnail** for every video in the style of the covers the owner currently uses (he sent examples on Nov 10, 2026, and rejected a split close-up and a plain photo with Anton text).
+   - **Format:** 9:16, 1080×1920 JPG, saved to `exports/thumbnails/<video>_thumb.jpg`. Also save a 3:4 grid crop (`_thumb_3x4.jpg`), with everything important inside it. Deliver both to Dropbox with the video.
+   - **Background:** one sharp, full-bleed real photo or frame (no AI images). The subject is cut out (rembg `u2net_human_seg`) and graded punchy, and the background is slightly blurred and darkened.
+   - **Headline:** a big, bold, slanted headline in Montserrat Black: a white line over a yellow-gradient line, black stroke, drop shadow, with a tapered red brush swipe under it (e.g. "THE NEXT / BOLT?", "NO ARMS / NO LIMITS").
+   - **Extras when they help the story:** a circle inset with a white/red ring and glow, a short red label tag, and a curved red arrow with a white outline pointing at the subject.
+   - **Checks:** photos at native resolution, never enlarged. Faces, hands and gestures must not be cut off or covered.
+   - **Example:** `projects/matthew-boling/thumbnail.py`.
 - **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
