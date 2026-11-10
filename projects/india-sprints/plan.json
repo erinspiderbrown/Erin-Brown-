@@ -171,11 +171,11 @@
    "type": "split",
    "start": 55.2,
    "broll": {
-    "src": "geo/map_in_v2.jpg",
-    "ss": 0,
+    "src": "mine/may_cc.mp4",
+    "ss": 3.0,
     "focus": [
      0.5,
-     0.42
+     0.5
     ]
    }
   },
