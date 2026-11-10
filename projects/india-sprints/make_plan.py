@@ -1,7 +1,7 @@
 """India sprints TikTok: writes plan.json for editor/build.py (talking head on top, house style)."""
 import json
 DUR = 121.6
-BW, JM, IN, SC = 'geo/map_bw.jpg', 'geo/map_jm.jpg', 'geo/map_in.jpg', 'geo/size_compare.jpg'
+BW, JM, IN, SC = 'geo/map_bw_v2.jpg', 'geo/map_jm_v2.jpg', 'geo/map_in_v2.jpg', 'geo/size_compare.jpg'
 RACE = 'mine/may_cc.mp4'; G = lambda n: f'gph/{n}.jpg'
 SEG = [  # (start, type, src, ss, focus, extra)
  (0.0,   'full',  BW, 0, [0.5, 0.42], {}),
@@ -15,12 +15,12 @@ SEG = [  # (start, type, src, ss, focus, extra)
  (41.6,  'split', G('getset'), 0, [0.55, 0.6], {}),
  (45.4,  'split', G('wpgtrack'), 0, [0.5, 0.5], {}),
  (51.7,  'full',  SC, 0, [0.5, 0.5], {}),
- (55.2,  'split', G('zurich400'), 0, [0.5, 0.5], {}),
+ (55.2,  'split', IN, 0, [0.5, 0.42], {}),
  (59.2,  'full',  IN, 0, [0.5, 0.40], {}),
  (66.0,  'split', RACE, 6.0, [0.5, 0.5], {}),
- (71.7,  'split', G('istanbul400'), 0, [0.5, 0.5], {}),
+ (71.7,  'split', RACE, 9.0, [0.5, 0.5], {}),
  (78.8,  'full',  IN, 0, [0.5, 0.45], {}),
- (85.1,  'split', SC, 0, [0.5, 0.75], {}),
+ (85.1,  'split', G('zurich400'), 0, [0.5, 0.5], {}),
  (89.3,  'split', G('wpgtrack'), 0, [0.4, 0.5], {}),
  (97.9,  'full',  RACE, 1.5, [0.48, 0.5], {}),
  (100.8, 'split', G('getset'), 0, [0.45, 0.6], {}),

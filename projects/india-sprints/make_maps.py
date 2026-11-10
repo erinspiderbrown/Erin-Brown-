@@ -37,15 +37,15 @@ def draw_country(im, rings_km, flag, s, ox, oy, glow=(255, 255, 255)):
     d = ImageDraw.Draw(im)
     for r in pts: d.line(r + [r[0]], fill=(255, 255, 255), width=5, joint='curve')
     return bx
-def single(iso, lat0, lon0, flag, glow, out, keep=None, fill=0.80, cy=0.45):
+def single(iso, lat0, lon0, flag, glow, out, keep=None, fill=0.64, cy=0.45):
     R = km(polys(iso, keep), lat0, lon0); x0, x1, y0, y1 = place(R, None)
     s = min(W * fill / (x1 - x0), H * 0.55 / (y1 - y0))
     im = bg(hash(iso) % 100); ox = W / 2 - (x0 + x1) / 2 * s; oy = H * cy + (y0 + y1) / 2 * s
     draw_country(im, R, flag, s, ox, oy, glow); im.save(out, quality=94)
 main_ring = lambda r: len(r) > 40
-single('BW', -22.3, 24.7, f'{G}/flag_bw.png', (110, 200, 255), f'{G}/map_bw.jpg')
-single('JM', 18.1, -77.3, f'{G}/flag_jm.png', (255, 210, 0), f'{G}/map_jm.jpg', keep=main_ring)
-single('IN', 22.0, 79.0, f'{G}/flag_in.png', (255, 150, 40), f'{G}/map_in.jpg', keep=lambda r: len(r) > 60, fill=0.86)
+single('BW', -22.3, 24.7, f'{G}/flag_bw.png', (110, 200, 255), f'{G}/map_bw_v2.jpg')
+single('JM', 18.1, -77.3, f'{G}/flag_jm.png', (255, 210, 0), f'{G}/map_jm_v2.jpg', keep=main_ring, fill=0.62)
+single('IN', 22.0, 79.0, f'{G}/flag_in.png', (255, 150, 40), f'{G}/map_in_v2.jpg', keep=lambda r: len(r) > 60, fill=0.72)
 # same-scale size comparison: India vs Botswana vs Jamaica
 im = bg(7); s = 0.52                               # px per km
 RI = km(polys('IN', lambda r: len(r) > 60), 22.0, 79.0); RB = km(polys('BW'), -22.3, 24.7); RJ = km(polys('JM', main_ring), 18.1, -77.3)

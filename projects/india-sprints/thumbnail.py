@@ -5,7 +5,7 @@ import math, random
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 from rembg import remove, new_session
 F = '/home/user/Erin-Brown-/editor/assets/fonts/'; W, H = 1080, 1920
-bg = Image.open('geo/map_in.jpg').convert('RGB').resize((W, H), Image.LANCZOS)
+bg = Image.open('geo/map_in_v2.jpg').convert('RGB').resize((W, H), Image.LANCZOS)
 bg = ImageEnhance.Brightness(bg).enhance(0.85)
 canvas = Image.new('RGB', (W, H)); canvas.paste(bg, (0, -150)); canvas.paste(bg.crop((0, H - 160, W, H)), (0, H - 160))
 fr = Image.open('work/thumb_frame.png').convert('RGB').crop((560, 120, 3280, 2160))      # 2720x2040
