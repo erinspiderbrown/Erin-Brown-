@@ -17,11 +17,11 @@
    "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "broll/fireworks_at_olympic_stadium_and_the_orbit_durin.jpg",
+    "src": "broll/los_angeles_memorial_coliseum.jpg",
     "ss": 0,
     "focus": [
      0.5,
-     0.5
+     0.45
     ]
    },
    "transition": "fade"
@@ -30,7 +30,7 @@
    "type": "full",
    "start": 4.2,
    "broll": {
-    "src": "broll/los_angeles_memorial_coliseum.jpg",
+    "src": "broll/2016_summer_olympics_opening_ceremony_3.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -214,11 +214,11 @@
    "type": "split",
    "start": 70.1,
    "broll": {
-    "src": "broll/spikes_shoes.jpg",
+    "src": "broll/hs_400m_full.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.4,
+     0.75
     ]
    }
   },
@@ -375,10 +375,10 @@
    "type": "split",
    "start": 151.2,
    "broll": {
-    "src": "broll/rio_2016_opening_ceremony_29257297721.jpg",
+    "src": "broll/2016_summer_olympics_opening_ceremony_11.jpg",
     "ss": 0,
     "focus": [
-     0.5,
+     0.3,
      0.5
     ]
    }
@@ -399,10 +399,10 @@
    "type": "split",
    "start": 166.8,
    "broll": {
-    "src": "broll/zeus_le_cheval_m_tallique_jo_paris_2024.mp4",
-    "ss": 0.0,
+    "src": "broll/u_s_olympic_team_participates_in_2024_opening_ce.jpg",
+    "ss": 0,
     "focus": [
-     0.5,
+     0.3,
      0.5
     ]
    }
@@ -426,7 +426,7 @@
     "src": "broll/2016_summer_olympics_opening_ceremony_11.jpg",
     "ss": 0,
     "focus": [
-     0.5,
+     0.7,
      0.5
     ]
    }
@@ -497,7 +497,7 @@
    "start": 213.6,
    "broll": {
     "src": "broll/univ200.mp4",
-    "ss": 14.0,
+    "ss": 6.0,
     "focus": [
      0.5,
      0.5
@@ -520,11 +520,11 @@
    "type": "split",
    "start": 230.7,
    "broll": {
-    "src": "broll/porteurs_de_la_flamme_olympique_saverne_dans_le.mp4",
-    "ss": 0.0,
+    "src": "broll/2016_summer_olympics_opening_ceremony_2.jpg",
+    "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.7,
+     0.5
     ]
    }
   },
@@ -532,11 +532,11 @@
    "type": "split",
    "start": 236.0,
    "broll": {
-    "src": "broll/passage_de_pauline_stey_dans_la_grand_rue_de_sav.mp4",
-    "ss": 0.0,
+    "src": "broll/olympic_stadium_and_the_orbit_during_london_olym.jpg",
+    "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.6,
+     0.5
     ]
    }
   },

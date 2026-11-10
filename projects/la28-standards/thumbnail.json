@@ -1,0 +1,27 @@
+{
+ "bg": "broll/hs_400m_full.jpg",
+ "focus": [
+  0.6,
+  0.3
+ ],
+ "zoom": 1.0,
+ "darken": 0.45,
+ "lines": [
+  {
+   "text": "9.93 TO QUALIFY?",
+   "y": 1010,
+   "size": 116,
+   "color": "#FFE11A",
+   "slant": 10
+  },
+  {
+   "text": "LA28 STANDARDS",
+   "y": 1185,
+   "size": 100,
+   "color": "#FFFFFF",
+   "box": "#E8231E",
+   "slant": 10,
+   "rotate": -2
+  }
+ ]
+}

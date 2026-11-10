@@ -10,6 +10,8 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - For a soft 1080p clip, shrink it to 540×960 first, then upscale 4×.
   - Speed: about 5 s per 540×960 frame on this 4-core box. Enhance only the time ranges you use, and run one job at a time (parallel jobs just fight over the CPU).
   - Don't wait on jobs with busy-loops; use `sleep`.
+- **Wikimedia Commons downloads:** full-size originals often get rate-limited (HTTP 429). Use the cached standard-width thumbnails (`/thumb/…/3840px-…` or `1920px-…`), and send a descriptive User-Agent with the repo URL. Don't hammer: pace downloads and back off.
+- **Footage from broadcasters** (World Athletics/NBC interviews, ceremony broadcasts) is copyrighted. Don't pull it into videos. Find it, give the owner the link, and use free-licensed real footage instead.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
   - A 16:9 1080p clip cropped to full-screen vertical gets enlarged about 1.8×, which looks soft. Don't use it full-screen.
@@ -23,6 +25,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - The default voice chain in `build.py` cuts low-mid mud and lifts clarity (1.8 kHz) and air (7.5 kHz shelf). It has no de-esser or noise reduction.
   - After every render, `build.py` runs `audio_check.py`, which compares the export's tone with the raw voice and warns `MUFFLED` if clarity, presence or air drops. Never ship with that warning.
 - **Export:** 1080×1920, 30 fps, stereo audio, at −14 LUFS. Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode with `-crf 20 -preset slow`, or with a two-pass encode at about 9 Mbps if that's still too big.
+  - **Long-form (5 min+):** a two-pass encode at about 2.45 Mbps with `-tune film` fits under 100 MB and looked practically identical to the master on the LA28 video.
+- **"Cinematic" requests:** set `"broll_grade": "cinematic"` in the plan.
+  - Use `"transition": "fade"` on full-screen shots and `"fadeblack"` into chapter openers.
+  - Prefer real high-res photos with slow push-ins.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
@@ -71,6 +77,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Workflow
 1. **Get the files.** Files over 30 MB come as Dropbox share links. Download them with `?dl=1`.
 2. **Transcribe** with `transcribe.py … medium.en`, then fix names and numbers by hand (check bibs and graphics).
+   - Whisper can skip whole phrases (often names). Check for time gaps in `words.json`, then re-transcribe the gap in short chunks with `condition_on_previous_text=False` and splice in the words.
    - Whisper can mishear numbers ("50" heard as "15"). If a number contradicts the point being made, check it with the owner or the source they're quoting, and use the owner's own stats when they send them.
 3. **Check the voice for clipping.** Phone recordings are often too hot: the owner's Nov 2026 take clipped on nearly every loud syllable, which sounds crunchy.
    - Run `editor/declip.py raw/talking_head.mov work/voice_declip.wav`. It rebuilds the flattened peaks and writes a float WAV.

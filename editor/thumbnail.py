@@ -9,7 +9,7 @@ spec:
   "darken": 0.35,                     # 0..1 strength of the top/bottom gradient (text contrast)
   "lines": [                          # big words; keep it to 2-4 words per line, 2-3 lines
     {"text": "LIFTS 300 LB", "y": 300, "size": 170, "color": "#FFE11A"},
-    {"text": "RUNS 50.8", "y": 1180, "size": 190, "color": "#FFFFFF", "box": "#E8231E"}
+    {"text": "RUNS 50.8", "y": 1180, "size": 190, "color": "#FFFFFF", "box": "#E8231E", "slant": 10}   # slant = italic look
   ],
   "tag": {"text": "PART 3", "y": 120}  # optional small pill
 }
@@ -31,7 +31,7 @@ def line(l):
     stroke = "" if l.get('box') else "-webkit-text-stroke:10px #000;paint-order:stroke fill;"
     return (f"<div style=\"position:absolute;left:0;width:1080px;top:{l['y']}px;text-align:center\">"
             f"<span style=\"display:inline-block;font-family:Anton;font-size:{l.get('size', 170)}px;line-height:1.08;"
-            f"color:{l.get('color', '#fff')};{stroke}{box}transform:rotate({l.get('rotate', 0)}deg);"
+            f"color:{l.get('color', '#fff')};{stroke}{box}transform:rotate({l.get('rotate', 0)}deg) skewX({-l.get('slant', 0)}deg);"
             f"filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))\">{l['text']}</span></div>")
 
 tag = spec.get('tag')
