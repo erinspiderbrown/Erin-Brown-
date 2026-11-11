@@ -7,7 +7,17 @@
   - `clip.mov`: the Chester Metric Marathon finish, 720p. Its 2.5–8.7 s range is Real-ESRGAN enhanced to 1080×1920 and used full-screen.
   - Screenshots: the AW post on X and two University of Sydney passages, made into 1080×960 "receipt" cards.
   - `photo_1008.jpg` (950×560, the AW article photo) is unused because it's too small.
-- Commons (via thumbnails): Belfast City Marathon 2013 (17, 23, 24) by Ardfern (CC BY-SA 3.0); Kenyan runner Noah Serem, Dublin Marathon 2009 (CC BY-SA 2.0).
+- **v2 (owner: "real pictures of him, not random people, not repetitive"):** every shot is now Josh Griffiths himself. The Belfast and Kenyan-runner photos are removed.
+  - Commons category "Josh Griffiths (runner)", all 4 photos:
+    - London Marathon 2017 (Swansea Harriers) by Katie Chan (CC BY-SA 4.0)
+    - London Marathon 2017 IMGP1227 (Flickr upload)
+    - Guerlédan 2026 05 and 06
+  - Owner's uploads:
+    - Oregon22 finish photo
+    - AW race photo, enhanced from 950×560
+    - Chester clip, enhanced in three moments: the approach, the finish run-in, and arms up
+  - Each asset is used at most twice, with a different crop or moment each time, never back-to-back. Explicit `crop` values keep him large in the split shots.
+- Verified career facts (Wikipedia): born 3 Nov 1993; 2017 London Marathon 13th in 2:14:49 (first Briton); Worlds 2017 and 2022 for GB; marathon PB 2:11:28 (Seville 2022).
 
 ## Facts (verified) vs the owner's opinion
 - **Verified, and on screen:**
@@ -31,4 +41,4 @@
 Thumbnail: Griffiths close-up, "COCAINE POSITIVE" / "ONLY 3 MONTHS?".
 
 ## Credits
-> Photos via Wikimedia Commons: Ardfern (CC BY-SA 3.0); Noah Serem photo, Dublin Marathon 2009 (CC BY-SA 2.0).
+> Photos of Josh Griffiths via Wikimedia Commons: Katie Chan (CC BY-SA 4.0), "London Marathon 2017 IMGP1227" and "Guerlédan 2026" (see file pages for author and licence).
