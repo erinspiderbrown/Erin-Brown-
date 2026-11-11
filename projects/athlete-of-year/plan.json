@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/out/athlete_of_year_v1.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/out/athlete_of_year_v2.mp4",
  "words": "/home/user/Erin-Brown-/projects/athlete-of-year/words_final.json",
  "voice_ss": 0.0,
  "duration": 70.54,
@@ -357,7 +357,7 @@
     },
     {
      "event": "MONDO \u00b7 PV",
-     "value": "2 LOSSES"
+     "value": "LOST 2"
     }
    ],
    "times": [

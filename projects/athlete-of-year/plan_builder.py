@@ -86,14 +86,14 @@ gfx = [
     M('stopwatch', t_dropped + 0.3, 2.6, value='43.39', unit='SECONDS', label='400M PB · BUDAPEST 2026', anim=1.0),
     M('slam', t_7b - 0.1, 1.5, text='7TH PLACE?!', hi=0),
     M('board', t_lost2 - 0.3, 3.6, title='2026, HEAD TO HEAD',
-      rows=[{'event': 'COLLEN · 400M', 'value': 'UNBEATEN'}, {'event': 'MONDO · PV', 'value': '2 LOSSES'}], times=[0.2, 0.9]),
+      rows=[{'event': 'COLLEN · 400M', 'value': 'UNBEATEN'}, {'event': 'MONDO · PV', 'value': 'LOST 2'}], times=[0.2, 0.9]),
     M('slam', t_top3b, 1.4, text='TOP 3', hi=1, anchor='upper'),
     M('poll', t_jokes - 0.2, END - t_jokes + 0.2, question='WHO GOT ROBBED?', options=['COLLEN', 'NOBODY']),
 ]
 zooms = [[t_rid - 0.1, t_rid + 1.3, 1.1], [t_but - 0.1, t_but + 1.3, 1.08], [t_7b - 0.2, t_7b + 1.3, 1.12], [t_jokes - 0.2, t_jokes + 1.4, 1.1]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/aoty/build', 'output': f'{SP}/aoty/out/athlete_of_year_v1.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/aoty/build', 'output': f'{SP}/aoty/out/athlete_of_year_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):
