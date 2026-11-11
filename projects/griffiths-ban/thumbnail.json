@@ -1,0 +1,25 @@
+{
+ "bg": "broll/griffiths_2022.jpg",
+ "focus": [
+  0.47,
+  0.36
+ ],
+ "zoom": 1.55,
+ "darken": 0.4,
+ "lines": [
+  {
+   "text": "<span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>COCAINE</span> POSITIVE",
+   "y": 215,
+   "size": 112,
+   "color": "#FFFFFF",
+   "slant": 10
+  },
+  {
+   "text": "ONLY <span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>3 MONTHS?</span>",
+   "y": 375,
+   "size": 118,
+   "color": "#FFFFFF",
+   "slant": 10
+  }
+ ]
+}
