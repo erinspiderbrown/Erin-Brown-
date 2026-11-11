@@ -32,3 +32,9 @@ Kebinatshipi mid-race (Tokyo 2025), "UNBEATEN / RANKED 7TH?!", Duplantis laughin
 - "lost the most competitions he's ever lost in his professional career": 2 losses in 2026; Wikipedia says he lost only 4 times
   from 2020 to mid-2025, so 2 in a season is plausibly his most since turning pro, but no source says so outright.
 - "Undefeated at the World Championships last year": he won the 2025 world title (heat, semi and final).
+
+## Export (Nov 11 2026)
+- `exports/athlete_of_year_tiktok_hq.mp4` (Git LFS): 1:10.5, 1080x1920, 30 fps, two-pass 8 Mbps, SSIM 0.991; -14.1 LUFS (take -17.2,
+  one static +3.2 dB boost with a limiter), `polish` chain. 15 shots (5 full-screen incl. 2 freeze pop-outs), 13 graphics, 6 whooshes.
+- Dropbox `/TikTok Exports/`: video + `athlete_of_year_thumb(_916).jpg`, content_hash verified on all three.
+  Link: https://www.dropbox.com/scl/fi/zxxfnkjfkb1gz4t3r0lh6/athlete_of_year_tiktok_hq.mp4?rlkey=8h5ux8lh24pc7x53bybjbwuje&dl=0
