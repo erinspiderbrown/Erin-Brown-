@@ -93,7 +93,7 @@ gfx = [
 zooms = [[t_rid - 0.1, t_rid + 1.3, 1.1], [t_but - 0.1, t_but + 1.3, 1.08], [t_7b - 0.2, t_7b + 1.3, 1.12], [t_jokes - 0.2, t_jokes + 1.4, 1.1]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/aoty/build', 'output': f'{SP}/aoty/out/athlete_of_year_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/aoty/build', 'output': f'{SP}/aoty/out/athlete_of_year_v3.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):

@@ -515,6 +515,20 @@ def main(plan_path):
     }
     vchain = VOICE.get(plan.get('voice_chain', 'polish'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
+    if plan.get('voice_chain', 'polish') == 'polish':
+        # Owner, Nov 2026 (Athlete of the Year): "Why is the audio so loud ... and sound so echoed?" His phone takes come in hot
+        # (-10 LUFS, clipping past 0 dBFS); fed straight in, the 2:1 compressor squashed ~7 dB nonstop and lifted the room echo.
+        # Approved fix (A/B in projects/athlete-of-year/voice_before_after.mp3): repair clipped peaks, then trim the take to
+        # -24 LUFS BEFORE the polish so the compressor only touches peaks; the static gain below brings it to -14.
+        m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-map', '0:a:0', '-af', 'ebur128=peak=sample', '-f', 'null', '-'],
+                           capture_output=True, text=True).stderr
+        raw_i = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]); raw_pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+        pre = []
+        if raw_pk > -0.3: pre.append('adeclip=window=55:overlap=75:arorder=8:threshold=10')
+        if raw_i > -24.0: pre.append(f'volume={-24.0 - raw_i:.2f}dB')
+        if pre:
+            vchain = ','.join(pre) + ',' + vchain
+            print(f'voice input: {raw_i:.1f} LUFS, peak {raw_pk:+.1f} dBFS -> ' + ', '.join(p.split('=')[0] for p in pre) + ' before polish')
     cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
