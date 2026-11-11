@@ -1,34 +1,25 @@
 {
- "bg": "broll/los_angeles_memorial_coliseum.jpg",
+ "bg": "broll/lyles_thumb_hd.jpg",
  "focus": [
   0.5,
-  1.0
+  0.5
  ],
- "zoom": 1.25,
- "darken": 0.6,
+ "zoom": 1.0,
+ "darken": 0.32,
  "lines": [
   {
-   "text": "LA28 STANDARDS",
-   "y": 250,
-   "size": 122,
-   "color": "#FFE11A",
+   "text": "<span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>9.93</span> TO QUALIFY?",
+   "y": 205,
+   "size": 138,
+   "color": "#FFFFFF",
    "slant": 10
   },
   {
-   "text": "9.93 TO QUALIFY?",
-   "y": 440,
-   "size": 112,
+   "text": "FOR <span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>LA28</span>",
+   "y": 385,
+   "size": 150,
    "color": "#FFFFFF",
-   "box": "#E8231E",
-   "slant": 10,
-   "rotate": -2
-  },
-  {
-   "text": "100M 9.93 · 200M 19.95 · 400M 44.40",
-   "y": 650,
-   "size": 54,
-   "color": "#FFFFFF",
-   "box": "rgba(0,0,0,.72)"
+   "slant": 10
   }
  ]
 }

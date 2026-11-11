@@ -91,8 +91,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 7. **Render** with `python3 editor/build.py plan.json`, check sample frames, then export to `exports/` and push.
 8. **Every video gets a high-quality thumbnail** (TikTok cover, 1080×1920 JPG), saved as `exports/<name>_thumb.jpg` and pushed with the video.
    - Write `projects/<name>/thumbnail.json` and run `python3 editor/thumbnail.py thumbnail.json exports/<name>_thumb.jpg <scratch>/check.jpg`.
-   - **Background:** the sharpest real frame of the key moment. Score candidate frames for sharpness, run the pick through `enhance.py` (540×960 → 4×), or use a full-res photo.
-   - **Text:** 2–4 huge Anton words per line, 2 lines max, the video's core contrast or hook (e.g. "LIFTS 300 LB" / "RUNS 50.8"). Yellow `#FFE11A` with a black stroke, or white on a red `#E8231E` box.
+   - **The owner's preferred look** (shown on his best performer, and asked for again on LA28):
+     - **A close, sharp photo of a star athlete** relevant to the topic (e.g. Noah Lyles or Gout Gout for sprint-standard videos) filling the frame. Not generic scenery, not an unrelated athlete.
+     - **A two-line headline at the top:** bold slanted (`"slant": 10`) Anton, white with a black stroke, with the key number or word in yellow `#FFE11A` and a red `#E8231E` underline swoosh.
+     - Lines take inline HTML spans for per-word colour; see `projects/la28-standards/thumbnail.json`.
+   - **Photo:** free-licensed and real. If the athlete is small in the frame, crop the area the cover shows from the source and run it through `enhance.py` (downscale to about 675 px wide, then 4×) instead of zooming in the cover, which looks soft.
    - **Safe zones:** check the check image. Keep text out of the bottom 25% (caption/UI) and the right 140 px (buttons), and keep the text and the subject's face inside the centre 3:4 (y 240–1680), which is what the profile grid shows.
    - **Accuracy:** numbers on the thumbnail follow the "never invent data" rule too.
 

@@ -32,7 +32,7 @@ Hook (LA Coliseum, Rio opening ceremony) → PART 1: THE OLD STANDARDS → PART 
 - The master is 680 MB.
 - Shipped as a two-pass encode at 2.45 Mbps (`-tune film`), 97 MB. Side by side with the master, the difference is practically invisible.
 - −13.5 LUFS.
-- Thumbnail: `exports/la28_standards_thumb.jpg`, "9.93 TO QUALIFY?" / "LA28 STANDARDS" over the sprinter photo.
+- Thumbnail (v3, the owner's style): Noah Lyles at Paris 2024 (Commons, Aeltegop, CC BY 4.0), cropped and Real-ESRGAN enhanced, with "9.93 TO QUALIFY?" / "FOR LA28" (yellow numbers with a red underline, slanted). Gout Gout has no free-licensed photo on Commons.
 
 ## B-roll credits (Wikimedia Commons)
 > Photos/B-roll via Wikimedia Commons: Quintin Soloviev (CC BY 4.0); Ilgar Jafarov (CC BY-SA 4.0); Alexander Kachkaev (CC BY 2.0); Sgt. 1st Class Kula / U.S. Army (public domain); Ibex73 (CC BY 4.0); Dick Thomas Johnson (CC BY 2.0); Nick Webb (CC BY 2.0); dronepicr (CC BY 2.0); ArchaiOptix (CC BY-SA 4.0); Spurlock Museum (CC0); Livioandronico2013 (CC BY-SA 4.0); LeeMNichols (CC0); Chabe01 (CC BY-SA 4.0); Daieuxetdailleurs (CC BY 4.0); SprintsA11 (CC0); Oregon City High School (public domain); Habst (CC BY-SA 4.0); FISUTV (CC BY 3.0); World Athletics Championships 2015 (CC BY 3.0); the Dronalist (CC BY 3.0).
