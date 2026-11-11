@@ -86,14 +86,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **No neon theme.** The owner rejected the neon look from the 30-second test and Breaking 21 edits: no `neon`/`battery` graphics, no neon caption colors, no per-video "epic" transition or sound overrides. Use the house red/yellow captions and this style's graphics. The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and "probably the best video". Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure, pacing, graphics and transitions unless the owner asks for something different.
 - **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
   - The auto-picked viral transitions, with no per-segment overrides.
-  - A graphic on almost every beat (name tags, keywords, stamps, boards, bars, counters, a poll).
+  - A graphic on almost every beat (keywords, stamps, boards, bars, counters, a poll).
+  - **No name tags.** The owner rejected the red-box `name` graphic (Nov 11, 2026) for every video; `name_tags: false` in `style.json` makes `build.py` skip them. Introduce a person with a `keyword`, the captions, or the `podcast` mic badge for a guest clip.
   - Don't thin them out or swap in new styles without asking.
 - **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
 - **Story arc:** build the edit as an argument with a payoff.
-  1. **Hook (0–15 s):** the subject full-screen with a name tag, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
+  1. **Hook (0–15 s):** the subject full-screen, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
   2. **Context:** what's true about the subject, shown as data (an all-time `board`, a `pin` for where it happened, a `stamp` for the twist, e.g. "NOT A CHAMPIONSHIP").
   3. **Turn:** cut to full-screen on the key fact, with a `data` counter.
-  4. **The real story:** a name tag for each new person, then a `board` listing the evidence, one row landing on each spoken item (`times`).
+  4. **The real story:** each new person introduced in the voice/captions (or a `keyword`), then a `board` listing the evidence, one row landing on each spoken item (`times`).
   5. **Callback:** full-screen with the claim stamped again ("WRONG ERA?" → "LIE").
   6. **Proof:** actual results for each event the owner names (`bars` with real times, the subject's place in the name), with a stamp on each verdict ("4TH PLACE", "4TH AGAIN").
   7. **Ending:** `poll` on the core question ("BORN IN THE WRONG ERA? YES / NO").

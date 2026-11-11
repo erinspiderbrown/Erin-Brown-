@@ -374,6 +374,10 @@ def main(plan_path):
     style = {k: (os.path.join(here0, v) if k in ('fontsdir', 'sfxdir') and not os.path.isabs(v) else v)
              for k, v in style.items() if not k.startswith('_')}
     plan = {**style, **json.load(open(plan_path))}
+    if not plan.get('name_tags', False):       # owner (Nov 11 2026): no red-box name tags, in any video
+        dropped = [g for g in plan.get('graphics', []) if g['type'] == 'name']
+        plan['graphics'] = [g for g in plan.get('graphics', []) if g['type'] != 'name']
+        if dropped: print(f"NOTE: {len(dropped)} name tag(s) skipped (name_tags is off; the owner doesn't want them)")
     if plan['duration'] < plan.get('min_duration', 0):
         print(f"WARNING: {plan['duration']:.1f}s is under the {plan['min_duration']}s minimum")
     if plan.get('accent'): GOLD_ASS = hex2ass(plan['accent'])

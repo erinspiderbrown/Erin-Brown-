@@ -281,14 +281,6 @@
  ],
  "graphics": [
   {
-   "type": "name",
-   "t": 0.4,
-   "dur": 3.4,
-   "rank": "USA",
-   "name": "MATTHEW CENTROWITZ",
-   "sub": "OLYMPIC 1500M CHAMPION \u00b7 RIO 2016"
-  },
-  {
    "type": "motion",
    "kind": "keyword",
    "t": 4.3,
@@ -351,12 +343,13 @@
    "text": "OFFICE JOB"
   },
   {
-   "type": "name",
-   "t": 22.2,
-   "dur": 3.4,
-   "rank": "DAD",
-   "name": "MATT CENTROWITZ SR.",
-   "sub": "HIS DAD \u00b7 1976 OLYMPIAN"
+   "type": "motion",
+   "kind": "podcast",
+   "t": 22.1,
+   "dur": 9.9,
+   "text": "MATT CENTROWITZ SR.",
+   "tag": "HIS DAD \u00b7 1976 OLYMPIAN",
+   "anchor": "lower"
   },
   {
    "type": "motion",

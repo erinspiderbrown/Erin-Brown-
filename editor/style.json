@@ -23,5 +23,6 @@
   "whoosh_level": 0.24,
   "split_swipes": true,
   "face_grade": "vignette=PI/6",
-  "sfx_min_gap": 3.0
+  "sfx_min_gap": 3.0,
+  "name_tags": false
 }

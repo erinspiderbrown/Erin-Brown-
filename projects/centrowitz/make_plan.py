@@ -28,14 +28,13 @@ SEG = [
  (94.2,  'full',  FLAG, 0, [0.6, 0.3], {}),
 ]
 GFX = [
- {"type": "name", "t": 0.4, "dur": 3.4, "rank": "USA", "name": "MATTHEW CENTROWITZ", "sub": "OLYMPIC 1500M CHAMPION · RIO 2016"},
  {"type": "motion", "kind": "keyword", "t": 4.3, "dur": 2.6, "text": "NOT THE FLEX?"},
  {"type": "motion", "kind": "stamp", "t": 7.4, "dur": 1.9, "text": "NO ONE CARES", "anchor": "upper"},
  {"type": "motion", "kind": "board", "t": 12.3, "dur": 4.0, "title": "RIO 2016 · 1500M FINAL", "rows": [{"event": "CENTROWITZ (USA)", "value": "3:50.00", "tag": "GOLD"}], "times": [1.7]},
  {"type": "motion", "kind": "stamp", "t": 16.3, "dur": 1.8, "text": "1ST U.S. WIN SINCE 1908", "size": 90, "anchor": "lower"},
  {"type": "motion", "kind": "calendar", "t": 18.1, "dur": 2.0, "items": ["2016", "2026"], "hi": [1], "label": "10 YEARS LATER"},
  {"type": "motion", "kind": "keyword", "t": 20.2, "dur": 1.7, "text": "OFFICE JOB"},
- {"type": "name", "t": 22.2, "dur": 3.4, "rank": "DAD", "name": "MATT CENTROWITZ SR.", "sub": "HIS DAD · 1976 OLYMPIAN"},
+ {"type": "motion", "kind": "podcast", "t": 22.1, "dur": 9.9, "text": "MATT CENTROWITZ SR.", "tag": "HIS DAD · 1976 OLYMPIAN", "anchor": "lower"},
  {"type": "motion", "kind": "keyword", "t": 32.9, "dur": 2.4, "text": "NO ONE REALLY CARES"},
  {"type": "motion", "kind": "board", "t": 37.9, "dur": 7.2, "title": "OLYMPIC 1500M CHAMPS", "rows": [{"event": "2000 · NOAH NGENY", "value": "KEN"}, {"event": "1996 · MORCELI", "value": "ALG"}, {"event": "1992 · FERMIN CACHO", "value": "ESP"}], "times": [1.3, 4.2, 6.3]},
  {"type": "motion", "kind": "bubbles", "t": 45.2, "dur": 2.4, "items": ["WHO?", "NEVER HEARD OF HIM", "WAIT, WHO WON?"]},
