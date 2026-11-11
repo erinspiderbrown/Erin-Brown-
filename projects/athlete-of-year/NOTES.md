@@ -38,3 +38,7 @@ Kebinatshipi mid-race (Tokyo 2025), "UNBEATEN / RANKED 7TH?!", Duplantis laughin
   one static +3.2 dB boost with a limiter), `polish` chain. 15 shots (5 full-screen incl. 2 freeze pop-outs), 13 graphics, 6 whooshes.
 - Dropbox `/TikTok Exports/`: video + `athlete_of_year_thumb(_916).jpg`, content_hash verified on all three.
   Link: https://www.dropbox.com/scl/fi/zxxfnkjfkb1gz4t3r0lh6/athlete_of_year_tiktok_hq.mp4?rlkey=8h5ux8lh24pc7x53bybjbwuje&dl=0
+- v2 audio (owner: "so loud ... so echoed"): raw take -10.5 LUFS and clipping (~37k samples at full scale). Now declipped and trimmed
+  to -24 LUFS before the polish (the compressor had been squashing ~7 dB nonstop). Owner approved the A/B (`voice_before_after.mp3`).
+  Dropbox: `/TikTok Exports/athlete_of_year_tiktok_hq_v2.mp4`, hash verified.
+  Link: https://www.dropbox.com/scl/fi/bvupttibcz58cumyg3fek/athlete_of_year_tiktok_hq_v2.mp4?rlkey=iahs2oe6zw1m59k0jh6dc858n&dl=0
