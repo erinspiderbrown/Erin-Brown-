@@ -1,27 +1,34 @@
 {
- "bg": "broll/hs_400m_full.jpg",
+ "bg": "broll/los_angeles_memorial_coliseum.jpg",
  "focus": [
-  0.6,
-  0.3
+  0.5,
+  1.0
  ],
- "zoom": 1.0,
- "darken": 0.45,
+ "zoom": 1.25,
+ "darken": 0.6,
  "lines": [
   {
-   "text": "9.93 TO QUALIFY?",
-   "y": 1010,
-   "size": 116,
+   "text": "LA28 STANDARDS",
+   "y": 250,
+   "size": 122,
    "color": "#FFE11A",
    "slant": 10
   },
   {
-   "text": "LA28 STANDARDS",
-   "y": 1185,
-   "size": 100,
+   "text": "9.93 TO QUALIFY?",
+   "y": 440,
+   "size": 112,
    "color": "#FFFFFF",
    "box": "#E8231E",
    "slant": 10,
    "rotate": -2
+  },
+  {
+   "text": "100M 9.93 · 200M 19.95 · 400M 44.40",
+   "y": 650,
+   "size": 54,
+   "color": "#FFFFFF",
+   "box": "rgba(0,0,0,.72)"
   }
  ]
 }
