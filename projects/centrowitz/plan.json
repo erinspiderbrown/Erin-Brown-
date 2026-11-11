@@ -1,0 +1,498 @@
+{
+ "workdir": "build",
+ "output": "out/centrowitz.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 97.48,
+ "face": {
+  "src": "work/face_final.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "zooms": [
+  [
+   52.1,
+   54.9,
+   1.12
+  ],
+  [
+   94.3,
+   96.9,
+   1.1
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo2.webp",
+    "ss": 0,
+    "focus": [
+     0.53,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.3,
+   "broll": {
+    "src": "ph/medal_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.0,
+   "broll": {
+    "src": "up/trackfront.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.0,
+   "broll": {
+    "src": "up/office.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.95,
+   "broll": {
+    "src": "up/city1.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.4,
+   "broll": {
+    "src": "up/child.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.15,
+   "broll": {
+    "src": "up/city2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 36.9,
+   "broll": {
+    "src": "raw/photo2.webp",
+    "ss": 0,
+    "focus": [
+     0.22,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 45.1,
+   "broll": {
+    "src": "gph/zurich400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 47.6,
+   "broll": {
+    "src": "up/trackkid.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.4,
+   "broll": {
+    "src": "ph/medal_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.1,
+   "broll": {
+    "src": "gph/istanbul400.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.7,
+   "broll": {
+    "src": "up/office.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 63.45,
+   "broll": {
+    "src": "up/trackkid.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 68.0,
+   "broll": {
+    "src": "up/city1.mp4",
+    "ss": 0.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 72.35,
+   "broll": {
+    "src": "raw/photo2.webp",
+    "ss": 0,
+    "focus": [
+     0.53,
+     0.25
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 76.6,
+   "broll": {
+    "src": "up/office.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 82.9,
+   "broll": {
+    "src": "up/city2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 86.3,
+   "broll": {
+    "src": "up/trackfront.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 92.6,
+   "broll": {
+    "src": "ph/medal_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 94.2,
+   "broll": {
+    "src": "raw/photo2.webp",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.3
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.4,
+   "dur": 3.4,
+   "rank": "USA",
+   "name": "MATTHEW CENTROWITZ",
+   "sub": "OLYMPIC 1500M CHAMPION \u00b7 RIO 2016"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.3,
+   "dur": 2.6,
+   "text": "NOT THE FLEX?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 7.4,
+   "dur": 1.9,
+   "text": "NO ONE CARES",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 12.3,
+   "dur": 4.0,
+   "title": "RIO 2016 \u00b7 1500M FINAL",
+   "rows": [
+    {
+     "event": "CENTROWITZ (USA)",
+     "value": "3:50.00",
+     "tag": "GOLD"
+    }
+   ],
+   "times": [
+    1.7
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 16.3,
+   "dur": 1.8,
+   "text": "1ST U.S. WIN SINCE 1908",
+   "size": 90,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 18.1,
+   "dur": 2.0,
+   "items": [
+    "2016",
+    "2026"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "10 YEARS LATER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 20.2,
+   "dur": 1.7,
+   "text": "OFFICE JOB"
+  },
+  {
+   "type": "name",
+   "t": 22.2,
+   "dur": 3.4,
+   "rank": "DAD",
+   "name": "MATT CENTROWITZ SR.",
+   "sub": "HIS DAD \u00b7 1976 OLYMPIAN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 32.9,
+   "dur": 2.4,
+   "text": "NO ONE REALLY CARES"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 37.9,
+   "dur": 7.2,
+   "title": "OLYMPIC 1500M CHAMPS",
+   "rows": [
+    {
+     "event": "2000 \u00b7 NOAH NGENY",
+     "value": "KEN"
+    },
+    {
+     "event": "1996 \u00b7 MORCELI",
+     "value": "ALG"
+    },
+    {
+     "event": "1992 \u00b7 FERMIN CACHO",
+     "value": "ESP"
+    }
+   ],
+   "times": [
+    1.3,
+    4.2,
+    6.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 45.2,
+   "dur": 2.4,
+   "items": [
+    "WHO?",
+    "NEVER HEARD OF HIM",
+    "WAIT, WHO WON?"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 48.4,
+   "dur": 3.0,
+   "text": "COOL FOR A MOMENT"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 52.1,
+   "dur": 2.8,
+   "text": "REAL BENEFITS?",
+   "size": 110,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 57.3,
+   "dur": 3.4,
+   "text": "JUST AN OLYMPIAN?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 61.9,
+   "dur": 1.4,
+   "text": "NO ONE CARES",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 63.6,
+   "dur": 8.5,
+   "text": "MATT CENTROWITZ SR.",
+   "tag": "HIS DAD",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 72.6,
+   "dur": 3.4,
+   "text": "NOT THE FLEX"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 76.6,
+   "dur": 9.6,
+   "items": [
+    "TAKE THE BREAD",
+    "BUILD SOMETHING",
+    "LONGEVITY"
+   ],
+   "times": [
+    2.3,
+    6.5,
+    8.4
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 86.5,
+   "dur": 5.0,
+   "value": "35",
+   "unit": "YEARS OLD",
+   "label": "Entering the job market",
+   "sub": "after the track"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 92.9,
+   "dur": 1.4,
+   "text": "INSANE",
+   "size": 160
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 94.4,
+   "dur": 3.08,
+   "question": "OLYMPIC GOLD: WORTH IT?",
+   "options": [
+    "WORTH IT",
+    "NOT THE FLEX"
+   ]
+  }
+ ]
+}
