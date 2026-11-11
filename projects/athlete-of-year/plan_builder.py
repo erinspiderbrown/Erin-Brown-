@@ -49,21 +49,22 @@ t_but, t_collen, t_last, t_undef = at("but he's top"), at('they have collen'), a
 t_worlds, t_this, t_dropped, t_7a, t_7b = at('undefeated at the'), at('this year all'), at('dropped some'), at('seventh'), at('seventh place')
 t_guy, t_lost2, t_top3b, t_jokes = at('but a guy'), at("who's lost"), at('is top three'), at('certain jokes')
 
-DUP = P('Zurich_athletics_competition_08')
+JUMP, PRESS_V, PRESS_L = P('Duplantis_jumping'), P('Pole_rich_athletics_competition_08'), P('Pole_rich_athletics_competition_03')
 segs = [
-    full(0.0, DUP, 0.5, 0.35),                                               # hook: Duplantis, Zürich 2026
+    full(0.0, JUMP, 0.5, 0.3),                                                # hook: Duplantis in the air (Athletissima)
     split(t_rid - 0.05, R('wa_finalists'), 0.5, 0.45),                       # the finalists graphic
-    full(t_mondo - 0.05, FRZ('mondo', P('Zurich_athletics_competition_05'), t_mind - t_mondo, [0.5, 0.45]), 0.5, 0.5, hit=True),
-    split(t_mind - 0.05, P('Zurich_athletics_competition_04'), 0.5, 0.35),   # no outdoor WR
-    full(t_indoor - 0.05, P('Athletissima_athletics_competition_01'), 0.5, 0.35),
-    split(t_lost - 0.05, P('Marschall_at_the_2026'), 0.5, 0.35),             # losses: Marschall (Stockholm winner)
-    split(t_lost + 3.2, P('Kendricks_London_2017'), 0.5, 0.35),              # ... and Kendricks (London winner)
+    full(t_mondo - 0.05, FRZ('mondo', PRESS_V, t_mind - t_mondo, [0.5, 0.4]), 0.5, 0.5, hit=True),   # Mondo pops out
+    split(t_mind - 0.05, PRESS_L, 0.35, 0.4),                                # no outdoor WR
+    full(t_indoor - 0.05, JUMP, 0.5, 0.3),
+    split(t_lost - 0.05, P('Marschall_at_the_2026_W_sima_athletics_competition_01'), 0.4, 0.45),   # Marschall (beat him in Stockholm)
+    split(t_lost + 3.2, PRESS_L, 0.75, 0.4),
     split(t_but - 0.05, R('wa_runnersup'), 0.5, 0.4),                        # runners-up graphic
-    full(t_collen - 0.05, FRZ('collen', P('Kebinatshipi_2025_World'), t_undef - t_collen, [0.5, 0.45]), 0.5, 0.5, hit=True),
-    split(t_undef - 0.05, P('Kebinatshipi_BOT_2025'), 0.5, 0.35),
-    split(t_dropped - 0.05, P('Kebinatshipi_2025_World'), 0.5, 0.4),
+    full(t_collen - 0.05, FRZ('collen', P('Kebinatshipi_BOT_2025'), t_undef - t_collen, [0.6, 0.45], (0.64, 0.45)), 0.5, 0.5, hit=True),
+    split(t_undef - 0.05, P('Championships_Tokyo'), 0.55, 0.45),
+    split(t_dropped - 0.05, P('Kebinatshipi_BOT_2025'), 0.5, 0.45),
     split(t_7a - 0.05, R('wa_collen7th'), 0.5, 0.45),                        # the 7th graphic
-    full(t_guy - 0.05, P('Zurich_athletics_competition_03'), 0.5, 0.4),
+    full(t_guy - 0.05, PRESS_V, 0.5, 0.4),
+    split(t_lost2 - 0.35, P('Marschall_at_the_2026_W_sima_athletics_competition_05'), 0.45, 0.4),
     split(t_top3b - 0.3, R('wa_finalists'), 0.5, 0.35),
 ]
 

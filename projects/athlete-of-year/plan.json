@@ -1,0 +1,389 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/out/athlete_of_year_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/athlete-of-year/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 70.54,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/athlete-of-year/work/face.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Armand_Duplantis_jumping_at_th_sima_athletics_competition_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.73,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/athlete-of-year/raw/wa_finalists.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 7.09,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/frz/mondo.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 12.89,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Armand_Duplantis_wins_the_Pole_rich_athletics_competition_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 17.25,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Armand_Duplantis_jumping_at_th_sima_athletics_competition_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.03,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Kurtis_Marschall_at_the_2026_W_sima_athletics_competition_01.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.28,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Armand_Duplantis_wins_the_Pole_rich_athletics_competition_03.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.73,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/athlete-of-year/raw/wa_runnersup.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 33.67,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/frz/collen.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 37.93,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Busang_Collen_Kebinatshipi_202_Athletics_Championships_Tokyo.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.35,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Busang_Collen_Kebinatshipi_BOT_2025.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 50.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/athlete-of-year/raw/wa_collen7th.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 53.73,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Armand_Duplantis_wins_the_Pole_rich_athletics_competition_08.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.97,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/aoty/ph/Kurtis_Marschall_at_the_2026_W_sima_athletics_competition_05.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 63.92,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/athlete-of-year/raw/wa_finalists.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   3.6799999999999997,
+   5.08,
+   1.1
+  ],
+  [
+   30.68,
+   32.08,
+   1.08
+  ],
+  [
+   51.86,
+   53.36,
+   1.12
+  ],
+  [
+   66.92,
+   68.52000000000001,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.2,
+   "dur": 2.2,
+   "text": "WORLD ATHLETICS AWARDS"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 2.6,
+   "dur": 1.3,
+   "text": "SO BLATANT",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.38,
+   "dur": 1.8,
+   "text": "TOP 3?"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 14.48,
+   "dur": 5.2,
+   "title": "MONDO \u00b7 2026 WORLD RECORDS",
+   "rows": [
+    {
+     "event": "INDOOR \u00b7 UPPSALA",
+     "value": "6.31 WR"
+    },
+    {
+     "event": "OUTDOOR BEST",
+     "value": "6.25"
+    }
+   ],
+   "times": [
+    3.020000000000001,
+    4.860000000000001
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 21.98,
+   "dur": 6.0,
+   "title": "MONDO \u00b7 2026 LOSSES",
+   "rows": [
+    {
+     "event": "STOCKHOLM \u00b7 JUN 7",
+     "value": "2ND"
+    },
+    {
+     "event": "LONDON \u00b7 JUL 17",
+     "value": "2ND"
+    }
+   ],
+   "times": [
+    0.4,
+    1.8
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 31.18,
+   "dur": 1.4,
+   "text": "STILL TOP 3",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 35.56,
+   "dur": 1.4,
+   "text": "DAMN NEAR LAST",
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 37.88,
+   "dur": 8.520000000000001,
+   "title": "COLLEN \u00b7 2026 (400M)",
+   "rows": [
+    {
+     "event": "DIAMOND LEAGUE",
+     "value": "6-0"
+    },
+    {
+     "event": "2025 WORLDS",
+     "value": "GOLD"
+    },
+    {
+     "event": "2026 SEASON",
+     "value": "UNBEATEN"
+    }
+   ],
+   "times": [
+    0.3,
+    3.2000000000000055,
+    6.12
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 46.7,
+   "dur": 2.6,
+   "value": "43.39",
+   "unit": "SECONDS",
+   "label": "400M PB \u00b7 BUDAPEST 2026",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 51.96,
+   "dur": 1.5,
+   "text": "7TH PLACE?!",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 61.02,
+   "dur": 3.6,
+   "title": "2026, HEAD TO HEAD",
+   "rows": [
+    {
+     "event": "COLLEN \u00b7 400M",
+     "value": "UNBEATEN"
+    },
+    {
+     "event": "MONDO \u00b7 PV",
+     "value": "2 LOSSES"
+    }
+   ],
+   "times": [
+    0.2,
+    0.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 64.22,
+   "dur": 1.4,
+   "text": "TOP 3",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 66.92,
+   "dur": 3.620000000000002,
+   "question": "WHO GOT ROBBED?",
+   "options": [
+    "COLLEN",
+    "NOBODY"
+   ]
+  }
+ ]
+}
