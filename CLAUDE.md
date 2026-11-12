@@ -138,7 +138,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-7b. **Send it to the owner's TikTok** (set up Nov 12, 2026) through the vidIQ connector, to the **"Erin Spider Brown"** account only (`platformAccountId` `_000ssAV0cJxYmcJ0XSxwm8rgS87rI5_tVPx`). "6starfiles" is a different account, so never post the track edits there.
+7b. **Send it to the owner's TikTok and Instagram** (set up Nov 12, 2026) through the vidIQ connector, once he approves the video:
+   - **Track videos** (every chat) go to the TikTok account **"Erin Spider Brown"** (`platformAccountId` `_000ssAV0cJxYmcJ0XSxwm8rgS87rI5_tVPx`).
+   - **GTA videos** (the GTA chat) go to TikTok **"6starfiles"** (`_000q3uBIYM4vO1HWm18pq2_3BVJbWI6uGec`). Never mix the two.
+   - **Track videos also go to Instagram @e.diamondz as a Trial Reel** (`vidiq_instagram_publish_reel`, account `29211548525143718`, `trialParams.graduationStrategy: "MANUAL"`, so he decides when to share it to followers; no AI label). Instagram takes at most 299 MB and 15 min, so upload a ~5 Mbps copy if the export is bigger.
    - Upload the export with `vidiq_video_upload` (`localFile` for files over 299 MB), then `vidiq_social_post_draft_create`. The caption is the title plus a few hashtags.
    - Owner's settings: `privacyLevel: SELF_ONLY` ("Only me", so it works as a draft he makes public himself), `allowComment: true`, `musicUsageConfirmed: true` (he accepted TikTok's terms).
    - Show him the draft and publish only after he says yes. Check `vidiq_social_post_status` until it's `completed`.
