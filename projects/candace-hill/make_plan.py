@@ -178,6 +178,13 @@ TOP[0]['t'] = 0.0
 plan = {"workdir": "build", "output": "out/candace_hill.mp4", "words": "work/words_final.json", "voice_ss": 0.0, "duration": DUR,
         "face": {"src": "top.mov", "focus": [0.5, 0.5]}, "face_grade": "null", "zooms": [], "skip_res_check": False,
         "segments": segs, "graphics": GFX}
+# retime can stretch a short graphic across a bite; keep text graphics short and clear of the podcast badges
+badges = [g['t'] for g in GFX if g.get('kind') == 'podcast']
+for g in GFX:
+    if g.get('kind') in ('keyword', 'stamp'):
+        g['dur'] = min(g['dur'], 4.0)
+        for bt in badges:
+            if g['t'] < bt < g['t'] + g['dur']: g['dur'] = round(bt - g['t'] - 0.1, 2)
 json.dump(plan, open('plan.json', 'w'), indent=1)
 json.dump({"duration": DUR, "voice": "work/voice_t.wav", "shots": TOP}, open('top.json', 'w'), indent=1)
 full = sum((segs[i + 1]['start'] if i + 1 < len(segs) else DUR) - s['start'] for i, s in enumerate(segs) if s['type'] == 'full')
