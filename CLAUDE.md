@@ -89,6 +89,9 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - A graphic on almost every beat (keywords, stamps, boards, bars, counters, a poll).
   - **No name tags.** The owner rejected the red-box `name` graphic (Nov 11, 2026) for every video; `name_tags: false` in `style.json` makes `build.py` skip them. Introduce a person with a `keyword`, the captions, or the `podcast` mic badge for a guest clip.
   - Don't thin them out or swap in new styles without asking.
+- **Footage rights (owner, Nov 12, 2026):** for TikTok edits, use the real footage: broadcast race clips, news packages, interviews and athlete profiles, cut in as B-roll and soundbites. Don't use it in anything made for YouTube; YouTube versions need licensed or the owner's own footage. Credit the sources in `CREDITS.md`.
+  - Where to get it from the cloud session: Dailymotion mirrors a lot of athlete profiles and interviews (search its API, download with yt-dlp), and some news sites embed downloadable video (NBC News, Fox News, ABC13).
+  - YouTube, FloTrack and MileSplit block downloads here. Don't try to get around that; list those clips in `footage_wanted.md` for the owner to drop in Dropbox.
 - **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
 - **Story arc:** build the edit as an argument with a payoff.
   1. **Hook (0–15 s):** the subject full-screen, the claim as a `keyword` ("ALWAYS 2ND TO BOLT?"), a `stamp` on the punchline ("BIGGEST LIE"), and `bubbles` for "what people say online".
