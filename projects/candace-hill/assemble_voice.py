@@ -17,7 +17,26 @@ def loud(src, ss=None, to=None):
 
 # pieces: (kind, src, ss, se, words-json or None, label)
 P = lambda n: ('voice', f'{R}/p{n}.m4a', None, None, f'{WK}/w_p{n}.json', f'p{n}')
-pieces = [P(i) for i in range(1, 9)]
+V = f'{M}/vid'
+PV = lambda n, ss=None, se=None, lab=None: ('voice', f'{R}/p{n}.m4a', ss, se, f'{WK}/w_p{n}.json', lab or f'p{n}')
+BITE = lambda src, ss, se, wj, lab: ('bite', f'{V}/{src}.mp4', ss, se, f'{V}/{wj}', lab)
+pieces = [] if __import__('os').environ.get('NOBITES') else None
+if pieces is None:
+    pieces = [
+        PV(1),
+        BITE('x4a2qs8', 42.8, 47.8, 'w_x4a2qs8.json', 'bite_A'),     # "My name is Candace Hill. You don't know me yet, but you soon will."
+        PV(2, None, 24.5, 'p2a'),
+        BITE('x4a2qs8', 297.3, 302.2, 'w_x4a2qs8.json', 'bite_B'),   # "I cried... wow, I'm a real world champion."
+        PV(2, 24.5, None, 'p2b'),
+        PV(3),
+        BITE('x4a2qs8', 359.9, 367.8, 'w_x4a2qs8.json', 'bite_G'),   # coach: "...potential to be the greatest female sprinter ever, period."
+        PV(4, None, 10.55, 'p4a'),
+        BITE('x61wzb1', 173.5, 187.6, 'w_x61wzb1.json', 'bite_C'),   # "...you need surgery and you'll be out for four months... this is not going well."
+        PV(4, 10.55, None, 'p4b'),
+        BITE('x4a2qs8', 157.8, 163.3, 'w_x4a2qs8.json', 'bite_F'),   # coach: "...going to the next level is really on the mental side."
+    ] + [PV(i) for i in range(5, 9)]
+else:
+    pieces = [PV(i) for i in range(1, 9)]
 # owner's flubs, cut out (source seconds in each part):
 CUTS = {} if __import__('os').environ.get('NOCUTS') else {'p3': [(13.95, 17.80)],                      # "ASICS ain't never signed the number." -> keeps the restart "...say the number."
         'p6': [(32.62, 33.98), (43.35, 43.90), (45.38, 45.95)]}   # hesitations before "Baton Rouge", "2024", "Olympic Trials"
@@ -48,7 +67,6 @@ for k, (kind, src, ss, se, wj, label) in enumerate(pieces):
     if kind.startswith('voice'):
         a = (W[0]['s'] - 0.18) if ss is None else ss
         b = (W[-1]['e'] + 0.30) if se is None else se
-        if kind == 'voice8a': b = 20.20
         rng = minus(ranges_for(W, a, b), CUTS.get(label, []))
         if src not in gain_cache:
             I, Pk = loud(src)
@@ -60,9 +78,9 @@ for k, (kind, src, ss, se, wj, label) in enumerate(pieces):
     else:
         rng = [(ss, se)]
         I, Pk = loud(src, ss, se)
-        g, lim = -16.0 - I, True       # archival audio sits just under the voice
-    gap = 0.0 if k == 0 else (GAP_INSERT if (kind in ('nbc', 'abc') or pieces[k-1][0] in ('nbc', 'abc')) else GAP_PART)
-    if kind == 'voice8b': gap = 0.35
+        g, lim = -14.5 - I, True       # interview audio matched to the owner's voice (not his voice: gain + limiter is fine)
+    gap = 0.0 if k == 0 else (GAP_INSERT if (kind == 'bite' or pieces[k-1][0] == 'bite') else GAP_PART)
+    if label.endswith('b') and label.startswith('p'): gap = 0.35
     t += gap
     start = t
     for (r0, r1) in rng:

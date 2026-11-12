@@ -22,6 +22,24 @@ Alternates:
   - **AI-upscaled (Real-ESRGAN), split only:** World Athletics' 2016 World U20 win, two 2015 Brooks PR shots, and the 2021 close-up.
 - **Place scenes (`make_maps.py`):** Natural Earth outlines filled with the US / Colombia / Poland flags, with a city dot. Shoreline WA, Conyers GA, Cali, Bydgoszcz, California, Baton Rouge.
 
+## v2: rebuilt around video (owner: "it didn't include any videos")
+YouTube, FloTrack and MileSplit block downloads from the cloud, but Dailymotion mirrors several Candace Hill videos. These are now the top half of most of the split, AI-upscaled (Real-ESRGAN, 640 px input) because they're 720p or lower:
+
+**The footage:**
+- **beIN Sports / Express Xtra athlete profile (2016):** training, starts, runs, studying at home, coach Tony Carpenter, and the Cali 2015 race and flag celebration. The broadcast ticker is cropped off.
+- **El País TV (Colombia), Cali 2015:** the race, the flag lap and the podium.
+- **USATF 2016 junior-title interview** and **2017 goals interview:** used as B-roll only, without their audio.
+
+**Soundbites cut into the voiceover**, each lip-synced in the top slot with the `podcast` mic badge:
+- **A (after the intro), Candace:** "My name is Candace Hill. You don't know me yet, but you soon will."
+- **B (after Cali), Candace:** "I cried, I really cried after my 100… wow, I'm a real world champion."
+- **G (after the deal), Tony Carpenter:** "I think Candace Hill has the potential to be the greatest female sprinter ever, period."
+- **C (after "missed four months"), Candace:** "…you need surgery and you'll be out for four months… dang… this is not going well."
+  - Audio only, from a 288p interview, so it plays over training footage.
+- **F (before the mental-health part), Tony Carpenter:** "the most important thing for her going to the next level is really on the mental side."
+
+**Length:** 6:07 with the soundbites (5:26 without them).
+
 ## Owner's flubs removed (`CUTS` in `assemble_voice.py`, then `tighten_voice.py`)
 - **Part 3:** "ASICS ain't never *signed* the number" is cut. The restart "ASICS ain't never say the number" is kept.
 - **Part 6:** hesitations before "Baton Rouge" (1.4 s), before "2024" and before "Olympic Trials" are cut.

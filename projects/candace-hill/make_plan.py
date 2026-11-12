@@ -5,7 +5,8 @@ import json
 # retime() maps them onto the final voice track by matching the two transcripts word by word.
 import difflib, os
 OLD = json.load(open('work/words_old.json')); NEW = json.load(open('work/words_t.json'))
-sm = difflib.SequenceMatcher(a=[(w['src'], w['w']) for w in OLD], b=[(w['src'], w['w']) for w in NEW], autojunk=False)
+key = lambda w: (w['src'][:2] if w['src'].startswith('p') else w['src'], w['w'])      # p2a/p2b -> p2
+sm = difflib.SequenceMatcher(a=[key(w) for w in OLD], b=[key(w) for w in NEW], autojunk=False)
 ANCH = [(0.0, 0.0)] + [(OLD[i + k]['s'], NEW[j + k]['s']) for i, j, n in sm.get_matching_blocks() for k in range(n)]
 ANCH.sort()
 def retime(t):
@@ -14,57 +15,59 @@ def retime(t):
     return round(ANCH[-1][1] + (t - ANCH[-1][0]), 2)
 DUR = round(NEW[-1]['e'] + 0.6, 2)
 P = lambda n: f'ph/{n}.jpg'; M = lambda n: f'geo/{n}.jpg'; G = lambda n: f'gph/{n}.jpg'
+U = lambda n, ss=0: f'up/{n}.mp4@{ss}'
 SMILE, FLAG, ASICS, STAD, FIN, RUN, RUN2, U20, EYES, BLOCKS = (P('usa_smile'), P('cali_flag'), P('asics_run'), P('stadium_2021'),
     P('brooks_finish'), P('brooks_run'), P('brooks_run2'), P('u20_win'), P('eyes'), P('blocks_2x'))
 # (t, 'full', src, focus) | (t, 'split', top, top_focus, bottom, bottom_focus) | extra dict optional at the end
 B = [
  (0.0,   'full',  M('st_wa'), [0.5, 0.42]),
- (4.6,   'split', RUN, [0.5, 0.3], BLOCKS, [0.55, 0.5]),
+ (4.6,   'split', U('b_starts'), [0.5, 0.4], BLOCKS, [0.55, 0.5]),
  (7.6,   'split', FIN, [0.55, 0.5], RUN2, [0.5, 0.4]),
  (9.5,   'full',  ASICS, [0.5, 0.4]),
- (18.1,  'split', SMILE, [0.4, 0.3], STAD, [0.55, 0.3]),
- (26.9,  'split', EYES, [0.5, 0.5], FIN, [0.6, 0.5]),
+ (18.1,  'split', U('b_run1'), [0.5, 0.4], STAD, [0.55, 0.3]),
+ (26.9,  'split', U('b_open'), [0.5, 0.5], FIN, [0.6, 0.5]),
  (33.3,  'full',  STAD, [0.56, 0.3], {'hit': True}),
  (39.9,  'full',  M('st_ga'), [0.5, 0.42]),
- (45.0,  'split', FIN, [0.62, 0.5], RUN, [0.5, 0.35]),
+ (45.0,  'split', U('b_run2'), [0.5, 0.4], FIN, [0.5, 0.35]),
  (52.0,  'full',  M('ct_co'), [0.5, 0.42]),
- (57.0,  'full',  FLAG, [0.56, 0.35]),
- (62.6,  'split', SMILE, [0.42, 0.25], RUN2, [0.5, 0.4]),
- (71.3,  'split', RUN, [0.5, 0.35], BLOCKS, [0.5, 0.5]),
+ (57.0,  'split', U('c_race'), [0.5, 0.5], U('b_cali'), [0.5, 0.45]),
+ (60.4,  'split', U('c_flag'), [0.5, 0.4], FLAG, [0.56, 0.35]),
+ (62.6,  'split', U('b_flag'), [0.5, 0.4], RUN2, [0.5, 0.4]),
+ (71.3,  'split', U('b_run1', 2), [0.5, 0.4], BLOCKS, [0.5, 0.5]),
  (78.9,  'full',  ASICS, [0.62, 0.35]),
  (85.8,  'split', SMILE, [0.35, 0.3], ASICS, [0.4, 0.4]),
- (90.8,  'split', EYES, [0.5, 0.5], STAD, [0.5, 0.5]),
+ (90.8,  'split', U('g_talk'), [0.5, 0.35], STAD, [0.5, 0.5]),
  (96.3,  'split', ASICS, [0.5, 0.35], BLOCKS, [0.6, 0.5]),
- (104.3, 'split', STAD, [0.5, 0.25], G('wpgtrack'), [0.5, 0.5]),
- (115.7, 'split', SMILE, [0.45, 0.3], G('getset'), [0.55, 0.6]),
+ (104.3, 'split', U('b_starts', 3), [0.5, 0.4], G('wpgtrack'), [0.5, 0.5]),
+ (115.7, 'split', U('b_open', 2), [0.5, 0.5], G('getset'), [0.55, 0.6]),
  (118.5, 'full',  ASICS, [0.38, 0.45]),
- (124.2, 'split', RUN2, [0.5, 0.4], BLOCKS, [0.45, 0.5]),
+ (124.2, 'split', U('b_study'), [0.5, 0.45], BLOCKS, [0.45, 0.5]),
  (134.5, 'full',  SMILE, [0.42, 0.3]),
- (141.0, 'split', RUN, [0.5, 0.3], G('wpgtrack'), [0.4, 0.5]),
+ (141.0, 'split', U('b_open', 1), [0.5, 0.5], G('wpgtrack'), [0.4, 0.5]),
  (149.1, 'full',  M('ct_pl'), [0.5, 0.42]),
  (152.0, 'split', U20, [0.5, 0.4], FLAG, [0.55, 0.35]),
- (156.4, 'split', EYES, [0.5, 0.5], G('getset'), [0.5, 0.6]),
- (165.2, 'split', STAD, [0.55, 0.3], G('wpgtrack'), [0.6, 0.5]),
+ (156.4, 'split', U('u_smile'), [0.5, 0.35], G('getset'), [0.5, 0.6]),
+ (165.2, 'split', U('g_talk', 2), [0.5, 0.35], G('wpgtrack'), [0.6, 0.5]),
  (171.7, 'split', SMILE, [0.4, 0.25], BLOCKS, [0.55, 0.5]),
  (178.6, 'full',  STAD, [0.5, 0.3], {'hit': True}),
  (185.1, 'split', EYES, [0.5, 0.5], STAD, [0.62, 0.3]),
  (194.3, 'split', STAD, [0.5, 0.2], G('getset'), [0.45, 0.6]),
- (201.8, 'split', SMILE, [0.45, 0.3], EYES, [0.5, 0.5]),
+ (201.8, 'split', U('b_run2', 1), [0.5, 0.4], EYES, [0.5, 0.5]),
  (208.4, 'full',  M('st_ca'), [0.5, 0.42]),
  (216.2, 'split', STAD, [0.55, 0.35], G('wpgtrack'), [0.5, 0.5]),
  (231.1, 'split', SMILE, [0.4, 0.3], FIN, [0.6, 0.5]),
  (237.4, 'full',  M('st_la'), [0.5, 0.42]),
- (247.3, 'split', STAD, [0.5, 0.25], BLOCKS, [0.5, 0.5]),
+ (247.3, 'split', U('b_study', 1), [0.5, 0.45], BLOCKS, [0.5, 0.5]),
  (249.3, 'full',  SMILE, [0.45, 0.3]),
- (263.4, 'split', EYES, [0.5, 0.5], STAD, [0.5, 0.4]),
+ (263.4, 'split', U('b_starts', 1), [0.5, 0.4], STAD, [0.5, 0.4]),
  (280.3, 'split', FIN, [0.55, 0.5], FLAG, [0.6, 0.4]),
  (289.8, 'split', ASICS, [0.6, 0.4], G('wpgtrack'), [0.5, 0.5]),
- (296.2, 'split', SMILE, [0.4, 0.3], ASICS, [0.5, 0.45]),
- (305.7, 'split', RUN2, [0.5, 0.4], BLOCKS, [0.55, 0.5]),
+ (296.2, 'split', U('u_smile', 2), [0.5, 0.35], ASICS, [0.5, 0.45]),
+ (305.7, 'split', U('b_run2'), [0.5, 0.4], BLOCKS, [0.55, 0.5]),
  (313.2, 'full',  ASICS, [0.5, 0.4], {'hit': True}),
- (316.0, 'split', RUN, [0.5, 0.35], FIN, [0.55, 0.5]),
+ (316.0, 'split', U('b_run1'), [0.5, 0.4], FIN, [0.55, 0.5]),
  (322.1, 'full',  STAD, [0.56, 0.3]),
- (326.7, 'split', EYES, [0.5, 0.5], G('getset'), [0.5, 0.6]),
+ (326.7, 'split', U('b_open', 3), [0.5, 0.5], G('getset'), [0.5, 0.6]),
  (329.7, 'full',  FLAG, [0.56, 0.3]),
 ]
 GFX = [
@@ -138,13 +141,38 @@ for g in GFX:
     g['t'], g['dur'] = t0, max(0.8, round(t1 - t0, 2))
 GFX[-1]['dur'] = round(DUR - GFX[-1]['t'], 2)
 B = [(retime(b[0]),) + tuple(b[1:]) for b in B]
+VW = {'x4a2qs8': json.load(open('vid_w/w_x4a2qs8.json')), 'x61wzb1': json.load(open('vid_w/w_x61wzb1.json'))}
+BITES = [  # label, source video, source start, top, top focus, bottom, bottom focus, badge text, badge tag
+ ('bite_A', 'x4a2qs8', 42.8, U('b_A'), [0.5, 0.35], U('b_open'), [0.5, 0.5], 'CANDACE HILL', 'AGE 16 · beIN SPORTS'),
+ ('bite_B', 'x4a2qs8', 297.3, U('b_B'), [0.5, 0.35], U('c_flag'), [0.5, 0.4], 'CANDACE HILL', 'AFTER CALI 2015'),
+ ('bite_G', 'x4a2qs8', 359.9, U('b_G'), [0.5, 0.4], FLAG, [0.56, 0.35], 'TONY CARPENTER', 'HER COACH · 2016'),
+ ('bite_C', 'x61wzb1', 173.5, U('b_run2'), [0.5, 0.4], U('u_smile'), [0.5, 0.35], 'CANDACE HILL', 'ON HER 2016 SURGERY'),
+ ('bite_F', 'x4a2qs8', 157.8, U('b_F'), [0.5, 0.4], STAD, [0.55, 0.3], 'TONY CARPENTER', 'HER COACH · 2016'),
+]
+for lab, vid, src0, top, tf, bot, bf, who, tag in BITES:
+    ws = [w for w in NEW if w['src'] == lab]
+    w0 = next(x for x in VW[vid] if x['w'] == ws[0]['w'] and x['s'] >= src0 - 0.6)
+    t0 = round(ws[0]['s'] - (w0['s'] - src0) - 0.05, 2); t1 = round(ws[-1]['e'] + 0.15, 2)
+    B = [b for b in B if not (t0 - 0.3 < b[0] < t1)]
+    B.sort(key=lambda b: b[0])
+    nxt = [b for b in B if b[0] >= t1]
+    if nxt and nxt[0][0] - t1 > 0.4:                # the next beat starts as soon as the bite ends
+        i = B.index(nxt[0]); B[i] = (t1,) + tuple(nxt[0][1:])
+    B.append((t0, 'split', top, tf, bot, bf)); B.sort(key=lambda b: b[0])
+    GFX = [g for g in GFX if not (t0 - 0.2 < g['t'] < t1 - 0.3)]
+    GFX.append({"type": "motion", "kind": "podcast", "t": round(t0 + 0.2, 2), "dur": round(t1 - t0 - 0.4, 2), "text": who, "tag": tag, "anchor": "lower"})
+B.sort(key=lambda b: b[0]); GFX.sort(key=lambda g: g['t'])
 segs, TOP = [], []
 for b in B:
     ex = b[-1] if isinstance(b[-1], dict) else {}
     if b[1] == 'full': d = {"type": "full", "start": b[0], "broll": {"src": b[2], "ss": 0, "focus": b[3]}}
+    elif '@' in b[4]:
+        bs, _, bss = b[4].partition('@'); d = {"type": "split", "start": b[0], "broll": {"src": bs, "ss": float(bss), "focus": b[5]}}
     else:
         d = {"type": "split", "start": b[0], "broll": {"src": b[4], "ss": 0, "focus": b[5]}}
-        TOP.append({"t": b[0], "src": b[2], "focus": b[3]})
+    if b[1] == 'split':
+        src, _, ss = b[2].partition('@')
+        TOP.append({"t": b[0], "src": src, "ss": float(ss or 0), "focus": b[3]})
     d.update(ex); segs.append(d)
 TOP[0]['t'] = 0.0
 plan = {"workdir": "build", "output": "out/candace_hill.mp4", "words": "work/words_final.json", "voice_ss": 0.0, "duration": DUR,

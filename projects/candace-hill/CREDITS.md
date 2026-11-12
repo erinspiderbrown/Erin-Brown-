@@ -1,5 +1,5 @@
 # Credits
-**TikTok caption line:** Photos: World Athletics, NBC Sports/Getty, AJC, Sports Illustrated. Maps: Natural Earth. Flags: flag-icons.
+**TikTok caption line:** Video: beIN Sports, El País TV, USATF. Photos: World Athletics, NBC Sports/Getty, AJC, Sports Illustrated. Maps: Natural Earth. Flags: flag-icons.
 These are copyrighted editorial photos used with commentary (the owner asked for news photos). Swap one out if TikTok flags it.
 - usa_smile: NBC Sports article "Candace Hill turns pro" (Getty Images 481397154)
 - cali_flag, stadium_2021, u20_win, brooks_run, brooks_run2, eyes: World Athletics news features and reports (2015–2021)
@@ -8,3 +8,8 @@ These are copyrighted editorial photos used with commentary (the owner asked for
 - blocks_2x: Refinery29, "Youngest pro athlete Candace Hill"
 - getset, wpgtrack: Wikimedia Commons (CC BY-SA 4.0 / CC BY 2.0)
 - Map shapes: Natural Earth (public domain). Flags: flag-icons (MIT)
+
+## Video (copyrighted; short excerpts used with commentary)
+- beIN Sports / Express Xtra, "Athlete Profile – Candace Hill" (2016), via Dailymotion x4a2qs8
+- El País TV (Cali), "Candace Hill y Abdul Hakim enamoraron a Cali con sus marcas" (2015), via Dailymotion x7ffrvi
+- USATF 2016 junior-title interview (x61x11l), "Candace Hill Discusses 2017 Goals" (x61wx82), and "Candace Hill Excited For Prom After Fast Times" (x61wzb1, audio only), via Dailymotion

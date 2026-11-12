@@ -1,18 +1,20 @@
 {
- "duration": 326.42,
+ "duration": 367.13,
  "voice": "work/voice_t.wav",
  "shots": [
   {
    "t": 0.0,
-   "src": "ph/brooks_run.jpg",
+   "src": "up/b_starts.mp4",
+   "ss": 0.0,
    "focus": [
     0.5,
-    0.3
+    0.4
    ]
   },
   {
    "t": 7.6,
    "src": "ph/brooks_finish.jpg",
+   "ss": 0.0,
    "focus": [
     0.55,
     0.5
@@ -20,231 +22,323 @@
   },
   {
    "t": 18.1,
-   "src": "ph/usa_smile.jpg",
+   "src": "up/b_run1.mp4",
+   "ss": 0.0,
    "focus": [
-    0.4,
-    0.3
+    0.5,
+    0.4
    ]
   },
   {
    "t": 26.9,
-   "src": "ph/eyes.jpg",
+   "src": "up/b_open.mp4",
+   "ss": 0.0,
    "focus": [
     0.5,
     0.5
    ]
   },
   {
-   "t": 44.36,
-   "src": "ph/brooks_finish.jpg",
-   "focus": [
-    0.62,
-    0.5
-   ]
-  },
-  {
-   "t": 61.97,
-   "src": "ph/usa_smile.jpg",
-   "focus": [
-    0.42,
-    0.25
-   ]
-  },
-  {
-   "t": 70.67,
-   "src": "ph/brooks_run.jpg",
+   "t": 39.46,
+   "src": "up/b_A.mp4",
+   "ss": 0.0,
    "focus": [
     0.5,
     0.35
    ]
   },
   {
-   "t": 84.96,
+   "t": 49.86,
+   "src": "up/b_run2.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 61.86,
+   "src": "up/c_race.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 65.26,
+   "src": "up/c_flag.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 67.64,
+   "src": "up/b_B.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 72.77,
+   "src": "up/b_flag.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 81.86,
+   "src": "up/b_run1.mp4",
+   "ss": 2.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 96.16,
    "src": "ph/usa_smile.jpg",
+   "ss": 0.0,
    "focus": [
     0.35,
     0.3
    ]
   },
   {
-   "t": 89.49,
-   "src": "ph/eyes.jpg",
-   "focus": [
-    0.5,
-    0.5
-   ]
-  },
-  {
-   "t": 92.37,
-   "src": "ph/asics_run.jpg",
+   "t": 100.68,
+   "src": "up/g_talk.mp4",
+   "ss": 0.0,
    "focus": [
     0.5,
     0.35
    ]
   },
   {
-   "t": 99.89,
-   "src": "ph/stadium_2021.jpg",
+   "t": 103.57,
+   "src": "ph/asics_run.jpg",
+   "ss": 0.0,
    "focus": [
     0.5,
-    0.25
+    0.35
    ]
   },
   {
-   "t": 111.24,
-   "src": "ph/usa_smile.jpg",
-   "focus": [
-    0.45,
-    0.3
-   ]
-  },
-  {
-   "t": 119.4,
-   "src": "ph/brooks_run2.jpg",
+   "t": 111.09,
+   "src": "up/b_starts.mp4",
+   "ss": 3.0,
    "focus": [
     0.5,
     0.4
    ]
   },
   {
-   "t": 135.15,
-   "src": "ph/brooks_run.jpg",
-   "focus": [
-    0.5,
-    0.3
-   ]
-  },
-  {
-   "t": 146.15,
-   "src": "ph/u20_win.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ]
-  },
-  {
-   "t": 150.55,
-   "src": "ph/eyes.jpg",
+   "t": 122.44,
+   "src": "up/b_open.mp4",
+   "ss": 2.0,
    "focus": [
     0.5,
     0.5
    ]
   },
   {
-   "t": 159.35,
-   "src": "ph/stadium_2021.jpg",
+   "t": 130.59,
+   "src": "up/b_study.mp4",
+   "ss": 0.0,
    "focus": [
-    0.55,
-    0.3
+    0.5,
+    0.45
    ]
   },
   {
-   "t": 165.72,
+   "t": 140.68,
+   "src": "up/b_G.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 148.56,
+   "src": "up/b_open.mp4",
+   "ss": 1.0,
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 157.77,
+   "src": "up/b_run2.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 180.82,
+   "src": "ph/u20_win.jpg",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 185.22,
+   "src": "up/u_smile.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 194.02,
+   "src": "up/g_talk.mp4",
+   "ss": 2.0,
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 200.39,
    "src": "ph/usa_smile.jpg",
+   "ss": 0.0,
    "focus": [
     0.4,
     0.25
    ]
   },
   {
-   "t": 177.81,
+   "t": 206.57,
+   "src": "up/b_F.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 212.13,
    "src": "ph/eyes.jpg",
+   "ss": 0.0,
    "focus": [
     0.5,
     0.5
    ]
   },
   {
-   "t": 187.01,
+   "t": 227.72,
    "src": "ph/stadium_2021.jpg",
+   "ss": 0.0,
    "focus": [
     0.5,
     0.2
    ]
   },
   {
-   "t": 194.51,
-   "src": "ph/usa_smile.jpg",
+   "t": 235.22,
+   "src": "up/b_run2.mp4",
+   "ss": 1.0,
    "focus": [
-    0.45,
-    0.3
+    0.5,
+    0.4
    ]
   },
   {
-   "t": 208.15,
+   "t": 248.87,
    "src": "ph/stadium_2021.jpg",
+   "ss": 0.0,
    "focus": [
     0.55,
     0.35
    ]
   },
   {
-   "t": 222.38,
+   "t": 263.09,
    "src": "ph/usa_smile.jpg",
+   "ss": 0.0,
    "focus": [
     0.4,
     0.3
    ]
   },
   {
-   "t": 235.54,
-   "src": "ph/stadium_2021.jpg",
+   "t": 276.26,
+   "src": "up/b_study.mp4",
+   "ss": 1.0,
    "focus": [
     0.5,
-    0.25
+    0.45
    ]
   },
   {
-   "t": 248.61,
-   "src": "ph/eyes.jpg",
+   "t": 289.32,
+   "src": "up/b_starts.mp4",
+   "ss": 1.0,
    "focus": [
     0.5,
-    0.5
+    0.4
    ]
   },
   {
-   "t": 265.09,
+   "t": 305.81,
    "src": "ph/brooks_finish.jpg",
+   "ss": 0.0,
    "focus": [
     0.55,
     0.5
    ]
   },
   {
-   "t": 274.6,
+   "t": 315.31,
    "src": "ph/asics_run.jpg",
+   "ss": 0.0,
    "focus": [
     0.6,
     0.4
    ]
   },
   {
-   "t": 280.25,
-   "src": "ph/usa_smile.jpg",
-   "focus": [
-    0.4,
-    0.3
-   ]
-  },
-  {
-   "t": 289.6,
-   "src": "ph/brooks_run2.jpg",
-   "focus": [
-    0.5,
-    0.4
-   ]
-  },
-  {
-   "t": 299.57,
-   "src": "ph/brooks_run.jpg",
+   "t": 320.96,
+   "src": "up/u_smile.mp4",
+   "ss": 2.0,
    "focus": [
     0.5,
     0.35
    ]
   },
   {
-   "t": 310.23,
-   "src": "ph/eyes.jpg",
+   "t": 330.31,
+   "src": "up/b_run2.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 340.28,
+   "src": "up/b_run1.mp4",
+   "ss": 0.0,
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 350.94,
+   "src": "up/b_open.mp4",
+   "ss": 3.0,
    "focus": [
     0.5,
     0.5
