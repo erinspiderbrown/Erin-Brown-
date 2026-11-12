@@ -22,13 +22,13 @@ SMILE, FLAG, ASICS, STAD, FIN, RUN, RUN2, U20, EYES, BLOCKS = (P('usa_smile'), P
 B = [
  (0.0,   'full',  M('st_wa'), [0.5, 0.42]),
  (4.6,   'split', U('b_starts'), [0.5, 0.4], BLOCKS, [0.55, 0.5]),
- (7.6,   'split', FIN, [0.55, 0.5], RUN2, [0.5, 0.4]),
+ (6.4,   'full',  'gen/rec_1098.mp4@8.6', [0.5, 0.5]),
  (9.5,   'full',  ASICS, [0.5, 0.4]),
  (18.1,  'split', U('b_run1'), [0.5, 0.4], STAD, [0.55, 0.3]),
  (26.9,  'split', U('b_open'), [0.5, 0.5], FIN, [0.6, 0.5]),
  (33.3,  'full',  STAD, [0.56, 0.3], {'hit': True}),
  (39.9,  'full',  M('st_ga'), [0.5, 0.42]),
- (45.0,  'split', U('b_run2'), [0.5, 0.4], FIN, [0.5, 0.35]),
+ (45.0,  'full',  'gen/rec_1098.mp4@4.6', [0.5, 0.5]),
  (52.0,  'full',  M('ct_co'), [0.5, 0.42]),
  (57.0,  'split', U('c_race'), [0.5, 0.5], U('b_cali'), [0.5, 0.45]),
  (60.4,  'split', U('c_flag'), [0.5, 0.4], FLAG, [0.56, 0.35]),
@@ -45,7 +45,7 @@ B = [
  (134.5, 'full',  SMILE, [0.42, 0.3]),
  (141.0, 'split', U('b_open', 1), [0.5, 0.5], G('wpgtrack'), [0.4, 0.5]),
  (149.1, 'full',  M('ct_pl'), [0.5, 0.42]),
- (152.0, 'split', U20, [0.5, 0.4], FLAG, [0.55, 0.35]),
+ (152.0, 'full',  'gen/rec_u20.mp4@7.0', [0.5, 0.5]),
  (156.4, 'split', U('u_smile'), [0.5, 0.35], G('getset'), [0.5, 0.6]),
  (165.2, 'split', U('g_talk', 2), [0.5, 0.35], G('wpgtrack'), [0.6, 0.5]),
  (171.7, 'split', SMILE, [0.4, 0.25], BLOCKS, [0.55, 0.5]),
@@ -73,7 +73,6 @@ B = [
 GFX = [
  {"type": "motion", "kind": "calendar", "t": 0.2, "dur": 2.6, "items": ["MAY", "JUNE", "JULY"], "hi": [1], "label": "JUNE 20, 2015"},
  {"type": "motion", "kind": "pin", "t": 2.9, "dur": 1.7, "text": "SHORELINE, WA", "sub": "BROOKS PR INVITATIONAL"},
- {"type": "motion", "kind": "stopwatch", "t": 7.7, "dur": 1.8, "value": "10.98", "unit": "100M", "label": "AGE 16", "anim": 0.6},
  {"type": "motion", "kind": "keyword", "t": 11.1, "dur": 2.8, "text": "10-YEAR PRO DEAL"},
  {"type": "motion", "kind": "stamp", "t": 15.2, "dur": 2.6, "text": "REPORTEDLY 6 FIGURES/YR", "size": 80, "anchor": "lower"},
  {"type": "motion", "kind": "board", "t": 18.4, "dur": 14.6, "title": "SINCE THAT DAY", "rows": [{"event": "LEGAL SUB-11", "value": "0"}, {"event": "USA OLY/WORLD TEAMS", "value": "0"}, {"event": "100/200 PBS", "value": "0"}], "times": [2.6, 5.4, 9.5]},
@@ -102,7 +101,7 @@ GFX = [
  {"type": "motion", "kind": "keyword", "t": 141.2, "dur": 2.4, "text": "MISSED 4 MONTHS"},
  {"type": "motion", "kind": "board", "t": 144.4, "dur": 4.6, "title": "2016 OLYMPIC TRIALS", "rows": [{"event": "100M", "value": "13TH"}, {"event": "200M", "value": "14TH"}], "times": [1.7, 3.4]},
  {"type": "motion", "kind": "pin", "t": 149.3, "dur": 2.7, "text": "BYDGOSZCZ, POLAND", "sub": "2016 WORLD U20 CHAMPIONSHIPS"},
- {"type": "motion", "kind": "stopwatch", "t": 152.2, "dur": 4.0, "value": "11.07", "unit": "100M", "label": "WORLD U20 CHAMPION", "anim": 0.7},
+ {"type": "motion", "kind": "keyword", "t": 156.6, "dur": 1.6, "text": "WORLD U20 CHAMPION"},
  {"type": "motion", "kind": "stamp", "t": 158.6, "dur": 1.5, "text": "IT STOPS", "size": 140},
  {"type": "motion", "kind": "calendar", "t": 160.0, "dur": 5.1, "items": ["2017", "2018", "2019"], "hi": [2], "label": "NO PERSONAL BEST"},
  {"type": "motion", "kind": "board", "t": 165.4, "dur": 6.2, "title": "2019 USA CHAMPS", "rows": [{"event": "100M", "value": "14TH"}, {"event": "200M", "value": "14TH"}], "times": [2.7, 4.8]},
@@ -165,7 +164,8 @@ B.sort(key=lambda b: b[0]); GFX.sort(key=lambda g: g['t'])
 segs, TOP = [], []
 for b in B:
     ex = b[-1] if isinstance(b[-1], dict) else {}
-    if b[1] == 'full': d = {"type": "full", "start": b[0], "broll": {"src": b[2], "ss": 0, "focus": b[3]}}
+    if b[1] == 'full':
+        fs, _, fss = b[2].partition('@'); d = {"type": "full", "start": b[0], "broll": {"src": fs, "ss": float(fss or 0), "focus": b[3]}}
     elif '@' in b[4]:
         bs, _, bss = b[4].partition('@'); d = {"type": "split", "start": b[0], "broll": {"src": bs, "ss": float(bss), "focus": b[5]}}
     else:

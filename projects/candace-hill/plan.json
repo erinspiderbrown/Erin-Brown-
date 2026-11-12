@@ -20,7 +20,7 @@
    "start": 0.0,
    "broll": {
     "src": "geo/st_wa.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -40,14 +40,14 @@
    }
   },
   {
-   "type": "split",
-   "start": 7.6,
+   "type": "full",
+   "start": 6.4,
    "broll": {
-    "src": "ph/brooks_run2.jpg",
-    "ss": 0,
+    "src": "gen/rec_1098.mp4",
+    "ss": 8.6,
     "focus": [
      0.5,
-     0.4
+     0.5
     ]
    }
   },
@@ -56,7 +56,7 @@
    "start": 9.5,
    "broll": {
     "src": "ph/asics_run.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.4
@@ -92,7 +92,7 @@
    "start": 33.3,
    "broll": {
     "src": "ph/stadium_2021.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.56,
      0.3
@@ -117,7 +117,7 @@
    "start": 44.56,
    "broll": {
     "src": "geo/st_ga.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -125,14 +125,14 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 49.86,
    "broll": {
-    "src": "ph/brooks_finish.jpg",
-    "ss": 0,
+    "src": "gen/rec_1098.mp4",
+    "ss": 4.6,
     "focus": [
      0.5,
-     0.35
+     0.5
     ]
    }
   },
@@ -141,7 +141,7 @@
    "start": 56.86,
    "broll": {
     "src": "geo/ct_co.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -213,7 +213,7 @@
    "start": 89.28,
    "broll": {
     "src": "ph/asics_run.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.62,
      0.35
@@ -285,7 +285,7 @@
    "start": 125.24,
    "broll": {
     "src": "ph/asics_run.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.38,
      0.45
@@ -345,7 +345,7 @@
    "start": 172.07,
    "broll": {
     "src": "geo/ct_pl.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -353,14 +353,14 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 180.82,
    "broll": {
-    "src": "ph/cali_flag.jpg",
-    "ss": 0,
+    "src": "gen/rec_u20.mp4",
+    "ss": 7.0,
     "focus": [
-     0.55,
-     0.35
+     0.5,
+     0.5
     ]
    }
   },
@@ -453,7 +453,7 @@
    "start": 241.55,
    "broll": {
     "src": "geo/st_ca.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -489,7 +489,7 @@
    "start": 268.54,
    "broll": {
     "src": "geo/st_la.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.42
@@ -585,7 +585,7 @@
    "start": 337.81,
    "broll": {
     "src": "ph/asics_run.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.5,
      0.4
@@ -634,7 +634,7 @@
    "start": 353.94,
    "broll": {
     "src": "ph/cali_flag.jpg",
-    "ss": 0,
+    "ss": 0.0,
     "focus": [
      0.56,
      0.3
@@ -665,16 +665,6 @@
    "dur": 1.7,
    "text": "SHORELINE, WA",
    "sub": "BROOKS PR INVITATIONAL"
-  },
-  {
-   "type": "motion",
-   "kind": "stopwatch",
-   "t": 7.7,
-   "dur": 1.8,
-   "value": "10.98",
-   "unit": "100M",
-   "label": "AGE 16",
-   "anim": 0.6
   },
   {
    "type": "motion",
@@ -1026,13 +1016,10 @@
   },
   {
    "type": "motion",
-   "kind": "stopwatch",
-   "t": 181.02,
-   "dur": 4.0,
-   "value": "11.07",
-   "unit": "100M",
-   "label": "WORLD U20 CHAMPION",
-   "anim": 0.7
+   "kind": "keyword",
+   "t": 185.42,
+   "dur": 1.6,
+   "text": "WORLD U20 CHAMPION"
   },
   {
    "type": "motion",
