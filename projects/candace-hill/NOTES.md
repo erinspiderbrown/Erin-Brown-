@@ -40,6 +40,12 @@ YouTube, FloTrack and MileSplit block downloads from the cloud, but Dailymotion 
 
 **Length:** 6:07 with the soundbites (5:26 without them).
 
+**Races with no downloadable footage are animated race recreations** (`race_recreation.py`, labelled "RACE RECREATION" on screen; owner: "the videos that you don't have, just get creative"):
+- **The 10.98 (Brooks PR 2015):** Hill against an 11.00 ghost runner, "the 11-second barrier". Used in the hook and again on "wasn't no fluke". Her real time; the ghost is a reference line, not a real runner.
+- **2016 World U20 100 m final, Bydgoszcz:** all 8 finishers with official times (Hill 11.07, Swoboda 11.12, St Fort 11.18, Lansiquot 11.37, Rivera 11.59, Brier 11.60, Jasim 11.60, Ntia-Obong 11.79). Lane order isn't from the record, so it's marked "LANES ILLUSTRATIVE".
+- The runner motion between start and finish is a sprint-curve model; only the finish times are real.
+- **2024 Olympic Trials final:** real NBC broadcast footage (NBC Miami), in the split.
+
 ## Owner's flubs removed (`CUTS` in `assemble_voice.py`, then `tighten_voice.py`)
 - **Part 3:** "ASICS ain't never *signed* the number" is cut. The restart "ASICS ain't never say the number" is kept.
 - **Part 6:** hesitations before "Baton Rouge" (1.4 s), before "2024" and before "Olympic Trials" are cut.
