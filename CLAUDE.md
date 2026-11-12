@@ -138,6 +138,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
+7b. **Send it to the owner's TikTok** (set up Nov 12, 2026) through the vidIQ connector, to the **"Erin Spider Brown"** account only (`platformAccountId` `_000ssAV0cJxYmcJ0XSxwm8rgS87rI5_tVPx`). "6starfiles" is a different account, so never post the track edits there.
+   - Upload the export with `vidiq_video_upload` (`localFile` for files over 299 MB), then `vidiq_social_post_draft_create`. The caption is the title plus a few hashtags.
+   - Owner's settings: `privacyLevel: SELF_ONLY` ("Only me", so it works as a draft he makes public himself), `allowComment: true`, `musicUsageConfirmed: true` (he accepted TikTok's terms).
+   - Show him the draft and publish only after he says yes. Check `vidiq_social_post_status` until it's `completed`.
 8. **Make a cover thumbnail** for every video in the style of the covers the owner currently uses (he sent examples on Nov 10, 2026, and rejected a split close-up and a plain photo with Anton text).
    - **Format:** 9:16, 1080×1920 JPG, saved to `exports/thumbnails/<video>_thumb.jpg`. Also save a 3:4 grid crop (`_thumb_3x4.jpg`), with everything important inside it. Deliver both to Dropbox with the video.
    - **Background:** one sharp, full-bleed real photo or frame (no AI images). The subject is cut out (rembg `u2net_human_seg`) and graded punchy, and the background is slightly blurred and darkened.
