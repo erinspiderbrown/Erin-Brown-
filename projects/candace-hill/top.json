@@ -1,0 +1,254 @@
+{
+ "duration": 343.4,
+ "voice": "work/voice.wav",
+ "shots": [
+  {
+   "t": 0.0,
+   "src": "ph/brooks_run.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 7.6,
+   "src": "ph/brooks_finish.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "t": 18.1,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.4,
+    0.3
+   ]
+  },
+  {
+   "t": 26.9,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 45.0,
+   "src": "ph/brooks_finish.jpg",
+   "focus": [
+    0.62,
+    0.5
+   ]
+  },
+  {
+   "t": 62.6,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.42,
+    0.25
+   ]
+  },
+  {
+   "t": 71.3,
+   "src": "ph/brooks_run.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 85.8,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.35,
+    0.3
+   ]
+  },
+  {
+   "t": 90.8,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 96.3,
+   "src": "ph/asics_run.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 104.3,
+   "src": "ph/stadium_2021.jpg",
+   "focus": [
+    0.5,
+    0.25
+   ]
+  },
+  {
+   "t": 115.7,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "t": 124.2,
+   "src": "ph/brooks_run2.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 141.0,
+   "src": "ph/brooks_run.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "t": 152.0,
+   "src": "ph/u20_win.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 156.4,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 165.2,
+   "src": "ph/stadium_2021.jpg",
+   "focus": [
+    0.55,
+    0.3
+   ]
+  },
+  {
+   "t": 171.7,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.4,
+    0.25
+   ]
+  },
+  {
+   "t": 185.1,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 194.3,
+   "src": "ph/stadium_2021.jpg",
+   "focus": [
+    0.5,
+    0.2
+   ]
+  },
+  {
+   "t": 201.8,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.45,
+    0.3
+   ]
+  },
+  {
+   "t": 216.2,
+   "src": "ph/stadium_2021.jpg",
+   "focus": [
+    0.55,
+    0.35
+   ]
+  },
+  {
+   "t": 231.1,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.4,
+    0.3
+   ]
+  },
+  {
+   "t": 247.3,
+   "src": "ph/stadium_2021.jpg",
+   "focus": [
+    0.5,
+    0.25
+   ]
+  },
+  {
+   "t": 263.4,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "t": 280.3,
+   "src": "ph/brooks_finish.jpg",
+   "focus": [
+    0.55,
+    0.5
+   ]
+  },
+  {
+   "t": 289.8,
+   "src": "ph/asics_run.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "t": 296.2,
+   "src": "ph/usa_smile.jpg",
+   "focus": [
+    0.4,
+    0.3
+   ]
+  },
+  {
+   "t": 305.7,
+   "src": "ph/brooks_run2.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "t": 316.0,
+   "src": "ph/brooks_run.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "t": 326.7,
+   "src": "ph/eyes.jpg",
+   "focus": [
+    0.5,
+    0.5
+   ]
+  }
+ ]
+}
