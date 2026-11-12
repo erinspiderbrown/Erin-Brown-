@@ -9,7 +9,7 @@ Alternates:
 
 ## Source
 - **Voiceover:** 8 recordings from Dropbox `/Candace` (Candace 1, 2, pt 3, 4–8), assembled in order by `assemble_voice.py`.
-  - Pauses over 0.62 s are shortened to 0.42 s, which brings it to 5:43.
+  - Pauses over 0.62 s are shortened to 0.42 s, then the flub cuts and silence pass below bring it to 5:26.
   - Each part measured −15.4 to −19 LUFS, so each got one static lift to −14 with a limiter, as the house rule allows. No other processing, and nothing turned down.
 - **No video:** the race clips (FloTrack, MileSplit), the news pages and YouTube couldn't be downloaded from the cloud session, so the edit is built from photos plus place scenes. See `footage_wanted.md`.
 - **Photos:**
@@ -21,6 +21,16 @@ Alternates:
   - **Split only:** the SI 10.98 finish (3000×1584) and the Refinery29 blocks shot.
   - **AI-upscaled (Real-ESRGAN), split only:** World Athletics' 2016 World U20 win, two 2015 Brooks PR shots, and the 2021 close-up.
 - **Place scenes (`make_maps.py`):** Natural Earth outlines filled with the US / Colombia / Poland flags, with a city dot. Shoreline WA, Conyers GA, Cali, Bydgoszcz, California, Baton Rouge.
+
+## Owner's flubs removed (`CUTS` in `assemble_voice.py`, then `tighten_voice.py`)
+- **Part 3:** "ASICS ain't never *signed* the number" is cut. The restart "ASICS ain't never say the number" is kept.
+- **Part 6:** hesitations before "Baton Rouge" (1.4 s), before "2024" and before "Olympic Trials" are cut.
+- **Every silence over 0.7 s** (22 of them, including hesitations the transcriber hid inside long words) is shortened to 0.5 s.
+  - That brings the video from 5:43 to 5:26.
+- **Checked and left alone:**
+  - "2017, 2018, 2019" in part 4 is clean, each burst checked separately.
+  - Part 2 has one "sophomore", not two.
+  - "Miles Smith" is how the owner said MileSplit; it's fixed in the captions only.
 
 ## Facts on screen (checked)
 - **10.98 at the Brooks PR Invitational, Shoreline WA, June 2015, age 16:** the first high school girl under 11. (Wikipedia gives both June 20 and June 21.)

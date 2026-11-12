@@ -18,6 +18,17 @@ def loud(src, ss=None, to=None):
 # pieces: (kind, src, ss, se, words-json or None, label)
 P = lambda n: ('voice', f'{R}/p{n}.m4a', None, None, f'{WK}/w_p{n}.json', f'p{n}')
 pieces = [P(i) for i in range(1, 9)]
+# owner's flubs, cut out (source seconds in each part):
+CUTS = {} if __import__('os').environ.get('NOCUTS') else {'p3': [(13.95, 17.80)],                      # "ASICS ain't never signed the number." -> keeps the restart "...say the number."
+        'p6': [(32.62, 33.98), (43.35, 43.90), (45.38, 45.95)]}   # hesitations before "Baton Rouge", "2024", "Olympic Trials"
+def minus(rng, cuts):
+    out = []
+    for a, b in rng:
+        segs = [(a, b)]
+        for c0, c1 in cuts:
+            segs = [x for s0, s1 in segs for x in ((s0, min(s1, c0)), (max(s0, c1), s1)) if x[1] - x[0] > 0.02]
+        out += segs
+    return out
 GAP_PART, GAP_INSERT = 0.5, 0.45
 
 def ranges_for(words, a, b):
@@ -38,7 +49,7 @@ for k, (kind, src, ss, se, wj, label) in enumerate(pieces):
         a = (W[0]['s'] - 0.18) if ss is None else ss
         b = (W[-1]['e'] + 0.30) if se is None else se
         if kind == 'voice8a': b = 20.20
-        rng = ranges_for(W, a, b)
+        rng = minus(ranges_for(W, a, b), CUTS.get(label, []))
         if src not in gain_cache:
             I, Pk = loud(src)
             if I < -14.0: g, lim = -14.0 - I, True

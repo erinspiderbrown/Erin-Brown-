@@ -1,7 +1,18 @@
 """Candace Hill doc (voiceover only): writes plan.json (build.py) + top.json (toptrack.py).
 Split = photo with slow push-in on top, a second photo / place scene below; full = sharp photos (>=1867 px tall) or place scenes."""
 import json
-DUR = 343.4
+# The beats below are timed on the first assembly (before the owner's flubs and long hesitations were cut).
+# retime() maps them onto the final voice track by matching the two transcripts word by word.
+import difflib, os
+OLD = json.load(open('work/words_old.json')); NEW = json.load(open('work/words_t.json'))
+sm = difflib.SequenceMatcher(a=[(w['src'], w['w']) for w in OLD], b=[(w['src'], w['w']) for w in NEW], autojunk=False)
+ANCH = [(0.0, 0.0)] + [(OLD[i + k]['s'], NEW[j + k]['s']) for i, j, n in sm.get_matching_blocks() for k in range(n)]
+ANCH.sort()
+def retime(t):
+    for (a0, b0), (a1, b1) in zip(ANCH, ANCH[1:]):
+        if a0 <= t <= a1: return round(b0 + (t - a0) * ((b1 - b0) / (a1 - a0) if a1 > a0 else 0), 2)
+    return round(ANCH[-1][1] + (t - ANCH[-1][0]), 2)
+DUR = round(NEW[-1]['e'] + 0.6, 2)
 P = lambda n: f'ph/{n}.jpg'; M = lambda n: f'geo/{n}.jpg'; G = lambda n: f'gph/{n}.jpg'
 SMILE, FLAG, ASICS, STAD, FIN, RUN, RUN2, U20, EYES, BLOCKS = (P('usa_smile'), P('cali_flag'), P('asics_run'), P('stadium_2021'),
     P('brooks_finish'), P('brooks_run'), P('brooks_run2'), P('u20_win'), P('eyes'), P('blocks_2x'))
@@ -121,6 +132,12 @@ GFX = [
  {"type": "motion", "kind": "bubbles", "t": 327.0, "dur": 2.6, "items": ["YOU MESSED UP", "WRONG DECISION", "SHOULD'VE GONE TO COLLEGE"]},
  {"type": "motion", "kind": "poll", "t": 331.4, "dur": 12.0, "question": "DID SHE FINESSE ASICS?", "options": ["SHE FINESSED", "ASICS LOST A BET"]},
 ]
+for g in GFX:
+    t0, t1 = retime(g['t']), retime(g['t'] + g['dur'])
+    if 'times' in g: g['times'] = [round(retime(g['t'] + x) - t0, 2) for x in g['times']]
+    g['t'], g['dur'] = t0, max(0.8, round(t1 - t0, 2))
+GFX[-1]['dur'] = round(DUR - GFX[-1]['t'], 2)
+B = [(retime(b[0]),) + tuple(b[1:]) for b in B]
 segs, TOP = [], []
 for b in B:
     ex = b[-1] if isinstance(b[-1], dict) else {}
@@ -134,6 +151,6 @@ plan = {"workdir": "build", "output": "out/candace_hill.mp4", "words": "work/wor
         "face": {"src": "top.mov", "focus": [0.5, 0.5]}, "face_grade": "null", "zooms": [], "skip_res_check": False,
         "segments": segs, "graphics": GFX}
 json.dump(plan, open('plan.json', 'w'), indent=1)
-json.dump({"duration": DUR, "voice": "work/voice.wav", "shots": TOP}, open('top.json', 'w'), indent=1)
+json.dump({"duration": DUR, "voice": "work/voice_t.wav", "shots": TOP}, open('top.json', 'w'), indent=1)
 full = sum((segs[i + 1]['start'] if i + 1 < len(segs) else DUR) - s['start'] for i, s in enumerate(segs) if s['type'] == 'full')
 print(len(segs), 'segments,', len(GFX), 'graphics; full-screen', round(100 * full / DUR), '%')
