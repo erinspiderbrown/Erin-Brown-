@@ -287,8 +287,8 @@
    "type": "split",
    "start": 66.9,
    "broll": {
-    "src": "br/p7822022.mp4",
-    "ss": 1,
+    "src": "br/p7362704.mp4",
+    "ss": 10,
     "focus": [
      0.5,
      0.5
@@ -358,7 +358,8 @@
    "t": 7.4,
    "dur": 1.6,
    "text": "FAMOUS PEOPLE",
-   "anchor": "upper"
+   "anchor": "upper",
+   "size": 96
   },
   {
    "type": "motion",
@@ -535,7 +536,8 @@
    "t": 72.6,
    "dur": 1.0,
    "text": "NOT INTERESTED",
-   "anchor": "upper"
+   "anchor": "upper",
+   "size": 96
   },
   {
    "type": "motion",

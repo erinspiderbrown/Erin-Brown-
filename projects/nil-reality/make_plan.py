@@ -37,7 +37,7 @@ M = lambda kind, t, dur, **kw: {"type": "motion", "kind": kind, "t": t, "dur": d
 GFX = [
  M('keyword', 0.3, 2.2, text="COLLEGE ATHLETES"),
  M('bubbles', 3.0, 3.4, items=["HOW DO I GET NIL?", "CAN YOU HELP ME GET A DEAL?", "WHO DO I DM?"]),
- M('stamp', 7.4, 1.6, text="FAMOUS PEOPLE", anchor="upper"),
+ M('stamp', 7.4, 1.6, text="FAMOUS PEOPLE", anchor="upper", size=96),
  M('keyword', 14.9, 1.8, text="FREE STUFF"),
  M('stamp', 17.2, 1.5, text="NOT REAL NIL", anchor="upper"),
  M('keyword', 21.4, 1.8, text="REAL BREAD"),
@@ -58,7 +58,7 @@ GFX = [
  M('stamp', 65.7, 1.2, text="NO PICTURES?", anchor="upper"),
  M('keyword', 68.2, 1.3, text="BIG NAME"),
  M('keyword', 70.1, 1.0, text="FOLLOWERS?"),
- M('stamp', 72.6, 1.0, text="NOT INTERESTED", anchor="upper"),
+ M('stamp', 72.6, 1.0, text="NOT INTERESTED", anchor="upper", size=96),
  M('poll', 73.4, 2.26, question="WOULD A BRAND PAY YOU?", options=["YES", "NOT YET"]),
 ]
 plan = {"workdir": "build", "output": "out/nil_reality.mp4", "words": "work/words_final.json", "voice_ss": 0.0,
