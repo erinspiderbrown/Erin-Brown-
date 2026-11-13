@@ -1,0 +1,25 @@
+{
+ "bg": "broll/lyles_usatf2_v.jpg",
+ "focus": [
+  0.5,
+  0.5
+ ],
+ "zoom": 1.0,
+ "darken": 0.35,
+ "lines": [
+  {
+   "text": "<span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>NOAH</span> SHOWS UP",
+   "y": 1060,
+   "size": 125,
+   "color": "#FFFFFF",
+   "slant": 10
+  },
+  {
+   "text": "WHY <span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>DON'T YOU?</span>",
+   "y": 1235,
+   "size": 122,
+   "color": "#FFFFFF",
+   "slant": 10
+  }
+ ]
+}
