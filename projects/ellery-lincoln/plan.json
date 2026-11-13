@@ -1,6 +1,6 @@
 {
  "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/build",
- "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/out/ellery_lincoln_v2.mp4",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/out/ellery_lincoln_v4.mp4",
  "words": "/home/user/Erin-Brown-/projects/ellery-lincoln/words_final.json",
  "voice_ss": 0.0,
  "duration": 92.2,
@@ -13,20 +13,21 @@
  },
  "segments": [
   {
-   "type": "split",
+   "type": "full",
    "start": 0.0,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo4.jpg",
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/frz/ellery_hook.mp4",
     "ss": 0,
     "focus": [
      0.5,
-     0.18
+     0.5
     ]
-   }
+   },
+   "hit": true
   },
   {
    "type": "split",
-   "start": 6.17,
+   "start": 7.77,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
     "ss": 0,
@@ -76,11 +77,11 @@
    "type": "split",
    "start": 22.45,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Hayward_Field_on_the_University_of_Oregon_Campus.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/web_stride.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.5
+     0.78,
+     0.4
     ]
    }
   },
@@ -112,24 +113,24 @@
    "type": "full",
    "start": 39.54,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Katelyn_Tuohy_at_the_2025_Portland_Track_Festival_.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/web_hayward_lookout.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.3
+     0.28,
+     0.42
     ]
    },
    "hit": true
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 47.8,
    "broll": {
-    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Katelyn_Tuohy_and_Regan_Yee_at_the_2025_Portland_T.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/web_stride.jpg",
     "ss": 0,
     "focus": [
-     0.62,
-     0.45
+     0.8,
+     0.35
     ]
    }
   },
@@ -182,13 +183,13 @@
    }
   },
   {
-   "type": "split",
+   "type": "full",
    "start": 74.32,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/web_hayward_lookout.jpg",
     "ss": 0,
     "focus": [
-     0.5,
+     0.3,
      0.5
     ]
    }
@@ -322,7 +323,7 @@
    "kind": "board",
    "t": 41.99,
    "dur": 3.6,
-   "title": "KATELYN TUOHY \u00b7 NC STATE",
+   "title": "WHAT TUOHY DID IN COLLEGE",
    "rows": [
     {
      "event": "NCAA TITLES",

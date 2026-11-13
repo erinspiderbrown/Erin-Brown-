@@ -28,9 +28,9 @@ def at(phrase, n=1):
     sys.exit(f'not found: {phrase}')
 
 
-def FRZ(name, src, dur, pick, focus=(0.5, 0.5), push=1.08):
+def FRZ(name, src, dur, pick, focus=(0.5, 0.5), push=1.08, keep_x=None):
     out = f'{SP}/elly/frz/{name}.mp4'; os.makedirs(os.path.dirname(out), exist_ok=True)
-    spec = {'src': src, 'ss': 0, 'out': out, 'dur': round(dur + 0.6, 2), 'pick': pick, 'focus': list(focus), 'push': push}
+    spec = {'src': src, 'ss': 0, 'out': out, 'dur': round(dur + 0.6, 2), 'pick': pick, 'focus': list(focus), 'push': push, **({'keep_x': keep_x} if keep_x else {})}
     js = out[:-4] + '.json'
     if not (os.path.exists(out) and os.path.exists(js) and json.load(open(js)) == spec):
         json.dump(spec, open(js, 'w')); subprocess.run(['python3', f'{H}/../../editor/freeze.py', js], check=True)
@@ -50,24 +50,24 @@ t_maybe, t_u20, t_trials, t_worlds, t_win2 = at('maybe'), at('i saw that'), at("
 t_fastest, t_records, t_champ, t_exp, t_burn = at("she's one of"), at("so she ain't got"), at("she ain't the"), at("but she's expediting"), at('burn out')
 t_dont, t_wrong, t_luck = at("i don't get it"), at('i could be'), at('good luck to her')
 
-TUOHY, TUOHY_YEE = P('Tuohy_at_the_2025'), P('Tuohy_and_Regan_Yee')
+HAY = R('web_hayward_lookout')                                     # Lookout Eugene-Springfield, 1707x2560 (full-screen OK)
 segs = [
-    split(0.0, R('photo4'), 0.5, 0.18),                               # RunnerSpace headline: forgoing final HS season
-    split(t_ellery - 0.05, R('photo2'), 0.5, 0.3),                   # Lincoln in Oregon kit
+    full(0.0, FRZ('ellery_hook', HAY, t_ellery + 1.6, [0.3, 0.55], keep_x=[0.0, 0.5]), 0.5, 0.5, hit=True),   # hook: Ellery pops out at Hayward
+    split(t_ellery + 1.55, R('photo2'), 0.5, 0.3),                   # Lincoln in Oregon kit
     split(t_instead - 0.05, R('photo1'), 0.6, 0.45),                 # flags at Hayward
-    split(t_rush - 0.05, R('photo3'), 0.4, 0.5),                     # racing
-    split(t_football - 0.05, P('Hayward_Field'), 0.5, 0.5),          # NIL: football / basketball / track
-    split(t_track - 0.05, R('photo4'), 0.5, 0.18),
-    full(t_tuohy - 0.05, TUOHY, 0.5, 0.3, hit=True),   # Tuohy (runners overlap, so no pop-out)
-    full(t_why - 0.05, TUOHY_YEE, 0.62, 0.45),
-    split(t_u20 - 0.05, R('photo3'), 0.55, 0.5),                     # the U20s
-    split(t_fastest - 0.05, R('photo1'), 0.65, 0.45),
-    split(t_exp - 0.05, R('photo2'), 0.5, 0.5),
-    split(t_dont - 0.05, R('photo4'), 0.5, 0.18),
     split(t_decided - 0.05, R('photo3'), 0.75, 0.45),
+    split(t_rush - 0.05, R('photo3'), 0.4, 0.5),                     # racing
+    split(t_football - 0.05, R('web_stride'), 0.78, 0.4),           # NIL board over her photos
     split(t_bball - 0.05, R('photo1'), 0.3, 0.45),
+    split(t_track - 0.05, R('photo4'), 0.5, 0.18),
+    full(t_tuohy - 0.05, HAY, 0.28, 0.42, hit=True),                # "top HS girls like Tuohy": Ellery full-screen, Tuohy facts as a board
+    split(t_why - 0.05, R('web_stride'), 0.8, 0.35),
+    split(t_u20 - 0.05, R('photo3'), 0.55, 0.5),                     # the U20s
     split(t_worlds - 0.05, R('photo2'), 0.5, 0.15),
+    split(t_fastest - 0.05, R('photo1'), 0.65, 0.45),
     split(t_champ - 0.05, R('photo3'), 0.2, 0.5),
+    full(t_exp - 0.05, HAY, 0.3, 0.5),                              # expediting / burn out
+    split(t_dont - 0.05, R('photo4'), 0.5, 0.18),
     split(t_luck + 3.0, R('photo2'), 0.5, 0.25),
 ]
 
@@ -81,7 +81,7 @@ gfx = [
       rows=[{'event': 'FOOTBALL', 'value': '$3–4M'}, {'event': 'BASKETBALL', 'value': '$600–700K'}, {'event': 'TRACK', 'value': '???'}],
       times=[at('three,') - t_football - 0.6, at('600,') - t_football - 0.6, t_track - t_football - 0.3]),
     M('slam', t_foolish2 - 0.2, 1.4, text='FOOLISH', hi=0),
-    M('board', t_tuohy + 2.4, 3.6, title='KATELYN TUOHY · NC STATE', rows=[{'event': 'NCAA TITLES', 'value': '4'}, {'event': 'TURNED PRO', 'value': 'DEC 2023'}],
+    M('board', t_tuohy + 2.4, 3.6, title='WHAT TUOHY DID IN COLLEGE', rows=[{'event': 'NCAA TITLES', 'value': '4'}, {'event': 'TURNED PRO', 'value': 'DEC 2023'}],
       times=[0.3, 1.2]),
     M('keyword', t_disappear - 0.1, 1.5, text='THEN DISAPPEAR?'),
     M('slam', t_why + 0.1, 1.6, text='WHY EXPEDITE?', hi=1),
@@ -98,7 +98,7 @@ gfx = [
 zooms = [[t_idiot - 0.2, t_idiot + 1.2, 1.1], [t_why - 0.1, t_why + 1.3, 1.1], [t_dont - 0.1, t_dont + 1.2, 1.1], [t_luck + 4.4, t_luck + 5.6, 1.12]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/elly/build', 'output': f'{SP}/elly/out/ellery_lincoln_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/elly/build', 'output': f'{SP}/elly/out/ellery_lincoln_v4.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face_tight.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):

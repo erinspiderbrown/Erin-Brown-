@@ -1,11 +1,10 @@
 # Credits: Ellery Lincoln
 
-Owner's media: talking head and 4 photos of Ellery Lincoln (one is a RunnerSpace graphic, "PHOTO: RUNNERSPACE.COM").
+B-roll is only Ellery Lincoln (owner, Nov 13: "As B-roll, I only want pictures and videos of her").
 
-**Caption line:** Photos: Wikimedia Commons — Joe Peacock (CC BY-SA 4.0); Rick Obst (CC BY 4.0).
+- Owner's 4 photos (one is a RunnerSpace graphic, "PHOTO: RUNNERSPACE.COM").
+- `raw/web_hayward_lookout.jpg`: Lookout Eugene-Springfield article photo (Lincoln at Hayward Field), 1707x2560. Not freely licensed;
+  used per the owner's earlier OK to use non-free photos. Credit if wanted: "Photo: Lookout Eugene-Springfield".
+- `raw/web_stride.jpg`: The Stride Report article graphic (1920x1080). Credit if wanted: "Graphic: The Stride Report".
 
-| Photo | Author | Licence |
-|---|---|---|
-| Katelyn Tuohy at the 2025 Portland Track Festival 01.jpg | Joe Peacock | CC BY-SA 4.0 |
-| Katelyn Tuohy and Regan Yee at the 2025 Portland Track Festival.jpg | Joe Peacock | CC BY-SA 4.0 |
-| Hayward Field on the University of Oregon Campus.jpg | Rick Obst | CC BY 4.0 |
+**Caption line (if crediting):** Photos: RunnerSpace, Lookout Eugene-Springfield, The Stride Report.

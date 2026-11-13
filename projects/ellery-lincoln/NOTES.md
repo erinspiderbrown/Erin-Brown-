@@ -32,3 +32,12 @@ burst, "LEAVING HS EARLY / FOR TRACK?!", Lincoln cut out of the owner's Oregon-k
 
 ## Export
 - `exports/ellery_lincoln_tiktok_hq.mp4` (Git LFS): 1:32, 1080x1920, two-pass 8 Mbps, SSIM 0.988, -14.1 LUFS.
+
+## v2 (owner, Nov 13: only pictures and videos of her; find race video online)
+- Removed the Tuohy and Hayward Field Commons photos. Added two web photos of Lincoln (see CREDITS.md); the Lookout photo
+  (1707x2560) is sharp enough for full-screen: hook freeze pop-out (`keep_x` keeps only her, she's hugging someone) + 2 full-screen beats.
+- The Tuohy facts stay as a board, retitled "WHAT TUOHY DID IN COLLEGE" so it can't read as a caption for Lincoln's photo.
+- **No race video**: every video of her found is on YouTube ("High School Star Ellery Lincoln Takes On the Pros" — Pre Classic 1500;
+  "How to Train Like One of the Fastest High School Milers Ever"), DyeStat (HOKA Festival of Miles mile, behind a Cloudflare check)
+  or KOIN (bot wall). None can be downloaded from the cloud session without getting around those checks, which isn't allowed.
+- Export: same file name, 1:32, SSIM 0.990. Dropbox: `ellery_lincoln_tiktok_hq_v2.mp4`.
