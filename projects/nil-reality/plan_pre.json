@@ -1,0 +1,553 @@
+{
+ "workdir": "build",
+ "output": "out/nil_preview.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 75.666,
+ "min_duration": 61,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "zooms": [
+  [
+   9.8,
+   11.6,
+   1.08
+  ],
+  [
+   57.1,
+   58.8,
+   1.12
+  ],
+  [
+   74.4,
+   75.6,
+   1.1
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "br/p37253080.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.6,
+   "broll": {
+    "src": "br/p7362704.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 6.7,
+   "broll": {
+    "src": "br/p35701013.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.6,
+   "broll": {
+    "src": "news/x8warwk.mp4",
+    "ss": 26,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 12.4,
+   "broll": {
+    "src": "news/x8warwk.mp4",
+    "ss": 11.4,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 14.2,
+   "broll": {
+    "src": "br/p6956639.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 16.7,
+   "broll": {
+    "src": "br/p6568265.mp4",
+    "ss": 5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 18.7,
+   "broll": {
+    "src": "br/p6266433.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 23.0,
+   "broll": {
+    "src": "news/x8bid3z.mp4",
+    "ss": 2.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 27.6,
+   "broll": {
+    "src": "br/p8814522.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.1,
+   "broll": {
+    "src": "news/x8bid3z.mp4",
+    "ss": 8,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.7,
+   "broll": {
+    "src": "br/p8188831.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.6,
+   "broll": {
+    "src": "br/p34719386.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 40.6,
+   "broll": {
+    "src": "br/p7735908.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 45.1,
+   "broll": {
+    "src": "br/p36780065.mp4",
+    "ss": 5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 46.5,
+   "broll": {
+    "src": "br/p30997018.mp4",
+    "ss": 3,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 50.6,
+   "broll": {
+    "src": "news/x8152v6.mp4",
+    "ss": 46,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.4,
+   "broll": {
+    "src": "news/x8152v6.mp4",
+    "ss": 40.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.0,
+   "broll": {
+    "src": "br/p12893607.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.2,
+   "broll": {
+    "src": "br/p10145286.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.6,
+   "broll": {
+    "src": "br/p11123558.mp4",
+    "ss": 4,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 66.9,
+   "broll": {
+    "src": "news/x8warwk.mp4",
+    "ss": 32,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.0,
+   "broll": {
+    "src": "br/p10374888.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 71.0,
+   "broll": {
+    "src": "br/p8170432.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 73.4,
+   "broll": {
+    "src": "br/p31229040.mp4",
+    "ss": 10,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.3,
+   "dur": 2.2,
+   "text": "COLLEGE ATHLETES"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 3.0,
+   "dur": 3.4,
+   "items": [
+    "HOW DO I GET NIL?",
+    "CAN YOU HELP ME GET A DEAL?",
+    "WHO DO I DM?"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 7.4,
+   "dur": 1.6,
+   "text": "FAMOUS PEOPLE",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 14.9,
+   "dur": 1.8,
+   "text": "FREE STUFF"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 17.2,
+   "dur": 1.5,
+   "text": "NOT REAL NIL",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 21.4,
+   "dur": 1.8,
+   "text": "REAL BREAD"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 24.2,
+   "dur": 3.4,
+   "items": [
+    "NAME",
+    "IMAGE",
+    "LIKENESS"
+   ],
+   "times": [
+    0.1,
+    0.7,
+    1.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 28.7,
+   "dur": 1.3,
+   "text": "FAIR EXCHANGE",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 29.9,
+   "dur": 1.2,
+   "text": "NOT A ROBBERY"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 32.1,
+   "dur": 1.9,
+   "text": "NAME + BRAND"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 36.0,
+   "dur": 1.6,
+   "text": "MARKETABILITY"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.2,
+   "dur": 1.6,
+   "text": "PROFIT MARGINS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 41.1,
+   "dur": 3.9,
+   "title": "WHO BENEFITS?",
+   "rows": [
+    {
+     "event": "THE COMPANY",
+     "value": "ALL OF IT"
+    },
+    {
+     "event": "YOU",
+     "value": "NOTHING"
+    }
+   ],
+   "times": [
+    0.6,
+    2.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 45.5,
+   "dur": 1.3,
+   "text": "NO NAME",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 47.2,
+   "dur": 1.6,
+   "text": "GREATEST IN YOUR SPORT?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 49.6,
+   "dur": 1.0,
+   "text": "NOT VALUABLE",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 51.3,
+   "dur": 1.9,
+   "text": "NAME \u00b7 IMAGE \u00b7 LIKENESS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 54.6,
+   "dur": 1.0,
+   "text": "UNKNOWN",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 57.2,
+   "dur": 1.7,
+   "text": "WHAT DO YOU OFFER?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 60.6,
+   "dur": 1.3,
+   "text": "NIL DMs"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 65.7,
+   "dur": 1.2,
+   "text": "NO PICTURES?",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 68.2,
+   "dur": 1.3,
+   "text": "BIG NAME"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 70.1,
+   "dur": 1.0,
+   "text": "FOLLOWERS?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 72.6,
+   "dur": 1.0,
+   "text": "NOT INTERESTED",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 73.4,
+   "dur": 2.26,
+   "question": "WOULD A BRAND PAY YOU?",
+   "options": [
+    "YES",
+    "NOT YET"
+   ]
+  }
+ ],
+ "skip_res_check": true
+}
