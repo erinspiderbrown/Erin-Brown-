@@ -101,3 +101,23 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 
 ## Setup in a fresh session
 Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.
+
+## Publishing (standing request, Nov 2026)
+Every finished TikTok is also posted to the owner's accounts, the same way as "US sprinters skip TV meets" (`projects/us-sprinters-tv`). Use the vidIQ tools; Higgsfield has no TikTok account connected.
+- **Upload once:** `vidiq_video_upload` with `localFile` (the export in `exports/`), run the printed command, then call it again with the `uploadId`.
+- **Where it goes:**
+
+  | Platform | Account | ID | Settings |
+  |---|---|---|---|
+  | TikTok | **Erin Spider Brown**, the track account (not 6starfiles) | `_000ssAV0cJxYmcJ0XSxwm8rgS87rI5_tVPx` | public, comments on, `musicUsageConfirmed: true` (the owner accepts it) |
+  | YouTube Short | **The Erin Brown**, @theerinbrowntv (not the GTA 6 channel) | `UCiMHg3V2Q414zFIjb8PyTcg` | public, category 17 (Sports), title ending in `#shorts` |
+  | Instagram Trial Reel | **@e.diamondz** | `29211548525143718` | `vidiq_instagram_publish_reel` with `trialParams: {graduationStrategy: "MANUAL"}` |
+
+  - TikTok and YouTube go in one `vidiq_social_post_draft_create` draft.
+- **Captions:**
+  - TikTok and Instagram: a question-style hook, a poll call-to-action, track hashtags, and "Photos: Wikimedia Commons (CC BY / CC BY-SA)" when Commons media is used.
+  - YouTube: the full credit line from the project's NOTES.md in the description.
+  - Follow the "never invent data" rule.
+- **Confirm before posting:** show the owner the draft (accounts, title, caption) and get one quick yes, because posting is public and can't be undone. Then publish and poll until it's live (`vidiq_social_post_status`, plus the Instagram `containerId`).
+- **Report back:** the three links.
+- **Covers:** remind the owner that the API can't set custom covers, so they upload `exports/<name>_thumb.jpg` as the cover in the TikTok app.
