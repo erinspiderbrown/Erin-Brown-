@@ -41,3 +41,8 @@ burst, "LEAVING HS EARLY / FOR TRACK?!", Lincoln cut out of the owner's Oregon-k
   "How to Train Like One of the Fastest High School Milers Ever"), DyeStat (HOKA Festival of Miles mile, behind a Cloudflare check)
   or KOIN (bot wall). None can be downloaded from the cloud session without getting around those checks, which isn't allowed.
 - Export: same file name, 1:32, SSIM 0.990. Dropbox: `ellery_lincoln_tiktok_hq_v2.mp4`.
+
+## Posted (Nov 13 2026, owner-approved caption/settings)
+- TikTok (Erin Spider Brown, public, comments on): https://www.tiktok.com/@erinspiderbrown/video/7707508904426540302
+- YouTube Short (The Erin Brown, public, Sports): https://www.youtube.com/watch?v=SIZRKgZ9w-w
+- Instagram trial reel (@e.diamondz, manual graduation): https://www.instagram.com/reel/Dfqx1F_CJof/
