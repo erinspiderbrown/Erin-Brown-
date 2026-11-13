@@ -1,0 +1,426 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/out/ellery_lincoln_v2.mp4",
+ "words": "/home/user/Erin-Brown-/projects/ellery-lincoln/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 92.2,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.18
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 6.17,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.99,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.25,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.49,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.45,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Hayward_Field_on_the_University_of_Oregon_Campus.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.13,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 35.78,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.18
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 39.54,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Katelyn_Tuohy_at_the_2025_Portland_Track_Festival_.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "full",
+   "start": 47.8,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/elly/ph/Katelyn_Tuohy_and_Regan_Yee_at_the_2025_Portland_T.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.47,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.15
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.65,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 70.6,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo3.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 74.32,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 80.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo4.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.18
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 87.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ellery-lincoln/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   3.77,
+   5.17,
+   1.1
+  ],
+  [
+   47.75,
+   49.15,
+   1.1
+  ],
+  [
+   80.11,
+   81.41,
+   1.1
+  ],
+  [
+   89.37,
+   90.57,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.15,
+   "dur": 2.4,
+   "text": "LEAVING HIGH SCHOOL EARLY"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 3.87,
+   "dur": 1.4,
+   "text": "MOST IDIOTIC?",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 8.72,
+   "dur": 2.4,
+   "value": "17",
+   "unit": "YEARS OLD",
+   "label": "Ellery Lincoln",
+   "sub": "enrolling early at Oregon"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 12.54,
+   "dur": 2.6,
+   "text": "SKIPPING HER LAST HS SEASON"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 20.84,
+   "dur": 1.5,
+   "text": "RUSHING THE PROCESS",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 23.1,
+   "dur": 13.929999999999998,
+   "title": "NIL MONEY (HIS ESTIMATE)",
+   "rows": [
+    {
+     "event": "FOOTBALL",
+     "value": "$3\u20134M"
+    },
+    {
+     "event": "BASKETBALL",
+     "value": "$600\u2013700K"
+    },
+    {
+     "event": "TRACK",
+     "value": "???"
+    }
+   ],
+   "times": [
+    4.340000000000002,
+    9.360000000000001,
+    13.029999999999998
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 38.47,
+   "dur": 1.4,
+   "text": "FOOLISH",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 41.99,
+   "dur": 3.6,
+   "title": "KATELYN TUOHY \u00b7 NC STATE",
+   "rows": [
+    {
+     "event": "NCAA TITLES",
+     "value": "4"
+    },
+    {
+     "event": "TURNED PRO",
+     "value": "DEC 2023"
+    }
+   ],
+   "times": [
+    0.3,
+    1.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 46.67,
+   "dur": 1.5,
+   "text": "THEN DISAPPEAR?"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 47.95,
+   "dur": 1.6,
+   "text": "WHY EXPEDITE?",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 57.43,
+   "dur": 6.559999999999995,
+   "title": "ELLERY \u00b7 2026 \u00b7 1500M",
+   "rows": [
+    {
+     "event": "USA U20 CHAMPS",
+     "value": "2ND"
+    },
+    {
+     "event": "WORLD U20 (EUGENE)",
+     "value": "5TH"
+    }
+   ],
+   "times": [
+    0.4,
+    5.379999999999997
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 64.79,
+   "dur": 9.580000000000007,
+   "title": "HER HS BEST \u00b7 1500M",
+   "rows": [
+    {
+     "event": "4:07.06 \u00b7 ALL-TIME HS",
+     "value": "#4"
+    },
+    {
+     "event": "HS NATIONAL RECORD",
+     "value": "NO"
+    }
+   ],
+   "times": [
+    0.4,
+    4.129999999999998
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 78.41,
+   "dur": 1.6,
+   "text": "BURN OUT FASTER?",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 82.23,
+   "dur": 1.6,
+   "text": "USUALLY NEVER WRONG"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 84.77,
+   "dur": 7.430000000000004,
+   "question": "SHOULD SHE HAVE STAYED IN HIGH SCHOOL?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}

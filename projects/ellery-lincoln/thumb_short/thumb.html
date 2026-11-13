@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url('file:///home/user/Erin-Brown-/editor/assets/fonts/Anton-Regular.ttf')}
+@font-face{font-family:MB;src:url('file:///home/user/Erin-Brown-/editor/assets/fonts/Montserrat-Black.ttf')}
+html,body{margin:0;background:#000}
+#c{position:relative;overflow:hidden}
+.abs{position:absolute}
+.txt{font-family:Anton;text-transform:uppercase;line-height:.9;white-space:nowrap;paint-order:stroke fill;text-align:center}
+.yel{color:#FFE11A;-webkit-text-stroke:16px #000;text-shadow:0 10px 0 #000,0 0 40px rgba(0,0,0,.6)}
+.wht{color:#fff;-webkit-text-stroke:14px #000;text-shadow:0 9px 0 #000}
+.box{background:#E8231E;color:#fff;font-family:Anton;padding:6px 34px 10px;border:8px solid #fff;border-radius:18px;
+     box-shadow:0 14px 0 rgba(0,0,0,.55),0 0 50px rgba(232,35,30,.6);line-height:1}
+.ring{border:14px solid #E8231E;border-radius:50%;box-shadow:0 0 0 5px #fff,0 0 30px rgba(232,35,30,.9),inset 0 0 0 5px #fff}
+.face{filter:drop-shadow(0 0 0 #fff) drop-shadow(0 0 6px #fff) drop-shadow(0 0 30px rgba(255,225,26,.75)) contrast(1.08) saturate(1.15) brightness(1.06)}
+.rays{background:conic-gradient(from 0deg at 50% 45%, rgba(255,255,255,.16) 0 6deg, transparent 6deg 18deg, rgba(255,255,255,.16) 18deg 24deg, transparent 24deg 36deg,
+      rgba(255,255,255,.16) 36deg 42deg, transparent 42deg 54deg, rgba(255,255,255,.16) 54deg 60deg, transparent 60deg 72deg, rgba(255,255,255,.16) 72deg 78deg, transparent 78deg 90deg,
+      rgba(255,255,255,.16) 90deg 96deg, transparent 96deg 108deg, rgba(255,255,255,.16) 108deg 114deg, transparent 114deg 126deg, rgba(255,255,255,.16) 126deg 132deg, transparent 132deg 144deg,
+      rgba(255,255,255,.16) 144deg 150deg, transparent 150deg 162deg, rgba(255,255,255,.16) 162deg 168deg, transparent 168deg 180deg, rgba(255,255,255,.16) 180deg 186deg, transparent 186deg 198deg,
+      rgba(255,255,255,.16) 198deg 204deg, transparent 204deg 216deg, rgba(255,255,255,.16) 216deg 222deg, transparent 222deg 234deg, rgba(255,255,255,.16) 234deg 240deg, transparent 240deg 252deg,
+      rgba(255,255,255,.16) 252deg 258deg, transparent 258deg 270deg, rgba(255,255,255,.16) 270deg 276deg, transparent 276deg 288deg, rgba(255,255,255,.16) 288deg 294deg, transparent 294deg 306deg,
+      rgba(255,255,255,.16) 306deg 312deg, transparent 312deg 324deg, rgba(255,255,255,.16) 324deg 330deg, transparent 330deg 342deg, rgba(255,255,255,.16) 342deg 348deg, transparent 348deg 360deg),
+      radial-gradient(circle at 50% 45%, #3BE36B 0%, #0E9C3E 45%, #04471C 100%)}
+</style></head><body><div id="c"></div>
+<script>
+// hash: {W,H,els:[{t:'img'|'text'|'box'|'ring'|'arrow'|'div', ...}]}
+const L = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const c = document.getElementById('c'); c.style.width = L.W + 'px'; c.style.height = L.H + 'px';
+const st = e => `left:${e.x}px;top:${e.y}px;${e.w ? 'width:' + e.w + 'px;' : ''}${e.h ? 'height:' + e.h + 'px;' : ''}transform:rotate(${e.rot || 0}deg);${e.css || ''}`;
+c.innerHTML = L.els.map(e => {
+  if (e.t === 'img') return `<img class="abs ${e.cls || ''}" src="${e.src}" style="${st(e)}">`;
+  if (e.t === 'text') return `<div class="abs txt ${e.cls}" style="${st(e)}font-size:${e.size}px">${e.text}</div>`;
+  if (e.t === 'box') return `<div class="abs box" style="${st(e)}font-size:${e.size}px">${e.text}</div>`;
+  if (e.t === 'ring') return `<div class="abs ring" style="${st(e)}"></div>`;
+  if (e.t === 'div') return `<div class="abs ${e.cls || ''}" style="${st(e)}"></div>`;
+  if (e.t === 'arrow') return `<svg class="abs" style="${st(e)};overflow:visible" viewBox="0 0 200 120" width="${e.w}"><path d="M0 48 H120 V8 L200 60 L120 112 V72 H0 Z" fill="#E8231E" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></svg>`;
+}).join('');
+</script></body></html>

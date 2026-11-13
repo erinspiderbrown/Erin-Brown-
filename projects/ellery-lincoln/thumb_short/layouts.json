@@ -1,0 +1,18 @@
+{
+ "A_916": {"W":1080,"H":1920,"els":[
+  {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1920},
+  {"t":"text","cls":"yel","text":"LEAVING HS EARLY","x":0,"y":250,"w":1080,"size":150,"rot":-3},
+  {"t":"text","cls":"wht","text":"FOR TRACK?!","x":0,"y":420,"w":1080,"size":130,"rot":-3},
+  {"t":"img","cls":"face","src":"ellery.png","x":600,"y":640,"w":420},
+  {"t":"box","text":"AGE 17","x":70,"y":800,"size":130,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-90,"y":1240,"w":680}
+ ]},
+ "A_34": {"W":1080,"H":1440,"els":[
+  {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1440},
+  {"t":"text","cls":"yel","text":"LEAVING HS EARLY","x":0,"y":30,"w":1080,"size":145,"rot":-3},
+  {"t":"text","cls":"wht","text":"FOR TRACK?!","x":0,"y":195,"w":1080,"size":125,"rot":-3},
+  {"t":"img","cls":"face","src":"ellery.png","x":630,"y":380,"w":360},
+  {"t":"box","text":"AGE 17","x":70,"y":470,"size":120,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-80,"y":860,"w":620}
+ ]}
+}
