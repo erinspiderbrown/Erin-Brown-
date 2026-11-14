@@ -122,7 +122,7 @@ def render_segment(plan, seg, a, b, out):
     elif seg['type'] == 'face':                # v2 style: full-screen talking head (vertical crop of the 4K take), lip-synced
         fv = plan['face_v']
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', []) if z1 > a and z0 < b]
-        drift = f"0.035*(t+{a - seg['start']:.3f})/{max(0.1, seg.get('_len', dur)):.3f}"      # slow push-in across the segment
+        drift = f"0.035*max(0,t+{a - seg['start']:.3f})/{max(0.1, seg.get('_len', dur)):.3f}"      # slow push-in across the segment
         fc = (f"[2:v]{cover(W, H, None, focus=tuple(fv.get('focus', (0.5, 0.4))), zexpr='+'.join(zt + [drift]))},{grade},fps={FPS},format=yuv420p[v]")
         extra = ['-ss', f'{fss:.3f}', '-t', f'{dur:.3f}', '-i', fv['src']]
     else:
