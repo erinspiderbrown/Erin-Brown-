@@ -467,14 +467,16 @@ def main(plan_path):
     }
     vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[0:a]{vchain},asplit=2[vo][vk]' if cues else f'[0:a]{vchain}[vo]']
+    cues = sfx_cues(plan); memes = plan.get('meme_sfx', [])
+    mix = [f'[0:a]{vchain},asplit=3[vo][vk][vm]' if cues and memes else f'[0:a]{vchain},asplit=2[vo][vk]' if cues else f'[0:a]{vchain},asplit=2[vo][vm]' if memes else f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
         ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    memes = plan.get('meme_sfx', [])          # owner asked for these by name and spot (e.g. the vine boom): exact start, no pitch shift, no ducking
+    # owner asked for these by name and spot (e.g. the vine boom): exact start, no pitch shift; full level in the pause,
+    # ducked only while he's talking so voice + boom never clips (the voice itself stays untouched)
     for k, (name, t, vol) in enumerate(memes):
         src = name if os.path.exists(name) else f"{plan['sfxdir']}/{name}.wav"
         ain += ['-i', src]
@@ -487,8 +489,9 @@ def main(plan_path):
     else:
         mixed = '[vo]anull'
     if memes:
-        mixed = (mixed.replace('[vo][sd]amix=inputs=2', '[vo][sd]' + ''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={2+len(memes)}')
-                 if cues else '[vo]' + ''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={1+len(memes)}:normalize=0:duration=first')
+        mix.append(''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={len(memes)}:normalize=0:duration=longest[mb]')
+        mix.append('[mb][vm]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=120[md]')
+        mixed = mixed.replace('[vo][sd]amix=inputs=2', '[vo][sd][md]amix=inputs=3') if cues else '[vo][md]amix=inputs=2:normalize=0:duration=first'
     m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
