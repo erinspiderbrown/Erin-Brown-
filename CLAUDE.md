@@ -23,6 +23,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - a high-res photo (about 3000 px or more on the long side)
   - 1080p landscape clips go in the bottom half of the split only.
   - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
+- **Talking-head cleanup (default):** `face_grade` in `build.py` = light denoise (`hqdn3d=2.5:2:4:4`), a little brighter (`eq=brightness=0.02:contrast=1.08:saturation=1.08:gamma=1.06`), contrast-adaptive sharpen (`cas=strength=0.55`), soft vignette. Owner picked this ("option A") in Nov 2026 after saying his face looked low quality and "needs to be sharpened and cleaned up"; the stronger option B looked processed. Comparison: `projects/maddox-krotzer/face_cleanup_options.jpg`.
 - **Quality first** (owner, Nov 2026: "even the videos that were exported to Dropbox were very low quality … keep the quality really high"):
   - Intermediates: face crop and `tighten.py` at CRF 10 (24-bit audio); segments CRF 12; master `master_crf` 12 (style.json).
   - **Final export: x264 CRF 16, preset slow, no bitrate cap, audio copied** (`-c:v libx264 -crf 16 -preset slow -profile:v high -pix_fmt yuv420p -r 30 -c:a copy -movflags +faststart`). Big files go through Git LFS; don't squeeze to 100 MB or ~8 Mbps any more.

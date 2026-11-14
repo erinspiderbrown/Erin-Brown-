@@ -96,7 +96,9 @@ def render_segment(plan, seg, a, b, out):
     fss = plan['voice_ss'] + a                 # face stays lip-synced to voice
     bss = max(0.0, br['ss'] + (a - seg['start']))
     dur = b - a
-    grade = plan.get('face_grade', 'hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:saturation=1.06:gamma=0.98,vignette=PI/6')
+    # owner, Nov 2026 ("needs to be sharpened and cleaned up"; picked option A of face_cleanup_options.jpg): denoise, a little
+    # brighter, contrast-adaptive sharpen. Don't push it further (option B looked processed).
+    grade = plan.get('face_grade', 'hqdn3d=2.5:2:4:4,eq=brightness=0.02:contrast=1.08:saturation=1.08:gamma=1.06,cas=strength=0.55,vignette=PI/6')
     bpush = 0.10 if is_img(br['src']) else 0.04
     if seg['type'] == 'split':
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', [])
@@ -434,7 +436,7 @@ def main(plan_path):
         a = max(0.0, s['start'] - PAD) if i else 0.0
         b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
-                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
+                          plan.get('face_grade', 'default-grade-A-2026-11'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
