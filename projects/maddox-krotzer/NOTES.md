@@ -24,3 +24,9 @@ Alternates:
 
 ## Export
 - `exports/maddox_krotzer_tiktok_hq.mp4` (Git LFS): 1:08, 1080x1920, two-pass 8 Mbps, -14 LUFS.
+
+## Posted (Nov 14 2026)
+- TikTok (Erin Spider Brown): https://www.tiktok.com/@erinspiderbrown/video/7708105816074669326
+- YouTube Short (The Erin Brown): https://www.youtube.com/watch?v=ZThAq_dMRhA
+- Instagram trial reel (@e.diamondz, manual): https://www.instagram.com/reel/Dfu7B2IHNbq/
+- Facebook: no Facebook Page connected in vidIQ yet; connect link sent to the owner.
