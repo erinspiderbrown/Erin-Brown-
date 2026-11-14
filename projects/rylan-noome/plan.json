@@ -421,14 +421,14 @@
    "sub": "RYLAN NOOME"
   },
   {
-   "type": "motion",
-   "kind": "stopwatch",
+   "type": "data",
+   "kind": "counter",
    "t": 18.4,
    "dur": 2.6,
    "value": "35.28",
-   "unit": "300M",
-   "label": "ONE REP \u00b7 OCT 2026",
-   "anim": 0.6
+   "unit": "S",
+   "label": "300M \u00b7 ONE REP",
+   "sub": "OCT 2026 \u00b7 ATHLETICS NZ"
   },
   {
    "type": "motion",
@@ -541,8 +541,6 @@
    "items": [
     "JULY",
     "AUG",
-    "SEP",
-    "OCT",
     "NOV"
    ],
    "hi": [
