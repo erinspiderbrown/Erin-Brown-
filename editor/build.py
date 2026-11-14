@@ -591,7 +591,7 @@ def main(plan_path):
     ai = len(inputs) // 2
     inputs += ['-i', awav]
     run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
-         '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
+         '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', str(plan.get('master_crf', 12)), '-preset', 'slow',
          '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])

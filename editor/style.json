@@ -24,5 +24,6 @@
   "split_swipes": true,
   "sfx_min_gap": 3.0,
   "name_tags": false,
-  "stamps": false
+  "stamps": false,
+  "master_crf": 12
 }

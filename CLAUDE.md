@@ -23,7 +23,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - a high-res photo (about 3000 px or more on the long side)
   - 1080p landscape clips go in the bottom half of the split only.
   - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
-- **Export:** 1080×1920, 30 fps. Loudness is −14 LUFS, or louder if the owner's take is already louder (see above). Save finished edits to `exports/` and push them so the owner can download from GitHub. Keep them under 100 MB: re-encode the video with `-crf 20 -preset slow`, or with a two-pass encode at about 6–9 Mbps if that's still too big. Copy the audio (`-c:a copy`; the build writes 256k AAC) so the voice is never re-compressed.
+- **Quality first** (owner, Nov 2026: "even the videos that were exported to Dropbox were very low quality … keep the quality really high"):
+  - Intermediates: face crop and `tighten.py` at CRF 10 (24-bit audio); segments CRF 12; master `master_crf` 12 (style.json).
+  - **Final export: x264 CRF 16, preset slow, no bitrate cap, audio copied** (`-c:v libx264 -crf 16 -preset slow -profile:v high -pix_fmt yuv420p -r 30 -c:a copy -movflags +faststart`). Big files go through Git LFS; don't squeeze to 100 MB or ~8 Mbps any more.
+  - After changing the face source, clear the project's build cache (segments are cached by path, not content).
+- **Export:** 1080×1920, 30 fps. Loudness is −14 LUFS, or louder if the owner's take is already louder (see above). Save finished edits to `exports/` and push them so the owner can download from GitHub. (Superseded: the old "under 100 MB, CRF 20 / 6–9 Mbps" export; see Quality first above.) Copy the audio (`-c:a copy`; the build writes 256k AAC) so the voice is never re-compressed.
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
