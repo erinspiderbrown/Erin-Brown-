@@ -138,7 +138,8 @@
     ],
     "nograde": true
    },
-   "transition": "zoom"
+   "transition": "zoom",
+   "cap_y": 0.95
   },
   {
    "type": "face",

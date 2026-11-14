@@ -30,6 +30,7 @@ for t, k, src, ss, tr in SEG:
     if k == 'face': d = {"type": "face", "start": t, "broll": {"src": "work/facev_tight.mov", "ss": t, "nograde": True}}
     else: d = {"type": k, "start": t, "broll": {"src": src, "ss": ss, "focus": [0.5, 0.5], **({"nograde": True} if FX(src) else {})}}
     if tr: d["transition"] = tr
+    if src == 'fx/map.mp4': d["cap_y"] = 0.95          # keep captions off the country labels
     segs.append(d)
 plan = {"workdir": "build", "output": "out/gift_bright.mp4", "words": "work/words_final.json", "voice_ss": 0.0,
         "duration": 72.53, "min_duration": 61,

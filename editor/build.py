@@ -180,15 +180,16 @@ def cine_caption_events(plan, words, t0, t1):
     segs = plan['segments']
     def ypos(t):
         for sg, nx in zip(segs, segs[1:] + [None]):
-            if sg['start'] <= t < (nx['start'] if nx else 1e9): return HALF if sg['type'] == 'split' else int(H * 0.74)
+            if sg['start'] <= t < (nx['start'] if nx else 1e9): return HALF if sg['type'] == 'split' else int(H * sg.get('cap_y', 0.74))
         return int(H * 0.74)
     ev = []
     ws = [w for w in merge_words(words) if w['e'] > t0 and w['s'] < t1]
-    for ci, c in enumerate(chunks(ws, maxw=3)):
-        nxt_s = None
+    cs = list(chunks(ws, maxw=3))
+    for ci, c in enumerate(cs):
+        nxt_s = cs[ci + 1][0]['s'] if ci + 1 < len(cs) else t1      # a phrase never overlaps the next one
         for wi, w in enumerate(c):
             a = max(w['s'], t0) - t0
-            b = (c[wi + 1]['s'] if wi + 1 < len(c) else min(c[-1]['e'] + 0.2, t1)) - t0
+            b = (c[wi + 1]['s'] if wi + 1 < len(c) else min(c[-1]['e'] + 0.2, nxt_s, t1)) - t0
             if b <= a: continue
             y = ypos(a)
             parts = []

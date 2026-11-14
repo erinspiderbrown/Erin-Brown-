@@ -240,7 +240,7 @@ def progression(out, dur, bg_src, bg_t, cols, title=None, fx=0.5, fy=0.5):
                 if b <= 0: continue
                 try:
                     v = float(val); dec = len(val.split('.')[1]) if '.' in val else 0
-                    shown = f"{v * (1.25 - 0.25 * ease((t - rt) / 0.6)):.{dec}f}"
+                    shown = f"{v * ease((t - rt) / 0.7):.{dec}f}"          # counts UP to the time, like a clock
                 except ValueError: shown = val
                 place(fr, title_layer(shown, 210 if c.get('hi') else 170, WHITE if c.get('hi') else (215, 215, 220), track=2), cx[j], H * (0.47 + 0.17 * r), alpha=b)
                 place(fr, title_layer(lab, 44, col, track=6, font_name='Montserrat-Black.ttf'), cx[j], H * (0.47 + 0.17 * r) + 120, alpha=b)
