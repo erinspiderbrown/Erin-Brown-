@@ -66,7 +66,7 @@ gfx = [
 zooms = [[t_business - 0.2, t_business + 1.2, 1.1], [t_like74 - 0.2, t_like74 + 1.2, 1.12], [t_gg - 0.1, t_gg + 1.2, 1.1]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/mdx/build', 'output': f'{SP}/mdx/out/maddox_krotzer_v2.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/mdx/build', 'output': f'{SP}/mdx/out/maddox_krotzer_hq3.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face_tight.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):
