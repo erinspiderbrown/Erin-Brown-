@@ -169,6 +169,13 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - Files over about 150 MB can't go through `DROPBOX_UPLOAD_FILE`. Use `DROPBOX_SAVE_URL` with the file's GitHub LFS URL (`https://media.githubusercontent.com/media/<owner>/<repo>/<branch>/exports/<file>`), so Dropbox fetches it server-side.
    - Check the returned `content_hash` against the local file (SHA-256 of the per-4 MB-block SHA-256s) before telling the owner it's there.
    - He can also put raw footage in his Dropbox and name the folder; read it from there instead of asking for share links.
+6b. **Post every finished TikTok to all three places, without asking** (owner, Nov 2026: "When you make TikTok videos, post them on all three places … don't ask again"). Via vidIQ (`vidiq_video_upload` → `vidiq_social_post_draft_create` + `vidiq_social_post_publish`; `vidiq_instagram_publish_reel` for the trial reel):
+   - **TikTok:** "Erin Spider Brown" (`_000ssAV0cJxYmcJ0XSxwm8rgS87rI5_tVPx`), public, comments on, music usage confirmed.
+   - **YouTube Short:** "The Erin Brown" (@theerinbrowntv, `UCiMHg3V2Q414zFIjb8PyTcg`), public, category 17 (Sports), `#Shorts` in the description, the video title as the YouTube title.
+   - **Instagram trial reel:** @e.diamondz (`29211548525143718`), `trialParams.graduationStrategy: MANUAL`.
+   - **Facebook:** he wants the Instagram trial reel shared to the Facebook page connected to @e.diamondz too. Post it to that page as well whenever a Facebook Page is connected in vidIQ (`vidiq_social_account_list` platform FACEBOOK_PAGES).
+   - Caption: the title + one line + `#track #trackandfield` + topic tags. Never the "6starfiles" TikTok or the "GTA 6 Ernie" YouTube channel.
+   - Record the post links in the project NOTES.
 7. **Write a title** for every video: a one-line, YouTube Shorts style hook (the owner asked for this on all of them).
    - Lead with a name people search plus the conflict or twist (e.g. "He Refused to Leave the Track… 11 Years Later, Track Banned Him").
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
