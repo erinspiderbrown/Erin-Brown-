@@ -15,6 +15,7 @@ def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode:
         err = '\n'.join(l for l in r.stderr.splitlines() if len(l) < 600)   # skip ffmpeg's echo of huge filtergraphs
+        open('/tmp/claude-0/-home-user-Erin-Brown-/86462db5-48b3-5b35-8962-db876d3ef862/scratchpad/last_failed_cmd.txt', 'w').write('\n'.join(cmd))
         sys.exit(f"FAILED: {' '.join(cmd)[:400]}...\n{err[-3000:]}")
 
 IMG = ('.jpg', '.jpeg', '.png', '.webp', '.heic')
@@ -129,8 +130,8 @@ def render_segment(plan, seg, a, b, out):
         c = br.get('fullcrop', br.get('crop'))
         bg = '' if br.get('nograde') or not plan.get('broll_grade') else ',' + plan['broll_grade']
         push = 0.0 if br.get('nograde') else (0.12 if is_img(br['src']) else 0.06)
-        fc = (f"[1:v]{cover(W, H, c, push, dur, seg.get('punch', 0.0 if br.get('nograde') else 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}{bg},"
-              f"fps={FPS},format=yuv420p[v]")
+        fc = (f"[1:v]tpad=stop_mode=clone:stop_duration=1.5,{cover(W, H, c, push, dur, seg.get('punch', 0.0 if br.get('nograde') else 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}{bg},"
+              f"fps={FPS},format=yuv420p[v]")     # tpad: a clip cut to the segment's exact length still covers the transition overlap
         extra = []
     bin_ = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', br['src']] if is_img(br['src'])
             else ['-ss', f'{bss:.3f}', '-t', f'{dur:.3f}', '-i', br['src']])
