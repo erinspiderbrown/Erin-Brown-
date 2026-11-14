@@ -30,3 +30,5 @@ Alternates:
 - YouTube Short (The Erin Brown): https://www.youtube.com/watch?v=ZThAq_dMRhA
 - Instagram trial reel (@e.diamondz, manual): https://www.instagram.com/reel/Dfu7B2IHNbq/
 - Facebook: no Facebook Page connected in vidIQ yet; connect link sent to the owner.
+- HQ redo (face cleanup A, CRF 16 / 19 Mbps): `exports/maddox_krotzer_tiktok_hq3.mp4`, Dropbox `/TikTok Exports/maddox_krotzer_tiktok_hq3.mp4`.
+  Reposted to TikTok at the owner's request (the first TikTok post was deleted by him): https://www.tiktok.com/@erinspiderbrown/video/7708117653897940238
