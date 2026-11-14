@@ -1,0 +1,367 @@
+{
+ "workdir": "build",
+ "output": "out/gift_bright.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 72.53,
+ "min_duration": 61,
+ "face": {
+  "src": "work/faces_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_v": {
+  "src": "work/facev_tight.mov",
+  "focus": [
+   0.5,
+   0.42
+  ]
+ },
+ "face_grade": "unsharp=5:5:0.5:5:5:0,vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=6:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "Africa",
+  "Africa,",
+  "2028",
+  "2028,",
+  "Olympics",
+  "Nigeria",
+  "Botswana",
+  "South",
+  "Morocco",
+  "Algeria",
+  "dominate",
+  "Gift",
+  "Bright",
+  "Bright.",
+  "15",
+  "14",
+  "10.5",
+  "21.5",
+  "10.28",
+  "10.2",
+  "20.7",
+  "200",
+  "freshman",
+  "limit",
+  "sky's",
+  "quick"
+ ],
+ "flash": false,
+ "zooms": [
+  [
+   3.0,
+   4.6,
+   1.08
+  ],
+  [
+   41.6,
+   43.4,
+   1.1
+  ],
+  [
+   57.3,
+   58.4,
+   1.08
+  ],
+  [
+   70.9,
+   72.5,
+   1.12
+  ]
+ ],
+ "meme_sfx": [
+  [
+   "impact_quick_zoom",
+   32.55,
+   0.22,
+   0.9
+  ],
+  [
+   "impact_quick_zoom",
+   52.9,
+   0.22,
+   0.9
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "fx/hook.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   }
+  },
+  {
+   "type": "face",
+   "start": 2.45,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 2.45,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 6.2,
+   "broll": {
+    "src": "fx/ramp_start.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "full",
+   "start": 9.3,
+   "broll": {
+    "src": "fx/map.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "face",
+   "start": 17.3,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 17.3,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 20.1,
+   "broll": {
+    "src": "br/p37253080.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 22.9,
+   "broll": {
+    "src": "br/p31229040.mp4",
+    "ss": 8,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "face",
+   "start": 25.2,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 25.2,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 27.0,
+   "broll": {
+    "src": "raw/clip.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:up"
+  },
+  {
+   "type": "full",
+   "start": 30.0,
+   "broll": {
+    "src": "raw/clip.mp4",
+    "ss": 10.4,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 32.55,
+   "broll": {
+    "src": "fx/freeze_name.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 35.65,
+   "broll": {
+    "src": "fx/prog14.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "face",
+   "start": 41.1,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 41.1,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 43.6,
+   "broll": {
+    "src": "fx/p_1028.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 46.2,
+   "broll": {
+    "src": "fx/ramp_finish.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "whip:right"
+  },
+  {
+   "type": "face",
+   "start": 50.8,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 50.8,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 52.9,
+   "broll": {
+    "src": "fx/freeze_200.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "face",
+   "start": 56.4,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 56.4,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 58.8,
+   "broll": {
+    "src": "br/p31229032.mp4",
+    "ss": 3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 62.4,
+   "broll": {
+    "src": "fx/prog_both.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "full",
+   "start": 66.3,
+   "broll": {
+    "src": "fx/limit.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "whip:up"
+  },
+  {
+   "type": "face",
+   "start": 69.9,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 69.9,
+    "nograde": true
+   },
+   "transition": "cut"
+  }
+ ],
+ "graphics": []
+}

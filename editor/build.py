@@ -115,13 +115,21 @@ def render_segment(plan, seg, a, b, out):
             shade = soft_seam_asset(plan)
             hl = float(plan.get('seam_hairline', 0.22))
             fc = (f"[0:v]{cover(W, HALF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade}[f];"
-                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}{'' if br.get('nograde') or not plan.get('broll_grade') else ',' + plan['broll_grade']}[b];"
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+    elif seg['type'] == 'face':                # v2 style: full-screen talking head (vertical crop of the 4K take), lip-synced
+        fv = plan['face_v']
+        zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', []) if z1 > a and z0 < b]
+        drift = f"0.035*(t+{a - seg['start']:.3f})/{max(0.1, seg.get('_len', dur)):.3f}"      # slow push-in across the segment
+        fc = (f"[2:v]{cover(W, H, None, focus=tuple(fv.get('focus', (0.5, 0.4))), zexpr='+'.join(zt + [drift]))},{grade},fps={FPS},format=yuv420p[v]")
+        extra = ['-ss', f'{fss:.3f}', '-t', f'{dur:.3f}', '-i', fv['src']]
     else:
         c = br.get('fullcrop', br.get('crop'))
-        fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
+        bg = '' if br.get('nograde') or not plan.get('broll_grade') else ',' + plan['broll_grade']
+        push = 0.0 if br.get('nograde') else (0.12 if is_img(br['src']) else 0.06)
+        fc = (f"[1:v]{cover(W, H, c, push, dur, seg.get('punch', 0.0 if br.get('nograde') else 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}{bg},"
               f"fps={FPS},format=yuv420p[v]")
         extra = []
     bin_ = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', br['src']] if is_img(br['src'])
@@ -162,6 +170,36 @@ def clean(w):
 
 def hex2ass(h):
     h = h.lstrip('#'); return f'&H{h[4:6]}{h[2:4]}{h[0:2]}&'
+
+def cine_caption_events(plan, words, t0, t1):
+    """v2 style: clean white phrase (2-3 words) near the bottom, no karaoke colour; the KEY words (plan 'caption_emph':
+    names, numbers, places) punch in bigger in Anton + gold on their own beat. Position follows the layout:
+    lower third on full-screen face / B-roll, on the seam in the split."""
+    emph = {e.lower() for e in plan.get('caption_emph', [])}; gold = hex2ass(plan.get('caption_accent', '#FFC83D'))
+    segs = plan['segments']
+    def ypos(t):
+        for sg, nx in zip(segs, segs[1:] + [None]):
+            if sg['start'] <= t < (nx['start'] if nx else 1e9): return HALF if sg['type'] == 'split' else int(H * 0.74)
+        return int(H * 0.74)
+    ev = []
+    ws = [w for w in merge_words(words) if w['e'] > t0 and w['s'] < t1]
+    for ci, c in enumerate(chunks(ws, maxw=3)):
+        nxt_s = None
+        for wi, w in enumerate(c):
+            a = max(w['s'], t0) - t0
+            b = (c[wi + 1]['s'] if wi + 1 < len(c) else min(c[-1]['e'] + 0.2, t1)) - t0
+            if b <= a: continue
+            y = ypos(a)
+            parts = []
+            for i, x in enumerate(c[:wi + 1]):           # words appear as they're said (build-on), never all at once
+                tok = clean(x['w']); key = tok.lower().strip('.,!?')
+                if key in emph:
+                    pop = r'\fscx60\fscy60\t(0,90,\fscx118\fscy118)\t(90,170,\fscx100\fscy100)' if i == wi else ''
+                    parts.append(f'{{\\fnAnton\\fs118\\c{gold}{pop}}}{tok}{{\\fnMontserrat ExtraBold\\fs76\\c&HFFFFFF&\\fscx100\\fscy100}}')
+                else:
+                    parts.append(tok)
+            ev.append(f'Dialogue: 5,{ts(a)},{ts(b)},CapC,,0,0,0,,{{\\an5\\pos({W//2},{y})}}' + ' '.join(parts))
+    return ev
 
 def caption_events(words, t0, t1, colors=('#FFE11A',), ypos=None):
     """Word-by-word karaoke: the word being spoken lights up; chunk pops in."""
@@ -232,6 +270,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{fonts},86,&H00FFFFFF,&H00FFFFFF,&H00000000,&H50000000,0,0,0,0,100,100,1,0,1,6,3,5,40,40,0,1
+Style: CapC,Montserrat ExtraBold,76,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,1,0,1,4,4,5,40,40,0,1
 Style: Gfx,Arial,10,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 Style: Num,Anton,170,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,1,0,0,0,1
 Style: Unit,Bebas Neue,96,{GOLD_ASS.replace('&H','&H00')},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,2,0,1,0,0,1,0,0,0,1
@@ -243,7 +282,8 @@ Style: Name,Anton,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     t0 = plan['voice_ss']; t1 = t0 + plan['duration']
-    ev = caption_events(words, t0, t1, plan.get('caption_colors', ['#FFE11A']), plan.get('caption_y'))
+    ev = (cine_caption_events(plan, words, t0, t1) if plan.get('caption_style') == 'cine'
+          else caption_events(words, t0, t1, plan.get('caption_colors', ['#FFE11A']), plan.get('caption_y')))
     for g in plan.get('graphics', []):
         if g['type'] in ('data', 'motion', 'clip'): continue
         ev += stat_card(g) if g['type'] == 'stat' else name_card(g)
@@ -393,7 +433,7 @@ def main(plan_path):
         b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
         st = os.stat(plan['face']['src']) if s['type'] == 'split' else None   # split shots depend on the face/top track's content too
         key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], [st.st_size, int(st.st_mtime)] if st else None, plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
-                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
+                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent'), plan.get('face_v'), plan.get('broll_grade')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
         if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
