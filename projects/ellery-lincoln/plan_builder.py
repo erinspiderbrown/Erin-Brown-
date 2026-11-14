@@ -98,7 +98,7 @@ gfx = [
 zooms = [[t_idiot - 0.2, t_idiot + 1.2, 1.1], [t_why - 0.1, t_why + 1.3, 1.1], [t_dont - 0.1, t_dont + 1.2, 1.1], [t_luck + 4.4, t_luck + 5.6, 1.12]]
 
 segs.sort(key=lambda s: s['start']); gfx.sort(key=lambda g: g['t'])
-plan = {'workdir': f'{SP}/elly/build', 'output': f'{SP}/elly/out/ellery_lincoln_v4.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
+plan = {'workdir': f'{SP}/elly/build', 'output': f'{SP}/elly/out/ellery_lincoln_hq5.mp4', 'words': f'{H}/words_final.json', 'voice_ss': 0.0,
         'duration': END, 'face': {'src': f'{H}/work/face_tight.mov', 'focus': [0.5, 0.5]}, 'segments': segs, 'zooms': zooms, 'graphics': gfx}
 json.dump(plan, open(f'{H}/plan.json', 'w'), indent=1)
 for a, b in zip(segs, segs[1:] + [{'start': END}]):
