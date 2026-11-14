@@ -37,7 +37,7 @@ plan = {"workdir": "build", "output": "out/gift_bright.mp4", "words": "work/word
         "face": {"src": "work/faces_tight.mov", "focus": [0.5, 0.5]},
         "face_v": {"src": "work/facev_tight.mov", "focus": [0.5, 0.42]},
         "face_grade": "unsharp=5:5:0.5:5:5:0,vignette=PI/6",
-        "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=6:allf=t,vignette=PI/5",
+        "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
         "caption_style": "cine", "caption_accent": "#FFC83D",
         "caption_emph": ["Africa", "Africa,", "2028", "2028,", "Olympics", "Nigeria", "Botswana", "South", "Morocco", "Algeria", "dominate",
                          "Gift", "Bright", "Bright.", "15", "14", "10.5", "21.5", "10.28", "10.2", "20.7", "200", "freshman", "limit", "sky's", "quick"],

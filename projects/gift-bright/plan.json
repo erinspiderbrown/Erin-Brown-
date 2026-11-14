@@ -20,7 +20,7 @@
   ]
  },
  "face_grade": "unsharp=5:5:0.5:5:5:0,vignette=PI/6",
- "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=6:allf=t,vignette=PI/5",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
  "caption_style": "cine",
  "caption_accent": "#FFC83D",
  "caption_emph": [

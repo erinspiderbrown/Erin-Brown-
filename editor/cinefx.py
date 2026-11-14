@@ -42,7 +42,7 @@ def zoom(im, k, cx=0.5, cy=0.5):
 
 _rng = np.random.default_rng(7)
 _vig = None
-def grade(im, grain=0.035, strength=1.0):
+def grade(im, grain=0.012, strength=1.0):
     """film-ish: S-curve contrast, warm highlights / cool shadows, light grain, vignette"""
     global _vig
     a = np.asarray(im.convert('RGB')).astype(np.float32) / 255
@@ -220,7 +220,7 @@ def map_africa(out, dur, hits, geo, final=None, title=None):
                 place(img, title_layer(lab, 46, WHITE, track=3, font_name='Montserrat-Black.ttf'), x + dx, y + dy, alpha=ease((t - tt) / 0.25))
         if title: place(img, title_layer(title, 120, WHITE, track=4), W / 2, H * 0.12, alpha=ease(t / 0.5))
         if final and t >= final[0]: place(img, title_layer(final[1], 150, GOLD, track=4), W / 2, H * 0.88, alpha=ease((t - final[0]) / 0.4), scale=1.1 - 0.1 * ease((t - final[0]) / 0.4))
-        W_.add(grade(img, grain=0.025, strength=0.6))
+        W_.add(grade(img, grain=0.008, strength=0.6))
     W_.close()
 
 def progression(out, dur, bg_src, bg_t, cols, title=None, fx=0.5, fy=0.5):
@@ -248,7 +248,7 @@ def progression(out, dur, bg_src, bg_t, cols, title=None, fx=0.5, fy=0.5):
             a = ease((t - cols[1]['t']) / 0.4); d = ImageDraw.Draw(fr)
             d.line([(W / 2 - 40, H * 0.36), (W / 2 - 40 + 80 * a, H * 0.36)], fill=GOLD + (255,), width=8)
             d.polygon([(W / 2 + 40 * a + 10, H * 0.36), (W / 2 + 40 * a - 14, H * 0.36 - 18), (W / 2 + 40 * a - 14, H * 0.36 + 18)], fill=GOLD + (int(255 * a),))
-        W_.add(grade(fr, grain=0.03, strength=0.6))
+        W_.add(grade(fr, grain=0.01, strength=0.6))
     W_.close()
 
 if __name__ == '__main__':
