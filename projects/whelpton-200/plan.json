@@ -1,0 +1,725 @@
+{
+ "workdir": "work/build",
+ "output": "work/whelpton.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 103.72,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "hqdn3d=2:2:5:5,curves=master='0/0 0.12/0.10 0.3/0.36 0.55/0.66 0.8/0.88 1/1',eq=contrast=1.04:saturation=1.1,colorbalance=rs=-0.02:gs=0:bs=0.03:rm=0.03:bm=-0.02,unsharp=5:5:0.55:5:5:0,vignette=angle=PI/3.6:x0=w/2:y0=h*0.42",
+ "broll_grade": "cinematic",
+ "zooms": [
+  [
+   6.4,
+   8.9,
+   1.08
+  ],
+  [
+   25.7,
+   26.6,
+   1.12
+  ],
+  [
+   38.2,
+   39.5,
+   1.08
+  ],
+  [
+   44.6,
+   46.0,
+   1.1
+  ],
+  [
+   66.2,
+   67.1,
+   1.1
+  ],
+  [
+   84.8,
+   86.3,
+   1.12
+  ],
+  [
+   92.0,
+   94.6,
+   1.06
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/whelpton_bend_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.22
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 2.8,
+   "broll": {
+    "src": "broll/bolt_close.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 5.1,
+   "broll": {
+    "src": "broll/powerlifting.webm",
+    "ss": 47.6,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1100,
+     978,
+     410,
+     102
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 9.2,
+   "broll": {
+    "src": "broll/squat_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 11.3,
+   "broll": {
+    "src": "broll/power_1.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.7,
+   "broll": {
+    "src": "broll/whelpton_nz_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.52,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.4,
+   "broll": {
+    "src": "broll/glasgow_gp.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 21.0,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.1,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 9.0,
+    "focus": [
+     0.7,
+     0.65
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 26.6,
+   "broll": {
+    "src": "broll/youth_blocks.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 31.1,
+   "broll": {
+    "src": "broll/london_200.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   },
+   "transition": "fadeblack"
+  },
+  {
+   "type": "split",
+   "start": 34.3,
+   "broll": {
+    "src": "broll/shin_ice.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 38.2,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 8.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 41.4,
+   "broll": {
+    "src": "broll/xray_tibia.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.0,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 50.3,
+   "broll": {
+    "src": "broll/whelpton_nz_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.523,
+     0.3
+    ]
+   },
+   "transition": "fadeblack",
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 56.7,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 60.2,
+   "broll": {
+    "src": "broll/whelpton_celebrate_hd.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "type": "split",
+   "start": 63.5,
+   "broll": {
+    "src": "broll/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 67.1,
+   "broll": {
+    "src": "broll/hs_sprinter.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.8,
+   "broll": {
+    "src": "broll/power_2.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 74.1,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.65,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 77.7,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 7.5,
+    "focus": [
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 80.0,
+   "broll": {
+    "src": "broll/powerlifting.webm",
+    "ss": 53.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1100,
+     978,
+     440,
+     102
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 82.4,
+   "broll": {
+    "src": "broll/stopwatch.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 84.8,
+   "broll": {
+    "src": "broll/univ200.mp4",
+    "ss": 12.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 86.3,
+   "broll": {
+    "src": "broll/slo_400m.mp4",
+    "ss": 20.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 91.8,
+   "broll": {
+    "src": "broll/glasgow_gp.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 94.7,
+   "broll": {
+    "src": "broll/vaporfly_v.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1250,
+     1110,
+     150,
+     1720
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 98.9,
+   "broll": {
+    "src": "broll/whelpton_bend_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   },
+   "transition": "fade",
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 101.5,
+   "broll": {
+    "src": "broll/race_hd.mp4",
+    "ss": 10.0,
+    "focus": [
+     0.75,
+     0.65
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 1.2,
+   "dur": 1.5,
+   "text": "6'5\"",
+   "size": 170,
+   "y": 1450,
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 3.4,
+   "dur": 1.6,
+   "text": "SAME HEIGHT AS BOLT",
+   "size": 100,
+   "y": 1450,
+   "hi": 3
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 6.6,
+   "dur": 2.4,
+   "text": "BENCH 300?",
+   "size": 120,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.3,
+   "dur": 1.9,
+   "text": "SQUAT 800?",
+   "size": 130,
+   "y": 1450,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.4,
+   "dur": 2.2,
+   "text": "CLEAN 600?",
+   "size": 120,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 14.0,
+   "dur": 3.2,
+   "value": "10.10",
+   "unit": "SECONDS",
+   "label": "Whelpton 100m PB",
+   "sub": "Legal \u00b7 2025 & 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "wind",
+   "t": 17.5,
+   "dur": 1.4,
+   "text": "WIND-AIDED",
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 19.0,
+   "dur": 2.0,
+   "value": "10.01",
+   "unit": "SECONDS (W)",
+   "label": "Whelpton 100m",
+   "sub": "Wind-aided \u00b7 Feb 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 23.6,
+   "dur": 1.5,
+   "text": "21 SECONDS?!",
+   "size": 120,
+   "y": 260,
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 25.75,
+   "dur": 1.4,
+   "text": "HORRIBLE",
+   "size": 140,
+   "y": 1250
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 31.4,
+   "dur": 2.6,
+   "text": "MY 200s \u00b7 LAST SEASON",
+   "size": 96,
+   "y": 1450,
+   "hi": 1
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 38.3,
+   "dur": 2.0,
+   "value": "20.8",
+   "unit": "SECONDS",
+   "label": "My 200m",
+   "sub": "Sprained ankle"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 44.7,
+   "dur": 2.0,
+   "value": "20.8",
+   "unit": "SECONDS",
+   "label": "My 200m",
+   "sub": "Stress fractures in both shins"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 48.9,
+   "dur": 1.3,
+   "text": "20-POINT-HURT",
+   "size": 110,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 54.0,
+   "dur": 2.6,
+   "x": 520,
+   "y": 500,
+   "r": 165,
+   "lx": 110,
+   "ly": 1400,
+   "text": "TIAAN WHELPTON",
+   "sub": "NEW ZEALAND"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 57.6,
+   "dur": 2.5,
+   "value": "21.04",
+   "unit": "SECONDS",
+   "label": "200M  \u00b7  HAMILTON NZ  \u00b7  NOV 14",
+   "anim": 1.4
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 66.2,
+   "dur": 0.9,
+   "text": "HURT",
+   "size": 150,
+   "y": 260,
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 69.1,
+   "dur": 1.2,
+   "text": "UNDER DEVELOPMENT",
+   "size": 100,
+   "y": 260,
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 71.3,
+   "dur": 2.0,
+   "text": "DON'T LIFT YET",
+   "size": 120,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 79.9,
+   "dur": 1.9,
+   "text": "ALL THIS POWER",
+   "size": 120,
+   "y": 260,
+   "hi": 2
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 82.5,
+   "dur": 3.0,
+   "label": "200m",
+   "unit": "S",
+   "lower_is_better": true,
+   "spread": 0.4,
+   "items": [
+    {
+     "name": "Me (hurt)",
+     "value": "20.8"
+    },
+    {
+     "name": "Whelpton",
+     "value": "21.04"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 85.35,
+   "dur": 1.3,
+   "text": "PRACTICE TIME",
+   "size": 120,
+   "y": 1250
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 88.3,
+   "dur": 2.8,
+   "text": "250s \u00b7 15 MIN REST",
+   "size": 100,
+   "y": 260,
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 96.6,
+   "dur": 2.2,
+   "text": "SUPER SHOES + CARBON PLATE",
+   "size": 82,
+   "y": 260,
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 100.85,
+   "dur": 1.6,
+   "text": "IT'S OVER",
+   "size": 150,
+   "y": 1150
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 101.5,
+   "dur": 2.2,
+   "question": "IS 21.04 EMBARRASSING FOR HIM?",
+   "options": [
+    "YES",
+    "NO"
+   ],
+   "cta": "COMMENT BELOW"
+  }
+ ]
+}

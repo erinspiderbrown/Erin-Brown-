@@ -1,0 +1,25 @@
+{
+ "bg": "broll/whelpton_bend_hd.jpg",
+ "focus": [
+  0.45,
+  0.3
+ ],
+ "zoom": 1.0,
+ "darken": 0.35,
+ "lines": [
+  {
+   "text": "BUILT LIKE BOLT",
+   "y": 1040,
+   "size": 122,
+   "color": "#FFFFFF",
+   "slant": 10
+  },
+  {
+   "text": "RAN <span style='color:#FFE11A;background:linear-gradient(transparent 76%,#E8231E 76%,#E8231E 92%,transparent 92%);padding:0 6px'>21.04</span>?!",
+   "y": 1215,
+   "size": 135,
+   "color": "#FFFFFF",
+   "slant": 10
+  }
+ ]
+}
