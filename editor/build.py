@@ -317,11 +317,12 @@ def sfx_cues(plan):
     for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
         if c[0] in BANNED_SFX: print(f"NOTE: extra_sfx '{c[0]}' is banned (owner: too loud/drawn out), skipped"); continue
         add(1, [(c[0], c[1], c[2], 0)])
+    # owner-requested meme sounds (plan 'meme_sfx': [[name, start_t, vol], ...]) reserve their slot so no whoosh lands near them
+    kept = [(float(c[1]), 99, []) for c in plan.get('meme_sfx', [])]
     # spacing: keep highest-priority moments first, then anything that is >= gap from every kept moment
-    kept = []
     for m in sorted(moments, key=lambda m: (-m[1], m[0])):
         if all(abs(m[0] - k[0]) >= gap for k in kept): kept.append(m)
-    kept.sort(key=lambda m: m[0])
+    kept = [k for k in kept if k[2]]; kept.sort(key=lambda m: m[0])
     # resolve sound names chronologically; never the same file twice in a row
     rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
     out, last = [], None
@@ -473,12 +474,21 @@ def main(plan_path):
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
+    memes = plan.get('meme_sfx', [])          # owner asked for these by name and spot (e.g. the vine boom): exact start, no pitch shift, no ducking
+    for k, (name, t, vol) in enumerate(memes):
+        src = name if os.path.exists(name) else f"{plan['sfxdir']}/{name}.wav"
+        ain += ['-i', src]
+        mix.append(f'[{1+len(cues)+k}:a]aresample=48000,volume={vol:.3f},adelay={int(t*1000)}:all=1[m{k}]')
+    if memes: print('meme SFX: ' + ', '.join(f'{t:.2f}s {os.path.basename(n)}' for n, t, _ in memes))
     if cues:   # whooshes duck under the voice (sidechain on the SFX bus only), so they never push the voice's peaks up
         mix.append(''.join(f'[s{j}]' for j in range(len(cues))) + f'amix=inputs={len(cues)}:normalize=0:duration=longest[sb]')
         mix.append('[sb][vk]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=180[sd]')
         mixed = '[vo][sd]amix=inputs=2:normalize=0:duration=first'
     else:
         mixed = '[vo]anull'
+    if memes:
+        mixed = (mixed.replace('[vo][sd]amix=inputs=2', '[vo][sd]' + ''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={2+len(memes)}')
+                 if cues else '[vo]' + ''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={1+len(memes)}:normalize=0:duration=first')
     m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
