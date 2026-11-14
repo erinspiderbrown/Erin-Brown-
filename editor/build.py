@@ -477,11 +477,12 @@ def main(plan_path):
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
     # owner asked for these by name and spot (e.g. the vine boom): exact start, no pitch shift; full level in the pause,
     # ducked only while he's talking so voice + boom never clips (the voice itself stays untouched)
-    for k, (name, t, vol) in enumerate(memes):
+    for k, (name, t, vol, *ln) in enumerate(memes):   # optional 4th value: play length (s), faded out so it ends before he talks again
         src = name if os.path.exists(name) else f"{plan['sfxdir']}/{name}.wav"
         ain += ['-i', src]
-        mix.append(f'[{1+len(cues)+k}:a]aresample=48000,volume={vol:.3f},adelay={int(t*1000)}:all=1[m{k}]')
-    if memes: print('meme SFX: ' + ', '.join(f'{t:.2f}s {os.path.basename(n)}' for n, t, _ in memes))
+        cut = f',atrim=0:{ln[0]:.3f},afade=t=out:st={max(0, ln[0]-0.12):.3f}:d=0.12' if ln else ''
+        mix.append(f'[{1+len(cues)+k}:a]aresample=48000{cut},volume={vol:.3f},adelay={int(t*1000)}:all=1[m{k}]')
+    if memes: print('meme SFX: ' + ', '.join(f'{m[1]:.2f}s {os.path.basename(m[0])}' + (f' ({m[3]:.2f}s long)' if len(m) > 3 else '') for m in memes))
     if cues:   # whooshes duck under the voice (sidechain on the SFX bus only), so they never push the voice's peaks up
         mix.append(''.join(f'[s{j}]' for j in range(len(cues))) + f'amix=inputs={len(cues)}:normalize=0:duration=longest[sb]')
         mix.append('[sb][vk]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=180[sd]')
@@ -517,7 +518,7 @@ def main(plan_path):
     inputs += ['-i', awav]
     run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
          '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
-         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
+         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '320k', '-ac', '2', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])
 

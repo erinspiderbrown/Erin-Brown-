@@ -73,7 +73,7 @@ GFX = [
 plan = {"workdir": "build", "output": "out/rylan_noome.mp4", "words": "work/words_final.json", "voice_ss": 0.0,
         "duration": 112.33, "min_duration": 61, "face": {"src": "work/face_tight.mov", "focus": [0.5, 0.5]},
         "zooms": [[3.5, 4.4, 1.22], [57.0, 58.0, 1.1], [68.9, 70.9, 1.12], [96.7, 97.6, 1.1]],
-        "meme_sfx": [["sfx/vine_boom.wav", 3.47, 0.6]],     # owner: vine boom right after "don't you ever go against this shit"
+        "meme_sfx": [["sfx/vine_boom.wav", 3.47, 0.6, 0.62]],     # owner: vine boom right after "don't you ever go against this shit"
         "segments": segs, "graphics": GFX}
 json.dump(plan, open('plan.json', 'w'), indent=1)
 print(len(segs), 'segments,', len(GFX), 'graphics')
