@@ -104,7 +104,7 @@ def outline(mask, px=7, glow=26, col=WHITE):
     return L
 
 # ---------------------------------------------------------------- shots
-def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE):
+def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE, sy=0.80):
     base = frame_at(src, t, fx, fy); m = mask_of(base)
     W_ = Writer(out); n = int(dur * FPS)
     for i in range(n):
@@ -117,7 +117,7 @@ def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=
         sm = zoom(m, 1 + push * 1.6 * u, 0.5, 0.6); sb = zoom(base, 1 + push * 1.6 * u, 0.5, 0.6)
         fr.alpha_composite(outline(sm).copy(), (0, 0)) if k > 0.2 else None
         subj = sb.convert('RGBA'); subj.putalpha(sm); fr.alpha_composite(subj)
-        if sub: place(fr, title_layer(sub, 64, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * 0.80, alpha=ease((i - 6) / 8))
+        if sub: place(fr, title_layer(sub, 64, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * sy, alpha=ease((i - 6) / 8))
         if i < 4: fr = Image.blend(fr.convert('RGB'), Image.new('RGB', fr.size, WHITE), 0.6 * (1 - i / 4)).convert('RGBA')
         W_.add(grade(fr))
     W_.close()
@@ -136,9 +136,14 @@ def text_behind(src, ss, dur, out, text, sub=None, fx=0.5, fy=0.5, ty=0.34, size
         W_.add(grade(fr))
     W_.close()
 
-def parallax(photo, out, dur, text=None, sub=None, fx=0.5, fy=0.3, ty=0.30, size=300, color=WHITE, cy=0.75):
+def parallax(photo, out, dur, text=None, sub=None, fx=0.5, fy=0.3, ty=0.30, size=300, color=WHITE, cy=0.75, subj_scale=1.0, sy=0.86):
     im = Image.open(photo).convert('RGB'); base = cover(im, fx=fx, fy=fy); m = mask_of(base)
-    bgsrc = base.filter(ImageFilter.GaussianBlur(3))
+    bgsrc = base.filter(ImageFilter.GaussianBlur(3 if subj_scale >= 1 else 22))
+    if subj_scale < 1:                       # shrink the cut-out athlete (never enlarged), bottom-anchored; bg stays full-bleed
+        sw, sh = int(W * subj_scale), int(H * subj_scale)
+        b2 = Image.new('RGB', (W, H)); m2 = Image.new('L', (W, H), 0)
+        b2.paste(base.resize((sw, sh), Image.LANCZOS), ((W - sw) // 2, H - sh)); m2.paste(m.resize((sw, sh), Image.LANCZOS), ((W - sw) // 2, H - sh))
+        base, m = b2, m2
     W_ = Writer(out); n = int(dur * FPS)
     tl = title_layer(text, size, color, track=6) if text else None
     for i in range(n):
@@ -149,7 +154,7 @@ def parallax(photo, out, dur, text=None, sub=None, fx=0.5, fy=0.3, ty=0.30, size
         k = 1.0 + 0.10 * u
         sb = zoom(base, k, 0.5, cy); sm = zoom(m, k, 0.5, cy)
         subj = sb.convert('RGBA'); subj.putalpha(sm); fr.alpha_composite(subj)
-        if sub: place(fr, title_layer(sub, 58, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * 0.86, alpha=ease((i - 10) / 8))
+        if sub: place(fr, title_layer(sub, 58, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * sy, alpha=ease((i - 10) / 8))
         W_.add(grade(fr, strength=0.8))
     W_.close()
 
@@ -194,7 +199,7 @@ def map_africa(out, dur, hits, geo, final=None, title=None):
         ww, hh = img.size; mw = ww * 0.98 * sc; mh = mw * (box0[3] - box0[1]) / (box0[2] - box0[0]) * 1.05
         ox = (ww - mw) / 2; oy = (hh - mh) / 2 - hh * 0.02
         P = lambda lo, la: (ox + _proj(lo, la, box0)[0] * mw, oy + _proj(lo, la, box0)[1] * mh)
-        lit = {c: max(0, t - tt) for tt, c, _ in hits if t >= tt}
+        lit = {h_[1]: max(0, t - h_[0]) for h_ in hits if t >= h_[0]}
         for k, ps in shapes.items():
             on = k in lit; a = ease(lit.get(k, 0) / 0.35)
             col = tuple(int(c0 + (c1 - c0) * a) for c0, c1 in zip((38, 42, 52), GOLD)) if on else (38, 42, 52)
@@ -202,15 +207,17 @@ def map_africa(out, dur, hits, geo, final=None, title=None):
             for p in ps: d.polygon([P(x, y) for x, y in p], fill=col, outline=(16, 18, 24))
         img = img.resize((W, H), Image.LANCZOS).convert('RGBA')
         glow = Image.new('L', (W, H), 0); dg = ImageDraw.Draw(glow)
-        for tt, c, lab in hits:
+        for h_ in hits:
+            tt, c = h_[0], h_[1]
             if t >= tt and c in cent:
                 x, y = P(*cent[c]); x, y = x * 2 / SS, y * 2 / SS; r = 26 + 10 * math.sin((t - tt) * 6) * math.exp(-(t - tt) * 2)
                 dg.ellipse([x - r, y - r, x + r, y + r], fill=int(200 * math.exp(-(t - tt) * 1.2)))
         img.alpha_composite(Image.merge('RGBA', [Image.new('L', (W, H), 255)] * 3 + [glow.filter(ImageFilter.GaussianBlur(18))]))
-        for tt, c, lab in hits:
+        for h_ in hits:
+            tt, c, lab = h_[:3]; dx, dy = (h_[3], h_[4]) if len(h_) > 4 else (0, -46)
             if t >= tt and c in cent:
                 x, y = P(*cent[c]); x, y = x * 2 / SS, y * 2 / SS
-                place(img, title_layer(lab, 46, WHITE, track=3, font_name='Montserrat-Black.ttf'), x, y - 46, alpha=ease((t - tt) / 0.25))
+                place(img, title_layer(lab, 46, WHITE, track=3, font_name='Montserrat-Black.ttf'), x + dx, y + dy, alpha=ease((t - tt) / 0.25))
         if title: place(img, title_layer(title, 120, WHITE, track=4), W / 2, H * 0.12, alpha=ease(t / 0.5))
         if final and t >= final[0]: place(img, title_layer(final[1], 150, GOLD, track=4), W / 2, H * 0.88, alpha=ease((t - final[0]) / 0.4), scale=1.1 - 0.1 * ease((t - final[0]) / 0.4))
         W_.add(grade(img, grain=0.025, strength=0.6))

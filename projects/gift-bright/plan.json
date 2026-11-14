@@ -189,7 +189,7 @@
    "type": "full",
    "start": 27.0,
    "broll": {
-    "src": "raw/clip.mp4",
+    "src": "raw/clip_clean.mp4",
     "ss": 5.0,
     "focus": [
      0.5,
@@ -202,7 +202,7 @@
    "type": "full",
    "start": 30.0,
    "broll": {
-    "src": "raw/clip.mp4",
+    "src": "raw/clip_clean.mp4",
     "ss": 10.4,
     "focus": [
      0.5,
