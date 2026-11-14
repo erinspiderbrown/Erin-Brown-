@@ -3,8 +3,8 @@ import json
 B = lambda i, ss=0: (f'br/p{i}.mp4', ss)
 R = lambda n, ss=0: (f'raw/{n}', ss)
 SEG = [  # start, type, (src, ss), focus, hit
- (0.0,   'split', R('clip_nov06.mov', 42),   [0.5, 0.5],  False),
- (4.1,   'split', B(35829195, 1),            [0.5, 0.6],  False),
+ (0.0,   'full',  R('clip_nov06.mov', 42),   [0.5, 0.5],  False),   # opening of the take is motion-blurred (owner leaning into the lens): cover it with his sharp 400 clip
+ (3.45,  'split', B(35829195, 0.4),          [0.5, 0.6],  False),   # back to his face right on the vine boom
  (7.2,   'full',  B(35863230, 2),            [0.5, 0.5],  False),
  (10.0,  'split', B(10499738, 0),            [0.5, 0.45], False),
  (11.7,  'split', R('photo_nov09a.jpg'),     [0.5, 0.35], False),
@@ -36,10 +36,12 @@ segs = []
 for t, k, (src, ss), f, hit in SEG:
     d = {"type": k, "start": t, "broll": {"src": src, "ss": ss, "focus": f}}
     if hit: d["hit"] = True
+    if t == 3.45: d["transition"] = "cut"      # hard cut to his face right on the vine boom
     segs.append(d)
 M = lambda kind, t, dur, **kw: {"type": "motion", "kind": kind, "t": t, "dur": dur, **kw}
 GFX = [
- M('stamp', 3.55, 1.3, text="I TOLD Y'ALL", anchor="upper"),
+ M('keyword', 0.2, 3.1, text="DON'T YOU EVER GO AGAINST THIS"),
+ M('stamp', 4.3, 1.3, text="I TOLD Y'ALL", anchor="upper"),
  M('keyword', 5.5, 1.8, text="SPIKES TOO EARLY"),
  M('stamp', 8.7, 1.4, text="EARLY GRAVE", anchor="upper"),
  M('keyword', 10.6, 1.4, text="MEET YOUR DEMISE"),
@@ -72,7 +74,8 @@ GFX = [
 ]
 plan = {"workdir": "build", "output": "out/rylan_noome.mp4", "words": "work/words_final.json", "voice_ss": 0.0,
         "duration": 112.33, "min_duration": 61, "face": {"src": "work/face_tight.mov", "focus": [0.5, 0.5]},
-        "zooms": [[3.5, 4.4, 1.22], [57.0, 58.0, 1.1], [68.9, 70.9, 1.12], [96.7, 97.6, 1.1]],
+        "face_grade": "unsharp=5:5:0.55:5:5:0,vignette=PI/6",   # light sharpen: the face reads soft after TikTok's re-encode
+        "zooms": [[3.47, 4.2, 1.15], [57.0, 58.0, 1.1], [68.9, 70.9, 1.12], [96.7, 97.6, 1.1]],
         "meme_sfx": [["sfx/vine_boom.wav", 3.47, 0.6, 0.62]],     # owner: vine boom right after "don't you ever go against this shit"
         "segments": segs, "graphics": GFX}
 json.dump(plan, open('plan.json', 'w'), indent=1)
