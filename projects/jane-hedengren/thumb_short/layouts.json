@@ -1,0 +1,134 @@
+{
+ "A_916": {
+  "W": 1080,
+  "H": 1920,
+  "els": [
+   {
+    "t": "div",
+    "cls": "rays",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1920
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "ALWAYS 2ND?",
+    "x": 0,
+    "y": 250,
+    "w": 1080,
+    "size": 185,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "NOT ANYMORE",
+    "x": 0,
+    "y": 455,
+    "w": 1080,
+    "size": 115,
+    "rot": -3
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "doris.png",
+    "x": -90,
+    "y": 640,
+    "w": 520
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "jane.png",
+    "x": 330,
+    "y": 600,
+    "w": 700
+   },
+   {
+    "t": "box",
+    "text": "#1 NOW",
+    "x": 40,
+    "y": 1180,
+    "size": 150,
+    "rot": -6
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "face.png",
+    "x": -60,
+    "y": 1420,
+    "w": 560
+   }
+  ]
+ },
+ "A_34": {
+  "W": 1080,
+  "H": 1440,
+  "els": [
+   {
+    "t": "div",
+    "cls": "rays",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1440
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "ALWAYS 2ND?",
+    "x": 0,
+    "y": 30,
+    "w": 1080,
+    "size": 175,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "NOT ANYMORE",
+    "x": 0,
+    "y": 225,
+    "w": 1080,
+    "size": 105,
+    "rot": -3
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "doris.png",
+    "x": -80,
+    "y": 400,
+    "w": 440
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "jane.png",
+    "x": 370,
+    "y": 380,
+    "w": 620
+   },
+   {
+    "t": "box",
+    "text": "#1 NOW",
+    "x": 30,
+    "y": 900,
+    "size": 130,
+    "rot": -6
+   },
+   {
+    "t": "img",
+    "cls": "face",
+    "src": "face.png",
+    "x": -50,
+    "y": 1060,
+    "w": 440
+   }
+  ]
+ }
+}

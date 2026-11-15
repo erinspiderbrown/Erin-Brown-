@@ -1,0 +1,387 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new1/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new1/out/jane_hedengren_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/jane-hedengren/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 69.67,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/jane-hedengren/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new1/frz/jane_hook.mp4",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 5.37,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.65,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo1_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 12.75,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new1/frz/doris_intro.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 18.87,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/jh_arcadia.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 23.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo3_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 27.17,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo1_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 34.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/dl_01c.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 39.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/jh_byu_face.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 43.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo3_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.31,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/jh_arcadia.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.71,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/photo1_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 61.43,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/jane-hedengren/raw/jh_byu.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.3
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   18.82,
+   20.220000000000002,
+   1.1
+  ],
+  [
+   26.24,
+   27.54,
+   1.1
+  ],
+  [
+   48.26,
+   49.66,
+   1.08
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.2,
+   "dur": 2.6,
+   "text": "BEST IN COLLEGE?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 9.15,
+   "dur": 2.2,
+   "text": "NCAA XC NATIONALS"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 16.1,
+   "dur": 1.8,
+   "text": "BELT AFTER BELT",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 19.92,
+   "dur": 2.6,
+   "text": "ONLY IF DORIS GOT DQ'D"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 24.08,
+   "dur": 1.6,
+   "text": "COULD NOT BEAT HER",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 27.22,
+   "dur": 7.659999999999998,
+   "title": "2025 NCAA XC \u00b7 6K",
+   "rows": [
+    {
+     "event": "1 \u00b7 LEMNGOLE",
+     "value": "18:25.4"
+    },
+    {
+     "event": "2 \u00b7 HEDENGREN",
+     "value": "18:38.9"
+    },
+    {
+     "event": "3 \u00b7 OLEMOMOI",
+     "value": "18:46.4"
+    }
+   ],
+   "times": [
+    0.3,
+    1.6100000000000017,
+    5.3199999999999985
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 35.78,
+   "dur": 2.6,
+   "text": "DORIS: PRO NOW"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 41.58,
+   "dur": 1.6,
+   "text": "TOP RUNNER NOW",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 44.0,
+   "dur": 4.459999999999999,
+   "title": "JANE \u00b7 FALL 2026",
+   "rows": [
+    {
+     "event": "T&FN PRESEASON",
+     "value": "#1"
+    },
+    {
+     "event": "BIG 12 XC",
+     "value": "1ST"
+    }
+   ],
+   "times": [
+    0.3,
+    1.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 48.96,
+   "dur": 2.4,
+   "text": "50-YEAR-OLD RUNNERS?"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 52.58,
+   "dur": 3.3800000000000012,
+   "title": "HS NATIONAL RECORDS",
+   "rows": [
+    {
+     "event": "5000M",
+     "value": "14:57.93"
+    },
+    {
+     "event": "2 MILE",
+     "value": "9:17.75"
+    },
+    {
+     "event": "MILE",
+     "value": "4:23.50"
+    }
+   ],
+   "times": [
+    0.2,
+    0.9,
+    1.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 56.16,
+   "dur": 5.519999999999999,
+   "title": "HER FRESHMAN YEAR",
+   "rows": [
+    {
+     "event": "NCAA INDOOR 3K",
+     "value": "1ST"
+    },
+    {
+     "event": "NCAA INDOOR 5K",
+     "value": "1ST"
+    },
+    {
+     "event": "NCAA XC",
+     "value": "2ND"
+    }
+   ],
+   "times": [
+    0.3,
+    1.0,
+    3.28
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 64.42,
+   "dur": 1.5,
+   "text": "HER TIME",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 65.66,
+   "dur": 4.0100000000000025,
+   "question": "CAN ANYBODY BEAT JANE THIS YEAR?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
