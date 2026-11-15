@@ -4,6 +4,20 @@ editor/out/
 __pycache__/
 *.mp4
 *.mov
-projects/*/work
+projects/*/raw/
+projects/*/work/
+projects/*/out/
+projects/*/broll/
+
+# two-pass encoder logs written during exports
+exports/x264pass*
+
+# rebuilt from voice_takes/ by assemble_voice.py
+projects/*/voice_master.wav
+projects/*/voice_cut.wav
+projects/*/raw/source.mp4
+
+# scratch symlinks (a trailing-slash pattern does not match a symlink)
 projects/*/raw
+projects/*/work
 projects/*/broll

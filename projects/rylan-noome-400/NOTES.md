@@ -1,0 +1,36 @@
+# Rylan Noome roast: the 400 and the power clean (Nov 10 2026)
+
+Separate from the earlier 300m video (folder `projects/rylan-noome/` on branch `claude/dazzling-gates-a1dtnf`), hence the `-400` name.
+
+**Title (YouTube Shorts / TikTok), suggested:** Rylan Noome Ran 50.8 in the 400… He's Built Like a Deep Freezer 😭
+Alternates:
+- New Zealand's Strongest Sprinter Just Committed Another Atrocity
+- 135 kg Power Clean, 50.8 in the 400… What Is Rylan Noome?
+- Rylan Noome Has One More Chance: The 100 and 200 This Weekend
+
+**Cover** (`exports/thumbnails/rylan_noome_thumb.jpg` 3:4 / `_thumb_916.jpg` 9:16), short-form style (`thumb_short/`): Rylan with the
+bar racked (frame from the owner's power clean clip), "BUILT LIKE A / DEEP FREEZER", the owner's laughing face cut out of his 4K take,
+"400M 50.8" in a red box.
+
+## Sources (owner's Dropbox, Nov 10 2026)
+- `raw/talking_head.mov`: 4K landscape, 121.7 s → cropped 2430x2160 @ x=705 → 1440x1280, `tighten.py` → 118.2 s.
+- `raw/race_400.mov` (55 s, vertical 1080x1920 60 fps → `race_400.mp4` 30 fps): Rylan's 400 filmed from the stands; runners are small
+  in frame, so no freeze pop-out on the race (can't be sure which runner is him at every point).
+- `raw/power_clean.mov` (21 s, vertical 1080x1920 → `.mp4`): the clean (catch ≈ 9 s). Freeze pop-outs at 9.1 s (hook) and 7.3 s (warning).
+- `raw/photo_blocks.jpg` (1206x1629), `raw/photo_kick.jpg` (2048x1365): split only.
+- Captions: "Noom" → "Noome"; the f-word shows as "F*CKING" on screen (audio untouched).
+
+## Facts
+- Checked (World Athletics): Rylan Noome, NZL, born 10 Mar 2006 (20). PBs 100m 10.48 (14 Mar 2026), 200m 21.45 (25 Jan 2025);
+  shown on the "HIS OFFICIAL BESTS" board.
+- **Owner's numbers, not found in any published results:** 300m 35.3 (~a month ago), 400m 50.8, 135 kg power clean, "200 pounds",
+  "third meet this season", NZ nationals in March/April. Shown as he says them (stopwatches, counter, season board); not in the
+  Athletics NZ weekly round-ups for 2 and 9 Nov 2026.
+
+## Export (Nov 10 2026)
+- `exports/rylan_noome_400_tiktok_hq.mp4` (Git LFS): 1:59, 1080x1920, 30 fps, two-pass 8 Mbps, SSIM 0.985; -14.1 LUFS (take -16.9,
+  one static +2.9 dB boost with a limiter), `polish` chain. 24 shots (9 full-screen, 2 freeze pop-outs), 29 graphics, no name tags,
+  slams instead of stamps, 12 quiet whooshes.
+- The owner chose to skip the earlier 300m clip (720x1280, below the 1080p rule; not in his Dropbox): the 300 part uses the 400 footage.
+- Dropbox `/TikTok Exports/`: `rylan_noome_400_tiktok_hq.mp4` + `rylan_noome_400_thumb(_916).jpg`, content_hash verified on all three.
+  Link: https://www.dropbox.com/scl/fi/5yqkomk5ozvtd9hekqynz/rylan_noome_400_tiktok_hq.mp4?rlkey=jtpyi1ulhg6j1esp00f4zf4rx&dl=0

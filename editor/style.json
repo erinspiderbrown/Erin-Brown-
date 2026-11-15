@@ -6,7 +6,7 @@
     "#FFE11A"
   ],
   "caption_font": "Montserrat Black",
-  "flash": "hits",
+  "flash": false,
   "sfx_level": 1.0,
   "fontsdir": "assets/fonts",
   "sfxdir": "assets/sfx",
@@ -16,5 +16,14 @@
   "seam_soft": 46,
   "seam_shadow": 0.55,
   "seam_hairline": 0.22,
-  "sfx_min_gap": 3.0
+  "voice_chain": "polish",
+  "graphic_sfx": false,
+  "hit_sfx": false,
+  "extra_sfx_on": false,
+  "whoosh_level": 0.24,
+  "split_swipes": true,
+  "sfx_min_gap": 3.0,
+  "name_tags": false,
+  "stamps": false,
+  "master_crf": 12
 }

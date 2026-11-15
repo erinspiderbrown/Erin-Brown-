@@ -27,14 +27,27 @@ Rules: the final video must be **at least 61 seconds**, and all B-roll must be *
 | type | kinds / fields | use for |
 |---|---|---|
 | `data` | `counter`, `compare`, `bars`, `line`, `ring` | numbers and stats |
-| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll` | things being talked about |
-| `name` | `rank`, `name`, `sub` | **disabled**: the owner doesn't want name tags; `build.py` drops them |
+| `motion` | `stamp`, `keyword`, `pin`, `calendar`, `stopwatch`, `wind`, `spotlight`, `poll`, `padlock`, `subscription`, `tv`, `flow`, `bubbles`, `board`, `track` | things being talked about |
+| `name` | `rank`, `name`, `sub` | introducing a person |
 | `clip` | `src`, `t`, `dur`, `x`, `y`, `w`, `key: green\|black` | animation clips you supply (green-screen, black-background or alpha) |
 
 Placement: `anchor` (`lower`/`upper`/`center`) or explicit `x`/`y`. `spotlight` takes subject coordinates `x`, `y`, `r` on the 1080×1920 frame.
 Segments: `"hit": true` marks the one or two biggest full-screen moments (bass hit and flash). `"sfx": true` forces a whoosh on a quiet B-roll swap.
 
 Renders are cached: unchanged segments and graphics are reused, so tweaks re-render fast.
+
+## Transitions
+`transitions.py` has these effects:
+- `whip`: whip-pan with directional motion blur
+- `zoom`: zoom-through
+- `spin`
+- `glitch`: RGB split plus jitter
+- `flash`: white bloom
+- `shake`: camera shake
+- `swipe`: bottom-half whip for split B-roll swaps
+- `cut`
+
+Each is rendered as a short clip from the overlap between segments. `build.py` picks them automatically and varies them; override per segment with `"transition"`.
 
 ## What it does
 - **Layout:** split screen (face top, B-roll bottom, separated by a soft seam: a clean edge, soft shadow and faint hairline. `seam_style: "blend"` is available but not the house look) and full-screen B-roll with smooth slide transitions, a punch-in and a flash frame.
@@ -49,8 +62,8 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
 
   Each one gets its own sound design: a whoosh in, data ticks as the numbers move, and a pop and bass hit when the number lands.
 - **Captions:** word-by-word highlights in Montserrat Black. The highlight color alternates between chunks using `caption_colors`.
-- **Graphics:** stat cards with count-up numbers. (Name plates exist in the code but are disabled; the owner doesn't want them.)
-- **Audio:** voice cleanup (high-pass, denoise, EQ, compression), mastered to −14 LUFS.
+- **Graphics:** stat cards with count-up numbers, and rank/name plates in the `accent` color.
+- **Audio:** your original voice, untouched. It's never turned down; a quiet take is raised to −14 LUFS.
 - **Sound effects:** Mixkit whooshes, impacts, pops and clicks. They rotate so none repeats back-to-back, and each one's peak lands exactly on its cut.
   - Sound moments are spaced at least `sfx_min_gap` (3 s) apart.
   - The same sound never plays twice in a row.
@@ -63,6 +76,3 @@ Renders are cached: unchanged segments and graphics are reused, so tweaks re-ren
 
 SFX: Mixkit Sound Effects Free License (commercial use OK; files aren't committed, `setup.sh` downloads them).
 Fonts: SIL Open Font License.
-
-## Thumbnails
-Every video ships with a TikTok cover: `python3 thumbnail.py spec.json out.jpg [check.jpg]`. The spec format and safe zones are documented at the top of `thumbnail.py`; see `projects/noome-weights/thumbnail.json` for an example.

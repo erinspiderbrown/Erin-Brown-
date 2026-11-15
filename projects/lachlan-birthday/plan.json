@@ -1,0 +1,500 @@
+{
+ "workdir": "work/build",
+ "output": "out/lachlan_birthday_v1.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 66.7,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.4,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 0,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.1,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 5.5,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.0,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 10.5,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.6,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.2
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.1,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 15,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 22.2,
+   "broll": {
+    "src": "raw/photo3.webp",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 27.0,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 22,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 29.4,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 25,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 33.9,
+   "broll": {
+    "src": "raw/photo2.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.4,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 17,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.6,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 2.5,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.0,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 7,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.4,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 13.5,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 52.7,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 27,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.0,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 31,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 58.2,
+   "broll": {
+    "src": "raw/photo3.webp",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.6,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 9,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.7,
+   "broll": {
+    "src": "raw/clip_608p.mp4",
+    "ss": 19.5,
+    "crop": [
+     1080,
+     530,
+     0,
+     16
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   8.3,
+   10.0,
+   1.08
+  ],
+  [
+   19.0,
+   22.1,
+   1.1
+  ],
+  [
+   29.4,
+   31.9,
+   1.08
+  ],
+  [
+   41.0,
+   42.5,
+   1.14
+  ],
+  [
+   54.9,
+   57.6,
+   1.1
+  ],
+  [
+   61.0,
+   62.6,
+   1.15
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.1,
+   "dur": 1.6,
+   "text": "23 YEARS AGO",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 2.75,
+   "dur": 1.7,
+   "text": "FRAUD?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 10.8,
+   "dur": 1.9,
+   "text": "NO TOP-END SPEED",
+   "hi": 1,
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 14.45,
+   "dur": 1.6,
+   "text": "FRAUDULENT TIMES?",
+   "size": 96
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 16.1,
+   "dur": 1.9,
+   "text": "FOOLING THE WORLD",
+   "hi": 2,
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 22.85,
+   "dur": 1.6,
+   "text": "NOT LEGIT",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 24.45,
+   "dur": 2.5,
+   "text": "AUSTRALIA",
+   "sub": "THE WHOLE SCENE?"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 28.4,
+   "dur": 1.5,
+   "text": "COOL GUY",
+   "hi": 1
+  },
+  {
+   "type": "name",
+   "t": 32.0,
+   "dur": 2.6,
+   "rank": "AUS",
+   "name": "LACHLAN KENNEDY",
+   "sub": "AUSTRALIAN SPRINTER"
+  },
+  {
+   "type": "motion",
+   "kind": "birthday",
+   "t": 34.4,
+   "dur": 4.9,
+   "number": "23",
+   "text": "HAPPY BIRTHDAY",
+   "sub": "LACHLAN KENNEDY"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 40.9,
+   "dur": 1.6,
+   "text": "STILL A FRAUD?",
+   "size": 120
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 43.3,
+   "dur": 1.9,
+   "text": "THIS SEASON",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 46.9,
+   "dur": 1.9,
+   "text": "CHANGE HIS WAYS",
+   "hi": 2,
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 49.3,
+   "dur": 2.0,
+   "text": "TAKE THE ADVICE",
+   "hi": 2,
+   "size": 130
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 62.2,
+   "dur": 0.95,
+   "text": "FOOLING?",
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 63.15,
+   "dur": 3.55,
+   "question": "LEGIT OR FRAUD?",
+   "options": [
+    "LEGIT",
+    "FRAUD"
+   ]
+  }
+ ]
+}

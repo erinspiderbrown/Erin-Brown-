@@ -1,0 +1,19 @@
+{
+ "panels": [
+  {
+   "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/raw6/ph/texas_flag.jpg",
+   "cx": 1640,
+   "cy": 1150,
+   "zoom": 0.8
+  },
+  {
+   "src": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/raw6/ph/kkk_init.jpg",
+   "cx": 1900,
+   "cy": 1300,
+   "zoom": 0.75,
+   "bw": true
+  }
+ ],
+ "split": 0.52,
+ "out": "/home/user/Erin-Brown-/exports/thumbnails/klan_bonfire"
+}

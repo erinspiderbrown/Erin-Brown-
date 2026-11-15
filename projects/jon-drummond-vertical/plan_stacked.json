@@ -1,0 +1,108 @@
+{
+ "src": "raw3/src.mp4",
+ "words": "w3/words_fixed.json",
+ "keep": [
+  [
+   1.6,
+   33.6
+  ],
+  [
+   38.9,
+   69.0
+  ],
+  [
+   79.6,
+   100.2
+  ],
+  [
+   110.9,
+   140.9
+  ],
+  [
+   177.7,
+   206.4
+  ],
+  [
+   211.5,
+   283.0
+  ],
+  [
+   290.9,
+   436.8
+  ],
+  [
+   444.5,
+   463.0
+  ],
+  [
+   478.1,
+   481.3
+  ],
+  [
+   491.8,
+   512.9
+  ]
+ ],
+ "chapters": [
+  [
+   0,
+   "JON DRUMMOND",
+   "THE SHOWMAN WHO WOULDN'T LEAVE"
+  ],
+  [
+   63.7,
+   "WHO WAS HE?",
+   "US 4X100 RELAY CAPTAIN"
+  ],
+  [
+   110.9,
+   "SYDNEY 2000",
+   "THE CELEBRATION"
+  ],
+  [
+   187.3,
+   "THE NEW RULE",
+   "FALSE STARTS"
+  ],
+  [
+   214.1,
+   "PARIS 2003",
+   "HE WOULDN'T LEAVE"
+  ],
+  [
+   305.5,
+   "MY TAKE",
+   "BAD LOOK \u00b7 FAIR POINT"
+  ],
+  [
+   349.7,
+   "THE COMEBACK",
+   "COACH DRUMMOND"
+  ],
+  [
+   380.3,
+   "2013",
+   "THE TYSON GAY CASE"
+  ],
+  [
+   414.0,
+   "THE RULING",
+   "8-YEAR BAN"
+  ],
+  [
+   444.5,
+   "SAME YEAR",
+   "HALL OF FAME + BANNED"
+  ],
+  [
+   478.1,
+   "WHERE HE IS NOW",
+   ""
+  ]
+ ],
+ "title": "JON DRUMMOND",
+ "subtitle": "THE SHOWMAN WHO WOULDN'T LEAVE",
+ "output": "out/jon_drummond_vertical.mp4",
+ "workdir": "w3/build",
+ "frame_y": 600
+}

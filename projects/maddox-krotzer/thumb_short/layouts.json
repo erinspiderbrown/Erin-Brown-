@@ -1,0 +1,20 @@
+{
+ "A_916": {"W":1080,"H":1920,"els":[
+  {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1920},
+  {"t":"text","cls":"yel","text":"HIGH SCHOOLER?!","x":0,"y":250,"w":1080,"size":165,"rot":-3},
+  {"t":"text","cls":"wht","text":"SEASON OPENER","x":0,"y":440,"w":1080,"size":110,"rot":-3},
+  {"t":"img","cls":"face","src":"maddox.png","x":440,"y":640,"w":680},
+  {"t":"text","cls":"wht","text":"HIGH JUMP","x":40,"y":700,"w":440,"size":80,"rot":-6},
+  {"t":"box","text":"7-4½","x":60,"y":790,"size":170,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-90,"y":1250,"w":680}
+ ]},
+ "A_34": {"W":1080,"H":1440,"els":[
+  {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1440},
+  {"t":"text","cls":"yel","text":"HIGH SCHOOLER?!","x":0,"y":30,"w":1080,"size":160,"rot":-3},
+  {"t":"text","cls":"wht","text":"SEASON OPENER","x":0,"y":215,"w":1080,"size":105,"rot":-3},
+  {"t":"img","cls":"face","src":"maddox.png","x":470,"y":390,"w":620},
+  {"t":"text","cls":"wht","text":"HIGH JUMP","x":40,"y":430,"w":440,"size":78,"rot":-6},
+  {"t":"box","text":"7-4½","x":60,"y":515,"size":160,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-80,"y":860,"w":620}
+ ]}
+}

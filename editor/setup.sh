@@ -2,7 +2,9 @@
 # One-time setup: Python deps, fonts (Google Fonts / OFL), and the Mixkit SFX library (Mixkit Free License).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-pip install -q faster-whisper numpy onnxruntime
+pip install -q faster-whisper numpy opencv-contrib-python-headless "rembg[cpu]"   # rembg: subject cut-outs for thumb_cutout.py
+mkdir -p "$(dirname "$0")/assets/models"
+curl -sSfL -o "$(dirname "$0")/assets/models/FSRCNN_x2.pb" https://raw.githubusercontent.com/Saafke/FSRCNN_Tensorflow/master/models/FSRCNN_x2.pb   # neural 2x upscaler (editor/upscale.py)
 mkdir -p "$HERE/assets/fonts" "$HERE/assets/sfx_raw" "$HERE/assets/sfx"
 F="$HERE/assets/fonts"
 curl -sSL -o "$F/Anton-Regular.ttf"      https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf
@@ -15,8 +17,11 @@ while read -r name id; do
   curl -sSL -o "$HERE/assets/sfx_raw/$name.mp3" "https://assets.mixkit.co/active_storage/sfx/$id/$id-preview.mp3"
 done < "$HERE/sfx_list.txt"
 python3 "$HERE/prep_sfx.py" "$HERE/assets/sfx_raw" "$HERE/assets/sfx"
-# Real-ESRGAN general x4 v3 (BSD-3) for enhance.py: AI upscaling of low-res clips/photos, runs on CPU
-mkdir -p "$HERE/assets/models"
-curl -sSL -o /tmp/esr.zip https://qaihub-public-assets.s3.us-west-2.amazonaws.com/qai-hub-models/models/real_esrgan_general_x4v3/releases/v0.66.0/real_esrgan_general_x4v3-onnx-float.zip
-unzip -o -j -q /tmp/esr.zip '*.onnx' '*.data' -d "$HERE/assets/models" && rm /tmp/esr.zip
+# ambience beds (campfire, night crickets, scary woods) for the plan's "ambience" list
+mkdir -p "$HERE/assets/ambience"
+while read -r name id; do
+  [ -z "$name" ] && continue
+  curl -sSL -o "$HERE/assets/ambience/$name.mp3" "https://assets.mixkit.co/active_storage/sfx/$id/$id-preview.mp3"
+  ffmpeg -nostdin -v error -y -i "$HERE/assets/ambience/$name.mp3" -ar 48000 -ac 2 "$HERE/assets/ambience/$name.wav"
+done < "$HERE/ambience_list.txt"
 echo "setup done"

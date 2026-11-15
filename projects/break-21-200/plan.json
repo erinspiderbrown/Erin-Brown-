@@ -1,0 +1,664 @@
+{
+ "workdir": "w7/build",
+ "output": "out/break21_200.mp4",
+ "words": "w7/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 128.958,
+ "face": {
+  "src": "w7/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw7/clip5.mov",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.03,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 0.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.56,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 17.3,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 8.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.34,
+   "broll": {
+    "src": "raw7/up/clip2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.72,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 7.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.16,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 14.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 36.2,
+   "broll": {
+    "src": "raw7/clip3.mov",
+    "ss": 0.4,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 41.3,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 44.02,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 17.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.09,
+   "broll": {
+    "src": "raw7/up/clip2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 53.7,
+   "broll": {
+    "src": "raw7/up/clip1.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.92,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 11.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 63.11,
+   "broll": {
+    "src": "raw7/clip5.mov",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 65.99,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 1.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.87,
+   "broll": {
+    "src": "raw7/up/clip1.mp4",
+    "ss": 6.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 75.48,
+   "broll": {
+    "src": "raw7/up/clip1.mp4",
+    "ss": 12.1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 79.91,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 16.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 85.45,
+   "broll": {
+    "src": "raw7/up/clip2.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 91.33,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 97.27,
+   "broll": {
+    "src": "raw7/up/clip2.mp4",
+    "ss": 2.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.53,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 108.33,
+   "broll": {
+    "src": "raw7/up/clip4.mp4",
+    "ss": 11.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 112.52,
+   "broll": {
+    "src": "raw7/up/clip6.mp4",
+    "ss": 7.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 119.32,
+   "broll": {
+    "src": "raw7/clip3.mov",
+    "ss": 2.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 124.45,
+   "broll": {
+    "src": "raw7/up/clip2.mp4",
+    "ss": 2.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   36.2,
+   37.800000000000004,
+   1.12
+  ],
+  [
+   63.11,
+   64.61,
+   1.1
+  ],
+  [
+   124.45,
+   125.75,
+   1.15
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.47,
+   "dur": 2.4,
+   "text": "SUB 21 IN THE 200?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 3.7,
+   "dur": 1.8,
+   "text": "THE SAUCE",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 5.83,
+   "dur": 3.4,
+   "items": [
+    "HOW DO I BREAK 21??",
+    "STUCK AT 21.3 ALL SEASON",
+    "DROP THE SAUCE"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 12.41,
+   "dur": 4.6,
+   "text": "21.1 \u00b7 21.2 \u00b7 21.3 \u00b7 21.4"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 19.16,
+   "dur": 1.9,
+   "text": "DOING IT WRONG",
+   "anchor": "lower",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 21.9,
+   "dur": 4.6,
+   "items": [
+    "STRATEGY",
+    "RACE MODEL",
+    "EXECUTION"
+   ],
+   "times": [
+    0.1,
+    0.9,
+    2.22
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 26.36,
+   "dur": 1.35,
+   "text": "A SHORT 400"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 27.78,
+   "dur": 6.0,
+   "title": "400 RACE PHASES",
+   "rows": [
+    {
+     "event": "ACCELERATE",
+     "value": "1"
+    },
+    {
+     "event": "CHILL",
+     "value": "2"
+    },
+    {
+     "event": "RE-ACCELERATE",
+     "value": "3"
+    },
+    {
+     "event": "COME HOME",
+     "value": "4"
+    }
+   ],
+   "times": [
+    0.86,
+    1.94,
+    2.76,
+    4.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 37.04,
+   "dur": 1.8,
+   "text": "I RAN THE 400",
+   "anchor": "lower",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 39.800000000000004,
+   "dur": 2.2,
+   "text": "SAME PHASES. FASTER."
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 43.02,
+   "dur": 2.0,
+   "text": "BIGGEST MISTAKE",
+   "anchor": "lower",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 49.09,
+   "dur": 3.2,
+   "text": "GET OUT HARD \u2192 HOLD ON"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 54.06,
+   "dur": 1.8,
+   "text": "NO STRATEGY",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 61.98,
+   "dur": 2.2,
+   "text": "NO PHASES"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 64.35,
+   "dur": 2.4,
+   "text": "HOW TO RUN SUB 21"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 73.23,
+   "dur": 2.4,
+   "text": "MUSCLE MEMORY"
+  },
+  {
+   "type": "motion",
+   "kind": "race200",
+   "t": 76.73,
+   "dur": 19.02,
+   "phases": [
+    {
+     "from": 0,
+     "to": 45,
+     "label": "DRIVE"
+    },
+    {
+     "from": 45,
+     "to": 80,
+     "label": "CHILL"
+    }
+   ],
+   "times": [
+    0.2,
+    8.72
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "race200",
+   "t": 95.95,
+   "dur": 6.38,
+   "phases": [
+    {
+     "from": 0,
+     "to": 45,
+     "label": "DRIVE"
+    },
+    {
+     "from": 45,
+     "to": 80,
+     "label": "CHILL"
+    },
+    {
+     "from": 80,
+     "to": 110,
+     "label": "RE-ACCELERATE"
+    }
+   ],
+   "zone": {
+    "from": 80,
+    "to": 110,
+    "at": 0.5
+   },
+   "times": [
+    0.0,
+    0.05,
+    0.5
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 102.73,
+   "dur": 2.6,
+   "text": "SPEED THE ARMS UP"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 104.63,
+   "dur": 2.4,
+   "text": "LEG FREQUENCY \u2191"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 107.23,
+   "dur": 1.8,
+   "text": "20-POINT. EVERY TIME",
+   "anchor": "lower",
+   "size": 90
+  },
+  {
+   "type": "motion",
+   "kind": "race200",
+   "t": 109.78,
+   "dur": 2.84,
+   "phases": [
+    {
+     "from": 0,
+     "to": 45,
+     "label": "DRIVE"
+    },
+    {
+     "from": 45,
+     "to": 80,
+     "label": "CHILL"
+    },
+    {
+     "from": 80,
+     "to": 110,
+     "label": "RE-ACCELERATE"
+    },
+    {
+     "from": 110,
+     "to": 200,
+     "label": "HOME"
+    }
+   ],
+   "zone": {
+    "from": 80,
+    "to": 110,
+    "at": 0.0
+   },
+   "times": [
+    0.0,
+    0.05,
+    0.1,
+    0.5
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 113.22,
+   "dur": 2.4,
+   "text": "NO SWIMMING"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 117.78,
+   "dur": 2.3,
+   "text": "ALREADY ON 20-POINT PACE"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 122.43,
+   "dur": 1.9,
+   "text": "HOPE & PRAY?",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 124.45,
+   "dur": 1.6,
+   "text": "GOOD LUCK",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 126.43,
+   "dur": 2.53,
+   "question": "WHAT'S YOUR 200 PR?",
+   "options": [
+    "SUB 21",
+    "21-POINT"
+   ]
+  }
+ ]
+}

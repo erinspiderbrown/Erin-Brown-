@@ -4,6 +4,8 @@ Usage: python3 build.py plan.json
 All times in the plan are OUTPUT seconds (0 = start of edit), except *_ss fields which are source seek times.
 """
 import hashlib, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import transitions
 
 W, H, FPS, D = 1080, 1920, 30, 0.30          # canvas, fps, transition duration
 HALF = H // 2
@@ -11,7 +13,9 @@ GOLD_ASS = '&H2CC7FF&'                        # #FFC72C in ASS BGR
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode: sys.exit(f"FAILED: {' '.join(cmd)}\n{r.stderr[-3000:]}")
+    if r.returncode:
+        err = '\n'.join(l for l in r.stderr.splitlines() if len(l) < 600)   # skip ffmpeg's echo of huge filtergraphs
+        sys.exit(f"FAILED: {' '.join(cmd)[:400]}...\n{err[-3000:]}")
 
 IMG = ('.jpg', '.jpeg', '.png', '.webp', '.heic')
 def is_img(p): return p.lower().endswith(IMG)
@@ -39,6 +43,15 @@ def cover(w, h, crop=None, push=0.0, dur=1.0, punch=0.0, focus=(0.5, 0.5), zexpr
     return ','.join(f)
 
 _probe = {}
+def cached(path, expect=None):
+    """A cached render counts only if it's complete. A stopped render can leave a 0-byte file, or (ffmpeg exits
+    cleanly on SIGTERM) a valid but short one, so check the duration against what the render should produce."""
+    if not os.path.exists(path) or os.path.getsize(path) < 1024: return False
+    r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    try: got = float(r.stdout.strip())
+    except ValueError: return False
+    return expect is None or got >= expect - 0.1
+
 def probe(src):
     if src not in _probe:
         r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
@@ -83,21 +96,10 @@ def render_segment(plan, seg, a, b, out):
     fss = plan['voice_ss'] + a                 # face stays lip-synced to voice
     bss = max(0.0, br['ss'] + (a - seg['start']))
     dur = b - a
-    grade = plan.get('face_grade', 'hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:saturation=1.06:gamma=0.98,vignette=PI/6')
+    # owner, Nov 2026 ("needs to be sharpened and cleaned up"; picked option A of face_cleanup_options.jpg): denoise, a little
+    # brighter, contrast-adaptive sharpen. Don't push it further (option B looked processed).
+    grade = plan.get('face_grade', 'hqdn3d=2.5:2:4:4,eq=brightness=0.02:contrast=1.08:saturation=1.08:gamma=1.06,cas=strength=0.55,vignette=PI/6')
     bpush = 0.10 if is_img(br['src']) else 0.04
-    hold = ''
-    # optional film look on all B-roll (plan "broll_grade": an ffmpeg filter chain, or "cinematic" for the house preset)
-    bg = plan.get('broll_grade') or ''
-    if bg == 'cinematic':
-        bg = ('eq=contrast=1.08:saturation=1.08:gamma=0.97,colorbalance=rs=0.04:gs=0.0:bs=-0.04:rh=-0.03:bh=0.04,'
-              'vignette=PI/5,noise=alls=5:allf=t+u')
-    bg = (',' + bg) if bg else ''
-    if not is_img(br['src']):
-        have = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', br['src']],
-                                    capture_output=True, text=True).stdout or 0) - bss
-        if have < dur - 0.02:
-            print(f"NOTE: {os.path.basename(br['src'])} has {have:.2f}s from ss but the segment needs {dur:.2f}s; holding its last frame")
-        hold = f'tpad=stop_mode=clone:stop_duration={dur + 1:.2f},'
     if seg['type'] == 'split':
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', [])
               if z1 > a and z0 < b]
@@ -107,7 +109,7 @@ def render_segment(plan, seg, a, b, out):
             mask, shade = seam_assets(plan, F)
             fc = (f"[0:v]{cover(W, HF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade},format=yuva420p[f];"
                   f"[2:v]format=gray,scale={W}:{HF}[m];[f][m]alphamerge[fa];"
-                  f"[1:v]{hold}{cover(W, HF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}{bg}[b];"
+                  f"[1:v]{cover(W, HF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
                   f"color=c=black:s={W}x{H}:r={FPS}:d={dur:.3f}[bg];[bg][b]overlay=0:{H-HF}[t1];[t1][fa]overlay=0:0:shortest=1[t2];"
                   f"[3:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', mask, '-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
@@ -115,19 +117,52 @@ def render_segment(plan, seg, a, b, out):
             shade = soft_seam_asset(plan)
             hl = float(plan.get('seam_hairline', 0.22))
             fc = (f"[0:v]{cover(W, HALF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade}[f];"
-                  f"[1:v]{hold}{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}{bg}[b];"
+                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+    elif br.get('fit') == 'frame':
+        # "framed" full screen (owner's preference over blurred fill): the whole shot (older/retro video or a wide photo)
+        # sits uncropped in a band across the middle; the space above and below is filled with REAL content - other
+        # high-res photos of the story with their own slow push - so every part of the 9:16 frame is part of the video.
+        # Graphics/captions land on the panels as usual. broll keys: top/bottom = {src, focus}.
+        sw, sh = probe(br['src'])
+        if br.get('crop'): sw, sh = br['crop'][0], br['crop'][1]
+        bh = min(round(W * sh / sw / 2) * 2, H - 2 * 360)          # band height (keep >= 360px panels)
+        ph = (H - bh) // 4 * 2; ph2 = H - bh - ph                   # even panel heights (yuv420p drops odd rows)
+        tp, bt = br['top'], br['bottom']
+        def pin(i, p, h, push):
+            ip = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', p['src']] if is_img(p['src'])
+                  else ['-ss', f"{p.get('ss', 0):.3f}", '-t', f'{dur:.3f}', '-i', p['src']])
+            return ip, (f"[{i}:v]{cover(W, h, p.get('crop'), push, dur, focus=tuple(p.get('focus', (0.5, 0.5))), src_wh=probe(p['src']))},"
+                        f"eq=brightness=-0.05:saturation=1.05[p{i}]")
+        i2, f2 = pin(2, tp, ph, 0.08); i3, f3 = pin(3, bt, ph2, 0.08)
+        fc = (f"{f2};{f3};[1:v]{cover(W, bh, br.get('crop'), 0.04 if is_img(br['src']) else 0.0, dur, seg.get('punch', 0.06), src_wh=(sw, sh))}[mid];"
+              f"[p2][mid][p3]vstack=3,"
+              f"drawbox=y={ph-3}:w={W}:h=6:color=white@0.92:t=fill,drawbox=y={ph+bh-3}:w={W}:h=6:color=white@0.92:t=fill,"
+              f"fps={FPS},format=yuv420p[v]")
+        extra = i2 + i3
+    elif br.get('fit') == 'blur':
+        # "blurred fill" (owner-approved for older / lower-res / wide footage): the WHOLE shot shows, uncropped and
+        # centred, over a blurred, darkened, zoomed copy of itself, so the 9:16 frame is still filled edge to edge.
+        sw, sh = probe(br['src'])
+        if br.get('crop'): sw, sh = br['crop'][0], br['crop'][1]
+        fw, fh = (W, round(W * sh / sw / 2) * 2) if sw / sh >= W / H else (round(H * sw / sh / 2) * 2, H)
+        c = br.get('crop')
+        fc = (f"[1:v]split[s1][s2];"
+              f"[s1]{cover(W, H, c, 0.06, dur, focus=tuple(br.get('focus', (0.5, 0.5))))},gblur=sigma=38,eq=brightness=-0.10:saturation=1.15[bg];"
+              f"[s2]{cover(fw, fh, c, 0.05 if is_img(br['src']) else 0.0, dur, seg.get('punch', 0.06), src_wh=(sw, sh))}[fg];"
+              f"[bg][fg]overlay=(W-w)/2:(H-h)/2,fps={FPS},format=yuv420p[v]")
+        extra = []
     else:
         c = br.get('fullcrop', br.get('crop'))
-        fc = (f"[1:v]{hold}{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}{bg},"
+        fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
               f"fps={FPS},format=yuv420p[v]")
         extra = []
     bin_ = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', br['src']] if is_img(br['src'])
             else ['-ss', f'{bss:.3f}', '-t', f'{dur:.3f}', '-i', br['src']])
     run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{fss:.3f}', '-t', f'{dur:.3f}', '-i', face['src'], *bin_, *extra,
-         '-filter_complex', fc, '-map', '[v]', '-an', '-t', f'{dur:.3f}', '-c:v', 'libx264', '-crf', '12', '-preset', 'fast', out])
+         '-filter_complex', fc, '-map', '[v]', '-an', '-c:v', 'libx264', '-crf', '12', '-preset', 'fast', out])
 
 # ---------- captions & graphics (ASS) ----------
 def ts(t):
@@ -157,7 +192,7 @@ def chunks(words, maxw=3, gap=0.35):
             yield cur; cur = []
 
 def clean(w):
-    w = re.sub(r'[^\w.%$#*\'-]', '', w.upper())
+    w = re.sub(r'[^\w.%$#\'*:-]', '', w.upper())
     return re.sub(r'\.$', '', w)
 
 def hex2ass(h):
@@ -275,6 +310,13 @@ POOLS = {
 }
 BANNED_SFX = {'riser', 'riser_synth', 'riser_space_stutter', 'impact_big_cine', 'impact_deep_cine_whoosh',
               'impact_quick_zoom', 'impact_trailer_whoosh_hit', 'air_windy_swoosh'}
+def is_fs(sg):
+    """true full-screen: type 'full' without the framed middle band (fit: frame counts as a framed layout)"""
+    return sg['type'] == 'full' and (sg.get('broll') or {}).get('fit') != 'frame'
+
+def is_framed(sg):
+    return sg['type'] == 'full' and (sg.get('broll') or {}).get('fit') == 'frame'
+
 import random
 def sfx_cues(plan):
     """-> list of (sfx name, time where its PEAK lands, volume, rate)"""
@@ -288,14 +330,16 @@ def sfx_cues(plan):
     for prev, nxt in zip(segs, segs[1:]):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
-        if nxt['type'] == 'full' and prev['type'] != 'full':
-            add(3 if nxt.get('hit') else 2, [('air', T, 0.30, 0)] + ([('impact', T + 0.02, 0.26, 0)] if nxt.get('hit') else []))
+        if is_fs(nxt) and not is_fs(prev):
+            wl = float(plan.get('whoosh_level', 0.24))
+            add(3 if nxt.get('hit') else 2, [('air', T, wl, 0)] + ([('impact', T + 0.02, 0.26, 0)] if nxt.get('hit') and plan.get('hit_sfx', False) else []))
             last_full = T
-        elif nxt['type'] != 'full' and prev['type'] == 'full':
+        elif not is_fs(nxt) and is_fs(prev):
             if T - last_full >= 6: add(0, [('air_soft', T, 0.20, 0)])
         elif nxt.get('sfx'):
             add(1, [('air_soft', T, 0.2, 0)])
-    for g in plan.get('graphics', []):
+    graphic_sfx = plan.get('graphic_sfx', False)        # owner: no random loud sounds mid-sentence
+    for g in (plan.get('graphics', []) if graphic_sfx else []):
         t0, ev = g['t'], g.get('_ev', {})
         if g['type'] == 'data':
             add(1, [('data_tick', t0 + tk, 0.12, 1) for tk in ev.get('ticks', [])[:3]] + [('pop', t0 + ev['land'], 0.30, 0)])
@@ -312,17 +356,13 @@ def sfx_cues(plan):
             elif first: add(1, ticks + [first])
         elif g['type'] in ('name', 'stat'):
             add(1, [('pop', t0 + 0.05, 0.26, 0)])
-    for c in plan.get('extra_sfx', []):
+    for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
         if c[0] in BANNED_SFX: print(f"NOTE: extra_sfx '{c[0]}' is banned (owner: too loud/drawn out), skipped"); continue
         add(1, [(c[0], c[1], c[2], 0)])
     # spacing: keep highest-priority moments first, then anything that is >= gap from every kept moment
-    # distance between two moments = closest pair of their audible (non-tick) cues, not their start times,
-    # so a graphic whose pop lands late can't crowd the next whoosh
-    def times(m): return [c[1] for c in m[2] if not c[3]] or [m[0]]
-    def dist(a, b): return min(abs(x - y) for x in times(a) for y in times(b))
     kept = []
     for m in sorted(moments, key=lambda m: (-m[1], m[0])):
-        if all(dist(m, k) >= gap for k in kept): kept.append(m)
+        if all(abs(m[0] - k[0]) >= gap for k in kept): kept.append(m)
     kept.sort(key=lambda m: m[0])
     # resolve sound names chronologically; never the same file twice in a row
     rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
@@ -342,6 +382,30 @@ def sfx_cues(plan):
           ', '.join(f"{t:.1f}s {n}" for n, t, _ in out if not n.startswith('tick')))
     return [(n, t, v * lvl, round(rng.uniform(0.92, 1.08), 3)) for n, t, v in out]
 
+def choose_transitions(plan):
+    """Pick a transition per boundary. A segment can force one with "transition": "whip:left" / "zoom" / "cut" / ...
+    Auto rules (house style, viral but varied):
+      into full-screen   -> rotate zoom, whip-left, spin, whip-up   ("hit" segments: flash / shake)
+      out of full-screen -> rotate whip-down, zoom, whip-right, glitch
+      full -> full       -> rotate whip-left, glitch, whip-right
+      split -> split     -> bottom-half swipe (left/right alternating); your face never moves"""
+    rot = {'in': ['zoom', 'whip:left', 'spin', 'whip:up'], 'hit': ['flash', 'shake'], 'out': ['whip:down', 'zoom', 'whip:right', 'glitch'],
+           'ff': ['whip:left', 'glitch', 'whip:right'], 'ss': ['swipe:left', 'swipe:right']}
+    cnt = {k: 0 for k in rot}
+    def take(k):
+        v = rot[k][cnt[k] % len(rot[k])]; cnt[k] += 1; return v
+    segs, out = plan['segments'], [None]
+    for prev, nxt in zip(segs, segs[1:]):
+        if 'transition' in nxt and nxt['transition'] in transitions.DUR or ':' in str(nxt.get('transition', '')):
+            spec = nxt['transition']
+        elif is_fs(nxt) and not is_fs(prev): spec = take('hit') if nxt.get('hit') else take('in')
+        elif is_fs(prev) and not is_fs(nxt): spec = take('out')
+        elif nxt['type'] == 'full': spec = take('ff')      # full->full, framed->framed, split->framed
+        else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
+        k, _, dr = spec.partition(':')
+        out.append((k, dr or None, 'bottom' if k == 'swipe' else None))
+    return out
+
 def main(plan_path):
     global GOLD_ASS
     here0 = os.path.dirname(os.path.abspath(__file__))
@@ -352,32 +416,52 @@ def main(plan_path):
     if plan['duration'] < plan.get('min_duration', 0):
         print(f"WARNING: {plan['duration']:.1f}s is under the {plan['min_duration']}s minimum")
     if plan.get('accent'): GOLD_ASS = hex2ass(plan['accent'])
-    # owner (Nov 2026): no name tag / name plate in any video. Drop any 'name' graphic a plan still has.
-    dropped = [g for g in plan.get('graphics', []) if g['type'] == 'name']
-    if dropped:
-        print(f"NOTE: dropped {len(dropped)} name-tag graphic(s); the owner doesn't want name tags in any video")
-        plan['graphics'] = [g for g in plan['graphics'] if g['type'] != 'name']
+    # owner, Nov 2026: "those little red name tag[s] at the bottom, I don't like that. Let's exclude those" and the red
+    # stamps are "too cliche". Name tags are dropped and stamps become 'slam' kinetic text unless a plan opts back in.
+    gl = []
+    for g in plan.get('graphics', []):
+        if g['type'] == 'name' and not plan.get('name_tags', False):
+            print(f"NOTE: name tag '{g.get('name')}' skipped (name_tags off)"); continue
+        if g['type'] == 'motion' and g.get('kind') == 'stamp' and not plan.get('stamps', False):
+            g = {**{k: v for k, v in g.items() if k not in ('angle', 'size', 'sub')}, 'kind': 'slam'}
+        gl.append(g)
+    plan['graphics'] = gl
     if not plan.get('skip_res_check'): check_sources(plan, plan.get('min_broll_short_side', 1080))
     wd = plan['workdir']; os.makedirs(wd, exist_ok=True)
     segs = plan['segments']; end = plan['duration']
-    # 1) segments with D/2 overlap on each inner boundary
+    # 1) segments, each rendered with PAD s of overlap on both sides so any transition can use it
+    PAD = 0.25
     parts = []
     for i, s in enumerate(segs):
-        a = s['start'] - (D / 2 if i else 0)
-        b = (segs[i + 1]['start'] + D / 2) if i + 1 < len(segs) else end
-        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'), plan.get('broll_grade'),
-                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
+        a = max(0.0, s['start'] - PAD) if i else 0.0
+        b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
+        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
+                          plan.get('face_grade', 'default-grade-A-2026-11'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
-        if not os.path.exists(p): render_segment(plan, s, a, b, p)
+        if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
-    # 2) xfade chain
-    inputs, fc, last = [], [], '0:v'
+    # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
+    trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
+    dur = [0.0] + [transitions.DUR[k] for k, _, _ in trs[1:]]
+    inputs, fc, pieces = [], [], []
     for i, (p, a, b) in enumerate(parts):
         inputs += ['-i', p]
-    for i in range(1, len(parts)):
-        tr = segs[i].get('transition', 'smoothup' if segs[i]['type'] == 'full' else 'smoothdown')
-        off = parts[i][1]
-        fc.append(f'[{last}][{i}:v]xfade=transition={tr}:duration={D}:offset={off:.3f}[x{i}]'); last = f'x{i}'
+    for i in range(len(parts)):
+        a_i = parts[i][1]
+        if i:
+            k, dr, half = trs[i]
+            if dur[i] > 0:
+                d = dur[i]; T = segs[i]['start']
+                key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
+                tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
+                if not cached(tp, d - 0.05):
+                    transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
+                n = len(inputs) // 2; inputs += ['-i', tp]
+                pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
+        s0 = (segs[i]['start'] + dur[i] / 2 - a_i) if i else 0.0
+        s1 = (segs[i + 1]['start'] - dur[i + 1] / 2 - a_i) if i + 1 < len(segs) else end - a_i
+        fc.append(f'[{i}:v]trim=start={s0:.4f}:end={s1:.4f},setpts=PTS-STARTPTS,setsar=1[b{i}]'); pieces.append(f'[b{i}]')
+    fc.append(''.join(pieces) + f'concat=n={len(pieces)}:v=1:a=0,fps={FPS}[x0]'); last = 'x0'
     here = os.path.dirname(os.path.abspath(__file__))
     for gi, g in enumerate(plan.get('graphics', [])):
         if g['type'] == 'clip':
@@ -392,9 +476,11 @@ def main(plan_path):
                     accent2=(plan.get('caption_colors') or ['#FFE11A'])[-1])
         if g['type'] == 'motion': spec['page'] = 'motion.html'
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
-        h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
+        # the cache key covers the graphic's code too, so editing motion.html/gfx.html re-renders graphics that use it
+        page_src = open(f"{here}/datagfx/{spec.get('page', 'gfx.html')}", 'rb').read()
+        h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode() + page_src).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
-        if not os.path.exists(mov):
+        if not cached(mov, g['dur'] - 0.1):
             json.dump(spec, open(sp, 'w'))
             r = subprocess.run(['node', f'{here}/datagfx/render.js', sp, mov], capture_output=True, text=True)
             if r.returncode: sys.exit('graphic failed: ' + r.stderr[-2000:])
@@ -415,32 +501,102 @@ def main(plan_path):
     write_ass(plan, json.load(open(plan['words'])), ass)
     fontsdir = plan['fontsdir']
     fc.append(f"[{last}]ass={ass}:fontsdir={fontsdir},format=yuv420p[v]")
-    # 3) audio: voice + sfx
-    ai = len(inputs) // 2           # all earlier inputs are ["-i", path] pairs
-    inputs += ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    # voice: float all the way (the source may be declipped, peaks > 1.0), headroom first. Owner: the voice must be
-    # CLEAR, never muffled. No de-esser or noise reduction (they dulled it); cut low-mid mud, lift clarity (1.8k)
-    # and air (7.5k shelf). audio_check.py verifies the export is at least as bright as the source.
-    vchain = plan.get('voice_chain', 'aformat=sample_fmts=flt,volume=-6dB,highpass=f=90,equalizer=f=200:t=q:w=1.0:g=-3.5,'
-                      'equalizer=f=1800:t=q:w=1.2:g=2,equalizer=f=7500:t=h:w=0.7:g=3.5,'
-                      'acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,alimiter=limit=0.9')
-    cues = sfx_cues(plan); mix = [f'[{ai}:a]{vchain}[vo]']
+    # 3) audio: voice + sfx -> mastered WAV (two-pass, LINEAR loudness normalisation: no pumping)
+    VOICE = {
+        # natural: no noise reduction (it made the voice watery/muffled), gentle de-mud + air, light 2:1 compression
+        'natural': 'highpass=f=70,equalizer=f=320:t=q:w=1.0:g=-1.5,equalizer=f=4500:t=h:w=0.7:g=2,'
+                   'acompressor=threshold=-18dB:ratio=2:attack=15:release=200:makeup=1.5',
+        # HOUSE DEFAULT (owner approved Nov 2026, "I like the way the voice sounds. Save that for all of my future videos"):
+        # a light polish that keeps the bass - rumble filter only below 60 Hz (no low cut, no EQ), very gentle noise reduction,
+        # soft de-ess, light 2:1 leveling. Loudness is still set by the static gain below (never turned down).
+        'polish': 'highpass=f=60,afftdn=nr=8:nf=-48:tn=1,deesser=i=0.35:m=0.5:f=0.5,'
+                  'acompressor=threshold=-22dB:ratio=2:attack=8:release=160:makeup=1.5',
+        'original': 'anull',          # the owner's untouched voice (earlier default; heavier EQ/compression took the bass out)
+        'raw': 'anull',
+        'denoise': 'highpass=f=70,afftdn=nf=-40:nr=6,equalizer=f=4500:t=h:w=0.7:g=2,acompressor=threshold=-18dB:ratio=2:attack=15:release=200',
+    }
+    vchain = VOICE.get(plan.get('voice_chain', 'polish'), plan.get('voice_chain'))
+    ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
+    if plan.get('voice_chain', 'polish') == 'polish':
+        # Owner, Nov 2026 (Athlete of the Year): "Why is the audio so loud ... and sound so echoed?" His phone takes come in hot
+        # (-10 LUFS, clipping past 0 dBFS); fed straight in, the 2:1 compressor squashed ~7 dB nonstop and lifted the room echo.
+        # Approved fix (A/B in projects/athlete-of-year/voice_before_after.mp3): repair clipped peaks, then trim the take to
+        # -24 LUFS BEFORE the polish so the compressor only touches peaks; the static gain below brings it to -14.
+        m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-map', '0:a:0', '-af', 'ebur128=peak=sample', '-f', 'null', '-'],
+                           capture_output=True, text=True).stderr
+        raw_i = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]); raw_pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+        pre = []
+        if raw_pk > -0.3: pre.append('adeclip=window=55:overlap=75:arorder=8:threshold=10')
+        if raw_i > -24.0: pre.append(f'volume={-24.0 - raw_i:.2f}dB')
+        if pre:
+            vchain = ','.join(pre) + ',' + vchain
+            print(f'voice input: {raw_i:.1f} LUFS, peak {raw_pk:+.1f} dBFS -> ' + ', '.join(p.split('=')[0] for p in pre) + ' before polish')
+    cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
-        inputs += ['-i', f"{plan['sfxdir']}/{name}.wav"]
+        ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
-        mix.append(f'[{ai+1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mix.append(''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) +
-               f'amix=inputs={len(cues)+1}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.0:LRA=9,aformat=channel_layouts=stereo[a]')
-    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc + mix),
-         '-map', '[v]', '-map', '[a]', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
-         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
+        mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
+    # ambience beds (plan "ambience"): quiet looped atmospheres under a stretch of the story (e.g. campfire crackle,
+    # night crickets). Each is levelled to its own target loudness ("lufs", default -34) far below the -14 voice, faded in/out.
+    amb_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'ambience')
+    beds = []
+    for k, a in enumerate(plan.get('ambience', [])):
+        src = f"{amb_dir}/{a['src']}.wav"
+        lm = subprocess.run(['ffmpeg', '-hide_banner', '-i', src, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        g = float(a.get('lufs', -34)) - float(re.findall(r'I:\s+(-?[\d.]+) LUFS', lm)[-1])
+        d = a['end'] - a['t']; f = min(float(a.get('fade', 1.0)), d / 2)
+        ain += ['-stream_loop', '-1', '-i', src]
+        mix.append(f"[{1+len(cues)+k}:a]atrim=0:{d:.3f},asetpts=PTS-STARTPTS,aresample=48000,afade=t=in:d={f:.2f},"
+                   f"afade=t=out:st={d-f:.3f}:d={f:.2f},volume={g:.2f}dB,adelay={int(a['t']*1000)}:all=1[b{k}]")
+        beds.append(f'[b{k}]')
+    others = [f'[s{j}]' for j in range(len(cues))] + beds
+    def measure(graph):
+        m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', graph + ',ebur128=framelog=quiet:peak=sample[a]',
+                            '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        return float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]), float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', m)[-1])
+    def graph(vg, fg):
+        g = list(mix)
+        if not others: return ';'.join(g) + f';[vo]volume={vg:.2f}dB'
+        g.append(f'[vo]volume={vg:.2f}dB,asplit[vg][key]')
+        # sfx/beds duck briefly under loud words (sidechain on the voice), so they never stack on a voice peak
+        g.append(''.join(others) + f'amix=inputs={len(others)}:normalize=0,volume={fg:.2f}dB[fxr]')
+        g.append('[fxr][key]sidechaincompress=threshold=0.12:ratio=6:attack=3:release=180:makeup=1[fx]')
+        return ';'.join(g) + ';[vg][fx]amix=inputs=2:normalize=0:duration=first'
+    # The voice is judged ON ITS OWN (not the sum with sfx/beds), so the extra sounds can never cause it to be turned down.
+    # NEVER turn the owner's voice down: a take at or above -14 LUFS passes through bit-for-bit (no gain, no limiter);
+    # a quiet take gets one static boost to -14, with a limiter only then.
+    li, vpk = measure(';'.join(mix[:1]) + ';[vo]anull')
+    fxg = 0.0
+    if -14.0 - li > 0.05:
+        gain = -14.0 - li
+        ln = 'alimiter=limit=0.84:attack=5:release=50:level=false'   # -1.5 dBFS: AAC overshoots ~1 dB on transients
+        # the limiter shaves loudness off a peaky take: measure AFTER it and top the static gain up until it lands on -14
+        for _ in range(3):
+            lo = measure(graph(gain, 0.0) + f',{ln}')[0]
+            if abs(-14.0 - lo) < 0.15: break
+            gain += -14.0 - lo
+    else:
+        # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
+        # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
+        # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
+        gain = min(0.0, -0.5 - vpk); ln = 'anull'
+        # ducking keeps the SUM within ~0.2 dB of the voice peak; if it still goes over -0.3 dBFS, turn down the sfx/beds, never the voice
+        while others and fxg > -12 and measure(graph(gain, fxg))[1] > -0.3: fxg -= 1.5
+    print(f'voice: {li:.1f} LUFS, peak {vpk:.1f} dBFS, static gain {gain:+.2f} dB' + (', limiter' if gain > 0.05 else ', no limiter')
+          + (f'; sfx/beds {fxg:+.1f} dB to avoid clipping' if fxg else ''))
+    mixed = graph(gain, fxg) + (f',{ln}' if ln != 'anull' else '')
+    awav = f'{wd}/mix.wav'
+    run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', mixed + ',aresample=48000[a]',
+         '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
+    ai = len(inputs) // 2
+    inputs += ['-i', awav]
+    run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
+         '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', str(plan.get('master_crf', 12)), '-preset', 'slow',
+         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import audio_check
-    audio_check.check(plan['face']['src'], plan['output'])
 
 if __name__ == '__main__':
     main(sys.argv[1])
