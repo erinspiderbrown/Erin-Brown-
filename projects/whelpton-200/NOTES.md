@@ -46,3 +46,22 @@
 > - Nike Vaporfly Next% photo, HK (CC BY-SA 4.0)
 > - FISUTV Universiade 200m (CC BY 3.0)
 > - Stopwatch and HS sprint photos (see `projects/california-sprints/NOTES.md`)
+
+## v2 (owner feedback: no random people)
+- **All B-roll is now Tiaan or Bolt.** Removed the lifting stock, Olympic and meet photos, X-ray, shoes and stopwatch.
+- **New owner clips** (`new0/1/2.mp4`, 720×1280, Tiaan's own training videos): shrunk to 540×960, then enhanced 4× to 1080×1920, only the ranges used:
+  - portrait "How much does the fastest man in NZ lift?"
+  - quarter squat 400 kg
+  - clean
+  - Hatfield squat 307.5 kg
+  - step-ups 220 kg
+  - Keiser squat
+  - Wattbike
+  - clean PB 166 kg
+  - hang split clean 165 kg
+- **The clips' own burned-in numbers are shown.** The "BENCH 300? / SQUAT 800? / CLEAN 600?" and "6'5\"" keyword cards were removed.
+  - His posted clean is 165–166 kg (364–366 lb), not 600 lb.
+  - The quarter squat is 400 kg (~880 lb).
+  - No bench footage.
+- **Online photos and interviews of Tiaan** (RNZ, 1News, Athletics NZ, NZ Herald) are copyrighted press material. None are free-licensed, so they aren't used.
+- `rule` added to CLAUDE.md: B-roll shows the actual subject, never random people.

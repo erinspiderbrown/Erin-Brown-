@@ -11,6 +11,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Speed: about 5 s per 540×960 frame on this 4-core box. Enhance only the time ranges you use, and run one job at a time (parallel jobs just fight over the CPU).
   - Don't wait on jobs with busy-loops; use `sleep`.
 - **Wikimedia Commons downloads:** full-size originals often get rate-limited (HTTP 429). Use the cached standard-width thumbnails (`/thumb/…/3840px-…` or `1920px-…`), and send a descriptive User-Agent with the repo URL. Don't hammer: pace downloads and back off.
+- **B-roll shows the actual subject, never random people** (owner, Nov 2026, on the Whelpton video).
+  - Use footage and photos of the athlete being talked about: the owner's Dropbox clips first (they often add the athlete's own training/lifting videos), then real photos of that athlete.
+  - Photos of a star the owner name-checks (e.g. Usain Bolt) are fine.
+  - No stock athletes, random Olympic/meet footage, other lifters, or generic "sprinter" photos standing in for the subject. If there isn't enough of the subject, reuse their clips with different framing and ask the owner for more, rather than filling with strangers.
+  - If footage of the subject shows numbers that contradict the script (e.g. lifts), show the real numbers and tell the owner.
 - **Footage from broadcasters** (World Athletics/NBC interviews, ceremony broadcasts) is copyrighted. Don't pull it into videos. Find it, give the owner the link, and use free-licensed real footage instead.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Full-screen shots must be sharp enough to monetize.** The owner rejected a soft opening shot.
