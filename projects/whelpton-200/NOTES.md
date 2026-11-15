@@ -64,4 +64,4 @@
   - The quarter squat is 400 kg (~880 lb).
   - No bench footage.
 - **Online photos and interviews of Tiaan** (RNZ, 1News, Athletics NZ, NZ Herald) are copyrighted press material. None are free-licensed, so they aren't used.
-- `rule` added to CLAUDE.md: B-roll shows the actual subject, never random people.
+- Rule added to CLAUDE.md: B-roll shows the actual subject, never random people.
