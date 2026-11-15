@@ -55,3 +55,12 @@
   - freshman year
 - Poll: CAN ANYBODY BEAT JANE THIS YEAR?
 - Voice: polish chain with the hot-take fix. Quality-first export, CRF 16.
+
+## Delivered / posted (15 Nov 2026)
+- Export `exports/jane_hedengren_tiktok_hq.mp4`: 1:09.7, CRF 16, 14.3 Mbps, SSIM 0.990 vs master, −14.0 LUFS.
+  - Take came in hot (−10.3 LUFS, peak 0 dBFS), so declip + pre-trim ran.
+- Dropbox: `/TikTok Exports/jane_hedengren_tiktok_hq.mp4`, plus both covers. content_hash verified.
+- YouTube Short: https://www.youtube.com/watch?v=KWoP3heHUxo
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DfviW1zjLhu/
+- Facebook: no Page connected in vidIQ yet.
+- TikTok: owner posts from the app with Upload HD.
