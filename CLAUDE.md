@@ -195,7 +195,11 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - **Shorter videos (TikToks under ~5 min):** a bright SHORT-FORM viral cover, NOT the dark cut-out style (owner, Nov 2026, on the Gift Bright cut-out: "That thumbnail is trash. It has no viral or virality in it").
      - Bright and saturated, never dark/moody grading. One 2–4 word hook in Anton, yellow `#FFE11A` with a thick black outline ("15 YEARS OLD", "HE'S ONLY 15").
      - The key number in a red `#E8231E` box with a white border ("10.28").
-     - Either a real proof frame (the race moment, red ring + red arrow on the subject, his face cut-out in a corner) or a huge emotional face cut-out over a bright color burst.
+     - **Real-photo look (owner, Nov 17, 2026, on the Boonson cover: "Take the image of me out. Use a picture of the person who's the topic… slightly blur the background of a real image and make it a high quality thumbnail"):**
+       - The subject only, cut out of a full-resolution real photo (≥ 3000 px; Commons 3840 px thumbs work). No cut-out of the owner, and no screen grabs or video frames.
+       - The background is a real photo of the scene (same shoot or venue), lightly blurred (Gaussian ~7 px at 1080 wide) with a soft vignette, not a color burst. Keep the subject's own blurred copy out of the background.
+       - Thin white rim + drop shadow on the cut-out (`.subj` in `projects/puripol-boonson/thumb_short/thumb.html`), not a heavy glow.
+       - Reference: `projects/puripol-boonson/thumb_short/`, `exports/thumbnails/puripol_boonson_thumb*.jpg`.
      - Cover any burned-in captions/logos in source frames. Cut-outs at or below ~1.1× source size.
      - Tool: `projects/bright/thumb_short/` (`thumb.html`, `layouts.json`, `render.js`); render 9:16 and 3:4.
    - **VIRAL thumbnail, in the owner's YouTube-thumbnail style** (owner, Nov 2026: the plain cut-outs "aren't appeasing to an audience… they aren't viral thumbnails"; "look into the YouTube thumbnails and convert it into a TikTok thumbnail, high quality").
