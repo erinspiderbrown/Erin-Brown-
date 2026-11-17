@@ -1,30 +1,31 @@
-"""Tiaan Whelpton: 21 seconds at 6'4". v2 cinematic style. Sub-1080 footage (all his clips) stays in the split, AI-upscaled;
+"""Tiaan Whelpton: 21 seconds at 6'4". v2 cinematic style. Owner (Nov 17): every cut away from the talking head is a SPLIT
+(face on top, high-quality graphic/B-roll under it); full-screen face only for talking stretches. Sub-1080 footage (all his clips) stays in the split, AI-upscaled;
 FX shots of that footage render at split size (1080x960)."""
 import json
 SEG = [  # start, type, src, ss, transition
  (0.0,  'face',  None,                  0, None),
  (2.6,  'split', 'fx/freeze_intro.mp4', 0, 'cut'),
- (8.1,  'full',  'fx/result.mp4',       0, 'zoom'),
+ (8.1,  'split', 'fx/result.mp4',       0, 'cut'),
  (11.4, 'face',  None,                  0, 'cut'),
  (13.6, 'split', 'fx/bolt.mp4',         0, 'cut'),
  (19.6, 'face',  None,                  0, 'cut'),
  (24.9, 'split', 'up/c1.mp4',           0, 'cut'),
- (28.5, 'full',  'fx/should.mp4',       0, 'glitch'),
- (30.9, 'split', 'fx/curve.mp4',        0, 'whip:left'),
+ (28.5, 'split', 'fx/should.mp4',       0, 'cut'),
+ (30.9, 'split', 'fx/curve.mp4',        0, None),
  (34.2, 'face',  None,                  0, 'cut'),
  (38.1, 'split', 'up/c2.mp4',           0, 'cut'),
  (41.0, 'face',  None,                  0, 'cut'),
  (47.7, 'split', 'br/p37264421.mp4',    0, 'cut'),
- (50.5, 'full',  'fx/nov16.mp4',        0, 'zoom'),
+ (50.5, 'split', 'fx/nov16.mp4',        0, 'cut'),
  (54.8, 'face',  None,                  0, 'cut'),
  (57.9, 'split', 'up/c250.mp4',         0, 'cut'),
  (61.1, 'split', 'fx/freeze_22.mp4',    0, 'cut'),
  (65.4, 'face',  None,                  0, 'cut'),
  (69.1, 'split', 'br/p32240945.mp4',    2, 'cut'),
  (73.0, 'face',  None,                  0, 'cut'),
- (76.4, 'full',  'br/p39710084.mp4',    0, 'whip:up'),
+ (76.4, 'split', 'br/p39710084.mp4',    0, 'cut'),
  (81.4, 'face',  None,                  0, 'cut'),
- (84.6, 'full',  'br/p5229966.mp4',     1, 'whip:left'),
+ (84.6, 'split', 'br/p5229966.mp4',     1, 'cut'),
  (87.8, 'face',  None,                  0, 'cut'),
 ]
 segs = []

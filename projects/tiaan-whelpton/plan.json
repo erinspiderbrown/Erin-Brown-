@@ -126,7 +126,7 @@
    "transition": "cut"
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 8.1,
    "broll": {
     "src": "fx/result.mp4",
@@ -137,7 +137,7 @@
     ],
     "nograde": true
    },
-   "transition": "zoom"
+   "transition": "cut"
   },
   {
    "type": "face",
@@ -187,7 +187,7 @@
    "transition": "cut"
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 28.5,
    "broll": {
     "src": "fx/should.mp4",
@@ -198,7 +198,7 @@
     ],
     "nograde": true
    },
-   "transition": "glitch"
+   "transition": "cut"
   },
   {
    "type": "split",
@@ -211,8 +211,7 @@
      0.5
     ],
     "nograde": true
-   },
-   "transition": "whip:left"
+   }
   },
   {
    "type": "face",
@@ -261,7 +260,7 @@
    "transition": "cut"
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 50.5,
    "broll": {
     "src": "fx/nov16.mp4",
@@ -272,7 +271,7 @@
     ],
     "nograde": true
    },
-   "transition": "zoom"
+   "transition": "cut"
   },
   {
    "type": "face",
@@ -345,7 +344,7 @@
    "transition": "cut"
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 76.4,
    "broll": {
     "src": "br/p39710084.mp4",
@@ -355,7 +354,7 @@
      0.5
     ]
    },
-   "transition": "whip:up"
+   "transition": "cut"
   },
   {
    "type": "face",
@@ -368,7 +367,7 @@
    "transition": "cut"
   },
   {
-   "type": "full",
+   "type": "split",
    "start": 84.6,
    "broll": {
     "src": "br/p5229966.mp4",
@@ -378,7 +377,7 @@
      0.5
     ]
    },
-   "transition": "whip:left"
+   "transition": "cut"
   },
   {
    "type": "face",

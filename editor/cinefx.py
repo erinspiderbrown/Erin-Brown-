@@ -259,12 +259,13 @@ def result_card(out, dur, bg_src, bg_t, event, meet, rows, hi=0, t_rows=0.6, not
     W_ = Writer(out); n = int(dur * FPS)
     for i in range(n):
         t = i / FPS; fr = zoom(bg, 1.02 + 0.03 * t / dur).convert('RGBA')
-        place(fr, title_layer(event, 150, WHITE, track=3), W / 2, H * 0.30, alpha=ease(t / 0.35))
-        place(fr, title_layer(meet, 44, (190, 190, 198), track=4, font_name='Montserrat-Black.ttf'), W / 2, H * 0.30 + 120, alpha=ease((t - 0.1) / 0.35))
+        Y0 = H * 0.30 if H > 1200 else H * 0.20            # split-size cards keep a fixed-pixel stack
+        place(fr, title_layer(event, 150, WHITE, track=3), W / 2, Y0, alpha=ease(t / 0.35))
+        place(fr, title_layer(meet, 44, (190, 190, 198), track=4, font_name='Montserrat-Black.ttf'), W / 2, Y0 + 120, alpha=ease((t - 0.1) / 0.35))
         for r, row in enumerate(rows):
             rt = t_rows + 0.35 * r; a = ease((t - rt) / 0.35)
             if a <= 0: continue
-            y = H * 0.46 + r * 220; x0 = 40 - 120 * (1 - a)
+            y = Y0 + 300 + r * 220; x0 = 40 - 120 * (1 - a)
             bar = Image.new('RGBA', (W - 80, 200), (255, 255, 255, int(30 * a))); fr.alpha_composite(bar, (int(x0), int(y - 100)))
             d = ImageDraw.Draw(fr)
             pl, name, club, tm, wind = row
@@ -279,7 +280,7 @@ def result_card(out, dur, bg_src, bg_t, event, meet, rows, hi=0, t_rows=0.6, not
                 if sw > 0:
                     hl = Image.new('RGBA', (int((tw + 40) * sw), 170), GOLD + (70,)); fr.alpha_composite(hl, (int(x0 + W - 150 - tw), int(y - 86)))
                     d.rectangle([x0 + W - 150 - tw, y + 96, x0 + W - 150 - tw + (tw + 40) * sw, y + 104], fill=GOLD + (255,))
-        if note: place(fr, title_layer(note, 34, (170, 170, 178), track=3, font_name='Montserrat-ExtraBold.ttf'), W / 2, H * 0.46 + len(rows) * 220 + 40, alpha=ease((t - t_rows - 1.0) / 0.4))
+        if note: place(fr, title_layer(note, 34, (170, 170, 178), track=3, font_name='Montserrat-ExtraBold.ttf'), W / 2, Y0 + 300 + len(rows) * 220 - 60, alpha=ease((t - t_rows - 1.0) / 0.4))
         W_.add(grade(fr, grain=0.008, strength=0.5))
     W_.close()
 
