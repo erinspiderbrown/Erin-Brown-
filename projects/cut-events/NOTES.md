@@ -56,7 +56,7 @@
 
 ## Delivered
 - `exports/cut_events_tiktok_hq.mp4` (CRF 16, −14.1 LUFS).
-- Covers: `exports/thumbnails/cut_events_thumb.jpg` (3:4), `cut_events_thumb_916.jpg` (9:16).
+- Covers (v2, 17 Nov): "0 AMERICANS?!" / "ONLY 12 MADE IT", red "8.30" box (LA28 standard), Tentoglou mid-jump, owner bust, green burst like Jane/Maddox. `exports/thumbnails/cut_events_thumb.jpg` (3:4), `cut_events_thumb_916.jpg` (9:16).
 - **Dropbox:** `/TikTok Exports/cut_events_tiktok_hq.mp4` plus both covers. content_hash verified.
 - **YouTube Short:** https://www.youtube.com/watch?v=CKUC_pBdAPo
 - **Instagram trial reel** (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1LN6TnOi4/

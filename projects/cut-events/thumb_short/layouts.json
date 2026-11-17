@@ -1,5 +1,5 @@
 {
- "A_916": {
+ "B_916": {
   "W": 1080,
   "H": 1920,
   "els": [
@@ -9,46 +9,66 @@
     "x": 0,
     "y": 0,
     "w": 1080,
-    "h": 1920,
-    "css": "filter:hue-rotate(160deg)"
+    "h": 1920
    },
    {
     "t": "text",
     "cls": "yel",
-    "text": "CUT THE JUMPS?",
+    "text": "0 AMERICANS?!",
     "x": 0,
     "y": 250,
     "w": 1080,
-    "size": 160,
+    "size": 178,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "ONLY 12 MADE IT",
+    "x": 0,
+    "y": 440,
+    "w": 1080,
+    "size": 104,
     "rot": -3
    },
    {
     "t": "img",
     "cls": "face",
     "src": "tentoglou.png",
-    "x": 450,
-    "y": 430,
-    "w": 560
+    "x": 405,
+    "y": 575,
+    "w": 640
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "LA28 STANDARD",
+    "x": 40,
+    "y": 680,
+    "w": 600,
+    "size": 84,
+    "rot": -6,
+    "css": "text-align:left;"
    },
    {
     "t": "box",
-    "text": "0 AMERICANS",
-    "x": 40,
-    "y": 1150,
-    "size": 120,
+    "text": "8.30",
+    "x": 55,
+    "y": 790,
+    "size": 175,
     "rot": -6
    },
    {
     "t": "img",
     "cls": "face",
     "src": "face.png",
-    "x": -40,
-    "y": 1330,
-    "w": 560
+    "x": -50,
+    "y": 1300,
+    "w": 640
    }
   ]
  },
- "A_34": {
+ "B_34": {
   "W": 1080,
   "H": 1440,
   "els": [
@@ -58,42 +78,62 @@
     "x": 0,
     "y": 0,
     "w": 1080,
-    "h": 1440,
-    "css": "filter:hue-rotate(160deg)"
+    "h": 1440
    },
    {
     "t": "text",
     "cls": "yel",
-    "text": "CUT THE JUMPS?",
+    "text": "0 AMERICANS?!",
     "x": 0,
     "y": 40,
     "w": 1080,
-    "size": 150,
+    "size": 170,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "ONLY 12 MADE IT",
+    "x": 0,
+    "y": 220,
+    "w": 1080,
+    "size": 96,
     "rot": -3
    },
    {
     "t": "img",
     "cls": "face",
     "src": "tentoglou.png",
-    "x": 520,
-    "y": 200,
-    "w": 470
+    "x": 500,
+    "y": 340,
+    "w": 520
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "LA28 STANDARD",
+    "x": 40,
+    "y": 395,
+    "w": 600,
+    "size": 76,
+    "rot": -6,
+    "css": "text-align:left;"
    },
    {
     "t": "box",
-    "text": "0 AMERICANS",
-    "x": 40,
-    "y": 760,
-    "size": 110,
+    "text": "8.30",
+    "x": 55,
+    "y": 505,
+    "size": 160,
     "rot": -6
    },
    {
     "t": "img",
     "cls": "face",
     "src": "face.png",
-    "x": -30,
+    "x": -50,
     "y": 930,
-    "w": 470
+    "w": 540
    }
   ]
  }
