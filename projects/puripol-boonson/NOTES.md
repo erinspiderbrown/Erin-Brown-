@@ -1,6 +1,7 @@
 # Puripol Boonson: Nike, Dennis Mitchell, and leaving the setup that worked
 
-**Title:** Asia's Fastest Man Just Signed With Nike… Is Florida a Mistake? 🤔  (66 chars)
+**Title:** Asian Games Champ Just Signed With Nike… Is Florida a Mistake? 🤔  (64 chars)
+(First draft said "Asia's Fastest Man"; changed because he's #2 all-time in Asia behind Su Bingtian, which the video itself shows.)
 
 ## Sources
 - `raw/take.mov`: owner, 4K, 83.4 s → cropped 1980×1760 at (894, 420) → 1440×1280 → tightened 76.4 s (21 pauses cut).
@@ -55,3 +56,11 @@
 - Pins: Nagoya, Florida.
 - Guest soundbite in the top slot, with captions merged.
 - Poll: IS FLORIDA A MISTAKE?
+
+## Delivered / posted (17 Nov 2026), old style (owner chose it over a v2 re-cut)
+- Export `exports/puripol_boonson_tiktok_hq.mp4`: 1:31.8, CRF 16, 215 MB (LFS), −14.0 LUFS.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+- YouTube Short: https://www.youtube.com/watch?v=XMkTn3fzKhQ
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1IHtnjXau/
+- Facebook: no Page connected in vidIQ yet.
+- TikTok: owner posts from the app with Upload HD.
