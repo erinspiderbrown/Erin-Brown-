@@ -60,5 +60,5 @@
 - **Dropbox:** `/TikTok Exports/cut_events_tiktok_hq.mp4` plus both covers. content_hash verified.
 - **YouTube Short:** https://www.youtube.com/watch?v=CKUC_pBdAPo
 - **Instagram trial reel** (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1LN6TnOi4/
-- **Facebook:** no Page connected in vidIQ.
+- **Facebook Page** (E.Diamondz): https://www.facebook.com/reel/2208828203846083 (posted through the Composio Facebook connector)
 - **TikTok:** the owner posts from the app with Upload HD.

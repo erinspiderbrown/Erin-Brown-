@@ -212,7 +212,9 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - **TikTok: do NOT post it.** TikTok re-compresses uploads sent through its posting API; the app's "Upload HD" option is only in the app. Deliver the export to Dropbox `/TikTok Exports/` as usual and give him the caption to paste. He posts it on "Erin Spider Brown" from the app with "Upload HD" on.
    - **YouTube Short:** "The Erin Brown" (@theerinbrowntv, `UCiMHg3V2Q414zFIjb8PyTcg`), public, category 17 (Sports), `#Shorts` in the description, the video title as the YouTube title.
    - **Instagram trial reel:** @e.diamondz (`29211548525143718`), `trialParams.graduationStrategy: MANUAL`.
-   - **Facebook:** he wants the Instagram trial reel shared to the Facebook page connected to @e.diamondz too. Post it to that page as well whenever a Facebook Page is connected in vidIQ (`vidiq_social_account_list` platform FACEBOOK_PAGES).
+   - **Facebook Page "E.Diamondz"** (id `506309812910570`, the Page linked to @e.diamondz): post every finished video there too, with the same caption as the Instagram reel.
+     - Use the Composio Facebook connector, connected 17 Nov 2026: `FACEBOOK_CREATE_VIDEO_POST` with `file_url` set to the export's GitHub LFS media URL. vidIQ has no Facebook Page connected.
+     - Then check `FACEBOOK_GET_GRAPH_OBJECT` (fields `permalink_url,status`) until `video_status` is ready, and record the link.
    - Caption: the title + one line + `#track #trackandfield` + topic tags. Never the "6starfiles" TikTok or the "GTA 6 Ernie" YouTube channel.
    - Record the post links in the project NOTES.
    - **Low-res sources:** tell him BEFORE the edit when any of his clips/photos are under 1080p (they look soft once enlarged) and ask for better versions or offer to find some.
