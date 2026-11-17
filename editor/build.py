@@ -66,6 +66,7 @@ def check_sources(plan, min_short=1080):
     bad = []
     for s in plan['segments']:
         w, h = probe(s['broll']['src'])
+        if s['type'] == 'split' and (w, h) == (W, HALF): continue     # cinefx split-size shot: exactly the bottom half, nothing enlarged
         if min(w, h) < min_short: bad.append(f"  B-roll {os.path.basename(s['broll']['src'])}: {w}x{h}")
     fw, fh = probe(plan['face']['src'])
     if min(fw, fh) < min_short: print(f"WARNING: talking-head source is only {fw}x{fh}")
