@@ -61,4 +61,4 @@
 - **YouTube Short:** https://www.youtube.com/watch?v=CKUC_pBdAPo
 - **Instagram trial reel** (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1LN6TnOi4/
 - **Facebook Page** (E.Diamondz): https://www.facebook.com/reel/2208828203846083 (posted through the Composio Facebook connector)
-- **TikTok:** the owner posts from the app with Upload HD.
+- **TikTok** (Erin Spider Brown, posted through vidIQ at the owner's request): https://www.tiktok.com/@erinspiderbrown/video/7709012501207223582
