@@ -30,7 +30,7 @@ SEG = [  # start, type, src, ss, transition
 ]
 segs = []
 for t, k, src, ss, tr in SEG:
-    d = {"type": k, "start": t, "broll": {"src": src, "ss": ss, "focus": [0.5, 0.42], **({"nograde": True} if src.startswith('fx/') else {})}}
+    d = {"type": k, "start": t, "broll": {"src": src, "ss": ss, "focus": [0.5, 0.85] if src == 'up/c250.mp4' else [0.5, 0.42], **({"nograde": True} if src.startswith('fx/') else {})}}
     if tr: d["transition"] = tr
     segs.append(d)
 plan = {"workdir": "build", "output": "out/tiaan_whelpton.mp4", "words": "work/words_final.json", "voice_ss": 0.0,
