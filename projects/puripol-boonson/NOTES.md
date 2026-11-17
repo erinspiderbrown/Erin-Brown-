@@ -63,4 +63,4 @@
 - YouTube Short: https://www.youtube.com/watch?v=XMkTn3fzKhQ
 - Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1IHtnjXau/
 - Facebook: no Page connected in vidIQ yet.
-- TikTok: owner posts from the app with Upload HD.
+- TikTok (posted via vidIQ at the owner's request): https://www.tiktok.com/@erinspiderbrown/video/7709000779595566367
