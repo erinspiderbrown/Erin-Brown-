@@ -81,7 +81,25 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - As of Nov 2026 the owner's Higgsfield account is on the free plan with 10 credits. Its 1080p models need the Basic plan or higher, and the only clips 10 credits cover are 720p, which breaks the 1080p rule. Until that changes, hand-build animations as `motion` graphics.
   - Clips go in as `type: "clip"` overlays: keyed with `key: "green"`/`"black"`, as alpha video, or full-frame as a B-roll segment.
 
-## Default editing method: the Yohan Blake edit
+## Default editing method (from Nov 17, 2026): the v2 cinematic style
+The owner said viewers called the old edits "regular Claude editing" with "stickers slapping on the screen" and asked to go "higher and more complex". He approved the Gift Bright test (`projects/gift-bright/`, `exports/gift_bright_v2style_test_hq.mp4`) and chose this style for the next video. **Use it for every video unless he asks for the old one.** It overrides the sticker-density and split-screen parts of the Yohan Blake method below; the fact-checking, story-arc, sound and voice rules still apply.
+- **Layout:** the owner's face **full-screen** (`"type": "face"`, from a vertical 1080×1920 crop of the 4K take in `plan.face_v`, lip-synced, slow push-in) for most of the talking, cutting to **full-screen** B-roll and FX shots. The split is an occasional variation, not the default.
+- **FX shots** (`editor/cinefx.py`, driven by a project `fx.json`; each renders a finished 1080×1920 clip used as a `"nograde": true` full segment):
+  - `freeze_pop`: the action freezes, the athlete is cut out with a white outline and glow, the background darkens and drifts, and the name/time sits above or behind them, with a gold sub-line.
+  - `text_behind`: per-frame cutout, so a big title sits behind the moving athlete.
+  - `parallax`: 2.5D push on a photo (athlete layer and background move separately); `subj_scale` < 1 leaves room for a title above the head.
+  - `ramp`: real time into motion-interpolated slow motion.
+  - `map_africa` (or similar maps): countries light up on the spoken word.
+  - `progression`: numbers card (e.g. age 14 → age 15), times count **up**.
+  - Keep titles clear of the head (check a frame); titles go above or behind the subject, never hidden.
+- **No stickers:** no stamp/keyword/board/poll graphics by default (`"graphics": []`).
+- **Captions:** `"caption_style": "cine"`: clean white Montserrat ExtraBold phrases that build word by word; key words (names, places, times, the punchline) in `caption_emph` punch in bigger in Anton gold (`caption_accent` `#FFC83D`). Lower third on full-screen shots, on the seam in the split; `cap_y` per segment moves them off on-screen labels.
+- **Grade:** B-roll gets `broll_grade` (gentle contrast, warm highs, cool shadows, light vignette, **light** grain only: heavy grain turns to mush after TikTok's re-encode). The owner's face is never colour-graded; `face_grade` is a light unsharp plus the vignette.
+- **Transitions:** set per segment, mostly hard `cut`s, with a whip, zoom or glitch at act changes. No flash on every full-screen cut (`"flash": false`).
+- **Sound:** the voice is untouched. Only a couple of quiet hits (via `meme_sfx`), on the freeze frames.
+- **Watermarks:** remove burned-in repost text from clips (`delogo`) before using them.
+
+## Previous default editing method: the Yohan Blake edit
 **This is the default way to edit every TikTok from now on.** The owner reconfirmed this on Nov 6, 2026: every TikTok should match the Tebogo vs Lyles edit (`exports/tebogo_lyles_tiktok.mp4`, built in this style) unless he asks for something different.
 - **No neon theme.** The owner rejected the neon look from the 30-second test and Breaking 21 edits: no `neon`/`battery` graphics, no neon caption colors, no per-video "epic" transition or sound overrides. Use the house red/yellow captions and this style's graphics. The owner called `exports/yohan_blake_tiktok.mp4` "perfect" and "probably the best video". Its plan is `projects/yohan-blake/plan.json` and its notes are in `projects/yohan-blake/NOTES.md`. Copy its structure, pacing, graphics and transitions unless the owner asks for something different.
 - **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
