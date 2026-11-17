@@ -227,7 +227,7 @@ def progression(out, dur, bg_src, bg_t, cols, title=None, fx=0.5, fy=0.5):
     """cols: [{'head': 'AGE 14', 't': s, 'rows': [('100M', '10.5'), ...], 'hi': False}, ...] left to right"""
     bg = frame_at(bg_src, bg_t, fx, fy).filter(ImageFilter.GaussianBlur(14))
     bg = Image.blend(bg, Image.new('RGB', bg.size, (6, 6, 10)), 0.62)
-    W_ = Writer(out); n = int(dur * FPS); cx = [W * (0.5 + (j - (len(cols) - 1) / 2) * 0.46) for j in range(len(cols))]
+    W_ = Writer(out); n = int(dur * FPS); cx = [W * (0.5 + (j - (len(cols) - 1) / 2) * 0.52) for j in range(len(cols))]
     for i in range(n):
         t = i / FPS; fr = zoom(bg, 1.02 + 0.03 * t / dur).convert('RGBA')
         if title: place(fr, title_layer(title, 96, WHITE, track=4), W / 2, H * 0.22, alpha=ease(t / 0.4))
@@ -243,12 +243,56 @@ def progression(out, dur, bg_src, bg_t, cols, title=None, fx=0.5, fy=0.5):
                     shown = f"{v * ease((t - rt) / 0.7):.{dec}f}"          # counts UP to the time, like a clock
                 except ValueError: shown = val
                 place(fr, title_layer(shown, 210 if c.get('hi') else 170, WHITE if c.get('hi') else (215, 215, 220), track=2), cx[j], H * (0.47 + 0.17 * r), alpha=b)
-                place(fr, title_layer(lab, 44, col, track=6, font_name='Montserrat-Black.ttf'), cx[j], H * (0.47 + 0.17 * r) + 120, alpha=b)
+                place(fr, title_layer(lab, 44, col, track=6, font_name='Montserrat-Black.ttf'), cx[j], H * (0.47 + 0.17 * r) + 140, alpha=b)
         if len(cols) > 1 and t >= cols[1]['t']:
             a = ease((t - cols[1]['t']) / 0.4); d = ImageDraw.Draw(fr)
             d.line([(W / 2 - 40, H * 0.36), (W / 2 - 40 + 80 * a, H * 0.36)], fill=GOLD + (255,), width=8)
             d.polygon([(W / 2 + 40 * a + 10, H * 0.36), (W / 2 + 40 * a - 14, H * 0.36 - 18), (W / 2 + 40 * a - 14, H * 0.36 + 18)], fill=GOLD + (int(255 * a),))
         W_.add(grade(fr, grain=0.01, strength=0.6))
+    W_.close()
+
+def result_card(out, dur, bg_src, bg_t, event, meet, rows, hi=0, t_rows=0.6, note=None, fx=0.5, fy=0.5):
+    """Clean recreation of an official results row (real results only): event header, meet line, rows of
+    (place, name, club, time, wind) sliding in; the highlighted row gets a gold sweep on its time."""
+    bg = frame_at(bg_src, bg_t, fx, fy).filter(ImageFilter.GaussianBlur(16))
+    bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 9, 14)), 0.66)
+    W_ = Writer(out); n = int(dur * FPS)
+    for i in range(n):
+        t = i / FPS; fr = zoom(bg, 1.02 + 0.03 * t / dur).convert('RGBA')
+        place(fr, title_layer(event, 150, WHITE, track=3), W / 2, H * 0.30, alpha=ease(t / 0.35))
+        place(fr, title_layer(meet, 44, (190, 190, 198), track=4, font_name='Montserrat-Black.ttf'), W / 2, H * 0.30 + 120, alpha=ease((t - 0.1) / 0.35))
+        for r, row in enumerate(rows):
+            rt = t_rows + 0.35 * r; a = ease((t - rt) / 0.35)
+            if a <= 0: continue
+            y = H * 0.46 + r * 220; x0 = 40 - 120 * (1 - a)
+            bar = Image.new('RGBA', (W - 80, 200), (255, 255, 255, int(30 * a))); fr.alpha_composite(bar, (int(x0), int(y - 100)))
+            d = ImageDraw.Draw(fr)
+            pl, name, club, tm, wind = row
+            d.text((x0 + 26, y - 80), str(pl), font=font('Anton-Regular.ttf', 140), fill=(GOLD if r == hi else WHITE) + (int(255 * a),))
+            d.text((x0 + 130, y - 66), name, font=font('Montserrat-Black.ttf', 46), fill=WHITE + (int(255 * a),))
+            d.text((x0 + 130, y + 4), club, font=font('Montserrat-ExtraBold.ttf', 34), fill=(170, 170, 178, int(255 * a)))
+            tf = font('Anton-Regular.ttf', 150); tw = tf.getlength(tm)
+            d.text((x0 + W - 130 - tw, y - 96), tm, font=tf, fill=WHITE + (int(255 * a),))
+            if wind: d.text((x0 + W - 130 - tw, y + 62), wind, font=font('Montserrat-ExtraBold.ttf', 30), fill=(235, 235, 240, int(255 * a)))
+            if r == hi:
+                sw = ease((t - rt - 0.4) / 0.5)
+                if sw > 0:
+                    hl = Image.new('RGBA', (int((tw + 40) * sw), 170), GOLD + (70,)); fr.alpha_composite(hl, (int(x0 + W - 150 - tw), int(y - 86)))
+                    d.rectangle([x0 + W - 150 - tw, y + 96, x0 + W - 150 - tw + (tw + 40) * sw, y + 104], fill=GOLD + (255,))
+        if note: place(fr, title_layer(note, 34, (170, 170, 178), track=3, font_name='Montserrat-ExtraBold.ttf'), W / 2, H * 0.46 + len(rows) * 220 + 40, alpha=ease((t - t_rows - 1.0) / 0.4))
+        W_.add(grade(fr, grain=0.008, strength=0.5))
+    W_.close()
+
+def title_card(out, dur, bg_src, bg_t, title, sub=None, fx=0.5, fy=0.5, size=230, ty=0.45, color=WHITE):
+    """big typographic beat over a blurred, darkened frame (e.g. a date)"""
+    bg = frame_at(bg_src, bg_t, fx, fy).filter(ImageFilter.GaussianBlur(12))
+    bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 9, 14)), 0.55)
+    W_ = Writer(out); n = int(dur * FPS); tl = title_layer(title, size, color, track=4)
+    for i in range(n):
+        t = i / FPS; fr = zoom(bg, 1.03 + 0.04 * t / dur).convert('RGBA')
+        place(fr, tl, W / 2, H * ty + 40 * (1 - ease(t / 0.4)), alpha=ease(t / 0.3), scale=1.12 - 0.12 * ease(t / 0.4))
+        if sub: place(fr, title_layer(sub, 60, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * ty + size * 0.75, alpha=ease((t - 0.3) / 0.4))
+        W_.add(grade(fr, grain=0.008, strength=0.6))
     W_.close()
 
 if __name__ == '__main__':
@@ -258,4 +302,5 @@ if __name__ == '__main__':
         if only and s['out'] not in only: continue
         if os.path.exists(s['out']) and not s.get('force'): print('cached', s['out']); continue
         fn = globals()[s.pop('fx')]; s.pop('force', None)
+        W, H = s.pop('frame', (1080, 1920))      # 'frame': [1080, 960] renders a split-bottom shot (for upscaled sub-1080 footage)
         print('render', s['out'], flush=True); fn(**s)

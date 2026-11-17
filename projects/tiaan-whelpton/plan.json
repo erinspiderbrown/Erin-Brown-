@@ -1,0 +1,395 @@
+{
+ "workdir": "build",
+ "output": "out/tiaan_whelpton.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 92.95,
+ "min_duration": 61,
+ "face": {
+  "src": "work/faces_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_v": {
+  "src": "work/facev_tight.mov",
+  "focus": [
+   0.5,
+   0.42
+  ]
+ },
+ "face_grade": "unsharp=5:5:0.5:5:5:0,vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "sad",
+  "fastest",
+  "Zealand",
+  "21",
+  "200",
+  "Bolt",
+  "Usain",
+  "awful",
+  "20.3",
+  "20.4",
+  "flat",
+  "horrible",
+  "overspeed",
+  "November",
+  "16th",
+  "1080",
+  "250s",
+  "22",
+  "nowhere",
+  "one",
+  "rep",
+  "horse",
+  "water",
+  "drink",
+  "old",
+  "dog",
+  "tricks",
+  "cry",
+  "disaster"
+ ],
+ "flash": false,
+ "zooms": [
+  [
+   22.6,
+   23.5,
+   1.08
+  ],
+  [
+   35.3,
+   37.7,
+   1.08
+  ],
+  [
+   49.0,
+   50.4,
+   1.1
+  ],
+  [
+   65.6,
+   66.8,
+   1.1
+  ],
+  [
+   73.1,
+   75.6,
+   1.12
+  ],
+  [
+   89.5,
+   92.9,
+   1.1
+  ]
+ ],
+ "meme_sfx": [
+  [
+   "impact_quick_zoom",
+   2.6,
+   0.22,
+   0.9
+  ],
+  [
+   "impact_quick_zoom",
+   61.1,
+   0.22,
+   0.9
+  ]
+ ],
+ "segments": [
+  {
+   "type": "face",
+   "start": 0.0,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 0.0,
+    "nograde": true
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.6,
+   "broll": {
+    "src": "fx/freeze_intro.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 8.1,
+   "broll": {
+    "src": "fx/result.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "face",
+   "start": 11.4,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 11.4,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 13.6,
+   "broll": {
+    "src": "fx/bolt.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "face",
+   "start": 19.6,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 19.6,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 24.9,
+   "broll": {
+    "src": "up/c1.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 28.5,
+   "broll": {
+    "src": "fx/should.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "split",
+   "start": 30.9,
+   "broll": {
+    "src": "fx/curve.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "face",
+   "start": 34.2,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 34.2,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 38.1,
+   "broll": {
+    "src": "up/c2.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "face",
+   "start": 41.0,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 41.0,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 47.7,
+   "broll": {
+    "src": "br/p37264421.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 50.5,
+   "broll": {
+    "src": "fx/nov16.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "face",
+   "start": 54.8,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 54.8,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 57.9,
+   "broll": {
+    "src": "up/c250.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 61.1,
+   "broll": {
+    "src": "fx/freeze_22.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "face",
+   "start": 65.4,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 65.4,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 69.1,
+   "broll": {
+    "src": "br/p32240945.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "face",
+   "start": 73.0,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 73.0,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 76.4,
+   "broll": {
+    "src": "br/p39710084.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:up"
+  },
+  {
+   "type": "face",
+   "start": 81.4,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 81.4,
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 84.6,
+   "broll": {
+    "src": "br/p5229966.mp4",
+    "ss": 1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "face",
+   "start": 87.8,
+   "broll": {
+    "src": "work/facev_tight.mov",
+    "ss": 87.8,
+    "nograde": true
+   },
+   "transition": "cut"
+  }
+ ],
+ "graphics": []
+}

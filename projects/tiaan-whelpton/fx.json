@@ -1,0 +1,11 @@
+[
+ {"fx": "freeze_pop", "out": "fx/freeze_intro.mp4", "frame": [1080, 960], "src": "up/c4.mp4", "t": 2.2, "dur": 5.6, "title": "NZ'S FASTEST", "sub": "TIAAN WHELPTON", "ty": 0.12, "title_size": 170, "sy": 0.92, "push": 0.05},
+ {"fx": "result_card", "out": "fx/result.mp4", "dur": 3.3, "bg_src": "raw/c3.mov", "bg_t": 28.0, "event": "MEN 200M", "meet": "AWBOP OPEN MEETING #4 · NOV 14, 2026",
+  "rows": [[1, "TIAAN WHELPTON", "Hamilton City Hawks", "21.04", "WIND -1.3 M/S"]], "t_rows": 1.3},
+ {"fx": "parallax", "out": "fx/bolt.mp4", "frame": [1080, 960], "photo": "raw/ph1.jpg", "dur": 6.0, "text": "BUILT LIKE BOLT", "fy": 0.2, "ty": 0.13, "size": 150, "subj_scale": 0.82, "cy": 0.6},
+ {"fx": "progression", "out": "fx/should.mp4", "dur": 2.4, "bg_src": "raw/c3.mov", "bg_t": 30.0,
+  "cols": [{"head": "SHOULD BE", "t": 0.0, "rows": [["200M", "20.3"]]}, {"head": "RAN", "t": 0.5, "hi": true, "rows": [["200M", "21.04"]]}]},
+ {"fx": "ramp", "out": "fx/curve.mp4", "frame": [1080, 960], "src": "up/c3.mp4", "ss": 3.5, "dur": 3.3, "slow_from": 1.0, "factor": 0.45},
+ {"fx": "title_card", "out": "fx/nov16.mp4", "dur": 4.3, "bg_src": "br/p32240945.mp4", "bg_t": 3.0, "title": "NOV 16", "sub": "OVERSPEED?!", "size": 300},
+ {"fx": "freeze_pop", "out": "fx/freeze_22.mp4", "frame": [1080, 960], "src": "up/c250.mp4", "t": 8.6, "dur": 4.3, "title": "22.0", "sub": "FIRST 200 · MY WATCH", "ty": 0.14, "title_size": 230, "sy": 0.92}
+]
