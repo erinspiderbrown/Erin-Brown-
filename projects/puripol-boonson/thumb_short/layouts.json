@@ -1,18 +1,18 @@
 {
  "A_916": {"W":1080,"H":1920,"els":[
   {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1920},
-  {"t":"text","cls":"yel","text":"BIG MISTAKE?","x":0,"y":250,"w":1080,"size":180,"rot":-3},
-  {"t":"text","cls":"wht","text":"NIKE + FLORIDA","x":0,"y":455,"w":1080,"size":110,"rot":-3},
-  {"t":"img","cls":"face","src":"boonson.png","x":250,"y":620,"w":860},
-  {"t":"box","text":"9.90","x":40,"y":1080,"size":170,"rot":-6},
-  {"t":"img","cls":"face","src":"face.png","x":-80,"y":1400,"w":600}
+  {"t":"text","cls":"yel","text":"BIG MISTAKE?","x":0,"y":245,"w":1080,"size":190,"rot":-3},
+  {"t":"text","cls":"wht","text":"NIKE + FLORIDA","x":0,"y":462,"w":1080,"size":112,"rot":-3},
+  {"t":"img","cls":"face","src":"boonson.png","x":215,"y":610,"w":880},
+  {"t":"box","text":"9.90","x":36,"y":1040,"size":175,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-50,"y":1400,"w":590}
  ]},
  "A_34": {"W":1080,"H":1440,"els":[
   {"t":"div","cls":"rays","x":0,"y":0,"w":1080,"h":1440},
-  {"t":"text","cls":"yel","text":"BIG MISTAKE?","x":0,"y":30,"w":1080,"size":175,"rot":-3},
-  {"t":"text","cls":"wht","text":"NIKE + FLORIDA","x":0,"y":225,"w":1080,"size":105,"rot":-3},
-  {"t":"img","cls":"face","src":"boonson.png","x":300,"y":380,"w":780},
-  {"t":"box","text":"9.90","x":30,"y":790,"size":160,"rot":-6},
-  {"t":"img","cls":"face","src":"face.png","x":-60,"y":1010,"w":480}
+  {"t":"text","cls":"yel","text":"BIG MISTAKE?","x":0,"y":28,"w":1080,"size":180,"rot":-3},
+  {"t":"text","cls":"wht","text":"NIKE + FLORIDA","x":0,"y":232,"w":1080,"size":106,"rot":-3},
+  {"t":"img","cls":"face","src":"boonson.png","x":330,"y":372,"w":760},
+  {"t":"box","text":"9.90","x":26,"y":740,"size":158,"rot":-6},
+  {"t":"img","cls":"face","src":"face.png","x":-40,"y":1000,"w":480}
  ]}
 }
