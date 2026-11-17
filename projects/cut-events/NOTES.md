@@ -57,3 +57,8 @@
 ## Delivered
 - `exports/cut_events_tiktok_hq.mp4` (CRF 16, −14.1 LUFS).
 - Covers: `exports/thumbnails/cut_events_thumb.jpg` (3:4), `cut_events_thumb_916.jpg` (9:16).
+- **Dropbox:** `/TikTok Exports/cut_events_tiktok_hq.mp4` plus both covers. content_hash verified.
+- **YouTube Short:** https://www.youtube.com/watch?v=CKUC_pBdAPo
+- **Instagram trial reel** (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1LN6TnOi4/
+- **Facebook:** no Page connected in vidIQ.
+- **TikTok:** the owner posts from the app with Upload HD.
