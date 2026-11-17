@@ -86,7 +86,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Graphics and transitions:** the owner said both were "on point". Keep the same mix and density:
   - The auto-picked viral transitions, with no per-segment overrides.
   - A graphic on almost every beat (keywords, slams, boards, bars, counters, a poll).
-  - **No name tags** (owner, Nov 2026: "those little red name tag[s] at the bottom, I don't like that. Let's exclude those"). The build skips `name` graphics unless a plan sets `name_tags: true`. Introduce a person with a **freeze-frame pop-out** instead (`editor/freeze.py`): the shot freezes with a flash, the background drops dark and desaturated, and the athlete pops out with a white edge and glow. Use it as a full-screen segment (see `FRZ()` in `projects/bright/plan_builder.py`); `pick` selects the athlete when several are in frame (choose a frame where they're clear of others).
+  - **No name tags** (owner, Nov 2026: "those little red name tag[s] at the bottom, I don't like that. Let's exclude those"). The build skips `name` graphics unless a plan sets `name_tags: true`. Introduce a person with a **freeze-frame pop-out** instead (`editor/freeze.py`): the shot freezes with a flash, the background drops dark and desaturated, and the athlete pops out with a white edge and glow. Use it as a full-screen segment (see `FRZ()` in `projects/bright/plan_builder.py`); `pick` selects the athlete when several are in frame (choose a frame where they're clear of others). Check the frame: if the 9:16 crop or the cut-out loses limbs (e.g. arms raised holding a flag), use the plain full-screen photo instead; `model` can switch the rembg model.
   - Don't thin them out or swap in new styles without asking.
 - **Pull relevant historical media online whenever the owner's footage doesn't cover the story.** That means photos of the athletes, races and moments being discussed. Use it even when he sends B-roll, if a moment he talks about isn't covered. See "When the owner sends only a talking head" below for sources and rules.
 - **Story arc:** build the edit as an argument with a payoff.
@@ -106,7 +106,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **When the owner sends only a talking head:**
   - Pull B-roll from Wikimedia Commons: freely licensed photos of the athletes and races, ≥2800 px.
     - Search by category and by file name.
-    - Download slowly, because Commons rate-limits.
+    - Download slowly, because Commons rate-limits. When upload.wikimedia.org returns 429, the API's `iiurlwidth=1920` thumb on `thumb.wikimedia.org`, fetched from the Composio workbench, has worked.
     - Bake in EXIF orientation, and cap photos at 3200 px for render speed.
   - Write `CREDITS.md` (CC BY / CC BY-SA need a caption credit) and tell the owner the caption line.
   - YouTube race footage can't be downloaded from the cloud session (bot check; don't try to get around it). List the official uploads in `footage_wanted.md` so the owner can send them; they'd go in the bottom half.
@@ -215,4 +215,4 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
 - **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
-Run `editor/setup.sh`. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.
+Run `editor/setup.sh`. The disk allowance is small: delete finished projects' `work/` folders and old scratch builds before a long render. A half-written segment from a disk-full render must not be reused, so clear that build cache. It installs faster-whisper and downloads the fonts and the Mixkit sound library into `editor/assets/`, which is gitignored. Node Playwright and Chromium render the graphics.

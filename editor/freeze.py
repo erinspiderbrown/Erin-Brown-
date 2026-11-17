@@ -6,7 +6,8 @@ usage: python3 editor/freeze.py spec.json
 spec: {src, ss (s, for video), out (.mp4), dur (default 1.6), focus [x,y] 0..1 for the 9:16 crop,
        pick [x,y] 0..1 in the 1080x1920 frame: keep only the cut-out blob nearest this point (one athlete among several),
        glow [r,g,b] (default yellow), push (end zoom, default 1.07),
-       keep_x [x0,x1] 0..1: keep only this horizontal band of the cut-out (for people who touch)}
+       keep_x [x0,x1] 0..1: keep only this horizontal band of the cut-out (for people who touch),
+       model: rembg model (default isnet-general-use; 'u2net_human_seg' keeps raised arms in front of flags/banners)}
 Output: 1080x1920, 30 fps, no audio; use it as the broll src of a 'full' segment. Real frame, nothing generated.
 """
 import json, sys, os, subprocess, io
@@ -33,9 +34,9 @@ def cover(im, fx, fy):
     return im.crop((x, y, x + W, y + H))
 
 
-def cutout(im, pick, keep_x=None):
+def cutout(im, pick, keep_x=None, model='isnet-general-use'):
     from rembg import remove, new_session
-    a = np.array(remove(im, session=new_session('isnet-general-use')).getchannel('A'))
+    a = np.array(remove(im, session=new_session(model)).getchannel('A'))
     m = a > 150
     if keep_x:                       # people touching/hugging: keep only this horizontal band (fractions of the width)
         x0, x1 = int(keep_x[0] * W), int(keep_x[1] * W); m[:, :x0] = False; m[:, x1:] = False
@@ -59,7 +60,7 @@ def main(sp):
     S = json.load(open(sp)); dur = S.get('dur', 1.6); push = S.get('push', 1.07); glow = tuple(S.get('glow', [255, 225, 26]))
     fx, fy = S.get('focus', [0.5, 0.5])
     base = cover(frame(S['src'], S.get('ss', 0)), fx, fy)
-    mask = cutout(base, S.get('pick'), S.get('keep_x'))
+    mask = cutout(base, S.get('pick'), S.get('keep_x'), S.get('model', 'isnet-general-use'))
     subj = base.copy(); subj.putalpha(mask)
     bb = mask.getbbox(); cx, cy = (bb[0] + bb[2]) / 2, (bb[1] + bb[3]) / 2
     # outline + glow layers built once
