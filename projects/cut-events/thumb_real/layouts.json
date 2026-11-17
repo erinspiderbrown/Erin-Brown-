@@ -1,0 +1,122 @@
+{
+ "R_916": {
+  "W": 1080,
+  "H": 1920,
+  "els": [
+   {
+    "t": "img",
+    "src": "bg_916.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080
+   },
+   {
+    "t": "div",
+    "x": 0,
+    "y": 980,
+    "w": 1080,
+    "h": 560,
+    "css": "background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.45) 45%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0))"
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "LA28 STANDARD",
+    "x": 40,
+    "y": 300,
+    "w": 600,
+    "size": 74,
+    "rot": -6,
+    "css": "text-align:left;"
+   },
+   {
+    "t": "box",
+    "text": "8.30",
+    "x": 50,
+    "y": 385,
+    "size": 165,
+    "rot": -6
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "0 AMERICANS?!",
+    "x": 0,
+    "y": 1070,
+    "w": 1080,
+    "size": 172,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "ONLY 12 MADE IT",
+    "x": 0,
+    "y": 1265,
+    "w": 1080,
+    "size": 100,
+    "rot": -3
+   }
+  ]
+ },
+ "R_34": {
+  "W": 1080,
+  "H": 1440,
+  "els": [
+   {
+    "t": "img",
+    "src": "bg_34.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080
+   },
+   {
+    "t": "div",
+    "x": 0,
+    "y": 760,
+    "w": 1080,
+    "h": 520,
+    "css": "background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.45) 45%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0))"
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "LA28 STANDARD",
+    "x": 40,
+    "y": 120,
+    "w": 600,
+    "size": 70,
+    "rot": -6,
+    "css": "text-align:left;"
+   },
+   {
+    "t": "box",
+    "text": "8.30",
+    "x": 50,
+    "y": 200,
+    "size": 150,
+    "rot": -6
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "0 AMERICANS?!",
+    "x": 0,
+    "y": 850,
+    "w": 1080,
+    "size": 165,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "ONLY 12 MADE IT",
+    "x": 0,
+    "y": 1035,
+    "w": 1080,
+    "size": 96,
+    "rot": -3
+   }
+  ]
+ }
+}

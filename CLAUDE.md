@@ -228,8 +228,13 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - **Shorter videos (TikToks under ~5 min):** a bright SHORT-FORM viral cover, NOT the dark cut-out style (owner, Nov 2026, on the Gift Bright cut-out: "That thumbnail is trash. It has no viral or virality in it").
      - Bright and saturated, never dark/moody grading. One 2–4 word hook in Anton, yellow `#FFE11A` with a thick black outline ("15 YEARS OLD", "HE'S ONLY 15").
      - The key number in a red `#E8231E` box with a white border ("10.28").
-     - Either a real proof frame (the race moment, red ring + red arrow on the subject, his face cut-out in a corner) or a huge emotional face cut-out over a bright color burst.
-     - Cover any burned-in captions/logos in source frames. Cut-outs at or below ~1.1× source size.
+     - **Real photos with their real backgrounds, slightly blurred** (owner, 17 Nov 2026, on the LA28 cover: "Never use screen grab photos from videos when you make these thumbnails. I shouldn't be in the thumbnail unless it's a high quality image. Use real images with real backgrounds that are slightly blurred. But the green background is ridiculous.").
+       - Use a sharp, high-res real photo of the athlete (Commons or his own photos), never a frame grabbed from a video.
+       - Keep the photo's own background (stadium, track), blurred a little (depth-of-field look) so the athlete stands out sharp in front.
+       - **No color-burst/rays backgrounds** (the green/purple burst is banned).
+       - **The owner only goes in the cover if he supplies a high-quality photo of himself.** Never cut him out of his talking-head video.
+       - This supersedes the older "huge face cut-out over a bright color burst" and "his face cut-out in a corner" options. Tool: `projects/cut-events/thumb_real/`.
+     - Cover any burned-in captions/logos. Cut-outs at or below ~1.1× source size.
      - Tool: `projects/bright/thumb_short/` (`thumb.html`, `layouts.json`, `render.js`); render 9:16 and 3:4.
    - **VIRAL thumbnail, in the owner's YouTube-thumbnail style** (owner, Nov 2026: the plain cut-outs "aren't appeasing to an audience… they aren't viral thumbnails"; "look into the YouTube thumbnails and convert it into a TikTok thumbnail, high quality").
    - **Style (from his YouTube thumbnails, e.g. "Allyson Felix: Two-Faced or Ambitious?"):** black background, the subject's face big and close (cut out of a real, sharp photo, bust fading into black), a bold 2–4 word hook in Anton, stacked: lines in green `#8DF02A` with the key word huge in glowing white (e.g. "BIGGEST / SNAKE / IN TRACK?"), and a tilted white Polaroid inset showing the other person or the key moment.

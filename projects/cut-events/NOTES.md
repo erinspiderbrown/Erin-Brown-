@@ -56,7 +56,7 @@
 
 ## Delivered
 - `exports/cut_events_tiktok_hq.mp4` (CRF 16, −14.1 LUFS).
-- Covers (v2, 17 Nov): "0 AMERICANS?!" / "ONLY 12 MADE IT", red "8.30" box (LA28 standard), Tentoglou mid-jump, owner bust, green burst like Jane/Maddox. `exports/thumbnails/cut_events_thumb.jpg` (3:4), `cut_events_thumb_916.jpg` (9:16).
+- Covers (v3, 17 Nov, owner rules: real photo, real background slightly blurred, no screen grabs, no colour burst): Tentoglou at Munich 2022 (Sandro Halank, CC BY-SA 4.0) over his own blurred stadium, "0 AMERICANS?!" / "ONLY 12 MADE IT", red "8.30" box. Built with `thumb_real/` (`make_bg.py` + `thumb.html`). `exports/thumbnails/cut_events_thumb.jpg` (3:4), `cut_events_thumb_916.jpg` (9:16).
 - **Dropbox:** `/TikTok Exports/cut_events_tiktok_hq.mp4` plus both covers. content_hash verified.
 - **YouTube Short:** https://www.youtube.com/watch?v=CKUC_pBdAPo
 - **Instagram trial reel** (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df1LN6TnOi4/
