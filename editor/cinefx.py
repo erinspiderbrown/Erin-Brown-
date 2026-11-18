@@ -104,8 +104,17 @@ def outline(mask, px=7, glow=26, col=WHITE):
     return L
 
 # ---------------------------------------------------------------- shots
-def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE, sy=0.80):
+def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE, sy=0.80, front=False, largest=False, clear_left=0):
+    """front=True draws the title over the athlete (for tight close-ups with no headroom); largest keeps only the main cut-out blob"""
     base = frame_at(src, t, fx, fy); m = mask_of(base)
+    if largest:
+        import numpy as np; from scipy import ndimage
+        a = np.array(m); lab, n_ = ndimage.label(a > 96)
+        if n_ > 1:
+            big = 1 + int(np.argmax(ndimage.sum(np.ones_like(a), lab, range(1, n_ + 1))))
+            m = Image.fromarray((a * (lab == big)).astype('uint8'))
+    if clear_left:                            # drop stray background props stuck to the cut-out, left of x = clear_left px
+        m = m.copy(); m.paste(0, (0, 0, int(clear_left), m.size[1]))
     W_ = Writer(out); n = int(dur * FPS)
     for i in range(n):
         u = i / max(1, n - 1); k = ease(i / 10)
@@ -113,10 +122,11 @@ def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=
         bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 8, 12)), 0.55 * k)
         fr = bg.convert('RGBA')
         tl = title_layer(title, title_size, color, track=4)
-        place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
+        if not front: place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
         sm = zoom(m, 1 + push * 1.6 * u, 0.5, 0.6); sb = zoom(base, 1 + push * 1.6 * u, 0.5, 0.6)
         fr.alpha_composite(outline(sm).copy(), (0, 0)) if k > 0.2 else None
         subj = sb.convert('RGBA'); subj.putalpha(sm); fr.alpha_composite(subj)
+        if front: place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
         if sub: place(fr, title_layer(sub, 64, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * sy, alpha=ease((i - 6) / 8))
         if i < 4: fr = Image.blend(fr.convert('RGB'), Image.new('RGB', fr.size, WHITE), 0.6 * (1 - i / 4)).convert('RGBA')
         W_.add(grade(fr))
