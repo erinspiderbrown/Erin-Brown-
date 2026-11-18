@@ -7,3 +7,7 @@ __pycache__/
 projects/*/raw/
 projects/*/work/
 projects/*/out/
+projects/*/broll/
+projects/*/raw
+projects/*/work
+projects/*/broll

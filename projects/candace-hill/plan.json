@@ -1,0 +1,1358 @@
+{
+ "workdir": "build",
+ "output": "out/candace_hill.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 367.13,
+ "face": {
+  "src": "top.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "null",
+ "zooms": [],
+ "skip_res_check": false,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "geo/st_wa.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.6,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 6.4,
+   "broll": {
+    "src": "gen/rec_1098.mp4",
+    "ss": 8.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 9.5,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.1,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 26.9,
+   "broll": {
+    "src": "ph/brooks_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 33.3,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.56,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 39.46,
+   "broll": {
+    "src": "up/b_open.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 44.56,
+   "broll": {
+    "src": "geo/st_ga.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.86,
+   "broll": {
+    "src": "gen/rec_1098.mp4",
+    "ss": 4.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 56.86,
+   "broll": {
+    "src": "geo/ct_co.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.86,
+   "broll": {
+    "src": "up/b_cali.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 65.26,
+   "broll": {
+    "src": "ph/cali_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.56,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 67.64,
+   "broll": {
+    "src": "up/c_flag.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 72.77,
+   "broll": {
+    "src": "ph/brooks_run2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 81.86,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 89.28,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.62,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 96.16,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 100.68,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 103.57,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 111.09,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 122.44,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 125.24,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.38,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 130.59,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 140.68,
+   "broll": {
+    "src": "ph/cali_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.56,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 148.56,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 157.77,
+   "broll": {
+    "src": "up/u_smile.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 172.07,
+   "broll": {
+    "src": "geo/ct_pl.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 180.82,
+   "broll": {
+    "src": "gen/rec_u20.mp4",
+    "ss": 7.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 185.22,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 194.02,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 200.39,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 206.57,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 212.13,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 227.72,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 235.22,
+   "broll": {
+    "src": "ph/eyes.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 241.55,
+   "broll": {
+    "src": "geo/st_ca.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 248.87,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 263.09,
+   "broll": {
+    "src": "ph/brooks_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 268.54,
+   "broll": {
+    "src": "geo/st_la.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.42
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 276.26,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 278.22,
+   "broll": {
+    "src": "vid_w/nbc_trials24.mp4",
+    "ss": 8.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 289.32,
+   "broll": {
+    "src": "ph/stadium_2021.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 305.81,
+   "broll": {
+    "src": "ph/cali_flag.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 315.31,
+   "broll": {
+    "src": "gph/wpgtrack.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 320.96,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 330.31,
+   "broll": {
+    "src": "ph/blocks_2x.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 337.81,
+   "broll": {
+    "src": "ph/asics_run.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 340.28,
+   "broll": {
+    "src": "ph/brooks_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 346.34,
+   "broll": {
+    "src": "vid_w/nbc_trials24.mp4",
+    "ss": 107.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 350.94,
+   "broll": {
+    "src": "gph/getset.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 353.94,
+   "broll": {
+    "src": "ph/cali_flag.jpg",
+    "ss": 0.0,
+    "focus": [
+     0.56,
+     0.3
+    ]
+   }
+  }
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 0.2,
+   "dur": 2.6,
+   "items": [
+    "MAY",
+    "JUNE",
+    "JULY"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "JUNE 20, 2015"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 2.9,
+   "dur": 1.7,
+   "text": "SHORELINE, WA",
+   "sub": "BROOKS PR INVITATIONAL"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.1,
+   "dur": 2.8,
+   "text": "10-YEAR PRO DEAL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 15.2,
+   "dur": 2.6,
+   "text": "REPORTEDLY 6 FIGURES/YR",
+   "size": 80,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 18.4,
+   "dur": 14.6,
+   "title": "SINCE THAT DAY",
+   "rows": [
+    {
+     "event": "LEGAL SUB-11",
+     "value": "0"
+    },
+    {
+     "event": "USA OLY/WORLD TEAMS",
+     "value": "0"
+    },
+    {
+     "event": "100/200 PBS",
+     "value": "0"
+    }
+   ],
+   "times": [
+    2.6,
+    5.4,
+    9.5
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 34.0,
+   "dur": 4.0,
+   "text": "DID SHE FINESSE ASICS?"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 39.66,
+   "dur": 4.6,
+   "text": "CANDACE HILL",
+   "tag": "AGE 16 \u00b7 beIN SPORTS",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 46.26,
+   "dur": 3.6,
+   "text": "CONYERS, GEORGIA",
+   "sub": "ROCKDALE COUNTY HIGH SCHOOL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 51.96,
+   "dur": 1.5,
+   "text": "NO FLUKE",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 53.56,
+   "dur": 3.2,
+   "text": "1ST HS GIRL UNDER 11"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 59.26,
+   "dur": 2.6,
+   "text": "CALI, COLOMBIA",
+   "sub": "2015 WORLD YOUTH CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 62.06,
+   "dur": 9.97,
+   "title": "WORLD YOUTHS 2015",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "11.08",
+     "tag": "GOLD"
+    },
+    {
+     "event": "200M",
+     "value": "22.43",
+     "tag": "GOLD"
+    }
+   ],
+   "times": [
+    0.8,
+    2.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 67.84,
+   "dur": 4.34,
+   "text": "CANDACE HILL",
+   "tag": "AFTER CALI 2015",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 73.56,
+   "dur": 3.8,
+   "text": "GATORADE NATIONAL AWARD"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 77.66,
+   "dur": 3.9,
+   "text": "AS A SOPHOMORE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 82.66,
+   "dur": 1.8,
+   "text": "FASTEST GIRL ALIVE"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 84.46,
+   "dur": 4.48,
+   "items": [
+    "USC WANTS HER",
+    "FLORIDA WANTS HER",
+    "EVERY BIG PROGRAM"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 89.46,
+   "dur": 2.6,
+   "items": [
+    "OCT",
+    "NOV",
+    "DEC",
+    "JAN"
+   ],
+   "hi": [
+    2
+   ],
+   "label": "DEC 17, 2015"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 92.56,
+   "dur": 3.4,
+   "text": "SIGNS WITH ASICS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 98.06,
+   "dur": 2.57,
+   "text": "YOUNGEST U.S. PRO EVER",
+   "size": 80,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 100.79,
+   "dur": 2.48,
+   "text": "NUMBER NEVER CONFIRMED"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 103.87,
+   "dur": 7.08,
+   "title": "THE DEAL (REPORTED)",
+   "rows": [
+    {
+     "event": "PAY",
+     "value": "6 FIGURES/YR"
+    },
+    {
+     "event": "LENGTH",
+     "value": "10 YEARS"
+    },
+    {
+     "event": "REDUCTIONS",
+     "value": "NONE"
+    }
+   ],
+   "times": [
+    1.9,
+    3.2,
+    4.3
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 113.54,
+   "dur": 3.1,
+   "text": "REDUCTION CLAUSE"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 117.14,
+   "dur": 5.2,
+   "items": [
+    "DON'T RUN FAST",
+    "MISS THE TEAM",
+    "PAY CUT"
+   ],
+   "times": [
+    0.5,
+    3.0,
+    4.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 123.54,
+   "dur": 1.6,
+   "text": "NOT HER",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 126.34,
+   "dur": 4.11,
+   "items": [
+    "2015",
+    "2020",
+    "2025"
+   ],
+   "hi": [
+    2
+   ],
+   "label": "THROUGH AGE 26"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 131.16,
+   "dur": 2.6,
+   "text": "COLLEGE PAID TOO"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 137.66,
+   "dur": 3.12,
+   "text": "SET FOR 10 YEARS",
+   "size": 100
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 140.88,
+   "dur": 7.48,
+   "text": "TONY CARPENTER",
+   "tag": "HER COACH \u00b7 2016",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 149.08,
+   "dur": 3.84,
+   "items": [
+    "2015",
+    "2016",
+    "2017"
+   ],
+   "hi": [
+    1
+   ],
+   "label": "THE OLYMPIC YEAR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 155.12,
+   "dur": 2.75,
+   "text": "MISSED 4 MONTHS"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 157.97,
+   "dur": 13.9,
+   "text": "CANDACE HILL",
+   "tag": "ON HER 2016 SURGERY",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 173.22,
+   "dur": 4.6,
+   "title": "2016 OLYMPIC TRIALS",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "13TH"
+    },
+    {
+     "event": "200M",
+     "value": "14TH"
+    }
+   ],
+   "times": [
+    1.7,
+    3.4
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 178.12,
+   "dur": 2.7,
+   "text": "BYDGOSZCZ, POLAND",
+   "sub": "2016 WORLD U20 CHAMPIONSHIPS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 185.42,
+   "dur": 1.6,
+   "text": "WORLD U20 CHAMPION"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 187.42,
+   "dur": 1.5,
+   "text": "IT STOPS",
+   "size": 140
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 188.82,
+   "dur": 5.1,
+   "items": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "hi": [
+    2
+   ],
+   "label": "NO PERSONAL BEST"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 194.22,
+   "dur": 6.09,
+   "title": "2019 USA CHAMPS",
+   "rows": [
+    {
+     "event": "100M",
+     "value": "14TH"
+    },
+    {
+     "event": "200M",
+     "value": "14TH"
+    }
+   ],
+   "times": [
+    2.7,
+    4.8
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 200.8,
+   "dur": 4.0,
+   "text": "COACH AFTER COACH"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 206.77,
+   "dur": 5.16,
+   "text": "TONY CARPENTER",
+   "tag": "HER COACH \u00b7 2016",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 212.82,
+   "dur": 4.0,
+   "text": "THE PART NOBODY SAW"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 221.22,
+   "dur": 4.0,
+   "text": "\"YOU MADE THE WRONG DECISION\""
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 226.22,
+   "dur": 1.5,
+   "text": "SECOND-GUESSING",
+   "size": 100,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 228.52,
+   "dur": 4.0,
+   "text": "EMOTIONAL \u2192 PHYSICAL PAIN"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 237.22,
+   "dur": 4.0,
+   "text": "MIND FIRST, BODY FOLLOWS"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 244.87,
+   "dur": 3.8,
+   "text": "CALIFORNIA",
+   "sub": "JULY 2021"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 249.17,
+   "dur": 5.6,
+   "value": "10.99",
+   "unit": "100M",
+   "label": "FIRST SUB-11 IN 6 YEARS",
+   "anim": 0.8
+  },
+  {
+   "type": "motion",
+   "kind": "wind",
+   "t": 254.97,
+   "dur": 4.6,
+   "text": "WIND +2.5 \u00b7 LIMIT +2.0"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 259.97,
+   "dur": 2.65,
+   "text": "WIND-AIDED",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 263.23,
+   "dur": 5.11,
+   "title": "2021 OLYMPIC TRIALS",
+   "rows": [
+    {
+     "event": "100M FINAL",
+     "value": "11.23"
+    }
+   ],
+   "times": [
+    3.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 269.68,
+   "dur": 2.86,
+   "text": "BATON ROUGE, LA",
+   "sub": "COACH DENNIS SHAVER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 274.07,
+   "dur": 2.19,
+   "text": "TRAINING WITH ALEIA HOBBS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 276.42,
+   "dur": 1.8,
+   "text": "BACK IN SCHOOL"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 279.77,
+   "dur": 7.09,
+   "title": "2024 OLYMPIC TRIALS",
+   "rows": [
+    {
+     "event": "100M FINAL",
+     "value": "7TH",
+     "tag": "11.00"
+    }
+   ],
+   "times": [
+    3.63
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 286.96,
+   "dur": 2.26,
+   "text": "THAT CLOSE"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 291.31,
+   "dur": 14.3,
+   "title": "SINCE SIGNING",
+   "rows": [
+    {
+     "event": "LEGAL SUB-11S",
+     "value": "0"
+    },
+    {
+     "event": "OLYMPIC TEAMS",
+     "value": "0"
+    },
+    {
+     "event": "WORLD TEAMS",
+     "value": "0"
+    },
+    {
+     "event": "100/200 PBS",
+     "value": "0"
+    }
+   ],
+   "times": [
+    3.1,
+    5.3,
+    8.3,
+    13.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 306.11,
+   "dur": 9.0,
+   "title": "STILL HER BESTS",
+   "rows": [
+    {
+     "event": "100M \u00b7 JUNE 2015",
+     "value": "10.98"
+    },
+    {
+     "event": "200M \u00b7 JULY 2015",
+     "value": "22.43"
+    }
+   ],
+   "times": [
+    2.5,
+    6.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 316.51,
+   "dur": 4.0,
+   "text": "3 YEARS LEFT (2023)"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 326.11,
+   "dur": 3.0,
+   "text": "AS A BUSINESS DEAL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 329.21,
+   "dur": 1.6,
+   "text": "GOT THE BAG",
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 331.21,
+   "dur": 4.0,
+   "text": "THE TIME NEVER CAME BACK"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 338.61,
+   "dur": 1.6,
+   "text": "FINESSE",
+   "size": 170
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 340.64,
+   "dur": 2.6,
+   "text": "NOBODY TRICKED ASICS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 343.44,
+   "dur": 2.8,
+   "text": "THEY MADE A BET"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 346.44,
+   "dur": 4.4,
+   "items": [
+    "NEVER QUIT",
+    "2 TRIALS FINALS",
+    "BACK TO SCHOOL"
+   ],
+   "times": [
+    0.4,
+    1.4,
+    3.1
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 351.24,
+   "dur": 2.6,
+   "items": [
+    "YOU MESSED UP",
+    "WRONG DECISION",
+    "SHOULD'VE GONE TO COLLEGE"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 355.32,
+   "dur": 11.81,
+   "question": "DID SHE FINESSE ASICS?",
+   "options": [
+    "SHE FINESSED",
+    "ASICS LOST A BET"
+   ]
+  }
+ ]
+}

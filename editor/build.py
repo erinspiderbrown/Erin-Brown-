@@ -13,7 +13,10 @@ GOLD_ASS = '&H2CC7FF&'                        # #FFC72C in ASS BGR
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode: sys.exit(f"FAILED: {' '.join(cmd)}\n{r.stderr[-3000:]}")
+    if r.returncode:
+        err = '\n'.join(l for l in r.stderr.splitlines() if len(l) < 600)   # skip ffmpeg's echo of huge filtergraphs
+        open('/tmp/claude-0/-home-user-Erin-Brown-/86462db5-48b3-5b35-8962-db876d3ef862/scratchpad/last_failed_cmd.txt', 'w').write('\n'.join(cmd))
+        sys.exit(f"FAILED: {' '.join(cmd)[:400]}...\n{err[-3000:]}")
 
 IMG = ('.jpg', '.jpeg', '.png', '.webp', '.heic')
 def is_img(p): return p.lower().endswith(IMG)
@@ -41,6 +44,15 @@ def cover(w, h, crop=None, push=0.0, dur=1.0, punch=0.0, focus=(0.5, 0.5), zexpr
     return ','.join(f)
 
 _probe = {}
+def cached(path, expect=None):
+    """A cached render counts only if it's complete. A stopped render can leave a 0-byte file, or (ffmpeg exits
+    cleanly on SIGTERM) a valid but short one, so check the duration against what the render should produce."""
+    if not os.path.exists(path) or os.path.getsize(path) < 1024: return False
+    r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    try: got = float(r.stdout.strip())
+    except ValueError: return False
+    return expect is None or got >= expect - 0.1
+
 def probe(src):
     if src not in _probe:
         r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
@@ -54,6 +66,7 @@ def check_sources(plan, min_short=1080):
     bad = []
     for s in plan['segments']:
         w, h = probe(s['broll']['src'])
+        if s['type'] == 'split' and (w, h) == (W, HALF): continue     # cinefx split-size shot: exactly the bottom half, nothing enlarged
         if min(w, h) < min_short: bad.append(f"  B-roll {os.path.basename(s['broll']['src'])}: {w}x{h}")
     fw, fh = probe(plan['face']['src'])
     if min(fw, fh) < min_short: print(f"WARNING: talking-head source is only {fw}x{fh}")
@@ -104,14 +117,22 @@ def render_segment(plan, seg, a, b, out):
             shade = soft_seam_asset(plan)
             hl = float(plan.get('seam_hairline', 0.22))
             fc = (f"[0:v]{cover(W, HALF, face.get('crop'), focus=ffoc, zexpr='+'.join(zt) or None)},{grade}[f];"
-                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}[b];"
+                  f"[1:v]{cover(W, HALF, br.get('crop'), bpush, dur, focus=bfoc, src_wh=probe(br['src']))}{'' if br.get('nograde') or not plan.get('broll_grade') else ',' + plan['broll_grade']}[b];"
                   f"[f][b]vstack[t2];[2:v]format=rgba[sh];[t2][sh]overlay=0:{HALF}-h/2:shortest=1,"
                   f"drawbox=y={HALF-1}:w={W}:h=2:color=white@{hl}:t=fill,fps={FPS},format=yuv420p[v]")
             extra = ['-loop', '1', '-t', f'{dur:.3f}', '-i', shade]
+    elif seg['type'] == 'face':                # v2 style: full-screen talking head (vertical crop of the 4K take), lip-synced
+        fv = plan['face_v']
+        zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', []) if z1 > a and z0 < b]
+        drift = f"0.035*max(0,t+{a - seg['start']:.3f})/{max(0.1, seg.get('_len', dur)):.3f}"      # slow push-in across the segment
+        fc = (f"[2:v]{cover(W, H, None, focus=tuple(fv.get('focus', (0.5, 0.4))), zexpr='+'.join(zt + [drift]))},{grade},fps={FPS},format=yuv420p[v]")
+        extra = ['-ss', f'{fss:.3f}', '-t', f'{dur:.3f}', '-i', fv['src']]
     else:
         c = br.get('fullcrop', br.get('crop'))
-        fc = (f"[1:v]{cover(W, H, c, 0.12 if is_img(br['src']) else 0.06, dur, seg.get('punch', 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))},"
-              f"fps={FPS},format=yuv420p[v]")
+        bg = '' if br.get('nograde') or not plan.get('broll_grade') else ',' + plan['broll_grade']
+        push = 0.0 if br.get('nograde') else (0.12 if is_img(br['src']) else 0.06)
+        fc = (f"[1:v]tpad=stop_mode=clone:stop_duration=1.5,{cover(W, H, c, push, dur, seg.get('punch', 0.0 if br.get('nograde') else 0.10), tuple(br.get('focus', (0.5, 0.5))), src_wh=probe(br['src']))}{bg},"
+              f"fps={FPS},format=yuv420p[v]")     # tpad: a clip cut to the segment's exact length still covers the transition overlap
         extra = []
     bin_ = (['-loop', '1', '-framerate', str(FPS), '-t', f'{dur:.3f}', '-i', br['src']] if is_img(br['src'])
             else ['-ss', f'{bss:.3f}', '-t', f'{dur:.3f}', '-i', br['src']])
@@ -146,11 +167,42 @@ def chunks(words, maxw=3, gap=0.35):
             yield cur; cur = []
 
 def clean(w):
-    w = re.sub(r'[^\w.%$#\'-]', '', w.upper())
+    w = re.sub(r'[^\w.%$#\'*:-]', '', w.upper())
     return re.sub(r'\.$', '', w)
 
 def hex2ass(h):
     h = h.lstrip('#'); return f'&H{h[4:6]}{h[2:4]}{h[0:2]}&'
+
+def cine_caption_events(plan, words, t0, t1):
+    """v2 style: clean white phrase (2-3 words) near the bottom, no karaoke colour; the KEY words (plan 'caption_emph':
+    names, numbers, places) punch in bigger in Anton + gold on their own beat. Position follows the layout:
+    lower third on full-screen face / B-roll, on the seam in the split."""
+    emph = {e.lower() for e in plan.get('caption_emph', [])}; gold = hex2ass(plan.get('caption_accent', '#FFC83D'))
+    segs = plan['segments']
+    def ypos(t):
+        for sg, nx in zip(segs, segs[1:] + [None]):
+            if sg['start'] <= t < (nx['start'] if nx else 1e9): return HALF if sg['type'] == 'split' else int(H * sg.get('cap_y', 0.74))
+        return int(H * 0.74)
+    ev = []
+    ws = [w for w in merge_words(words) if w['e'] > t0 and w['s'] < t1]
+    cs = list(chunks(ws, maxw=3))
+    for ci, c in enumerate(cs):
+        nxt_s = cs[ci + 1][0]['s'] if ci + 1 < len(cs) else t1      # a phrase never overlaps the next one
+        for wi, w in enumerate(c):
+            a = max(w['s'], t0) - t0
+            b = (c[wi + 1]['s'] if wi + 1 < len(c) else min(c[-1]['e'] + 0.2, nxt_s, t1)) - t0
+            if b <= a: continue
+            y = ypos(a)
+            parts = []
+            for i, x in enumerate(c[:wi + 1]):           # words appear as they're said (build-on), never all at once
+                tok = clean(x['w']); key = tok.lower().strip('.,!?')
+                if key in emph:
+                    pop = r'\fscx60\fscy60\t(0,90,\fscx118\fscy118)\t(90,170,\fscx100\fscy100)' if i == wi else ''
+                    parts.append(f'{{\\fnAnton\\fs118\\c{gold}{pop}}}{tok}{{\\fnMontserrat ExtraBold\\fs76\\c&HFFFFFF&\\fscx100\\fscy100}}')
+                else:
+                    parts.append(tok)
+            ev.append(f'Dialogue: 5,{ts(a)},{ts(b)},CapC,,0,0,0,,{{\\an5\\pos({W//2},{y})}}' + ' '.join(parts))
+    return ev
 
 def caption_events(words, t0, t1, colors=('#FFE11A',), ypos=None):
     """Word-by-word karaoke: the word being spoken lights up; chunk pops in."""
@@ -221,6 +273,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{fonts},86,&H00FFFFFF,&H00FFFFFF,&H00000000,&H50000000,0,0,0,0,100,100,1,0,1,6,3,5,40,40,0,1
+Style: CapC,Montserrat ExtraBold,76,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,1,0,1,4,4,5,40,40,0,1
 Style: Gfx,Arial,10,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 Style: Num,Anton,170,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,1,0,0,0,1
 Style: Unit,Bebas Neue,96,{GOLD_ASS.replace('&H','&H00')},&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,2,0,1,0,0,1,0,0,0,1
@@ -232,7 +285,8 @@ Style: Name,Anton,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     t0 = plan['voice_ss']; t1 = t0 + plan['duration']
-    ev = caption_events(words, t0, t1, plan.get('caption_colors', ['#FFE11A']), plan.get('caption_y'))
+    ev = (cine_caption_events(plan, words, t0, t1) if plan.get('caption_style') == 'cine'
+          else caption_events(words, t0, t1, plan.get('caption_colors', ['#FFE11A']), plan.get('caption_y')))
     for g in plan.get('graphics', []):
         if g['type'] in ('data', 'motion', 'clip'): continue
         ev += stat_card(g) if g['type'] == 'stat' else name_card(g)
@@ -243,10 +297,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                 ev.append(f'Dialogue: 30,{ts(T-0.04)},{ts(T+0.22)},Gfx,,0,0,0,,{{\\an7\\pos(0,0)\\p1\\1c&HFFFFFF&\\1a&H70&\\t(40,220,\\1a&HFF&)}}{rrect(W,H,0)}{{\\p0}}')
     open(path, 'w').write(hdr + '\n'.join(ev) + '\n')
 
-# ---------- SFX: restrained + varied ----------
-# Rules (house style): B-roll swaps inside the split are SILENT; cuts to full-screen get a soft airy whoosh;
-# a bass hit/flash only on segments marked "hit"; returns to split only get a whoosh if the last one was >= 6 s ago;
-# every cue gets a small random pitch/speed variation so repeats never sound identical.
+# ---------- SFX: restrained, spaced, never repeated back-to-back ----------
+# House rules (owner feedback, Nov 2026):
+# - B-roll swaps inside the split are SILENT; cuts to full-screen get a soft airy whoosh;
+#   a short bass hit only on segments marked "hit"; graphics get one small pop/thud each.
+# - NO risers or long cinematic hits (too loud, too drawn out). They're banned below and can't be requested.
+# - Sound "moments" are spaced at least `sfx_min_gap` seconds apart (default 3.0): never a sound every 1-2 s.
+#   Higher-priority moments (hits, full-screen cuts) win; quieter ones that crowd them are dropped.
+# - The same sound file never plays twice in a row (data ticks inside one counter excepted).
+# - Every cue gets a small random pitch variation.
 POOLS = {
     'air':       ['air_fast_sweeping', 'air_flying_swoosh', 'air_wind_passing', 'air_cine_wind', 'air_zoom_vacuum', 'air_short_wind',
                   'whoosh_cine_fast', 'whoosh_fast_sweep'],
@@ -254,55 +313,75 @@ POOLS = {
     'impact':    ['impact_short_bass', 'impact_sub_bass_knock', 'impact_futuristic_bass'],
     'pop':       ['pop_hard_click', 'pop_explainer_light', 'pop_dry_notify'],
     'tick':      ['click_box_check'],
-    'riser':     ['riser_synth', 'riser_space_stutter'],
     'data_tick': ['tick_scifi', 'tick_tech_select'],
-    'thud':      ['thud_wood_hit'],
+    'thud':      ['thud_wood_hit', 'impact_sub_bass_knock', 'impact_short_bass'],
 }
+BANNED_SFX = {'riser', 'riser_synth', 'riser_space_stutter', 'impact_big_cine', 'impact_deep_cine_whoosh',
+              'impact_quick_zoom', 'impact_trailer_whoosh_hit', 'air_windy_swoosh'}
 import random
 def sfx_cues(plan):
     """-> list of (sfx name, time where its PEAK lands, volume, rate)"""
     rng = random.Random(plan.get('sfx_seed', 7))
-    rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
-    def pick(pool):
-        n = POOLS[pool][rot[pool] % len(POOLS[pool])]; rot[pool] += 1; return n
+    gap = float(plan.get('sfx_min_gap', 3.0))
     lvl = float(plan.get('sfx_level', 1.0))
-    cues, segs, last_tr = [], plan['segments'], -99
+    moments = []                     # (anchor t, priority, [(pool|name, t, vol, is_tick)])
+    def add(prio, cues):
+        if cues: moments.append((min(c[1] for c in cues), prio, cues))
+    segs, last_full = plan['segments'], -99
     for prev, nxt in zip(segs, segs[1:]):
         T = nxt['start']
         if nxt.get('sfx') is False: continue
         if nxt['type'] == 'full' and prev['type'] != 'full':
-            cues.append((pick('air'), T, float(plan.get('whoosh_level', 0.24)))); last_tr = T
-            if nxt.get('hit') and plan.get('hit_sfx', False): cues.append((pick('impact'), T + 0.02, 0.30))
+            wl = float(plan.get('whoosh_level', 0.24))
+            add(3 if nxt.get('hit') else 2, [('air', T, wl, 0)] + ([('impact', T + 0.02, 0.26, 0)] if nxt.get('hit') and plan.get('hit_sfx', False) else []))
+            last_full = T
         elif nxt['type'] != 'full' and prev['type'] == 'full':
-            if T - last_tr >= 6: cues.append((pick('air_soft'), T, 0.22)); last_tr = T
+            if T - last_full >= 6: add(0, [('air_soft', T, 0.20, 0)])
         elif nxt.get('sfx'):
-            cues.append((pick('air_soft'), T, 0.2)); last_tr = T
+            add(1, [('air_soft', T, 0.2, 0)])
     graphic_sfx = plan.get('graphic_sfx', False)        # owner: no random loud sounds mid-sentence
     for g in (plan.get('graphics', []) if graphic_sfx else []):
         t0, ev = g['t'], g.get('_ev', {})
         if g['type'] == 'data':
-            for k, tk in enumerate(ev.get('ticks', [])[:5]): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.14))
-            cues.append((pick('pop'), t0 + ev['land'], 0.32))
-            if 'badge' in ev: cues.append((pick('pop'), t0 + ev['badge'], 0.28))
+            add(1, [('data_tick', t0 + tk, 0.12, 1) for tk in ev.get('ticks', [])[:3]] + [('pop', t0 + ev['land'], 0.30, 0)])
         elif g['type'] == 'motion':
-            if 'thud' in ev: cues += [(pick('thud'), t0 + ev['thud'], 0.45), (pick('impact'), t0 + ev['thud'], 0.22)]
-            for tk in ev.get('pops', []): cues.append((pick('pop'), t0 + tk, 0.26))
-            if 'drop' in ev: cues.append((pick('pop'), t0 + ev['drop'], 0.32))
-            for k, tk in enumerate(ev.get('ticks', [])): cues.append((POOLS['data_tick'][k % 2], t0 + tk, 0.15))
-            if 'land' in ev: cues.append((pick('pop'), t0 + ev['land'], 0.32))
-            if 'air' in ev: cues.append((pick('air'), t0 + ev['air'] + 0.3, 0.3))
-            if 'swish' in ev: cues.append((pick('air_soft'), t0 + ev['swish'] + 0.25, 0.24))
+            first = None
+            for key, pool, vol in (('drop', 'pop', 0.30), ('land', 'pop', 0.30), ('air', 'air', 0.28), ('swish', 'air_soft', 0.22)):
+                if key in ev: first = (pool, t0 + ev[key] + (0.3 if key == 'air' else 0.25 if key == 'swish' else 0), vol, 0); break
+            if first is None and ev.get('pops'): first = ('pop', t0 + ev['pops'][0], 0.26, 0)
+            ticks = [('data_tick', t0 + tk, 0.12, 1) for tk in ev.get('ticks', [])[:3]]
+            if 'thud' in ev:
+                th = ('thud', t0 + ev['thud'], 0.40, 0)
+                if first and th[1] - first[1] > 1.0: add(1, ticks + [first]); add(1, [th])
+                else: add(1, ticks + [th])
+            elif first: add(1, ticks + [first])
         elif g['type'] in ('name', 'stat'):
-            cues.append((pick('pop'), t0 + 0.05, 0.28))
+            add(1, [('pop', t0 + 0.05, 0.26, 0)])
     for c in (plan.get('extra_sfx', []) if plan.get('extra_sfx_on', False) else []):
-        cues.append((pick(c[0]) if c[0] in POOLS else c[0], c[1], c[2]))
-    # de-clutter: no two cues of the same family within 0.12 s; whoosh-family cues >= 1.5 s apart
-    cues.sort(key=lambda c: c[1]); out, last_air = [], -99
-    for c in cues:
-        if c[0].startswith(('air', 'whoosh')):
-            if c[1] - last_air < 1.5: continue
-            last_air = c[1]
-        out.append(c)
+        if c[0] in BANNED_SFX: print(f"NOTE: extra_sfx '{c[0]}' is banned (owner: too loud/drawn out), skipped"); continue
+        add(1, [(c[0], c[1], c[2], 0)])
+    # owner-requested meme sounds (plan 'meme_sfx': [[name, start_t, vol], ...]) reserve their slot so no whoosh lands near them
+    kept = [(float(c[1]), 99, []) for c in plan.get('meme_sfx', [])]
+    # spacing: keep highest-priority moments first, then anything that is >= gap from every kept moment
+    for m in sorted(moments, key=lambda m: (-m[1], m[0])):
+        if all(abs(m[0] - k[0]) >= gap for k in kept): kept.append(m)
+    kept = [k for k in kept if k[2]]; kept.sort(key=lambda m: m[0])
+    # resolve sound names chronologically; never the same file twice in a row
+    rot = {k: rng.randrange(len(v)) for k, v in POOLS.items()}
+    out, last = [], None
+    for _, _, cues in kept:
+        for src, t, vol, tick in sorted(cues, key=lambda c: c[1]):
+            if src in POOLS:
+                pool = POOLS[src]
+                for _ in range(len(pool)):
+                    name = pool[rot[src] % len(pool)]; rot[src] += 1
+                    if tick or name != last: break
+            else: name = src
+            if name in BANNED_SFX: continue
+            if not tick: last = name
+            out.append((name, t, vol))
+    print(f"SFX: {len(kept)} moments kept of {len(moments)} (min gap {gap:.1f}s): " +
+          ', '.join(f"{t:.1f}s {n}" for n, t, _ in out if not n.startswith('tick')))
     return [(n, t, v * lvl, round(rng.uniform(0.92, 1.08), 3)) for n, t, v in out]
 
 def choose_transitions(plan):
@@ -314,6 +393,8 @@ def choose_transitions(plan):
       split -> split     -> bottom-half swipe (left/right alternating); your face never moves"""
     rot = {'in': ['zoom', 'whip:left', 'spin', 'whip:up'], 'hit': ['flash', 'shake'], 'out': ['whip:down', 'zoom', 'whip:right', 'glitch'],
            'ff': ['whip:left', 'glitch', 'whip:right'], 'ss': ['swipe:left', 'swipe:right']}
+    if plan.get('transition_style') == 'epic':     # B-roll swaps in the split rotate through bigger moves (bottom half only)
+        rot['ss'] = ['swipe:left', 'zoom', 'swipe:right', 'glitch', 'whip:up', 'swipe:left', 'zoom', 'whip:down', 'glitch', 'swipe:right']
     cnt = {k: 0 for k in rot}
     def take(k):
         v = rot[k][cnt[k] % len(rot[k])]; cnt[k] += 1; return v
@@ -326,7 +407,8 @@ def choose_transitions(plan):
         elif nxt['type'] == 'full': spec = take('ff')
         else: spec = take('ss') if plan.get('split_swipes', True) else 'cut'
         k, _, dr = spec.partition(':')
-        out.append((k, dr or None, 'bottom' if k == 'swipe' else None))
+        both_split = prev['type'] == 'split' and nxt['type'] == 'split'
+        out.append((k, dr or None, 'bottom' if (k == 'swipe' or (both_split and k != 'cut')) else None))
     return out
 
 def main(plan_path):
@@ -336,6 +418,10 @@ def main(plan_path):
     style = {k: (os.path.join(here0, v) if k in ('fontsdir', 'sfxdir') and not os.path.isabs(v) else v)
              for k, v in style.items() if not k.startswith('_')}
     plan = {**style, **json.load(open(plan_path))}
+    if not plan.get('name_tags', False):       # owner (Nov 11 2026): no red-box name tags, in any video
+        dropped = [g for g in plan.get('graphics', []) if g['type'] == 'name']
+        plan['graphics'] = [g for g in plan.get('graphics', []) if g['type'] != 'name']
+        if dropped: print(f"NOTE: {len(dropped)} name tag(s) skipped (name_tags is off; the owner doesn't want them)")
     if plan['duration'] < plan.get('min_duration', 0):
         print(f"WARNING: {plan['duration']:.1f}s is under the {plan['min_duration']}s minimum")
     if plan.get('accent'): GOLD_ASS = hex2ass(plan['accent'])
@@ -348,10 +434,11 @@ def main(plan_path):
     for i, s in enumerate(segs):
         a = max(0.0, s['start'] - PAD) if i else 0.0
         b = min(end, segs[i + 1]['start'] + PAD) if i + 1 < len(segs) else end
-        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
-                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent')], sort_keys=True)
+        st = os.stat(plan['face']['src']) if s['type'] == 'split' else None   # split shots depend on the face/top track's content too
+        key = json.dumps([s, round(a, 3), round(b, 3), plan['face'], [st.st_size, int(st.st_mtime)] if st else None, plan.get('zooms'), plan.get('seam_style'), plan.get('seam_feather'), plan.get('seam_shade'), plan.get('seam_soft'), plan.get('seam_shadow'), plan.get('seam_hairline'),
+                          plan.get('face_grade'), plan.get('voice_ss'), plan.get('accent'), plan.get('face_v'), plan.get('broll_grade')], sort_keys=True)
         p = f'{wd}/seg_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4'
-        if not os.path.exists(p): render_segment(plan, s, a, b, p)
+        if not cached(p, b - a): render_segment(plan, s, a, b, p)
         parts.append((p, a, b))
     # 2) transitions: short standalone clips built from the overlap, then everything is concatenated
     trs = choose_transitions(plan)                     # [(kind, direction, half)] per boundary (index 0 unused)
@@ -367,7 +454,7 @@ def main(plan_path):
                 d = dur[i]; T = segs[i]['start']
                 key = json.dumps([k, dr, half, parts[i - 1][0], parts[i][0], round(T, 3), d])
                 tp = f"{wd}/tr_{hashlib.md5(key.encode()).hexdigest()[:12]}.mp4"
-                if not os.path.exists(tp):
+                if not cached(tp, d - 0.05):
                     transitions.render(k, parts[i - 1][0], T - d / 2 - parts[i - 1][1], parts[i][0], T - d / 2 - a_i, d, tp, dr, half)
                 n = len(inputs) // 2; inputs += ['-i', tp]
                 pieces.append(f'[{n}:v]setpts=PTS-STARTPTS,setsar=1[t{i}]'); fc.append(pieces[-1]); pieces[-1] = f'[t{i}]'
@@ -391,7 +478,7 @@ def main(plan_path):
         sp, mov = f'{wd}/data{gi:02d}.json', f'{wd}/data{gi:02d}.mov'
         h12 = hashlib.md5(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
         sp, mov = f'{wd}/gfx_{h12}.json', f'{wd}/gfx_{h12}.mov'
-        if not os.path.exists(mov):
+        if not cached(mov, g['dur'] - 0.1):
             json.dump(spec, open(sp, 'w'))
             r = subprocess.run(['node', f'{here}/datagfx/render.js', sp, mov], capture_output=True, text=True)
             if r.returncode: sys.exit('graphic failed: ' + r.stderr[-2000:])
@@ -423,19 +510,50 @@ def main(plan_path):
     }
     vchain = VOICE.get(plan.get('voice_chain', 'original'), plan.get('voice_chain'))
     ain = ['-ss', str(plan['voice_ss']), '-t', str(end), '-i', plan['face']['src']]
-    cues = sfx_cues(plan); mix = [f'[0:a]{vchain}[vo]']
+    cues = sfx_cues(plan); memes = plan.get('meme_sfx', [])
+    mix = [f'[0:a]{vchain},asplit=3[vo][vk][vm]' if cues and memes else f'[0:a]{vchain},asplit=2[vo][vk]' if cues else f'[0:a]{vchain},asplit=2[vo][vm]' if memes else f'[0:a]{vchain}[vo]']
     meta = json.load(open(f"{plan['sfxdir']}/sfx.json"))
     for j, (name, t, vol, rate) in enumerate(cues):
         ain += ['-i', f"{plan['sfxdir']}/{name}.wav"]
         st = t - meta[name]['peak'] / rate               # start so the (re-pitched) peak lands on t
         trim = f'atrim=start={-st:.3f},asetpts=PTS-STARTPTS,' if st < 0 else ''
         mix.append(f'[{1+j}:a]asetrate={int(48000*rate)},aresample=48000,{trim}volume={vol:.3f},adelay={int(max(st,0)*1000)}:all=1[s{j}]')
-    mixed = ''.join(['[vo]'] + [f'[s{j}]' for j in range(len(cues))]) + f'amix=inputs={len(cues)+1}:normalize=0:duration=first'
-    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet[a]']),
+    # owner asked for these by name and spot (e.g. the vine boom): exact start, no pitch shift; full level in the pause,
+    # ducked only while he's talking so voice + boom never clips (the voice itself stays untouched)
+    for k, (name, t, vol, *ln) in enumerate(memes):   # optional 4th value: play length (s), faded out so it ends before he talks again
+        src = name if os.path.exists(name) else f"{plan['sfxdir']}/{name}.wav"
+        ain += ['-i', src]
+        cut = f',atrim=0:{ln[0]:.3f},afade=t=out:st={max(0, ln[0]-0.12):.3f}:d=0.12' if ln else ''
+        mix.append(f'[{1+len(cues)+k}:a]aresample=48000{cut},volume={vol:.3f},adelay={int(t*1000)}:all=1[m{k}]')
+    if memes: print('meme SFX: ' + ', '.join(f'{m[1]:.2f}s {os.path.basename(m[0])}' + (f' ({m[3]:.2f}s long)' if len(m) > 3 else '') for m in memes))
+    if cues:   # whooshes duck under the voice (sidechain on the SFX bus only), so they never push the voice's peaks up
+        mix.append(''.join(f'[s{j}]' for j in range(len(cues))) + f'amix=inputs={len(cues)}:normalize=0:duration=longest[sb]')
+        mix.append('[sb][vk]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=180[sd]')
+        mixed = '[vo][sd]amix=inputs=2:normalize=0:duration=first'
+    else:
+        mixed = '[vo]anull'
+    if memes:
+        mix.append(''.join(f'[m{k}]' for k in range(len(memes))) + f'amix=inputs={len(memes)}:normalize=0:duration=longest[mb]')
+        mix.append('[mb][vm]sidechaincompress=threshold=0.05:ratio=8:attack=2:release=120[md]')
+        mixed = mixed.replace('[vo][sd]amix=inputs=2', '[vo][sd][md]amix=inputs=3') if cues else '[vo][md]amix=inputs=2:normalize=0:duration=first'
+    m = subprocess.run(['ffmpeg', '-hide_banner', *ain, '-filter_complex', ';'.join(mix + [mixed + ',ebur128=framelog=quiet:peak=sample[a]']),
                         '-map', '[a]', '-f', 'null', '-'], capture_output=True, text=True).stderr
     li = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1])
-    gain = -14.0 - li                                  # one static gain: tone and dynamics untouched
-    ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+    # one static gain, tone and dynamics untouched. NEVER turn the owner's voice down: a take already at or above
+    # -14 LUFS passes through bit-for-bit (no gain, no limiter); a quiet take is raised, with a limiter only then.
+    gain = max(0.0, -14.0 - li)
+    if gain > 0.05:
+        ln = f'volume={gain:.2f}dB,alimiter=limit=0.89:attack=5:release=50:level=false'
+    else:
+        # Untouched, except: a take that peaks right at 0 dBFS gets the minimum static trim to a -0.5 dBFS peak.
+        # Measured: ffmpeg's AAC encoder squashes full-scale audio (-0.3 dB quieter + audible crunch, residual -27 dB);
+        # with 0.5 dB headroom the encode is clean (residual -41 dB) and the level change is below audibility.
+        vm = subprocess.run(['ffmpeg', '-hide_banner', *ain[:6], '-af', f'{vchain},ebur128=framelog=quiet:peak=sample', '-f', 'null', '-'],
+                            capture_output=True, text=True).stderr
+        pk = float(re.findall(r'Peak:\s+(-?[\d.inf]+) dBFS', vm)[-1])      # the voice's own peak, not voice + whooshes
+        gain = min(0.0, -0.5 - pk)
+        ln = f'volume={gain:.2f}dB' if gain < -0.01 else 'anull'
+    print(f'voice: {li:.1f} LUFS, static gain {gain:+.2f} dB' + (', no limiter' if gain <= 0.05 else ', limiter'))
     awav = f'{wd}/mix.wav'
     run(['ffmpeg', '-v', 'error', '-y', *ain, '-filter_complex', ';'.join(mix + [mixed + f',{ln},aresample=48000[a]']),
          '-map', '[a]', '-t', str(end), '-c:a', 'pcm_s16le', awav])
@@ -443,7 +561,7 @@ def main(plan_path):
     inputs += ['-i', awav]
     run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc),
          '-map', '[v]', '-map', f'{ai}:a', '-t', str(end), '-c:v', 'libx264', '-crf', '17', '-preset', 'slow',
-         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '256k', '-ar', '48000',
+         '-profile:v', 'high', '-r', str(FPS), '-c:a', 'aac', '-b:a', '320k', '-ac', '2', '-ar', '48000',
          '-movflags', '+faststart', plan['output']])
     print('wrote', plan['output'])
 

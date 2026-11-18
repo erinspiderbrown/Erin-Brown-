@@ -1,0 +1,457 @@
+{
+ "workdir": "work/build",
+ "output": "work/out/30s_test_v4.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 68.76,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "split",
+   "start": 0.0,
+   "broll": {
+    "src": "broll/t_slo_up.mp4",
+    "ss": 9.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 2.85,
+   "broll": {
+    "src": "broll/upA.mp4",
+    "ss": 0.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 5.35,
+   "broll": {
+    "src": "broll/gcu.mp4",
+    "ss": 10,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.3,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 6,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.4,
+   "broll": {
+    "src": "broll/upA.mp4",
+    "ss": 2.7,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 17.3,
+   "broll": {
+    "src": "broll/curve_slo.mp4",
+    "ss": 10.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 21.6,
+   "broll": {
+    "src": "broll/upB.mp4",
+    "ss": 0.1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.9,
+   "broll": {
+    "src": "broll/upB.mp4",
+    "ss": 2.1,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.5,
+   "broll": {
+    "src": "broll/upB.mp4",
+    "ss": 9.6,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 35.3,
+   "broll": {
+    "src": "broll/upB.mp4",
+    "ss": 10.2,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 39.4,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 43.7,
+   "broll": {
+    "src": "broll/crouch.mp4",
+    "ss": 9,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 49.5,
+   "broll": {
+    "src": "broll/gcu_slo.mp4",
+    "ss": 6.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 55.6,
+   "broll": {
+    "src": "broll/curve_slo.mp4",
+    "ss": 14.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.9,
+   "broll": {
+    "src": "broll/hurdles.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 62.5,
+   "broll": {
+    "src": "broll/t_slo_up.mp4",
+    "ss": 5.0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "crop": [
+     1440,
+     810,
+     125,
+     189
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   13.9,
+   17.2,
+   1.08
+  ],
+  [
+   49.6,
+   52.2,
+   1.1
+  ],
+  [
+   66.7,
+   68.76,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.5,
+   "rank": "GCU",
+   "name": "ERIN BROWN",
+   "sub": "FIRST TIME IN SPIKES  \u00b7  30-SEC TEST"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 3.5,
+   "dur": 2.0,
+   "value": "30.0",
+   "unit": "SECONDS",
+   "label": "HOW FAR CAN YOU GO?",
+   "anim": 1.1,
+   "size": 150
+  },
+  {
+   "type": "motion",
+   "kind": "calendar",
+   "t": 5.7,
+   "dur": 3.3,
+   "items": [
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV"
+   ],
+   "hi": [
+    3
+   ],
+   "label": "LATEST I'VE EVER PUT ON SPIKES"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 10.4,
+   "dur": 2.6,
+   "text": "HEALTHIEST EVER",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 15.3,
+   "dur": 2.0,
+   "text": "GOOD OR BAD?",
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 19.8,
+   "dur": 1.4,
+   "text": "DIED",
+   "size": 200,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 20.7,
+   "dur": 1.6,
+   "value": "281",
+   "unit": "M",
+   "label": "LAST YEAR \u00b7 30 SEC"
+  },
+  {
+   "type": "motion",
+   "kind": "track",
+   "t": 22.4,
+   "dur": 2.5,
+   "value": "400",
+   "anim": 1.3,
+   "text": "RUN IT LIKE A 400",
+   "sub": "NOT ALL-OUT"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 25.9,
+   "dur": 5.6,
+   "title": "FIRST 200M",
+   "times": [
+    0.75,
+    3.95
+   ],
+   "rows": [
+    {
+     "event": "THIS YEAR'S PLAN",
+     "value": "21.4\u201321.5"
+    },
+    {
+     "event": "LAST YEAR",
+     "value": "20.8\u201320.9"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 33.3,
+   "dur": 1.9,
+   "text": "CLOSE STRONG",
+   "hi": 1
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 37.7,
+   "dur": 1.7,
+   "value": "283",
+   "unit": "M",
+   "label": "THIS YEAR \u00b7 30 SEC"
+  },
+  {
+   "type": "data",
+   "kind": "compare",
+   "t": 40.8,
+   "dur": 2.9,
+   "label": "30-SECOND TEST",
+   "unit": "M",
+   "base": 270,
+   "badge": "+2 M",
+   "items": [
+    {
+     "name": "LAST YEAR",
+     "value": "281"
+    },
+    {
+     "name": "THIS YEAR",
+     "value": "283"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 44.0,
+   "dur": 5.0,
+   "text": "LESS ENERGY. LESS TIRED.",
+   "hi": 0
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 53.2,
+   "dur": 2.4,
+   "value": "45",
+   "unit": "SECONDS",
+   "label": "400M \u00b7 WHERE I COME FROM",
+   "anim": 1.0,
+   "size": 160,
+   "anchor": "lower"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 55.9,
+   "dur": 2.0,
+   "text": "DIFFERENT STRATEGIES",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 58.6,
+   "dur": 8.0,
+   "title": "THE EXPERIMENTS",
+   "times": [
+    0.9,
+    4.0,
+    7.4
+   ],
+   "rows": [
+    {
+     "event": "30-SECOND TEST",
+     "value": "DONE",
+     "tag": "283 M"
+    },
+    {
+     "event": "200 METERS",
+     "value": "NEXT"
+    },
+    {
+     "event": "100 METERS",
+     "value": "NEXT"
+    }
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 66.7,
+   "dur": 2.06,
+   "question": "WHAT SHOULD I TEST NEXT?",
+   "options": [
+    "200M",
+    "100M"
+   ]
+  }
+ ]
+}

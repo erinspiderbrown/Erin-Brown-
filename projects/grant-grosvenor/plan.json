@@ -1,0 +1,600 @@
+{
+ "workdir": "work/build",
+ "output": "out/grant_grosvenor.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 113.3,
+ "face": {
+  "src": "work/face_final.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "skip_res_check": true,
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "raw/p2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 3.4,
+   "broll": {
+    "src": "raw/p1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.85,
+   "broll": {
+    "src": "raw/p3.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.4,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 44.1,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.5,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 19.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.7,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 33.9,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.8,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 36.4,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 28.4,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 48.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.6,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 23.6,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 36.6,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 26.45,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 40.0,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 40.85,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 44.0,
+   "broll": {
+    "src": "raw/p2.jpg",
+    "ss": 0,
+    "crop": [
+     1300,
+     2311,
+     350,
+     120
+    ],
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 51.6,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 39.3,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.0,
+   "broll": {
+    "src": "raw/p2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.9,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 22.15,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.5,
+   "broll": {
+    "src": "raw/p4.webp",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 64.45,
+   "broll": {
+    "src": "raw/vidA.mp4",
+    "ss": 38.0,
+    "crop": [
+     720,
+     640,
+     0,
+     290
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 68.9,
+   "broll": {
+    "src": "raw/p4.webp",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 76.35,
+   "broll": {
+    "src": "raw/vidA.mp4",
+    "ss": 40.5,
+    "crop": [
+     720,
+     640,
+     0,
+     290
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 80.6,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 5.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 86.9,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 58.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 93.2,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 46.85,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 97.7,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 61.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.4,
+   "broll": {
+    "src": "raw/p4.webp",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 105.9,
+   "broll": {
+    "src": "raw/vidA.mp4",
+    "ss": 98.5,
+    "crop": [
+     720,
+     640,
+     0,
+     290
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 110.3,
+   "broll": {
+    "src": "raw/vidB.mp4",
+    "ss": 50.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   32.6,
+   34.3,
+   1.1
+  ],
+  [
+   55.3,
+   56.5,
+   1.12
+  ],
+  [
+   63.1,
+   64.4,
+   1.1
+  ],
+  [
+   91.1,
+   92.6,
+   1.1
+  ],
+  [
+   98.0,
+   99.6,
+   1.1
+  ],
+  [
+   102.4,
+   104.8,
+   1.14
+  ],
+  [
+   110.9,
+   113.3,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "name",
+   "t": 0.3,
+   "dur": 2.4,
+   "rank": "33",
+   "name": "GRANT GROSVENOR",
+   "sub": "AGE 33  \u00b7  MILER"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 2.55,
+   "dur": 1.0,
+   "text": "FORMER CRACKHEAD",
+   "size": 110,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.4,
+   "dur": 1.5,
+   "text": "SUB-4 MILE"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 5.95,
+   "dur": 2.4,
+   "value": "107",
+   "format": "mss",
+   "unit": " ",
+   "label": "AT 33 YEARS OLD",
+   "anim": 0.9
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 9.2,
+   "dur": 2.3,
+   "value": "2016",
+   "unit": "",
+   "label": "Back in",
+   "sub": "University of Oregon"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 11.7,
+   "dur": 1.8,
+   "text": "NCAA CHAMPION"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 13.55,
+   "dur": 1.9,
+   "text": "OREGON",
+   "sub": "TEAM TITLE"
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 15.7,
+   "dur": 2.6,
+   "x": 800,
+   "y": 1150,
+   "r": 150,
+   "lx": 90,
+   "ly": 1420,
+   "text": "GRANT",
+   "sub": "RELAY WIN AT NATIONALS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 23.0,
+   "dur": 1.5,
+   "text": "ADDICTED",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 26.9,
+   "dur": 1.6,
+   "text": "REGULAR LIFE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 28.6,
+   "dur": 1.5,
+   "text": "YEARS LATER"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 38.3,
+   "dur": 1.7,
+   "text": "ALL THE ALCOHOL"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 42.2,
+   "dur": 1.5,
+   "text": "LOCKED IN",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 45.7,
+   "dur": 2.1,
+   "text": "ONE OF THE OLDEST",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 49.95,
+   "dur": 2.75,
+   "value": "238",
+   "format": "mss",
+   "unit": "MILE",
+   "label": "FIRST SUB-4",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 52.75,
+   "dur": 1.3,
+   "text": "BEATING PROS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 54.4,
+   "dur": 1.5,
+   "text": "UNSPONSORED",
+   "size": 130,
+   "anchor": "upper"
+  },
+  {
+   "type": "name",
+   "t": 62.3,
+   "dur": 2.6,
+   "rank": "?",
+   "name": "NATHAN GREEN",
+   "sub": "WHO IS THIS GUY?"
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 69.15,
+   "dur": 7.0,
+   "text": "NATHAN GREEN",
+   "tag": "ON A PODCAST",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 70.1,
+   "dur": 3.3,
+   "text": "CALLING OUT PROS"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 73.65,
+   "dur": 1.25,
+   "text": "NIL?"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 75.0,
+   "dur": 1.2,
+   "text": "PRO CONTRACTS?",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 85.0,
+   "dur": 1.6,
+   "text": "RECONSIDER"
+  },
+  {
+   "type": "motion",
+   "kind": "stamp",
+   "t": 94.9,
+   "dur": 1.4,
+   "text": "PRESSED",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 104.0,
+   "dur": 1.9,
+   "text": "WHAT DOES THAT SAY?",
+   "size": 110
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 110.45,
+   "dur": 2.85,
+   "question": "WHO'S RIGHT?",
+   "options": [
+    "GRANT",
+    "NATHAN"
+   ]
+  }
+ ],
+ "extra_sfx": []
+}

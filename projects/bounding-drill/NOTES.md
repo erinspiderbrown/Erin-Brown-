@@ -15,7 +15,7 @@
 1. Crop the face to 2000×1778 at (813, 250), scale to 1440×1280, then run `tighten.py` (71.2 s → 68.5 s).
 2. Transcript: medium.en misheard several words, so they were checked against large-v3. Fixes: "mid-rep", "mid-run", "mid-bound", "mid-race", "track meet", "get you rolled".
 3. New motion kinds:
-   - `track`: top-down oval where two runners come off the curve and start bounding (`tc`, `tb`, `back`).
+   - `bounding` (was `track`): top-down oval where two runners come off the curve and start bounding (`tc`, `tb`, `back`).
    - `jail`: bars slam down on a coach figure, then the sentence text.
 4. Render with `python3 ../../editor/build.py plan.json`, then re-encode at `-crf 20 -preset slow` (plus a `-crf 24` phone copy).
 

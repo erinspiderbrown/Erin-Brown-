@@ -27,7 +27,7 @@ Photos:
 ## Steps
 1. Transcribe with large-v3. Fixes: "slam-dunking", "three-point", "y'all". Swears are censored in captions only (f*ck, sh*t); the audio is untouched.
 2. Crop the face to 2000×1778 at (863, 250), scale to 1440×1280, then run `tighten.py` (87.6 s → 82.4 s).
-3. New motion kind `scoreboard`: arena LED board counts up to the final, with a FINAL lamp and a margin slam.
+3. New motion kind `ledscore` (was `scoreboard`): arena LED board counts up to the final, with a FINAL lamp and a margin slam.
 4. Render, then re-encode at `-crf 20` plus a `-crf 24` phone copy.
 
 ## Title

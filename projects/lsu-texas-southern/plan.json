@@ -374,7 +374,7 @@
   },
   {
    "type": "motion",
-   "kind": "scoreboard",
+   "kind": "ledscore",
    "t": 7.5,
    "dur": 5.4,
    "home": "LSU",
