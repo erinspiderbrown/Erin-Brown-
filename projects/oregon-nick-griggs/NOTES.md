@@ -47,3 +47,10 @@ v2 cinematic (CLAUDE.md, "Default editing method"):
 ## Exports
 - `exports/oregon_nick_griggs_hq.mp4`: Git LFS, 155 MB, SSIM 0.982 vs master.
 - `exports/oregon_nick_griggs_phone.mp4`: 57 MB.
+
+## Posted (Nov 18, 2026)
+- Cover: the owner's own thumbnail (`exports/thumbnails/reference/oregon_nick_griggs_owner_thumb.png`), added as the first 0.1 s via `editor/social_cover.sh`.
+- YouTube Short (The Erin Brown, public): https://www.youtube.com/watch?v=qtDpzvrssaY
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df5cHVlivWG/
+- TikTok (Erin Spider Brown, public): delivered; vidIQ returned no post URL.
+- Facebook: the Page reconnect failed (Facebook didn't share the Page with vidIQ). The owner is posting it manually.
