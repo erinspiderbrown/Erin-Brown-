@@ -71,3 +71,7 @@
 - **Caveat:** the best source is a 1206 px screenshot. A higher-res photo of Foster would make a sharper cover.
 
 ## Delivered
+- **Dropbox:** `/TikTok Exports/shea_foster_tiktok_hq.mp4` plus both covers. content_hash verified.
+- **YouTube Short and Instagram reel:** the owner declined both when asked to approve them, so they were not posted.
+- **Facebook Page** (E.Diamondz): https://www.facebook.com/reel/1605902347871860 . It was sent in the same step as the declined posts and was still processing when last checked.
+- **TikTok:** the owner posts it himself.
