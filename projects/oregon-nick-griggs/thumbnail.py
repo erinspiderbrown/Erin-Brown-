@@ -37,7 +37,7 @@ def drop(img, xy, blur=16, off=(8, 14), a=190):
 
 
 # subject: the owner, full head and shoulders, soft rim, bottom faded into the headline
-_f = Image.open('ph/f_74.3.png').convert('RGB').crop((840, 0, 3240, 2160))
+_f = Image.open('ph/owner_74.3.jpg').convert('RGB').crop((840, 0, 3240, 2160))
 SW = 1320; SH = round(_f.height * SW / _f.width)
 subj = ImageEnhance.Sharpness(grade(_f.resize((SW, SH), Image.LANCZOS), 1.12, 1.08, 1.12)).enhance(1.15)
 mask = remove(_f, session=new_session('u2net_human_seg'), only_mask=True).resize((SW, SH), Image.LANCZOS)
