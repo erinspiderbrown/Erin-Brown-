@@ -75,6 +75,9 @@
 
 ## Delivered
 - **Dropbox:** `/TikTok Exports/shea_foster_tiktok_hq.mp4` plus both covers. content_hash verified.
-- **YouTube Short and Instagram reel:** the owner declined both when asked to approve them, so they were not posted.
+- **YouTube Short:** https://www.youtube.com/watch?v=tiahINMws58 (posted 18 Nov at the owner's request, with his thumbnail sent as the custom thumbnail).
+- **TikTok** (Erin Spider Brown, posted through vidIQ at his request): https://www.tiktok.com/@erinspiderbrown/video/7709618129286089997
+- **Instagram reel:** not posted. He declined it each time it was put to him. A sub-299 MB copy (CRF 19, 221 MB) was made because the HQ file is over Instagram's limit.
+- **Owner's thumbnail in Dropbox:** `/TikTok Exports/shea_foster_thumb_FINAL.jpg` (hash verified).
 - **Facebook Page** (E.Diamondz): https://www.facebook.com/reel/1605902347871860 . It was sent in the same step as the declined posts and was still processing when last checked.
 - **TikTok:** the owner posts it himself.
