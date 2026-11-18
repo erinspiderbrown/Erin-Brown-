@@ -1,0 +1,70 @@
+[
+ {
+  "fx": "title_card",
+  "out": "fx/hook.mp4",
+  "dur": 5.0,
+  "bg_src": "raw/stock/hay63.jpg",
+  "bg_t": 0,
+  "title": "LOST HIS MIND?",
+  "sub": "OREGON'S JERRY SCHUMACHER",
+  "size": 165,
+  "ty": 0.4,
+  "force": true
+ },
+ {
+  "fx": "title_card",
+  "out": "fx/both.mp4",
+  "dur": 3.0,
+  "bg_src": "raw/photo1.jpg",
+  "bg_t": 0,
+  "title": "HE DID BOTH",
+  "sub": "FOREIGN  +  PRO",
+  "size": 190,
+  "ty": 0.42,
+  "force": true
+ },
+ {
+  "fx": "progression",
+  "out": "fx/facts.mp4",
+  "dur": 5.2,
+  "bg_src": "raw/stock/hay70.jpg",
+  "bg_t": 0,
+  "title": "NICK GRIGGS",
+  "cols": [
+   {
+    "head": "AGE",
+    "t": 0.3,
+    "rows": [
+     [
+      "YEARS OLD",
+      "21"
+     ]
+    ]
+   },
+   {
+    "head": "ELIGIBILITY",
+    "t": 1.2,
+    "hi": true,
+    "rows": [
+     [
+      "YEARS LEFT",
+      "3"
+     ]
+    ]
+   }
+  ],
+  "force": true
+ },
+ {
+  "fx": "title_card",
+  "out": "fx/end.mp4",
+  "dur": 3.9,
+  "bg_src": "raw/stock/hay63.jpg",
+  "bg_t": 0,
+  "title": "DOUBLE STANDARD?",
+  "sub": "WHAT Y'ALL THINK?",
+  "size": 150,
+  "ty": 0.4,
+  "force": true
+ }
+]

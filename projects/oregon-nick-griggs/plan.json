@@ -1,0 +1,298 @@
+{
+ "workdir": "work/build2",
+ "output": "out/oregon_v2style.mp4",
+ "words": "work/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 100.35,
+ "min_duration": 61,
+ "face": {
+  "src": "work/aroll.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "unsharp=5:5:0.5:5:5:0,vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "Oregon",
+  "rabid",
+  "mind,",
+  "professional",
+  "college.",
+  "interview",
+  "greatest",
+  "regrets",
+  "criticize",
+  "foreign",
+  "both",
+  "simultaneously.",
+  "NCAA",
+  "NCAA.",
+  "rules,",
+  "good.",
+  "NBA",
+  "NFL,",
+  "NIL",
+  "Nick",
+  "preaching",
+  "29",
+  "freshmen,",
+  "rules.",
+  "Jerry",
+  "pro",
+  "contract,",
+  "Professionalism",
+  "criticism,",
+  "think?"
+ ],
+ "flash": false,
+ "meme_sfx": [
+  [
+   "impact_quick_zoom",
+   31.5,
+   0.22,
+   0.9
+  ],
+  [
+   "impact_quick_zoom",
+   79.8,
+   0.22,
+   0.9
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "fx/hook.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.86,
+   "broll": {
+    "src": "raw/stock/hay70.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "full",
+   "start": 7.6,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "split",
+   "start": 14.5,
+   "broll": {
+    "src": "raw/stock/hay78.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "whip:down"
+  },
+  {
+   "type": "split",
+   "start": 20.9,
+   "broll": {
+    "src": "raw/stock/hay61.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 27.8,
+   "broll": {
+    "src": "raw/stock/hay80.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 31.5,
+   "broll": {
+    "src": "fx/both.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "split",
+   "start": 34.4,
+   "broll": {
+    "src": "raw/stock/hay64.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 37.75,
+   "broll": {
+    "src": "work/img/card2.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 63.55,
+   "broll": {
+    "src": "raw/stock/hay69.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "whip:right"
+  },
+  {
+   "type": "split",
+   "start": 72.3,
+   "broll": {
+    "src": "raw/stock/hay72.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 79.8,
+   "broll": {
+    "src": "fx/facts.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 84.9,
+   "broll": {
+    "src": "raw/photo1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 88.2,
+   "broll": {
+    "src": "raw/stock/haypano.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 92.9,
+   "broll": {
+    "src": "raw/stock/hay63.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 96.45,
+   "broll": {
+    "src": "fx/end.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  }
+ ],
+ "zooms": [
+  [
+   20.9,
+   22.6,
+   1.08
+  ],
+  [
+   63.6,
+   65.6,
+   1.08
+  ],
+  [
+   77.9,
+   79.4,
+   1.12
+  ]
+ ],
+ "graphics": []
+}
