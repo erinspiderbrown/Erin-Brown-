@@ -29,3 +29,12 @@
 ## Where the owner's wording differs
 - "No such thing as a professional contract": the coach says pro track deals are *NIL-style* sponsorship contracts (paid to wear product and make appearances), not that they aren't paid. The edit uses the coach's own words for it.
 - Griggs isn't named by the owner. The edit names him from the interview context (the coach says "Nick").
+
+## Delivered / posted (18 Nov 2026), old style
+- Export `exports/pro_nil_griggs_tiktok_hq.mp4`: 1:41, CRF 16, 222 MB (LFS), SSIM 0.991, −14.1 LUFS.
+  - Take peaked at 0 dBFS, so declip + pre-trim ran.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+- YouTube Short: https://www.youtube.com/watch?v=xNYUHIsfO8w
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df5bmiQmWUB/
+- Facebook: not posted (Page auto-shares). TikTok: owner posts from the app with Upload HD.
+- Cover: the 2023 Worlds heat photo with Griggs sharp and the rest lightly blurred, plus a red ring. It's the only freely licensed photo of him, and he's partly blocked, so a full cut-out wasn't possible.
