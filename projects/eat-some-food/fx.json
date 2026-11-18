@@ -1,0 +1,80 @@
+[
+ {
+  "fx": "headline_card",
+  "out": "fx/nyt_card.mp4",
+  "dur": 3.5,
+  "bg_src": "news/web_5686151.mp4",
+  "bg_t": 20.0,
+  "outlet": "The New York Times \u00b7 Opinion video",
+  "date": "Nov 7, 2019",
+  "headline": "I Was the Fastest Girl in America, Until I Joined Nike",
+  "pull": "MARY CAIN: 5 BROKEN BONES"
+ },
+ {
+  "fx": "title_card",
+  "out": "fx/xray_card.mp4",
+  "dur": 3.8,
+  "bg_src": "br/p5722222.mp4",
+  "bg_t": 5.0,
+  "title": "STRESS FRACTURES",
+  "sub": "TENDON TEARS \u00b7 BROKEN BONES",
+  "size": 190
+ },
+ {
+  "fx": "freeze_pop",
+  "out": "fx/allie_freeze.mp4",
+  "frame": [
+   1080,
+   960
+  ],
+  "src": "up/allie.mp4",
+  "t": 2.5,
+  "dur": 3.5,
+  "title": "ALLIE OSTRANDER",
+  "sub": "3\u00d7 NCAA CHAMPION \u00b7 BOISE STATE",
+  "ty": 0.12,
+  "title_size": 140,
+  "sy": 0.92
+ },
+ {
+  "fx": "headline_card",
+  "out": "fx/adn_card.mp4",
+  "dur": 4.8,
+  "bg_src": "news/x61x0gl.mp4",
+  "bg_t": 30.0,
+  "outlet": "Anchorage Daily News",
+  "date": "June 12, 2021",
+  "headline": "Alaska running star Allie Ostrander says treatment of a long-term eating disorder is her priority as Olympic Trials approach",
+  "pull": "5 WEEKS IN TREATMENT"
+ },
+ {
+  "fx": "parallax",
+  "out": "fx/myhre.mp4",
+  "frame": [
+   1080,
+   960
+  ],
+  "photo": "raw/ph1.jpg",
+  "dur": 5.1,
+  "text": "MARTHE KATRINE MYHRE",
+  "sub": "5\u00d7 NORWEGIAN MARATHON CHAMPION",
+  "fy": 0.3,
+  "ty": 0.1,
+  "size": 110,
+  "subj_scale": 0.9,
+  "cy": 0.6,
+  "sy": 0.92
+ },
+ {
+  "fx": "headline_card",
+  "out": "fx/myhre_card.mp4",
+  "dur": 3.6,
+  "bg_src": "raw/ph1.jpg",
+  "bg_t": 0,
+  "outlet": "NationalWorld",
+  "date": "December 2024",
+  "headline": "Marthe Katrine Myhre: Norwegian marathon runner dies aged 39",
+  "pull": "LONG-TERM EATING DISORDER",
+  "force": true
+ }
+]

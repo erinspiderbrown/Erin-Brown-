@@ -296,6 +296,40 @@ def title_card(out, dur, bg_src, bg_t, title, sub=None, fx=0.5, fy=0.5, size=230
         W_.add(grade(fr, grain=0.008, strength=0.6))
     W_.close()
 
+def headline_card(out, dur, bg_src, bg_t, outlet, date, headline, pull=None, fx=0.5, fy=0.5, bg_blur=14):
+    """A real published headline, recreated as a clean article card (outlet + date + headline, optional pull quote
+    highlighted on the word). Plain type, no outlet logos: it quotes the headline, it doesn't imitate the page."""
+    bg = frame_at(bg_src, bg_t, fx, fy).filter(ImageFilter.GaussianBlur(bg_blur))
+    bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 9, 14)), 0.55)
+    W_ = Writer(out); n = int(dur * FPS); pw = W - 120
+    f_h = font('Montserrat-Black.ttf', 62 if H > 1200 else 50)
+    words = headline.split(); lines, cur = [], ''
+    for w_ in words:
+        t2 = (cur + ' ' + w_).strip()
+        if f_h.getlength(t2) > pw - 80: lines.append(cur); cur = w_
+        else: cur = t2
+    lines.append(cur)
+    lh = int(f_h.size * 1.18); ph = 150 + lh * len(lines) + (130 if pull else 40)
+    for i in range(n):
+        t = i / FPS; fr = zoom(bg, 1.02 + 0.03 * t / dur).convert('RGBA')
+        a = ease(t / 0.35); y0 = (H - ph) / 2 + 60 * (1 - a)
+        card = Image.new('RGBA', (pw, ph), (248, 246, 240, int(250 * a))); d = ImageDraw.Draw(card)
+        d.text((40, 36), outlet.upper(), font=font('Montserrat-Black.ttf', 30), fill=(20, 20, 24, int(255 * a)))
+        d.text((40, 76), date.upper(), font=font('Montserrat-ExtraBold.ttf', 24), fill=(120, 120, 128, int(255 * a)))
+        d.line([(40, 118), (pw - 40, 118)], fill=(20, 20, 24, int(255 * a)), width=3)
+        for k, ln in enumerate(lines):
+            la = ease((t - 0.25 - 0.12 * k) / 0.3)
+            d.text((40, 140 + k * lh), ln, font=f_h, fill=(14, 14, 18, int(255 * la)))
+        if pull:
+            pa = ease((t - 0.9) / 0.4); py = 150 + lh * len(lines) + 10
+            hl = int((pw - 80) * ease((t - 1.0) / 0.5))
+            d.rectangle([40, py, 40 + hl, py + 70], fill=GOLD + (int(210 * pa),))
+            d.text((54, py + 12), pull, font=font('Montserrat-Black.ttf', 40 if H > 1200 else 34), fill=(14, 14, 18, int(255 * pa)))
+        sh = Image.new('RGBA', card.size, (0, 0, 0, 0)); sh.paste((0, 0, 0, int(140 * a)), (0, 0), card.split()[3])
+        sh = sh.filter(ImageFilter.GaussianBlur(18)); fr.alpha_composite(sh, (60 + 8, int(y0) + 16)); fr.alpha_composite(card, (60, int(y0)))
+        W_.add(grade(fr, grain=0.006, strength=0.4))
+    W_.close()
+
 if __name__ == '__main__':
     spec = json.load(open(sys.argv[1]))
     only = set(sys.argv[2:])
