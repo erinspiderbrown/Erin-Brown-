@@ -66,6 +66,8 @@
 - Default face cleanup, **no filter**, `polish` voice. CRF 16 HQ export.
 
 ## Cover
+- **v2 (18 Nov, designed graphic per owner):** Foster cut-out over his Southland backdrop (painted out and blurred), OSU race card with a red ring on him, Paris Team USA card ("PARIS: WITHDREW"), EPO vial, "HE WAS / NOT KENYAN", the "ALL-AMERICAN · CAUGHT ON EPO" ribbon and "BANNED · 4 YEARS" tape. `thumb_pro/`.
+- v1 (replaced):
 - Owner's Southland MVP photo (p1, upscaled) on its own Southland backdrop, slightly blurred.
 - Text: "NOT KENYAN" / "BANNED 4 YEARS", with a red "EPO" box. No screen grabs, no colour burst, and the owner isn't in it.
 - **Caveat:** the best source is a 1206 px screenshot. A higher-res photo of Foster would make a sharper cover.

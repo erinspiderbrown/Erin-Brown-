@@ -1,0 +1,154 @@
+{
+ "P_916": {
+  "W": 1080,
+  "H": 1920,
+  "els": [
+   {
+    "t": "bg",
+    "src": "bg.jpg"
+   },
+   {
+    "t": "card",
+    "src": "card_pich.jpg",
+    "x": 30,
+    "y": 620,
+    "iw": 330,
+    "ih": 330,
+    "pos": "50% 25%",
+    "rot": -7,
+    "cap": "MEN'S TJ: 7"
+   },
+   {
+    "t": "card",
+    "src": "card_rojas.jpg",
+    "x": 40,
+    "y": 1060,
+    "iw": 320,
+    "ih": 300,
+    "pos": "50% 30%",
+    "rot": 5,
+    "cap": "WOMEN'S TJ: 12"
+   },
+   {
+    "t": "subj",
+    "src": "subj.png",
+    "x": 360,
+    "y": 560,
+    "w": 680
+   },
+   {
+    "t": "stamp",
+    "text": "8.30 M",
+    "x": 640,
+    "y": 1250,
+    "size": 110,
+    "rot": -8
+   },
+   {
+    "t": "text",
+    "cls": "not",
+    "text": "ONLY 12 MADE IT",
+    "y": 150,
+    "size": 100,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "big",
+    "text": "0 AMERICANS",
+    "y": 250,
+    "size": 190,
+    "rot": -3
+   },
+   {
+    "t": "ribbon",
+    "text": "LA28 LONG JUMP STANDARD",
+    "y": 460,
+    "size": 54
+   },
+   {
+    "t": "tape",
+    "text": "CUT THE EVENT?",
+    "y": 1430,
+    "rot": -6,
+    "size": 84
+   }
+  ]
+ },
+ "P_34": {
+  "W": 1080,
+  "H": 1440,
+  "els": [
+   {
+    "t": "bg",
+    "src": "bg.jpg"
+   },
+   {
+    "t": "card",
+    "src": "card_pich.jpg",
+    "x": 30,
+    "y": 420,
+    "iw": 300,
+    "ih": 290,
+    "pos": "50% 25%",
+    "rot": -7,
+    "cap": "MEN'S TJ: 7"
+   },
+   {
+    "t": "card",
+    "src": "card_rojas.jpg",
+    "x": 40,
+    "y": 800,
+    "iw": 290,
+    "ih": 260,
+    "pos": "50% 30%",
+    "rot": 5,
+    "cap": "WOMEN'S TJ: 12"
+   },
+   {
+    "t": "subj",
+    "src": "subj.png",
+    "x": 400,
+    "y": 370,
+    "w": 580
+   },
+   {
+    "t": "stamp",
+    "text": "8.30 M",
+    "x": 660,
+    "y": 960,
+    "size": 96,
+    "rot": -8
+   },
+   {
+    "t": "text",
+    "cls": "not",
+    "text": "ONLY 12 MADE IT",
+    "y": 20,
+    "size": 90,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "big",
+    "text": "0 AMERICANS",
+    "y": 110,
+    "size": 175,
+    "rot": -3
+   },
+   {
+    "t": "ribbon",
+    "text": "LA28 LONG JUMP STANDARD",
+    "y": 300,
+    "size": 48
+   },
+   {
+    "t": "tape",
+    "text": "CUT THE EVENT?",
+    "y": 1140,
+    "rot": -6,
+    "size": 76
+   }
+  ]
+ }
+}

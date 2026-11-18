@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url('file:///home/user/Erin-Brown-/editor/assets/fonts/Anton-Regular.ttf')}
+@font-face{font-family:MB;src:url('file:///home/user/Erin-Brown-/editor/assets/fonts/Montserrat-Black.ttf')}
+html,body{margin:0;background:#000}
+#c{position:relative;overflow:hidden;width:1080px}
+.a{position:absolute}
+.bg{inset:0;width:100%;height:100%;object-fit:cover}
+.grade{inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 35%,rgba(0,0,0,.55) 100%),linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0) 28%,rgba(0,0,0,0) 62%,rgba(0,0,0,.7))}
+.subj{filter:drop-shadow(0 0 0 #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 28px rgba(255,200,61,.55)) drop-shadow(0 30px 40px rgba(0,0,0,.6)) contrast(1.06) saturate(1.1)}
+.hl{font-family:Anton;text-transform:uppercase;line-height:.88;text-align:center;width:1080px;left:0}
+.big{color:#FFE11A;-webkit-text-stroke:14px #000;paint-order:stroke fill;
+     text-shadow:0 4px 0 #b88a00,0 8px 0 #9a7200,0 12px 0 #7a5a00,0 16px 0 #000,0 22px 30px rgba(0,0,0,.7)}
+.not{color:#fff;-webkit-text-stroke:12px #000;paint-order:stroke fill;text-shadow:0 8px 0 #000}
+.ribbon{left:50%;transform:translateX(-50%) rotate(-3deg);background:#E8231E;color:#fff;font-family:Anton;letter-spacing:1px;
+        padding:10px 34px 14px;border:6px solid #fff;border-radius:14px;box-shadow:0 12px 0 rgba(0,0,0,.5);white-space:nowrap}
+.card{background:#fff;padding:14px 14px 70px;box-shadow:0 22px 40px rgba(0,0,0,.65);border-radius:6px}
+.card img{display:block;object-fit:cover}
+.card .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:Anton;font-size:46px;color:#111;letter-spacing:1px}
+.ring{border:12px solid #E8231E;border-radius:50%;box-shadow:0 0 0 4px #fff,0 0 24px rgba(232,35,30,.9),inset 0 0 0 4px #fff}
+.tape{left:-80px;width:1240px;background:repeating-linear-gradient(-45deg,#FFE11A 0 46px,#111 46px 92px);box-shadow:0 14px 30px rgba(0,0,0,.6);
+      border-top:6px solid #111;border-bottom:6px solid #111}
+.tape span{display:block;margin:14px auto;width:max-content;background:#111;color:#FFE11A;font-family:Anton;padding:4px 30px 8px;letter-spacing:3px}
+.stamp{font-family:Anton;color:#E8231E;border:10px solid #E8231E;border-radius:14px;padding:0 22px 6px;background:rgba(255,255,255,.88);box-shadow:0 10px 24px rgba(0,0,0,.5)}
+</style></head><body><div id="c"></div>
+<script>
+const L = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const c = document.getElementById('c'); c.style.height = L.H + 'px';
+const vial = (w) => `<svg width="${w}" viewBox="0 0 120 300" style="overflow:visible;filter:drop-shadow(0 0 18px rgba(232,35,30,.8)) drop-shadow(0 10px 14px rgba(0,0,0,.6))">
+  <rect x="34" y="0" width="52" height="34" rx="6" fill="#bbb" stroke="#fff" stroke-width="4"/>
+  <rect x="40" y="30" width="40" height="18" fill="#888"/>
+  <path d="M28 48 h64 v210 a32 32 0 0 1 -64 0 z" fill="rgba(220,240,255,.85)" stroke="#fff" stroke-width="6"/>
+  <path d="M34 150 h52 v108 a26 26 0 0 1 -52 0 z" fill="#E8231E"/>
+  <rect x="22" y="90" width="76" height="70" rx="6" fill="#fff" stroke="#111" stroke-width="4"/>
+  <text x="60" y="140" text-anchor="middle" font-family="Anton" font-size="42" fill="#111">EPO</text></svg>`;
+c.innerHTML = L.els.map(e => {
+  const p = `left:${e.x}px;top:${e.y}px;${e.w ? 'width:' + e.w + 'px;' : ''}${e.h ? 'height:' + e.h + 'px;' : ''}transform:rotate(${e.rot || 0}deg);${e.css || ''}`;
+  switch (e.t) {
+    case 'bg': return `<img class="a bg" src="${e.src}"><div class="a grade"></div>`;
+    case 'subj': return `<img class="a subj" src="${e.src}" style="${p}">`;
+    case 'text': return `<div class="a hl ${e.cls}" style="top:${e.y}px;font-size:${e.size}px;transform:rotate(${e.rot || 0}deg)">${e.text}</div>`;
+    case 'ribbon': return `<div class="a ribbon" style="top:${e.y}px;font-size:${e.size}px">${e.text}</div>`;
+    case 'card': return `<div class="a card" style="${p}"><img src="${e.src}" style="width:${e.iw}px;height:${e.ih}px;object-position:${e.pos || 'center'}">${e.ring ? `<div class="a ring" style="left:${e.ring[0]}px;top:${e.ring[1]}px;width:${e.ring[2]}px;height:${e.ring[3]}px"></div>` : ''}<div class="cap">${e.cap}</div></div>`;
+    case 'tape': return `<div class="a tape" style="top:${e.y}px;transform:rotate(${e.rot}deg)"><span style="font-size:${e.size}px">${e.text}</span></div>`;
+    case 'vial': return `<div class="a" style="${p}">${vial(e.w)}</div>`;
+    case 'stamp': return `<div class="a stamp" style="${p}font-size:${e.size}px">${e.text}</div>`;
+  }
+}).join('');
+</script></body></html>

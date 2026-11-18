@@ -1,0 +1,164 @@
+{
+ "P_916": {
+  "W": 1080,
+  "H": 1920,
+  "els": [
+   {
+    "t": "bg",
+    "src": "bg.jpg"
+   },
+   {
+    "t": "card",
+    "src": "card_osu.jpg",
+    "x": 640,
+    "y": 560,
+    "iw": 380,
+    "ih": 300,
+    "pos": "72% 30%",
+    "rot": 7,
+    "cap": "OKLAHOMA ST.",
+    "ring": [
+     120,
+     45,
+     135,
+     150
+    ]
+   },
+   {
+    "t": "subj",
+    "src": "shea_cut.png",
+    "x": -40,
+    "y": 520,
+    "w": 930
+   },
+   {
+    "t": "card",
+    "src": "card_paris.jpg",
+    "x": 650,
+    "y": 1000,
+    "iw": 360,
+    "ih": 300,
+    "pos": "50% 30%",
+    "rot": -6,
+    "cap": "PARIS: WITHDREW"
+   },
+   {
+    "t": "vial",
+    "x": 70,
+    "y": 1080,
+    "w": 120,
+    "rot": -14
+   },
+   {
+    "t": "text",
+    "cls": "not",
+    "text": "HE WAS",
+    "y": 150,
+    "size": 110,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "big",
+    "text": "NOT KENYAN",
+    "y": 255,
+    "size": 205,
+    "rot": -3
+   },
+   {
+    "t": "ribbon",
+    "text": "ALL-AMERICAN \u00b7 CAUGHT ON EPO",
+    "y": 470,
+    "size": 54
+   },
+   {
+    "t": "tape",
+    "text": "BANNED \u00b7 4 YEARS",
+    "y": 1430,
+    "rot": -6,
+    "size": 84
+   }
+  ]
+ },
+ "P_34": {
+  "W": 1080,
+  "H": 1440,
+  "els": [
+   {
+    "t": "bg",
+    "src": "bg.jpg"
+   },
+   {
+    "t": "card",
+    "src": "card_osu.jpg",
+    "x": 660,
+    "y": 380,
+    "iw": 340,
+    "ih": 270,
+    "pos": "72% 30%",
+    "rot": 7,
+    "cap": "OKLAHOMA ST.",
+    "ring": [
+     105,
+     38,
+     120,
+     135
+    ]
+   },
+   {
+    "t": "subj",
+    "src": "shea_cut.png",
+    "x": -20,
+    "y": 360,
+    "w": 770
+   },
+   {
+    "t": "card",
+    "src": "card_paris.jpg",
+    "x": 680,
+    "y": 760,
+    "iw": 320,
+    "ih": 260,
+    "pos": "50% 30%",
+    "rot": -6,
+    "cap": "PARIS: WITHDREW"
+   },
+   {
+    "t": "vial",
+    "x": 60,
+    "y": 800,
+    "w": 100,
+    "rot": -14
+   },
+   {
+    "t": "text",
+    "cls": "not",
+    "text": "HE WAS",
+    "y": 20,
+    "size": 96,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "big",
+    "text": "NOT KENYAN",
+    "y": 110,
+    "size": 185,
+    "rot": -3
+   },
+   {
+    "t": "ribbon",
+    "text": "ALL-AMERICAN \u00b7 CAUGHT ON EPO",
+    "y": 300,
+    "size": 48
+   },
+   {
+    "t": "tape",
+    "text": "BANNED \u00b7 4 YEARS",
+    "y": 1140,
+    "rot": -6,
+    "size": 76
+   }
+  ]
+ }
+}

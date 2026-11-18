@@ -233,6 +233,13 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
        - Keep the photo's own background (stadium, track), blurred a little (depth-of-field look) so the athlete stands out sharp in front.
        - **No color-burst/rays backgrounds** (the green/purple burst is banned).
        - **The owner only goes in the cover if he supplies a high-quality photo of himself.** Never cut him out of his talking-head video.
+       - **Make it a designed graphic, not a photo with text** (owner, 18 Nov 2026: "Make a more complex thumbnail. That looks too simple. It looks like no effort was put into making that. Make it a real graphic and do that for all of the thumbnails"). Every cover is layered:
+         - The athlete cut out large (`rembg`, `u2net_human_seg` keeps raised arms), with a white edge, a warm rim glow and a drop shadow.
+         - Behind them, their own real photo's background with the athlete painted out (no ghost) and blurred: `editor/cover_bg.py photo.jpg bg.jpg`.
+         - 2–3 tilted white photo cards of the evidence (other athletes, the race, the moment), each with a short Anton caption carrying a checked fact ("MEN'S TJ: 7", "PARIS: WITHDREW"), and a red ring on the person in the card.
+         - A two-line headline: a white kicker over a huge yellow word with a 3D extrude, plus a red ribbon sub-line.
+         - A story graphic: caution tape ("BANNED · 4 YEARS", "CUT THE EVENT?"), a number badge ("8.30 M"), or an object drawn in SVG (an EPO vial).
+         - Template: `projects/shea-foster/thumb_pro/` (`thumb.html` element types bg/subj/card/text/ribbon/tape/stamp/vial, `layouts.json`, `render.js`). Second example: `projects/cut-events/thumb_pro/`. Render 9:16 and 3:4.
        - This supersedes the older "huge face cut-out over a bright color burst" and "his face cut-out in a corner" options. Tool: `projects/cut-events/thumb_real/`.
      - Cover any burned-in captions/logos. Cut-outs at or below ~1.1× source size.
      - Tool: `projects/bright/thumb_short/` (`thumb.html`, `layouts.json`, `render.js`); render 9:16 and 3:4.
