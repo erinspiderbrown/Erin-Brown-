@@ -179,9 +179,11 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - **TikTok: do NOT post it.** TikTok re-compresses uploads sent through its posting API; the app's "Upload HD" option is only in the app. Deliver the export to Dropbox `/TikTok Exports/` as usual and give him the caption to paste. He posts it on "Erin Spider Brown" from the app with "Upload HD" on.
    - **YouTube Short:** "The Erin Brown" (@theerinbrowntv, `UCiMHg3V2Q414zFIjb8PyTcg`), public, category 17 (Sports), `#Shorts` in the description, the video title as the YouTube title.
    - **Instagram trial reel:** @e.diamondz (`29211548525143718`), `trialParams.graduationStrategy: MANUAL`.
-   - **Facebook: do NOT post** (owner, Nov 17, 2026: "No, it auto-shares"). His Page "E.Diamondz" (`506309812910570`) already gets every video through his own sharing, so posting from here makes duplicates (it happened once; the 6 copies were deleted).
-     - vidIQ can't reach this Page because it's owned by the e.diamondz business portfolio.
-     - Composio's `facebook` connection can (`FACEBOOK_PUBLISH_PAGE_REEL` with the LFS `file_url`). Use it only if he asks for a Facebook post, and check `FACEBOOK_LIST_PAGE_REELS` for the same video length first.
+   - **Facebook Page: post every video** (owner, Nov 18, 2026, choosing "Post every video"; this replaces his Nov 17 "No, it auto-shares").
+     - Page "E.Diamondz" (`506309812910570`), owned by the e.diamondz business portfolio, so vidIQ can't reach it.
+     - Use Composio's `facebook` connection (account "Erin EDiamondz Brown"): `COMPOSIO_SEARCH_TOOLS` ("publish a reel video to a Facebook Page") for a session id, then `FACEBOOK_PUBLISH_PAGE_REEL` with `page_id` `506309812910570`, `file_url` = the export's GitHub LFS URL (`https://media.githubusercontent.com/media/erinspiderbrown/Erin-Brown-/<branch>/exports/<file>.mp4`), `description` = the same caption as Instagram, `video_state` "PUBLISHED". Success returns `video_id` with `upload_success`/`finish_success` true.
+     - **Check for duplicates first:** `FACEBOOK_LIST_PAGE_REELS` and compare `length` to the export's duration; skip if it's already there. On Nov 17, 6 duplicates had to be deleted because old auto-shared copies were already on the Page.
+     - Record the `video_id` in the project NOTES.
    - Caption: the title + one line + `#track #trackandfield` + topic tags. Never the "6starfiles" TikTok or the "GTA 6 Ernie" YouTube channel.
    - Record the post links in the project NOTES.
    - **Low-res sources:** tell him BEFORE the edit when any of his clips/photos are under 1080p (they look soft once enlarged) and ask for better versions or offer to find some.

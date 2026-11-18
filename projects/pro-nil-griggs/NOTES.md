@@ -36,5 +36,6 @@
 - Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
 - YouTube Short: https://www.youtube.com/watch?v=xNYUHIsfO8w
 - Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df5bmiQmWUB/
-- Facebook: not posted (Page auto-shares). TikTok: owner posts from the app with Upload HD.
+- Facebook Page E.Diamondz: reel video_id 1142288781528534 (posted via Composio, Nov 18)
+- TikTok: owner posts from the app with Upload HD.
 - Cover: the 2023 Worlds heat photo with Griggs sharp and the rest lightly blurred, plus a red ring. It's the only freely licensed photo of him, and he's partly blocked, so a full cut-out wasn't possible.
