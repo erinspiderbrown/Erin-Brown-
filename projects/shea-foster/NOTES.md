@@ -66,6 +66,7 @@
 - Default face cleanup, **no filter**, `polish` voice. CRF 16 HQ export.
 
 ## Cover
+- **FINAL (18 Nov): the owner's own thumbnail** (`owner_thumbnail.png`, `exports/thumbnails/shea_foster_thumb_owner.jpg`): the OSU race photo, warm and sharp, with a red-ringed gavel bubble. This is the reference for all future covers (CLAUDE.md step 8).
 - **v2 (18 Nov, designed graphic per owner):** Foster cut-out over his Southland backdrop (painted out and blurred), OSU race card with a red ring on him, Paris Team USA card ("PARIS: WITHDREW"), EPO vial, "HE WAS / NOT KENYAN", the "ALL-AMERICAN · CAUGHT ON EPO" ribbon and "BANNED · 4 YEARS" tape. `thumb_pro/`.
 - v1 (replaced):
 - Owner's Southland MVP photo (p1, upscaled) on its own Southland backdrop, slightly blurred.

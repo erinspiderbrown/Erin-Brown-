@@ -223,7 +223,18 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - Keep it under about 70 characters so it isn't cut off in the Shorts feed. One emoji at most.
    - No claim the video doesn't back up.
    - Put it at the top of the project's `NOTES.md` and give it to the owner with the finished video.
-8. **Thumbnail for every video. Style depends on length** (owner, Nov 2026: "only want to use that [viral] style of thumbnail when I'm making the longer 5-minute plus documentary style videos"):
+8. **Thumbnail for every video.**
+   - **CURRENT STYLE (owner, 18 Nov 2026), which overrides everything below for short videos.** He made his own Shea Foster cover and said: "Use this thumbnail instead. Simple, high quality. And I want my thumbnails in the future to look like this."
+     - Reference: `projects/shea-foster/owner_thumbnail.png` (also `exports/thumbnails/shea_foster_thumb_owner.jpg`, 1086×1448, 3:4).
+     - **One real, sharp photo of the subject** fills the frame: a race/candid moment with the real background softly out of focus, and natural, warm, bright colour.
+       - No cut-outs, no white outlines or glows, no photo cards, no caution tape, no headline text, no number boxes.
+     - **One symbolic inset:** a circle with a thick red `#E8231E` border and a speech-bubble tail pointing at the subject's head.
+       - Inside it, a sharp real photo of an object that tells the story: a judge's gavel for a ban, a stopwatch for a time, a syringe for doping, a measuring tape for a jump standard.
+       - It sits top-right, over sky or background, never over a face.
+     - **Simple and high quality:** sharp at full size, no screen grabs, the owner only if he supplies a HQ photo of himself.
+     - Make 3:4 (1080×1440, his format) plus a 9:16 version for the upload cover (same layout, more background above and below).
+     - The "designed graphic" layered style and the text-hook covers below are **superseded** for short videos. Keep them only for reference or if he asks.
+   - Older guidance (superseded where it conflicts with the above). Style depended on length (owner, Nov 2026: "only want to use that [viral] style of thumbnail when I'm making the longer 5-minute plus documentary style videos"):
    - **5+ minute documentary-style videos:** the VIRAL thumbnail below.
    - **Shorter videos (TikToks under ~5 min):** a bright SHORT-FORM viral cover, NOT the dark cut-out style (owner, Nov 2026, on the Gift Bright cut-out: "That thumbnail is trash. It has no viral or virality in it").
      - Bright and saturated, never dark/moody grading. One 2–4 word hook in Anton, yellow `#FFE11A` with a thick black outline ("15 YEARS OLD", "HE'S ONLY 15").
