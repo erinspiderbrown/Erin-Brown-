@@ -21,5 +21,5 @@ Mary Cain, 6.5 s, from the ABC13/AP package (2019), in the top slot at 27.45 s, 
 - YouTube Short: https://www.youtube.com/watch?v=qOX9pydVHZE
 - Instagram trial reel: https://www.instagram.com/reel/Df5iFNsk6-H/
 - Facebook Page E.Diamondz: reel video_id 1641068960485337
-- TikTok (public): scheduled 22:24 UTC via vidIQ post 70e49fd2-a1fc-4b89-88fc-7d59f87fcc49 (pacing after another post)
+- TikTok (public): https://www.tiktok.com/@erinspiderbrown/video/7709640834228047118 (went out 22:24 UTC)
 - Dropbox: /TikTok Exports/eat_some_food_tiktok.mp4 + thumbs (hashes verified)
