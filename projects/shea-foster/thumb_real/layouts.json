@@ -1,0 +1,100 @@
+{
+ "R_916": {
+  "W": 1080,
+  "H": 1920,
+  "els": [
+   {
+    "t": "img",
+    "src": "bg_916.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080
+   },
+   {
+    "t": "div",
+    "x": 0,
+    "y": 1000,
+    "w": 1080,
+    "h": 560,
+    "css": "background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 75%,rgba(0,0,0,0))"
+   },
+   {
+    "t": "box",
+    "text": "EPO",
+    "x": 740,
+    "y": 640,
+    "size": 150,
+    "rot": 6
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "NOT KENYAN",
+    "x": 0,
+    "y": 1080,
+    "w": 1080,
+    "size": 185,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "BANNED 4 YEARS",
+    "x": 0,
+    "y": 1285,
+    "w": 1080,
+    "size": 104,
+    "rot": -3
+   }
+  ]
+ },
+ "R_34": {
+  "W": 1080,
+  "H": 1440,
+  "els": [
+   {
+    "t": "img",
+    "src": "bg_34.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080
+   },
+   {
+    "t": "div",
+    "x": 0,
+    "y": 760,
+    "w": 1080,
+    "h": 520,
+    "css": "background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.5) 40%,rgba(0,0,0,.5) 75%,rgba(0,0,0,0))"
+   },
+   {
+    "t": "box",
+    "text": "EPO",
+    "x": 720,
+    "y": 470,
+    "size": 140,
+    "rot": 6
+   },
+   {
+    "t": "text",
+    "cls": "yel",
+    "text": "NOT KENYAN",
+    "x": 0,
+    "y": 840,
+    "w": 1080,
+    "size": 175,
+    "rot": -3
+   },
+   {
+    "t": "text",
+    "cls": "wht",
+    "text": "BANNED 4 YEARS",
+    "x": 0,
+    "y": 1035,
+    "w": 1080,
+    "size": 98,
+    "rot": -3
+   }
+  ]
+ }
+}

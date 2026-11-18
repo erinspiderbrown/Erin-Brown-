@@ -1,0 +1,606 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/shea11/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/shea11/out/shea_foster_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/shea-foster/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 153.51,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/shea-foster/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 4.1,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 8.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.58,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.25,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 19.49,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p7_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 24.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.83,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 37.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 41.92,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p8_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 49.53,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.37,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p8_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 63.31,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p7_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 70.99,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 77.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p7_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 84.2,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 91.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.66,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 95.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 103.58,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 105.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 108.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 113.12,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 117.38,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 123.82,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 126.51,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.7
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 133.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p6_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.15,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 137.96,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p8_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 144.96,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.42,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 147.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/shea-foster/broll/p7_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   33.61,
+   34.910000000000004,
+   1.1
+  ],
+  [
+   70.94000000000001,
+   72.64,
+   1.08
+  ],
+  [
+   113.07000000000001,
+   114.77,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.3,
+   "dur": 3.0,
+   "text": "\"ALWAYS DOPING\""
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 4.75,
+   "dur": 3.0,
+   "text": "\"ALWAYS TOO OLD\""
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 13.63,
+   "dur": 11.089999999999998,
+   "items": [
+    "KENYANS ALWAYS DOPING",
+    "ALWAYS TOO OLD",
+    "AFRICANS ALWAYS DOPING"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 28.88,
+   "dur": 2.8,
+   "text": "OKLAHOMA STATE",
+   "sub": "STILLWATER, OK"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 31.63,
+   "dur": 1.4,
+   "text": "SUSPENDED"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 34.31,
+   "dur": 1.6,
+   "text": "NOT KENYAN",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 39.53,
+   "dur": 1.9,
+   "text": "HOUSTON, TX",
+   "sub": "CYPRESS WOODS HS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 50.58,
+   "dur": 2.6,
+   "text": "SOUTHLAND INDOORS 2021"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 54.92,
+   "dur": 6.699999999999998,
+   "title": "2021 SOUTHLAND INDOORS",
+   "rows": [
+    {
+     "event": "MILE \u00b7 1ST",
+     "value": "4:03.57"
+    },
+    {
+     "event": "3000M \u00b7 1ST",
+     "value": "8:00.79"
+    },
+    {
+     "event": "5000M \u00b7 1ST",
+     "value": "13:40.36"
+    }
+   ],
+   "times": [
+    0.9999999999999986,
+    1.8999999999999972,
+    3.059999999999994
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 71.34,
+   "dur": 1.6,
+   "text": "LAPPED IN A MILE",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 77.81,
+   "dur": 2.6,
+   "text": "TRANSFER: OKLAHOMA STATE"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 82.63,
+   "dur": 1.2,
+   "text": "DISAPPEARED",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 84.65,
+   "dur": 2.6,
+   "text": "FLAGSTAFF, AZ",
+   "sub": "SUMMER 2022 TRAINING"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 92.15,
+   "dur": 1.6,
+   "text": "EPO FOUND",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 98.66,
+   "dur": 4.870000000000002,
+   "title": "2022 NCAA XC \u00b7 TEAM",
+   "rows": [
+    {
+     "event": "1 \u00b7 NAU",
+     "value": "83"
+    },
+    {
+     "event": "2 \u00b7 OKLAHOMA ST",
+     "value": "83"
+    }
+   ],
+   "times": [
+    0.2,
+    0.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 104.63,
+   "dur": 2.6,
+   "text": "WON THE 2024 PARA TRIALS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 105.97,
+   "dur": 4.139999999999992,
+   "title": "HOW HE GOT CAUGHT",
+   "rows": [
+    {
+     "event": "JUL 2024 TRIALS",
+     "value": "POSITIVE"
+    },
+    {
+     "event": "PARIS 2024",
+     "value": "WITHDREW"
+    },
+    {
+     "event": "OCT 2026 \u00b7 CAS",
+     "value": "4 YEARS"
+    }
+   ],
+   "times": [
+    0.2,
+    1.4,
+    2.6
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 113.57,
+   "dur": 1.8,
+   "text": "THE AFRICANS?",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 117.83,
+   "dur": 2.6,
+   "text": "LETSRUN \u00b7 NOV 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 127.16,
+   "dur": 2.8,
+   "text": "MY VIDEO CAME FIRST"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 147.05,
+   "dur": 6.4599999999999795,
+   "question": "DID YOU THINK IT WAS HIM?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
