@@ -23,11 +23,15 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
     - a high-res photo (about 3000 px or more on the long side)
   - 1080p landscape clips go in the bottom half of the split only.
   - Check a full-resolution frame of every full-screen shot, especially the opening, before exporting.
-- **Talking-head cleanup (default):** `face_grade` in `build.py` = light denoise (`hqdn3d=2.5:2:4:4`), a little brighter (`eq=brightness=0.02:contrast=1.08:saturation=1.08:gamma=1.06`), contrast-adaptive sharpen (`cas=strength=0.55`), soft vignette. Owner picked this ("option A") in Nov 2026 after saying his face looked low quality and "needs to be sharpened and cleaned up"; the stronger option B looked processed. Comparison: `projects/maddox-krotzer/face_cleanup_options.jpg`.
+- **Face look (owner, 18 Nov 2026): don't alter the talking head's quality at all.** He said: "besides the little darkened edges, don't alter the quality of the talking head video. It's already high quality and it doesn't need to be altered."
+  - The only thing allowed on it is the dark-edge vignette (`vignette=PI/6`).
+  - No sharpening (unsharp, cas), no denoise (hqdn3d), and no contrast, saturation, gamma or colour grade.
+  - `build.py` drops any other filter put in `face_grade`.
+  - This supersedes the older option-A cleanup (denoise, brighten, sharpen).
 - **No filters or "looks" on the video** (owner, Nov 2026, on the Whelpton edit: "The filter that was put on this video is trash. Never do that again").
   - That edit used a custom `face_grade` (shadow-lifting curves, warm/cool colour shifts, a heavy off-centre vignette) plus `broll_grade: "cinematic"` (film colour grade).
   - Never use a custom `face_grade` or any `broll_grade` film look. Even if he asks for "cinematic", get cinematic from pacing, transitions, framing and photo push-ins, not a colour filter.
-  - Only the default option-A cleanup above, which keeps natural colour.
+  - Only the vignette (see Face look above), which keeps his natural look.
 - **B-roll shows the actual subject, never random people** (owner, Nov 2026, also on Whelpton).
   - Use footage and photos of the athlete being discussed: the owner's Dropbox clips first (he often adds the athlete's own training/lifting videos), then real photos of that athlete.
   - Photos of a star he name-checks (e.g. Usain Bolt) are fine.
