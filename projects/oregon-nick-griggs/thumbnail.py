@@ -1,4 +1,4 @@
-# TikTok cover, Oregon / Nick Griggs. Built from the approved NIL cover (projects/nil-reality/thumbnail.py): same headline
+# TikTok cover, Oregon / Nick Griggs. Built from the approved NIL cover (projects/nil-reality/thumbnail.py): same headline NOTE: superseded, the owner supplied the final cover (exports/thumbnails/reference/oregon_nick_griggs_owner_thumb.png).
 # lettering, brush swipe, circle inset, arrow and vignette. Real images only, nothing enlarged:
 # - the owner's 4K take (74.3 s, sharpest skeptical look), wide crop 2400x2160 -> 0.43x, cut out with rembg u2net_human_seg
 # - Hayward Field (Commons, Habst, CC BY-SA 4.0), 1920x2560 -> 0.75x

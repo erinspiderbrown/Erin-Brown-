@@ -175,6 +175,14 @@ The owner said viewers called the old edits "regular Claude editing" with "stick
    - **Extras when they help the story:** a circle inset with a white/red ring and glow, a short red label tag, and a curved red arrow with a white outline pointing at the subject.
    - **Checks:** photos at native resolution, never enlarged. Faces, hands and gestures must not be cut off or covered.
    - **Example:** `projects/matthew-boling/thumbnail.py`.
+   - **Quality bar (owner, Nov 18, 2026): `exports/thumbnails/reference/oregon_nick_griggs_owner_thumb.png`.** He rejected two Claude-made Oregon covers ("looks AI… the words look AI… doesn't look like any effort was put into it") and supplied this one: "this is the type of quality and editing that I want" for every thumbnail. Match it:
+     - **The people are the design.** A large, sharp, expressive hero (big smile, open-hands gesture) fills most of the frame. The second person sits in a big thick circle (team-colour ring, here Oregon yellow) with a bold curved arrow in the same colour linking the two. The story reads from the faces, not from words.
+     - **Polished, premium finish.** A clean, crisp cutout with no halo. A glossy, punchy grade with rich colour and bright highlights, and skin and fabric detail kept sharp.
+     - **Branded backdrop.** A heavily blurred team or venue backdrop with the team's mark big behind the subject (the giant yellow "O"). The whole cover is in the team's colours.
+     - **Little or no text.** No generic two-line slanted headline unless he asks. If text is needed, keep it short and integrated, not stacked on top.
+     - **Not acceptable:** low-res or small cutouts, a talking-head frame as the hero when a better photo of the real subject exists, generic stadium backgrounds, the stock red tag + red arrow + brush swipe template, or text doing the work the images should do.
+     - If the sources available can't reach this level (no sharp, high-res photo of the subject), tell the owner and ask for better photos rather than shipping a weaker cover.
+     - The owner's covers are 3:4 (grid shape). The 9:16 upload cover is the 3:4 image full-width with soft edge-colour fades above and below, so nothing in it is cropped.
 - **Exports too big for GitHub's 100 MB limit at full quality** go through Git LFS (`exports/*_hq.mp4`). Measure SSIM against the master and keep it at 0.98 or higher, rather than squeezing under 100 MB and losing quality.
 
 ## Setup in a fresh session
