@@ -1,0 +1,415 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new3/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new3/out/pro_nil_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/pro-nil-griggs/words_aroll.json",
+ "voice_ss": 0.0,
+ "duration": 99.76,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/work/face_aroll.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/trials63.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 5.6,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward21.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.65,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_new.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 14.99,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/griggs_916.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.0
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 21.55,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward21.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 24.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_race.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 31.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/griggs_wkb.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_new.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 43.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_race.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 46.75,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward21.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.19,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/trials63.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.26,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/trials63.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.75
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 61.76,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_new.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.7
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 67.27,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_race.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 73.29,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/griggs_wkb.jpg",
+    "ss": 0,
+    "focus": [
+     0.7,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 79.23,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward21.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 87.29,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/hayward_new.jpg",
+    "ss": 0,
+    "focus": [
+     0.15,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 92.05,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/griggs_wkb.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 93.44,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/raw/griggs_916.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   6.140000000000001,
+   7.54,
+   1.1
+  ],
+  [
+   67.22,
+   68.52,
+   1.1
+  ],
+  [
+   79.18,
+   80.48,
+   1.08
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 1.5,
+   "dur": 1.8,
+   "text": "NO PRO TRACK RUNNERS?",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 6.64,
+   "dur": 2.2,
+   "text": "NOT A PRO SPORT"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 10.3,
+   "dur": 2.2,
+   "text": "NO \"PRO\" CONTRACTS"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 12.29,
+   "dur": 2.6,
+   "text": "EUGENE, OREGON",
+   "sub": "OREGON HEAD COACH SPEAKS"
+  },
+  {
+   "type": "motion",
+   "kind": "spotlight",
+   "t": 15.64,
+   "dur": 2.6,
+   "x": 594,
+   "y": 230,
+   "r": 130,
+   "lx": 120,
+   "ly": 470,
+   "text": "NICK GRIGGS"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 21.5,
+   "dur": 2.4999999999999987,
+   "title": "NICK GRIGGS \u00b7 IRELAND",
+   "rows": [
+    {
+     "event": "PRO WITH PUMA",
+     "value": "4 YRS"
+    },
+    {
+     "event": "NCAA ELIGIBILITY",
+     "value": "3 YRS"
+    }
+   ],
+   "times": [
+    0.2,
+    1.0
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 24.2,
+   "dur": 4.0,
+   "text": "JERRY SCHUMACHER",
+   "tag": "OREGON HEAD COACH",
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 38.2,
+   "dur": 1.8,
+   "text": "JUST NIL ATHLETES",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 38.68,
+   "dur": 2.0,
+   "text": "JUST NIL CONTRACTS",
+   "hi": 1
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 47.1,
+   "dur": 2.2,
+   "text": "COMPLIANCE READS IT"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 51.24,
+   "dur": 2.0,
+   "text": "SAME AS NIL",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 58.74,
+   "dur": 3.0,
+   "text": "\"PAID TO WEAR THE PRODUCT\""
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 79.48,
+   "dur": 14.059999999999993,
+   "items": [
+    "SIGN A SHOE DEAL",
+    "FALL OFF",
+    "BACK TO THE NCAA"
+   ],
+   "times": [
+    2.560000000000005,
+    7.860000000000002,
+    12.619999999999994
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 97.2,
+   "dur": 1.6,
+   "text": "CHEAT CODE",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 98.8,
+   "dur": 0.9599999999999995,
+   "question": "ARE \"PRO\" RUNNERS JUST NIL ATHLETES?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
