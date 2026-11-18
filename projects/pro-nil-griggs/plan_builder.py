@@ -20,14 +20,14 @@ def at(phrase, n=1):
     sys.exit(f'not found: {phrase}')
 
 
-END = round(W[-1]['e'] + 1.8, 2)
+END = round(W[-1]['e'] + 3.0, 2)
 full = lambda t, src, fx=0.5, fy=0.4, **k: {'type': 'full', 'start': round(t, 2), 'broll': {'src': src, 'ss': 0, 'focus': [fx, fy]}, **k}
 split = lambda t, src, fx=0.5, fy=0.4, **k: {'type': 'split', 'start': round(t, 2), 'broll': {'src': src, 'ss': 0, 'focus': [fx, fy]}, **k}
 M = lambda kind, t, dur, **k: {'type': 'motion', 'kind': kind, 't': round(t, 2), 'dur': dur, **k}
 
 t_notsport, t_contract, t_oregon, t_asking, t_told = at('track is not'), at('no such thing as a professional contract'), at('the oregon coach'), at('they were asking'), at('he literally told')
 t_nil1, t_paid = at('just nil contracts'), at('being paid')
-t_review, t_same, t_these, t_justnil = at('gets reviewed'), at('exact same'), at('these people'), at("they're just nil")
+t_review, t_same, t_these, t_justnil = at('gets reviewed'), at('exact same'), at('these people'), at("they're just nil", 2)
 t_mf, t_haven, t_fall, t_collect, t_cheat = at('so these'), at("if you haven't"), at('fall off'), at('collect'), at('cheat code')
 
 segs = [
@@ -68,8 +68,8 @@ gfx = [
     M('slam', t_justnil, 1.8, text='JUST NIL ATHLETES', hi=1, anchor='upper'),
     M('flow', t_haven + 0.2, t_collect - t_haven - 0.4, items=['SIGN A SHOE DEAL', 'FALL OFF', 'BACK TO THE NCAA'],
       times=[at('signed') - t_haven - 0.2, t_fall - t_haven - 0.2, at('come to college') - t_haven - 0.2]),
-    M('slam', t_cheat - 0.2, 1.6, text='CHEAT CODE', hi=0, anchor='upper'),
-    M('poll', t_cheat + 1.4, END - t_cheat - 1.4, question='ARE "PRO" RUNNERS JUST NIL ATHLETES?', options=['YES', 'NO']),
+    M('slam', at('method') - 0.2, 1.6, text='CHEAT CODE', hi=0, anchor='upper'),
+    M('poll', t_cheat - 0.2, END - t_cheat + 0.2, question='ARE "PRO" RUNNERS JUST NIL ATHLETES?', options=['YES', 'NO']),
 ]
 zooms = [[t_notsport - 0.1, t_notsport + 1.3, 1.1], [t_these - 0.1, t_these + 1.2, 1.1], [t_haven - 0.1, t_haven + 1.2, 1.08]]
 

@@ -3,7 +3,7 @@
  "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new3/out/pro_nil_v1.mp4",
  "words": "/home/user/Erin-Brown-/projects/pro-nil-griggs/words_aroll.json",
  "voice_ss": 0.0,
- "duration": 99.76,
+ "duration": 100.96,
  "face": {
   "src": "/home/user/Erin-Brown-/projects/pro-nil-griggs/work/face_aroll.mov",
   "focus": [
@@ -338,15 +338,6 @@
   {
    "type": "motion",
    "kind": "slam",
-   "t": 38.2,
-   "dur": 1.8,
-   "text": "JUST NIL ATHLETES",
-   "hi": 1,
-   "anchor": "upper"
-  },
-  {
-   "type": "motion",
-   "kind": "slam",
    "t": 38.68,
    "dur": 2.0,
    "text": "JUST NIL CONTRACTS",
@@ -377,6 +368,15 @@
   },
   {
    "type": "motion",
+   "kind": "slam",
+   "t": 70.12,
+   "dur": 1.8,
+   "text": "JUST NIL ATHLETES",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
    "kind": "flow",
    "t": 79.48,
    "dur": 14.059999999999993,
@@ -394,7 +394,7 @@
   {
    "type": "motion",
    "kind": "slam",
-   "t": 97.2,
+   "t": 96.32,
    "dur": 1.6,
    "text": "CHEAT CODE",
    "hi": 0,
@@ -403,8 +403,8 @@
   {
    "type": "motion",
    "kind": "poll",
-   "t": 98.8,
-   "dur": 0.9599999999999995,
+   "t": 97.2,
+   "dur": 3.7599999999999882,
    "question": "ARE \"PRO\" RUNNERS JUST NIL ATHLETES?",
    "options": [
     "YES",
