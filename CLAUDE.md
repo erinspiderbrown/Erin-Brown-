@@ -215,6 +215,7 @@ Learned on the Asafa Powell video (Nov 2026); details in `projects/asafa-powell/
    - **Facebook Page "E.Diamondz"** (id `506309812910570`, the Page linked to @e.diamondz): post every finished video there too, with the same caption as the Instagram reel.
      - Use the Composio Facebook connector, connected 17 Nov 2026: `FACEBOOK_CREATE_VIDEO_POST` with `file_url` set to the export's GitHub LFS media URL. vidIQ has no Facebook Page connected.
      - Then check `FACEBOOK_GET_GRAPH_OBJECT` (fields `permalink_url,status`) until `video_status` is ready, and record the link.
+     - Alternative that posts it as a Page **Reel** (used by the "TikTok editing 2" chat, confirmed working on the Whelpton video): `FACEBOOK_PUBLISH_PAGE_REEL` with `page_id` `506309812910570`, `file_url` = the export's direct URL (GitHub LFS media URL), `description` = title + hashtags, `video_state` `PUBLISHED`. It returns `video_id` with `upload_success`/`finish_success` true.
    - Caption: the title + one line + `#track #trackandfield` + topic tags. Never the "6starfiles" TikTok or the "GTA 6 Ernie" YouTube channel.
    - Record the post links in the project NOTES.
    - **Low-res sources:** tell him BEFORE the edit when any of his clips/photos are under 1080p (they look soft once enlarged) and ask for better versions or offer to find some.
