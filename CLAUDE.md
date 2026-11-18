@@ -25,7 +25,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 
 ## Style
 - **Layout:** talking head on top, B-roll on the bottom most of the time, switching to full-screen B-roll for big moments.
-- **Face look:** no color grade on the talking head; the owner disliked the reddish look from the old contrast and saturation grade. Keep only the dark edges: `face_grade: "vignette=PI/6"` in `style.json`.
+- **Face look (owner, Nov 18, 2026): don't alter the talking head's quality at all.** It's already high quality. The only thing allowed on it is the dark-edge vignette (`face_grade: "vignette=PI/6"`): no sharpening/unsharp, no denoise, no contrast, saturation or colour grade. `build.py` drops any other filter put in `face_grade`. (He first disliked the reddish look from the old contrast and saturation grade, then on Nov 18 said the unsharp should not have been added either.)
 - **Seam:** a clear separation between the face and the B-roll, but soft: `seam_style: "soft"` gives a clean edge with a soft shadow band and a faint 2 px hairline.
   - The face must **not** blend or dissolve into the B-roll; the owner rejected `"blend"`.
   - No bold or colored divider line either; the owner rejected the red line.
@@ -94,7 +94,7 @@ The owner said viewers called the old edits "regular Claude editing" with "stick
   - Keep titles clear of the head (check a frame); titles go above or behind the subject, never hidden.
 - **No stickers:** no stamp/keyword/board/poll graphics by default (`"graphics": []`).
 - **Captions:** `"caption_style": "cine"`: clean white Montserrat ExtraBold phrases that build word by word; key words (names, places, times, the punchline) in `caption_emph` punch in bigger in Anton gold (`caption_accent` `#FFC83D`). Lower third on full-screen shots, on the seam in the split; `cap_y` per segment moves them off on-screen labels.
-- **Grade:** B-roll gets `broll_grade` (gentle contrast, warm highs, cool shadows, light vignette, **light** grain only: heavy grain turns to mush after TikTok's re-encode). The owner's face is never colour-graded; `face_grade` is a light unsharp plus the vignette.
+- **Grade:** B-roll gets `broll_grade` (gentle contrast, warm highs, cool shadows, light vignette, **light** grain only: heavy grain turns to mush after TikTok's re-encode). The owner's face is never touched beyond the vignette: no unsharp, no grade (see Face look).
 - **Transitions:** set per segment, mostly hard `cut`s, with a whip, zoom or glitch at act changes. No flash on every full-screen cut (`"flash": false`).
 - **Sound:** the voice is untouched. Only a couple of quiet hits (via `meme_sfx`), on the freeze frames.
 - **Watermarks:** remove burned-in repost text from clips (`delogo`) before using them.

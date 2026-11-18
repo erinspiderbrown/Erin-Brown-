@@ -98,7 +98,9 @@ def render_segment(plan, seg, a, b, out):
     fss = plan['voice_ss'] + a                 # face stays lip-synced to voice
     bss = max(0.0, br['ss'] + (a - seg['start']))
     dur = b - a
-    grade = plan.get('face_grade', 'hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:saturation=1.06:gamma=0.98,vignette=PI/6')
+    # Owner (Nov 18, 2026): the talking head is already high quality. Nothing but the dark-edge vignette touches it:
+    # no denoise, sharpen, contrast, saturation or colour. Any other filter in face_grade is dropped.
+    grade = ','.join(f for f in plan.get('face_grade', 'vignette=PI/6').split(',') if f.strip().startswith('vignette')) or 'vignette=PI/6'
     bpush = 0.10 if is_img(br['src']) else 0.04
     if seg['type'] == 'split':
         zt = [f"{k-1}*min(1,(t+{a:.3f}-{z0})/0.12)*between(t+{a:.3f},{z0},{z1})" for z0, z1, k in plan.get('zooms', [])
