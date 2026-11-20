@@ -43,3 +43,10 @@
 - A red-ringed bubble with a real stopwatch photo (Commons) pointing at him.
 - No text.
 - 9:16 and 3:4.
+
+## Delivered / posted (20 Nov 2026, owner: "Everywhere")
+- **Dropbox:** `/TikTok Exports/issam_asinga_tiktok_hq.mp4` plus both covers (hash verified).
+- **TikTok** (Erin Spider Brown, posted through vidIQ): https://www.tiktok.com/@erinspiderbrown/video/7710376634137808142
+- **YouTube Short** (custom thumbnail sent): https://www.youtube.com/watch?v=SsnbvysFauQ
+- **Instagram trial reel** (MANUAL): https://www.instagram.com/reel/Df-rVOHnJnH/
+- **Facebook Page** (E.Diamondz): https://www.facebook.com/reel/1073042902450022
