@@ -31,6 +31,6 @@
 - Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df-xh2pE23F/
   - Posted from a 276 MB ~9 Mbps copy, because Instagram caps Reels at 299 MB.
 - Facebook Page E.Diamondz: reel video_id 964030789895213.
-- TikTok: owner posts from the app with Upload HD.
+- TikTok (posted via vidIQ at the owner's request): https://www.tiktok.com/@erinspiderbrown/video/7710392123606060301
 - Talking head processing: vignette only, per the owner's Nov 18 rule.
 - Lip-sync: tightened frame-accurately from the original take (A/V within 5 ms).
