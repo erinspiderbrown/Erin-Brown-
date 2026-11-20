@@ -19,3 +19,10 @@ Talk: 70.2 s raw, 65.4 s after tightening. 4K landscape, cropped and downscaled 
 - "Usually cold and snowy": snow is rare (2018); cold and muddy is common (2019).
 - The 2025 champ Habtom Samuel is East African but Eritrean, not Kenyan.
 - Rocky Hansen has raced little this fall (skipped regionals; reportedly banged up).
+
+## Posted (Nov 20, 2026)
+- TikTok (public): https://www.tiktok.com/@erinspiderbrown/video/7710367688929021198
+- YouTube Short: https://www.youtube.com/watch?v=Tb4S3RFIIz0
+- Instagram trial reel: https://www.instagram.com/reel/Df-nZlWFD-s/
+- Facebook Page E.Diamondz: reel video_id 1582444597254680
+- Dropbox: /TikTok Exports/ncaa_xc_kenyans_tiktok.mp4 + thumbs (hashes verified)
