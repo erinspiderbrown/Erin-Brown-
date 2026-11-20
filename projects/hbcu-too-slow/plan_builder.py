@@ -10,8 +10,8 @@ W = json.load(open(f'{H}/words_aroll.json'))
 TOK = [re.sub(r"[^a-z0-9.'\-*]", '', x['w'].lower()).rstrip('.,?').strip("'") for x in W]
 R = lambda n: f'{H}/raw/{n}.jpg'
 COP = f'{H}/work/clipB_full.mp4'
-T1, LB, LA = 190.2, 4.2, 7.8
-T2 = 202.7 + LB                        # Pop the Balloon insert start (A-roll time)
+T1, LB, LA = 190.17, 4.2, 7.8
+T2 = 202.68 + LB                        # Pop the Balloon insert start (A-roll time)
 
 
 def at(phrase, n=1):
