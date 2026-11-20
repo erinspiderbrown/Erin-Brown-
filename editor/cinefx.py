@@ -26,7 +26,8 @@ def mask_of(im):
     if _sess is None: _sess = new_session('u2net_human_seg')
     return remove(im, session=_sess, only_mask=True).convert('L')
 
-def cover(im, w=W, h=H, fx=0.5, fy=0.5):
+def cover(im, w=None, h=None, fx=0.5, fy=0.5):
+    w = w or W; h = h or H                  # read the current frame size at call time (split-size shots set W, H)
     s = max(w / im.width, h / im.height)
     r = im.resize((max(w, round(im.width * s)), max(h, round(im.height * s))), Image.LANCZOS)
     x = int((r.width - w) * fx); y = int((r.height - h) * fy)
@@ -346,6 +347,6 @@ if __name__ == '__main__':
     for s in spec:
         if only and s['out'] not in only: continue
         if os.path.exists(s['out']) and not s.get('force'): print('cached', s['out']); continue
-        fn = globals()[s.pop('fx')]; s.pop('force', None)
+        fn = globals()[s.pop('effect') if 'effect' in s else s.pop('fx')]; s.pop('force', None)   # 'effect' lets a shot also pass the fx (focus-x) param
         W, H = s.pop('frame', (1080, 1920))      # 'frame': [1080, 960] renders a split-bottom shot (for upscaled sub-1080 footage)
         print('render', s['out'], flush=True); fn(**s)

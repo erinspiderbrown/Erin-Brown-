@@ -1,0 +1,275 @@
+{
+ "workdir": "build",
+ "output": "out/ncaa_xc_kenyans.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 65.41,
+ "min_duration": 61,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "kenyans",
+  "kenyan",
+  "ncaa",
+  "2019",
+  "tomorrow",
+  "cold",
+  "snowy",
+  "snow",
+  "kenya",
+  "extreme",
+  "neanderthal",
+  "mountains",
+  "thrive",
+  "indiana",
+  "60",
+  "perfect",
+  "shine",
+  "wind",
+  "rain",
+  "skies",
+  "sweep",
+  "rocky",
+  "hansen",
+  "victory",
+  "louisville",
+  "colorado",
+  "texas",
+  "tech"
+ ],
+ "flash": false,
+ "zooms": [],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "fx/open_par.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.0,
+   "broll": {
+    "src": "br/kurgat.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 7.1,
+   "broll": {
+    "src": "fx/champ_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 10.9,
+   "broll": {
+    "src": "br/2025_ncaa_men_start.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 14.5,
+   "broll": {
+    "src": "fx/cold_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "split",
+   "start": 19.7,
+   "broll": {
+    "src": "br/2024_ncaa_men_crowd.mp4",
+    "ss": 4,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 24.2,
+   "broll": {
+    "src": "br/2024_ncaa_men_cold.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 27.3,
+   "broll": {
+    "src": "br/2024_ncaa_men_finish.mp4",
+    "ss": 18,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.6,
+   "broll": {
+    "src": "br/lavern.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 36.2,
+   "broll": {
+    "src": "fx/weather_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 40.3,
+   "broll": {
+    "src": "br/kiprotich.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 44.6,
+   "broll": {
+    "src": "br/2025_ncaa_men_start.mp4",
+    "ss": 33,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.1,
+   "broll": {
+    "src": "br/2025_ncaa_men_finish.mp4",
+    "ss": 44.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.0,
+   "broll": {
+    "src": "br/kurgat.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.15
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.0,
+   "broll": {
+    "src": "fx/elsingi.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 60.6,
+   "broll": {
+    "src": "fx/meshack.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 62.4,
+   "broll": {
+    "src": "fx/kimaru_par.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  }
+ ],
+ "graphics": []
+}
