@@ -1,0 +1,841 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new4/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/scratchpad/new4/out/hbcu_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/hbcu-too-slow/words_aroll.json",
+ "voice_ss": 0.0,
+ "duration": 238.9,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/work/face_aroll.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_homecoming.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 9.47,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 14.51,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.25,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.72,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_tsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 27.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 34.05,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_tsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 38.45,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.84,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/asu_campus.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 47.01,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm2.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 51.18,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 55.35,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 59.61,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm1.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 63.88,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 68.14,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 73.18,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/carl_lewis.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 77.53,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 84.56,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 88.98,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.8,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 95.51,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_threepeat.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 100.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 105.98,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_threepeat.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 111.06,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 116.44,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_tsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.15,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 121.83,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 130.32,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 134.15,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 139.39,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac1.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 144.64,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/shsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 149.73,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_tsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 156.35,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 160.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_homecoming.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 161.71,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_stadium.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 166.26,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_tsu.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 170.81,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/swac2.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 175.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm2.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 182.39,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/work/clipB_full.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 186.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/work/clipB_full.mp4",
+    "ss": 3.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 190.2,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/work/clipB_full.mp4",
+    "ss": 8.6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 194.4,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm1.jpg",
+    "ss": 0,
+    "focus": [
+     0.8,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 201.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/asu_campus.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 206.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/asu_night.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 214.83,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/asu_campus.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 220.25,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_storm2.jpg",
+    "ss": 0,
+    "focus": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 225.67,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/asu_night.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 231.71,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/hbcu-too-slow/raw/pv_homecoming.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   114.14,
+   115.44,
+   1.1
+  ],
+  [
+   172.46,
+   173.76,
+   1.1
+  ],
+  [
+   214.78,
+   216.07999999999998,
+   1.1
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 2.76,
+   "dur": 1.5,
+   "text": "TOO SLOW",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 5.66,
+   "dur": 1.6,
+   "text": "CALLED THE POLICE"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 8.14,
+   "dur": 1.6,
+   "text": "HOMECOMING SHUT DOWN",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 12.34,
+   "dur": 2.6,
+   "value": "49",
+   "unit": "S",
+   "label": "400M \u00b7 10TH GRADE",
+   "sub": "first year running"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 14.56,
+   "dur": 2.4,
+   "text": "TEXAS"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 32.06,
+   "dur": 2.0,
+   "text": "PRE-SUPER SHOES"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 37.99,
+   "dur": 1.8,
+   "text": "TAKE THE SAT"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 43.24,
+   "dur": 2.6,
+   "value": "1200",
+   "unit": "",
+   "label": "SAT SCORE",
+   "sub": "took it once"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 55.96,
+   "dur": 4.0,
+   "title": "MY 400M",
+   "rows": [
+    {
+     "event": "10TH GRADE",
+     "value": "49"
+    },
+    {
+     "event": "11TH GRADE",
+     "value": "48.4"
+    }
+   ],
+   "times": [
+    0.2,
+    0.7
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 75.4,
+   "dur": 2.2,
+   "text": "IOWA \u00b7 NEBRASKA"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 85.01,
+   "dur": 2.8,
+   "text": "PRAIRIE VIEW, TEXAS",
+   "sub": "PRAIRIE VIEW A&M \u00b7 HBCU"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 90.03,
+   "dur": 2.6,
+   "text": "TOP 5 AT THEIR CONFERENCE MEET?"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 101.1,
+   "dur": 1.8,
+   "text": "TOO DAMN SLOW",
+   "hi": 2
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 103.48,
+   "dur": 2.4,
+   "text": "\"RUN THE 800 OR THE 200\""
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 111.36,
+   "dur": 1.7,
+   "text": "WALK ON?",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 122.08,
+   "dur": 2.4,
+   "text": "POWER 5 SCHOOLS CALLING"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 130.77,
+   "dur": 1.8,
+   "text": "NEVER AGAIN",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 144.99,
+   "dur": 2.6,
+   "text": "HUNTSVILLE, TEXAS",
+   "sub": "SAM HOUSTON STATE"
+  },
+  {
+   "type": "motion",
+   "kind": "flow",
+   "t": 149.78,
+   "dur": 3.6,
+   "items": [
+    "SAM HOUSTON",
+    "TSU \u00b7 UH",
+    "PV HOMECOMING"
+   ],
+   "times": [
+    0.0,
+    0.6,
+    6.420000000000004
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 160.8,
+   "dur": 1.6,
+   "text": "DEAD PARTY",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 175.56,
+   "dur": 1.8,
+   "text": "CALLED THE COPS",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 190.5,
+   "dur": 3.6,
+   "text": "\"THANK YOU FOR YOUR SERVICE\""
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 196.88,
+   "dur": 1.8,
+   "text": "TOO DAMN SLOW",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 202.21,
+   "dur": 2.6,
+   "text": "TEMPE, ARIZONA",
+   "sub": "ARIZONA STATE"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 205.43,
+   "dur": 2.4,
+   "text": "POP THE BALLOON?!"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 216.08,
+   "dur": 1.6,
+   "text": "TOO SLOW?",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 225.92,
+   "dur": 3.0,
+   "text": "ASU: NEW COACHING STAFF IN 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 231.56,
+   "dur": 7.340000000000015,
+   "question": "PETTY OR JUSTIFIED?",
+   "options": [
+    "PETTY",
+    "JUSTIFIED"
+   ]
+  }
+ ]
+}
