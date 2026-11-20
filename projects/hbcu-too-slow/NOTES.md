@@ -23,3 +23,14 @@
 - **"They all got fired" (ASU):** ASU hired a new head coach (Ryan Vanhoy, July 2026) and a new staff (Aug 2026). The firings are only reported on forums. On screen: "ASU: NEW COACHING STAFF IN 2026".
 - **Legal risk, flagged to the owner:** the story describes a false police report (underage drinking, gunshots). That's a crime in Texas.
 - **Captions:** hard swears and the n-word are starred on screen only; the audio is untouched. "hit a blue HBCU prayer review" fixed to "hit up HBCU Prairie View".
+
+## Delivered / posted (20 Nov 2026), old style
+- Export `exports/hbcu_too_slow_tiktok_hq.mp4`: 3:59, CRF 16, 665 MB (LFS), −14.0 LUFS. Take peaked at 0 dBFS, so declip + pre-trim ran.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+- YouTube: **not posted** (owner: "Don't post it on YouTube").
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/Df-xh2pE23F/
+  - Posted from a 276 MB ~9 Mbps copy, because Instagram caps Reels at 299 MB.
+- Facebook Page E.Diamondz: reel video_id 964030789895213.
+- TikTok: owner posts from the app with Upload HD.
+- Talking head processing: vignette only, per the owner's Nov 18 rule.
+- Lip-sync: tightened frame-accurately from the original take (A/V within 5 ms).
