@@ -1,0 +1,353 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/asinga12/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/asinga12/out/asinga_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/issam-asinga/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 65.0,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/issam-asinga/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race_hd.mp4",
+    "ss": 0.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 3.64,
+   "broll": {
+    "src": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/asinga12/frz/asinga_intro.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 7.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.76,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 11.02,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race.mp4",
+    "ss": 10.0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 15.52,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 18.31,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/lyles_thumb_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 22.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/lyles_paris.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 26.79,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race_hd.mp4",
+    "ss": 1.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 31.06,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/lyles_usatf2_v.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 32.69,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race.mp4",
+    "ss": 5.5,
+    "focus": [
+     0.45,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.07,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race.mp4",
+    "ss": 11.5,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 44.75,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 48.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/lyles_paris.jpg",
+    "ss": 0,
+    "focus": [
+     0.35,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.59,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 58.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/issam-asinga/broll/race.mp4",
+    "ss": 12.5,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   31.38,
+   32.68,
+   1.1
+  ],
+  [
+   54.89,
+   56.59,
+   1.08
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.3,
+   "dur": 3.0,
+   "text": "HE'S COMING BACK"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 7.89,
+   "dur": 1.6,
+   "text": "AIN'T SKIPPED A BEAT",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 11.27,
+   "dur": 6.989999999999999,
+   "title": "THE BAN",
+   "rows": [
+    {
+     "event": "JUL 2023",
+     "value": "GW1516"
+    },
+    {
+     "event": "4-YEAR BAN",
+     "value": "AIU"
+    },
+    {
+     "event": "9.89 U20 RECORD",
+     "value": "WIPED"
+    },
+    {
+     "event": "ELIGIBLE",
+     "value": "AUG 2027"
+    }
+   ],
+   "times": [
+    0.2,
+    1.4,
+    2.6,
+    6.429999999999999
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 21.39,
+   "dur": 2.4,
+   "text": "DISAPPOINTED FACES"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 28.04,
+   "dur": 2.6,
+   "text": "CLERMONT, FL",
+   "sub": "APR 23, 2023"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 31.01,
+   "dur": 1.9300000000000026,
+   "title": "CLERMONT 2023 \u00b7 100M",
+   "rows": [
+    {
+     "event": "1 \u00b7 ASINGA (18)",
+     "value": "9.83w"
+    },
+    {
+     "event": "2 \u00b7 NOAH LYLES",
+     "value": "9.92"
+    }
+   ],
+   "times": [
+    0.2,
+    0.9
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 34.04,
+   "dur": 1.6,
+   "text": "NO RUST",
+   "hi": 1,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 40.7,
+   "dur": 2.6,
+   "text": "SAT OUT. CAME BACK."
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 48.88,
+   "dur": 1.6,
+   "text": "FLOWER BRINGING",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 54.89,
+   "dur": 2.4,
+   "value": "21",
+   "unit": "YEARS OLD",
+   "label": "Issam Asinga",
+   "sub": "22 when his ban ends"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 58.96,
+   "dur": 6.039999999999999,
+   "question": "WILL ASINGA BE ELITE WHEN HE RETURNS?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
