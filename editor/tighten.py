@@ -12,10 +12,14 @@ log = subprocess.run(['ffmpeg', '-i', src, '-af', f'silencedetect=noise={noise}d
                      capture_output=True, text=True).stderr
 st = [float(x) for x in re.findall(r'silence_start: ([\d.]+)', log)]
 en = [float(x) for x in re.findall(r'silence_end: ([\d.]+)', log)]
-cuts = [(a + PAD, b - PAD) for a, b in zip(st, en) if b - a - 2 * PAD > 0.08]
+# snap every cut to the frame grid so the joined video and audio stay the same length (else lip-sync drifts ~0.02 s per cut)
+fr = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=r_frame_rate', '-of', 'csv=p=0', src],
+                    capture_output=True, text=True).stdout.strip().split(',')[0].split('/')
+FPS = float(fr[0]) / float(fr[1]); q = lambda t: round(round(t * FPS) / FPS, 6)
+cuts = [(q(a + PAD), q(b - PAD)) for a, b in zip(st, en) if b - a - 2 * PAD > 0.08]
 ranges, s = [], 0.0
 for a, b in cuts: ranges.append((s, a)); s = b
-ranges.append((s, dur))
+ranges.append((s, q(dur - 0.5 / FPS)))
 def remap(t):
     acc = 0
     for a, b in ranges:
@@ -26,13 +30,21 @@ def remap(t):
 W = json.load(open(wj))
 for w in W: w['s'], w['e'] = round(remap(w['s']), 3), round(remap(w['e']), 3)
 json.dump(W, open(out_w, 'w'))
-fc = []
+# Cut each kept range separately and join them (one big trim/concat filter graph runs out of memory on 4+ minute
+# 1440x1280 takes and the process dies silently with a truncated file).
+import os
+d = os.path.dirname(os.path.abspath(out_v)); parts = []
 for i, (a, b) in enumerate(ranges):
-    fc.append(f"[0:v]trim={a:.3f}:{b:.3f},setpts=PTS-STARTPTS[v{i}]")
-    fc.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={b-a-0.015:.3f}:d=0.015[a{i}]")
-fc.append(''.join(f'[v{i}][a{i}]' for i in range(len(ranges))) + f'concat=n={len(ranges)}:v=1:a=1[cv][ca]')
-r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-filter_complex', ';'.join(fc), '-map', '[cv]', '-map', '[ca]',
-                    '-c:v', 'libx264', '-crf', '10', '-preset', 'fast', '-c:a', 'pcm_s24le', out_v], capture_output=True, text=True)
+    p = f'{d}/_tight_seg_{i:03d}.mov'; parts.append(p)
+    nfr = round((b - a) * FPS); L = nfr / FPS
+    r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{a:.6f}', '-i', src, '-frames:v', str(nfr), '-t', f'{L:.6f}',
+                        '-af', f'apad,atrim=0:{L:.6f},afade=t=in:d=0.015,afade=t=out:st={L - 0.015:.4f}:d=0.015', '-ar', '48000',
+                        '-c:v', 'libx264', '-crf', '10', '-preset', 'fast', '-c:a', 'pcm_s24le', p], capture_output=True, text=True)
+    if r.returncode: sys.exit(r.stderr[-2000:])
+lst = f'{d}/_tight_segs.txt'
+open(lst, 'w').write(''.join(f"file '{os.path.basename(p)}'\n" for p in parts))
+r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', out_v], capture_output=True, text=True)
+for p in parts + [lst]: os.remove(p)
 if r.returncode: sys.exit(r.stderr[-2000:])
 new = sum(b - a for a, b in ranges)
 print(f'{dur:.2f}s -> {new:.2f}s ({len(cuts)} pauses cut)')
