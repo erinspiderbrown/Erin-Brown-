@@ -2,7 +2,11 @@
 usage: python3 upscale.py <model.pth> <in> <out.mp4> <ss> <dur> <outW> <outH|-1> [fps=30]
 (outH -1 keeps the aspect ratio; display rotation is handled; frames are resampled to fps)
 model: https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesr-general-x4v3.pth
-needs: pip install torch --index-url https://download.pytorch.org/whl/cpu"""
+needs: pip install torch --index-url https://download.pytorch.org/whl/cpu
+Owner rule (Nov 23, 2026): upscales must not look blurry or distorted, just good enough to meet the 1080 rule.
+So: always feed the ORIGINAL resolution (never shrink first: that throws detail away), and the AI result is mixed
+with a plain Lanczos/bicubic resize of the original (env UPSCALE_BLEND, default 0.6 = 60% AI) so faces and text keep
+their real texture instead of the waxy AI look. Check a full-resolution frame of every upscale before using it."""
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, subprocess, sys, time
 class SRVGG(nn.Module):
     def __init__(s, nf=64, nc=32, up=4):
@@ -18,6 +22,7 @@ def load(p):
 if __name__=='__main__':
     # usage: srvgg.py model in.mp4 out.mp4 ss dur outW outH
     mp,src,dst,ss,dur,W,H=sys.argv[1:8]; W,H=int(W),int(H); FPS=sys.argv[8] if len(sys.argv)>8 else '30'
+    import os; BLEND=float(os.environ.get('UPSCALE_BLEND','0.6'))
     torch.set_num_threads(4); m=load(mp)
     import json as _j
     st=_j.loads(subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height:stream_side_data=rotation','-of','json',src],capture_output=True,text=True).stdout)['streams'][0]
@@ -34,7 +39,9 @@ if __name__=='__main__':
             if len(buf)<fs: break
             x=torch.from_numpy(np.frombuffer(buf,np.uint8).reshape(ih,iw,3).copy()).permute(2,0,1).float().div(255)[None]
             y=m(x).clamp(0,1)
-            y=F.interpolate(y,size=(H,W),mode='bicubic',antialias=True).clamp(0,1)
+            y=F.interpolate(y,size=(H,W),mode='bicubic',antialias=True)
+            if BLEND<1: y=BLEND*y+(1-BLEND)*F.interpolate(x,size=(H,W),mode='bicubic',antialias=True)
+            y=y.clamp(0,1)
             enc.stdin.write((y[0].permute(1,2,0).mul(255).round().byte().numpy()).tobytes()); n+=1
             if n%30==0: print(n, f'{(time.time()-t0)/n:.2f}s/frame', flush=True)
     enc.stdin.close(); enc.wait(); print('done',n)

@@ -6,6 +6,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
   - Never use sub-1080p footage full-screen. If the owner wants it used, keep it in the split and AI-upscale it first with `editor/upscale.py` (Real-ESRGAN general-x4v3; CPU, about 8 s per frame).
+  - **Upscales must not look blurry or distorted (owner, Nov 23, 2026, all videos, all chats):** make them just good enough to meet the 1080 rule, no more.
+    - Always upscale from the original resolution. Never shrink a clip first to save time: that throws real detail away and comes out blurry.
+    - Scale only to the size the slot needs (e.g. 1440×1280 for the top slot, 1080×960 for the split), not beyond.
+    - `upscale.py` mixes the AI result with a plain resize of the original (`UPSCALE_BLEND`, default 0.6), so faces, hair and text keep their real texture instead of a waxy, smeared AI look. Don't push it to 1.0.
+    - Check a full-resolution frame of every upscaled photo and clip (face, hands, text) before it goes in. If it still looks smeared or soft, flag it to the owner instead of using it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Use the owner's original voice audio, untouched, on every video.** The default is `voice_chain: "original"`.
   - No EQ, no compression, no noise reduction: the owner said processing made his voice "weird / muffled" and "took the bass out".
