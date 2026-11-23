@@ -1,6 +1,10 @@
 """Neural 2x upscale of a low-res clip: light denoise -> FSRCNN x2 -> fine sharpen -> near-lossless H.264.
 Used for owner clips below 1080p (bottom half of the split only; the rules still forbid them full-screen).
-usage: python3 editor/upscale.py in.mov out.mp4 [prefilter]   (prefilter: extra ffmpeg filters, e.g. a crop, applied first)"""
+usage: python3 editor/upscale.py in.mov out.mp4 [prefilter]   (prefilter: extra ffmpeg filters, e.g. a crop, applied first)
+Owner rule (Nov 23, 2026): "make sure that they aren't really blurry or super distorted. Make them just good enough to where they
+meet the quality qualifications." So: always from the ORIGINAL resolution (never shrink first), and the AI result is mixed with a
+plain Lanczos resize of the original (UPSCALE_BLEND, default 0.6 = 60% AI) so faces/hair/text keep real texture, no waxy look.
+Check a full-resolution frame of every upscale before using it; if it is still smeared or soft, flag it to the owner."""
 import subprocess, sys, json, os
 import cv2, numpy as np
 
@@ -19,6 +23,7 @@ W, H = w * 2 // 2 * 2, h * 2 // 2 * 2
 enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{W}x{H}', '-r', '30', '-i', '-',
                         '-i', src, '-map', '0:v', '-map', '1:a?', '-c:a', 'aac', '-b:a', '256k', '-shortest',
                         '-c:v', 'libx264', '-crf', '10', '-preset', 'medium', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
+BLEND = float(os.environ.get('UPSCALE_BLEND', '0.6'))
 n = 0
 while True:
     buf = dec.stdout.read(w * h * 3)
@@ -27,6 +32,8 @@ while True:
     up = sr.upsample(f)[:H, :W]
     blur = cv2.GaussianBlur(up, (0, 0), 1.2)
     up = cv2.addWeighted(up, 1.45, blur, -0.45, 0)          # fine sharpen (unsharp mask)
+    plain = cv2.resize(f, (W, H), interpolation=cv2.INTER_LANCZOS4)
+    up = cv2.addWeighted(up, BLEND, plain, 1 - BLEND, 0)   # keep real texture
     enc.stdin.write(up.tobytes()); n += 1
 enc.stdin.close(); enc.wait(); dec.wait()
 print(f'{src}: {w}x{h} -> {W}x{H}, {n} frames')

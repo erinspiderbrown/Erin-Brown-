@@ -5,6 +5,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Hard rules
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
+  - **Upscaling** (owner, Nov 23, 2026: "make sure that they aren't really blurry or super distorted. Make them just good enough to where they meet the quality qualifications"):
+    - Always upscale from the ORIGINAL resolution; never shrink a clip first to save time.
+    - Scale only to the size the slot needs (1440×1280 top slot, 1080×960 split), not beyond.
+    - `editor/upscale.py` mixes the AI result with a plain Lanczos resize (`UPSCALE_BLEND`, default 0.6 = 60% AI) so faces, hair and text keep real texture. Don't use 1.0.
+    - Check a full-resolution frame (face, hands, text) of every upscale before using it; if it's still smeared or soft, flag it to the owner.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Use the owner's real voice with the approved light polish on every video.** The default is `voice_chain: "polish"` (owner, Nov 2026, after an A/B of his Felix/Tarmoh narration: "I like the way the voice sounds. Save that for all of my future videos").
   - The chain (in `build.py`): rumble filter below 60 Hz only, very gentle noise reduction (`afftdn nr=8`), soft de-ess, light 2:1 leveling. No EQ and no low cut: it measured *fuller* in the low end than the original.
