@@ -27,3 +27,12 @@
 ## Where the owner's wording differs
 - **"The high school record on the track is 13:30":** the US HS outdoor 5000 m record is Daniel Simmons' 13:25.86 (Portland, June 2024). On screen: 13:25.86.
 - **"Black bred… genetics way more superior":** flagged to the owner as a race-based genetics claim that could draw backlash. Kept as said, with no graphic on it.
+
+## Delivered / posted (23 Nov 2026), old style
+- Export `exports/abdi_hassan_tiktok_hq.mp4`: 1:39, CRF 16, 211 MB (LFS), −14.1 LUFS.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+- YouTube Short: https://www.youtube.com/watch?v=v340dZk0FFE
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgGl2pUAhKH/
+- Facebook Page E.Diamondz: reel video_id 3003316680000612.
+- TikTok: owner posts from the app with Upload HD.
+- Upscales: 720p clips FSRCNN 2× from the original, blended 60/40 with a plain Lanczos resize (owner's Nov 23 rule). Full-res frame checked.
