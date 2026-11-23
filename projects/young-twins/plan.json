@@ -1,0 +1,411 @@
+{
+ "workdir": "build",
+ "output": "out/young_twins.mp4",
+ "words": "work/words_ins.json",
+ "voice_ss": 0.0,
+ "duration": 130.22,
+ "min_duration": 61,
+ "face": {
+  "src": "work/face_final.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "leo",
+  "lex",
+  "young",
+  "studied",
+  "prodigies",
+  "records",
+  "american",
+  "newbury",
+  "greatest",
+  "record",
+  "5k",
+  "burns",
+  "gasket",
+  "apart",
+  "stanford",
+  "opposite",
+  "nationals",
+  "hundred",
+  "fame",
+  "kipchoge",
+  "kiptum",
+  "nico",
+  "nau.",
+  "olympic",
+  "sahlman.",
+  "ncaa",
+  "champion",
+  "flagstaff",
+  "money.",
+  "education.",
+  "ky",
+  "robinson",
+  "pro",
+  "excuses",
+  "panning",
+  "usa",
+  "earn",
+  "singlet,",
+  "counts."
+ ],
+ "flash": false,
+ "zooms": [],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "fx/open_par.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.3,
+   "broll": {
+    "src": "br/np_finish.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 9.7,
+   "broll": {
+    "src": "br/ph6_up.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 16.45,
+   "broll": {
+    "src": "br/leo_usatf.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 30.27,
+   "broll": {
+    "src": "br/ph2_up.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 32.52,
+   "broll": {
+    "src": "fx/np_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 36.82,
+   "broll": {
+    "src": "br/lex_record.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 41.12,
+   "broll": {
+    "src": "fx/hs5k_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "split",
+   "start": 44.82,
+   "broll": {
+    "src": "br/burns.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 50.12,
+   "broll": {
+    "src": "br/stan_nutty.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.32,
+   "broll": {
+    "src": "br/stan_bu1.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 57.42,
+   "broll": {
+    "src": "br/stan_bu2.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.72,
+   "broll": {
+    "src": "br/n26start.mp4",
+    "ss": 4,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 65.22,
+   "broll": {
+    "src": "br/n26fin.mp4",
+    "ss": 21.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 67.72,
+   "broll": {
+    "src": "fx/ncaa26_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "split",
+   "start": 72.32,
+   "broll": {
+    "src": "br/n24pack.mp4",
+    "ss": 10,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 74.92,
+   "broll": {
+    "src": "br/committed.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 79.32,
+   "broll": {
+    "src": "br/lex_record.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.55
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 84.42,
+   "broll": {
+    "src": "fx/nico_par.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 91.52,
+   "broll": {
+    "src": "br/sahlman800.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 96.92,
+   "broll": {
+    "src": "fx/sahlman_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "split",
+   "start": 102.52,
+   "broll": {
+    "src": "br/sahlman3000.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 109.42,
+   "broll": {
+    "src": "br/stan_team.png",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 114.92,
+   "broll": {
+    "src": "br/n25fin.mp4",
+    "ss": 7,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 118.12,
+   "broll": {
+    "src": "fx/ky_card.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 122.12,
+   "broll": {
+    "src": "br/n24pack.mp4",
+    "ss": 22,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 125.82,
+   "broll": {
+    "src": "br/n26fin.mp4",
+    "ss": 40,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ ],
+ "graphics": []
+}

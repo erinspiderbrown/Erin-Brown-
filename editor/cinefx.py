@@ -283,8 +283,11 @@ def result_card(out, dur, bg_src, bg_t, event, meet, rows, hi=0, t_rows=0.6, not
             d.text((x0 + 26, y - 80), str(pl), font=font('Anton-Regular.ttf', 140), fill=(GOLD if r == hi else WHITE) + (int(255 * a),))
             d.text((x0 + 130, y - 66), name, font=font('Montserrat-Black.ttf', 46), fill=WHITE + (int(255 * a),))
             d.text((x0 + 130, y + 4), club, font=font('Montserrat-ExtraBold.ttf', 34), fill=(170, 170, 178, int(255 * a)))
-            tf = font('Anton-Regular.ttf', 150); tw = tf.getlength(tm)
-            d.text((x0 + W - 130 - tw, y - 96), tm, font=tf, fill=WHITE + (int(255 * a),))
+            nw = max(font('Montserrat-Black.ttf', 46).getlength(name), font('Montserrat-ExtraBold.ttf', 34).getlength(club))
+            ts = 150; tf = font('Anton-Regular.ttf', ts); tw = tf.getlength(tm)
+            while ts > 70 and 130 + nw + 40 > W - 130 - tw:      # shrink the time so it never covers the name/club line
+                ts -= 6; tf = font('Anton-Regular.ttf', ts); tw = tf.getlength(tm)
+            d.text((x0 + W - 130 - tw, y - 96 + (150 - ts) * 0.55), tm, font=tf, fill=WHITE + (int(255 * a),))
             if wind: d.text((x0 + W - 130 - tw, y + 62), wind, font=font('Montserrat-ExtraBold.ttf', 30), fill=(235, 235, 240, int(255 * a)))
             if r == hi:
                 sw = ease((t - rt - 0.4) / 0.5)
