@@ -8,7 +8,7 @@ SP = '/tmp/claude-0/-home-user-Erin-Brown-/353a917a-eedc-5fa9-9c7e-7d1a29f0affb/
 W = json.load(open(f'{H}/words_aroll.json'))
 TOK = [re.sub(r"[^a-z0-9.:'\-*]", '', x['w'].lower()).rstrip('.,?').strip("'") for x in W]
 R = lambda n: f'{H}/raw/{n}.jpg'
-VERT, RACE, WALK = f'{H}/raw/clipV.mov', f'{H}/work/clipL_2x.mp4', f'{H}/work/clipS_2x.mp4'
+VERT, RACE, WALK = f'{H}/raw/clipV.mov', f'{H}/work/clipL_up.mp4', f'{H}/work/clipS_up.mp4'
 T1, L = 27.72, 15.7
 
 
