@@ -26,7 +26,8 @@ def mask_of(im):
     if _sess is None: _sess = new_session('u2net_human_seg')
     return remove(im, session=_sess, only_mask=True).convert('L')
 
-def cover(im, w=W, h=H, fx=0.5, fy=0.5):
+def cover(im, w=None, h=None, fx=0.5, fy=0.5):
+    w = w or W; h = h or H                  # read the current frame size at call time (split-size shots set W, H)
     s = max(w / im.width, h / im.height)
     r = im.resize((max(w, round(im.width * s)), max(h, round(im.height * s))), Image.LANCZOS)
     x = int((r.width - w) * fx); y = int((r.height - h) * fy)
@@ -104,8 +105,17 @@ def outline(mask, px=7, glow=26, col=WHITE):
     return L
 
 # ---------------------------------------------------------------- shots
-def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE, sy=0.80):
+def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=0.07, title_size=330, color=WHITE, sy=0.80, front=False, largest=False, clear_left=0):
+    """front=True draws the title over the athlete (for tight close-ups with no headroom); largest keeps only the main cut-out blob"""
     base = frame_at(src, t, fx, fy); m = mask_of(base)
+    if largest:
+        import numpy as np; from scipy import ndimage
+        a = np.array(m); lab, n_ = ndimage.label(a > 96)
+        if n_ > 1:
+            big = 1 + int(np.argmax(ndimage.sum(np.ones_like(a), lab, range(1, n_ + 1))))
+            m = Image.fromarray((a * (lab == big)).astype('uint8'))
+    if clear_left:                            # drop stray background props stuck to the cut-out, left of x = clear_left px
+        m = m.copy(); m.paste(0, (0, 0, int(clear_left), m.size[1]))
     W_ = Writer(out); n = int(dur * FPS)
     for i in range(n):
         u = i / max(1, n - 1); k = ease(i / 10)
@@ -113,10 +123,11 @@ def freeze_pop(src, t, out, dur, title, sub=None, fx=0.5, fy=0.5, ty=0.36, push=
         bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 8, 12)), 0.55 * k)
         fr = bg.convert('RGBA')
         tl = title_layer(title, title_size, color, track=4)
-        place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
+        if not front: place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
         sm = zoom(m, 1 + push * 1.6 * u, 0.5, 0.6); sb = zoom(base, 1 + push * 1.6 * u, 0.5, 0.6)
         fr.alpha_composite(outline(sm).copy(), (0, 0)) if k > 0.2 else None
         subj = sb.convert('RGBA'); subj.putalpha(sm); fr.alpha_composite(subj)
+        if front: place(fr, tl, W / 2, H * ty + 60 * (1 - ease(i / 9)), alpha=ease(i / 7), scale=1.12 - 0.12 * ease(i / 9))
         if sub: place(fr, title_layer(sub, 64, GOLD, track=6, font_name='Montserrat-Black.ttf'), W / 2, H * sy, alpha=ease((i - 6) / 8))
         if i < 4: fr = Image.blend(fr.convert('RGB'), Image.new('RGB', fr.size, WHITE), 0.6 * (1 - i / 4)).convert('RGBA')
         W_.add(grade(fr))
@@ -272,8 +283,11 @@ def result_card(out, dur, bg_src, bg_t, event, meet, rows, hi=0, t_rows=0.6, not
             d.text((x0 + 26, y - 80), str(pl), font=font('Anton-Regular.ttf', 140), fill=(GOLD if r == hi else WHITE) + (int(255 * a),))
             d.text((x0 + 130, y - 66), name, font=font('Montserrat-Black.ttf', 46), fill=WHITE + (int(255 * a),))
             d.text((x0 + 130, y + 4), club, font=font('Montserrat-ExtraBold.ttf', 34), fill=(170, 170, 178, int(255 * a)))
-            tf = font('Anton-Regular.ttf', 150); tw = tf.getlength(tm)
-            d.text((x0 + W - 130 - tw, y - 96), tm, font=tf, fill=WHITE + (int(255 * a),))
+            nw = max(font('Montserrat-Black.ttf', 46).getlength(name), font('Montserrat-ExtraBold.ttf', 34).getlength(club))
+            ts = 150; tf = font('Anton-Regular.ttf', ts); tw = tf.getlength(tm)
+            while ts > 70 and 130 + nw + 40 > W - 130 - tw:      # shrink the time so it never covers the name/club line
+                ts -= 6; tf = font('Anton-Regular.ttf', ts); tw = tf.getlength(tm)
+            d.text((x0 + W - 130 - tw, y - 96 + (150 - ts) * 0.55), tm, font=tf, fill=WHITE + (int(255 * a),))
             if wind: d.text((x0 + W - 130 - tw, y + 62), wind, font=font('Montserrat-ExtraBold.ttf', 30), fill=(235, 235, 240, int(255 * a)))
             if r == hi:
                 sw = ease((t - rt - 0.4) / 0.5)
@@ -296,12 +310,46 @@ def title_card(out, dur, bg_src, bg_t, title, sub=None, fx=0.5, fy=0.5, size=230
         W_.add(grade(fr, grain=0.008, strength=0.6))
     W_.close()
 
+def headline_card(out, dur, bg_src, bg_t, outlet, date, headline, pull=None, fx=0.5, fy=0.5, bg_blur=14):
+    """A real published headline, recreated as a clean article card (outlet + date + headline, optional pull quote
+    highlighted on the word). Plain type, no outlet logos: it quotes the headline, it doesn't imitate the page."""
+    bg = frame_at(bg_src, bg_t, fx, fy).filter(ImageFilter.GaussianBlur(bg_blur))
+    bg = Image.blend(bg, Image.new('RGB', bg.size, (8, 9, 14)), 0.55)
+    W_ = Writer(out); n = int(dur * FPS); pw = W - 120
+    f_h = font('Montserrat-Black.ttf', 62 if H > 1200 else 50)
+    words = headline.split(); lines, cur = [], ''
+    for w_ in words:
+        t2 = (cur + ' ' + w_).strip()
+        if f_h.getlength(t2) > pw - 80: lines.append(cur); cur = w_
+        else: cur = t2
+    lines.append(cur)
+    lh = int(f_h.size * 1.18); ph = 150 + lh * len(lines) + (130 if pull else 40)
+    for i in range(n):
+        t = i / FPS; fr = zoom(bg, 1.02 + 0.03 * t / dur).convert('RGBA')
+        a = ease(t / 0.35); y0 = (H - ph) / 2 + 60 * (1 - a)
+        card = Image.new('RGBA', (pw, ph), (248, 246, 240, int(250 * a))); d = ImageDraw.Draw(card)
+        d.text((40, 36), outlet.upper(), font=font('Montserrat-Black.ttf', 30), fill=(20, 20, 24, int(255 * a)))
+        d.text((40, 76), date.upper(), font=font('Montserrat-ExtraBold.ttf', 24), fill=(120, 120, 128, int(255 * a)))
+        d.line([(40, 118), (pw - 40, 118)], fill=(20, 20, 24, int(255 * a)), width=3)
+        for k, ln in enumerate(lines):
+            la = ease((t - 0.25 - 0.12 * k) / 0.3)
+            d.text((40, 140 + k * lh), ln, font=f_h, fill=(14, 14, 18, int(255 * la)))
+        if pull:
+            pa = ease((t - 0.9) / 0.4); py = 150 + lh * len(lines) + 10
+            hl = int((pw - 80) * ease((t - 1.0) / 0.5))
+            d.rectangle([40, py, 40 + hl, py + 70], fill=GOLD + (int(210 * pa),))
+            d.text((54, py + 12), pull, font=font('Montserrat-Black.ttf', 40 if H > 1200 else 34), fill=(14, 14, 18, int(255 * pa)))
+        sh = Image.new('RGBA', card.size, (0, 0, 0, 0)); sh.paste((0, 0, 0, int(140 * a)), (0, 0), card.split()[3])
+        sh = sh.filter(ImageFilter.GaussianBlur(18)); fr.alpha_composite(sh, (60 + 8, int(y0) + 16)); fr.alpha_composite(card, (60, int(y0)))
+        W_.add(grade(fr, grain=0.006, strength=0.4))
+    W_.close()
+
 if __name__ == '__main__':
     spec = json.load(open(sys.argv[1]))
     only = set(sys.argv[2:])
     for s in spec:
         if only and s['out'] not in only: continue
         if os.path.exists(s['out']) and not s.get('force'): print('cached', s['out']); continue
-        fn = globals()[s.pop('fx')]; s.pop('force', None)
+        fn = globals()[s.pop('effect') if 'effect' in s else s.pop('fx')]; s.pop('force', None)   # 'effect' lets a shot also pass the fx (focus-x) param
         W, H = s.pop('frame', (1080, 1920))      # 'frame': [1080, 960] renders a split-bottom shot (for upscaled sub-1080 footage)
         print('render', s['out'], flush=True); fn(**s)

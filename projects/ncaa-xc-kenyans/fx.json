@@ -1,0 +1,125 @@
+[
+ {
+  "effect": "parallax",
+  "out": "fx/open_par.mp4",
+  "photo": "br/kiprotich.jpg",
+  "dur": 4.2,
+  "text": "NCAA XC",
+  "sub": "NATIONALS \u00b7 SAT NOV 21",
+  "fx": 0.5,
+  "fy": 0.25,
+  "ty": 0.11,
+  "size": 260,
+  "subj_scale": 0.74,
+  "cy": 0.7,
+  "sy": 0.94,
+  "force": false
+ },
+ {
+  "effect": "result_card",
+  "out": "fx/champ_card.mp4",
+  "dur": 4.0,
+  "bg_src": "br/kurgat.jpg",
+  "bg_t": 0,
+  "event": "LAST KENYAN CHAMP",
+  "meet": "NCAA D1 MEN'S CROSS COUNTRY",
+  "rows": [
+   [
+    "",
+    "EDWIN KURGAT",
+    "IOWA STATE \u00b7 KENYA",
+    "2019",
+    null
+   ],
+   [
+    "",
+    "HABTOM SAMUEL",
+    "NEW MEXICO \u00b7 ERITREA",
+    "2025",
+    null
+   ]
+  ],
+  "hi": 0,
+  "t_rows": 0.5,
+  "note": "6 TITLES SINCE 2019 \u00b7 NO KENYAN WINNER",
+  "force": false
+ },
+ {
+  "effect": "title_card",
+  "out": "fx/cold_card.mp4",
+  "dur": 5.4,
+  "bg_src": "br/2024_ncaa_men_crowd.mp4",
+  "bg_t": 3.0,
+  "title": "SNOW. RAIN. MUD.",
+  "sub": "2018 MADISON \u00b7 2019 TERRE HAUTE",
+  "size": 170,
+  "force": false
+ },
+ {
+  "effect": "title_card",
+  "out": "fx/weather_card.mp4",
+  "dur": 4.3,
+  "bg_src": "br/lavern.jpg",
+  "bg_t": 0,
+  "title": "~60\u00b0 AT THE GUN",
+  "sub": "SAT \u00b7 SUNNY \u00b7 0% RAIN \u00b7 LIGHT WIND",
+  "size": 170,
+  "force": false
+ },
+ {
+  "effect": "parallax",
+  "out": "fx/elsingi.mp4",
+  "frame": [
+   1080,
+   960
+  ],
+  "photo": "br/elsingi.jpg",
+  "dur": 1.9,
+  "text": "ELSINGI KIPRUTO",
+  "sub": "LOUISVILLE \u00b7 ACC CHAMPION",
+  "fx": 0.5,
+  "fy": 0.2,
+  "ty": 0.09,
+  "size": 110,
+  "subj_scale": 0.74,
+  "cy": 0.8,
+  "sy": 0.93,
+  "force": true
+ },
+ {
+  "effect": "parallax",
+  "out": "fx/meshack.mp4",
+  "frame": [
+   1080,
+   960
+  ],
+  "photo": "br/meshack.jpg",
+  "dur": 2.1,
+  "text": "MESHACK KIPRUTO",
+  "sub": "COLORADO \u00b7 NUTTYCOMBE CHAMP",
+  "fx": 0.42,
+  "fy": 0.3,
+  "ty": 0.1,
+  "size": 110,
+  "subj_scale": 0.9,
+  "cy": 0.6,
+  "sy": 0.93,
+  "force": false
+ },
+ {
+  "effect": "parallax",
+  "out": "fx/kimaru_par.mp4",
+  "photo": "br/kimaru.jpg",
+  "dur": 3.2,
+  "text": "TITUS KIMARU",
+  "sub": "TEXAS TECH \u00b7 REGIONAL CHAMP",
+  "fx": 0.62,
+  "fy": 0.3,
+  "ty": 0.14,
+  "size": 220,
+  "subj_scale": 0.86,
+  "cy": 0.7,
+  "sy": 0.92,
+  "force": false
+ }
+]

@@ -1,0 +1,10 @@
+raw
+work
+br
+build
+fx
+out
+up
+media
+*.jpg
+!cover/*.jpg

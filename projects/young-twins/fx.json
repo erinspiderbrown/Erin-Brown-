@@ -1,0 +1,124 @@
+[
+ {
+  "effect": "parallax",
+  "out": "fx/open_par.mp4",
+  "photo": "br/leo_usatf.jpg",
+  "dur": 4.5,
+  "text": "LEO & LEX YOUNG",
+  "sub": "WHAT HAPPENED?",
+  "fx": 0.5,
+  "fy": 0.25,
+  "ty": 0.12,
+  "size": 190,
+  "subj_scale": 0.8,
+  "cy": 0.75,
+  "sy": 0.94,
+  "force": false
+ },
+ {
+  "effect": "title_card",
+  "out": "fx/np_card.mp4",
+  "dur": 4.4,
+  "bg_src": "br/np_finish.jpg",
+  "bg_t": 0,
+  "title": "NEWBURY PARK",
+  "sub": "'21: 1-2-3 AT NATIONALS \u00b7 '22: NXN CHAMPS",
+  "size": 190,
+  "force": false
+ },
+ {
+  "effect": "result_card",
+  "out": "fx/hs5k_card.mp4",
+  "dur": 3.9,
+  "bg_src": "br/lex_record.jpg",
+  "bg_t": 0,
+  "event": "HS 5000m RECORD",
+  "meet": "MAY 2023",
+  "rows": [
+   [
+    "",
+    "LEX YOUNG",
+    "NEWBURY PARK \u00b7 MAY 26",
+    "13:34.96",
+    null
+   ],
+   [
+    "",
+    "CONNOR BURNS",
+    "OLD RECORD",
+    "13:37.30",
+    null
+   ]
+  ],
+  "hi": 0,
+  "t_rows": 0.4,
+  "force": true
+ },
+ {
+  "effect": "result_card",
+  "out": "fx/ncaa26_card.mp4",
+  "dur": 4.7,
+  "bg_src": "br/stan_team.png",
+  "bg_t": 0,
+  "event": "NCAA XC 2026",
+  "meet": "TERRE HAUTE \u00b7 NOV 21",
+  "rows": [
+   [
+    "",
+    "LEO YOUNG",
+    "STANFORD \u00b7 30:13.3",
+    "117TH",
+    null
+   ],
+   [
+    "",
+    "LEX YOUNG",
+    "STANFORD \u00b7 30:31.2",
+    "154TH",
+    null
+   ]
+  ],
+  "hi": 0,
+  "t_rows": 0.5,
+  "note": "STANFORD: 17TH AS A TEAM",
+  "force": false
+ },
+ {
+  "effect": "parallax",
+  "out": "fx/nico_par.mp4",
+  "photo": "br/nico.jpg",
+  "dur": 7.2,
+  "text": "NICO YOUNG",
+  "sub": "OLYMPIAN \u00b7 AMERICAN RECORD",
+  "fx": 0.5,
+  "fy": 0.3,
+  "ty": 0.12,
+  "size": 230,
+  "subj_scale": 0.82,
+  "cy": 0.75,
+  "sy": 0.94,
+  "force": true
+ },
+ {
+  "effect": "title_card",
+  "out": "fx/sahlman_card.mp4",
+  "dur": 5.7,
+  "bg_src": "br/sahlman800.jpg",
+  "bg_t": 0,
+  "title": "3 NCAA TITLES",
+  "sub": "NCAA INDOOR 800m RECORD \u00b7 1:44.70",
+  "size": 200,
+  "force": false
+ },
+ {
+  "effect": "title_card",
+  "out": "fx/ky_card.mp4",
+  "dur": 4.1,
+  "bg_src": "br/n26start.mp4",
+  "bg_t": 4.0,
+  "title": "KY ROBINSON",
+  "sub": "STANFORD \u00b7 2023 NCAA 5K & 10K CHAMP",
+  "size": 200,
+  "force": true
+ }
+]
