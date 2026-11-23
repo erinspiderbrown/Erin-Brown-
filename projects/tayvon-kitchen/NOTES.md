@@ -5,7 +5,7 @@
 ## Sources
 - `raw/talking_head.mov`: 4K, 1:30, −12.6 LUFS, peak −3.1 dBFS (not clipping).
   - Hot-take fix applied: trimmed to −24 LUFS before the polish, then static gain to −14.
-  - Cropped to 1440×1280 (CRF 10) and tightened to 1:24.6. Final length 1:26.
+  - Cropped to 1440×1280 (CRF 10) and tightened to 1:24.6. Final length 1:26 (export 166 MB, SSIM 0.991 vs master, −14.1 LUFS).
   - Face: vignette only.
 - **Owner's media.** All under 1080p, so Real-ESRGAN 4× upscaled:
   - p1: the XC pack of African runners
@@ -37,5 +37,9 @@
 - **"Rocky Hansen kicked, was in front, got run down":** that race detail isn't verified. The board shows only the finishing places and times.
 - Captions are censored to "sh*t" and "f*ck".
 
-## Posts
-- (pending)
+## Posts (Nov 23, 2026; owner chose "Everywhere")
+- YouTube Short (@theerinbrowntv): https://www.youtube.com/watch?v=lN3BTo9ZWDc
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgGnGPgnAMi/
+- Facebook Page E.Diamondz reel: https://www.facebook.com/reel/28946754968358131/
+- TikTok (Erin Spider Brown): sent via vidIQ (publication 2bc89626-6fdc-451e-a1ad-4ebcf3332d7a), Public, comments on
+- Dropbox /TikTok Exports/: video + both covers, content hashes verified
