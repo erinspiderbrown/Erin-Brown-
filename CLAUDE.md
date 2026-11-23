@@ -5,6 +5,11 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
 ## Hard rules
 - **Length:** the final video is **at least 61 seconds** (1:01).
 - **B-roll quality:** B-roll and photos must be **1080p or higher** on the short side. If something isn't, flag it to the owner and don't silently use it.
+  - **Upscales must not look blurry or distorted** (owner, Nov 23, 2026, all videos, all chats: "When you upscale photos and videos, make sure that they aren't really blurry or super distorted. Make them just good enough to where they meet the quality qualifications").
+    - Always upscale from the original resolution. Never shrink a clip first to save time (the old "720p → 540×960" trick): it throws real detail away and comes out blurry.
+    - Scale only to the size the slot needs (e.g. 1440×1280 top slot, 1080×960 split, 1080×1920 full-screen; photos cap at 3200 px), not beyond.
+    - `editor/enhance.py` mixes the AI result with a plain Lanczos resize of the original (`--blend`, env `UPSCALE_BLEND`, default 0.6), so faces, hair and text keep their real texture instead of a waxy AI look. Don't push it to 1.0.
+    - Check a full-resolution frame of every upscaled photo and clip (face, hands, text) before it goes in. If it still looks smeared or soft, flag it to the owner instead of using it.
 - **Full-screen B-roll covers the whole 9:16 frame.** No letterboxing, blurred fill or blank space. Use `focus` to keep the action in the crop.
 - **Use the owner's real voice with the approved light polish on every video.** The default is `voice_chain: "polish"` (owner, Nov 2026, after an A/B of his Felix/Tarmoh narration: "I like the way the voice sounds. Save that for all of my future videos").
   - The chain (in `build.py`): rumble filter below 60 Hz only, very gentle noise reduction (`afftdn nr=8`), soft de-ess, light 2:1 leveling. No EQ and no low cut: it measured *fuller* in the low end than the original.
@@ -38,7 +43,7 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - No stock athletes, random meet/Olympic footage, other lifters or generic "sprinter" photos standing in for the subject. If there isn't enough, reuse the subject's clips with different framing and ask him for more.
   - If the subject's own footage shows numbers that contradict the script (e.g. lifts), show the real numbers and tell him.
 - **Low-res clips of the subject:** flag them first (see 6b). If he wants them used, `editor/enhance.py` (Real-ESRGAN, local CPU, no credits) upscales them.
-  - For a 720p clip: shrink to 540×960, then upscale 4× to 1080×1920. That makes vertical clips full-screen eligible.
+  - Upscale from the clip's original resolution straight to the slot size (no shrinking first; see B-roll quality).
   - It takes about 5 s per frame, so enhance only the ranges you use, one job at a time.
 - **Quality first** (owner, Nov 2026: "even the videos that were exported to Dropbox were very low quality … keep the quality really high"):
   - Intermediates: face crop and `tighten.py` at CRF 10 (24-bit audio); segments CRF 12; master `master_crf` 12 (style.json).

@@ -5,13 +5,18 @@ usage:
   python3 enhance.py <in.mp4|in.jpg> <out.mp4|out.jpg> [--ss S] [--t T] [--w W] [--h H]
     --ss/--t   only this time range of a video (keeps audio for that range)
     --w/--h    final size (default: fit 4x result inside 1080x1920 for vertical, 1920x1080 for landscape;
-               photos keep the full 4x size, capped at 4000 px on the long side)
+               photos keep the full 4x size, capped at 3200 px on the long side)
 
 The model takes fixed 128x128 tiles. Frames are cut into overlapping tiles (16 px), upscaled, and blended
 with a feathered weight so no seams show. Model: editor/assets/models/real_esrgan_general_x4v3.onnx
-(setup.sh downloads it)."""
+(setup.sh downloads it).
+
+Owner rule (Nov 23, 2026): upscales must not look blurry or distorted, just good enough to meet the 1080 rule.
+Always feed the ORIGINAL resolution (never shrink first), size to what the slot needs, and the AI result is mixed
+with a plain Lanczos resize of the original (--blend, default 0.6 = 60% AI; env UPSCALE_BLEND) so faces, hair and
+text keep their real texture instead of a waxy AI look. Check a full-resolution frame of every upscale."""
 import argparse, os, subprocess, sys, json
-import numpy as np
+import numpy as np, cv2
 import onnxruntime as ort
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -45,6 +50,12 @@ def upscale(sess, img):
     y = (acc / np.maximum(wt, 1e-6))[:, :h * S, :w * S].transpose(1, 2, 0)
     return (np.clip(y, 0, 1) * 255 + 0.5).astype(np.uint8)
 
+def mix(up, img, blend):
+    """blend the AI result with a plain Lanczos resize of the original"""
+    if blend >= 1: return up
+    plain = cv2.resize(img, (up.shape[1], up.shape[0]), interpolation=cv2.INTER_LANCZOS4)
+    return np.clip(blend * up.astype(np.float32) + (1 - blend) * plain.astype(np.float32) + 0.5, 0, 255).astype(np.uint8)
+
 def probe(path):
     r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
                         'stream=width,height,r_frame_rate:stream_side_data=rotation', '-of', 'json', path], capture_output=True, text=True)
@@ -61,12 +72,13 @@ def fit(w, h, W=None, H=None):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('out')
     ap.add_argument('--ss', type=float, default=0); ap.add_argument('--t', type=float)
-    ap.add_argument('--w', type=int); ap.add_argument('--h', type=int); a = ap.parse_args()
+    ap.add_argument('--w', type=int); ap.add_argument('--h', type=int)
+    ap.add_argument('--blend', type=float, default=float(os.environ.get('UPSCALE_BLEND', '0.6'))); a = ap.parse_args()
     sess = session(); w, h, fps = probe(a.src)
     if a.src.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
         raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', a.src, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], capture_output=True).stdout
-        up = upscale(sess, np.frombuffer(raw, np.uint8).reshape(h, w, 3))
-        k = min(1.0, 4000 / max(up.shape[:2])); W, H = (a.w, a.h) if a.w else (int(up.shape[1] * k), int(up.shape[0] * k))
+        img = np.frombuffer(raw, np.uint8).reshape(h, w, 3); up = mix(upscale(sess, img), img, a.blend)
+        k = min(1.0, 3200 / max(up.shape[:2])); W, H = (a.w, a.h) if a.w else (int(up.shape[1] * k), int(up.shape[0] * k))
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{up.shape[1]}x{up.shape[0]}', '-i', '-',
                         '-vf', f'scale={W}:{H}:flags=lanczos', '-q:v', '2', a.out], input=up.tobytes(), check=True)
         print(f'{a.src}: {w}x{h} -> {W}x{H}'); return
@@ -81,7 +93,8 @@ def main():
     while True:
         buf = dec.stdout.read(fb)
         if len(buf) < fb: break
-        enc.stdin.write(upscale(sess, np.frombuffer(buf, np.uint8).reshape(h, w, 3)).tobytes()); n += 1
+        img = np.frombuffer(buf, np.uint8).reshape(h, w, 3)
+        enc.stdin.write(mix(upscale(sess, img), img, a.blend).tobytes()); n += 1
         if n % 30 == 0: print(f'  {n} frames', file=sys.stderr, flush=True)
     enc.stdin.close(); enc.wait(); dec.wait()
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tmp, *rng, '-i', a.src, '-map', '0:v', '-map', '1:a?', '-c:v', 'copy',

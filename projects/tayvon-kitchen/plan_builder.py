@@ -35,27 +35,27 @@ D = lambda kind, t, dur, **k: {'type': 'data', 'kind': kind, 't': round(t, 2), '
 
 
 t_like, t_top5, t_11th, t_one, t_now, t_just, t_african, t_so, t_but, t_now2, t_rocky, t_kicked, t_people, t_little, t_hes, t_improving, t_tilt = at('like this was'), at('it was an'), at('and we had'), at('one of probably'), at('now i inducted'), at('just the fact'), at('you african now.'), at('so you a'), at('but by the'), at('now i think'), at('rocky hansen'), at('he kicked'), at('and people try'), at('but little'), at("he's african"), at("and he's improving"), at('so i gotta')
-POD = B('podium_hd.mp4')
+POD = B('podium_hd2.mp4')
 segs = [
-    full(0.0, B('p5_hd.jpg'), 0.5, 0.35, hit=True),
-    split(t_like - 0.05, B('p1_hd.jpg'), 0.5, 0.4),
-    split(t_top5 - 0.05, B('p2_hd.jpg'), 0.35, 0.45),
-    split(t_11th - 0.05, B('p4_hd.jpg'), 0.5, 0.35),
-    full(t_one - 0.05, B('p6_hd.jpg'), 0.42, 0.3, hit=True),
-    split(t_now - 0.05, B('p3_hd.jpg'), 0.45, 0.35),
-    split(t_just - 0.05, B('p2_hd.jpg'), 0.85, 0.4),
+    full(0.0, B('p5_hd2.jpg'), 0.5, 0.35, hit=True),
+    split(t_like - 0.05, B('p1_hd2.jpg'), 0.5, 0.4),
+    split(t_top5 - 0.05, B('p2_hd2.jpg'), 0.35, 0.45),
+    split(t_11th - 0.05, B('p4_hd2.jpg'), 0.5, 0.35),
+    full(t_one - 0.05, B('p6_hd2.jpg'), 0.42, 0.3, hit=True),
+    split(t_now - 0.05, B('p3_hd2.jpg'), 0.45, 0.35),
+    split(t_just - 0.05, B('p2_hd2.jpg'), 0.85, 0.4),
     split(at("that's just some") - 0.05, POD, 0.5, 0.45, ss=1.0),
-    split(t_african - 0.05, B('p6_hd.jpg'), 0.45, 0.3),
-    split(t_so - 0.05, B('p2_hd.jpg'), 0.5, 0.45),
-    full(t_but - 0.05, B('p3_hd.jpg'), 0.4, 0.35),
-    split(at("you won't be") - 0.05, B('p5_hd.jpg'), 0.5, 0.3),
-    split(t_now2 - 0.05, B('p1_hd.jpg'), 0.3, 0.4),
-    split(t_kicked - 0.05, B('p1_hd.jpg'), 0.7, 0.4),
+    split(t_african - 0.05, B('p6_hd2.jpg'), 0.45, 0.3),
+    split(t_so - 0.05, B('p2_hd2.jpg'), 0.5, 0.45),
+    full(t_but - 0.05, B('p3_hd2.jpg'), 0.4, 0.35),
+    split(at("you won't be") - 0.05, B('p5_hd2.jpg'), 0.5, 0.3),
+    split(t_now2 - 0.05, B('p1_hd2.jpg'), 0.3, 0.4),
+    split(t_kicked - 0.05, B('p1_hd2.jpg'), 0.7, 0.4),
     split(t_people - 0.05, POD, 0.5, 0.45, ss=3.5),
-    full(t_little - 0.05, B('p5_hd.jpg'), 0.42, 0.3, hit=True),
-    split(t_hes - 0.05, B('p2_hd.jpg'), 0.86, 0.35),
-    split(t_improving - 0.05, B('p4_hd.jpg'), 0.5, 0.3),
-    split(t_tilt - 0.05, B('p5_hd.jpg'), 0.5, 0.3),
+    full(t_little - 0.05, B('p5_hd2.jpg'), 0.42, 0.3, hit=True),
+    split(t_hes - 0.05, B('p2_hd2.jpg'), 0.86, 0.35),
+    split(t_improving - 0.05, B('p4_hd2.jpg'), 0.5, 0.3),
+    split(t_tilt - 0.05, B('p5_hd2.jpg'), 0.5, 0.3),
 ]
 gfx = [
     M('keyword', 0.3, 3.4, text='AFRICA SHOWED UP'),
