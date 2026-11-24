@@ -1,0 +1,510 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/speed14/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/speed14/out/speed_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/ishowspeed/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 115.62,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/ishowspeed/work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 6.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 9.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 13.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 18.48,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 23.86,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.88,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 33.07,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 40.9,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 47.18,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/tyreek.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 51.78,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/tyreek.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.25
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 56.63,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 63.64,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 65.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.02,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 71.97,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 80.37,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 86.33,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 89.23,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 92.48,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p5_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 98.16,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 107.96,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   98.11,
+   99.61,
+   1.1
+  ],
+  [
+   112.80000000000001,
+   114.30000000000001,
+   1.12
+  ],
+  [
+   75.66000000000001,
+   77.16000000000001,
+   1.08
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 0.4,
+   "dur": 3.6,
+   "value": "10.35",
+   "unit": "SEC",
+   "label": "IShowSpeed \u00b7 100m",
+   "sub": "2nd run \u00b7 1st was 10.50"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 6.89,
+   "dur": 1.9,
+   "text": "CRABS IN A BUCKET",
+   "hi": 3,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 14.05,
+   "dur": 3.6,
+   "items": [
+    "NOT A REAL MEET",
+    "THAT AIN'T A PRO TIME",
+    "WAIT TIL IT'S OFFICIAL"
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 25.83,
+   "dur": 2.0,
+   "text": "MT. SAC \u00b7 WALNUT, CA",
+   "sub": "USATF GOLDEN GAMES \u00b7 MAY 2021"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 27.93,
+   "dur": 2.6,
+   "value": "10.37",
+   "unit": "SEC",
+   "label": "DK Metcalf \u00b7 100m",
+   "sub": "Golden Games \u00b7 9 May 2021"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 37.15,
+   "dur": 2.4,
+   "text": "NFL WIDE RECEIVER"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 46.06,
+   "dur": 1.6,
+   "text": "TRASH?",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 49.86,
+   "dur": 1.869999999999996,
+   "title": "TYREEK HILL \u00b7 2025",
+   "rows": [
+    {
+     "event": "JUNE 13 \u00b7 LA",
+     "value": "10.15"
+    },
+    {
+     "event": "JUNE 28 \u00b7 TEXAS",
+     "value": "10.10w"
+    }
+   ],
+   "times": [
+    0.3,
+    1.0
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 51.93,
+   "dur": 2.6,
+   "text": "FIRST RACE SINCE 2014"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 62.53,
+   "dur": 1.9,
+   "text": "CRABS IN A BUCKET",
+   "hi": 3,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 66.18,
+   "dur": 2.6,
+   "text": "COACH: ATO BOLDON"
+  },
+  {
+   "type": "motion",
+   "kind": "stopwatch",
+   "t": 69.27,
+   "dur": 2.4,
+   "value": "10.35",
+   "unit": "SECONDS",
+   "label": "WITH USAIN BOLT WATCHING",
+   "anim": 1.0
+  },
+  {
+   "type": "motion",
+   "kind": "bubbles",
+   "t": 72.02,
+   "dur": 3.4,
+   "items": [
+    "NOT TILL A REAL MEET",
+    "HAND TIMED?",
+    "MAKE IT OFFICIAL"
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 82.9,
+   "dur": 2.8,
+   "value": "19.67",
+   "unit": "SEC",
+   "label": "Gout Gout \u00b7 200m",
+   "sub": "Australian Champs \u00b7 Apr 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 86.38,
+   "dur": 1.8,
+   "text": "OFFICIAL MEET",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 94.65,
+   "dur": 3.5599999999999996,
+   "title": "COMMONWEALTH GAMES 100M",
+   "rows": [
+    {
+     "event": "1 \u00b7 E. ESEME",
+     "value": "9.83"
+    },
+    {
+     "event": "2 \u00b7 L. KENNEDY",
+     "value": "9.85"
+    },
+    {
+     "event": "3 \u00b7 K. AJAYI",
+     "value": "9.90"
+    }
+   ],
+   "times": [
+    0.3,
+    0.8,
+    1.3
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 103.97,
+   "dur": 3.0,
+   "value": "9.89",
+   "unit": "SEC",
+   "label": "Sam Blaskowski \u00b7 100m",
+   "sub": "Music City meet, TN \u00b7 May 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 108.31,
+   "dur": 7.31,
+   "question": "IS SPEED'S 10.35 LEGIT?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
