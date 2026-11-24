@@ -51,7 +51,7 @@ t_tyreek, t_goes, t_havent, t_since, t_these, t_crabs2, t_speed, t_trained, t_ru
     at('tyreek hill'), at('he goes out there'), at("haven't ran"), at('since he was in college'), at('these guys running'), at('crabs in a bucket', 2),
     at('ishowspeed jump'), at('he trained with'), at('goes out and he runs'), at("oh i'm not gonna"), at('as if a real'))
 t_gout, t_aus, t_official, t_sowhen, t_kennedy, t_cwg, t_earth, t_sam, t_tenn, t_when, t_what = (
-    at('goutgout'), at('the australian national'), at('an official track meet'), at('so when has a'), at('lachlan kennedy'), at('show up to the commonwealth'),
+    at('gout gout'), at('the australian national'), at('an official track meet'), at('so when has a'), at('lachlan kennedy'), at('show up to the commonwealth'),
     at('so when on earth'), at('sam blaskowski'), at('random meet in tennessee'), at('when has a track meet or'), at('what are we talking'))
 
 segs = [
