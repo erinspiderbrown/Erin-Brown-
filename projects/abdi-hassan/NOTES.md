@@ -34,5 +34,5 @@
 - YouTube Short: https://www.youtube.com/watch?v=v340dZk0FFE
 - Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgGl2pUAhKH/
 - Facebook Page E.Diamondz: reel video_id 3003316680000612.
-- TikTok: owner posts from the app with Upload HD.
+- TikTok (posted via vidIQ at the owner's request): https://www.tiktok.com/@erinspiderbrown/video/7711521436833238286
 - Upscales: 720p clips FSRCNN 2× from the original, blended 60/40 with a plain Lanczos resize (owner's Nov 23 rule). Full-res frame checked.
