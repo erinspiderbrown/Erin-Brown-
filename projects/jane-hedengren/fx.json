@@ -1,0 +1,128 @@
+[
+ {
+  "fx": "freeze_pop",
+  "out": "fx/hook.mp4",
+  "src": "raw/sh/big12.mp4",
+  "t": 3.0,
+  "dur": 4.8,
+  "title": "JANE HEDENGREN",
+  "sub": "BYU  \u00b7  9 HS NATIONAL RECORDS",
+  "ty": 0.12,
+  "title_size": 150,
+  "sy": 0.9,
+  "push": 0.05
+ },
+ {
+  "fx": "result_card",
+  "out": "fx/xc25.mp4",
+  "dur": 3.4,
+  "bg_src": "raw/sh/xc25s.mp4",
+  "bg_t": 1.0,
+  "event": "NCAA XC 2025",
+  "meet": "WOMEN 6K  \u00b7  NOV 22, 2025",
+  "rows": [
+   [
+    1,
+    "DORIS LEMNGOLE",
+    "Alabama",
+    "18:25.4",
+    ""
+   ],
+   [
+    2,
+    "JANE HEDENGREN",
+    "BYU",
+    "18:38.9",
+    ""
+   ]
+  ],
+  "hi": 0,
+  "t_rows": 0.9
+ },
+ {
+  "fx": "result_card",
+  "out": "fx/out26.mp4",
+  "dur": 5.0,
+  "bg_src": "raw/sh/rivalry.mp4",
+  "bg_t": 20.0,
+  "event": "NCAA 5000M 2026",
+  "meet": "OUTDOOR FINAL  \u00b7  JUNE 13, 2026",
+  "rows": [
+   [
+    "X",
+    "DORIS LEMNGOLE",
+    "Alabama \u00b7 crossed 1st, DQ'd",
+    "15:11.71",
+    ""
+   ],
+   [
+    1,
+    "MARION JEPNGETICH",
+    "New Mexico",
+    "15:13.01",
+    ""
+   ],
+   [
+    9,
+    "JANE HEDENGREN",
+    "BYU",
+    "15:22.88",
+    ""
+   ]
+  ],
+  "hi": 2,
+  "t_rows": 0.9,
+  "note": "LEMNGOLE DISQUALIFIED: STEPS ON THE CURB",
+  "force": true
+ },
+ {
+  "fx": "title_card",
+  "out": "fx/p39.mp4",
+  "dur": 3.0,
+  "bg_src": "raw/sh/big12.mp4",
+  "bg_t": 9.0,
+  "title": "39TH",
+  "sub": "2026 NCAA XC  \u00b7  RAN ON A CALF INJURY",
+  "size": 300,
+  "ty": 0.42
+ },
+ {
+  "fx": "title_card",
+  "out": "fx/end.mp4",
+  "dur": 3.4,
+  "bg_src": "raw/sh/gatorade.mp4",
+  "bg_t": 22.0,
+  "title": "THE BEGINNING OF THE END?",
+  "sub": "Y'ALL LET ME KNOW",
+  "size": 120,
+  "ty": 0.42
+ },
+ {
+  "fx": "result_card",
+  "out": "fx/record.mp4",
+  "dur": 3.8,
+  "bg_src": "raw/sh/rivalry.mp4",
+  "bg_t": 8.0,
+  "event": "HEDENGREN 5000M",
+  "meet": "FASTEST EVER  vs  NCAA FINAL",
+  "rows": [
+   [
+    "\u2013",
+    "COLLEGIATE RECORD",
+    "Bryan Clay \u00b7 April 2026",
+    "14:50.50",
+    ""
+   ],
+   [
+    9,
+    "NCAA FINAL",
+    "Hayward Field \u00b7 June 2026",
+    "15:22.88",
+    ""
+   ]
+  ],
+  "hi": 1,
+  "t_rows": 0.8,
+  "force": true
+ }
+]

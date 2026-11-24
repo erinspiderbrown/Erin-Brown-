@@ -1,0 +1,503 @@
+{
+ "workdir": "work/build",
+ "output": "out/hedengren_v1.mp4",
+ "words": "work/words_tight.json",
+ "voice_ss": 0.0,
+ "duration": 112.4,
+ "min_duration": 61,
+ "face": {
+  "src": "work/face_tight.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "face_grade": "vignette=PI/6",
+ "broll_grade": "eq=contrast=1.07:saturation=1.06:gamma=0.98,colorbalance=rs=0.03:bs=-0.03:rh=0.03:bh=-0.03,noise=alls=2:allf=t,vignette=PI/5",
+ "caption_style": "cine",
+ "caption_accent": "#FFC83D",
+ "caption_emph": [
+  "Jane",
+  "Hedengren",
+  "BYU,",
+  "hope",
+  "injured.",
+  "choke",
+  "artist.",
+  "biggest",
+  "coach",
+  "hard.",
+  "shine",
+  "apart.",
+  "greatest",
+  "Katelyn",
+  "Tuohy",
+  "records.",
+  "hell.",
+  "faster",
+  "BYU.",
+  "nationals.",
+  "Doris",
+  "Alabama.",
+  "Indoor.",
+  "Outdoor",
+  "record",
+  "fastest",
+  "history",
+  "championships.",
+  "no",
+  "win.",
+  "30.",
+  "something.",
+  "hard?",
+  "early",
+  "career",
+  "America",
+  "end?",
+  "comments.",
+  "patterns",
+  "before."
+ ],
+ "flash": false,
+ "meme_sfx": [
+  [
+   "impact_quick_zoom",
+   0.0,
+   0.2,
+   0.9
+  ],
+  [
+   "impact_quick_zoom",
+   74.8,
+   0.22,
+   0.9
+  ]
+ ],
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "fx/hook.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   }
+  },
+  {
+   "type": "split",
+   "start": 4.5,
+   "broll": {
+    "src": "raw/ph/des_rec.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 7.0,
+   "broll": {
+    "src": "raw/yt/coach.mp4",
+    "ss": 30,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 8.9,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 1.2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "split",
+   "start": 13.9,
+   "broll": {
+    "src": "raw/yt/coach.mp4",
+    "ss": 60,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "whip:down"
+  },
+  {
+   "type": "split",
+   "start": 18.5,
+   "broll": {
+    "src": "raw/sh/tenk.mp4",
+    "ss": 25,
+    "crop": [
+     1920,
+     960,
+     0,
+     0
+    ],
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 22.5,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 1.2,
+    "focus": [
+     0.5,
+     0.6
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 26.2,
+   "broll": {
+    "src": "raw/prep/hs_clean.mp4",
+    "ss": 2,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "full",
+   "start": 29.6,
+   "broll": {
+    "src": "raw/sh/nxnwin.mp4",
+    "ss": 3,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 31.4,
+   "broll": {
+    "src": "raw/yt/tuohy.mp4",
+    "ss": 20,
+    "focus": [
+     0.8,
+     0.4
+    ]
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "split",
+   "start": 37.5,
+   "broll": {
+    "src": "raw/ph/byu_headshot.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 41.3,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 9,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 44.5,
+   "broll": {
+    "src": "raw/prep/byu_up.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 47.8,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 8.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:left"
+  },
+  {
+   "type": "full",
+   "start": 51.9,
+   "broll": {
+    "src": "fx/xc25.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 55.3,
+   "broll": {
+    "src": "raw/sh/indoor5k.mp4",
+    "ss": 6,
+    "focus": [
+     0.5,
+     0.72
+    ]
+   },
+   "transition": "whip:down"
+  },
+  {
+   "type": "full",
+   "start": 59.1,
+   "broll": {
+    "src": "fx/out26.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom",
+   "cap_y": 0.86
+  },
+  {
+   "type": "full",
+   "start": 64.3,
+   "broll": {
+    "src": "fx/record.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 68.1,
+   "broll": {
+    "src": "raw/ph/des_2026xc.jpg",
+    "ss": 0,
+    "focus": [
+     0.55,
+     0.5
+    ]
+   },
+   "transition": "glitch"
+  },
+  {
+   "type": "split",
+   "start": 71.4,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 7,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 74.8,
+   "broll": {
+    "src": "fx/p39.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 77.8,
+   "broll": {
+    "src": "raw/yt/coach.mp4",
+    "ss": 120,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "whip:right"
+  },
+  {
+   "type": "split",
+   "start": 83.4,
+   "broll": {
+    "src": "raw/prep/byu_up.mp4",
+    "ss": 4.0,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 87.0,
+   "broll": {
+    "src": "raw/prep/hs_clean.mp4",
+    "ss": 6,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 90.8,
+   "broll": {
+    "src": "raw/sh/gatorade.mp4",
+    "ss": 24,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "split",
+   "start": 95.0,
+   "broll": {
+    "src": "raw/ph/des_rec.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 98.9,
+   "broll": {
+    "src": "fx/end.mp4",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.5
+    ],
+    "nograde": true
+   },
+   "transition": "zoom"
+  },
+  {
+   "type": "split",
+   "start": 102.3,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 9.5,
+    "focus": [
+     0.5,
+     0.5
+    ]
+   },
+   "transition": "whip:down"
+  },
+  {
+   "type": "split",
+   "start": 104.4,
+   "broll": {
+    "src": "raw/yt/tuohy.mp4",
+    "ss": 60,
+    "focus": [
+     0.8,
+     0.4
+    ]
+   },
+   "transition": "cut"
+  },
+  {
+   "type": "full",
+   "start": 109.8,
+   "broll": {
+    "src": "raw/sh/big12.mp4",
+    "ss": 3.5,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   },
+   "transition": "zoom"
+  }
+ ],
+ "zooms": [
+  [
+   9.5,
+   11.0,
+   1.08
+  ],
+  [
+   37.5,
+   38.9,
+   1.1
+  ],
+  [
+   83.4,
+   85.0,
+   1.08
+  ],
+  [
+   100.8,
+   102.0,
+   1.12
+  ]
+ ],
+ "graphics": []
+}
