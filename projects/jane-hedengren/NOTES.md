@@ -44,3 +44,9 @@ v2 cinematic:
 - `exports/jane_hedengren_hq.mp4`: LFS, 174 MB, SSIM 0.981.
 - `exports/jane_hedengren_phone.mp4`: 63 MB.
 - Cover: `exports/thumbnails/jane_hedengren_thumb(_3x4).jpg`, built by `cover/cover.py` in the owner's reference style.
+
+## Posted (Nov 24, 2026)
+- TikTok (Erin Spider Brown, public): https://www.tiktok.com/@erinspiderbrown/video/7711739874843299085
+- YouTube Short (The Erin Brown, public): https://www.youtube.com/watch?v=66o3IPAVU00
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgII1Maj9LT/
+- Facebook Page E.Diamondz reel: video_id 3768279920015423 (via Composio; checked the Page for duplicates first)
