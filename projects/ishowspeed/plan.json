@@ -65,11 +65,11 @@
    "type": "full",
    "start": 18.48,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/dk.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.3
+     0.52,
+     0.35
     ]
    },
    "hit": true
@@ -78,11 +78,11 @@
    "type": "split",
    "start": 23.86,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/dk.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.3
+     0.52,
+     0.2
     ]
    }
   },
@@ -90,7 +90,7 @@
    "type": "split",
    "start": 25.88,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/dk.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -102,11 +102,11 @@
    "type": "split",
    "start": 33.07,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p4_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/dk.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.52,
+     0.45
     ]
    }
   },
@@ -114,7 +114,7 @@
    "type": "split",
    "start": 40.9,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p1_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/dk.jpg",
     "ss": 0,
     "focus": [
      0.5,
@@ -211,11 +211,11 @@
    "type": "full",
    "start": 80.37,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/gout.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.35
+     0.56,
+     0.4
     ]
    },
    "hit": true
@@ -224,11 +224,11 @@
    "type": "split",
    "start": 86.33,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p2_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/gout.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.4
+     0.56,
+     0.3
     ]
    }
   },
@@ -248,11 +248,11 @@
    "type": "full",
    "start": 92.48,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p5_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/cwg.jpg",
     "ss": 0,
     "focus": [
-     0.5,
-     0.3
+     0.83,
+     0.4
     ]
    }
   },
@@ -260,10 +260,10 @@
    "type": "split",
    "start": 98.16,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/p3_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/ishowspeed/broll/cwg.jpg",
     "ss": 0,
     "focus": [
-     0.5,
+     0.26,
      0.35
     ]
    }

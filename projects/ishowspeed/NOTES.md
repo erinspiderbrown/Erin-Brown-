@@ -13,7 +13,12 @@
   - p3: Speed and Bolt, thumbs up
   - p4: Speed shirtless with Bolt
   - p5: Speed and Bolt, arms crossed
-- **Commons photos:** see CREDITS.md. Tyreek Hill is #10 on the Chiefs.
+- **Other athletes:** owner, Nov 24: "They are all public figures … if you can't find photos use videos". Commons and Flickr rate-limited this server for over an hour, so the photos are news-article lead images (see CREDITS.md):
+  - **Tyreek Hill:** Commons, #10 Chiefs.
+  - **DK Metcalf:** racing at the 2021 Golden Games, in an Under Armour top. USA TODAY Sports via SI.com.
+  - **Gout Gout:** at the 2026 Australian Championships. AFP via Al Jazeera.
+  - **Commonwealth Games 100m final:** Eseme, Ajayi and Kennedy in the rain. World Athletics news report.
+  - **Ato Boldon:** no usable photo. The only one found was 960 px and shows other athletes. His line uses the Speed and Bolt photo with a "COACH: ATO BOLDON" graphic.
 
 ## Facts on screen (checked, sources in the research log)
 - **IShowSpeed:** about 10.50 on his first run, then **10.35** (10.352), in the *Speed Goes Pro* S2 video "I RACED USAIN BOLT!" (released 22 Nov 2026).

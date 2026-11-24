@@ -38,11 +38,10 @@ D = lambda kind, t, dur, **k: {'type': 'data', 'kind': kind, 't': round(t, 2), '
 
 SPRINT, BLOCKS, THUMBS, SHIRTLESS, CROSSED = (B(f'p{i}_hd.jpg') for i in range(1, 6))
 TYREEK = B('tyreek.jpg')
-DK, DK2 = B('dk.jpg', 'p1_hd.jpg'), B('dk2.jpg', 'p4_hd.jpg')
+DK = DK2 = B('dk.jpg')
 ATO = B('ato.jpg', 'p3_hd.jpg')
-GOUT = B('gout.jpg', 'p2_hd.jpg')
-ESEME = B('eseme.jpg', 'p5_hd.jpg')
-KENNEDY = B('kennedy.jpg', 'p3_hd.jpg')
+GOUT = B('gout.jpg')
+ESEME = KENNEDY = B('cwg.jpg')
 
 t_crabs, t_this, t_try, t_dk, t_ran, t_predict, t_mt, t_saying, t_speaking, t_nfl, t_big, t_trashed = (
     at('people are crabs'), at('this is how'), at('they try to downplay'), at('i remember dk'), at('ran track and he'), at('people predicting'),
@@ -59,10 +58,10 @@ segs = [
     split(t_crabs - 0.05, BLOCKS, 0.5, 0.45),
     split(t_this - 0.05, CROSSED, 0.5, 0.3),
     split(t_try - 0.05, SHIRTLESS, 0.5, 0.3),
-    full(t_dk - 0.05, DK, 0.5, 0.3, hit=True),
-    split(t_predict - 0.05, DK2, 0.5, 0.3),
+    full(t_dk - 0.05, DK, 0.52, 0.35, hit=True),
+    split(t_predict - 0.05, DK2, 0.52, 0.2),
     split(t_mt - 0.05, DK, 0.5, 0.35),
-    split(t_speaking - 0.05, DK2, 0.5, 0.4),
+    split(t_speaking - 0.05, DK2, 0.52, 0.45),
     split(t_big - 0.05, DK, 0.5, 0.5),
     full(t_tyreek - 0.05, TYREEK, 0.45, 0.35, hit=True),
     split(t_havent - 0.05, TYREEK, 0.5, 0.25),
@@ -71,11 +70,11 @@ segs = [
     split(t_trained - 0.05, ATO, 0.5, 0.3),
     split(t_runs - 0.05, SPRINT, 0.4, 0.35),
     split(t_trust - 0.05, SHIRTLESS, 0.5, 0.3),
-    full(t_gout - 0.05, GOUT, 0.5, 0.35, hit=True),
-    split(t_official - 0.05, GOUT, 0.5, 0.4),
+    full(t_gout - 0.05, GOUT, 0.56, 0.4, hit=True),
+    split(t_official - 0.05, GOUT, 0.56, 0.3),
     split(t_sowhen - 0.05, BLOCKS, 0.5, 0.45),
-    full(t_kennedy - 0.05, ESEME, 0.5, 0.3),
-    split(t_earth - 0.05, KENNEDY, 0.5, 0.35),
+    full(t_kennedy - 0.05, KENNEDY, 0.83, 0.4),
+    split(t_earth - 0.05, ESEME, 0.26, 0.35),
     split(t_sam - 0.05, SPRINT, 0.4, 0.4),
     split(t_when - 0.05, THUMBS, 0.5, 0.3),
 ]
