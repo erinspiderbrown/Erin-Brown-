@@ -4,7 +4,7 @@
 
 ## Sources
 - `raw/talking_head.mov`: 4K landscape (rotated), 2:02.5, −14.4 LUFS, peak −2.9 dBFS (not clipping).
-  - Cropped 2430×2160 @ x=705 → 1440×1280 (CRF 10), then tightened to 1:54.0 (23 pauses cut). Final 1:55.6.
+  - Cropped 2430×2160 @ x=705 → 1440×1280 (CRF 10), then tightened to 1:54.0 (23 pauses cut). Final 1:55.6 (export SSIM vs master and loudness below).
   - Face: vignette only.
 - **Owner's photos:** IShowSpeed training, and Speed with Usain Bolt (Bolt in the white Portugal #7 shirt).
   - All five are under 1080 px on the short side (749–1206 px). They were upscaled from the original resolution with `enhance.py` (60% AI / 40% plain resize) to about 3200 px tall, and checked at full size.
