@@ -20,3 +20,10 @@ blend method) = 130.2 s. Face: crop + downscale only, vignette only.
 - "He went out chasing a record and fell apart": that was **Connor Burns** (HS mile record attempt, Festival of Miles, June 1, 2023: 7th in 4:03.25), not a twin.
 - "Kyle Robinson" = **Ky Robinson** (captions say Ky).
 - "Kip Cruz and Kip tools" = Kipchoge and Kiptum (captions say so).
+
+## Posted (Nov 24, 2026)
+- TikTok (public): delivered (vidIQ post 2b1ac7d7-24c9-4a68-9a29-c190aefc6975; no link returned)
+- YouTube Short: https://www.youtube.com/watch?v=nNeVqjsyoBU
+- Instagram trial reel: https://www.instagram.com/reel/DgGpYMfCOPV/
+- Facebook Page E.Diamondz: reel video_id 2300743180497690
+- Dropbox: /TikTok Exports/young_twins_tiktok.mp4 + thumbs (hashes verified)
