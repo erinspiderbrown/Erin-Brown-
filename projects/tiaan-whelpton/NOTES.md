@@ -15,3 +15,6 @@ Alternates:
 - "Same weight as Bolt"
 - "He should be 20.3, 20.4 jogging"
 - Overspeed on Nov 16, 250s
+
+## Known issue (found Nov 20, 2026)
+The split-size parallax photo shot flickers (every other frame a blurry close-up) because of a cinefx cover() bug, since fixed. Owner chose to leave the posted video up as is (Nov 24, 2026).

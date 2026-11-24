@@ -23,3 +23,6 @@ Mary Cain, 6.5 s, from the ABC13/AP package (2019), in the top slot at 27.45 s, 
 - Facebook Page E.Diamondz: reel video_id 1641068960485337
 - TikTok (public): https://www.tiktok.com/@erinspiderbrown/video/7709640834228047118 (went out 22:24 UTC)
 - Dropbox: /TikTok Exports/eat_some_food_tiktok.mp4 + thumbs (hashes verified)
+
+## Known issue (found Nov 20, 2026)
+The split-size parallax photo shot flickers (every other frame a blurry close-up) because of a cinefx cover() bug, since fixed. Owner chose to leave the posted video up as is (Nov 24, 2026).
