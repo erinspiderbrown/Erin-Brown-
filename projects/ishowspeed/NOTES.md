@@ -48,7 +48,7 @@
 
 ## Posts (Nov 24, 2026; owner chose "Post everywhere")
 - YouTube Short (@theerinbrowntv): https://www.youtube.com/watch?v=T3LLj6Ky2Kc
-- Instagram trial reel (@e.diamondz, MANUAL): container 18648551515012738 (processing at time of writing)
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgIIf7xAhhJ/
 - Facebook Page E.Diamondz reel: https://www.facebook.com/reel/961235666845373/
-- TikTok (Erin Spider Brown): sent via vidIQ (publication 8b253ea6-e725-4e61-9d47-d727311d6509), Public, comments on
+- TikTok (Erin Spider Brown): https://www.tiktok.com/@erinspiderbrown/video/7711739176122666253 (Public, comments on)
 - Dropbox /TikTok Exports/: video + both covers, content hashes verified
