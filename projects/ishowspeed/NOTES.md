@@ -4,7 +4,7 @@
 
 ## Sources
 - `raw/talking_head.mov`: 4K landscape (rotated), 2:02.5, −14.4 LUFS, peak −2.9 dBFS (not clipping).
-  - Cropped 2430×2160 @ x=705 → 1440×1280 (CRF 10), then tightened to 1:54.0 (23 pauses cut). Final 1:55.6 (export SSIM vs master and loudness below).
+  - Cropped 2430×2160 @ x=705 → 1440×1280 (CRF 10), then tightened to 1:54.0 (23 pauses cut). Final 1:55.6 (export 207 MB, SSIM 0.990 vs master, −14.0 LUFS).
   - Face: vignette only.
 - **Owner's photos:** IShowSpeed training, and Speed with Usain Bolt (Bolt in the white Portugal #7 shirt).
   - All five are under 1080 px on the short side (749–1206 px). They were upscaled from the original resolution with `enhance.py` (60% AI / 40% plain resize) to about 3200 px tall, and checked at full size.
@@ -46,5 +46,9 @@
 - **"People predicting he'll run 11, 10.9":** these are his words. There's no graphic for it.
 - Captions are censored to "sh*t" and "f*ck".
 
-## Posts
-- (pending)
+## Posts (Nov 24, 2026; owner chose "Post everywhere")
+- YouTube Short (@theerinbrowntv): https://www.youtube.com/watch?v=T3LLj6Ky2Kc
+- Instagram trial reel (@e.diamondz, MANUAL): container 18648551515012738 (processing at time of writing)
+- Facebook Page E.Diamondz reel: https://www.facebook.com/reel/961235666845373/
+- TikTok (Erin Spider Brown): sent via vidIQ (publication 8b253ea6-e725-4e61-9d47-d727311d6509), Public, comments on
+- Dropbox /TikTok Exports/: video + both covers, content hashes verified
