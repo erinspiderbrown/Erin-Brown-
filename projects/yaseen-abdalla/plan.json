@@ -378,20 +378,26 @@
    ]
   },
   {
-   "type": "data",
-   "kind": "counter",
-   "t": 52.02,
-   "dur": 3.0,
-   "value": "59:12",
-   "unit": "",
-   "label": "Valencia Half \u00b7 25 Oct 2026",
-   "sub": "8th \u00b7 Sudan national record"
+   "type": "motion",
+   "kind": "board",
+   "t": 51.82,
+   "dur": 2.6,
+   "title": "VALENCIA HALF \u00b7 OCT 2026",
+   "rows": [
+    {
+     "event": "8TH \u00b7 Y. ABDALLA",
+     "value": "59:12"
+    }
+   ],
+   "times": [
+    0.4
+   ]
   },
   {
    "type": "motion",
    "kind": "board",
    "t": 54.92,
-   "dur": 5.475999999999999,
+   "dur": 5.479999999999997,
    "title": "US HALF MARATHON RECORD",
    "rows": [
     {
@@ -425,14 +431,20 @@
    "text": "LARPING AS AMERICAN?"
   },
   {
-   "type": "data",
-   "kind": "counter",
+   "type": "motion",
+   "kind": "board",
    "t": 78.22,
    "dur": 2.1,
-   "value": "56:51",
-   "unit": "",
-   "label": "African & world record",
-   "sub": "Yomif Kejelcha \u00b7 Aug 2026"
+   "title": "AFRICAN & WORLD RECORD",
+   "rows": [
+    {
+     "event": "Y. KEJELCHA \u00b7 2026",
+     "value": "56:51"
+    }
+   ],
+   "times": [
+    0.4
+   ]
   },
   {
    "type": "motion",

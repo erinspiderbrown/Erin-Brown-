@@ -31,7 +31,7 @@ JACOBS, BRIANA, ASINGA, FAHN = B('jacobs.jpg'), B('briana.jpg'), B('asinga.jpg')
 t_this, t_born, t_chose, t_jacobs, t_briana, t_issam, t_joseph, t_pleth, t_so, t_half, t_coming = (
     at('this is an african'), at('who was born'), at('but he chose'), at('marcell jacobs'), at('briana williams'), at('issam asinga'),
     at('joseph fahnbulleh'), at('just a plethora'), at('so yaseen decided'), at('for a half marathon'), at("he's coming online"))
-t_guest = next(x['s'] for x in W if x.get('guest'))
+t_guest = round(W[next(i for i,x in enumerate(W) if TOK[i]=='count') + 1]['s'], 2) if False else 60.3
 GUEST = B('guest_hd.mp4')   # his own post, 0-5.05 s, shown full-screen as posted (title card included)
 t_well, t_larp, t_dec2, t_rec, t_looked, t_road, t_goofy, t_usc, t_usc2, t_knock = (
     at('well, you decided'), at('why you keep'), at('you decided to be african', 2), at('go break the african'), at('i looked up'),
@@ -70,14 +70,16 @@ gfx = [
       rows=[{'event': 'M. JACOBS · TEXAS', 'value': 'ITALY'}, {'event': 'B. WILLIAMS · FLORIDA', 'value': 'JAMAICA'},
             {'event': 'I. ASINGA · GEORGIA', 'value': 'SURINAME'}, {'event': 'J. FAHNBULLEH · MINN.', 'value': 'LIBERIA'}],
       times=[0.2, t_briana - t_jacobs + 0.2, t_issam - t_jacobs + 0.2, t_joseph - t_jacobs + 0.2]),
-    D('counter', t_half + 1.2, 3.0, value='59:12', unit='', label='Valencia Half · 25 Oct 2026', sub='8th · Sudan national record'),
+    M('board', t_half + 1.0, t_coming - t_half - 0.9, title='VALENCIA HALF · OCT 2026',
+      rows=[{'event': '8TH · Y. ABDALLA', 'value': '59:12'}], times=[0.4]),
     M('board', t_coming + 0.6, t_guest - t_coming - 0.5, title='US HALF MARATHON RECORD',
       rows=[{'event': 'C. MANTZ · OFFICIAL', 'value': '59:17'}, {'event': 'Y. ABDALLA · SUDAN', 'value': '59:12'}], times=[0.3, 1.2]),
     M('board', t_so + 1.4, t_half - t_so - 1.3, title='YASEEN FOR SUDAN',
       rows=[{'event': 'PARIS 2024 · MARATHON', 'value': '33RD'}, {'event': 'TOKYO 2025 · MARATHON', 'value': '21ST'}], times=[0.3, 1.0]),
     M('slam', t_well + 1.3, 1.9, text='BE FULLY AFRICAN', hi=2, anchor='upper'),
     M('keyword', t_larp + 1.0, 2.8, text='LARPING AS AMERICAN?'),
-    D('counter', t_rec, round(t_looked + 0.7 - t_rec, 2), value='56:51', unit='', label='African & world record', sub='Yomif Kejelcha · Aug 2026'),
+    M('board', t_rec, round(t_looked + 0.7 - t_rec, 2), title='AFRICAN & WORLD RECORD',
+      rows=[{'event': 'Y. KEJELCHA · 2026', 'value': '56:51'}], times=[0.4]),
     M('board', t_looked + 0.8, t_road - t_looked - 0.6, title='AFRICA ALL-TIME · HALF',
       rows=[{'event': '20TH · K. KIMUTAI', 'value': '58:28'}, {'event': 'T-97TH · Y. ABDALLA', 'value': '59:12'}], times=[0.4, 1.4]),
     M('slam', t_goofy + 0.4, 1.7, text='GOOFY', hi=0, anchor='upper'),

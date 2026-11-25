@@ -10,7 +10,7 @@
 - **Guest soundbite** (owner, Nov 25: "only use a short clip of him talking about how he has the American record, but they won't give it to him. Don't use that whole long video or even long portions of it"):
   - Only `raw/clip1.mp4` 0.0–5.05 s: "I just became the fastest American ever over the half marathon 59:12, but I won't be getting the American record."
   - It's shown full-screen exactly as he posted it, title card included. It was upscaled from 720×1280 to 1080×1920 with `enhance.py` (from the original resolution, blend 0.6).
-  - It goes in right after "…his American record don't count". Loudness matched (+0.2 dB). A-roll total: 1:45.
+  - It goes in right after "…his American record don't count". Loudness matched (+0.2 dB). A-roll total: 1:45. Final 1:46 (export 189 MB, SSIM 0.990, −14.0 LUFS). Our captions are hidden during his clip; his own burned-in captions show.
 - **Owner's photos:** Abdalla in Sudan kit, four photos at 1206 px wide, upscaled from the originals.
   - p1: road race
   - p2: in the pack next to Ayale (Israel)
