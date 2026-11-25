@@ -1,0 +1,538 @@
+{
+ "workdir": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/yaseen15/build",
+ "output": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/yaseen15/out/yaseen_v1.mp4",
+ "words": "/home/user/Erin-Brown-/projects/yaseen-abdalla/words_final.json",
+ "voice_ss": 0.0,
+ "duration": 122.77,
+ "face": {
+  "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/work/aroll.mov",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "segments": [
+  {
+   "type": "full",
+   "start": 0.0,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 6.34,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 10.02,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 15.21,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 20.5,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/jacobs.jpg",
+    "ss": 0,
+    "focus": [
+     0.85,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 25.88,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/briana.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 30.91,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/asinga.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 37.18,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/fahn.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 42.26,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.6,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 45.36,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 50.77,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 54.27,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 60.38,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 65.4,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 69.19,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 75.74,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.45
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 81.8,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.3,
+     0.35
+    ]
+   },
+   "hit": true
+  },
+  {
+   "type": "split",
+   "start": 86.62,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 90.93,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.4,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 96.07,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 102.76,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.75,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "full",
+   "start": 108.38,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.5,
+     0.3
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 110.87,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/jacobs.jpg",
+    "ss": 0,
+    "focus": [
+     0.85,
+     0.35
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 114.87,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/fahn.jpg",
+    "ss": 0,
+    "focus": [
+     0.62,
+     0.4
+    ]
+   }
+  },
+  {
+   "type": "split",
+   "start": 119.24,
+   "broll": {
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
+    "ss": 0,
+    "focus": [
+     0.45,
+     0.35
+    ]
+   }
+  }
+ ],
+ "zooms": [
+  [
+   86.57000000000001,
+   88.07000000000001,
+   1.1
+  ],
+  [
+   108.33000000000001,
+   109.63000000000001,
+   1.12
+  ]
+ ],
+ "graphics": [
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 0.4,
+   "dur": 3.6,
+   "text": "FASTEST AMERICAN EVER?"
+  },
+  {
+   "type": "motion",
+   "kind": "pin",
+   "t": 6.69,
+   "dur": 2.4,
+   "text": "SUDAN",
+   "sub": "THE COUNTRY HE RUNS FOR"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 10.27,
+   "dur": 3.0,
+   "text": "BORN IN THE USA"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 16.86,
+   "dur": 1.8,
+   "text": "THE EASIER PATH",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 20.35,
+   "dur": 21.96,
+   "title": "BORN IN THE USA, RAN FOR\u2026",
+   "rows": [
+    {
+     "event": "M. JACOBS \u00b7 TEXAS",
+     "value": "ITALY"
+    },
+    {
+     "event": "B. WILLIAMS \u00b7 FLORIDA",
+     "value": "JAMAICA"
+    },
+    {
+     "event": "I. ASINGA \u00b7 GEORGIA",
+     "value": "SURINAME"
+    },
+    {
+     "event": "J. FAHNBULLEH \u00b7 MINN.",
+     "value": "LIBERIA"
+    }
+   ],
+   "times": [
+    0.2,
+    5.579999999999999,
+    10.61,
+    16.879999999999995
+   ]
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 52.02,
+   "dur": 3.0,
+   "value": "59:12",
+   "unit": "",
+   "label": "Valencia Half \u00b7 25 Oct 2026",
+   "sub": "8th \u00b7 Sudan national record"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 54.92,
+   "dur": 5.555999999999997,
+   "title": "US HALF MARATHON RECORD",
+   "rows": [
+    {
+     "event": "C. MANTZ \u00b7 OFFICIAL",
+     "value": "59:17"
+    },
+    {
+     "event": "Y. ABDALLA \u00b7 SUDAN",
+     "value": "59:12"
+    }
+   ],
+   "times": [
+    0.3,
+    1.2
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "podcast",
+   "t": 60.58,
+   "dur": 3.2,
+   "text": "YASEEN ABDALLA",
+   "tag": "HIS OWN VIDEO"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 67.3,
+   "dur": 8.540000000000003,
+   "title": "YASEEN FOR SUDAN",
+   "rows": [
+    {
+     "event": "PARIS 2024 \u00b7 MARATHON",
+     "value": "33RD"
+    },
+    {
+     "event": "TOKYO 2025 \u00b7 MARATHON",
+     "value": "21ST"
+    }
+   ],
+   "times": [
+    0.3,
+    1.0
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 77.24,
+   "dur": 2.0,
+   "text": "DIDN'T GET THE RECORD",
+   "hi": 3,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 83.15,
+   "dur": 1.9,
+   "text": "BE FULLY AFRICAN",
+   "hi": 2,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 87.67,
+   "dur": 2.8,
+   "text": "LARPING AS AMERICAN?"
+  },
+  {
+   "type": "data",
+   "kind": "counter",
+   "t": 94.72,
+   "dur": 2.1,
+   "value": "56:51",
+   "unit": "",
+   "label": "African & world record",
+   "sub": "Yomif Kejelcha \u00b7 Aug 2026"
+  },
+  {
+   "type": "motion",
+   "kind": "board",
+   "t": 96.92,
+   "dur": 6.089999999999998,
+   "title": "AFRICA ALL-TIME \u00b7 HALF",
+   "rows": [
+    {
+     "event": "20TH \u00b7 K. KIMUTAI",
+     "value": "58:28"
+    },
+    {
+     "event": "T-97TH \u00b7 Y. ABDALLA",
+     "value": "59:12"
+    }
+   ],
+   "times": [
+    0.4,
+    1.4
+   ]
+  },
+  {
+   "type": "motion",
+   "kind": "slam",
+   "t": 108.83,
+   "dur": 1.7,
+   "text": "GOOFY",
+   "hi": 0,
+   "anchor": "upper"
+  },
+  {
+   "type": "motion",
+   "kind": "keyword",
+   "t": 111.22,
+   "dur": 2.8,
+   "text": "U.S. CITIZENS TOO"
+  },
+  {
+   "type": "motion",
+   "kind": "poll",
+   "t": 118.89,
+   "dur": 3.8799999999999897,
+   "question": "SHOULD 59:12 BE THE AMERICAN RECORD?",
+   "options": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}
