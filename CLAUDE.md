@@ -75,6 +75,10 @@ This repo holds the editing setup for the owner's TikTok sports/track videos. Th
   - Don't turn any of these back on unless the owner asks.
   - (History: the owner first found every-cut whooshes repetitive, then found graphic and impact sounds loud and random, and risers too loud and drawn out.)
 - **Numbers and stats** get animated data graphics (`type: "data"`: counter, compare, bars, line, ring); they're silent by default. Run `suggest_data.py` on the transcript to find every number.
+- **No big text that just repeats the captions** (owner, 25 Nov 2026, after the Yaseen Abdalla video, which is the last one made this way: "I don't like on the videos where the subtitles are there and then they put like big subtitles just replicating the same subtitles on the screen. Take away that for all future videos").
+  - No `slam` or `keyword` whose text is the words he's saying at that moment (e.g. "BE FULLY AFRICAN", "CRABS IN A BUCKET", "GOOFY", "BORN IN THE USA").
+  - Big on-screen text must add something the captions don't: a checked number, a result, a place or a name (`board`, `data`, `pin`, `stopwatch`, `poll`, `podcast` badge, etc.).
+  - This overrides the `slam`/`keyword` density in the Jane and Yohan Blake formats below: fill those beats with data graphics, B-roll changes and punch-in zooms instead.
 - **Things being talked about** get motion graphics (`type: "motion"`):
   - `slam`: kinetic punch text with a yellow marker bar on the key word (`hi`), e.g. "BIGGEST LIE". This replaces `stamp` (owner, Nov 2026: the red stamps are "too cliche"); the build turns any `stamp` into a `slam` unless a plan sets `stamps: true`.
   - `keyword`
