@@ -3,7 +3,7 @@
  "output": "/tmp/claude-0/-home-user-Erin-Brown-/44aa0cd6-8023-5301-82fa-277e8bea228e/scratchpad/yaseen15/out/yaseen_v1.mp4",
  "words": "/home/user/Erin-Brown-/projects/yaseen-abdalla/words_final.json",
  "voice_ss": 0.0,
- "duration": 122.77,
+ "duration": 106.27,
  "face": {
   "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/work/aroll.mov",
   "focus": [
@@ -159,56 +159,21 @@
    }
   },
   {
-   "type": "split",
-   "start": 60.38,
+   "type": "full",
+   "start": 60.3,
    "broll": {
-    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
-    "ss": 0,
-    "focus": [
-     0.45,
-     0.4
-    ]
-   }
-  },
-  {
-   "type": "split",
-   "start": 65.4,
-   "broll": {
-    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
+    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/guest_hd.mp4",
     "ss": 0,
     "focus": [
      0.5,
-     0.45
+     0.5
     ]
-   }
-  },
-  {
-   "type": "split",
-   "start": 69.19,
-   "broll": {
-    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
-    "ss": 0,
-    "focus": [
-     0.3,
-     0.3
-    ]
-   }
-  },
-  {
-   "type": "split",
-   "start": 75.74,
-   "broll": {
-    "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
-    "ss": 0,
-    "focus": [
-     0.4,
-     0.45
-    ]
-   }
+   },
+   "transition": "cut"
   },
   {
    "type": "full",
-   "start": 81.8,
+   "start": 65.3,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
     "ss": 0,
@@ -221,7 +186,7 @@
   },
   {
    "type": "split",
-   "start": 86.62,
+   "start": 70.12,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
     "ss": 0,
@@ -233,7 +198,7 @@
   },
   {
    "type": "split",
-   "start": 90.93,
+   "start": 74.43,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p1_hd.jpg",
     "ss": 0,
@@ -245,7 +210,7 @@
   },
   {
    "type": "split",
-   "start": 96.07,
+   "start": 79.57,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
     "ss": 0,
@@ -257,7 +222,7 @@
   },
   {
    "type": "split",
-   "start": 102.76,
+   "start": 86.26,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p4_hd.jpg",
     "ss": 0,
@@ -269,7 +234,7 @@
   },
   {
    "type": "full",
-   "start": 108.38,
+   "start": 91.88,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p3_hd.jpg",
     "ss": 0,
@@ -281,7 +246,7 @@
   },
   {
    "type": "split",
-   "start": 110.87,
+   "start": 94.37,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/jacobs.jpg",
     "ss": 0,
@@ -293,7 +258,7 @@
   },
   {
    "type": "split",
-   "start": 114.87,
+   "start": 98.37,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/fahn.jpg",
     "ss": 0,
@@ -305,7 +270,7 @@
   },
   {
    "type": "split",
-   "start": 119.24,
+   "start": 102.74,
    "broll": {
     "src": "/home/user/Erin-Brown-/projects/yaseen-abdalla/broll/p2_hd.jpg",
     "ss": 0,
@@ -318,13 +283,13 @@
  ],
  "zooms": [
   [
-   86.57000000000001,
-   88.07000000000001,
+   70.07000000000001,
+   71.57000000000001,
    1.1
   ],
   [
-   108.33000000000001,
-   109.63000000000001,
+   91.83000000000001,
+   93.13000000000001,
    1.12
   ]
  ],
@@ -392,6 +357,27 @@
    ]
   },
   {
+   "type": "motion",
+   "kind": "board",
+   "t": 46.81,
+   "dur": 4.110000000000004,
+   "title": "YASEEN FOR SUDAN",
+   "rows": [
+    {
+     "event": "PARIS 2024 \u00b7 MARATHON",
+     "value": "33RD"
+    },
+    {
+     "event": "TOKYO 2025 \u00b7 MARATHON",
+     "value": "21ST"
+    }
+   ],
+   "times": [
+    0.3,
+    1.0
+   ]
+  },
+  {
    "type": "data",
    "kind": "counter",
    "t": 52.02,
@@ -405,7 +391,7 @@
    "type": "motion",
    "kind": "board",
    "t": 54.92,
-   "dur": 5.555999999999997,
+   "dur": 5.475999999999999,
    "title": "US HALF MARATHON RECORD",
    "rows": [
     {
@@ -424,46 +410,8 @@
   },
   {
    "type": "motion",
-   "kind": "podcast",
-   "t": 60.58,
-   "dur": 3.2,
-   "text": "YASEEN ABDALLA",
-   "tag": "HIS OWN VIDEO"
-  },
-  {
-   "type": "motion",
-   "kind": "board",
-   "t": 67.3,
-   "dur": 8.540000000000003,
-   "title": "YASEEN FOR SUDAN",
-   "rows": [
-    {
-     "event": "PARIS 2024 \u00b7 MARATHON",
-     "value": "33RD"
-    },
-    {
-     "event": "TOKYO 2025 \u00b7 MARATHON",
-     "value": "21ST"
-    }
-   ],
-   "times": [
-    0.3,
-    1.0
-   ]
-  },
-  {
-   "type": "motion",
    "kind": "slam",
-   "t": 77.24,
-   "dur": 2.0,
-   "text": "DIDN'T GET THE RECORD",
-   "hi": 3,
-   "anchor": "upper"
-  },
-  {
-   "type": "motion",
-   "kind": "slam",
-   "t": 83.15,
+   "t": 66.65,
    "dur": 1.9,
    "text": "BE FULLY AFRICAN",
    "hi": 2,
@@ -472,14 +420,14 @@
   {
    "type": "motion",
    "kind": "keyword",
-   "t": 87.67,
+   "t": 71.17,
    "dur": 2.8,
    "text": "LARPING AS AMERICAN?"
   },
   {
    "type": "data",
    "kind": "counter",
-   "t": 94.72,
+   "t": 78.22,
    "dur": 2.1,
    "value": "56:51",
    "unit": "",
@@ -489,7 +437,7 @@
   {
    "type": "motion",
    "kind": "board",
-   "t": 96.92,
+   "t": 80.42,
    "dur": 6.089999999999998,
    "title": "AFRICA ALL-TIME \u00b7 HALF",
    "rows": [
@@ -510,7 +458,7 @@
   {
    "type": "motion",
    "kind": "slam",
-   "t": 108.83,
+   "t": 92.33,
    "dur": 1.7,
    "text": "GOOFY",
    "hi": 0,
@@ -519,14 +467,14 @@
   {
    "type": "motion",
    "kind": "keyword",
-   "t": 111.22,
+   "t": 94.72,
    "dur": 2.8,
    "text": "U.S. CITIZENS TOO"
   },
   {
    "type": "motion",
    "kind": "poll",
-   "t": 118.89,
+   "t": 102.39,
    "dur": 3.8799999999999897,
    "question": "SHOULD 59:12 BE THE AMERICAN RECORD?",
    "options": [

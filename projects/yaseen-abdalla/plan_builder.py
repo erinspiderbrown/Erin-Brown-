@@ -31,7 +31,8 @@ JACOBS, BRIANA, ASINGA, FAHN = B('jacobs.jpg'), B('briana.jpg'), B('asinga.jpg')
 t_this, t_born, t_chose, t_jacobs, t_briana, t_issam, t_joseph, t_pleth, t_so, t_half, t_coming = (
     at('this is an african'), at('who was born'), at('but he chose'), at('marcell jacobs'), at('briana williams'), at('issam asinga'),
     at('joseph fahnbulleh'), at('just a plethora'), at('so yaseen decided'), at('for a half marathon'), at("he's coming online"))
-t_guest = next(x['s'] for x in W if x.get('guest')); t_olym = at('opportunity to go to the olympics'); t_faster = at('i got faster and')
+t_guest = next(x['s'] for x in W if x.get('guest'))
+GUEST = B('guest_hd.mp4')   # his own post, 0-5.05 s, shown full-screen as posted (title card included)
 t_well, t_larp, t_dec2, t_rec, t_looked, t_road, t_goofy, t_usc, t_usc2, t_knock = (
     at('well, you decided'), at('why you keep'), at('you decided to be african', 2), at('go break the african'), at('i looked up'),
     at('i can go these'), at("but it's goofy"), at("oh, i'm a"), at("i'm a u.s.", 2), at('so knock that'))
@@ -49,10 +50,7 @@ segs = [
     full(t_so - 0.05, CLOSE, 0.5, 0.35, hit=True),
     split(t_half - 0.05, ROAD, 0.4, 0.35),
     split(t_coming - 0.05, TRACK, 0.3, 0.3),
-    split(t_guest, PACK, 0.45, 0.4),
-    split(t_olym - 0.3, CLOSE, 0.5, 0.45),
-    split(at("i'm very proud") - 0.05, TRACK, 0.3, 0.3),
-    split(t_faster - 0.3, ROAD, 0.4, 0.45),
+    full(t_guest, GUEST, 0.5, 0.5, transition='cut'),
     full(t_well - 0.05, TRACK, 0.3, 0.35, hit=True),
     split(t_larp - 0.05, PACK, 0.45, 0.35),
     split(t_dec2 - 0.05, ROAD, 0.4, 0.3),
@@ -75,10 +73,8 @@ gfx = [
     D('counter', t_half + 1.2, 3.0, value='59:12', unit='', label='Valencia Half · 25 Oct 2026', sub='8th · Sudan national record'),
     M('board', t_coming + 0.6, t_guest - t_coming - 0.5, title='US HALF MARATHON RECORD',
       rows=[{'event': 'C. MANTZ · OFFICIAL', 'value': '59:17'}, {'event': 'Y. ABDALLA · SUDAN', 'value': '59:12'}], times=[0.3, 1.2]),
-    M('podcast', t_guest + 0.2, 3.2, text='YASEEN ABDALLA', tag='HIS OWN VIDEO'),
-    M('board', t_olym + 1.6, t_faster - t_olym - 1.8, title='YASEEN FOR SUDAN',
+    M('board', t_so + 1.4, t_half - t_so - 1.3, title='YASEEN FOR SUDAN',
       rows=[{'event': 'PARIS 2024 · MARATHON', 'value': '33RD'}, {'event': 'TOKYO 2025 · MARATHON', 'value': '21ST'}], times=[0.3, 1.0]),
-    M('slam', t_faster + 1.2, 2.0, text="DIDN'T GET THE RECORD", hi=3, anchor='upper'),
     M('slam', t_well + 1.3, 1.9, text='BE FULLY AFRICAN', hi=2, anchor='upper'),
     M('keyword', t_larp + 1.0, 2.8, text='LARPING AS AMERICAN?'),
     D('counter', t_rec, round(t_looked + 0.7 - t_rec, 2), value='56:51', unit='', label='African & world record', sub='Yomif Kejelcha · Aug 2026'),
