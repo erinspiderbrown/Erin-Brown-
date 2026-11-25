@@ -40,3 +40,11 @@
 - No name tags; freeze pop-out of Speed in the hook.
 - Full-screen: hook (hit), Olympic stadium aerial, Berlin Olympic stadium (hit), passports (hit), stadium at night, stadium aerial, crowd.
 - Graphics: keyword/slam on each beat, counter 10.35, bars (Speed day 1 / Briana PB / Speed w/ Bolt), CBI price board, São Tomé pin, flow (sponsor → $90K → passport), processing-time board, Paris prelim board, poll "SHOULD SPEED BUY A PASSPORT FOR LA 2028?".
+
+## Delivered / posted (25 Nov 2026)
+- Export `exports/ishowspeed_passport_tiktok_hq.mp4`: 2:05, CRF 16, 299 MB (LFS), −14.2 LUFS, SSIM 0.990 vs master.
+- Dropbox `/TikTok Exports/`: video + both covers, content_hash verified.
+- YouTube Short: https://www.youtube.com/watch?v=vV8K3ZZ8gPk
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgJnp9fvICk/
+- Facebook Page E.Diamondz: reel video_id 1530833915771372.
+- TikTok (auto-posted via vidIQ, owner's Nov 24 rule): delivered; vidIQ returned no post link. vidIQ flagged it as close to the previous TikTok (pacing).
