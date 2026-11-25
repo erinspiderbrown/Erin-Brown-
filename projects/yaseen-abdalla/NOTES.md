@@ -55,5 +55,9 @@
 - **"Ran 59 minutes":** 59:12.
 - Captions are censored: sh*t, f*ck, n*gga.
 
-## Posts
-- (pending)
+## Posts (Nov 25, 2026; owner: "Post the videos when you're done making it")
+- YouTube Short (@theerinbrowntv): https://www.youtube.com/watch?v=9gurqqzhkqg
+- Instagram trial reel (@e.diamondz, MANUAL): https://www.instagram.com/reel/DgJiIE9NwKU/
+- Facebook Page E.Diamondz reel: https://www.facebook.com/reel/2012694390116351/
+- TikTok (Erin Spider Brown): vidIQ publication 31c304e9-fb26-4d14-a6d6-9c3ea77f0294 (Public, comments on)
+- Dropbox /TikTok Exports/: video + both covers, content hashes verified
